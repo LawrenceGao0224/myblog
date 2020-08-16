@@ -2,17 +2,17 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <sitemap>
-        <loc>http://MyBlog.com/post-sitemap.xml</loc>
+        <loc>https://github.com/LawrenceGao0224/myblog.git/post-sitemap.xml</loc>
         <lastmod>2020-08-16T07:39:08.377Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://MyBlog.com/page-sitemap.xml</loc>
+        <loc>https://github.com/LawrenceGao0224/myblog.git/page-sitemap.xml</loc>
         <lastmod>2020-08-16T07:39:08.430Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://MyBlog.com/tag-sitemap.xml</loc>
+        <loc>https://github.com/LawrenceGao0224/myblog.git/tag-sitemap.xml</loc>
         <lastmod>2020-08-16T07:39:08.377Z</lastmod>
     </sitemap>
 
