@@ -2,14 +2,14 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Hexo/</loc>
+        <loc>http://MyBlog.com/tags/Hexo/</loc>
         <lastmod>2020-08-16T07:39:08.377Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Blog/</loc>
+        <loc>http://MyBlog.com/tags/Blog/</loc>
         <lastmod>2020-08-16T07:39:08.377Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
