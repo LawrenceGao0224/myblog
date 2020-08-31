@@ -7,29 +7,29 @@
     </url>
     
     <url>
-        <loc>http://MyBlog.com/tags/</loc>
-        <lastmod>2020-08-16T07:39:08.430Z</lastmod>
+        <loc>http://MyBlog.com/404.html</loc>
+        <lastmod>2020-08-31T09:02:01.837Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>http://MyBlog.com/about/</loc>
-        <lastmod>2020-08-16T07:39:08.386Z</lastmod>
+        <loc>http://MyBlog.com/tags/</loc>
+        <lastmod>2020-08-31T08:43:46.822Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
         <loc>http://MyBlog.com/archive/</loc>
-        <lastmod>2020-08-16T07:39:08.386Z</lastmod>
+        <lastmod>2020-08-31T08:34:31.449Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
     <url>
-        <loc>http://MyBlog.com/404.html</loc>
-        <lastmod>2020-08-16T07:39:08.376Z</lastmod>
+        <loc>http://MyBlog.com/about/</loc>
+        <lastmod>2020-08-31T08:26:12.378Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
