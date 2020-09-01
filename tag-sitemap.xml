@@ -93,22 +93,8 @@
     </url>
 
     <url>
-        <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Graduation/</loc>
-        <lastmod>2020-09-01T12:57:46.574Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Vietnam/</loc>
         <lastmod>2020-09-01T13:06:01.062Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Blog/</loc>
-        <lastmod>2020-09-01T13:25:47.097Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -123,6 +109,27 @@
     <url>
         <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Intern/</loc>
         <lastmod>2020-09-01T13:25:47.097Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Blog/</loc>
+        <lastmod>2020-09-01T13:58:53.556Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://github.com/LawrenceGao0224/myblog.git/tags/%E8%98%AD%E5%B6%BC/</loc>
+        <lastmod>2020-09-01T13:58:53.556Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Graduation/</loc>
+        <lastmod>2020-09-01T13:58:53.556Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
