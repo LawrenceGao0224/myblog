@@ -7,8 +7,16 @@
     </url>
 
     <url>
-        <loc>https://github.com/LawrenceGao0224/myblog.git/2018/12/31/maya/</loc>
-        <lastmod>2020-09-01T04:36:49.150Z</lastmod>
+        <loc>https://github.com/LawrenceGao0224/myblog.git/2018/03/04/Thailand/</loc>
+        <lastmod>2020-09-01T07:46:04.238Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://github.com/LawrenceGao0224/myblog.git/2019/02/09/stock-prediction/</loc>
+        <lastmod>2020-09-01T07:14:18.751Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -16,7 +24,23 @@
 
     <url>
         <loc>https://github.com/LawrenceGao0224/myblog.git/2017/12/13/college-project/</loc>
-        <lastmod>2020-09-01T03:34:37.881Z</lastmod>
+        <lastmod>2020-09-01T06:57:44.202Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://github.com/LawrenceGao0224/myblog.git/2019/01/29/AP-algo/</loc>
+        <lastmod>2020-09-01T06:56:21.419Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://github.com/LawrenceGao0224/myblog.git/2018/12/31/maya/</loc>
+        <lastmod>2020-09-01T06:13:38.669Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
