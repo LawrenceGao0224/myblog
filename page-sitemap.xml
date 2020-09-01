@@ -7,6 +7,13 @@
     </url>
     
     <url>
+        <loc>https://github.com/LawrenceGao0224/myblog.git/about/</loc>
+        <lastmod>2020-09-01T03:36:42.289Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
         <loc>https://github.com/LawrenceGao0224/myblog.git/404.html</loc>
         <lastmod>2020-08-31T09:02:01.837Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -23,13 +30,6 @@
     <url>
         <loc>https://github.com/LawrenceGao0224/myblog.git/archive/</loc>
         <lastmod>2020-08-31T08:34:31.449Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://github.com/LawrenceGao0224/myblog.git/about/</loc>
-        <lastmod>2020-08-31T08:26:12.378Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
