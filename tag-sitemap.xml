@@ -72,13 +72,6 @@
     </url>
 
     <url>
-        <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Thailand/</loc>
-        <lastmod>2020-09-01T12:57:42.927Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Malaysia/</loc>
         <lastmod>2020-09-01T12:57:46.574Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -114,29 +107,36 @@
     </url>
 
     <url>
-        <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Graduation/</loc>
-        <lastmod>2020-09-01T13:58:53.556Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Blog/</loc>
-        <lastmod>2020-09-02T02:32:10.387Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Working-Holiday/</loc>
-        <lastmod>2020-09-02T02:32:10.387Z</lastmod>
+        <lastmod>2020-09-02T02:40:30.371Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Tainan/</loc>
-        <lastmod>2020-09-02T02:32:10.387Z</lastmod>
+        <lastmod>2020-09-02T02:40:30.371Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Blog/</loc>
+        <lastmod>2020-09-02T02:49:51.672Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Graduation/</loc>
+        <lastmod>2020-09-02T02:49:51.672Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Thailand/</loc>
+        <lastmod>2020-09-02T02:49:51.672Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
