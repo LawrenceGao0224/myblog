@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          [Hexo] Theme BeanTech - LawrenceKao&#39;s Blog
+          Hexo &amp; GitHub 建置部落格 - LawrenceKao&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="https://github.com/LawrenceGao0224/myblog.git/myblog/2017/03/18/hexo-theme-beantech/">
+    <link rel="canonical" href="https://github.com/LawrenceGao0224/myblog.git/myblog/2020/09/02/github-and-hexo/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="../../../../css/bootstrap.min.css">
@@ -69,7 +69,7 @@
 <style type="text/css">
     header.intro-header{
         
-            background-image: url('Demo.png')
+            background-image: url('head.png')
             /*post*/
         
     }
@@ -92,12 +92,14 @@
                             
                               <a class="tag" href="/myblog/tags/#Work" title="Work">Work</a>
                             
+                              <a class="tag" href="/myblog/tags/#Blog" title="Blog">Blog</a>
+                            
                         </div>
-                        <h1>[Hexo] Theme BeanTech</h1>
-                        <h2 class="subheading">This is hexo theme Demo.</h2>
+                        <h1>Hexo &amp; GitHub 建置部落格</h1>
+                        <h2 class="subheading">採用Hexo建置</h2>
                         <span class="meta">
                             Posted by Lawrence Kao on
-                            2017-03-18
+                            2020-09-02
                         </span>
                     </div>
                 
@@ -215,59 +217,146 @@
                 post-container">
 
                 <blockquote>
-<p>Ported Theme of <a href="https://github.com/Huxpro/huxpro.github.io">Hux Blog</a>, Thank <a href="https://github.com/Huxpro">Huxpro</a> for designing such a flawless theme.</p>
-<p>This BeanTech theme created by <a href="http://beantech.org" target="_blank" rel="noopener">YuHsuan</a> modified from the original Porter <a href="http://kaijun.rocks/hexo-theme-huxblog/" target="_blank" rel="noopener">Kaijun</a></p>
+<p>原本抱著想充實自己的想法 並且能應用於求職面試<br>
+開始製作自己的部落格<br>
+每寫完一篇就有成就感<br>
+更能記錄自己生活的點滴</p>
 </blockquote>
-<h1><span id="live-demo"></span></h1>
 <hr>
-<p><img src="http://beantech.org/img/beantech-desktop.png" alt="BeanTech Desktop"></p>
-<h1><span id="usage">Usage</span></h1>
+<h1><span id="開始撰寫動機">開始撰寫動機</span></h1>
+<p>現在科技的快速進步與影音發達，大部分人只憑藉著手機或電視媒體獲取新知，然而最近讀過一篇文章 <a href="https://www.cw.com.tw/article/5009267" target="_blank" rel="noopener">美國新一波教育革命：寫作真的很重要</a>，說明寫作的重要性，對於自我發展能力的培養，可學習組織零碎的知識與片段的數據進行重組，並以自身理解的方式在傳達出去，因此要學習，必須要會寫作。<br>
+同時想鍛鍊自己並能記錄自己的生活點滴，此外讓企業容易發覺你的價值，引此決心開始撰寫</p>
 <hr>
-<p>I publish the whole project for your convenience, so you can just follow the instruction down below, then you can easily customiz your own blog!</p>
-<p>Let’s begin!!!</p>
-<h2><span id="init">Init</span></h2>
+<h1><span id="工具選擇-amp-選擇hexo">工具選擇 &amp; 選擇HEXO</span></h1>
+<p>起初有使用過Webnode建立過個人部落個，但是需要購買個人網域，因此只能自己欣賞而無法分享給朋友，此外也使用過網路教學HTML5模板搭配GitHub，但是在撰寫新的頁面時，需顧及程式面及美觀，無法專心創作，因此也決定放棄這方法，最後在看到HEXO的部落格建立方法，決定使用它。</p>
 <hr>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/YenYuHsuan/hexo-theme-beantech.git ./hexo-beantech</span><br><span class="line"><span class="built_in">cd</span> hexo-beantech</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-<h2><span id="modify">Modify</span></h2>
+<h1><span id="hexo-介紹">HEXO  介紹</span></h1>
+<ul>
+<li>技術轉移
+<ul>
+<li>純 AJAX</li>
+<li>Jekyll:
+<ul>
+<li>ruby sass（資料量多，太慢10-100x差距）</li>
+<li>不須預先編譯</li>
+</ul>
+</li>
+<li>Hexo:
+<ul>
+<li>node.js sass</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>繁中文件
+<ul>
+<li>主要為台灣開發者</li>
+<li>眾多的中國協作者</li>
+</ul>
+</li>
+<li>是一個靜態網站產生器 → 沒有資料庫（無法讓用戶改變內容）</li>
+<li>可以部署在 Github 上
+<ul>
+<li>免費</li>
+<li>有著 Github 超潮網域</li>
+</ul>
+</li>
+<li>使用 Markdown 撰寫
+<ul>
+<li>專注在寫文之上</li>
+<li>缺點是沒辦法主動帶圖片 （可解決:上傳圖庫 ex firebase 46:14）</li>
+</ul>
+</li>
+<li>大量地 Theme
+<ul>
+<li>也可以自己做 Theme</li>
+</ul>
+</li>
+<li>額外插件 plugins
+<ul>
+<li><a href="https://hexo.io/plugins/" target="_blank" rel="noopener">https://hexo.io/plugins/</a></li>
+<li>搜尋、gzip、sitemap、rss</li>
+</ul>
+</li>
+<li>外部工具
+<ul>
+<li>留言版、Facebook 社群工具、GA…</li>
+</ul>
+</li>
+</ul>
 <hr>
-<p>Modify <code>_config.yml</code> file with your own info.<br>
-Especially the section:</p>
-<h3><span id="deployment">Deployment</span></h3>
-<p>Replace to your own repo!</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/&lt;yourAccount&gt;/&lt;repo&gt;</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">&lt;your-branch&gt;</span></span><br></pre></td></tr></table></figure>
-<h3><span id="sidebar-settings">Sidebar settings</span></h3>
-<p>Copy your avatar image to <code>&lt;root&gt;/img/</code> and modify the <code>_config.yml</code>:</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">sidebar:</span> <span class="literal">true</span>    <span class="comment"># whether or not using Sidebar.</span></span><br><span class="line"><span class="attr">sidebar-about-description:</span> <span class="string">"&lt;your description&gt;"</span></span><br><span class="line"><span class="attr">sidebar-avatar:</span> <span class="string">img/&lt;your</span> <span class="string">avatar</span> <span class="string">path&gt;</span></span><br></pre></td></tr></table></figure>
-<p>and activate your personal widget you like</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">widgets:</span>         <span class="comment"># here are widget you can use, you can comment out</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">featured-tags</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">short-about</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">recent-posts</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">friends-blog</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">archive</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">category</span></span><br></pre></td></tr></table></figure>
-<p>if you want to add sidebar widget, please add at <code>layout/_widget</code>.</p>
-<h3><span id="signature-setup">Signature Setup</span></h3>
-<p>Copy your signature image to <code>&lt;root&gt;/img/signature</code> and modify the <code>_config.yml</code>:</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">signature:</span> <span class="literal">true</span>   <span class="comment"># show signature</span></span><br><span class="line"><span class="attr">signature-img:</span> <span class="string">img/signature/&lt;your-signature-ID&gt;</span></span><br></pre></td></tr></table></figure>
-<h3><span id="go-to-top-icon-setup">Go to top icon Setup</span></h3>
-<p>My icon is using iron man, you can change to your own icon at <code>css/image</code>.</p>
-<h3><span id="post-tag">Post tag</span></h3>
-<p>You can decide to show post tags or not.</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">home_posts_tag:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p><img src="home_posts_tag-true.png" alt="home_posts_tag-true"></p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">home_posts_tag:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-<p><img src="home_posts_tag-false.png" alt="home_posts_tag-false"></p>
-<h3><span id="markdown-render">Markdown render</span></h3>
-<p>My markdown render engine plugin is <a href="https://github.com/celsomiranda/hexo-renderer-markdown-it">hexo-renderer-markdown-it</a>.</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Markdown-it config</span></span><br><span class="line"><span class="comment">## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki</span></span><br><span class="line"><span class="attr">markdown:</span></span><br><span class="line">  <span class="attr">render:</span></span><br><span class="line">    <span class="attr">html:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">xhtmlOut:</span> <span class="literal">false</span></span><br><span class="line">    <span class="attr">breaks:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">linkify:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">typographer:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">quotes:</span> <span class="string">'“”‘’'</span></span><br></pre></td></tr></table></figure>
-<p>and if you want to change the header anchor ‘ℬ’, you can go to <code>layout/post.ejs</code> to change it.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span>(<span class="string">"https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        anchors.options = &#123;</span><br><span class="line">          visible: <span class="string">'hover'</span>,</span><br><span class="line">          placement: <span class="string">'left'</span>,</span><br><span class="line">          icon: ℬ <span class="comment">// this is the header anchor "unicode" icon</span></span><br><span class="line">        &#125;;</span><br></pre></td></tr></table></figure>
-<h2><span id="hexo-basics">Hexo Basics</span></h2>
+<h1><span id="hexo-流程">Hexo 流程</span></h1>
+<h2><span id="hexo前置作業">Hexo前置作業</span></h2>
+<ul>
+<li>安裝 Node.js</li>
+<li>教學</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/ppoffice/hexo-theme-icarus.git themes/icarusor node.js</span><br></pre></td></tr></table></figure>
+<ul>
+<li>安裝 hexo CLI</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli //可以讓hexo使用指令的工具</span><br></pre></td></tr></table></figure>
+<h2><span id="快速建立一個雛形">快速建立一個雛形</span></h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ <span class="built_in">cd</span> &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<ul>
+<li>啟動 (本地端預覽)</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s //s=server ， localhost:4000</span><br></pre></td></tr></table></figure>
+<ul>
+<li>建立(編譯)靜態網站</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g //g=generate，生成public file</span><br></pre></td></tr></table></figure>
 <hr>
-<p>Some hexo command:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo new post <span class="string">"&lt;post name&gt;"</span> <span class="comment"># you can change post to another layout if you want</span></span><br><span class="line">hexo clean &amp;&amp; hexo generate <span class="comment"># generate the static file</span></span><br><span class="line">hexo server <span class="comment"># run hexo in local environment</span></span><br><span class="line">hexo deploy <span class="comment"># hexo will push the static files automatically into the specific branch(gh-pages) of your repo!</span></span><br></pre></td></tr></table></figure>
-<h1><span id="have-fun-_">Have fun ^_^</span></h1>
+<h1><span id="github-教學">Github 教學</span></h1>
+<h2><span id="初始化">初始化</span></h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//create a new repository</span><br><span class="line">git init</span><br><span class="line">git add.</span><br><span class="line">git commit -m <span class="string">"git init"</span></span><br></pre></td></tr></table></figure>
+<h2><span id="push">push</span></h2>
+<ul>
+<li>push branch: master→原始碼</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//push an existing repository</span><br><span class="line">git remote add origin &lt;Github account&gt; //儲存庫路徑</span><br><span class="line">git push -u origin master  //branch:master</span><br><span class="line">push branch: gh-pages→public</span><br></pre></td></tr></table></figure>
+<h2><span id="修改-_configyml">修改 _config.yml</span></h2>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">https://github.com/LawrenceGao0224/myblog.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">gh-pages</span></span><br></pre></td></tr></table></figure>
+<h2><span id="pushdeploy">push(deploy)</span></h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//push</span><br><span class="line">npm install hexo-deployer-git --save //install hexo自動部署工具</span><br><span class="line">hexo d //push public to branch:gh-pages</span><br></pre></td></tr></table></figure>
+<ul>
+<li>絕對路徑改成相對路徑，修改 _config.yml</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">relative_link:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h2><span id="部署要點">部署要點：</span></h2>
+<ul>
+<li>{用戶名稱}.github.io
+<ul>
+<li>儲存庫名稱：{用戶名稱}.github.io
+<ul>
+<li>ex: <a href="http://LawrenceGao0224.github.io" target="_blank" rel="noopener">LawrenceGao0224.github.io</a></li>
+<li>link: <a href="https://LawrenceGao0224.github.io" target="_blank" rel="noopener">https://LawrenceGao0224.github.io</a></li>
+<li>每個帳戶只有一個，能放在最根目錄的專案</li>
+</ul>
+</li>
+<li>Branch ：master</li>
+</ul>
+</li>
+<li>{用戶名稱}.github.io/{專案名稱}
+<ul>
+<li>儲存庫名稱：{用戶名稱}.github.io/{專案名稱}
+<ul>
+<li>ex: <a href="http://LawrenceGao0224.github.io/%7B%E5%B0%88%E6%A1%88%E5%90%8D%E7%A8%B1%7D" target="_blank" rel="noopener">LawrenceGao0224.github.io/{專案名稱}</a></li>
+<li>任意、無數量限制</li>
+</ul>
+</li>
+<li>Branch ：gh-pages</li>
+</ul>
+</li>
+</ul>
+<p>本站所使用模板: <a href="https://github.com/YenYuHsuan/hexo-theme-beantech/">BeanTech豆科技</a></p>
 <hr>
-<!-- Place this tag in your head or just before your close body tag. -->
-<script async defer src="https://buttons.github.io/buttons.js"></script>
-<!-- Place this tag where you want the button to render. -->
-<p>Please <a class="github-button" href="https://github.com/YenYuHsuan/hexo-theme-beantech" data-icon="octicon-star" aria-label="Star YenYuHsuan/hexo-theme-beantech on GitHub">Star</a> this Project if you like it! <a class="github-button" href="https://github.com/YenYuHsuan" aria-label="Follow @YenYuHsuan on GitHub">Follow</a> would also be appreciated!<br>
-Peace!</p>
+<h1><span id="總結">總結</span></h1>
+<p>用到最後，基本上都使用三個指令在操作</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>祝大家也在使用Hexo順利～～～</p>
+</blockquote>
 
                 
 
@@ -275,10 +364,10 @@ Peace!</p>
                 <!-- Pager -->
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/myblog/2017/12/13/college-project/" data-toggle="tooltip" data-placement="top" title="大學專題 Graduate Thesis- 僑牽ＯＣＣ">&larr; Previous Post</a>
-                        </li>
                     
+                        <li class="next">
+                            <a href="/myblog/2020/08/26/Tainan/" data-toggle="tooltip" data-placement="top" title="台南打工換宿 2020.8.17-2020.8.26">Next Post &rarr;</a>
+                        </li>
                     
                 </ul>
 
@@ -307,7 +396,7 @@ Peace!</p>
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.</span> <span class="toc-nav-text"></span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">Usage</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">Init</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">Modify</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.2.1.</span> <span class="toc-nav-text">Deployment</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.2.2.</span> <span class="toc-nav-text">Sidebar settings</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.2.3.</span> <span class="toc-nav-text">Signature Setup</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.2.4.</span> <span class="toc-nav-text">Go to top icon Setup</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.2.5.</span> <span class="toc-nav-text">Post tag</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.2.6.</span> <span class="toc-nav-text">Markdown render</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">Hexo Basics</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">Have fun ^_^</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">開始撰寫動機</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">工具選擇 &amp; 選擇HEXO</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">HEXO  介紹</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">Hexo 流程</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">Hexo前置作業</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">快速建立一個雛形</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">Github 教學</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">5.1.</span> <span class="toc-nav-text">初始化</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">5.2.</span> <span class="toc-nav-text">push</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">5.3.</span> <span class="toc-nav-text">修改 _config.yml</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">5.4.</span> <span class="toc-nav-text">push(deploy)</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">5.5.</span> <span class="toc-nav-text">部署要點：</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">總結</span></a></li></ol>
         
         </div>
       </aside>
@@ -329,6 +418,8 @@ Peace!</p>
                        
                           <a class="tag" href="/myblog/tags/#Work" title="Work">Work</a>
                         
+                          <a class="tag" href="/myblog/tags/#Blog" title="Blog">Blog</a>
+                        
                     </div>
                 </section>
                 
@@ -347,8 +438,8 @@ Peace!</p>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "your-disqus-ID";
-    var disqus_identifier = "https://github.com/LawrenceGao0224/myblog.git/2017/03/18/hexo-theme-beantech/";
-    var disqus_url = "https://github.com/LawrenceGao0224/myblog.git/2017/03/18/hexo-theme-beantech/";
+    var disqus_identifier = "https://github.com/LawrenceGao0224/myblog.git/2020/09/02/github-and-hexo/";
+    var disqus_url = "https://github.com/LawrenceGao0224/myblog.git/2020/09/02/github-and-hexo/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

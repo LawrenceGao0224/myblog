@@ -7,8 +7,8 @@
     </url>
 
     <url>
-        <loc>https://github.com/LawrenceGao0224/myblog.git/2018/03/04/Thailand/</loc>
-        <lastmod>2020-09-02T02:49:51.672Z</lastmod>
+        <loc>https://github.com/LawrenceGao0224/myblog.git/2020/09/02/github-and-hexo/</loc>
+        <lastmod>2020-09-02T04:11:56.615Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -16,7 +16,15 @@
 
     <url>
         <loc>https://github.com/LawrenceGao0224/myblog.git/2020/08/26/Tainan/</loc>
-        <lastmod>2020-09-02T02:40:30.371Z</lastmod>
+        <lastmod>2020-09-02T04:00:03.085Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://github.com/LawrenceGao0224/myblog.git/2018/03/04/Thailand/</loc>
+        <lastmod>2020-09-02T02:49:51.672Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -97,14 +105,6 @@
     <url>
         <loc>https://github.com/LawrenceGao0224/myblog.git/2018/12/31/maya/</loc>
         <lastmod>2020-09-01T06:13:38.669Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://github.com/LawrenceGao0224/myblog.git/2017/03/18/hexo-theme-beantech/</loc>
-        <lastmod>2020-09-01T02:00:17.776Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
