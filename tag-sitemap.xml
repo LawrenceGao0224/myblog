@@ -128,13 +128,6 @@
     </url>
 
     <url>
-        <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Work/</loc>
-        <lastmod>2020-09-02T04:11:56.615Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Blog/</loc>
         <lastmod>2020-09-13T11:51:33.869Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -144,6 +137,27 @@
     <url>
         <loc>https://github.com/LawrenceGao0224/myblog.git/tags/mountain/</loc>
         <lastmod>2020-09-13T11:51:33.869Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Work/</loc>
+        <lastmod>2020-09-14T03:54:50.138Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://github.com/LawrenceGao0224/myblog.git/tags/paper/</loc>
+        <lastmod>2020-09-14T03:54:50.138Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://github.com/LawrenceGao0224/myblog.git/tags/ARKit/</loc>
+        <lastmod>2020-09-14T03:54:50.138Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
