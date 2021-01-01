@@ -172,20 +172,6 @@
   </url>
   
   <url>
-    <loc>https://github.com/LawrenceGao0224/myblog.git/tags/paper/</loc>
-    <lastmod>2021-01-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://github.com/LawrenceGao0224/myblog.git/tags/ARKit/</loc>
-    <lastmod>2021-01-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Blog/</loc>
     <lastmod>2021-01-01</lastmod>
     <changefreq>daily</changefreq>
@@ -207,6 +193,20 @@
   </url>
   
   <url>
+    <loc>https://github.com/LawrenceGao0224/myblog.git/tags/paper/</loc>
+    <lastmod>2021-01-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/LawrenceGao0224/myblog.git/tags/ARKit/</loc>
+    <lastmod>2021-01-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://github.com/LawrenceGao0224/myblog.git/tags/%E8%98%AD%E5%B6%BC/</loc>
     <lastmod>2021-01-01</lastmod>
     <changefreq>daily</changefreq>
@@ -221,7 +221,42 @@
   </url>
   
   <url>
+    <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Tainan/</loc>
+    <lastmod>2021-01-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Malaysia/</loc>
+    <lastmod>2021-01-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Thailand/</loc>
+    <lastmod>2021-01-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/LawrenceGao0224/myblog.git/tags/mountain/</loc>
+    <lastmod>2021-01-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Vietnam/</loc>
+    <lastmod>2021-01-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Website/</loc>
     <lastmod>2021-01-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -242,41 +277,6 @@
   </url>
   
   <url>
-    <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Tainan/</loc>
-    <lastmod>2021-01-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Vietnam/</loc>
-    <lastmod>2021-01-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://github.com/LawrenceGao0224/myblog.git/tags/mountain/</loc>
-    <lastmod>2021-01-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Thailand/</loc>
-    <lastmod>2021-01-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Website/</loc>
-    <lastmod>2021-01-01</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Art/</loc>
     <lastmod>2021-01-01</lastmod>
     <changefreq>daily</changefreq>
@@ -291,14 +291,14 @@
   </url>
   
   <url>
-    <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Military-service/</loc>
+    <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Dance/</loc>
     <lastmod>2021-01-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Dance/</loc>
+    <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Military-service/</loc>
     <lastmod>2021-01-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
