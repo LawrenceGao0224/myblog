@@ -149,14 +149,14 @@
 
                         
                         <li>
-                            <a href="/myblog/archive/">Posts</a>
+                            <a href="/myblog/about/">About Ｍe</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/myblog/about/">About Ｍe</a>
+                            <a href="/myblog/archive/">Posts</a>
                         </li>
                         
                     
@@ -223,8 +223,8 @@
 <p>故宮沈浸式展場系統將，展場環境呈現於行動裝置中，使用者 能走訪於虛擬搭建的展場，且不受地域限制，提升博物館觀光的趣味，降低參展 的成本。本系統先將故宮 Open Data 之中國畫作、國外知名畫作及中西方雕像進 行蒐集，再將展場空間設計搭建，並放置畫作於展場空間內。最後透過 ARKit 技術將畫面投射行動裝置中，即時呈現影像。未來若可結合智慧眼鏡，將可帶來更 多應用。</p>
 </blockquote>
 <hr>
-<h1><span id="緒論">緒論</span></h1>
-<h2><span id="動機與目的">動機與目的</span></h2>
+<h1 id="緒論">緒論</h1>
+<h2 id="動機與目的">動機與目的</h2>
 <p>依據文化統計調查顯示，現今許多博物館皆面臨瀏覽人次減少問題，因此各大博物館希望透過 科技，建置現代結合過去，製造反差，改變大家以往對博物館的傳統思想，打造 創新的博物館，吸引更多遊客前來參觀。<br>
 過去擴增實境 (AR) 最早用於軍事方面，但隨著軟硬體的發展，目前應用在 日常生活及遊戲產業中，Apple.Inc 推出的 iOS13 版本內，搭載以 AR 量測物體大 小及尺寸的工具，使用者不須透過尺規即可得知物體大小，使 AR 應用更為寬廣及 普及。<br>
 沉浸式一詞為新興的概念，通俗定義為「物理存在於非物理世界中的感知」， 在提到沉浸式電影時，通常意指虛擬實境電影，也就是觀眾可透過 VR 裝置進入 360 的影像以及環繞音響中，仿如置身於另外的世界中，有時甚至還有嗅覺與觸覺 的體驗。在強調全身及全方位的感官體驗上，以科技藝術空間沉浸體驗為例，如 過去日本 teamLab 的作品也透過虛擬實境裝置體供使用者彷如在虛擬空間行走。<br>
@@ -234,7 +234,7 @@
 (2) 使用 Unity 及 SketchUp 軟體建立展場空間與擺設展品，並結合 ARKit 做實境技術運用，使系統更具有互動性。<br>
 (3) 將規劃展場空間，實作虛擬展場，並提供參展地圖，予使用者方便走訪</p>
 <hr>
-<h2><span id="相關研究">相關研究</span></h2>
+<h2 id="相關研究">相關研究</h2>
 <p>影像處理及硬體性能高速發展下，擴增實境、虛擬實境已不再只有軍事發展 或實驗而已，近年來更加入人們的日常生活及遊戲產業中，如 2016 年起於世界各 地發行的寶可夢盛行全球，雖然其非首度應用擴增實境技術之手機遊戲，但卻為 眾人皆知的擴增實境遊戲，還有其他包括遠程會議、培訓及醫療上的應用。<br>
 擴增實境技術的蓬勃發展，除了歸功於學術上的努力，也使更多商業團隊致 力於研究如何結合日常生活，加速便利性與有效性，以此開拓更廣大的消費市場。 以下列出近來商業界與學術界中，擴增實境相關應用的實際案例。</p>
 <p>(1) ARKit 與ARCore技術<br>
@@ -250,7 +250,7 @@ Google 眼鏡是一款由 Google 設計開發，裝配有光學式頭戴顯示�
 軍方從 1995 年起著手於研究光學式頭戴型裝置，而後 Google 於 2012 年起開 始測試並研發有關智慧眼鏡的各項功能應用，並於同年首次展示拍攝功能且相較 過去更輕薄。現今，其裝置已涵蓋觸控板、相機、顯示器、交通資訊和地圖服務 及遊戲等。<br>
 <img src="2.png" alt="2"></p>
 <hr>
-<h2><span id="本系統簡介與特色">本系統簡介與特色</span></h2>
+<h2 id="本系統簡介與特色">本系統簡介與特色</h2>
 <p>此系統以 Apple.Inc 所提供的 ARKit 為擴增實境主體，將 Unity 為開發媒介， 運用其內部所提供之 ProBuilder 為展場空間建模並擺放虛擬物件於展場空間，在其 中針對各物品的建材、材質、透明度做調整，以及展場內部光影強弱微調，使遊 客可以直接透過手機或平板，在空曠地區，即時地、快速地欣賞展場，並可以透 過下方按鈕顯示展品資訊。<br>
 此系統除了將故宮 Open Data 專區的數位化圖像放置於展區，也加入了具中國 風之展品(中式建築、兵馬俑等)，更加入西方著名八幅畫作與西方著名雕 像(大衛像、維納斯像、運動員)放置於左側，期望達到中西對比，與目前熱門 的實境技術結合，達到使用者可方便瀏覽，同時得到相當驚豔的效果。<br>
 (1) 使用者端 :<br>
@@ -260,16 +260,16 @@ Google 眼鏡是一款由 Google 設計開發，裝配有光學式頭戴顯示�
 <p>(3) 博物館端 :<br>
 此系統提供欲參訪博物館或展場的遊客使用、還有無法到達的民眾可以使用，同時能給予博物館設計展場前、設計此系統後，觀看內部空間與擺設狀態，以降低不必要的成本，同時提供此作為宣傳目的。另外，博物館若需在展覽時提供多種展場，可嘗試建立於雲端中，供民眾下載參考。</p>
 <hr>
-<h1><span id="系統關鍵技術">系統關鍵技術</span></h1>
+<h1 id="系統關鍵技術">系統關鍵技術</h1>
 <p>本系統的關鍵技術主要分成兩大部分，一為 Apple.Inc 所開發的 ARKit 技術，另一為 Unity 及 SketchUp 所提供的建模方法。</p>
-<h2><span id="arkit-api">ARKit API</span></h2>
+<h2 id="arkit-api">ARKit API</h2>
 <p>本研究主要針對 ARKit 作為開發支持，在此說明 ARKit 之底層技術。</p>
-<h3><span id="arkit-的關鍵技術">ARKit 的關鍵技術</span></h3>
+<h3 id="arkit-的關鍵技術">ARKit 的關鍵技術</h3>
 <p>ARKit 其中的技術原理為視覺慣性測量(VIO)系統及平面檢測兩大關鍵 技術，視覺慣性測試(VIO)即系統會隨時追蹤使用者在空間的位置，其記錄 著 iPhone 在 6DoF 空間中經過的距離(6DoF 即沿著 xyz 軸移動，加上俯仰、 旋轉、滾動等)，如下圖，螢幕在每幀畫面刷新時，動作會被立即重新計 算，畫面的刷新率為每秒 30fps 或以上，而這個刷新計算會同時被兩個系統 所計算，一為照相鏡頭與現實世界中的點將每幀畫面相匹配，此時使用者 動作會被計算。另一為動作被慣性系統所追蹤，以陀螺儀及加速度計兩慣 性測量單位(IMU)實作。最後透過卡爾曼濾波器(Kalman Filter)將其進行整 合，並計算出最佳真實位置(Ground Truth)。<br>
 平面檢測即以地面做為參考物以計算位置訊息，藉此確立物體能平放 於平面上，以避免虛擬物體漂浮。任三點決定一平面，通過計算將特徵點 平均化，得到參考平面。</p>
 <div align="left"><img src="3.png" width="400" height="400"> </div>
 <hr>
-<h3><span id="arkit-的架構">ARKit 的架構</span></h3>
+<h3 id="arkit-的架構">ARKit 的架構</h3>
 <p>ARKit 定義了簡單的 API，以下對 ARKit 組成進行分類，如: ARSession、ARSessionConfigration、ARFrame、ARCamera 等。其中 ARSession 為整個系統核心，其實現了 AR 效果，包括世界追蹤及場景解析等，而 ARFrame 包含有 ARSession 所輸出的信息，為渲染關鍵資料來源，其架構如下圖。<br>
 <img src="4.png" alt="4"></p>
 <p>真實世界追蹤 : ARKit 在此使用 ARWorldTrackingSessionConfiguration 提供 6DoF 追蹤取得的六個參數，同時，AVCaptureSession 獲取照相機所拍 攝的影片(一幀一幀的圖像)，ARSession 根據獲取 6DoF 的 6 個參數及一幀 一幀的圖像序列進行分析，輸出給 ARFrame，此時 ARFrame 就包含有渲染 虛擬世界所需的訊息。ARCamera 為 ARFrame 中的一個屬性，其提供相機 捕捉到的圖像長度及寬度(以像素為單位)，以及 intrinsics (為 3 x 3 之矩陣)， 目的將現實世界中三維座標的點映射至相機捕捉的圖像中。</p>
@@ -279,13 +279,13 @@ Google 眼鏡是一款由 Google 設計開發，裝配有光學式頭戴顯示�
 (3) 不斷更新相機位置及角度。<br>
 (4) 將坐標系結合到 AR 世界的座標系中，不斷渲染場景到真實世界的畫面中。</p>
 <hr>
-<h2><span id="本文場景設計與物體搭建">本文場景設計與物體搭建</span></h2>
+<h2 id="本文場景設計與物體搭建">本文場景設計與物體搭建</h2>
 <p>(1) Unity – ProBuilder<br>
 本研究所使用開發媒介為 Unity，場景建置為 Unity 所提供之ProBuilder，ProBuilder 自開發以來，廣受遊戲開發者好評，針對 簡單的幾何結構建構進行優化，提供簡單快速的建模方式，快速構建原型 結構、複雜地形特徵、車輛和武器等。提供遊戲開發者選擇外型，可針對材質、紋理、形狀做任意搭配，並 可設定物體長度、寬度、高度，以達需求。</p>
 <p>(2) SketchUp<br>
 本研究在物體建構中，運用模型建構軟體 SketchUp，適用於電腦動畫，擁有強大的建模、材質、模擬，其可達極為精細的設定，達到擬真效果。</p>
 <hr>
-<h2><span id="本文方法與現有方法之比較">本文方法與現有方法之比較</span></h2>
+<h2 id="本文方法與現有方法之比較">本文方法與現有方法之比較</h2>
 <p>(1) AR 美術館<br>
 取自論文“ A digital look at physical museum exhibits: Designing personalized stories with handheld Augmented Reality in museums ” Jens Keil ; Laia Pujol ; Maria Roussou ; Timo Engelke ; Michael Schmitt ; Ulrich Bockholt ; Stamatia Elefthe<br>
 將希臘的衛城博物館 (Acropolis Museum) 設計故事及動畫，並運用 AR 實作，不侷限在白紙黑字上，其添加互動及探索性，使博物館更具吸引力。其最大的特點為遊客可手持手機或平板，自行在博物館中觀覽自己喜 愛的作品，透過照相機辨識，並可顯示展品動畫與其欲傳達之資訊。<br>
@@ -297,8 +297,8 @@ VR 的藝術作品，從虛擬書畫展廳到「自敘心境」(懷素《自敘�
 然而，於這兩次的展覽中，皆須透過 HTC 的 VR 裝置進行互動體驗，若在沒有 VR 裝置下，無法進行體驗，甚至容易造成頭暈、想吐等狀況;另外，在設計上，開發所需的人力及遊戲設計，開發成本相對較高，利用此 方法對於使用者的裝置硬體需求較高，同時降低便利性。<br>
 <img src="6.png" alt="6"></p>
 <hr>
-<h1><span id="系統實作">系統實作</span></h1>
-<h2><span id="開發流程">開發流程</span></h2>
+<h1 id="系統實作">系統實作</h1>
+<h2 id="開發流程">開發流程</h2>
 <p>本系統之系統開發模式採用快速雛型法(Rapid Prototyping Model)。初期，採用 漸進模型(Incremental Model)將系統做開發，其細部功能及擴充功能尚未建立，而 後再對系統與現況做評估，透過給同學及老師實測並給予建議後做修正，再進行 下一步驟的流程，每次增加一個功能就評估一次，遞增至所有的功能都做完，透 過將主要功能完成後再進行附加功能的設計，可使流程更方便管理、維護，同時 更能在有限的時間內將系統達成進度。</p>
 <p>(1) 國立故宮博物院 Open Data 專區資料及西方古畫蒐集<br>
 本系統主要透過故宮古畫及西方知名畫作做為展品陳列，因此首先蒐集故宮古畫。在此次資料蒐集中，將明朝仇英之畫作做為本次畫展區展覽 主題，找尋明朝仇英之畫作的第一步驟為透過故宮博物院的 Open Data 專區 中的「精選圖像下載」進行搜尋，在類別中選擇「繪畫」，再以關鍵字搜尋 「仇英」，在下方顯示所有仇英之繪畫，從顯自資料中出現的 46 筆仇英畫 作中，以圖畫整體的「線條複雜度」及「色彩鮮豔度」為依據，挑選 5 張 做為本次展場中主要的畫作，分別為「宋人十八學士圖」、「明仇英西園雅 集圖」、「明仇英秋獵圖」、「明仇英清明上河圖」、「明仇英觀榜圖」。 另外，在西方畫作中，從 The Artist 網站中將耳熟能詳的 8 幅著名畫 作，在 Google 以「進階搜尋」選擇「可任意使用、分享或修改」， 搜尋圖片後，進行下載，其中選擇的畫作為 「Mona Lisa」 、 「The Starry Night」 、 「The Scream」 、 「Girl with a Pearl Earring」 、 「A Sunday Afternoon on the Island of La Grande Jatte」、「Guernica」、「The Kiss」、 「American Gothic」。</p>
@@ -314,7 +314,7 @@ VR 的藝術作品，從虛擬書畫展廳到「自敘心境」(懷素《自敘�
 <p>(5) 系統測試並修正<br>
 本系統在實際測試中，給予不同性別及身高的使用者使用，面臨幾個問題，例如: 當使用者身高的不同以及手拿裝置的角度不同出現展場的門口過高或過低，因此透過調整門口高度至平均值上下 160 公分左右，即可得到改善，另外，在展場環境中的亮度會受到外在環境光線的影響，因此透過加入光源於展場中，即可解決光度不足的問題。</p>
 <hr>
-<h2><span id="使用技術與工具">使用技術與工具</span></h2>
+<h2 id="使用技術與工具">使用技術與工具</h2>
 <p>(1) C#<br>
 C#<a href="http://xn--3js033a2ja.NET" target="_blank" rel="noopener">是基於.NET</a> 框架、物件導向的進階程式語言。其語法與 Java、 Javascript、C++相似，為 ECMA 標準。其效能不錯外，<a href="http://xn--h6q49cs42a.NET" target="_blank" rel="noopener">又具有.NET</a> Framework 作為根基，因此能讓程式設計師進行快速開發。C#可作為各種程式的開發 工具，從大型作業系統到小型嵌入式系統都可使用。</p>
 <p>(2) SketchUp<br>
@@ -322,13 +322,13 @@ SketchUp 是適用於遊戲、建築、模型、室內外設計的一套電腦�
 <p>(3) Xcode<br>
 Xcode 是一個提供開發人員為 Apple 開發應用程式的工具應用平台如(iPhone、iPad、Mac 等)，用於 OS X、iOS、watchOS，程式語言主要為 Swift 及Object-C，同時包含 C++與 C。內含有 iOS SDK、程式編輯器、除錯等 工具。其中，更提供模擬器功能，使開發者不需直接以手機或平板，即可 於 Xcode 中模擬執行 App。</p>
 <hr>
-<h1><span id="系統展示">系統展示</span></h1>
-<h2><span id="系統入口">系統入口</span></h2>
+<h1 id="系統展示">系統展示</h1>
+<h2 id="系統入口">系統入口</h2>
 <p>系統入口為 Unity 作成之 iPhone(或 iPad)的 App，其圖示為參考國立故宮博物院之外觀後，自行設計。</p>
 <div align="left"><img src="7.png" width="300" height="300"> </div>
 <p>點擊 App 後，可見到視覺化的門口作為展場的入口，同時周圍可看到真實的場景。</p>
 <hr>
-<h2><span id="系統操作步驟">系統操作步驟</span></h2>
+<h2 id="系統操作步驟">系統操作步驟</h2>
 <p><img src="8.png" alt="8"></p>
 <p>顯示展品資訊 走入門口後，即可見到所有展品陳列於使用者眼前，當使用者想了解展品資訊時，在螢幕左下方有「Show All」的按鈕，即可展示所有畫作的資 訊(作者、時間、類型、描述等)，以呈現給使用者。<br>
 <img src="9.png" alt="9"></p>
@@ -341,12 +341,12 @@ Xcode 是一個提供開發人員為 Apple 開發應用程式的工具應用平�
 <img src="11.png" alt="11"></p>
 <p><a href="https://www.youtube.com/watch?v=spNBQXed0aM&amp;feature=youtu.be" target="_blank" rel="noopener">系統Demo影片 : Click On Me</a></p>
 <hr>
-<h1><span id="未來研究方向與應用">未來研究方向與應用</span></h1>
-<h2><span id="結論">結論</span></h2>
+<h1 id="未來研究方向與應用">未來研究方向與應用</h1>
+<h2 id="結論">結論</h2>
 <p>故宮沉浸式展場系統可以增加展場的彈性運用，不僅可以快速調整展品內 容，更能讓使用者與系統做互動，即時顯示展品內容，並不受地域限制，隨處皆 可操作系統。此外可應用於佈展前做為展場的規劃，事先將展場的內容呈現於系 統，及時了解展出時的狀態及所遇到的問題，降低成本。相較於現今的 AR 系統相 關應用，皆需有實際展場動線與實體辨識，反凸顯故宮沉浸式展場系統的方便性 與可攜帶性。<br>
 AR、VR 在軟硬體的高速發展，使其將成為未來的趨勢及主流，扮演生活中 不可或缺的一部分，藉由結合科技與古代文物所激發出的美麗火花，不僅在台灣， 更能成為世界各地非同凡響的應用。</p>
 <hr>
-<h2><span id="未來研究方向">未來研究方向</span></h2>
+<h2 id="未來研究方向">未來研究方向</h2>
 <p>近來，博物館及美術館正積極與科技廠商合作並發展創新應用，可將人類歷 史存在數位資料中，可不佔空間的保存於世，也開始讓人好奇博物館未來將發展 到何種地步。想像漫步於博物館或美術館中，各個透明櫥窗如哈利波特魔法學校 內的畫作栩栩如生，並且跟觀眾互動，能與遊客對話聊天，甚至還能當朋友，想 必能吸引更多遊客、更驚艷世人。</p>
 <p>(1) 結合雲端即時變換展品與提供編輯功能<br>
 目前本系統需事先在 Unity 中編輯，在軟體中更動展品位置及場景等，然而此操作仍有其不便之處，因此希望在未來能將系統結合雲端的方式，將展品存於雲端資料庫中，方便於系統中即時更改、編輯，並根據展場需求做調整。</p>
@@ -359,7 +359,7 @@ AR、VR 在軟硬體的高速發展，使其將成為未來的趨勢及主流，
 <p>(5) 應用於其他領域提供經濟價值<br>
 在此系統，其概念不僅止於美術展品的呈現，在醫療、建築、娛樂等，皆能應用此系統的概念做為延伸，舉例建築，可透過系統的沉浸式建立建築模型，並事先觀看建築架構與室內規劃，並於開工前達成消費者需求，避免想法及預期落差，以滿足消費者期望。</p>
 <hr>
-<h1><span id="參考文獻">參考文獻</span></h1>
+<h1 id="參考文獻">參考文獻</h1>
 <p>[1] 施政計畫、業務統計及研究報告，2020. 取自國立故宮博物院博物館行政: <a href="https://www.npm.gov.tw/Article.aspx?sNo=03006230" target="_blank" rel="noopener">https://www.npm.gov.tw/Article.aspx?sNo=03006230</a><br>
 [2] 腦中乾坤 : 心智的生物學，2016. 取自國立自然科學博物館: <a href="http://web2.nmns.edu.tw/Exhibits/105/Brain/" target="_blank" rel="noopener">http://web2.nmns.edu.tw/Exhibits/105/Brain/</a><br>
 [3] 上河藝影—故宮 x 衛武營新媒體藝術展，2019. 取自國立故宮博物院展覽回 顧: <a href="https://theme.npm.edu.tw/exh108/npmweiwuying/" target="_blank" rel="noopener">https://theme.npm.edu.tw/exh108/npmweiwuying/</a><br>
@@ -407,10 +407,6 @@ AR、VR 在軟硬體的高速發展，使其將成為未來的趨勢及主流，
 
                 <!-- disqus comment start -->
                 
-                    <div class="comment">
-                        <div id="disqus_thread" class="disqus-thread"></div>
-                    </div>
-                
                 <!-- disqus comment end -->
             </div>
             
@@ -422,7 +418,7 @@ AR、VR 在軟硬體的高速發展，使其將成為未來的趨勢及主流，
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">緒論</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">動機與目的</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">相關研究</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">本系統簡介與特色</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">系統關鍵技術</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">ARKit API</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.1.1.</span> <span class="toc-nav-text">ARKit 的關鍵技術</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.1.2.</span> <span class="toc-nav-text">ARKit 的架構</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">本文場景設計與物體搭建</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">本文方法與現有方法之比較</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">系統實作</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">開發流程</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">使用技術與工具</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">系統展示</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">系統入口</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">系統操作步驟</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">未來研究方向與應用</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">5.1.</span> <span class="toc-nav-text">結論</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">5.2.</span> <span class="toc-nav-text">未來研究方向</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">參考文獻</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#緒論"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">緒論</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#動機與目的"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">動機與目的</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#相關研究"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">相關研究</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#本系統簡介與特色"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">本系統簡介與特色</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#系統關鍵技術"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">系統關鍵技術</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#arkit-api"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">ARKit API</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#arkit-的關鍵技術"><span class="toc-nav-number">2.1.1.</span> <span class="toc-nav-text">ARKit 的關鍵技術</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#arkit-的架構"><span class="toc-nav-number">2.1.2.</span> <span class="toc-nav-text">ARKit 的架構</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#本文場景設計與物體搭建"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">本文場景設計與物體搭建</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#本文方法與現有方法之比較"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">本文方法與現有方法之比較</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#系統實作"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">系統實作</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#開發流程"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">開發流程</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#使用技術與工具"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">使用技術與工具</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#系統展示"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">系統展示</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#系統入口"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">系統入口</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#系統操作步驟"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">系統操作步驟</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#未來研究方向與應用"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">未來研究方向與應用</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#結論"><span class="toc-nav-number">5.1.</span> <span class="toc-nav-text">結論</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#未來研究方向"><span class="toc-nav-number">5.2.</span> <span class="toc-nav-text">未來研究方向</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#參考文獻"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">參考文獻</span></a></li></ol>
         
         </div>
       </aside>
@@ -454,6 +450,15 @@ AR、VR 在軟硬體的高速發展，使其將成為未來的趨勢及主流，
 
                 <!-- Friends Blog -->
                 
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://cozynightin.com/" target="_blank">Cozy Night In</a></li>
+                    
+                </ul>
+                
             </div>
         </div>
     </div>
@@ -461,21 +466,6 @@ AR、VR 在軟硬體的高速發展，使其將成為未來的趨勢及主流，
 
 
 
-
-<!-- disqus embedded js code start (one page only need to embed once) -->
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = "your-disqus-ID";
-    var disqus_identifier = "https://github.com/LawrenceGao0224/myblog.git/2020/05/25/ARKit/";
-    var disqus_url = "https://github.com/LawrenceGao0224/myblog.git/2020/05/25/ARKit/";
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<!-- disqus embedded js code start end -->
 
 
 

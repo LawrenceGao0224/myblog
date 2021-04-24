@@ -149,14 +149,14 @@
 
                         
                         <li>
-                            <a href="/myblog/archive/">Posts</a>
+                            <a href="/myblog/about/">About Ｍe</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/myblog/about/">About Ｍe</a>
+                            <a href="/myblog/archive/">Posts</a>
                         </li>
                         
                     
@@ -219,20 +219,20 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h1><span id="概念發想concept">概念發想Concept</span></h1>
+                <h1 id="概念發想concept">概念發想Concept</h1>
 <hr>
 <p><a href="https://github.com/LawrenceGao0224/Intelligence-Oriented-Management-Decision/tree/master/%E6%99%BA%E6%85%A7%E5%9E%8B%E6%9C%9F%E6%9C%AB%E5%A0%B1%E5%91%8A">程式碼連結Click On Me</a></p>
 <p><img src="NBA.jpg" alt="NBA"></p>
 <p>我們將自己設想為球隊分析師，並希望能遞上一份不讓老闆&quot;打臉&quot;的分群資料，提供球隊高層在球員交易、補強、替代方案上有份合理客觀的依據。</p>
 <p>We envision ourselves as team analysts, and hope to hand over a group of information that provides the team’s top management with a reasonable and objective basis for player trading, reinforcement, and alternatives.</p>
 <hr>
-<h1><span id="操作方法operation">操作方法Operation</span></h1>
+<h1 id="操作方法operation">操作方法Operation</h1>
 <p>將NBA所有球員資料(Ex: 薪水、年齡、得分、助攻、有效命中率、真實命中率、球權佔有率、籃板率、效率值…)，以AP演算法實作，計算各球員資料的負歐積里德距離，調整preference、Damping Factor參數，求出k個高質量聚類，且我們將多維度的資料透過PCA()方法壓縮為低維度的資料，實現可視化。</p>
 <p>All NBA player information (Ex: salary, age, score, assists, effective hit rate, true hit rate, possession rate, rebound rate, efficiency value…) is calculated by AP algorithm to calculate each player’s data. The negative Ourich Reed distance, adjust the preferences, Damping Factor parameters, find k high-quality clusters, and we compress the multi-dimensional data into low-dimensional data through PCA () method to achieve visualization</p>
 <p>資料來源 ： (<a href="https://www.kaggle.com/acasalan/nba-player-stats-201718" target="_blank" rel="noopener">https://www.kaggle.com/acasalan/nba-player-stats-201718</a>)</p>
 <hr>
-<h1><span id="實作結果-result">實作結果 Result</span></h1>
-<h2><span id="調整參數-adjust-parameter">調整參數 Adjust parameter:</span></h2>
+<h1 id="實作結果-result">實作結果 Result</h1>
+<h2 id="調整參數-adjust-parameter">調整參數 Adjust parameter:</h2>
 <ol>
 <li>Preference:<br>
 Preference = 中位數(-62.5683289159)<br>
@@ -247,9 +247,9 @@ Preference = 中位數(-62.5683289159)<br>
 </ol>
 <p>Damping Factor = 0.5      --&gt;      Time = 0.8640606880187988 seconds.<br>
 Damping Factor = 0.9      --&gt;      Time = 1.2220699787139893 seconds.</p>
-<h2><span id="所有球員資料-all-players">所有球員資料 All players:</span></h2>
+<h2 id="所有球員資料-all-players">所有球員資料 All players:</h2>
 <p><img src="2-1.png" alt="2-1">   <img src="2-2.png" alt="2-2"></p>
-<h2><span id="依球員打球的位置-according-to-position">依球員打球的位置 According to position</span></h2>
+<h2 id="依球員打球的位置-according-to-position">依球員打球的位置 According to position</h2>
 <ol>
 <li>
 <p>center © : 8群集數<br>
@@ -272,10 +272,10 @@ Damping Factor = 0.9      --&gt;      Time = 1.2220699787139893 seconds.</p>
 <img src="3-5.png" alt="3-5"></p>
 </li>
 </ol>
-<h2><span id="依不同屬性">依不同屬性</span></h2>
+<h2 id="依不同屬性">依不同屬性</h2>
 <p>進攻性質 or 防守性質…</p>
 <hr>
-<h1><span id="延伸探討-any-imperfect">延伸探討  Any imperfect ?</span></h1>
+<h1 id="延伸探討-any-imperfect">延伸探討  Any imperfect ?</h1>
 <p>然而在我們丟入的data有其盲點存在,NBA的老闆或球隊在選擇球員上,並不會只觀看球員在場上的數據表現,還包括許多因素,事無法量化或在數據表現出來的(包括球員心理狀態、球員間磨合度…)</p>
 <p>However, the data we throw in has its  blind spots. The NBA boss or team is not only watching the performance of the players on the field, but also includes many factors, which cannot be quantified or expressed in the data. (including the player’s mental state, the player’s running-in…)</p>
 <p>如下:</p>
@@ -290,7 +290,7 @@ Rose是最年輕獲選MVP的球員,但由於前幾賽季腳傷原因,造成都�
 賽季缺賽,而傷後復出便不如以前突出,這也是無法顯現在數據上的。<br>
 <img src="4-3.png" alt="4-3"></p>
 <hr>
-<h1><span id="參考資料">參考資料</span></h1>
+<h1 id="參考資料">參考資料</h1>
 <p>(<a href="https://zi.media/@yidianzixun/post/uKZUFF?fbclid=IwAR1Dib-4T5MkM2x_helYBtq0TgTD871fAixs-4sBivOUXUNjuMl07xFahOs" target="_blank" rel="noopener">https://zi.media/@yidianzixun/post/uKZUFF?fbclid=IwAR1Dib-4T5MkM2x_helYBtq0TgTD871fAixs-4sBivOUXUNjuMl07xFahOs</a>)</p>
 <p>(<a href="https://www.cnblogs.com/huadongw/p/4202492.html?fbclid=IwAR3PHEOcrAar0rCI1e9AeYBxV0fI6JKJIRqGAJ3ag9BnlleT5M9v_8oNiy0" target="_blank" rel="noopener">https://www.cnblogs.com/huadongw/p/4202492.html?fbclid=IwAR3PHEOcrAar0rCI1e9AeYBxV0fI6JKJIRqGAJ3ag9BnlleT5M9v_8oNiy0</a>)</p>
 <p>(<a href="https://www.itread01.com/articles/1495821610.html?fbclid=IwAR1Ssz1ZCdqnxtT6obwpx0AFRDBEGrqKK0BXmMGPK-I1lvNwqJuif9EhZt0" target="_blank" rel="noopener">https://www.itread01.com/articles/1495821610.html?fbclid=IwAR1Ssz1ZCdqnxtT6obwpx0AFRDBEGrqKK0BXmMGPK-I1lvNwqJuif9EhZt0</a>)</p>
@@ -324,10 +324,6 @@ Rose是最年輕獲選MVP的球員,但由於前幾賽季腳傷原因,造成都�
 
                 <!-- disqus comment start -->
                 
-                    <div class="comment">
-                        <div id="disqus_thread" class="disqus-thread"></div>
-                    </div>
-                
                 <!-- disqus comment end -->
             </div>
             
@@ -339,7 +335,7 @@ Rose是最年輕獲選MVP的球員,但由於前幾賽季腳傷原因,造成都�
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">概念發想Concept</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">操作方法Operation</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">實作結果 Result</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">調整參數 Adjust parameter:</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">所有球員資料 All players:</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">依球員打球的位置 According to position</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">依不同屬性</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">延伸探討  Any imperfect ?</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#null"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">參考資料</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#概念發想concept"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">概念發想Concept</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#操作方法operation"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">操作方法Operation</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#實作結果-result"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">實作結果 Result</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#調整參數-adjust-parameter"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">調整參數 Adjust parameter:</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#所有球員資料-all-players"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">所有球員資料 All players:</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#依球員打球的位置-according-to-position"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">依球員打球的位置 According to position</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#依不同屬性"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">依不同屬性</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#延伸探討-any-imperfect"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">延伸探討  Any imperfect ?</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#參考資料"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">參考資料</span></a></li></ol>
         
         </div>
       </aside>
@@ -371,6 +367,15 @@ Rose是最年輕獲選MVP的球員,但由於前幾賽季腳傷原因,造成都�
 
                 <!-- Friends Blog -->
                 
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://cozynightin.com/" target="_blank">Cozy Night In</a></li>
+                    
+                </ul>
+                
             </div>
         </div>
     </div>
@@ -378,21 +383,6 @@ Rose是最年輕獲選MVP的球員,但由於前幾賽季腳傷原因,造成都�
 
 
 
-
-<!-- disqus embedded js code start (one page only need to embed once) -->
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = "your-disqus-ID";
-    var disqus_identifier = "https://github.com/LawrenceGao0224/myblog.git/2019/01/29/AP-algo/";
-    var disqus_url = "https://github.com/LawrenceGao0224/myblog.git/2019/01/29/AP-algo/";
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<!-- disqus embedded js code start end -->
 
 
 
