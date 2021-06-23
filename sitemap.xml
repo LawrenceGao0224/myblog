@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://github.com/LawrenceGao0224/myblog.git/about/index.html</loc>
+    
+    <lastmod>2021-06-23</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://github.com/LawrenceGao0224/myblog.git/2018/03/04/Thailand/</loc>
+    
+    <lastmod>2021-06-23</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://github.com/LawrenceGao0224/myblog.git/2017/12/13/college-project/</loc>
+    
+    <lastmod>2021-06-23</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://github.com/LawrenceGao0224/myblog.git/2021/06/19/Reading/</loc>
     
     <lastmod>2021-06-20</lastmod>
@@ -31,13 +52,6 @@
   
   <url>
     <loc>https://github.com/LawrenceGao0224/myblog.git/2019/06/29/Vietnam/</loc>
-    
-    <lastmod>2021-06-19</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://github.com/LawrenceGao0224/myblog.git/2018/03/04/Thailand/</loc>
     
     <lastmod>2021-06-19</lastmod>
     
@@ -107,13 +121,6 @@
   </url>
   
   <url>
-    <loc>https://github.com/LawrenceGao0224/myblog.git/2017/12/13/college-project/</loc>
-    
-    <lastmod>2021-06-19</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://github.com/LawrenceGao0224/myblog.git/2020/05/25/ARKit/</loc>
     
     <lastmod>2021-06-19</lastmod>
@@ -124,13 +131,6 @@
     <loc>https://github.com/LawrenceGao0224/myblog.git/2019/01/29/AP-algo/</loc>
     
     <lastmod>2021-06-19</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://github.com/LawrenceGao0224/myblog.git/about/index.html</loc>
-    
-    <lastmod>2021-06-01</lastmod>
     
   </url>
   
@@ -158,7 +158,7 @@
 
   <url>
     <loc>https://github.com/LawrenceGao0224/myblog.git</loc>
-    <lastmod>2021-06-20</lastmod>
+    <lastmod>2021-06-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -166,21 +166,21 @@
   
   <url>
     <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Work/</loc>
-    <lastmod>2021-06-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Blog/</loc>
-    <lastmod>2021-06-20</lastmod>
+    <lastmod>2021-06-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Travel/</loc>
-    <lastmod>2021-06-20</lastmod>
+    <lastmod>2021-06-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Blog/</loc>
+    <lastmod>2021-06-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
