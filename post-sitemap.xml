@@ -8,7 +8,15 @@
 
     <url>
         <loc>https://github.com/LawrenceGao0224/myblog.git/2021/06/19/Reading/</loc>
-        <lastmod>2021-07-18T08:44:19.891Z</lastmod>
+        <lastmod>2021-08-21T08:15:33.454Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://github.com/LawrenceGao0224/myblog.git/2020/09/02/github-and-hexo/</loc>
+        <lastmod>2021-07-24T15:36:24.559Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -121,14 +129,6 @@
     <url>
         <loc>https://github.com/LawrenceGao0224/myblog.git/2019/08/30/Micron/</loc>
         <lastmod>2021-06-19T10:05:03.911Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://github.com/LawrenceGao0224/myblog.git/2020/09/02/github-and-hexo/</loc>
-        <lastmod>2021-06-19T10:02:51.067Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
