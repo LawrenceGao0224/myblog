@@ -8,7 +8,7 @@
 登山新手的挑戰</p>
 </blockquote>
 <hr>
-<p><img src="17.jpg" alt="1"></p>
+<p><img src="22.jpg" alt="1"></p>
 <h1 id="加羅湖簡介">加羅湖簡介</h1>
 <p>加羅湖位於宜蘭縣大同鄉四季村、中橫北支線加羅山區，坐落於中央山脈南湖大山和三星山的山地交會點，里洛山北到太平山之間的陵脈上，因為鄰近加羅山故名為加羅湖，湖泊呈現為南北走向，是加納富溪的源頭；加羅湖標高為2242公尺，是一個湖群，因此除了加羅湖外還有撤退池、豪邁池、偉蛋池、墨池、日湖、月湖、天池、檜木池、水池、綠池等眾多高山湖泊，目前發現共有18個；在眾多的高山湖泊中以加羅湖的面積最為廣闊，其長度約為300公尺，寬約150公尺、深度約15公尺。<br>
 加羅湖的傳說－『散落的珍珠』<br>
@@ -80,6 +80,137 @@
 ]]></content>
       <tags>
         <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>NBA老闆的慧眼 - Affinity Propagation</title>
+    <url>/myblog/2019/01/29/AP-algo/</url>
+    <content><![CDATA[<h1 id="概念發想concept">概念發想Concept</h1>
+<hr>
+<p><a href="https://github.com/LawrenceGao0224/Intelligence-Oriented-Management-Decision/tree/master/%E6%99%BA%E6%85%A7%E5%9E%8B%E6%9C%9F%E6%9C%AB%E5%A0%B1%E5%91%8A">程式碼連結Click On Me</a></p>
+<p><img src="NBA.jpg" alt="NBA"></p>
+<p>我們將自己設想為球隊分析師，並希望能遞上一份不讓老闆&quot;打臉&quot;的分群資料，提供球隊高層在球員交易、補強、替代方案上有份合理客觀的依據。</p>
+<p>We envision ourselves as team analysts, and hope to hand over a group of information that provides the team’s top management with a reasonable and objective basis for player trading, reinforcement, and alternatives.</p>
+<hr>
+<h1 id="操作方法operation">操作方法Operation</h1>
+<p>將NBA所有球員資料(Ex: 薪水、年齡、得分、助攻、有效命中率、真實命中率、球權佔有率、籃板率、效率值…)，以AP演算法實作，計算各球員資料的負歐積里德距離，調整preference、Damping Factor參數，求出k個高質量聚類，且我們將多維度的資料透過PCA()方法壓縮為低維度的資料，實現可視化。</p>
+<p>All NBA player information (Ex: salary, age, score, assists, effective hit rate, true hit rate, possession rate, rebound rate, efficiency value…) is calculated by AP algorithm to calculate each player’s data. The negative Ourich Reed distance, adjust the preferences, Damping Factor parameters, find k high-quality clusters, and we compress the multi-dimensional data into low-dimensional data through PCA () method to achieve visualization</p>
+<p>資料來源 ： (<a href="https://www.kaggle.com/acasalan/nba-player-stats-201718" target="_blank" rel="noopener">https://www.kaggle.com/acasalan/nba-player-stats-201718</a>)</p>
+<hr>
+<h1 id="實作結果-result">實作結果 Result</h1>
+<h2 id="調整參數-adjust-parameter">調整參數 Adjust parameter:</h2>
+<ol>
+<li>Preference:<br>
+Preference = 中位數(-62.5683289159)<br>
+群集數: 43</li>
+</ol>
+<p><img src="1-1.png" alt="43"></p>
+<p>Preference = -500<br>
+群集數: 7</p>
+<p><img src="1-2.png" alt="7"></p>
+<ol start="2">
+<li>Damping Factor:</li>
+</ol>
+<p>Damping Factor = 0.5      --&gt;      Time = 0.8640606880187988 seconds.<br>
+Damping Factor = 0.9      --&gt;      Time = 1.2220699787139893 seconds.</p>
+<h2 id="所有球員資料-all-players">所有球員資料 All players:</h2>
+<p><img src="2-1.png" alt="2-1">   <img src="2-2.png" alt="2-2"></p>
+<h2 id="依球員打球的位置-according-to-position">依球員打球的位置 According to position</h2>
+<ol>
+<li>
+<p>center © : 8群集數<br>
+<img src="3-1.png" alt="3-1"></p>
+</li>
+<li>
+<p>power forward (PF) : 8群集數<br>
+<img src="3-2.png" alt="3-2"></p>
+</li>
+<li>
+<p>small forward (SF) : 12群集數<br>
+<img src="3-3.png" alt="3-3"></p>
+</li>
+<li>
+<p>point guard (PG) : 11群集數<br>
+<img src="3-4.png" alt="3-4"></p>
+</li>
+<li>
+<p>shooting guard (SG) : 4群集數<br>
+<img src="3-5.png" alt="3-5"></p>
+</li>
+</ol>
+<h2 id="依不同屬性">依不同屬性</h2>
+<p>進攻性質 or 防守性質…</p>
+<hr>
+<h1 id="延伸探討-any-imperfect">延伸探討  Any imperfect ?</h1>
+<p>然而在我們丟入的data有其盲點存在,NBA的老闆或球隊在選擇球員上,並不會只觀看球員在場上的數據表現,還包括許多因素,事無法量化或在數據表現出來的(包括球員心理狀態、球員間磨合度…)</p>
+<p>However, the data we throw in has its  blind spots. The NBA boss or team is not only watching the performance of the players on the field, but also includes many factors, which cannot be quantified or expressed in the data. (including the player’s mental state, the player’s running-in…)</p>
+<p>如下:</p>
+<p>❖商業價值 ex: Dwyane Wade<br>
+Wade是大家耳熟能詳的巨星,層經出現在2K遊戲的封面上,但最近的數據表現並不如其他球員出色,但仍是有淺力的球員,也累積許多粉絲,粉絲能帶來商業價值。<br>
+<img src="4-1.png" alt="4-1"></p>
+<p>❖球員背景 ex: Jeremy Lin<br>
+Jeremy是著名的台裔球員,能吸引亞洲地區的球迷觀注其球隊,帶來利益。<br>
+<img src="4-2.png" alt="4-2"></p>
+<p>❖健康因素 ex: Derrick Rose<br>
+Rose是最年輕獲選MVP的球員,但由於前幾賽季腳傷原因,造成都個<br>
+賽季缺賽,而傷後復出便不如以前突出,這也是無法顯現在數據上的。<br>
+<img src="4-3.png" alt="4-3"></p>
+<hr>
+<h1 id="參考資料">參考資料</h1>
+<p>(<a href="https://zi.media/@yidianzixun/post/uKZUFF?fbclid=IwAR1Dib-4T5MkM2x_helYBtq0TgTD871fAixs-4sBivOUXUNjuMl07xFahOs" target="_blank" rel="noopener">https://zi.media/@yidianzixun/post/uKZUFF?fbclid=IwAR1Dib-4T5MkM2x_helYBtq0TgTD871fAixs-4sBivOUXUNjuMl07xFahOs</a>)</p>
+<p>(<a href="https://www.cnblogs.com/huadongw/p/4202492.html?fbclid=IwAR3PHEOcrAar0rCI1e9AeYBxV0fI6JKJIRqGAJ3ag9BnlleT5M9v_8oNiy0" target="_blank" rel="noopener">https://www.cnblogs.com/huadongw/p/4202492.html?fbclid=IwAR3PHEOcrAar0rCI1e9AeYBxV0fI6JKJIRqGAJ3ag9BnlleT5M9v_8oNiy0</a>)</p>
+<p>(<a href="https://www.itread01.com/articles/1495821610.html?fbclid=IwAR1Ssz1ZCdqnxtT6obwpx0AFRDBEGrqKK0BXmMGPK-I1lvNwqJuif9EhZt0" target="_blank" rel="noopener">https://www.itread01.com/articles/1495821610.html?fbclid=IwAR1Ssz1ZCdqnxtT6obwpx0AFRDBEGrqKK0BXmMGPK-I1lvNwqJuif9EhZt0</a>)</p>
+<p>(<a href="https://scikit-learn.org/stable/auto_examples/applications/plot_stock_market.html?fbclid=IwAR29Qcy3SrWFDjHAJGF--XO-0zW2FWt8t4dYZT0lsYxUDqJpBz17ds2pQQM" target="_blank" rel="noopener">https://scikit-learn.org/stable/auto_examples/applications/plot_stock_market.html?fbclid=IwAR29Qcy3SrWFDjHAJGF–XO-0zW2FWt8t4dYZT0lsYxUDqJpBz17ds2pQQM</a>)</p>
+<p>(<a href="https://scikit-learn.org/stable/auto_examples/cluster/plot_affinity_propagation.html?fbclid=IwAR2SsWtrb5MJdypMha6G59nWSeEwf7QK5vzmCa_UefR9mHDT0WzLgEbqng4#sphx-glr-auto-examples-cluster-plot-affinity-propagation-py" target="_blank" rel="noopener">https://scikit-learn.org/stable/auto_examples/cluster/plot_affinity_propagation.html?fbclid=IwAR2SsWtrb5MJdypMha6G59nWSeEwf7QK5vzmCa_UefR9mHDT0WzLgEbqng4#sphx-glr-auto-examples-cluster-plot-affinity-propagation-py</a>)</p>
+]]></content>
+      <tags>
+        <tag>Work</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>墾丁打工換宿 2018/8/5~2018/8/25</title>
+    <url>/myblog/2018/08/25/Kenting-WH/</url>
+    <content><![CDATA[<blockquote>
+<p>謝謝每位我在這裡遇到的朋友<br>
+離開太趕 沒能全部拍到照 有緣再見<br>
+結束最後暑假 研究所人生準備開跑<br>
+#鹿境 #小幫手 #恆春 #海</p>
+</blockquote>
+<h1 id="前言">前言</h1>
+<p>你憧憬未來的時候，不會去想著把所有的事聯繫起來；只有在回憶過去的時候，才會將這點點滴滴聯繫在一起。一定要相信，這些生活的點滴會在你未來的某一天產生聯繫。一定要相信：勇氣、目標、生命、緣起…一切都不會令你失望，只會增加你的與眾不同。</p>
+<p><img src="1.png" alt="1"><br>
+<img src="2.png" alt="2"></p>
+<h1 id="工作-working">工作 Working</h1>
+<p>其實工作內容很間單，分爲吧台、鹿園兩區的工作</p>
+<h2 id="在吧台負責">在吧台負責：</h2>
+<ol>
+<li>飲料餐點</li>
+<li>外頭的商品部擺放、補貨(拆線、吊牌剪掉、檢查不良品)</li>
+<li>幫訂午餐、晚餐</li>
+<li>廁所打掃（每1hr巡一次）</li>
+<li>外頭路面地面整潔</li>
+</ol>
+<h2 id="在鹿園負責">在鹿園負責：</h2>
+<ol>
+<li>割草（沒體驗到 但要搬運20多公斤草）</li>
+<li>切紅蘿菠、地瓜</li>
+<li>打掃鹿園（沒體驗到 很臭）</li>
+<li>解說員（有人體驗到）</li>
+</ol>
+<p><img src="3.png" alt="3"></p>
+<h1 id="度假-holiday">度假 Holiday</h1>
+<p>其實幾乎只有第一週體驗到 剩下都待在鹿境工作 還有最後一週連日的大雨打壞行程（只找到一天沒雨空擋去環屏東）</p>
+<p>8/5 浮潛+逛恆春夜市<br>
+8/6 帆船石+麋谷<br>
+8/7 聚餐 美式餐廳 +打牌<br>
+8/8 七孔瀑布 + cafe cinema<br>
+8/9 古城家常菜+白沙灣<br>
+8/10 深潛+海生館+肥春號<br>
+8/11 吉普車（大腳168車隊）</p>
+<p>Last week :車程福安宮+牡丹水庫+牡丹國小+旭海+九鵬大沙漠+港仔大沙漠+風吹砂+龍磐+台灣最南點</p>
+]]></content>
+      <tags>
+        <tag>Travel</tag>
       </tags>
   </entry>
   <entry>
@@ -251,91 +382,6 @@ AR、VR 在軟硬體的高速發展，使其將成為未來的趨勢及主流，
       </tags>
   </entry>
   <entry>
-    <title>NBA老闆的慧眼 - Affinity Propagation</title>
-    <url>/myblog/2019/01/29/AP-algo/</url>
-    <content><![CDATA[<h1 id="概念發想concept">概念發想Concept</h1>
-<hr>
-<p><a href="https://github.com/LawrenceGao0224/Intelligence-Oriented-Management-Decision/tree/master/%E6%99%BA%E6%85%A7%E5%9E%8B%E6%9C%9F%E6%9C%AB%E5%A0%B1%E5%91%8A">程式碼連結Click On Me</a></p>
-<p><img src="NBA.jpg" alt="NBA"></p>
-<p>我們將自己設想為球隊分析師，並希望能遞上一份不讓老闆&quot;打臉&quot;的分群資料，提供球隊高層在球員交易、補強、替代方案上有份合理客觀的依據。</p>
-<p>We envision ourselves as team analysts, and hope to hand over a group of information that provides the team’s top management with a reasonable and objective basis for player trading, reinforcement, and alternatives.</p>
-<hr>
-<h1 id="操作方法operation">操作方法Operation</h1>
-<p>將NBA所有球員資料(Ex: 薪水、年齡、得分、助攻、有效命中率、真實命中率、球權佔有率、籃板率、效率值…)，以AP演算法實作，計算各球員資料的負歐積里德距離，調整preference、Damping Factor參數，求出k個高質量聚類，且我們將多維度的資料透過PCA()方法壓縮為低維度的資料，實現可視化。</p>
-<p>All NBA player information (Ex: salary, age, score, assists, effective hit rate, true hit rate, possession rate, rebound rate, efficiency value…) is calculated by AP algorithm to calculate each player’s data. The negative Ourich Reed distance, adjust the preferences, Damping Factor parameters, find k high-quality clusters, and we compress the multi-dimensional data into low-dimensional data through PCA () method to achieve visualization</p>
-<p>資料來源 ： (<a href="https://www.kaggle.com/acasalan/nba-player-stats-201718" target="_blank" rel="noopener">https://www.kaggle.com/acasalan/nba-player-stats-201718</a>)</p>
-<hr>
-<h1 id="實作結果-result">實作結果 Result</h1>
-<h2 id="調整參數-adjust-parameter">調整參數 Adjust parameter:</h2>
-<ol>
-<li>Preference:<br>
-Preference = 中位數(-62.5683289159)<br>
-群集數: 43</li>
-</ol>
-<p><img src="1-1.png" alt="43"></p>
-<p>Preference = -500<br>
-群集數: 7</p>
-<p><img src="1-2.png" alt="7"></p>
-<ol start="2">
-<li>Damping Factor:</li>
-</ol>
-<p>Damping Factor = 0.5      --&gt;      Time = 0.8640606880187988 seconds.<br>
-Damping Factor = 0.9      --&gt;      Time = 1.2220699787139893 seconds.</p>
-<h2 id="所有球員資料-all-players">所有球員資料 All players:</h2>
-<p><img src="2-1.png" alt="2-1">   <img src="2-2.png" alt="2-2"></p>
-<h2 id="依球員打球的位置-according-to-position">依球員打球的位置 According to position</h2>
-<ol>
-<li>
-<p>center © : 8群集數<br>
-<img src="3-1.png" alt="3-1"></p>
-</li>
-<li>
-<p>power forward (PF) : 8群集數<br>
-<img src="3-2.png" alt="3-2"></p>
-</li>
-<li>
-<p>small forward (SF) : 12群集數<br>
-<img src="3-3.png" alt="3-3"></p>
-</li>
-<li>
-<p>point guard (PG) : 11群集數<br>
-<img src="3-4.png" alt="3-4"></p>
-</li>
-<li>
-<p>shooting guard (SG) : 4群集數<br>
-<img src="3-5.png" alt="3-5"></p>
-</li>
-</ol>
-<h2 id="依不同屬性">依不同屬性</h2>
-<p>進攻性質 or 防守性質…</p>
-<hr>
-<h1 id="延伸探討-any-imperfect">延伸探討  Any imperfect ?</h1>
-<p>然而在我們丟入的data有其盲點存在,NBA的老闆或球隊在選擇球員上,並不會只觀看球員在場上的數據表現,還包括許多因素,事無法量化或在數據表現出來的(包括球員心理狀態、球員間磨合度…)</p>
-<p>However, the data we throw in has its  blind spots. The NBA boss or team is not only watching the performance of the players on the field, but also includes many factors, which cannot be quantified or expressed in the data. (including the player’s mental state, the player’s running-in…)</p>
-<p>如下:</p>
-<p>❖商業價值 ex: Dwyane Wade<br>
-Wade是大家耳熟能詳的巨星,層經出現在2K遊戲的封面上,但最近的數據表現並不如其他球員出色,但仍是有淺力的球員,也累積許多粉絲,粉絲能帶來商業價值。<br>
-<img src="4-1.png" alt="4-1"></p>
-<p>❖球員背景 ex: Jeremy Lin<br>
-Jeremy是著名的台裔球員,能吸引亞洲地區的球迷觀注其球隊,帶來利益。<br>
-<img src="4-2.png" alt="4-2"></p>
-<p>❖健康因素 ex: Derrick Rose<br>
-Rose是最年輕獲選MVP的球員,但由於前幾賽季腳傷原因,造成都個<br>
-賽季缺賽,而傷後復出便不如以前突出,這也是無法顯現在數據上的。<br>
-<img src="4-3.png" alt="4-3"></p>
-<hr>
-<h1 id="參考資料">參考資料</h1>
-<p>(<a href="https://zi.media/@yidianzixun/post/uKZUFF?fbclid=IwAR1Dib-4T5MkM2x_helYBtq0TgTD871fAixs-4sBivOUXUNjuMl07xFahOs" target="_blank" rel="noopener">https://zi.media/@yidianzixun/post/uKZUFF?fbclid=IwAR1Dib-4T5MkM2x_helYBtq0TgTD871fAixs-4sBivOUXUNjuMl07xFahOs</a>)</p>
-<p>(<a href="https://www.cnblogs.com/huadongw/p/4202492.html?fbclid=IwAR3PHEOcrAar0rCI1e9AeYBxV0fI6JKJIRqGAJ3ag9BnlleT5M9v_8oNiy0" target="_blank" rel="noopener">https://www.cnblogs.com/huadongw/p/4202492.html?fbclid=IwAR3PHEOcrAar0rCI1e9AeYBxV0fI6JKJIRqGAJ3ag9BnlleT5M9v_8oNiy0</a>)</p>
-<p>(<a href="https://www.itread01.com/articles/1495821610.html?fbclid=IwAR1Ssz1ZCdqnxtT6obwpx0AFRDBEGrqKK0BXmMGPK-I1lvNwqJuif9EhZt0" target="_blank" rel="noopener">https://www.itread01.com/articles/1495821610.html?fbclid=IwAR1Ssz1ZCdqnxtT6obwpx0AFRDBEGrqKK0BXmMGPK-I1lvNwqJuif9EhZt0</a>)</p>
-<p>(<a href="https://scikit-learn.org/stable/auto_examples/applications/plot_stock_market.html?fbclid=IwAR29Qcy3SrWFDjHAJGF--XO-0zW2FWt8t4dYZT0lsYxUDqJpBz17ds2pQQM" target="_blank" rel="noopener">https://scikit-learn.org/stable/auto_examples/applications/plot_stock_market.html?fbclid=IwAR29Qcy3SrWFDjHAJGF–XO-0zW2FWt8t4dYZT0lsYxUDqJpBz17ds2pQQM</a>)</p>
-<p>(<a href="https://scikit-learn.org/stable/auto_examples/cluster/plot_affinity_propagation.html?fbclid=IwAR2SsWtrb5MJdypMha6G59nWSeEwf7QK5vzmCa_UefR9mHDT0WzLgEbqng4#sphx-glr-auto-examples-cluster-plot-affinity-propagation-py" target="_blank" rel="noopener">https://scikit-learn.org/stable/auto_examples/cluster/plot_affinity_propagation.html?fbclid=IwAR2SsWtrb5MJdypMha6G59nWSeEwf7QK5vzmCa_UefR9mHDT0WzLgEbqng4#sphx-glr-auto-examples-cluster-plot-affinity-propagation-py</a>)</p>
-]]></content>
-      <tags>
-        <tag>Work</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>蘭嶼Lanyu遊 2020.7.21-2020.7.24</title>
     <url>/myblog/2020/07/24/Lanyu/</url>
     <content><![CDATA[<blockquote>
@@ -401,63 +447,6 @@ M cafe喝酒<br>
 <p>總歸一句：<br>
 抱持放鬆的心態來就好<br>
 Soak in your own world!</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Travel</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>大馬遊2018/7/21~2018/7/29</title>
-    <url>/myblog/2018/07/30/Malaysia/</url>
-    <content><![CDATA[<blockquote>
-<p>馬六甲(Malacca)&gt;吉隆坡(Kuala Lumpur)&gt;檳城(Penang)&gt;蘭卡威(langkawi)&gt;雲頂高原(Genting highlands)&gt;柔佛(Johor)&gt;新加坡</p>
-</blockquote>
-<p><img src="lankawei.jpg" alt="蘭卡威"></p>
-<hr>
-<h1 id="行程規畫">行程規畫</h1>
-<p><a href="https://gsy-life.webnode.tw/_files/200000006-8a0808b03e/%E9%A6%AC%E4%BE%86%E8%A5%BF%E4%BA%9E%E4%B9%8B%E6%97%85.pdf" target="_blank" rel="noopener">行程規劃 : Click On Me</a></p>
-<hr>
-<h1 id="行前準備">行前準備</h1>
-<p>由於是在暑假熱季前往，衣物方面幾乎都是短袖短褲（但是要注意可能因為機上冷氣太強，所以有攜帶薄襯衫），還要攜帶泳褲以便下水，防曬物品更不能少（我就被曬傷了 嚴重脫皮) &gt;&lt;</p>
-<hr>
-<h1 id="travel">Travel</h1>
-<h2 id="day-1">Day 1</h2>
-<p>坐飛機到Ｍalaysia時間大約為4小時，到達 Kuala Lumpur 已經是晚上8、9點，出機場直達麥當勞，他們的麥當勞比台灣便宜，而且有魚漢堡（1馬幣=7.6台幣），也是出國後才知道只有台灣麥當勞垃圾要自己收（好習慣😊）。<br>
-接著放完行李後，前往麻六甲(Malacca)品嚐道地沙爹，口味偏重、調味多，醬料如果沒有攪拌，下層便會燒焦，點飲料時推薦100plus(像有氣的舒跑)</p>
-<p><img src="1.jpg" alt="Day1"></p>
-<h2 id="day-2">Day 2</h2>
-<p>在麻六甲，先是前往著名地標，而後到顛倒屋拍照，再坐車前往吉隆坡玩水上樂園Sunway（門票好像要快130RM 約930NTD)，印象海盜船沒有360度，但這裡的有，這裡還有人造浪，還好都有玩到，晚上前往雙子星大樓（著名地標），在周邊吃小吃，印度薄餅好吃～</p>
-<p><img src="2.jpg" alt="Day2-1">   <img src="3.jpg" alt="Day2-2"></p>
-<h2 id="day-3">Day 3</h2>
-<p>前往蝙蝠洞，在階梯上充滿了獼猴，雖然可愛，會搶人的物品或食物<br>
-結束早上行程後，前往檳城，到達時間已是下午5點，購買後天前往蘭卡威的船票，晚上吃當地的夜市，再去逛阿凡達館（好像是東西都亮亮的像阿凡達？有點不懂）</p>
-<p><img src="4.jpg" alt="Day3"></p>
-<h2 id="day-4">Day 4</h2>
-<p>早起前往當地有名的早餐店多春，吃完逛鬼怪博物館，再逛歷史博物館，整天走走逛逛的行程，晚上開車去洗衣店洗衣服</p>
-<p><img src="6.jpg" alt="Day4-1">   <img src="5.jpg" alt="Day4-2"></p>
-<h2 id="day-5">Day 5</h2>
-<p>早起搭船前往蘭卡威，一下船，便有人推銷我們套票行程，每人200RM 大約1500NTD，便能租車、潛水，我們便購買了此行程，坐船到達許多分散的島嶼，還有很多沙灘，有些景點無聊且東西貴，晚上去吃一間華人開的餐廳，一個人台幣大約300左右，但超好吃也超級飽</p>
-<p><img src="7.jpg" alt="Day5"></p>
-<h2 id="day-6">Day 6</h2>
-<p>早起吃了早餐今天搭船前往沙灘潛水，那裡無限制潛水，而且沒有人會攔你要游到哪，只是有個邊界，累了可以上岸休息，傍晚時，我們回到飯店旁的沙灘玩遊樂設施，晚上吃馬來人開的店（有貴到、而且吃不飽），馬來西亞的朋友說有點被騙了，到馬來人開的餐廳要注意，最後逛了shopping mall，結束一天</p>
-<p><img src="8.jpg" alt="Day6"></p>
-<h2 id="day-7">Day 7</h2>
-<p>一大早大雨滂沱，朋友鑰匙差點搞丟，找了半天，原來掉在昨天吃飯的地方，一大早坐計程車趕車到搭船點，幸好及時趕上船班，離開蘭卡威、離開檳城，一路南下至雲頂，今晚的落角：雲頂高原（Genting Highland)裡面有很大型的賭場，我們吃完飯便去賭場，有生第一次去賭場，好像電影的場景都搬到眼前，進出口都有安檢檢查是否成年</p>
-<p>(賭場不能拍照)</p>
-<h2 id="day-89">Day 8,9</h2>
-<p>離開雲頂，前往馬來西亞朋友住家，住了一天，隔天到新加坡坐飛機回台灣，只在新加坡待了2小時</p>
-<p><img src="9.jpg" alt="Day8-9"></p>
-<h1 id="總結">總結</h1>
-<blockquote>
-<p>有吉隆坡的車牌好像大家會讓你 因為吉隆坡的人開車很兇<br>
-機車也可以騎高速公路 也不時看到泰國車牌<br>
-油價便宜 95汽油 一公升16塊台幣左右<br>
-馬來西亞朋友都會至少五種語言 跟當地人溝通不停切換 我當神拜<br>
-食物重口味又辣 大推沙爹、肉骨茶、Roti tissue<br>
-飲料推 100 plus、奶茶、milo 、涼茶<br>
-蘭卡威（langkawi)的酒比珍奶便宜<br>
-馬來西亞真的是美食天堂～</p>
 </blockquote>
 ]]></content>
       <tags>
@@ -622,152 +611,6 @@ PS : 在這些具有製成、高階技術研發的公司，資訊安全與公司
 <p><img src="1.png" alt="1"><br>
 <img src="2.png" alt="2"><br>
 <img src="3.png" alt="3"></p>
-]]></content>
-      <tags>
-        <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>墾丁打工換宿 2018/8/5~2018/8/25</title>
-    <url>/myblog/2018/08/25/Kenting-WH/</url>
-    <content><![CDATA[<blockquote>
-<p>謝謝每位我在這裡遇到的朋友<br>
-離開太趕 沒能全部拍到照 有緣再見<br>
-結束最後暑假 研究所人生準備開跑<br>
-#鹿境 #小幫手 #恆春 #海</p>
-</blockquote>
-<h1 id="前言">前言</h1>
-<p>你憧憬未來的時候，不會去想著把所有的事聯繫起來；只有在回憶過去的時候，才會將這點點滴滴聯繫在一起。一定要相信，這些生活的點滴會在你未來的某一天產生聯繫。一定要相信：勇氣、目標、生命、緣起…一切都不會令你失望，只會增加你的與眾不同。</p>
-<p><img src="1.png" alt="1"><br>
-<img src="2.png" alt="2"></p>
-<h1 id="工作-working">工作 Working</h1>
-<p>其實工作內容很間單，分爲吧台、鹿園兩區的工作</p>
-<h2 id="在吧台負責">在吧台負責：</h2>
-<ol>
-<li>飲料餐點</li>
-<li>外頭的商品部擺放、補貨(拆線、吊牌剪掉、檢查不良品)</li>
-<li>幫訂午餐、晚餐</li>
-<li>廁所打掃（每1hr巡一次）</li>
-<li>外頭路面地面整潔</li>
-</ol>
-<h2 id="在鹿園負責">在鹿園負責：</h2>
-<ol>
-<li>割草（沒體驗到 但要搬運20多公斤草）</li>
-<li>切紅蘿菠、地瓜</li>
-<li>打掃鹿園（沒體驗到 很臭）</li>
-<li>解說員（有人體驗到）</li>
-</ol>
-<p><img src="3.png" alt="3"></p>
-<h1 id="度假-holiday">度假 Holiday</h1>
-<p>其實幾乎只有第一週體驗到 剩下都待在鹿境工作 還有最後一週連日的大雨打壞行程（只找到一天沒雨空擋去環屏東）</p>
-<p>8/5 浮潛+逛恆春夜市<br>
-8/6 帆船石+麋谷<br>
-8/7 聚餐 美式餐廳 +打牌<br>
-8/8 七孔瀑布 + cafe cinema<br>
-8/9 古城家常菜+白沙灣<br>
-8/10 深潛+海生館+肥春號<br>
-8/11 吉普車（大腳168車隊）</p>
-<p>Last week :車程福安宮+牡丹水庫+牡丹國小+旭海+九鵬大沙漠+港仔大沙漠+風吹砂+龍磐+台灣最南點</p>
-]]></content>
-      <tags>
-        <tag>Travel</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>閱讀心路歷程與想法</title>
-    <url>/myblog/2021/06/19/Reading/</url>
-    <content><![CDATA[<blockquote>
-<p>我這輩子遇到的聰明人（來自各行各業的聰明人）沒有不每天閱讀的。 沒有，一個都沒有。<br>
-華倫讀書之多，我讀書之多，可能會讓你感到吃驚。我的孩子們都愛開玩笑，覺得我是一本長了兩條腿的書。<br>
-By 查理．蒙格</p>
-</blockquote>
-<h1 id="前言">前言</h1>
-<p>著名畫家李苦禪曾說過：「鳥欲高飛先振翅，人求上進先讀書。」<br>
-從比爾蓋茲、巴菲特、查里蒙格、歐巴馬…，世上偉大而具影響力的人，無不飽讀詩書，閱讀的重要性大家都知道<br>
-然而一定會有人說，為什麼每年那麼多排行榜書、勵志書、工具書被出版，成功的人還是這麼少？<br>
-閱讀到底有沒有用？<br>
-這個問題端看每個人怎麼想，有看過身邊的朋友因為喜歡學習、喜歡閱讀，而升遷、加薪 ;但我也可以說，實際用的不到30%<br>
-但當我看到這篇文後，我對閱讀的想法有所改變：<br>
-<a href="https://www.managertoday.com.tw/books/view/53266" target="_blank" rel="noopener">為什麼閱讀對我幫助不大？來看看年收入300萬的人是怎麼看書的</a></p>
-<hr>
-<h1 id="為何開始閱讀">為何開始閱讀</h1>
-<p>啟發我閱讀的是在去年4月，我在收聽自己滿喜歡的Podcast節目『 大人學的Small Talk 』，其中一集提到<a href="https://goldfishblog.tw/darencademy-podcast-ep56/" target="_blank" rel="noopener">我如何選擇、購買、放棄與吸收一本書</a>，裡面有提到國人平均一年只讀兩本書！其實我當下連一年兩本都不到！聽完節目後，想說姑且一試，既然閱讀對人那麼有幫助，那我怎麼能不看書，但沒有抱著會長久閱讀的想法，買了幾本暢銷書就來看看。</p>
-<p>起初第一本是「 有錢人跟你想的不一樣 」<br>
-<img src="3.jpeg" alt="有錢人跟你想的不一樣"><br>
-這本書告訴我們要培養有錢人的思考模式，舉例 -&gt; 當遇到一個東西很想買，但很昂貴：<br>
-<span style="color:IndianRed">窮人會想著：「太貴了，我永遠買不起」</span><br>
-<span style="color:IndianRed">有錢人會想著：「我該如何買得起他」</span><br>
-將問題轉化為該如何去解決問題，而不是無盡的抱怨、責備，書中提到17個有錢人的思維模式。這本書讓我感覺到閱讀是有趣的而且實用，可以影響我的行為模式。<br>
-一直持續閱讀習慣到當兵，在當兵期間，由於長時間待命或是等待操課很無聊，閱讀是唯一消遣，不操課就只能看書，站哨時無聊也偷偷拿出書來看，也因此在當兵時鞏固自己閱讀的習慣，而持續維持自己閱讀習慣到現在…</p>
-<hr>
-<h1 id="閱讀建議">閱讀建議</h1>
-<p>在我看到「讀懂一本書」時了解到，自己很常閱讀後就忘記，甚至就算再看一次很多觀念也會再次忘掉，作者說到：「知識的自我反芻：最有效的讀書不是一邊讀一邊畫重點，而是大概間隔一週，邊回憶邊畫心智圖」，也說到講書的重要性，就是能將知識內化成自己的語言再傳遞給他人，自己將是最大的受益者，因此我也開始記錄自己閱讀的書籍，並做重點整理。<br>
-<img src="2.jpeg" alt="讀懂一本書"></p>
-<p>但讀者在閱讀時仍要學習分辨，有些自己非常不認同的想法，可以訓練自己思考事情的正反面，還有為何作者想法如此，而自己的想法為何那樣，也許是情境的不同、立場不同、或是扭曲了作者想法等等，謹慎思考作者的論點，培養自己的獨立思考能力。</p>
-<p>再者，閱讀可以分為3種階段，由低至高，What、How、Why，其實也可以套用於學習上：</p>
-<ol>
-<li>
-<p>What:  看到書本上的內容覺得有什麼新奇、不了解的，抄寫、背誦下來，以後可以跟他人享</p>
-</li>
-<li>
-<p>How :  將在閱讀時看到的場景放置在現實生活中，如果有遇到這個問題可以供參考解決</p>
-</li>
-<li>
-<p>Why :  了解整個問題後，分析作者的思維結構、背後的動機、如何思考，當遇到問題需要解決，可以透過這種思維模式執行</p>
-</li>
-</ol>
-<p>過去學生時代的學習，也許死記硬背就能考高分，但是在現實生活中，並非所有問題都有正確答案，真正去思考才能讀透一本書，也就是融會貫通的精神所在。這也是為什麼同樣閱讀一本書，有些人卻能比其他人達到的成效高出許多。</p>
-<p>我個人個性比較急，常常想把書快速讀完，然後好像自己讀了很多書，很厲害一樣。但常常讀過卻沒有深入其義，只停留在第一或第二階段。在讀書會時發現同一本書有些人卻有非常深入透徹的想法，要漸漸讓自己能夠領悟第三階段，並非囫圇吞棗。</p>
-<hr>
-<h1 id="閱讀的好處">閱讀的好處</h1>
-<p>想當然閱讀的好處大家聽到不想再聽，而最讓我眼睛發亮的是當我看到</p>
-<p>閱讀可使人從「單向度」變成「多向度」，（前提是要達到第三階段：Why）：</p>
-<ol>
-<li>
-<p>事實：分析決策</p>
-</li>
-<li>
-<p>邏輯：事實間的邏輯為何</p>
-</li>
-<li>
-<p>批判思維：不斷訓練思維方式</p>
-</li>
-</ol>
-<p>以及，之前聽過，未來收入跟閱讀量成正比，我後來去查了一下這個新聞<a href="https://kknews.cc/zh-tw/culture/jma648l.html" target="_blank" rel="noopener">收入越高的人越愛讀書</a></p>
-<hr>
-<p>我的閱讀列表與重點整理 : <a href="https://www.notion.so/lawrencekao/1a7fb57a6f3c4e30a8f1f5e45677b129?v=e89018e9e9c54144977390b1195ad432" target="_blank" rel="noopener">https://www.notion.so/lawrencekao/1a7fb57a6f3c4e30a8f1f5e45677b129?v=e89018e9e9c54144977390b1195ad432</a><br>
-<img src="1.jpg" alt="書"></p>
-<hr>
-<h1 id="推薦書單">推薦書單</h1>
-<p>我最喜愛比爾蓋茲的書單，非常多元，各種面向都有，尤其是對於興趣廣泛的我再適合不過了，而股癌是Podcaster，他的書單也很棒，而查里蒙格是巴菲特身邊非常重要的人，巴菲特常說：「沒有蒙格就沒有我」</p>
-<ol>
-<li>
-<p><a href="https://activity.books.com.tw/crosscat/show/A00000023102" target="_blank" rel="noopener">比爾蓋茲書單</a></p>
-</li>
-<li>
-<p><a href="https://www.evernote.com/shard/s706/client/snv?noteGuid=a0556273-7a2b-9e6b-6d51-33e2c856e353&amp;noteKey=94725ec975a01bbf3cedb6db1b378dec&amp;sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs706%2Fsh%2Fa0556273-7a2b-9e6b-6d51-33e2c856e353%2F94725ec975a01bbf3cedb6db1b378dec&amp;title=%25E8%2582%25A1%25E7%2599%258C%25E6%259B%25B8%25E5%2596%25AE%2528%25E5%25B0%2587%25E6%258C%2581%25E7%25BA%258C%25E6%259B%25B4%25E6%2596%25B0%25EF%25BC%258C%25E6%259C%2580%25E6%2596%25B0%25E7%25BD%25AE%25E9%25A0%2582%2529" target="_blank" rel="noopener">股癌書單</a></p>
-</li>
-<li>
-<p><a href="https://jujuchu.com/charlie-munger-s-recommended-reading-material/" target="_blank" rel="noopener">查里蒙格書單</a></p>
-</li>
-<li>
-<p><a href="https://events.eslite.com/2020/191217-CelebrityPicks/index.html" target="_blank" rel="noopener">誠品的各名人書單</a></p>
-</li>
-<li>
-<p><a href="https://planetofbooklist.com/" target="_blank" rel="noopener">書單星球</a></p>
-</li>
-</ol>
-<p>此外，最近發現這個Blog所撰寫的閱讀心得與推薦書非常值得 <a href="https://jujuchu.com/" target="_blank" rel="noopener">JUJU CHU 愛讀書</a></p>
-<hr>
-<h1 id="推薦整理-notion">推薦整理 Notion</h1>
-<p>近期有個朋友推薦我，他看完書後都會使用 Notion 記錄自己的筆記，在我看過他的排版還有方便性後，決定使用這個軟體記錄自己的閱讀</p>
-<p><a href="https://www.notion.so/product?utm_source=google&amp;utm_campaign=2075789713&amp;utm_medium=80211061801&amp;utm_content=372709093351&amp;utm_term=notion&amp;targetid=aud-840164194020:kwd-312974742&amp;gclid=CjwKCAjwq7aGBhADEiwA6uGZp09kAHOzRRUTrYU8jmxz0-dG-mf2iP5SN7yC6mUTvbUmbJ4VsVBAjRoCnjsQAvD_BwE" target="_blank" rel="noopener">Notion 網址</a></p>
-<p>其實網路上有許多人分享他的優點，我在這裡就不贅述<br>
-如：<a href="https://medium.com/%E8%B8%A2%E4%BB%96%E7%A2%8E%E7%A2%8E%E5%BF%B5/%E4%BA%BA%E5%8F%83-notion-%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97%E5%88%86%E4%BA%AB-230055957305" target="_blank" rel="noopener">Notion：使用心得分享</a></p>
-<hr>
-<blockquote>
-<p><strong>Go and grab a book and read !</strong></p>
-</blockquote>
 ]]></content>
       <tags>
         <tag>Blog</tag>
@@ -983,40 +826,103 @@ To be continued…</p>
       </tags>
   </entry>
   <entry>
-    <title>大學專題 Graduate Thesis- 僑牽ＯＣＣ</title>
-    <url>/myblog/2017/12/13/college-project/</url>
+    <title>閱讀心路歷程與想法</title>
+    <url>/myblog/2021/06/19/Reading/</url>
     <content><![CDATA[<blockquote>
-<p>暨南大學是全台外籍生比例最高的學校 其中有非常大一部分是僑生<br>
-我們和僑生同學相處的日常 有溫馨、有歡笑、也有很多意想不到的趣事<br>
-「 僑牽 」是我們為僑生同學們打造的平台</p>
-<p>Nation Chi Nan University is the school with the highest proportion of foreign students in Taiwan. A very large part of it is overseas Chinese. The daily life we ​​spend with our overseas students is warm, funny, and there are many unexpected things. “Overseas Chinese” is our platform for overseas students.</p>
+<p>我這輩子遇到的聰明人（來自各行各業的聰明人）沒有不每天閱讀的。 沒有，一個都沒有。<br>
+華倫讀書之多，我讀書之多，可能會讓你感到吃驚。我的孩子們都愛開玩笑，覺得我是一本長了兩條腿的書。<br>
+By 查理．蒙格</p>
 </blockquote>
-<p><a href="https://www.facebook.com/ChiauChian.OCC/" target="_blank" rel="noopener">粉專 僑牽 ｜ ＯＣＣ</a></p>
-<div align="right"><img src="logo.png" width="150" height="150"> </div>
-<h1 id="想法與現況-concept">想法與現況 Concept：</h1>
+<h1 id="前言">前言</h1>
+<p>著名畫家李苦禪曾說過：「鳥欲高飛先振翅，人求上進先讀書。」<br>
+從比爾蓋茲、巴菲特、查里蒙格、歐巴馬…，世上偉大而具影響力的人，無不飽讀詩書，閱讀的重要性大家都知道<br>
+然而一定會有人說，為什麼每年那麼多排行榜書、勵志書、工具書被出版，成功的人還是這麼少？<br>
+閱讀到底有沒有用？<br>
+這個問題端看每個人怎麼想，有看過身邊的朋友因為喜歡學習、喜歡閱讀，而升遷、加薪 ;但我也可以說，實際用的不到30%<br>
+但當我看到這篇文後，我對閱讀的想法有所改變：<br>
+<a href="https://www.managertoday.com.tw/books/view/53266" target="_blank" rel="noopener">為什麼閱讀對我幫助不大？來看看年收入300萬的人是怎麼看書的</a></p>
 <hr>
-<p>依據教育部統計處發布資料顯示，臺灣現有近 12,000 名僑生，每年 約以 10%的比例快速成長。然而僑生來台前的資訊蒐集，多限於官方的 法規、政策、各校簡章等，生活問題少有相關文章可供參考。而來台後 面對文化與生活習慣差異，甚至是學業問題，多是仰賴同儕之間交流與 扶持。<br>
-在經過比較相關性高的各大交流平台中，我們選擇建立「僑牽」論 壇，除了可以讓資料有足夠地方可以彙整呈現，對於發問、交流等需求 也相當出色。另外現行社群媒體盛行，我們也將使用臉書作為推廣管道， 以觸及更多族群。<br>
-我們期盼透過創立臉書粉絲專頁以達到招攬使用者、宣傳活動等功 能;創立論壇以達到官方及非官方資訊彙整提供、諮詢空間、生活貼近 度等呈現。讓已來台僑生提供生活經驗分享，初來台之僑生更能融入台 灣的生活，欲來台僑生可初步認識台灣。更進一步希望台灣生也能了解 僑生們的不同文化民情，增進國際交流，擴展國際視野。<br>
-According to the statistics released by the Statistics Department of the Ministry of Education, there are nearly 12,000 overseas Chinese students in Taiwan, which grows rapidly by about 10% each year. However, the information gathering before the overseas Chinese came to Taiwan was mostly limited to official regulations, policies, and school briefs. There are few relevant articles on life issues for reference. After coming to Taiwan, facing the differences in culture and living habits, and even academic problems, most of them rely on exchanges and support between their peers.<br>
-Among the major exchange platforms that have been highly correlated, we chose to establish the “Overseas Chinese” forum. In addition to allowing the information to have enough places to be presented, the demand for questions and communication is also excellent. In addition, the current social media is prevalent, and we will also use Facebook as a promotion channel to reach more ethnic groups.<br>
-We look forward to the creation of Facebook fan pages to reach users, publicity activities, etc.; to create forums to achieve official and unofficial information collection, consultation space, life closeness and other presentations. Let the overseas Chinese students who have come to Taiwan provide life experience sharing. The overseas Chinese who come to Taiwan will be able to integrate into Taiwan’s life. Taiwanese who want to come to Taiwan can get to know Taiwan. I further hope that Taiwanese students can also understand the different cultures and customs of overseas Chinese, enhance international exchanges and expand their international horizons.</p>
-<p><img src="website.png" alt="網頁首頁"></p>
-<h1 id="進行步驟及活動成效-prcedure-and-result">進行步驟及活動成效 Prcedure and Result</h1>
+<h1 id="為何開始閱讀">為何開始閱讀</h1>
+<p>啟發我閱讀的是在去年4月，我在收聽自己滿喜歡的Podcast節目『 大人學的Small Talk 』，其中一集提到<a href="https://goldfishblog.tw/darencademy-podcast-ep56/" target="_blank" rel="noopener">我如何選擇、購買、放棄與吸收一本書</a>，裡面有提到國人平均一年只讀兩本書！其實我當下連一年兩本都不到！聽完節目後，想說姑且一試，既然閱讀對人那麼有幫助，那我怎麼能不看書，但沒有抱著會長久閱讀的想法，買了幾本暢銷書就來看看。</p>
+<p>起初第一本是「 有錢人跟你想的不一樣 」<br>
+<img src="3.jpeg" alt="有錢人跟你想的不一樣"><br>
+這本書告訴我們要培養有錢人的思考模式，舉例 -&gt; 當遇到一個東西很想買，但很昂貴：<br>
+<span style="color:IndianRed">窮人會想著：「太貴了，我永遠買不起」</span><br>
+<span style="color:IndianRed">有錢人會想著：「我該如何買得起他」</span><br>
+將問題轉化為該如何去解決問題，而不是無盡的抱怨、責備，書中提到17個有錢人的思維模式。這本書讓我感覺到閱讀是有趣的而且實用，可以影響我的行為模式。<br>
+一直持續閱讀習慣到當兵，在當兵期間，由於長時間待命或是等待操課很無聊，閱讀是唯一消遣，不操課就只能看書，站哨時無聊也偷偷拿出書來看，也因此在當兵時鞏固自己閱讀的習慣，而持續維持自己閱讀習慣到現在…</p>
 <hr>
-<h2 id="步驟-step">步驟 Step：</h2>
-<p>Step1. 建立粉絲專頁 Build Fan Page<br>
-Step2. 宣傳活動 Advertisement and Activities<br>
-Step3. 建置論壇 Build Website</p>
-<h2 id="成效-result">成效 Result：</h2>
+<h1 id="閱讀建議">閱讀建議</h1>
+<p>在我看到「讀懂一本書」時了解到，自己很常閱讀後就忘記，甚至就算再看一次很多觀念也會再次忘掉，作者說到：「知識的自我反芻：最有效的讀書不是一邊讀一邊畫重點，而是大概間隔一週，邊回憶邊畫心智圖」，也說到講書的重要性，就是能將知識內化成自己的語言再傳遞給他人，自己將是最大的受益者，因此我也開始記錄自己閱讀的書籍，並做重點整理。<br>
+<img src="2.jpeg" alt="讀懂一本書"></p>
+<p>但讀者在閱讀時仍要學習分辨，有些自己非常不認同的想法，可以訓練自己思考事情的正反面，還有為何作者想法如此，而自己的想法為何那樣，也許是情境的不同、立場不同、或是扭曲了作者想法等等，謹慎思考作者的論點，培養自己的獨立思考能力。</p>
+<p>再者，閱讀可以分為3種階段，由低至高，What、How、Why，其實也可以套用於學習上：</p>
+<ol>
+<li>
+<p>What:  看到書本上的內容覺得有什麼新奇、不了解的，抄寫、背誦下來，以後可以跟他人享</p>
+</li>
+<li>
+<p>How :  將在閱讀時看到的場景放置在現實生活中，如果有遇到這個問題可以供參考解決</p>
+</li>
+<li>
+<p>Why :  了解整個問題後，分析作者的思維結構、背後的動機、如何思考，當遇到問題需要解決，可以透過這種思維模式執行</p>
+</li>
+</ol>
+<p>過去學生時代的學習，也許死記硬背就能考高分，但是在現實生活中，並非所有問題都有正確答案，真正去思考才能讀透一本書，也就是融會貫通的精神所在。這也是為什麼同樣閱讀一本書，有些人卻能比其他人達到的成效高出許多。</p>
+<p>我個人個性比較急，常常想把書快速讀完，然後好像自己讀了很多書，很厲害一樣。但常常讀過卻沒有深入其義，只停留在第一或第二階段。在讀書會時發現同一本書有些人卻有非常深入透徹的想法，要漸漸讓自己能夠領悟第三階段，並非囫圇吞棗。</p>
 <hr>
-<p><img src="result1.jpg" alt="結果"> <img src="result2.png" alt="結果2"></p>
-<h1 id="書面資料-written-report">書面資料 Written Report</h1>
+<h1 id="閱讀的好處">閱讀的好處</h1>
+<p>想當然閱讀的好處大家聽到不想再聽，而最讓我眼睛發亮的是當我看到</p>
+<p>閱讀可使人從「單向度」變成「多向度」，（前提是要達到第三階段：Why）：</p>
+<ol>
+<li>
+<p>事實：分析決策</p>
+</li>
+<li>
+<p>邏輯：事實間的邏輯為何</p>
+</li>
+<li>
+<p>批判思維：不斷訓練思維方式</p>
+</li>
+</ol>
+<p>以及，之前聽過，未來收入跟閱讀量成正比，我後來去查了一下這個新聞<a href="https://kknews.cc/zh-tw/culture/jma648l.html" target="_blank" rel="noopener">收入越高的人越愛讀書</a></p>
 <hr>
-<p><a href="https://drive.google.com/drive/folders/126sHSHVP27LjqDtpRQmMCpdwN5nUHcUu" target="_blank" rel="noopener">了解更多此專題 Click on me</a></p>
+<p>我的閱讀列表與重點整理 : <a href="https://www.notion.so/lawrencekao/1a7fb57a6f3c4e30a8f1f5e45677b129?v=e89018e9e9c54144977390b1195ad432" target="_blank" rel="noopener">https://www.notion.so/lawrencekao/1a7fb57a6f3c4e30a8f1f5e45677b129?v=e89018e9e9c54144977390b1195ad432</a><br>
+<img src="1.jpg" alt="書"></p>
+<hr>
+<h1 id="推薦書單">推薦書單</h1>
+<p>我最喜愛比爾蓋茲的書單，非常多元，各種面向都有，尤其是對於興趣廣泛的我再適合不過了，而股癌是Podcaster，他的書單也很棒，而查里蒙格是巴菲特身邊非常重要的人，巴菲特常說：「沒有蒙格就沒有我」</p>
+<ol>
+<li>
+<p><a href="https://activity.books.com.tw/crosscat/show/A00000023102" target="_blank" rel="noopener">比爾蓋茲書單</a></p>
+</li>
+<li>
+<p><a href="https://www.evernote.com/shard/s706/client/snv?noteGuid=a0556273-7a2b-9e6b-6d51-33e2c856e353&amp;noteKey=94725ec975a01bbf3cedb6db1b378dec&amp;sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs706%2Fsh%2Fa0556273-7a2b-9e6b-6d51-33e2c856e353%2F94725ec975a01bbf3cedb6db1b378dec&amp;title=%25E8%2582%25A1%25E7%2599%258C%25E6%259B%25B8%25E5%2596%25AE%2528%25E5%25B0%2587%25E6%258C%2581%25E7%25BA%258C%25E6%259B%25B4%25E6%2596%25B0%25EF%25BC%258C%25E6%259C%2580%25E6%2596%25B0%25E7%25BD%25AE%25E9%25A0%2582%2529" target="_blank" rel="noopener">股癌書單</a></p>
+</li>
+<li>
+<p><a href="https://jujuchu.com/charlie-munger-s-recommended-reading-material/" target="_blank" rel="noopener">查里蒙格書單</a></p>
+</li>
+<li>
+<p><a href="https://events.eslite.com/2020/191217-CelebrityPicks/index.html" target="_blank" rel="noopener">誠品的各名人書單</a></p>
+</li>
+<li>
+<p><a href="https://planetofbooklist.com/" target="_blank" rel="noopener">書單星球</a></p>
+</li>
+</ol>
+<p>此外，最近發現這個Blog所撰寫的閱讀心得與推薦書非常值得 <a href="https://jujuchu.com/" target="_blank" rel="noopener">JUJU CHU 愛讀書</a></p>
+<hr>
+<h1 id="推薦整理-notion">推薦整理 Notion</h1>
+<p>近期有個朋友推薦我，他看完書後都會使用 Notion 記錄自己的筆記，在我看過他的排版還有方便性後，決定使用這個軟體記錄自己的閱讀</p>
+<p><a href="https://www.notion.so/product?utm_source=google&amp;utm_campaign=2075789713&amp;utm_medium=80211061801&amp;utm_content=372709093351&amp;utm_term=notion&amp;targetid=aud-840164194020:kwd-312974742&amp;gclid=CjwKCAjwq7aGBhADEiwA6uGZp09kAHOzRRUTrYU8jmxz0-dG-mf2iP5SN7yC6mUTvbUmbJ4VsVBAjRoCnjsQAvD_BwE" target="_blank" rel="noopener">Notion 網址</a></p>
+<p>其實網路上有許多人分享他的優點，我在這裡就不贅述<br>
+如：<a href="https://medium.com/%E8%B8%A2%E4%BB%96%E7%A2%8E%E7%A2%8E%E5%BF%B5/%E4%BA%BA%E5%8F%83-notion-%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97%E5%88%86%E4%BA%AB-230055957305" target="_blank" rel="noopener">Notion：使用心得分享</a></p>
+<hr>
+<blockquote>
+<p><strong>Go and grab a book and read !</strong></p>
+</blockquote>
 ]]></content>
       <tags>
-        <tag>Work</tag>
+        <tag>Blog</tag>
       </tags>
   </entry>
   <entry>
@@ -1181,65 +1087,6 @@ Step3. 建置論壇 Build Website</p>
       </tags>
   </entry>
   <entry>
-    <title> 義務役 2020.9.22-2021.1.11 </title>
-    <url>/myblog/2020/10/01/military/</url>
-    <content><![CDATA[<blockquote>
-<p>2020年不平靜的一年，也在最後一天結束軍旅生涯…</p>
-</blockquote>
-<div align="left"><img src="5.JPG" width="500"> </div>
-<p>當兵所遇到的以及各種建議，將依以下方式作介紹<br>
-(1) 基本介紹（應帶物品、食衣住行育樂）<br>
-(2) 操課內容（一階段、二階段）<br>
-(3) 自我經驗及建議（我所遇到的事）<br>
-(4) 心得分享（所學與感想）</p>
-<hr>
-<h1 id="基本介紹">基本介紹</h1>
-<p>∙ 入伍時間：119T (2020/9/22-2021/1/11) 個人折抵9天，預計1/2退伍，但又遇上假日，提早至12/31退伍</p>
-<p>∙ 所屬連隊：2營1連 - 於北訓中心，共2營，每營有4連(第4連為營部連 意指直屬連負責在戰場上補給裝備、彈藥，但在義務役操課都沒差)，每連差不多10班(基本上都按照身高編排)，每班約10人，共約800多人</p>
-<p>∙ 地理位置：桃園楊梅太平里（步行至楊梅火車站約25分鐘）</p>
-<p>∙ 所屬班級：十班器材班，共10人，二階段之後開始職物輪替，如：打飯、軍械、資收、內掃、公差等</p>
-<h2 id="食衣住行育樂">食衣住行育樂</h2>
-<p>∙ 食：雖然在網路上看到大家都在批評北訓的食物，但沒到自己認為的難吃，頂多食物很常重複，我還常去加菜加飯呢～</p>
-<div align="left"><img src="2.jpeg" width="500" height="500"> </div>
-∙ 衣：第一天會統一去領取物品
-<p>應帶物品推薦大家參考: <a href="http://jimmytraveling.com/blog/post/68331786" target="_blank" rel="noopener">【2019最新】當兵入伍攜帶物品清單（義務役新訓必備）</a></p>
-<p>** 小筆記本、資料袋、衣架、肥皂、刮鬍刀、海綿等，在北訓中心是統一購買的一袋，很貴！420元，個人覺得價值才200吧</p>
-<p>∙ 住：宿舍為40人左右的大通舖，床有上下兩層，都有枕頭跟棉被 <img src="1.jpeg" alt="1"></p>
-<p>∙ 行：真心覺得貴，從營區到桃園火車站就要價120，到台北200，基隆250，宜蘭300，不過搭遊覽車還是方便啦，錢要代夠</p>
-<p>∙ 樂： 第二階段開始有許多社團課及休息時間，可以玩桌遊（是我玩過最多次狼人殺的時期），其他操課或聽招募聽講都會偷玩猜數字或Bingo</p>
-<hr>
-<h1 id="操課內容">操課內容</h1>
-<p>推薦參考：<a href="https://matters.news/@lushaoming/%E7%95%B6%E5%85%B5%E5%BF%85%E8%AE%80-%E6%A5%8A%E6%A2%85%E5%A4%AA%E5%B9%B3%E9%87%8C%E5%8C%97%E8%A8%93%E4%B8%AD%E5%BF%83-107-t-1-b1-c-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%B4%B9-bafyreigbzyqklgmqf5j3xd4lw3uhnj2o7lfxcwhtl3uwx4566kqvrxu77q" target="_blank" rel="noopener">【 當兵必讀 - 楊梅太平里北訓中心 107T 1B1C #基本介紹】</a></p>
-<hr>
-<h1 id="自我經驗與建議">自我經驗與建議</h1>
-<h2 id="輔導長公差">輔導長公差</h2>
-<p>記得入伍第一天，大家都還無頭緒時，輔導長便詢問有無自願當輔導長公差，我立馬舉手，可享有放假、免操課、吃零食的福利，但要負責收錢、打雜等文書作業，有時候都會比別人晚就寢，但還是建議可以擔任公差職務，大家無聊到發慌時，你還有事做XD。</p>
-<h2 id="同梯朋友">同梯朋友</h2>
-<p>班長有說我們這梯次都是高學歷份子，身邊幾乎都是大學、研究所的、還有醫學系的朋友，沒遇到所謂的8+9，此外，這梯都是來自桃園、台北、基隆、宜蘭地區，我的鄰兵們也都滿罩的，會提醒集合時間還有攜帶裝備等。</p>
-<h2 id="懇親會">懇親會</h2>
-<p>我們第二週就是懇親會，記住！如果家人可以來一定要請他們來，因為如果他們帶走我們就能12點離開，如果沒有家人來，只能1600離開，還要收拾垃圾、善後工作等。</p>
-<h2 id="招募與志願役">招募與志願役</h2>
-<p>第一週都是在聽招募，開始的時候是抱著可以偷懶去參訪，便勾選自己認為最帥也最操的特戰指揮部，原本完全沒有簽志願役的想法，然而當自己開始了解軍種制度（士兵、士官、軍官）的福利政策、薪資上看5W以及各項技能學習後，開始漸漸對國軍改觀，我不能說當軍人有多好，但是現在講求人性化操課、並有國家提供的考證照機制，讓軍人退伍後仍能透過證照取得其他工作，甚至從軍20年後享有終身俸，同時不會有超時加班的問題，每天上午兩節及下午兩節操課，下午4-6點有運動時間，顧及到每個人的健康，6點以後就是自由時間，住附近的(50km以內)可以住家裡，隔天7:30再到營區報到就好，類似一個公司的制度。去到參訪地點後，看到餐點的提供比北訓中心好十萬八千里，深深吸引到我，特戰指揮部還有個重點是要學跳傘，也是必備技能，在外跳傘是很貴的體驗，這裡是免費且必須的。<br>
-然而志願役一簽就是四年，四年後自幾可能難以回歸本行，雖然每天晚上都有時間進修自我，但我無法保證自己四年後會不會因軍中的弟兄影響我的進修，擁有研究所的學歷並不會在軍中有效用，頂多長官多關注你，最後，自己還是有更遠的志向抱負，想到外面更寬廣的世界看看。</p>
-<h2 id="打靶">打靶</h2>
-<p>第三週的第一天開始練習臥射、清槍的基本口令動作，為隔天打靶做準備，太平里打靶場距離營區路程約40分鐘，全副武裝步行至打靶場，當天風很大，紅土飛揚，視線時好時壞，打靶距離是175M，剛好是子彈彈道上揚的時候，因此瞄準靶的腰部位置，但是我至今仍不知道為什麼我命中0發，接著就是一直輪著打，大概打了8輪、60發左右的子彈，班長說領多少子彈就要打完多少，原本以為是像高中實彈射擊一人打個一輪就收工回家，沒想到一去就是一整天的實彈射擊，因此我們中午也是在靶場坐著吃午餐、睡午覺，打靶當下的聲音真的很震撼，就像煙火在耳邊爆炸的音量，同時強大的後座力會讓全身都在抖動，穩住氣再打、不要急，我也在試著抓到穩定點。</p>
-<h2 id="飯菜問題">飯菜問題</h2>
-<p>第三週，指揮官（營區最大的老大）接獲消息有人通報說飯菜難吃，而且吃不飽，所以親自前往餐廳視察，看到飯菜直接暴怒，大罵營長還有連長為何飯菜每個人的量不一樣，而且餐點沒變化等，當著所有人的面要營長改進，說完還回頭問：指揮官我帥不帥，感覺有像套好的劇情，但果真隔天的飯菜變得豐富而且好吃、份量也多，而且還吩咐以後每週四會進行用餐滿意度調查的統計，想改善餐點問題，指揮官日後告訴我們，要當個如何解決問題的人，而不是看到問題還不解決，讓我深深印在腦中。</p>
-<h2 id="鑑測當週的假日">鑑測當週的假日</h2>
-<p>指揮官說如果9項測驗全過，週五1400就可以走，少一項延後一小時，但最晚1700就離開，而收假是下週一的1900，北訓真是好地方</p>
-<hr>
-<h1 id="心得分享">心得分享</h1>
-<p>令我訝異的是帶我的班長們也都是很合理化、就事論事的領導者，也都會跟我們聊天打屁，不會一板一眼，該認真就認真，該輕鬆就輕鬆，比起外面說的不合理要求差得多，班長有說那是以前世代的作法，他們過去也有經歷那些世代的管制方法，現在都是追求與時俱進、不做出不合理要求。<br>
-此外，班長也希望我們帶上自己的書充實自我，因為退伍後基本上都要求職，更應該精進自己，真心佩服班長的體貼，雖然也遇到許多不公平的對待或缺乏效率的問題，但人人都可以試著透過溝通與諒解去平衡所遇到的狀況。<br>
-聽長官們說我們是末代的北區專長訓練中心，以後營區會改成109旅的駐點，因此日後應該不會看到新兵在北區服役了，此篇分享的內容會因不同連隊或地區而有所差異，若有要服役的可以參考看看。<br>
-這四個月下來，最讓我感到心煩的是每次的收假日以及越接近退伍日矛盾感越重，一方面很開心快退伍，一方面卻在為將來進入職場感到恐懼與擔憂，期望每個同梯弟兄都能達到自己的理想，以後再約！後會有期～</p>
-<p><img src="6.jpg" alt="6"></p>
-]]></content>
-      <tags>
-        <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Maya學習成果</title>
     <url>/myblog/2018/12/31/maya/</url>
     <content><![CDATA[<blockquote>
@@ -1299,6 +1146,102 @@ Maya is a 3D computer animation software with powerful modeling, color rendering
 ]]></content>
       <tags>
         <tag>Work</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大學專題 Graduate Thesis- 僑牽ＯＣＣ</title>
+    <url>/myblog/2017/12/13/college-project/</url>
+    <content><![CDATA[<blockquote>
+<p>暨南大學是全台外籍生比例最高的學校 其中有非常大一部分是僑生<br>
+我們和僑生同學相處的日常 有溫馨、有歡笑、也有很多意想不到的趣事<br>
+「 僑牽 」是我們為僑生同學們打造的平台</p>
+<p>Nation Chi Nan University is the school with the highest proportion of foreign students in Taiwan. A very large part of it is overseas Chinese. The daily life we ​​spend with our overseas students is warm, funny, and there are many unexpected things. “Overseas Chinese” is our platform for overseas students.</p>
+</blockquote>
+<p><a href="https://www.facebook.com/ChiauChian.OCC/" target="_blank" rel="noopener">粉專 僑牽 ｜ ＯＣＣ</a></p>
+<div align="right"><img src="logo.png" width="150" height="150"> </div>
+<h1 id="想法與現況-concept">想法與現況 Concept：</h1>
+<hr>
+<p>依據教育部統計處發布資料顯示，臺灣現有近 12,000 名僑生，每年 約以 10%的比例快速成長。然而僑生來台前的資訊蒐集，多限於官方的 法規、政策、各校簡章等，生活問題少有相關文章可供參考。而來台後 面對文化與生活習慣差異，甚至是學業問題，多是仰賴同儕之間交流與 扶持。<br>
+在經過比較相關性高的各大交流平台中，我們選擇建立「僑牽」論 壇，除了可以讓資料有足夠地方可以彙整呈現，對於發問、交流等需求 也相當出色。另外現行社群媒體盛行，我們也將使用臉書作為推廣管道， 以觸及更多族群。<br>
+我們期盼透過創立臉書粉絲專頁以達到招攬使用者、宣傳活動等功 能;創立論壇以達到官方及非官方資訊彙整提供、諮詢空間、生活貼近 度等呈現。讓已來台僑生提供生活經驗分享，初來台之僑生更能融入台 灣的生活，欲來台僑生可初步認識台灣。更進一步希望台灣生也能了解 僑生們的不同文化民情，增進國際交流，擴展國際視野。<br>
+According to the statistics released by the Statistics Department of the Ministry of Education, there are nearly 12,000 overseas Chinese students in Taiwan, which grows rapidly by about 10% each year. However, the information gathering before the overseas Chinese came to Taiwan was mostly limited to official regulations, policies, and school briefs. There are few relevant articles on life issues for reference. After coming to Taiwan, facing the differences in culture and living habits, and even academic problems, most of them rely on exchanges and support between their peers.<br>
+Among the major exchange platforms that have been highly correlated, we chose to establish the “Overseas Chinese” forum. In addition to allowing the information to have enough places to be presented, the demand for questions and communication is also excellent. In addition, the current social media is prevalent, and we will also use Facebook as a promotion channel to reach more ethnic groups.<br>
+We look forward to the creation of Facebook fan pages to reach users, publicity activities, etc.; to create forums to achieve official and unofficial information collection, consultation space, life closeness and other presentations. Let the overseas Chinese students who have come to Taiwan provide life experience sharing. The overseas Chinese who come to Taiwan will be able to integrate into Taiwan’s life. Taiwanese who want to come to Taiwan can get to know Taiwan. I further hope that Taiwanese students can also understand the different cultures and customs of overseas Chinese, enhance international exchanges and expand their international horizons.</p>
+<p><img src="website.png" alt="網頁首頁"></p>
+<h1 id="進行步驟及活動成效-prcedure-and-result">進行步驟及活動成效 Prcedure and Result</h1>
+<hr>
+<h2 id="步驟-step">步驟 Step：</h2>
+<p>Step1. 建立粉絲專頁 Build Fan Page<br>
+Step2. 宣傳活動 Advertisement and Activities<br>
+Step3. 建置論壇 Build Website</p>
+<h2 id="成效-result">成效 Result：</h2>
+<hr>
+<p><img src="result1.jpg" alt="結果"> <img src="result2.png" alt="結果2"></p>
+<h1 id="書面資料-written-report">書面資料 Written Report</h1>
+<hr>
+<p><a href="https://drive.google.com/drive/folders/126sHSHVP27LjqDtpRQmMCpdwN5nUHcUu" target="_blank" rel="noopener">了解更多此專題 Click on me</a></p>
+]]></content>
+      <tags>
+        <tag>Work</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title> 義務役 2020.9.22-2021.1.11 </title>
+    <url>/myblog/2020/10/01/military/</url>
+    <content><![CDATA[<blockquote>
+<p>2020年不平靜的一年，也在最後一天結束軍旅生涯…</p>
+</blockquote>
+<div align="left"><img src="5.JPG" width="500"> </div>
+<p>當兵所遇到的以及各種建議，將依以下方式作介紹<br>
+(1) 基本介紹（應帶物品、食衣住行育樂）<br>
+(2) 操課內容（一階段、二階段）<br>
+(3) 自我經驗及建議（我所遇到的事）<br>
+(4) 心得分享（所學與感想）</p>
+<hr>
+<h1 id="基本介紹">基本介紹</h1>
+<p>∙ 入伍時間：119T (2020/9/22-2021/1/11) 個人折抵9天，預計1/2退伍，但又遇上假日，提早至12/31退伍</p>
+<p>∙ 所屬連隊：2營1連 - 於北訓中心，共2營，每營有4連(第4連為營部連 意指直屬連負責在戰場上補給裝備、彈藥，但在義務役操課都沒差)，每連差不多10班(基本上都按照身高編排)，每班約10人，共約800多人</p>
+<p>∙ 地理位置：桃園楊梅太平里（步行至楊梅火車站約25分鐘）</p>
+<p>∙ 所屬班級：十班器材班，共10人，二階段之後開始職物輪替，如：打飯、軍械、資收、內掃、公差等</p>
+<h2 id="食衣住行育樂">食衣住行育樂</h2>
+<p>∙ 食：雖然在網路上看到大家都在批評北訓的食物，但沒到自己認為的難吃，頂多食物很常重複，我還常去加菜加飯呢～</p>
+<div align="left"><img src="2.jpeg" width="500" height="500"> </div>
+∙ 衣：第一天會統一去領取物品
+<p>應帶物品推薦大家參考: <a href="http://jimmytraveling.com/blog/post/68331786" target="_blank" rel="noopener">【2019最新】當兵入伍攜帶物品清單（義務役新訓必備）</a></p>
+<p>** 小筆記本、資料袋、衣架、肥皂、刮鬍刀、海綿等，在北訓中心是統一購買的一袋，很貴！420元，個人覺得價值才200吧</p>
+<p>∙ 住：宿舍為40人左右的大通舖，床有上下兩層，都有枕頭跟棉被 <img src="1.jpeg" alt="1"></p>
+<p>∙ 行：真心覺得貴，從營區到桃園火車站就要價120，到台北200，基隆250，宜蘭300，不過搭遊覽車還是方便啦，錢要代夠</p>
+<p>∙ 樂： 第二階段開始有許多社團課及休息時間，可以玩桌遊（是我玩過最多次狼人殺的時期），其他操課或聽招募聽講都會偷玩猜數字或Bingo</p>
+<hr>
+<h1 id="操課內容">操課內容</h1>
+<p>推薦參考：<a href="https://matters.news/@lushaoming/%E7%95%B6%E5%85%B5%E5%BF%85%E8%AE%80-%E6%A5%8A%E6%A2%85%E5%A4%AA%E5%B9%B3%E9%87%8C%E5%8C%97%E8%A8%93%E4%B8%AD%E5%BF%83-107-t-1-b1-c-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%B4%B9-bafyreigbzyqklgmqf5j3xd4lw3uhnj2o7lfxcwhtl3uwx4566kqvrxu77q" target="_blank" rel="noopener">【 當兵必讀 - 楊梅太平里北訓中心 107T 1B1C #基本介紹】</a></p>
+<hr>
+<h1 id="自我經驗與建議">自我經驗與建議</h1>
+<h2 id="輔導長公差">輔導長公差</h2>
+<p>記得入伍第一天，大家都還無頭緒時，輔導長便詢問有無自願當輔導長公差，我立馬舉手，可享有放假、免操課、吃零食的福利，但要負責收錢、打雜等文書作業，有時候都會比別人晚就寢，但還是建議可以擔任公差職務，大家無聊到發慌時，你還有事做XD。</p>
+<h2 id="同梯朋友">同梯朋友</h2>
+<p>班長有說我們這梯次都是高學歷份子，身邊幾乎都是大學、研究所的、還有醫學系的朋友，沒遇到所謂的8+9，此外，這梯都是來自桃園、台北、基隆、宜蘭地區，我的鄰兵們也都滿罩的，會提醒集合時間還有攜帶裝備等。</p>
+<h2 id="懇親會">懇親會</h2>
+<p>我們第二週就是懇親會，記住！如果家人可以來一定要請他們來，因為如果他們帶走我們就能12點離開，如果沒有家人來，只能1600離開，還要收拾垃圾、善後工作等。</p>
+<h2 id="招募與志願役">招募與志願役</h2>
+<p>第一週都是在聽招募，開始的時候是抱著可以偷懶去參訪，便勾選自己認為最帥也最操的特戰指揮部，原本完全沒有簽志願役的想法，然而當自己開始了解軍種制度（士兵、士官、軍官）的福利政策、薪資上看5W以及各項技能學習後，開始漸漸對國軍改觀，我不能說當軍人有多好，但是現在講求人性化操課、並有國家提供的考證照機制，讓軍人退伍後仍能透過證照取得其他工作，甚至從軍20年後享有終身俸，同時不會有超時加班的問題，每天上午兩節及下午兩節操課，下午4-6點有運動時間，顧及到每個人的健康，6點以後就是自由時間，住附近的(50km以內)可以住家裡，隔天7:30再到營區報到就好，類似一個公司的制度。去到參訪地點後，看到餐點的提供比北訓中心好十萬八千里，深深吸引到我，特戰指揮部還有個重點是要學跳傘，也是必備技能，在外跳傘是很貴的體驗，這裡是免費且必須的。<br>
+然而志願役一簽就是四年，四年後自幾可能難以回歸本行，雖然每天晚上都有時間進修自我，但我無法保證自己四年後會不會因軍中的弟兄影響我的進修，擁有研究所的學歷並不會在軍中有效用，頂多長官多關注你，最後，自己還是有更遠的志向抱負，想到外面更寬廣的世界看看。</p>
+<h2 id="打靶">打靶</h2>
+<p>第三週的第一天開始練習臥射、清槍的基本口令動作，為隔天打靶做準備，太平里打靶場距離營區路程約40分鐘，全副武裝步行至打靶場，當天風很大，紅土飛揚，視線時好時壞，打靶距離是175M，剛好是子彈彈道上揚的時候，因此瞄準靶的腰部位置，但是我至今仍不知道為什麼我命中0發，接著就是一直輪著打，大概打了8輪、60發左右的子彈，班長說領多少子彈就要打完多少，原本以為是像高中實彈射擊一人打個一輪就收工回家，沒想到一去就是一整天的實彈射擊，因此我們中午也是在靶場坐著吃午餐、睡午覺，打靶當下的聲音真的很震撼，就像煙火在耳邊爆炸的音量，同時強大的後座力會讓全身都在抖動，穩住氣再打、不要急，我也在試著抓到穩定點。</p>
+<h2 id="飯菜問題">飯菜問題</h2>
+<p>第三週，指揮官（營區最大的老大）接獲消息有人通報說飯菜難吃，而且吃不飽，所以親自前往餐廳視察，看到飯菜直接暴怒，大罵營長還有連長為何飯菜每個人的量不一樣，而且餐點沒變化等，當著所有人的面要營長改進，說完還回頭問：指揮官我帥不帥，感覺有像套好的劇情，但果真隔天的飯菜變得豐富而且好吃、份量也多，而且還吩咐以後每週四會進行用餐滿意度調查的統計，想改善餐點問題，指揮官日後告訴我們，要當個如何解決問題的人，而不是看到問題還不解決，讓我深深印在腦中。</p>
+<h2 id="鑑測當週的假日">鑑測當週的假日</h2>
+<p>指揮官說如果9項測驗全過，週五1400就可以走，少一項延後一小時，但最晚1700就離開，而收假是下週一的1900，北訓真是好地方</p>
+<hr>
+<h1 id="心得分享">心得分享</h1>
+<p>令我訝異的是帶我的班長們也都是很合理化、就事論事的領導者，也都會跟我們聊天打屁，不會一板一眼，該認真就認真，該輕鬆就輕鬆，比起外面說的不合理要求差得多，班長有說那是以前世代的作法，他們過去也有經歷那些世代的管制方法，現在都是追求與時俱進、不做出不合理要求。<br>
+此外，班長也希望我們帶上自己的書充實自我，因為退伍後基本上都要求職，更應該精進自己，真心佩服班長的體貼，雖然也遇到許多不公平的對待或缺乏效率的問題，但人人都可以試著透過溝通與諒解去平衡所遇到的狀況。<br>
+聽長官們說我們是末代的北區專長訓練中心，以後營區會改成109旅的駐點，因此日後應該不會看到新兵在北區服役了，此篇分享的內容會因不同連隊或地區而有所差異，若有要服役的可以參考看看。<br>
+這四個月下來，最讓我感到心煩的是每次的收假日以及越接近退伍日矛盾感越重，一方面很開心快退伍，一方面卻在為將來進入職場感到恐懼與擔憂，期望每個同梯弟兄都能達到自己的理想，以後再約！後會有期～</p>
+<p><img src="6.jpg" alt="6"></p>
+]]></content>
+      <tags>
+        <tag>Blog</tag>
       </tags>
   </entry>
   <entry>
@@ -1368,6 +1311,63 @@ From graph, we can see that the trend we predicted is similar to the actual situ
 ]]></content>
       <tags>
         <tag>Work</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大馬遊2018/7/21~2018/7/29</title>
+    <url>/myblog/2018/07/30/Malaysia/</url>
+    <content><![CDATA[<blockquote>
+<p>馬六甲(Malacca)&gt;吉隆坡(Kuala Lumpur)&gt;檳城(Penang)&gt;蘭卡威(langkawi)&gt;雲頂高原(Genting highlands)&gt;柔佛(Johor)&gt;新加坡</p>
+</blockquote>
+<p><img src="lankawei.jpg" alt="蘭卡威"></p>
+<hr>
+<h1 id="行程規畫">行程規畫</h1>
+<p><a href="https://gsy-life.webnode.tw/_files/200000006-8a0808b03e/%E9%A6%AC%E4%BE%86%E8%A5%BF%E4%BA%9E%E4%B9%8B%E6%97%85.pdf" target="_blank" rel="noopener">行程規劃 : Click On Me</a></p>
+<hr>
+<h1 id="行前準備">行前準備</h1>
+<p>由於是在暑假熱季前往，衣物方面幾乎都是短袖短褲（但是要注意可能因為機上冷氣太強，所以有攜帶薄襯衫），還要攜帶泳褲以便下水，防曬物品更不能少（我就被曬傷了 嚴重脫皮) &gt;&lt;</p>
+<hr>
+<h1 id="travel">Travel</h1>
+<h2 id="day-1">Day 1</h2>
+<p>坐飛機到Ｍalaysia時間大約為4小時，到達 Kuala Lumpur 已經是晚上8、9點，出機場直達麥當勞，他們的麥當勞比台灣便宜，而且有魚漢堡（1馬幣=7.6台幣），也是出國後才知道只有台灣麥當勞垃圾要自己收（好習慣😊）。<br>
+接著放完行李後，前往麻六甲(Malacca)品嚐道地沙爹，口味偏重、調味多，醬料如果沒有攪拌，下層便會燒焦，點飲料時推薦100plus(像有氣的舒跑)</p>
+<p><img src="1.jpg" alt="Day1"></p>
+<h2 id="day-2">Day 2</h2>
+<p>在麻六甲，先是前往著名地標，而後到顛倒屋拍照，再坐車前往吉隆坡玩水上樂園Sunway（門票好像要快130RM 約930NTD)，印象海盜船沒有360度，但這裡的有，這裡還有人造浪，還好都有玩到，晚上前往雙子星大樓（著名地標），在周邊吃小吃，印度薄餅好吃～</p>
+<p><img src="2.jpg" alt="Day2-1">   <img src="3.jpg" alt="Day2-2"></p>
+<h2 id="day-3">Day 3</h2>
+<p>前往蝙蝠洞，在階梯上充滿了獼猴，雖然可愛，會搶人的物品或食物<br>
+結束早上行程後，前往檳城，到達時間已是下午5點，購買後天前往蘭卡威的船票，晚上吃當地的夜市，再去逛阿凡達館（好像是東西都亮亮的像阿凡達？有點不懂）</p>
+<p><img src="4.jpg" alt="Day3"></p>
+<h2 id="day-4">Day 4</h2>
+<p>早起前往當地有名的早餐店多春，吃完逛鬼怪博物館，再逛歷史博物館，整天走走逛逛的行程，晚上開車去洗衣店洗衣服</p>
+<p><img src="6.jpg" alt="Day4-1">   <img src="5.jpg" alt="Day4-2"></p>
+<h2 id="day-5">Day 5</h2>
+<p>早起搭船前往蘭卡威，一下船，便有人推銷我們套票行程，每人200RM 大約1500NTD，便能租車、潛水，我們便購買了此行程，坐船到達許多分散的島嶼，還有很多沙灘，有些景點無聊且東西貴，晚上去吃一間華人開的餐廳，一個人台幣大約300左右，但超好吃也超級飽</p>
+<p><img src="7.jpg" alt="Day5"></p>
+<h2 id="day-6">Day 6</h2>
+<p>早起吃了早餐今天搭船前往沙灘潛水，那裡無限制潛水，而且沒有人會攔你要游到哪，只是有個邊界，累了可以上岸休息，傍晚時，我們回到飯店旁的沙灘玩遊樂設施，晚上吃馬來人開的店（有貴到、而且吃不飽），馬來西亞的朋友說有點被騙了，到馬來人開的餐廳要注意，最後逛了shopping mall，結束一天</p>
+<p><img src="8.jpg" alt="Day6"></p>
+<h2 id="day-7">Day 7</h2>
+<p>一大早大雨滂沱，朋友鑰匙差點搞丟，找了半天，原來掉在昨天吃飯的地方，一大早坐計程車趕車到搭船點，幸好及時趕上船班，離開蘭卡威、離開檳城，一路南下至雲頂，今晚的落角：雲頂高原（Genting Highland)裡面有很大型的賭場，我們吃完飯便去賭場，有生第一次去賭場，好像電影的場景都搬到眼前，進出口都有安檢檢查是否成年</p>
+<p>(賭場不能拍照)</p>
+<h2 id="day-89">Day 8,9</h2>
+<p>離開雲頂，前往馬來西亞朋友住家，住了一天，隔天到新加坡坐飛機回台灣，只在新加坡待了2小時</p>
+<p><img src="9.jpg" alt="Day8-9"></p>
+<h1 id="總結">總結</h1>
+<blockquote>
+<p>有吉隆坡的車牌好像大家會讓你 因為吉隆坡的人開車很兇<br>
+機車也可以騎高速公路 也不時看到泰國車牌<br>
+油價便宜 95汽油 一公升16塊台幣左右<br>
+馬來西亞朋友都會至少五種語言 跟當地人溝通不停切換 我當神拜<br>
+食物重口味又辣 大推沙爹、肉骨茶、Roti tissue<br>
+飲料推 100 plus、奶茶、milo 、涼茶<br>
+蘭卡威（langkawi)的酒比珍奶便宜<br>
+馬來西亞真的是美食天堂～</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Travel</tag>
       </tags>
   </entry>
 </search>
