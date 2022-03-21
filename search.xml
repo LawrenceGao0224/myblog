@@ -1,221 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>NBA老闆的慧眼 - Affinity Propagation</title>
-    <url>/myblog/2019/01/29/AP-algo/</url>
-    <content><![CDATA[<h1 id="概念發想concept">概念發想Concept</h1>
-<hr>
-<p><a href="https://github.com/LawrenceGao0224/Intelligence-Oriented-Management-Decision/tree/master/%E6%99%BA%E6%85%A7%E5%9E%8B%E6%9C%9F%E6%9C%AB%E5%A0%B1%E5%91%8A">程式碼連結Click On Me</a></p>
-<p><img src="NBA.jpg" alt="NBA"></p>
-<p>我們將自己設想為球隊分析師，並希望能遞上一份不讓老闆&quot;打臉&quot;的分群資料，提供球隊高層在球員交易、補強、替代方案上有份合理客觀的依據。</p>
-<p>We envision ourselves as team analysts, and hope to hand over a group of information that provides the team’s top management with a reasonable and objective basis for player trading, reinforcement, and alternatives.</p>
-<hr>
-<h1 id="操作方法operation">操作方法Operation</h1>
-<p>將NBA所有球員資料(Ex: 薪水、年齡、得分、助攻、有效命中率、真實命中率、球權佔有率、籃板率、效率值…)，以AP演算法實作，計算各球員資料的負歐積里德距離，調整preference、Damping Factor參數，求出k個高質量聚類，且我們將多維度的資料透過PCA()方法壓縮為低維度的資料，實現可視化。</p>
-<p>All NBA player information (Ex: salary, age, score, assists, effective hit rate, true hit rate, possession rate, rebound rate, efficiency value…) is calculated by AP algorithm to calculate each player’s data. The negative Ourich Reed distance, adjust the preferences, Damping Factor parameters, find k high-quality clusters, and we compress the multi-dimensional data into low-dimensional data through PCA () method to achieve visualization</p>
-<p>資料來源 ： (<a href="https://www.kaggle.com/acasalan/nba-player-stats-201718" target="_blank" rel="noopener">https://www.kaggle.com/acasalan/nba-player-stats-201718</a>)</p>
-<hr>
-<h1 id="實作結果-result">實作結果 Result</h1>
-<h2 id="調整參數-adjust-parameter">調整參數 Adjust parameter:</h2>
-<ol>
-<li>Preference:<br>
-Preference = 中位數(-62.5683289159)<br>
-群集數: 43</li>
-</ol>
-<p><img src="1-1.png" alt="43"></p>
-<p>Preference = -500<br>
-群集數: 7</p>
-<p><img src="1-2.png" alt="7"></p>
-<ol start="2">
-<li>Damping Factor:</li>
-</ol>
-<p>Damping Factor = 0.5      --&gt;      Time = 0.8640606880187988 seconds.<br>
-Damping Factor = 0.9      --&gt;      Time = 1.2220699787139893 seconds.</p>
-<h2 id="所有球員資料-all-players">所有球員資料 All players:</h2>
-<p><img src="2-1.png" alt="2-1">   <img src="2-2.png" alt="2-2"></p>
-<h2 id="依球員打球的位置-according-to-position">依球員打球的位置 According to position</h2>
-<ol>
-<li>
-<p>center © : 8群集數<br>
-<img src="3-1.png" alt="3-1"></p>
-</li>
-<li>
-<p>power forward (PF) : 8群集數<br>
-<img src="3-2.png" alt="3-2"></p>
-</li>
-<li>
-<p>small forward (SF) : 12群集數<br>
-<img src="3-3.png" alt="3-3"></p>
-</li>
-<li>
-<p>point guard (PG) : 11群集數<br>
-<img src="3-4.png" alt="3-4"></p>
-</li>
-<li>
-<p>shooting guard (SG) : 4群集數<br>
-<img src="3-5.png" alt="3-5"></p>
-</li>
-</ol>
-<h2 id="依不同屬性">依不同屬性</h2>
-<p>進攻性質 or 防守性質…</p>
-<hr>
-<h1 id="延伸探討-any-imperfect">延伸探討  Any imperfect ?</h1>
-<p>然而在我們丟入的data有其盲點存在,NBA的老闆或球隊在選擇球員上,並不會只觀看球員在場上的數據表現,還包括許多因素,事無法量化或在數據表現出來的(包括球員心理狀態、球員間磨合度…)</p>
-<p>However, the data we throw in has its  blind spots. The NBA boss or team is not only watching the performance of the players on the field, but also includes many factors, which cannot be quantified or expressed in the data. (including the player’s mental state, the player’s running-in…)</p>
-<p>如下:</p>
-<p>❖商業價值 ex: Dwyane Wade<br>
-Wade是大家耳熟能詳的巨星,層經出現在2K遊戲的封面上,但最近的數據表現並不如其他球員出色,但仍是有淺力的球員,也累積許多粉絲,粉絲能帶來商業價值。<br>
-<img src="4-1.png" alt="4-1"></p>
-<p>❖球員背景 ex: Jeremy Lin<br>
-Jeremy是著名的台裔球員,能吸引亞洲地區的球迷觀注其球隊,帶來利益。<br>
-<img src="4-2.png" alt="4-2"></p>
-<p>❖健康因素 ex: Derrick Rose<br>
-Rose是最年輕獲選MVP的球員,但由於前幾賽季腳傷原因,造成都個<br>
-賽季缺賽,而傷後復出便不如以前突出,這也是無法顯現在數據上的。<br>
-<img src="4-3.png" alt="4-3"></p>
-<hr>
-<h1 id="參考資料">參考資料</h1>
-<p>(<a href="https://zi.media/@yidianzixun/post/uKZUFF?fbclid=IwAR1Dib-4T5MkM2x_helYBtq0TgTD871fAixs-4sBivOUXUNjuMl07xFahOs" target="_blank" rel="noopener">https://zi.media/@yidianzixun/post/uKZUFF?fbclid=IwAR1Dib-4T5MkM2x_helYBtq0TgTD871fAixs-4sBivOUXUNjuMl07xFahOs</a>)</p>
-<p>(<a href="https://www.cnblogs.com/huadongw/p/4202492.html?fbclid=IwAR3PHEOcrAar0rCI1e9AeYBxV0fI6JKJIRqGAJ3ag9BnlleT5M9v_8oNiy0" target="_blank" rel="noopener">https://www.cnblogs.com/huadongw/p/4202492.html?fbclid=IwAR3PHEOcrAar0rCI1e9AeYBxV0fI6JKJIRqGAJ3ag9BnlleT5M9v_8oNiy0</a>)</p>
-<p>(<a href="https://www.itread01.com/articles/1495821610.html?fbclid=IwAR1Ssz1ZCdqnxtT6obwpx0AFRDBEGrqKK0BXmMGPK-I1lvNwqJuif9EhZt0" target="_blank" rel="noopener">https://www.itread01.com/articles/1495821610.html?fbclid=IwAR1Ssz1ZCdqnxtT6obwpx0AFRDBEGrqKK0BXmMGPK-I1lvNwqJuif9EhZt0</a>)</p>
-<p>(<a href="https://scikit-learn.org/stable/auto_examples/applications/plot_stock_market.html?fbclid=IwAR29Qcy3SrWFDjHAJGF--XO-0zW2FWt8t4dYZT0lsYxUDqJpBz17ds2pQQM" target="_blank" rel="noopener">https://scikit-learn.org/stable/auto_examples/applications/plot_stock_market.html?fbclid=IwAR29Qcy3SrWFDjHAJGF–XO-0zW2FWt8t4dYZT0lsYxUDqJpBz17ds2pQQM</a>)</p>
-<p>(<a href="https://scikit-learn.org/stable/auto_examples/cluster/plot_affinity_propagation.html?fbclid=IwAR2SsWtrb5MJdypMha6G59nWSeEwf7QK5vzmCa_UefR9mHDT0WzLgEbqng4#sphx-glr-auto-examples-cluster-plot-affinity-propagation-py" target="_blank" rel="noopener">https://scikit-learn.org/stable/auto_examples/cluster/plot_affinity_propagation.html?fbclid=IwAR2SsWtrb5MJdypMha6G59nWSeEwf7QK5vzmCa_UefR9mHDT0WzLgEbqng4#sphx-glr-auto-examples-cluster-plot-affinity-propagation-py</a>)</p>
-]]></content>
-      <tags>
-        <tag>Work</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>找工作心路歷程 2021.1-2021.4</title>
-    <url>/myblog/2021/04/14/Lookforjobs/</url>
-    <content><![CDATA[<blockquote>
-<p>伴隨著退伍日其接近，心中五味雜陳，一則以喜，一則以憂，開心退伍後不再受到約束，擔憂求職路上遇到的波瀾<br>
-非常謝謝所有身邊的同學還有學長姐的經驗分享還有給我的鼓勵</p>
-</blockquote>
-<h1 id="心路歷程">心路歷程</h1>
-<p>畢業前，原本計畫著出國交換，然而卻因為兵役跟疫情，打亂了所有計畫，也沒研替也沒事先找，就等到當完兵才開始。<br>
-經歷了一段找工作的漫長時間，第一份工作找了4個多月，日子難熬、十分艱辛，同儕之間的比較等等，壓力很大<br>
-我想找過工作都能體會我想講的，其實也不是找不到工作，而是找不到自己喜歡且適合的工作，自從第一個月開始每天望著求職網、公司開的職缺，確認好自己的目標後，專注於所需能力的提升，尤其當兵過後，許多以前學的都忘光了，還需要花時間複習，自己投遞履歷的方式不是撒網型，而是針對自己最有興趣且會學得到東西的才丟，<br>
-一開始有許多公司的邀約，然而面試後發現有些不是想做的就拒絕了，當遇到非常喜歡的工作時卻被拒絕了，太玩弄人生了<br>
-隨著時間的推移，越來越少面試機會、每天盯著手機mail，身邊開始有聲音，如「你就是太挑啦！」、「先求有再求好！」，朋友的邀約都不太想前往，有時甚至是關心的話都覺得特別刺耳，「最近如何？」、「開始工作了嗎？」、「下禮拜吃飯啦！」，便開始懷疑自己，「我是不是真的太挑？」「我其實沒有自己想的那麼好對吧？」「如果當初不要拒絕那些公司就好了。」「還是隨便找份工作做吧！」覺得自己越來越黑暗。<br>
-然而就在每次沮喪絕望後，身邊也有許多還在找工作的朋友也在水深火熱中，我們互相打氣、互相討論，而且許多身邊同學、學長姊也都會提供我寶貴的經驗還有建議，讓我可以更正面、更有毅力的去面對未來目標，有時自己都會陪家人到公園走走，放鬆心情，去健身等等、冥想也是一個降低焦慮的方法，說真的，找工作是不分假日的要不斷督促自己<br>
-找工作只是開始，如果就被擊敗，更別說以後工作所遇到的所有挫折了，要時常提醒自己，還有更遠大的目標！</p>
-<hr>
-<h1 id="面試準備及目標">面試準備及目標</h1>
-<p>自從退伍後，開始修改著自己的履歷以及準備所有面試所需的能力(Software engineer)，以下列點：<br>
-(1) 履歷<br>
-(2) 熟悉自己過去所有的作品集、並 push到 GitHub上<br>
-(3) 程式能力 - Leetcode, codility 練習<br>
-(4) 程式語言 （如物件導像特性）<br>
-(4) 網路基礎知識 （IP, HTTP…）<br>
-(5) 資料結構、演算法<br>
-(6) 資料庫 (SQL, NoSQL…)<br>
-(7) 作業系統<br>
-(8) System Design<br>
-(9) Linux<br>
-基本上，資料來源都是以前考研究所的筆記、YouTube有許多課程可以學習</p>
-<hr>
-<p>在年前開始慢慢投遞許多職缺，自己的目標是台北外商，考量因素有以下：<br>
-(1) 軟體業在台灣集中於台北，發展學習速度快，雖然新竹、台中等也有，但多是半導體相關產業，因此選擇台北<br>
-(2) 台北的人脈較廣，同時接觸到的可以更多元<br>
-(3) 因為外商文化是自己喜歡的，同時也想多訓練自己英文的能力<br>
-(4) 自己更喜歡接觸人而非只有機器</p>
-<hr>
-<h1 id="陸續面試及沒面試的以下公司介紹">陸續面試及沒面試的以下公司介紹：</h1>
-<h2 id="台積電-system-engineer">台積電 System Engineer</h2>
-<div align="left"><img src="tsmc.png" width="100" height="100"> </div>
-<p>台積透過104發邀請我面試，雖然自己目標在外商，但仍願意參與面試<br>
-首先，主管直接電話告知我這個職位的工作內容與所需技能，感覺是在幫助開發商業智慧系統、Devops、幫助撰寫程式並設計流程等，而後問我個人的經歷、是否願意面試等，就直接約了一個時間當場面試</p>
-<p>1/27現場面試時間約上午9:30，由於前一天住同學家，環境不適應再加上有點緊張，沒什麼睡著，9:00就抵達現場，換證、卸下所有3C產品後等待，首先是英文能力測驗與性向測驗，感覺沒有特別難，只是作答到一半，旁邊的人電腦還出問題，有些干擾到，而後結束就通知人資，人資給了我小紙條請我搭廠車到指定的廠區，這時才知道原來台積那麼多廠XD，坐了10分鐘左右到指定廠區，由助理帶我到辦公室等候主管，來了兩個主管，一個白臉、一個黑臉，跟主管寒暄一番後開始自我介紹、介紹作品集等（原本想用電腦展示，但被繳走只好口頭），主管問了幾個經典問題：遇過最大的挑戰是什麼如何解決、如何充實自己、團隊遇到困難如何解決、針對技術問題詢問project使用什麼語言、什麼框架等，主管都要求一分鐘內講解，而後我問了主管會不會加班等，主管說很少，只有在專案很忙的時候。最後主管離開前說我很會講話，等待HR再跟我說下次面試，處長那還要做決定，之後就婉拒第二次面試。</p>
-<p>改進： 對於基本常見的經典問題沒有準備的很充分，自己的專案技術可以在熟悉一些</p>
-<hr>
-<h2 id="vpon-data-engineer">Vpon Data Engineer</h2>
-<div align="left"><img src="vpon.png" width="150" height="50"> </div>
-<p>這間公司是我透過Yourator投遞的，當時有去台北小巨蛋參加就業博覽會，從而得知這間公司，是做Big data還有藉此分析如何廣告投遞等等，公司員工數大約150人左右，一層樓的辦公空間，當時覺得是間不錯的公司就想去參與面試，跟HR喬定時間後面試。</p>
-<p>2/1當天早上10:00面試，位在捷運中山國中站附近的大樓7樓，辦公桌間完全沒有隔板，燈光舒適很有新創公司活力的感覺，雖然公司已經超過10年，我到的時候有人也剛好來上班，感覺很自由，主管進來後我先自我介紹並透過自己的筆電分享我的所有專案，主管很耐心聽我介紹，也邊問問題，而後主管開始介紹職位的內容以及工作型態，做data clean時會有點枯燥，並且會有mentor帶，公司提供各種挑戰任務還有很多公開發表的機會，我真心覺得是自己覺得還不錯的學習機會，而後主管默默地拿出一張考卷，裡面有4題題目，前兩題是SQL指令問哪個的performance較好、效率較高，一題Linux的指令，一題圖示要解釋大概是在做什麼（其實是如AWS雲端低負載流程），但我太久沒有碰SQL只知道簡單的指令，完全不知道哪個效率高，但有大概解釋指令是在幹嘛，主管也會在旁邊提示，而最後一題主管說可能我沒接觸AWS不太了解沒關係，總之這個測驗我沒什麼解出來，而後我問了些關於這裡的學習制度還有公司的制度等等。結束後原本是要跟人資做面試，但人資在還在開會，所以主管就親自送我下樓，真心覺得這裡的氛圍很好。過了一個禮拜被婉拒了。</p>
-<p>改進： 這次覺得面試的基本能力有提升，但沒有事先針對SQL多做研究，同時雲端運算、負載平衡等觀念也應該多做加強。</p>
-<hr>
-<h2 id="鴻海-雲端伺服器rd測試">鴻海 雲端伺服器RD測試</h2>
-<div align="left"><img src="foxconn.jpeg" width="150" height="50"> </div>
-<p>鴻海主管在104看到我直接打電話跟我聊這個職位的內容，主管感覺很年輕，而且也建議我可以面面看，增加經驗XD，內容大概是鴻海負責生產實體伺服器顧客是AWS或IBM等大公司，而我們負責伺服器的測試，中間會需要研發測試軟體，提供生產單位去做測試，而會接觸到python、Linux等，覺得可以試試看就答應了主管。</p>
-<p>原先約1/26面試，但因為疫情，公司一週遠距工作，改2/2下午2點面試，公司位於土城，騎車的路途中，好多砂石車跟大貨車，邊騎邊想，如果在這工作會每天膽戰心驚的，到了公司，HR帶我去一個房間做性向測驗跟英文測驗，透過觸控式的螢幕，但是因為我一年內有考過IELTS因此可以不用再考英文，考完後在一個霧玻璃的房間等主管，而HR也是先給我一題Leetcode 2sum的考題說等待期間可以先寫，主管還要一段時間，很快寫完我就準備好筆電等待主管。</p>
-<p>而主管一個個先後共來了三個跟我面試，我這次的自我介紹非常充分，還包括所有作品集，很詳細的一個個介紹，每個主管都聽的非常起勁，還問我當時為什麼想做這個，還跟我討論得很開心，說這個可以拿來賺大錢XD，連藝術的作品也都聊了一番，光這樣下來40分鐘左右，後來由大主管開始介紹這個職務內容，比電話中講的更明確，還有用手畫圖講解，讓我更了解內部的運作，而後我問了主管這裡會不會加班、主管對於一個好的員工的定義、升遷制度福利等等，主管都回得滿開心的，最後的最後，(N+2)*(14~15)的薪水，如果我有興趣可以跟主管mail，再寄offer，但這可能不是我的興趣，所以沒有答覆。</p>
-<p>改進： 這次表現得很好，但是應該問主管自己還有哪點可以多做改進</p>
-<hr>
-<h2 id="aws-cloud-support-associate">AWS Cloud Support Associate</h2>
-<div align="left"><img src="AWS.png" width="150" height="50"> </div>
-<p>透過官網投遞後，馬上系統會發線上測驗題，網路都查得到，像是多工處理如何調配、網路基本知識、個人興趣與能力自評，做完測驗後就再也沒消息了…</p>
-<p>改進： 網路基本知識很沒有把握，自從考研後都沒在複習</p>
-<hr>
-<h2 id="ibm-associate-consultant">IBM Associate Consultant</h2>
-<div align="left"><img src="ibm.png" width="150" height="150"> </div>
-<p>1/21就在官網投遞職缺，2/5收到做線上測驗，題目內容不太像一般IPAT，而是像玩遊戲的方式進行，包括數字加減、平面立體圖反轉等等，A long time after，<br>
-3/24收到要線上AI interview，主要是透過電腦錄影，然後會自動透過AI打分數，可參考：<a href="https://zhuanlan.zhihu.com/p/272741655?fbclid=IwAR3ejmIj-aDrGMoYtSsxxTt95M2Kf2_lJbcUlKkDUjHjhA1wV9EZ5ydox30" target="_blank" rel="noopener">AI 面試</a><br>
-4/11收到拒絕通知</p>
-<p>改進：<br>
-可能因為在進行AI interview時，我的網路收訊很差，一直跳出通知連線品質差而被干擾，同時很多段都沒有錄到，而且答題可以依照：</p>
-<p>事情陳述可採以下三點：<br>
-Situation &amp; Task : 我在美光公司實習時，由於本身是軟體領域，而實習部門是硬體相關的領域，因此需要了解硬體的相關概念知識，才能完成自己的專案<br>
-Action : 後來部門提供專業課程可以學習、有問題時主管同時也都很願意教導，身邊實習生也都是相關領域，可以詢問<br>
-Result : 最後花了一個月，順利完成專案開發</p>
-<p>失敗經驗可採以下三點：<br>
-情況及任務（Situation/Task）：擔任熱舞社器材長，跟廠商約定時間，卻因為雙方認知落差，造成表演當天時間Delay<br>
-事後補救（Result）：向社團同學承認錯誤，當場趕緊跟學校暫時借用器材彩排<br>
-事後檢討（Analyze）：應該跟廠商明確的5W、1H溝通</p>
-<hr>
-<h2 id="vmware-associate-consultant">VMware Associate Consultant</h2>
-<div align="left"><img src="vmware.png" width="150" height="50"> </div>
-<p>2/17透過官網投遞，看了職缺內容是自己滿喜歡且感興趣的，決定試試，期間一直準備K8S、Container的知識。</p>
-<p>3/3 職位介紹，很棒的是VMware會在事前召集大家線上說明職位內容、公司文化、學習進修資源、面試流程、ＱＡ等等，主要是協助顧客端做解決方案，熟悉Kubernetes、Container等技術是大加分，主要有一年的學習時間，而後會與其他Consultant拜訪顧客等等。</p>
-<p>3/10 5pm跟主管第一次線上面談，主管任職Solution Architect，首先給我3-5min自我介紹，我原先有準備作品集想Demo，但怕耽誤時間就跟主管說有需要我再介紹，而後主管問了我幾個問題：Work-Life 如何調配、論文內容、情境問題（顧客反應產品差，如何反應）、VMware是做時麼的、自己缺點、未來規劃等等，主要這次的面試，主管都是在了解個人特質，而後我問了專案的時長、專案是否並行、今天的表現如何等等</p>
-<p>等了兩個禮拜，3/24我寫信詢問主管面試結果，主管請HR回信，告知我沒被選上</p>
-<p>改進： 由於太想要這職位，我表現得太過緊張，比之前的面試更語塞，答案應該發自內心而非官腔，基本經典問題應該好好準備，沒有回答很好，主管也有給我建議，說希望能跟著面試官的流程走</p>
-<hr>
-<h2 id="hpe-technology-consultant">HPE Technology Consultant</h2>
-<div align="left"><img src="hpe.png" width="150" height="150"> </div>
-<p>3/24 透過官網投遞</p>
-<p>3/25 HR是香港人，打來跟我聊了關於職缺的內容，人很好聊了很多，還介紹其他presales、postsales的缺，而後跟我說主管會聯繫我</p>
-<p>4/1 跟主管線上面試，一開始簡單的自我介紹、問相關的個人特質，主管人很好，介紹工作內容型態，這職位比較偏Infrastructure，要學習Redhat VMware Linux知識，偏向IT service，聊得很開心</p>
-<p>4/8 一早突然接到主管的電話，說等等有沒有空，可以一起吃個飯聊聊天，我當下一時反應不過來，主管說原來他住離我家很近又是以前同研究所的，聊聊天而已不用太緊張，真的是太有緣，於是約了10點到家附近吃了早午餐（很高級我都沒吃過），順便聊聊關於我對職缺的想法還有介紹了關於職位的細項，可能一年內在辦公室時間不超過幾天，幾乎都在顧客那，開會偶爾才需在辦公室，聊完後主管還載我回家，真的人超級好。只是仍在思考是否自己適合這個職務。<br>
-4/16 去HPE南港參訪，主管介紹了公司的福利、空間環境等等，讓我對公司有更深的認識，更喜歡這個職務</p>
-<hr>
-<h2 id="沒消息">沒消息</h2>
-<p>趨勢科技 Software Engineer : 聽說要去104投才行<br>
-Verizon Software Engineer : 好像現在是缺Sr.<br>
-Shopee Python Backend Engineer : 好像要去丟新加坡的才有<br>
-Microsoft Associate Consultant : 看到是去年9月開的職缺，可能已經招滿</p>
-<hr>
-<p>最後我想謝謝所有公司所有主管提供我面試的機會，主管們的耐心與建議都讓我學到很多，也會更加強自己不足的點<br>
-我也想感謝這段時間提供我建議還有幫助我的所有朋友、學長姐們<br>
-希望看到這篇文章及身邊所有的人都能找到自己「喜歡」的好工作</p>
-<hr>
-<h1 id="參考資料與學習資源">參考資料與學習資源</h1>
-<p>以下列了我找到不錯的學習及參考資源</p>
-<p>網路：<br>
-<a href="http://linux.vbird.org/linux_server/0110network_basic.php#tcpip_network_arp" target="_blank" rel="noopener">http://linux.vbird.org/linux_server/0110network_basic.php#tcpip_network_arp</a><br>
-<a href="https://www.youtube.com/watch?v=QKfk7YFILws&amp;ab_channel=Geek%27sLesson" target="_blank" rel="noopener">https://www.youtube.com/watch?v=QKfk7YFILws&amp;ab_channel=Geek'sLesson</a></p>
-<p>演算法：<br>
-Sorting: <a href="https://www.toptal.com/developers/sorting-algorithms" target="_blank" rel="noopener">https://www.toptal.com/developers/sorting-algorithms</a><br>
-LeetCode great solutions: <a href="https://www.youtube.com/channel/UC_mYaQAE6-71rjSN6CeCA-g/community" target="_blank" rel="noopener">https://www.youtube.com/channel/UC_mYaQAE6-71rjSN6CeCA-g/community</a></p>
-<p>資料庫：<br>
-<a href="https://www.youtube.com/watch?v=7S_tz1z_5bA&amp;ab_channel=ProgrammingwithMosh" target="_blank" rel="noopener">https://www.youtube.com/watch?v=7S_tz1z_5bA&amp;ab_channel=ProgrammingwithMosh</a><br>
-<a href="https://www.youtube.com/watch?v=ZS_kXvOeQ5Y&amp;ab_channel=Academind" target="_blank" rel="noopener">https://www.youtube.com/watch?v=ZS_kXvOeQ5Y&amp;ab_channel=Academind</a></p>
-<p>System Design:<br>
-<a href="https://medium.com/%E5%BE%8C%E7%AB%AF%E6%96%B0%E6%89%8B%E6%9D%91/%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AD%B8%E7%BF%92%E5%9C%B0%E5%9C%96-de216ab211fb" target="_blank" rel="noopener">https://medium.com/後端新手村/系統設計學習地圖-de216ab211fb</a><br>
-<a href="https://www.youtube.com/watch?v=bUHFg8CZFws&amp;ab_channel=SystemDesignInterview" target="_blank" rel="noopener">https://www.youtube.com/watch?v=bUHFg8CZFws&amp;ab_channel=SystemDesignInterview</a><br>
-<a href="https://www.youtube.com/watch?v=hnpzNAPiC0E&amp;ab_channel=InfoQ" target="_blank" rel="noopener">https://www.youtube.com/watch?v=hnpzNAPiC0E&amp;ab_channel=InfoQ</a></p>
-<p>作業系統：<br>
-<a href="https://mropengate.blogspot.com/2017/09/operating-system-concepts.html" target="_blank" rel="noopener">https://mropengate.blogspot.com/2017/09/operating-system-concepts.html</a><br>
-<a href="http://debussy.im.nuu.edu.tw/sjchen/OS_Final.html" target="_blank" rel="noopener">http://debussy.im.nuu.edu.tw/sjchen/OS_Final.html</a></p>
-<p>K8s:<br>
-<a href="https://ithelp.ithome.com.tw/articles/10192401" target="_blank" rel="noopener">https://ithelp.ithome.com.tw/articles/10192401</a><br>
-<a href="https://www.youtube.com/watch?v=X48VuDVv0do&amp;list=LL&amp;index=13&amp;ab_channel=TechWorldwithNana" target="_blank" rel="noopener">https://www.youtube.com/watch?v=X48VuDVv0do&amp;list=LL&amp;index=13&amp;ab_channel=TechWorldwithNana</a></p>
-]]></content>
-      <tags>
-        <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>仙女散落的珍珠 - 加羅湖</title>
     <url>/myblog/2022/03/01/Jialuo/</url>
     <content><![CDATA[<blockquote>
@@ -298,52 +83,6 @@ LeetCode great solutions: <a href="https://www.youtube.com/channel/UC_mYaQAE6-71
 ]]></content>
       <tags>
         <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>墾丁打工換宿 2018/8/5~2018/8/25</title>
-    <url>/myblog/2018/08/25/Kenting-WH/</url>
-    <content><![CDATA[<blockquote>
-<p>謝謝每位我在這裡遇到的朋友<br>
-離開太趕 沒能全部拍到照 有緣再見<br>
-結束最後暑假 研究所人生準備開跑<br>
-#鹿境 #小幫手 #恆春 #海</p>
-</blockquote>
-<h1 id="前言">前言</h1>
-<p>你憧憬未來的時候，不會去想著把所有的事聯繫起來；只有在回憶過去的時候，才會將這點點滴滴聯繫在一起。一定要相信，這些生活的點滴會在你未來的某一天產生聯繫。一定要相信：勇氣、目標、生命、緣起…一切都不會令你失望，只會增加你的與眾不同。</p>
-<p><img src="1.png" alt="1"><br>
-<img src="2.png" alt="2"></p>
-<h1 id="工作-working">工作 Working</h1>
-<p>其實工作內容很間單，分爲吧台、鹿園兩區的工作</p>
-<h2 id="在吧台負責">在吧台負責：</h2>
-<ol>
-<li>飲料餐點</li>
-<li>外頭的商品部擺放、補貨(拆線、吊牌剪掉、檢查不良品)</li>
-<li>幫訂午餐、晚餐</li>
-<li>廁所打掃（每1hr巡一次）</li>
-<li>外頭路面地面整潔</li>
-</ol>
-<h2 id="在鹿園負責">在鹿園負責：</h2>
-<ol>
-<li>割草（沒體驗到 但要搬運20多公斤草）</li>
-<li>切紅蘿菠、地瓜</li>
-<li>打掃鹿園（沒體驗到 很臭）</li>
-<li>解說員（有人體驗到）</li>
-</ol>
-<p><img src="3.png" alt="3"></p>
-<h1 id="度假-holiday">度假 Holiday</h1>
-<p>其實幾乎只有第一週體驗到 剩下都待在鹿境工作 還有最後一週連日的大雨打壞行程（只找到一天沒雨空擋去環屏東）</p>
-<p>8/5 浮潛+逛恆春夜市<br>
-8/6 帆船石+麋谷<br>
-8/7 聚餐 美式餐廳 +打牌<br>
-8/8 七孔瀑布 + cafe cinema<br>
-8/9 古城家常菜+白沙灣<br>
-8/10 深潛+海生館+肥春號<br>
-8/11 吉普車（大腳168車隊）</p>
-<p>Last week :車程福安宮+牡丹水庫+牡丹國小+旭海+九鵬大沙漠+港仔大沙漠+風吹砂+龍磐+台灣最南點</p>
-]]></content>
-      <tags>
-        <tag>Travel</tag>
       </tags>
   </entry>
   <entry>
@@ -515,6 +254,91 @@ AR、VR 在軟硬體的高速發展，使其將成為未來的趨勢及主流，
       </tags>
   </entry>
   <entry>
+    <title>NBA老闆的慧眼 - Affinity Propagation</title>
+    <url>/myblog/2019/01/29/AP-algo/</url>
+    <content><![CDATA[<h1 id="概念發想concept">概念發想Concept</h1>
+<hr>
+<p><a href="https://github.com/LawrenceGao0224/Intelligence-Oriented-Management-Decision/tree/master/%E6%99%BA%E6%85%A7%E5%9E%8B%E6%9C%9F%E6%9C%AB%E5%A0%B1%E5%91%8A">程式碼連結Click On Me</a></p>
+<p><img src="NBA.jpg" alt="NBA"></p>
+<p>我們將自己設想為球隊分析師，並希望能遞上一份不讓老闆&quot;打臉&quot;的分群資料，提供球隊高層在球員交易、補強、替代方案上有份合理客觀的依據。</p>
+<p>We envision ourselves as team analysts, and hope to hand over a group of information that provides the team’s top management with a reasonable and objective basis for player trading, reinforcement, and alternatives.</p>
+<hr>
+<h1 id="操作方法operation">操作方法Operation</h1>
+<p>將NBA所有球員資料(Ex: 薪水、年齡、得分、助攻、有效命中率、真實命中率、球權佔有率、籃板率、效率值…)，以AP演算法實作，計算各球員資料的負歐積里德距離，調整preference、Damping Factor參數，求出k個高質量聚類，且我們將多維度的資料透過PCA()方法壓縮為低維度的資料，實現可視化。</p>
+<p>All NBA player information (Ex: salary, age, score, assists, effective hit rate, true hit rate, possession rate, rebound rate, efficiency value…) is calculated by AP algorithm to calculate each player’s data. The negative Ourich Reed distance, adjust the preferences, Damping Factor parameters, find k high-quality clusters, and we compress the multi-dimensional data into low-dimensional data through PCA () method to achieve visualization</p>
+<p>資料來源 ： (<a href="https://www.kaggle.com/acasalan/nba-player-stats-201718" target="_blank" rel="noopener">https://www.kaggle.com/acasalan/nba-player-stats-201718</a>)</p>
+<hr>
+<h1 id="實作結果-result">實作結果 Result</h1>
+<h2 id="調整參數-adjust-parameter">調整參數 Adjust parameter:</h2>
+<ol>
+<li>Preference:<br>
+Preference = 中位數(-62.5683289159)<br>
+群集數: 43</li>
+</ol>
+<p><img src="1-1.png" alt="43"></p>
+<p>Preference = -500<br>
+群集數: 7</p>
+<p><img src="1-2.png" alt="7"></p>
+<ol start="2">
+<li>Damping Factor:</li>
+</ol>
+<p>Damping Factor = 0.5      --&gt;      Time = 0.8640606880187988 seconds.<br>
+Damping Factor = 0.9      --&gt;      Time = 1.2220699787139893 seconds.</p>
+<h2 id="所有球員資料-all-players">所有球員資料 All players:</h2>
+<p><img src="2-1.png" alt="2-1">   <img src="2-2.png" alt="2-2"></p>
+<h2 id="依球員打球的位置-according-to-position">依球員打球的位置 According to position</h2>
+<ol>
+<li>
+<p>center © : 8群集數<br>
+<img src="3-1.png" alt="3-1"></p>
+</li>
+<li>
+<p>power forward (PF) : 8群集數<br>
+<img src="3-2.png" alt="3-2"></p>
+</li>
+<li>
+<p>small forward (SF) : 12群集數<br>
+<img src="3-3.png" alt="3-3"></p>
+</li>
+<li>
+<p>point guard (PG) : 11群集數<br>
+<img src="3-4.png" alt="3-4"></p>
+</li>
+<li>
+<p>shooting guard (SG) : 4群集數<br>
+<img src="3-5.png" alt="3-5"></p>
+</li>
+</ol>
+<h2 id="依不同屬性">依不同屬性</h2>
+<p>進攻性質 or 防守性質…</p>
+<hr>
+<h1 id="延伸探討-any-imperfect">延伸探討  Any imperfect ?</h1>
+<p>然而在我們丟入的data有其盲點存在,NBA的老闆或球隊在選擇球員上,並不會只觀看球員在場上的數據表現,還包括許多因素,事無法量化或在數據表現出來的(包括球員心理狀態、球員間磨合度…)</p>
+<p>However, the data we throw in has its  blind spots. The NBA boss or team is not only watching the performance of the players on the field, but also includes many factors, which cannot be quantified or expressed in the data. (including the player’s mental state, the player’s running-in…)</p>
+<p>如下:</p>
+<p>❖商業價值 ex: Dwyane Wade<br>
+Wade是大家耳熟能詳的巨星,層經出現在2K遊戲的封面上,但最近的數據表現並不如其他球員出色,但仍是有淺力的球員,也累積許多粉絲,粉絲能帶來商業價值。<br>
+<img src="4-1.png" alt="4-1"></p>
+<p>❖球員背景 ex: Jeremy Lin<br>
+Jeremy是著名的台裔球員,能吸引亞洲地區的球迷觀注其球隊,帶來利益。<br>
+<img src="4-2.png" alt="4-2"></p>
+<p>❖健康因素 ex: Derrick Rose<br>
+Rose是最年輕獲選MVP的球員,但由於前幾賽季腳傷原因,造成都個<br>
+賽季缺賽,而傷後復出便不如以前突出,這也是無法顯現在數據上的。<br>
+<img src="4-3.png" alt="4-3"></p>
+<hr>
+<h1 id="參考資料">參考資料</h1>
+<p>(<a href="https://zi.media/@yidianzixun/post/uKZUFF?fbclid=IwAR1Dib-4T5MkM2x_helYBtq0TgTD871fAixs-4sBivOUXUNjuMl07xFahOs" target="_blank" rel="noopener">https://zi.media/@yidianzixun/post/uKZUFF?fbclid=IwAR1Dib-4T5MkM2x_helYBtq0TgTD871fAixs-4sBivOUXUNjuMl07xFahOs</a>)</p>
+<p>(<a href="https://www.cnblogs.com/huadongw/p/4202492.html?fbclid=IwAR3PHEOcrAar0rCI1e9AeYBxV0fI6JKJIRqGAJ3ag9BnlleT5M9v_8oNiy0" target="_blank" rel="noopener">https://www.cnblogs.com/huadongw/p/4202492.html?fbclid=IwAR3PHEOcrAar0rCI1e9AeYBxV0fI6JKJIRqGAJ3ag9BnlleT5M9v_8oNiy0</a>)</p>
+<p>(<a href="https://www.itread01.com/articles/1495821610.html?fbclid=IwAR1Ssz1ZCdqnxtT6obwpx0AFRDBEGrqKK0BXmMGPK-I1lvNwqJuif9EhZt0" target="_blank" rel="noopener">https://www.itread01.com/articles/1495821610.html?fbclid=IwAR1Ssz1ZCdqnxtT6obwpx0AFRDBEGrqKK0BXmMGPK-I1lvNwqJuif9EhZt0</a>)</p>
+<p>(<a href="https://scikit-learn.org/stable/auto_examples/applications/plot_stock_market.html?fbclid=IwAR29Qcy3SrWFDjHAJGF--XO-0zW2FWt8t4dYZT0lsYxUDqJpBz17ds2pQQM" target="_blank" rel="noopener">https://scikit-learn.org/stable/auto_examples/applications/plot_stock_market.html?fbclid=IwAR29Qcy3SrWFDjHAJGF–XO-0zW2FWt8t4dYZT0lsYxUDqJpBz17ds2pQQM</a>)</p>
+<p>(<a href="https://scikit-learn.org/stable/auto_examples/cluster/plot_affinity_propagation.html?fbclid=IwAR2SsWtrb5MJdypMha6G59nWSeEwf7QK5vzmCa_UefR9mHDT0WzLgEbqng4#sphx-glr-auto-examples-cluster-plot-affinity-propagation-py" target="_blank" rel="noopener">https://scikit-learn.org/stable/auto_examples/cluster/plot_affinity_propagation.html?fbclid=IwAR2SsWtrb5MJdypMha6G59nWSeEwf7QK5vzmCa_UefR9mHDT0WzLgEbqng4#sphx-glr-auto-examples-cluster-plot-affinity-propagation-py</a>)</p>
+]]></content>
+      <tags>
+        <tag>Work</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>蘭嶼Lanyu遊 2020.7.21-2020.7.24</title>
     <url>/myblog/2020/07/24/Lanyu/</url>
     <content><![CDATA[<blockquote>
@@ -587,33 +411,176 @@ Soak in your own world!</p>
       </tags>
   </entry>
   <entry>
-    <title>Micron Intern in DEG  2019/7/1 ~ 2019/8/30</title>
-    <url>/myblog/2019/08/30/Micron/</url>
+    <title>墾丁打工換宿 2018/8/5~2018/8/25</title>
+    <url>/myblog/2018/08/25/Kenting-WH/</url>
     <content><![CDATA[<blockquote>
-<p>外商公司不喜歡你加班 自律是關鍵<br>
-英文很重要 溝通能力<br>
-環境自由 放鬆但不是隨便<br>
-待人處事態度 與同事們培養默契與團隊精神</p>
+<p>謝謝每位我在這裡遇到的朋友<br>
+離開太趕 沒能全部拍到照 有緣再見<br>
+結束最後暑假 研究所人生準備開跑<br>
+#鹿境 #小幫手 #恆春 #海</p>
 </blockquote>
-<hr>
-<h1 id="面試">面試</h1>
-<p>面試記得要準備中英文的自我介紹  並做個人的作品集會更加分 記得投地公司官網（我丟104都沒消息）</p>
-<h2 id="關卡-1-電話">關卡 1. 電話</h2>
-<p>這個關卡我沒有遇到，但身邊朋友幾個都有接到電話英文面試，自我介紹等等</p>
-<h2 id="關卡-2-face-to-face">關卡 2. Face to face</h2>
-<p>我面對三個主管，首先要你自我介紹，並知道美光是什麼公司，還有能解釋記憶體的架構還有你的了解（聽說正職會問程式題，我個人作品集是做程式相關的，所以沒有被問到）</p>
-<h2 id="關卡-3-英文邏輯測驗">關卡 3. 英文,邏輯測驗</h2>
-<p>寫個英文題目及性向測驗題</p>
-<h2 id="關卡-4-hr面談">關卡 4. HR面談</h2>
-<p>基本上問你為何想來面試這職位 了解你的動機跟穩重度</p>
-<hr>
-<h1 id="實習生活">實習生活</h1>
-<p>從軟體踏入硬體領域，許多新的知識需要吸收，前三天都會有新人訓，並且每個禮拜五部門都會有課程，關於DRAM的知識，因此慢慢學習吸收。<br>
-美光在我這屆有48個新生，認識到許多朋友，同時也能建立人脈！<br>
-PS : 在這些具有製成、高階技術研發的公司，資訊安全與公司機密是很重要的事，公司會不斷強調不能隨便在內部拍照也不能外流內部文件等！</p>
+<h1 id="前言">前言</h1>
+<p>你憧憬未來的時候，不會去想著把所有的事聯繫起來；只有在回憶過去的時候，才會將這點點滴滴聯繫在一起。一定要相信，這些生活的點滴會在你未來的某一天產生聯繫。一定要相信：勇氣、目標、生命、緣起…一切都不會令你失望，只會增加你的與眾不同。</p>
 <p><img src="1.png" alt="1"><br>
-<img src="2.png" alt="2"><br>
-<img src="3.png" alt="3"></p>
+<img src="2.png" alt="2"></p>
+<h1 id="工作-working">工作 Working</h1>
+<p>其實工作內容很間單，分爲吧台、鹿園兩區的工作</p>
+<h2 id="在吧台負責">在吧台負責：</h2>
+<ol>
+<li>飲料餐點</li>
+<li>外頭的商品部擺放、補貨(拆線、吊牌剪掉、檢查不良品)</li>
+<li>幫訂午餐、晚餐</li>
+<li>廁所打掃（每1hr巡一次）</li>
+<li>外頭路面地面整潔</li>
+</ol>
+<h2 id="在鹿園負責">在鹿園負責：</h2>
+<ol>
+<li>割草（沒體驗到 但要搬運20多公斤草）</li>
+<li>切紅蘿菠、地瓜</li>
+<li>打掃鹿園（沒體驗到 很臭）</li>
+<li>解說員（有人體驗到）</li>
+</ol>
+<p><img src="3.png" alt="3"></p>
+<h1 id="度假-holiday">度假 Holiday</h1>
+<p>其實幾乎只有第一週體驗到 剩下都待在鹿境工作 還有最後一週連日的大雨打壞行程（只找到一天沒雨空擋去環屏東）</p>
+<p>8/5 浮潛+逛恆春夜市<br>
+8/6 帆船石+麋谷<br>
+8/7 聚餐 美式餐廳 +打牌<br>
+8/8 七孔瀑布 + cafe cinema<br>
+8/9 古城家常菜+白沙灣<br>
+8/10 深潛+海生館+肥春號<br>
+8/11 吉普車（大腳168車隊）</p>
+<p>Last week :車程福安宮+牡丹水庫+牡丹國小+旭海+九鵬大沙漠+港仔大沙漠+風吹砂+龍磐+台灣最南點</p>
+]]></content>
+      <tags>
+        <tag>Travel</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>找工作心路歷程 2021.1-2021.4</title>
+    <url>/myblog/2021/04/14/Lookforjobs/</url>
+    <content><![CDATA[<blockquote>
+<p>伴隨著退伍日其接近，心中五味雜陳，一則以喜，一則以憂，開心退伍後不再受到約束，擔憂求職路上遇到的波瀾<br>
+非常謝謝所有身邊的同學還有學長姐的經驗分享還有給我的鼓勵</p>
+</blockquote>
+<h1 id="心路歷程">心路歷程</h1>
+<p>畢業前，原本計畫著出國交換，然而卻因為兵役跟疫情，打亂了所有計畫，也沒研替也沒事先找，就等到當完兵才開始。<br>
+經歷了一段找工作的漫長時間，第一份工作找了4個多月，日子難熬、十分艱辛，同儕之間的比較等等，壓力很大<br>
+我想找過工作都能體會我想講的，其實也不是找不到工作，而是找不到自己喜歡且適合的工作，自從第一個月開始每天望著求職網、公司開的職缺，確認好自己的目標後，專注於所需能力的提升，尤其當兵過後，許多以前學的都忘光了，還需要花時間複習，自己投遞履歷的方式不是撒網型，而是針對自己最有興趣且會學得到東西的才丟，<br>
+一開始有許多公司的邀約，然而面試後發現有些不是想做的就拒絕了，當遇到非常喜歡的工作時卻被拒絕了，太玩弄人生了<br>
+隨著時間的推移，越來越少面試機會、每天盯著手機mail，身邊開始有聲音，如「你就是太挑啦！」、「先求有再求好！」，朋友的邀約都不太想前往，有時甚至是關心的話都覺得特別刺耳，「最近如何？」、「開始工作了嗎？」、「下禮拜吃飯啦！」，便開始懷疑自己，「我是不是真的太挑？」「我其實沒有自己想的那麼好對吧？」「如果當初不要拒絕那些公司就好了。」「還是隨便找份工作做吧！」覺得自己越來越黑暗。<br>
+然而就在每次沮喪絕望後，身邊也有許多還在找工作的朋友也在水深火熱中，我們互相打氣、互相討論，而且許多身邊同學、學長姊也都會提供我寶貴的經驗還有建議，讓我可以更正面、更有毅力的去面對未來目標，有時自己都會陪家人到公園走走，放鬆心情，去健身等等、冥想也是一個降低焦慮的方法，說真的，找工作是不分假日的要不斷督促自己<br>
+找工作只是開始，如果就被擊敗，更別說以後工作所遇到的所有挫折了，要時常提醒自己，還有更遠大的目標！</p>
+<hr>
+<h1 id="面試準備及目標">面試準備及目標</h1>
+<p>自從退伍後，開始修改著自己的履歷以及準備所有面試所需的能力(Software engineer)，以下列點：<br>
+(1) 履歷<br>
+(2) 熟悉自己過去所有的作品集、並 push到 GitHub上<br>
+(3) 程式能力 - Leetcode, codility 練習<br>
+(4) 程式語言 （如物件導像特性）<br>
+(4) 網路基礎知識 （IP, HTTP…）<br>
+(5) 資料結構、演算法<br>
+(6) 資料庫 (SQL, NoSQL…)<br>
+(7) 作業系統<br>
+(8) System Design<br>
+(9) Linux<br>
+基本上，資料來源都是以前考研究所的筆記、YouTube有許多課程可以學習</p>
+<hr>
+<p>在年前開始慢慢投遞許多職缺，自己的目標是台北外商，考量因素有以下：<br>
+(1) 軟體業在台灣集中於台北，發展學習速度快，雖然新竹、台中等也有，但多是半導體相關產業，因此選擇台北<br>
+(2) 台北的人脈較廣，同時接觸到的可以更多元<br>
+(3) 因為外商文化是自己喜歡的，同時也想多訓練自己英文的能力<br>
+(4) 自己更喜歡接觸人而非只有機器</p>
+<hr>
+<h1 id="陸續面試及沒面試的以下公司介紹">陸續面試及沒面試的以下公司介紹：</h1>
+<h2 id="台積電-system-engineer">台積電 System Engineer</h2>
+<div align="left"><img src="tsmc.png" width="100" height="100"> </div>
+<p>台積透過104發邀請我面試，雖然自己目標在外商，但仍願意參與面試<br>
+首先，主管直接電話告知我這個職位的工作內容與所需技能，感覺是在幫助開發商業智慧系統、Devops、幫助撰寫程式並設計流程等，而後問我個人的經歷、是否願意面試等，就直接約了一個時間當場面試</p>
+<p>1/27現場面試時間約上午9:30，由於前一天住同學家，環境不適應再加上有點緊張，沒什麼睡著，9:00就抵達現場，換證、卸下所有3C產品後等待，首先是英文能力測驗與性向測驗，感覺沒有特別難，只是作答到一半，旁邊的人電腦還出問題，有些干擾到，而後結束就通知人資，人資給了我小紙條請我搭廠車到指定的廠區，這時才知道原來台積那麼多廠XD，坐了10分鐘左右到指定廠區，由助理帶我到辦公室等候主管，來了兩個主管，一個白臉、一個黑臉，跟主管寒暄一番後開始自我介紹、介紹作品集等（原本想用電腦展示，但被繳走只好口頭），主管問了幾個經典問題：遇過最大的挑戰是什麼如何解決、如何充實自己、團隊遇到困難如何解決、針對技術問題詢問project使用什麼語言、什麼框架等，主管都要求一分鐘內講解，而後我問了主管會不會加班等，主管說很少，只有在專案很忙的時候。最後主管離開前說我很會講話，等待HR再跟我說下次面試，處長那還要做決定，之後就婉拒第二次面試。</p>
+<p>改進： 對於基本常見的經典問題沒有準備的很充分，自己的專案技術可以在熟悉一些</p>
+<hr>
+<h2 id="vpon-data-engineer">Vpon Data Engineer</h2>
+<div align="left"><img src="vpon.png" width="150" height="50"> </div>
+<p>這間公司是我透過Yourator投遞的，當時有去台北小巨蛋參加就業博覽會，從而得知這間公司，是做Big data還有藉此分析如何廣告投遞等等，公司員工數大約150人左右，一層樓的辦公空間，當時覺得是間不錯的公司就想去參與面試，跟HR喬定時間後面試。</p>
+<p>2/1當天早上10:00面試，位在捷運中山國中站附近的大樓7樓，辦公桌間完全沒有隔板，燈光舒適很有新創公司活力的感覺，雖然公司已經超過10年，我到的時候有人也剛好來上班，感覺很自由，主管進來後我先自我介紹並透過自己的筆電分享我的所有專案，主管很耐心聽我介紹，也邊問問題，而後主管開始介紹職位的內容以及工作型態，做data clean時會有點枯燥，並且會有mentor帶，公司提供各種挑戰任務還有很多公開發表的機會，我真心覺得是自己覺得還不錯的學習機會，而後主管默默地拿出一張考卷，裡面有4題題目，前兩題是SQL指令問哪個的performance較好、效率較高，一題Linux的指令，一題圖示要解釋大概是在做什麼（其實是如AWS雲端低負載流程），但我太久沒有碰SQL只知道簡單的指令，完全不知道哪個效率高，但有大概解釋指令是在幹嘛，主管也會在旁邊提示，而最後一題主管說可能我沒接觸AWS不太了解沒關係，總之這個測驗我沒什麼解出來，而後我問了些關於這裡的學習制度還有公司的制度等等。結束後原本是要跟人資做面試，但人資在還在開會，所以主管就親自送我下樓，真心覺得這裡的氛圍很好。過了一個禮拜被婉拒了。</p>
+<p>改進： 這次覺得面試的基本能力有提升，但沒有事先針對SQL多做研究，同時雲端運算、負載平衡等觀念也應該多做加強。</p>
+<hr>
+<h2 id="鴻海-雲端伺服器rd測試">鴻海 雲端伺服器RD測試</h2>
+<div align="left"><img src="foxconn.jpeg" width="150" height="50"> </div>
+<p>鴻海主管在104看到我直接打電話跟我聊這個職位的內容，主管感覺很年輕，而且也建議我可以面面看，增加經驗XD，內容大概是鴻海負責生產實體伺服器顧客是AWS或IBM等大公司，而我們負責伺服器的測試，中間會需要研發測試軟體，提供生產單位去做測試，而會接觸到python、Linux等，覺得可以試試看就答應了主管。</p>
+<p>原先約1/26面試，但因為疫情，公司一週遠距工作，改2/2下午2點面試，公司位於土城，騎車的路途中，好多砂石車跟大貨車，邊騎邊想，如果在這工作會每天膽戰心驚的，到了公司，HR帶我去一個房間做性向測驗跟英文測驗，透過觸控式的螢幕，但是因為我一年內有考過IELTS因此可以不用再考英文，考完後在一個霧玻璃的房間等主管，而HR也是先給我一題Leetcode 2sum的考題說等待期間可以先寫，主管還要一段時間，很快寫完我就準備好筆電等待主管。</p>
+<p>而主管一個個先後共來了三個跟我面試，我這次的自我介紹非常充分，還包括所有作品集，很詳細的一個個介紹，每個主管都聽的非常起勁，還問我當時為什麼想做這個，還跟我討論得很開心，說這個可以拿來賺大錢XD，連藝術的作品也都聊了一番，光這樣下來40分鐘左右，後來由大主管開始介紹這個職務內容，比電話中講的更明確，還有用手畫圖講解，讓我更了解內部的運作，而後我問了主管這裡會不會加班、主管對於一個好的員工的定義、升遷制度福利等等，主管都回得滿開心的，最後的最後，(N+2)*(14~15)的薪水，如果我有興趣可以跟主管mail，再寄offer，但這可能不是我的興趣，所以沒有答覆。</p>
+<p>改進： 這次表現得很好，但是應該問主管自己還有哪點可以多做改進</p>
+<hr>
+<h2 id="aws-cloud-support-associate">AWS Cloud Support Associate</h2>
+<div align="left"><img src="AWS.png" width="150" height="50"> </div>
+<p>透過官網投遞後，馬上系統會發線上測驗題，網路都查得到，像是多工處理如何調配、網路基本知識、個人興趣與能力自評，做完測驗後就再也沒消息了…</p>
+<p>改進： 網路基本知識很沒有把握，自從考研後都沒在複習</p>
+<hr>
+<h2 id="ibm-associate-consultant">IBM Associate Consultant</h2>
+<div align="left"><img src="ibm.png" width="150" height="150"> </div>
+<p>1/21就在官網投遞職缺，2/5收到做線上測驗，題目內容不太像一般IPAT，而是像玩遊戲的方式進行，包括數字加減、平面立體圖反轉等等，A long time after，<br>
+3/24收到要線上AI interview，主要是透過電腦錄影，然後會自動透過AI打分數，可參考：<a href="https://zhuanlan.zhihu.com/p/272741655?fbclid=IwAR3ejmIj-aDrGMoYtSsxxTt95M2Kf2_lJbcUlKkDUjHjhA1wV9EZ5ydox30" target="_blank" rel="noopener">AI 面試</a><br>
+4/11收到拒絕通知</p>
+<p>改進：<br>
+可能因為在進行AI interview時，我的網路收訊很差，一直跳出通知連線品質差而被干擾，同時很多段都沒有錄到，而且答題可以依照：</p>
+<p>事情陳述可採以下三點：<br>
+Situation &amp; Task : 我在美光公司實習時，由於本身是軟體領域，而實習部門是硬體相關的領域，因此需要了解硬體的相關概念知識，才能完成自己的專案<br>
+Action : 後來部門提供專業課程可以學習、有問題時主管同時也都很願意教導，身邊實習生也都是相關領域，可以詢問<br>
+Result : 最後花了一個月，順利完成專案開發</p>
+<p>失敗經驗可採以下三點：<br>
+情況及任務（Situation/Task）：擔任熱舞社器材長，跟廠商約定時間，卻因為雙方認知落差，造成表演當天時間Delay<br>
+事後補救（Result）：向社團同學承認錯誤，當場趕緊跟學校暫時借用器材彩排<br>
+事後檢討（Analyze）：應該跟廠商明確的5W、1H溝通</p>
+<hr>
+<h2 id="vmware-associate-consultant">VMware Associate Consultant</h2>
+<div align="left"><img src="vmware.png" width="150" height="50"> </div>
+<p>2/17透過官網投遞，看了職缺內容是自己滿喜歡且感興趣的，決定試試，期間一直準備K8S、Container的知識。</p>
+<p>3/3 職位介紹，很棒的是VMware會在事前召集大家線上說明職位內容、公司文化、學習進修資源、面試流程、ＱＡ等等，主要是協助顧客端做解決方案，熟悉Kubernetes、Container等技術是大加分，主要有一年的學習時間，而後會與其他Consultant拜訪顧客等等。</p>
+<p>3/10 5pm跟主管第一次線上面談，主管任職Solution Architect，首先給我3-5min自我介紹，我原先有準備作品集想Demo，但怕耽誤時間就跟主管說有需要我再介紹，而後主管問了我幾個問題：Work-Life 如何調配、論文內容、情境問題（顧客反應產品差，如何反應）、VMware是做時麼的、自己缺點、未來規劃等等，主要這次的面試，主管都是在了解個人特質，而後我問了專案的時長、專案是否並行、今天的表現如何等等</p>
+<p>等了兩個禮拜，3/24我寫信詢問主管面試結果，主管請HR回信，告知我沒被選上</p>
+<p>改進： 由於太想要這職位，我表現得太過緊張，比之前的面試更語塞，答案應該發自內心而非官腔，基本經典問題應該好好準備，沒有回答很好，主管也有給我建議，說希望能跟著面試官的流程走</p>
+<hr>
+<h2 id="hpe-technology-consultant">HPE Technology Consultant</h2>
+<div align="left"><img src="hpe.png" width="150" height="150"> </div>
+<p>3/24 透過官網投遞</p>
+<p>3/25 HR是香港人，打來跟我聊了關於職缺的內容，人很好聊了很多，還介紹其他presales、postsales的缺，而後跟我說主管會聯繫我</p>
+<p>4/1 跟主管線上面試，一開始簡單的自我介紹、問相關的個人特質，主管人很好，介紹工作內容型態，這職位比較偏Infrastructure，要學習Redhat VMware Linux知識，偏向IT service，聊得很開心</p>
+<p>4/8 一早突然接到主管的電話，說等等有沒有空，可以一起吃個飯聊聊天，我當下一時反應不過來，主管說原來他住離我家很近又是以前同研究所的，聊聊天而已不用太緊張，真的是太有緣，於是約了10點到家附近吃了早午餐（很高級我都沒吃過），順便聊聊關於我對職缺的想法還有介紹了關於職位的細項，可能一年內在辦公室時間不超過幾天，幾乎都在顧客那，開會偶爾才需在辦公室，聊完後主管還載我回家，真的人超級好。只是仍在思考是否自己適合這個職務。<br>
+4/16 去HPE南港參訪，主管介紹了公司的福利、空間環境等等，讓我對公司有更深的認識，更喜歡這個職務</p>
+<hr>
+<h2 id="沒消息">沒消息</h2>
+<p>趨勢科技 Software Engineer : 聽說要去104投才行<br>
+Verizon Software Engineer : 好像現在是缺Sr.<br>
+Shopee Python Backend Engineer : 好像要去丟新加坡的才有<br>
+Microsoft Associate Consultant : 看到是去年9月開的職缺，可能已經招滿</p>
+<hr>
+<p>最後我想謝謝所有公司所有主管提供我面試的機會，主管們的耐心與建議都讓我學到很多，也會更加強自己不足的點<br>
+我也想感謝這段時間提供我建議還有幫助我的所有朋友、學長姐們<br>
+希望看到這篇文章及身邊所有的人都能找到自己「喜歡」的好工作</p>
+<hr>
+<h1 id="參考資料與學習資源">參考資料與學習資源</h1>
+<p>以下列了我找到不錯的學習及參考資源</p>
+<p>網路：<br>
+<a href="http://linux.vbird.org/linux_server/0110network_basic.php#tcpip_network_arp" target="_blank" rel="noopener">http://linux.vbird.org/linux_server/0110network_basic.php#tcpip_network_arp</a><br>
+<a href="https://www.youtube.com/watch?v=QKfk7YFILws&amp;ab_channel=Geek%27sLesson" target="_blank" rel="noopener">https://www.youtube.com/watch?v=QKfk7YFILws&amp;ab_channel=Geek'sLesson</a></p>
+<p>演算法：<br>
+Sorting: <a href="https://www.toptal.com/developers/sorting-algorithms" target="_blank" rel="noopener">https://www.toptal.com/developers/sorting-algorithms</a><br>
+LeetCode great solutions: <a href="https://www.youtube.com/channel/UC_mYaQAE6-71rjSN6CeCA-g/community" target="_blank" rel="noopener">https://www.youtube.com/channel/UC_mYaQAE6-71rjSN6CeCA-g/community</a></p>
+<p>資料庫：<br>
+<a href="https://www.youtube.com/watch?v=7S_tz1z_5bA&amp;ab_channel=ProgrammingwithMosh" target="_blank" rel="noopener">https://www.youtube.com/watch?v=7S_tz1z_5bA&amp;ab_channel=ProgrammingwithMosh</a><br>
+<a href="https://www.youtube.com/watch?v=ZS_kXvOeQ5Y&amp;ab_channel=Academind" target="_blank" rel="noopener">https://www.youtube.com/watch?v=ZS_kXvOeQ5Y&amp;ab_channel=Academind</a></p>
+<p>System Design:<br>
+<a href="https://medium.com/%E5%BE%8C%E7%AB%AF%E6%96%B0%E6%89%8B%E6%9D%91/%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AD%B8%E7%BF%92%E5%9C%B0%E5%9C%96-de216ab211fb" target="_blank" rel="noopener">https://medium.com/後端新手村/系統設計學習地圖-de216ab211fb</a><br>
+<a href="https://www.youtube.com/watch?v=bUHFg8CZFws&amp;ab_channel=SystemDesignInterview" target="_blank" rel="noopener">https://www.youtube.com/watch?v=bUHFg8CZFws&amp;ab_channel=SystemDesignInterview</a><br>
+<a href="https://www.youtube.com/watch?v=hnpzNAPiC0E&amp;ab_channel=InfoQ" target="_blank" rel="noopener">https://www.youtube.com/watch?v=hnpzNAPiC0E&amp;ab_channel=InfoQ</a></p>
+<p>作業系統：<br>
+<a href="https://mropengate.blogspot.com/2017/09/operating-system-concepts.html" target="_blank" rel="noopener">https://mropengate.blogspot.com/2017/09/operating-system-concepts.html</a><br>
+<a href="http://debussy.im.nuu.edu.tw/sjchen/OS_Final.html" target="_blank" rel="noopener">http://debussy.im.nuu.edu.tw/sjchen/OS_Final.html</a></p>
+<p>K8s:<br>
+<a href="https://ithelp.ithome.com.tw/articles/10192401" target="_blank" rel="noopener">https://ithelp.ithome.com.tw/articles/10192401</a><br>
+<a href="https://www.youtube.com/watch?v=X48VuDVv0do&amp;list=LL&amp;index=13&amp;ab_channel=TechWorldwithNana" target="_blank" rel="noopener">https://www.youtube.com/watch?v=X48VuDVv0do&amp;list=LL&amp;index=13&amp;ab_channel=TechWorldwithNana</a></p>
 ]]></content>
       <tags>
         <tag>Blog</tag>
@@ -674,6 +641,39 @@ PS : 在這些具有製成、高階技術研發的公司，資訊安全與公司
 ]]></content>
       <tags>
         <tag>Travel</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Micron Intern in DEG  2019/7/1 ~ 2019/8/30</title>
+    <url>/myblog/2019/08/30/Micron/</url>
+    <content><![CDATA[<blockquote>
+<p>外商公司不喜歡你加班 自律是關鍵<br>
+英文很重要 溝通能力<br>
+環境自由 放鬆但不是隨便<br>
+待人處事態度 與同事們培養默契與團隊精神</p>
+</blockquote>
+<hr>
+<h1 id="面試">面試</h1>
+<p>面試記得要準備中英文的自我介紹  並做個人的作品集會更加分 記得投地公司官網（我丟104都沒消息）</p>
+<h2 id="關卡-1-電話">關卡 1. 電話</h2>
+<p>這個關卡我沒有遇到，但身邊朋友幾個都有接到電話英文面試，自我介紹等等</p>
+<h2 id="關卡-2-face-to-face">關卡 2. Face to face</h2>
+<p>我面對三個主管，首先要你自我介紹，並知道美光是什麼公司，還有能解釋記憶體的架構還有你的了解（聽說正職會問程式題，我個人作品集是做程式相關的，所以沒有被問到）</p>
+<h2 id="關卡-3-英文邏輯測驗">關卡 3. 英文,邏輯測驗</h2>
+<p>寫個英文題目及性向測驗題</p>
+<h2 id="關卡-4-hr面談">關卡 4. HR面談</h2>
+<p>基本上問你為何想來面試這職位 了解你的動機跟穩重度</p>
+<hr>
+<h1 id="實習生活">實習生活</h1>
+<p>從軟體踏入硬體領域，許多新的知識需要吸收，前三天都會有新人訓，並且每個禮拜五部門都會有課程，關於DRAM的知識，因此慢慢學習吸收。<br>
+美光在我這屆有48個新生，認識到許多朋友，同時也能建立人脈！<br>
+PS : 在這些具有製成、高階技術研發的公司，資訊安全與公司機密是很重要的事，公司會不斷強調不能隨便在內部拍照也不能外流內部文件等！</p>
+<p><img src="1.png" alt="1"><br>
+<img src="2.png" alt="2"><br>
+<img src="3.png" alt="3"></p>
+]]></content>
+      <tags>
+        <tag>Blog</tag>
       </tags>
   </entry>
   <entry>
@@ -871,48 +871,6 @@ Reggie教導我們各項技術還有如何衝浪🏄！他什麼都會！真的�
       </tags>
   </entry>
   <entry>
-    <title>我的第一座山 - 鳶嘴山 </title>
-    <url>/myblog/2020/09/13/Yuanzui-Mountain/</url>
-    <content><![CDATA[<blockquote>
-<p>最厲害的不是登頂<br>
-而是製作步道跟繩索的人</p>
-</blockquote>
-<hr>
-<h1 id="行前準備">行前準備</h1>
-<ol>
-<li>建議保旅平險</li>
-<li>登山包要帶1.5升以上飲水、(雨衣)、保暖外套、(手套)、(暖暖包)、(頭燈)、行動糧、鹽糖</li>
-<li>另準備一包行李放車上帶一套新的衣物、午餐、水、睡袋</li>
-<li>衣著：運動鞋、運動長褲、排汗衫（袖套）、毛巾、太陽眼鏡、遮陽帽</li>
-<li>記得行李輕便為主</li>
-</ol>
-<hr>
-<h1 id="當天行程">當天行程</h1>
-<p>選擇一大早出發不僅可以避開人潮且較有車位停車同時可以避免午後雷陣雨，不過許多人前一天就在此地露營，所以還是有點難找停車位<br>
-<img src="1.JPG" alt="1"></p>
-<p>週日凌晨2點半出發、4點到登山口、休息小睡1個小時、5點半開爬、來回實際上只需大約三小時（沒有太多人排隊的話）、10點回登山口休息一下、下山吃午餐</p>
-<hr>
-<h1 id="山況說明">山況說明</h1>
-<p>27k的登山口上山後，起初為較好走的人造木階，但由於每個木階的高度都很高，因此相對較吃力<br>
-<img src="2.jpg" alt="2"></p>
-<p>而隨著高度增加 難度也越來越大<br>
-<img src="3.jpg" alt="3"> <img src="4.jpg" alt="4"></p>
-<p>後面開始有大石塊及繩索，有些必須踩入石塊縫隙中，並以繩索輔助，以及木梯（當時搬來的人真的很厲害）<br>
-<img src="5.jpg" alt="5"> <img src="6.JPG" alt="6"></p>
-<p>陸續爬到頂峰，鳶嘴山頂高度為2180公尺，絕美的風景只以大約1.5小時的路程非常值得<br>
-<img src="7.jpg" alt="7"> <img src="8.jpg" alt="8"></p>
-<hr>
-<h1 id="總結">總結</h1>
-<p>自己本身是登山菜雞，這是以個人角度做的評分，主要是因為路程短不需背重物，因此不會太困難</p>
-<p>難易度  ： ◼️ ◼️ ◼️ ◻️ ◻️<br>
-危險度  ： ◼️ ◼️ ◼️ ◼️ ◻️<br>
-值得程度： ◼️ ◼️ ◼️ ◼️ ◼️</p>
-]]></content>
-      <tags>
-        <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>越南遊2019/6/22~ 2019/6/29</title>
     <url>/myblog/2019/06/29/Vietnam/</url>
     <content><![CDATA[<blockquote>
@@ -986,6 +944,48 @@ To be continued…</p>
       </tags>
   </entry>
   <entry>
+    <title>我的第一座山 - 鳶嘴山 </title>
+    <url>/myblog/2020/09/13/Yuanzui-Mountain/</url>
+    <content><![CDATA[<blockquote>
+<p>最厲害的不是登頂<br>
+而是製作步道跟繩索的人</p>
+</blockquote>
+<hr>
+<h1 id="行前準備">行前準備</h1>
+<ol>
+<li>建議保旅平險</li>
+<li>登山包要帶1.5升以上飲水、(雨衣)、保暖外套、(手套)、(暖暖包)、(頭燈)、行動糧、鹽糖</li>
+<li>另準備一包行李放車上帶一套新的衣物、午餐、水、睡袋</li>
+<li>衣著：運動鞋、運動長褲、排汗衫（袖套）、毛巾、太陽眼鏡、遮陽帽</li>
+<li>記得行李輕便為主</li>
+</ol>
+<hr>
+<h1 id="當天行程">當天行程</h1>
+<p>選擇一大早出發不僅可以避開人潮且較有車位停車同時可以避免午後雷陣雨，不過許多人前一天就在此地露營，所以還是有點難找停車位<br>
+<img src="1.JPG" alt="1"></p>
+<p>週日凌晨2點半出發、4點到登山口、休息小睡1個小時、5點半開爬、來回實際上只需大約三小時（沒有太多人排隊的話）、10點回登山口休息一下、下山吃午餐</p>
+<hr>
+<h1 id="山況說明">山況說明</h1>
+<p>27k的登山口上山後，起初為較好走的人造木階，但由於每個木階的高度都很高，因此相對較吃力<br>
+<img src="2.jpg" alt="2"></p>
+<p>而隨著高度增加 難度也越來越大<br>
+<img src="3.jpg" alt="3"> <img src="4.jpg" alt="4"></p>
+<p>後面開始有大石塊及繩索，有些必須踩入石塊縫隙中，並以繩索輔助，以及木梯（當時搬來的人真的很厲害）<br>
+<img src="5.jpg" alt="5"> <img src="6.JPG" alt="6"></p>
+<p>陸續爬到頂峰，鳶嘴山頂高度為2180公尺，絕美的風景只以大約1.5小時的路程非常值得<br>
+<img src="7.jpg" alt="7"> <img src="8.jpg" alt="8"></p>
+<hr>
+<h1 id="總結">總結</h1>
+<p>自己本身是登山菜雞，這是以個人角度做的評分，主要是因為路程短不需背重物，因此不會太困難</p>
+<p>難易度  ： ◼️ ◼️ ◼️ ◻️ ◻️<br>
+危險度  ： ◼️ ◼️ ◼️ ◼️ ◻️<br>
+值得程度： ◼️ ◼️ ◼️ ◼️ ◼️</p>
+]]></content>
+      <tags>
+        <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>大學專題 Graduate Thesis- 僑牽ＯＣＣ</title>
     <url>/myblog/2017/12/13/college-project/</url>
     <content><![CDATA[<blockquote>
@@ -1017,68 +1017,6 @@ Step3. 建置論壇 Build Website</p>
 <h1 id="書面資料-written-report">書面資料 Written Report</h1>
 <hr>
 <p><a href="https://drive.google.com/drive/folders/126sHSHVP27LjqDtpRQmMCpdwN5nUHcUu" target="_blank" rel="noopener">了解更多此專題 Click on me</a></p>
-]]></content>
-      <tags>
-        <tag>Work</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Maya學習成果</title>
-    <url>/myblog/2018/12/31/maya/</url>
-    <content><![CDATA[<blockquote>
-<p>Maya 是 3D 電腦動畫軟體，擁有強大的建模、彩現、模擬、材質設定和動畫工具，適用於美工人員、建模人員和動畫師<br>
-Maya is a 3D computer animation software with powerful modeling, color rendering, simulation, material settings, and animation tools for artists, modelers, and animators.</p>
-</blockquote>
-<div align="left"><img src="maya.jpg" width="150" height="150"> </div>
-<p><a href="https://www.autodesk.com/products/maya/overview" target="_blank" rel="noopener">Maya 官網</a></p>
-<h1 id="hw-1-低調奢華-mazda-elegant-m">HW 1 - 低調奢華 MAZDA Elegant M</h1>
-<hr>
-<h3 id="低調奢華-mazda-elegant-m">低調奢華 MAZDA Elegant M</h3>
-<blockquote>
-<p>第一次使用Maya軟體設計車子色調，想透過車子表達抽象概念</p>
-</blockquote>
-<p>伴隨優雅的琴聲，聲音迴盪於山谷間，餘波盪漾，山水鏡射，車裡車外相透射，你泥中有我，我泥中有你，全車身以玻璃、水、氣泡，使車體超自然、虛無飄渺，卻又貨真價實擺在眼前，氣泡外殼反射紫色光暈，透露淡淡奢華，玻璃握把、座位區可細看出車體的每個細節，及設計美學，金屬材質的車燈集LOGO，其餘以水進行設計，打造精細的現代感，呈現高雅細膩之感…</p>
-<hr>
-<p><a href="https://drive.google.com/drive/folders/1p1te08vQCDFEZ7dcw9FoyRvf9eRl5cJm" target="_blank" rel="noopener">作品呈現 Click On Me</a></p>
-<p><img src="%E8%BF%91%E6%99%AF.jpeg" alt="近景">   <img src="%E5%85%A7%E9%83%A8%E7%B4%B0%E7%AF%80.jpeg" alt="內部細節">   <img src="%E9%81%A0%E6%99%AF.jpeg" alt="遠景"></p>
-<h1 id="hw-2-老皮革才有的韻味">HW 2 - 老皮革才有的韻味</h1>
-<hr>
-<h3 id="老皮革才有的韻味">老皮革才有的韻味</h3>
-<blockquote>
-<p>這是牛皮經過時間的氧化、摩擦而變得光滑透亮,這個過程我們稱作「養皮」。皮革會慢慢吸收油分,遇光則會氧化產生變化,所以每個人養出來的皮都會長得不一樣。養皮大概就跟泡茶的人養茶壺是一樣的道裡吧!</p>
-</blockquote>
-<p>皮革經歷時間越久越有韻味 然而皮鞋穿久了卻是滿滿回憶</p>
-<p>The longer the leather has passed, the more it has the charm. However, the leather shoes are worn for a long time but full of memories.</p>
-<p>皮鞋變舊過程：</p>
-<ol>
-<li>會失去其光澤</li>
-<li>在長期穿過的指頭關節會有皺摺</li>
-<li>經歷雨水沖刷會有明顯褪色</li>
-<li>外觀變得些許粗糙</li>
-</ol>
-<hr>
-<p><a href="https://drive.google.com/drive/folders/1p63-EbCh_Vi1qWExLoqcV0_fTUuZE9nv" target="_blank" rel="noopener">作品呈現 Click On Me</a></p>
-<p><img src="shoes.png" alt="shoes"></p>
-<h1 id="hw-3-沙漠之心-文明之源">HW 3 - 沙漠之心 文明之源</h1>
-<h3 id="沙漠之心-文明之源">沙漠之心 文明之源</h3>
-<blockquote>
-<p>Atlantis is a fictional aquatic civilization appearing in American comic books published by DC Comics.</p>
-</blockquote>
-<h3 id="靈感發想-水行俠aquaman的亞特蘭提斯">靈感發想 : 水行俠Aquaman的亞特蘭提斯</h3>
-<p>據了解，這個地方在西方傳說中，是一個擁有高度文明的國度，可是這個地方在一萬多年前沉沒在大海中，而對於亞特蘭提斯最早的描述，要追溯至古希臘哲學家柏拉圖的著作《對話錄》中。柏拉圖指出，亞特蘭提斯是一個遍地黃金及白銀的國度，可惜最後因為大地震及洪水相繼發生，最終令亞特蘭提斯淹沒在大海之中。至於真相如何，相信目前仍沒有得到確實的解說。</p>
-<hr>
-<h5 id="作品呈現">作品呈現：</h5>
-<p>共分三層：</p>
-<p>第一層：沙漠 desert<br>
-沙漠乃生命起源</p>
-<p><img src="1.jpeg" alt="desert"></p>
-<p>第二層：海洋 ocean<br>
-沙漠下方隱匿世界部分海洋</p>
-<p><img src="2.jpeg" alt="ocean"></p>
-<p>第三層：雲朵 + 城市 cloud + city<br>
-海洋下 其實有雲朵及荒廢的文明 其受到沙漠唯一的缺口照亮</p>
-<p><img src="3.jpeg" alt="city"></p>
-<p><img src="4.jpeg" alt="full">   <img src="5.jpeg" alt="city1">   <img src="6.jpeg" alt="city2">   <img src="7.jpeg" alt="ocean2"></p>
 ]]></content>
       <tags>
         <tag>Work</tag>
@@ -1246,39 +1184,62 @@ Maya is a 3D computer animation software with powerful modeling, color rendering
       </tags>
   </entry>
   <entry>
-    <title>股價走勢預測-Stock Prediction </title>
-    <url>/myblog/2019/02/09/stock-prediction/</url>
+    <title>Maya學習成果</title>
+    <url>/myblog/2018/12/31/maya/</url>
     <content><![CDATA[<blockquote>
-<p>利用三種不同的深度學習方法(RNN、LSTM、GRU)來預測IBM股價 走向並比較<br>
-Use three different deep learning methods (RNN, LSTM, GRU) to predict IBM stock price trends and compare them</p>
+<p>Maya 是 3D 電腦動畫軟體，擁有強大的建模、彩現、模擬、材質設定和動畫工具，適用於美工人員、建模人員和動畫師<br>
+Maya is a 3D computer animation software with powerful modeling, color rendering, simulation, material settings, and animation tools for artists, modelers, and animators.</p>
 </blockquote>
-<p><a href="https://github.com/LawrenceGao0224/data_mining/tree/main/datamining_final">程式碼＋報告PDF : Click On Me</a></p>
-<h1 id="前言">前言</h1>
+<div align="left"><img src="maya.jpg" width="150" height="150"> </div>
+<p><a href="https://www.autodesk.com/products/maya/overview" target="_blank" rel="noopener">Maya 官網</a></p>
+<h1 id="hw-1-低調奢華-mazda-elegant-m">HW 1 - 低調奢華 MAZDA Elegant M</h1>
 <hr>
-<p>一般投資者在投資各種金融商品時，往往都是大賠小賺，因投資者常聽信消息面及一時的衝動，或未作詳細的評估分析就輕易投資，若要單獨分析各種經濟資訊不僅需要蒐集繁多的相關資訊，不但非常費時且需要豐富的專業財經知識，而其預估未來的發展趨勢亦不一定準確，且通常經濟指標是落後市場反應的指標。<br>
-而人工智慧的發展日趨興盛，其被運用在多個領域中，尤其是在經融、財經領域中，以類神經網路來預測可說是相當熱門的，透過電腦運算快速的優勢，及多層神經網路，可輔助投資人進行預測。<br>
-When investing in various financial products, the average investor tends to make small profits. Because investors often listen to news and impulses, or do not make detailed assessments and analyze them easily. If you want to analyze various economic information separately, you need not only Collecting a lot of relevant information is not only very time-consuming but also requires a wealth of professional financial knowledge, and its estimated future development trend is not necessarily accurate.<br>
-The development of artificial intelligence is prosperous, and it is used in many fields, especially in the field of finance , the prediction of neural network is quite popular, and the advantages of computing are fast. Neural networks can help investors make predictions.</p>
+<h3 id="低調奢華-mazda-elegant-m">低調奢華 MAZDA Elegant M</h3>
+<blockquote>
+<p>第一次使用Maya軟體設計車子色調，想透過車子表達抽象概念</p>
+</blockquote>
+<p>伴隨優雅的琴聲，聲音迴盪於山谷間，餘波盪漾，山水鏡射，車裡車外相透射，你泥中有我，我泥中有你，全車身以玻璃、水、氣泡，使車體超自然、虛無飄渺，卻又貨真價實擺在眼前，氣泡外殼反射紫色光暈，透露淡淡奢華，玻璃握把、座位區可細看出車體的每個細節，及設計美學，金屬材質的車燈集LOGO，其餘以水進行設計，打造精細的現代感，呈現高雅細膩之感…</p>
 <hr>
-<h1 id="流程與實作結果">流程與實作結果</h1>
-<p><a href="https://www.kaggle.com/szrlee/stock-time-series-20050101-to-20171231" target="_blank" rel="noopener">Data Source 資料來源 Kaggle : Click On Me</a></p>
-<h2 id="流程-workflow">流程 Workflow :</h2>
-<p>本次實驗皆採用Keras來搭建深度學習模型，分別利用RNN、LSTM、GRU等深度學習方法來預測，並以均方根誤差(RMSE)來當作評估標準。<br>
-In this experiment, Keras was used to build a deep learning model, which was predicted by deep learning methods such as RNN, LSTM, and GRU, and the root mean square error (RMSE) was used as the evaluation standard.</p>
-<h2 id="實作結果-result">實作結果 Result：</h2>
-<p>(1)LSTM:<br>
-RMSE:2.5459669921977524.</p>
-<p><img src="LSTM.png" alt="LSTM"></p>
-<p>(2)RNN:<br>
-RMSE: 4.72949126626088.</p>
-<p><img src="RNN.png" alt="RNN"></p>
-<p>(3)GRU:<br>
-RMSE: 3.3223451158225696.</p>
-<p><img src="GRU.png" alt="GRU"></p>
+<p><a href="https://drive.google.com/drive/folders/1p1te08vQCDFEZ7dcw9FoyRvf9eRl5cJm" target="_blank" rel="noopener">作品呈現 Click On Me</a></p>
+<p><img src="%E8%BF%91%E6%99%AF.jpeg" alt="近景">   <img src="%E5%85%A7%E9%83%A8%E7%B4%B0%E7%AF%80.jpeg" alt="內部細節">   <img src="%E9%81%A0%E6%99%AF.jpeg" alt="遠景"></p>
+<h1 id="hw-2-老皮革才有的韻味">HW 2 - 老皮革才有的韻味</h1>
 <hr>
-<h1 id="分析結果與討論-discussion">分析結果與討論 Discussion</h1>
-<p>從上面結果圖可以看出，我們所預測的走勢與實際情況相近，其中又以LSTM最佳，RNN最差，我們推測原因是因為RNN只考慮最近的狀態，而LSTM結構更為複雜，會將過去的輸出和當前的輸入concatenate到一起。 在現實中的股價波動往往並不單純只與前一天的股價相關，而是會與歷史 中的股價變化有所關連。<br>
-From graph, we can see that the trend we predicted is similar to the actual situation. Among them, LSTM is the best and RNN is the worst. We speculate that the reason is because RNN only considers the most recent state, and the LSTM structure is more complicated. The past output is concatenate with the current input. In reality, stock price volatility is often not only related to the stock price of the previous day, but it is related to change in stock prices in history.</p>
+<h3 id="老皮革才有的韻味">老皮革才有的韻味</h3>
+<blockquote>
+<p>這是牛皮經過時間的氧化、摩擦而變得光滑透亮,這個過程我們稱作「養皮」。皮革會慢慢吸收油分,遇光則會氧化產生變化,所以每個人養出來的皮都會長得不一樣。養皮大概就跟泡茶的人養茶壺是一樣的道裡吧!</p>
+</blockquote>
+<p>皮革經歷時間越久越有韻味 然而皮鞋穿久了卻是滿滿回憶</p>
+<p>The longer the leather has passed, the more it has the charm. However, the leather shoes are worn for a long time but full of memories.</p>
+<p>皮鞋變舊過程：</p>
+<ol>
+<li>會失去其光澤</li>
+<li>在長期穿過的指頭關節會有皺摺</li>
+<li>經歷雨水沖刷會有明顯褪色</li>
+<li>外觀變得些許粗糙</li>
+</ol>
+<hr>
+<p><a href="https://drive.google.com/drive/folders/1p63-EbCh_Vi1qWExLoqcV0_fTUuZE9nv" target="_blank" rel="noopener">作品呈現 Click On Me</a></p>
+<p><img src="shoes.png" alt="shoes"></p>
+<h1 id="hw-3-沙漠之心-文明之源">HW 3 - 沙漠之心 文明之源</h1>
+<h3 id="沙漠之心-文明之源">沙漠之心 文明之源</h3>
+<blockquote>
+<p>Atlantis is a fictional aquatic civilization appearing in American comic books published by DC Comics.</p>
+</blockquote>
+<h3 id="靈感發想-水行俠aquaman的亞特蘭提斯">靈感發想 : 水行俠Aquaman的亞特蘭提斯</h3>
+<p>據了解，這個地方在西方傳說中，是一個擁有高度文明的國度，可是這個地方在一萬多年前沉沒在大海中，而對於亞特蘭提斯最早的描述，要追溯至古希臘哲學家柏拉圖的著作《對話錄》中。柏拉圖指出，亞特蘭提斯是一個遍地黃金及白銀的國度，可惜最後因為大地震及洪水相繼發生，最終令亞特蘭提斯淹沒在大海之中。至於真相如何，相信目前仍沒有得到確實的解說。</p>
+<hr>
+<h5 id="作品呈現">作品呈現：</h5>
+<p>共分三層：</p>
+<p>第一層：沙漠 desert<br>
+沙漠乃生命起源</p>
+<p><img src="1.jpeg" alt="desert"></p>
+<p>第二層：海洋 ocean<br>
+沙漠下方隱匿世界部分海洋</p>
+<p><img src="2.jpeg" alt="ocean"></p>
+<p>第三層：雲朵 + 城市 cloud + city<br>
+海洋下 其實有雲朵及荒廢的文明 其受到沙漠唯一的缺口照亮</p>
+<p><img src="3.jpeg" alt="city"></p>
+<p><img src="4.jpeg" alt="full">   <img src="5.jpeg" alt="city1">   <img src="6.jpeg" alt="city2">   <img src="7.jpeg" alt="ocean2"></p>
 ]]></content>
       <tags>
         <tag>Work</tag>
@@ -1371,6 +1332,45 @@ From graph, we can see that the trend we predicted is similar to the actual situ
 ]]></content>
       <tags>
         <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>股價走勢預測-Stock Prediction </title>
+    <url>/myblog/2019/02/09/stock-prediction/</url>
+    <content><![CDATA[<blockquote>
+<p>利用三種不同的深度學習方法(RNN、LSTM、GRU)來預測IBM股價 走向並比較<br>
+Use three different deep learning methods (RNN, LSTM, GRU) to predict IBM stock price trends and compare them</p>
+</blockquote>
+<p><a href="https://github.com/LawrenceGao0224/data_mining/tree/main/datamining_final">程式碼＋報告PDF : Click On Me</a></p>
+<h1 id="前言">前言</h1>
+<hr>
+<p>一般投資者在投資各種金融商品時，往往都是大賠小賺，因投資者常聽信消息面及一時的衝動，或未作詳細的評估分析就輕易投資，若要單獨分析各種經濟資訊不僅需要蒐集繁多的相關資訊，不但非常費時且需要豐富的專業財經知識，而其預估未來的發展趨勢亦不一定準確，且通常經濟指標是落後市場反應的指標。<br>
+而人工智慧的發展日趨興盛，其被運用在多個領域中，尤其是在經融、財經領域中，以類神經網路來預測可說是相當熱門的，透過電腦運算快速的優勢，及多層神經網路，可輔助投資人進行預測。<br>
+When investing in various financial products, the average investor tends to make small profits. Because investors often listen to news and impulses, or do not make detailed assessments and analyze them easily. If you want to analyze various economic information separately, you need not only Collecting a lot of relevant information is not only very time-consuming but also requires a wealth of professional financial knowledge, and its estimated future development trend is not necessarily accurate.<br>
+The development of artificial intelligence is prosperous, and it is used in many fields, especially in the field of finance , the prediction of neural network is quite popular, and the advantages of computing are fast. Neural networks can help investors make predictions.</p>
+<hr>
+<h1 id="流程與實作結果">流程與實作結果</h1>
+<p><a href="https://www.kaggle.com/szrlee/stock-time-series-20050101-to-20171231" target="_blank" rel="noopener">Data Source 資料來源 Kaggle : Click On Me</a></p>
+<h2 id="流程-workflow">流程 Workflow :</h2>
+<p>本次實驗皆採用Keras來搭建深度學習模型，分別利用RNN、LSTM、GRU等深度學習方法來預測，並以均方根誤差(RMSE)來當作評估標準。<br>
+In this experiment, Keras was used to build a deep learning model, which was predicted by deep learning methods such as RNN, LSTM, and GRU, and the root mean square error (RMSE) was used as the evaluation standard.</p>
+<h2 id="實作結果-result">實作結果 Result：</h2>
+<p>(1)LSTM:<br>
+RMSE:2.5459669921977524.</p>
+<p><img src="LSTM.png" alt="LSTM"></p>
+<p>(2)RNN:<br>
+RMSE: 4.72949126626088.</p>
+<p><img src="RNN.png" alt="RNN"></p>
+<p>(3)GRU:<br>
+RMSE: 3.3223451158225696.</p>
+<p><img src="GRU.png" alt="GRU"></p>
+<hr>
+<h1 id="分析結果與討論-discussion">分析結果與討論 Discussion</h1>
+<p>從上面結果圖可以看出，我們所預測的走勢與實際情況相近，其中又以LSTM最佳，RNN最差，我們推測原因是因為RNN只考慮最近的狀態，而LSTM結構更為複雜，會將過去的輸出和當前的輸入concatenate到一起。 在現實中的股價波動往往並不單純只與前一天的股價相關，而是會與歷史 中的股價變化有所關連。<br>
+From graph, we can see that the trend we predicted is similar to the actual situation. Among them, LSTM is the best and RNN is the worst. We speculate that the reason is because RNN only considers the most recent state, and the LSTM structure is more complicated. The past output is concatenate with the current input. In reality, stock price volatility is often not only related to the stock price of the previous day, but it is related to change in stock prices in history.</p>
+]]></content>
+      <tags>
+        <tag>Work</tag>
       </tags>
   </entry>
 </search>
