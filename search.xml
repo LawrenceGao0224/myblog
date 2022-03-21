@@ -1,88 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>仙女散落的珍珠 - 加羅湖</title>
-    <url>/myblog/2022/03/01/Jialuo/</url>
-    <content><![CDATA[<blockquote>
-<p>出發前才知道要爬的是加羅湖不是嘉明湖<br>
-登山新手的挑戰</p>
-</blockquote>
+    <title>NBA老闆的慧眼 - Affinity Propagation</title>
+    <url>/myblog/2019/01/29/AP-algo/</url>
+    <content><![CDATA[<h1 id="概念發想concept">概念發想Concept</h1>
 <hr>
-<p><img src="22.jpg" alt="1"></p>
-<h1 id="加羅湖簡介">加羅湖簡介</h1>
-<p>加羅湖位於宜蘭縣大同鄉四季村、中橫北支線加羅山區，坐落於中央山脈南湖大山和三星山的山地交會點，里洛山北到太平山之間的陵脈上，因為鄰近加羅山故名為加羅湖，湖泊呈現為南北走向，是加納富溪的源頭；加羅湖標高為2242公尺，是一個湖群，因此除了加羅湖外還有撤退池、豪邁池、偉蛋池、墨池、日湖、月湖、天池、檜木池、水池、綠池等眾多高山湖泊，目前發現共有18個；在眾多的高山湖泊中以加羅湖的面積最為廣闊，其長度約為300公尺，寬約150公尺、深度約15公尺。<br>
-加羅湖的傳說－『散落的珍珠』<br>
-加羅湖的傳說十分夢幻，相傳在遠古時代有一位貌美的仙女，當他正在梳妝打扮的同時，一個閃神不小心將桌上的明鏡給打破了，而亮麗如鑽石般的碎片便粒粒如雨下般的灑落於加羅山區，交織成了為數眾多、美如幻境的湖泊群；加羅湖群水時清澈、光線充足，也因為其週遭的美麗景致被稱之為『散落的珍珠』。<br>
-<a href="https://www.travelking.com.tw/tourguide/scenery103360.html" target="_blank" rel="noopener">資料來源：https://www.travelking.com.tw/tourguide/scenery103360.html</a></p>
-<h1 id="近代登山史中加羅湖的重新被發現">近代登山史中加羅湖的重新被發現</h1>
-<p>在1987年元月，當時台大登山社5名社員組成了加羅湖與加羅山首登勘察隊，在加羅山西南稜，也就是靠近現今撤退池的附近，誤走山徑，因而沒能登上加羅山，後經紮營，隔日回撤重新出發後才找著正確的路，並且成功進入加羅湖區。當晚他們在第一個遇見的盆地水池畔紮營，並將此池命名為「加羅湖」。不過，當第二天繼續前進而與更寬闊的湖面相遇時，隊員們就改變了心意，將「加羅湖」改賦予眼前的大池(即現今的加羅湖)，而昨天誤入山徑，差點以撤退收場，紮營的小池就另給了一個帶點紀念行程一波三折意味的名字，「撤退池」。</p>
-<h1 id="行程規劃">行程規劃</h1>
-<p><img src="1.jpeg" alt="1"><br>
-<img src="2.jpeg" alt="2"></p>
-<p>建議兩天行程，當天來回會很辛苦，尤其宜蘭山區極易下雨，可能抵達時下午霧氣擋住加羅湖美景，隔日一早霧氣才飄散<br>
-第一天：四季林道→鐵柵欄→加納富溪→巨木登山口→撤退池→偉蛋池→加羅湖<br>
-第二天：加羅湖→偉蛋池→撤退池→巨木登山口→加納富溪→鐵柵欄→四季林道</p>
-<h1 id="入山證申請">入山證申請</h1>
-<p>出發前5日至30日至<a href="https://nv2.npa.gov.tw/NM107-604Client/" target="_blank" rel="noopener">內政部警政署網站</a>申請，或前往加羅湖當日先至宜蘭縣警察局三星分局、大同分駐所、太平山派出所、明池派出所、蘇澳分局、澳花派出所、碧候派出所，任一處辦理入山證。<a href="https://www.ilcpb.gov.tw/?aspxerrorpath=/main/page_view.aspx" target="_blank" rel="noopener">（資料來源：宜蘭縣政府警察局）</a></p>
-<h1 id="行前準備">行前準備</h1>
+<p><a href="https://github.com/LawrenceGao0224/Intelligence-Oriented-Management-Decision/tree/master/%E6%99%BA%E6%85%A7%E5%9E%8B%E6%9C%9F%E6%9C%AB%E5%A0%B1%E5%91%8A">程式碼連結Click On Me</a></p>
+<p><img src="NBA.jpg" alt="NBA"></p>
+<p>我們將自己設想為球隊分析師，並希望能遞上一份不讓老闆&quot;打臉&quot;的分群資料，提供球隊高層在球員交易、補強、替代方案上有份合理客觀的依據。</p>
+<p>We envision ourselves as team analysts, and hope to hand over a group of information that provides the team’s top management with a reasonable and objective basis for player trading, reinforcement, and alternatives.</p>
+<hr>
+<h1 id="操作方法operation">操作方法Operation</h1>
+<p>將NBA所有球員資料(Ex: 薪水、年齡、得分、助攻、有效命中率、真實命中率、球權佔有率、籃板率、效率值…)，以AP演算法實作，計算各球員資料的負歐積里德距離，調整preference、Damping Factor參數，求出k個高質量聚類，且我們將多維度的資料透過PCA()方法壓縮為低維度的資料，實現可視化。</p>
+<p>All NBA player information (Ex: salary, age, score, assists, effective hit rate, true hit rate, possession rate, rebound rate, efficiency value…) is calculated by AP algorithm to calculate each player’s data. The negative Ourich Reed distance, adjust the preferences, Damping Factor parameters, find k high-quality clusters, and we compress the multi-dimensional data into low-dimensional data through PCA () method to achieve visualization</p>
+<p>資料來源 ： (<a href="https://www.kaggle.com/acasalan/nba-player-stats-201718" target="_blank" rel="noopener">https://www.kaggle.com/acasalan/nba-player-stats-201718</a>)</p>
+<hr>
+<h1 id="實作結果-result">實作結果 Result</h1>
+<h2 id="調整參數-adjust-parameter">調整參數 Adjust parameter:</h2>
 <ol>
-<li>行動糧（高熱量巧克力、能量棒、麵包…）</li>
-<li>建議至少2000cc的水</li>
-<li>鹽糖 (電解質補給)</li>
-<li>保暖衣物（山上非常冷，尤其我去的時間到午夜溫度是-2度Ｃ，還有建議襪子穿兩層厚度）</li>
-<li>登山杖</li>
-<li>雨靴（建議高筒，很多地方泥濘不堪）</li>
-<li>帳篷、睡墊</li>
-<li>衛生用品</li>
-<li>急救用品<br>
-（ＰＳ：如果是新手，建議找協作訂餐、租借帳篷及睡墊，減少背包的重量）<br>
-（ＰＳ：建議洋蔥式穿法，爬行過程會非常炎熱，因此穿脫方便為宜）</li>
+<li>Preference:<br>
+Preference = 中位數(-62.5683289159)<br>
+群集數: 43</li>
 </ol>
-<h1 id="加羅湖路徑詳述">加羅湖路徑詳述</h1>
-<p>起先搭接駁抵達著名紅色柵欄的登山口</p>
-<div align="left"><img src="3.jpg" width="500" height="500"> </div>
-<p>入柵欄後，開始行走四季林道，路上都是大小石頭，要小心打滑</p>
-<div align="left"><img src="4.jpg" width="500" height="500"> </div>
-<div align="left"><img src="5.jpg" width="500" height="500"> </div>
-<p>走近3.7K就會抵達四季養護所（廢棄工寮），上面被別人寫著許多到此一遊</p>
-<div align="left"><img src="6.jpg" width="500" height="500"> </div>
-<div align="left"><img src="7.jpg" width="500" height="500"> </div>
-<p>再走一小端路就抵達加納富溪，最後的取水點</p>
-<div align="left"><img src="8.jpg" width="500" height="500"> </div>
-<p>馬上就抵達巨木登山口，是此處最巨大的神木，感受大自然的鬼斧神工</p>
-<div align="left"><img src="9.jpg" width="500" height="500"> </div>
-<p>從此之後都是陡上的路徑，有近2.9K，沿路樹木被綠色植披覆蓋，猶如夢幻世界</p>
-<div align="left"><img src="10.jpg" width="500" height="500"> </div>
-<div align="left"><img src="11.jpg" width="500" height="500"> </div>
-<p>抵達1.9K處時建議稍作停留，此後將難以收到訊號，路途也變得較艱辛</p>
-<div align="left"><img src="12.jpg" width="500" height="500"> </div>
-<p>映入眼簾就是芒草區，建議長袖長褲避免刮傷</p>
-<div align="left"><img src="13.jpg" width="500" height="500"> </div>
-<p>由於我們行走前一週連日下雨，地面非常泥濘，腳一陷入，哭著找媽媽</p>
-<div align="left"><img src="14.jpg" width="500" height="500"> </div>
-<p>抵達偉蛋池，那時還有霧氣，猶如仙境</p>
-<div align="left"><img src="15.jpg" width="500" height="500"> </div>
-<p>在行走一段路程即抵達加羅湖，美麗的景色，建議先換上衣物再探索湖周遭，避免著涼</p>
-<div align="left"><img src="16.jpg" width="500" height="500"> </div>
-<div align="left"><img src="17.jpg" width="500" height="500"> </div>
-<div align="left"><img src="23.jpg" width="500" height="500"> </div>
-<p>協作準備的晚餐飯菜，大家的評價都滿好吃，我也很滿意，吃完可以在承裝，千萬不要浪費</p>
-<div align="left"><img src="18.jpg" width="500" height="500"> </div>
-<p>夜晚的各位等待裝飯，氣溫也逐漸降低</p>
-<div align="left"><img src="19.jpg" width="500" height="500"> </div>
-<div align="left"><img src="20.jpg" width="500" height="500"> </div>
-<p>夜晚美麗的星空</p>
-<div align="left"><img src="24.jpg" width="500" height="500"> </div>
-<p>清晨的加羅湖，很可惜到離開前都還是濃濃霧氣</p>
-<div align="left"><img src="21.jpg" width="500" height="500"> </div>
-<h1 id="總結">總結</h1>
-<p>自己本身是登山菜雞，這是以個人角度做的評分，覺得難度中上，全程9Ｋ，來回18K，在來之前要做好訓練，不要低估了！</p>
-<p>難易度  ： ◼️ ◼️ ◼️ ◼️ ◻️<br>
-危險度  ： ◼️ ◼️ ◼️ ◼️ ◻️<br>
-值得程度： ◼️ ◼️ ◼️ ◼️ ◼️</p>
+<p><img src="1-1.png" alt="43"></p>
+<p>Preference = -500<br>
+群集數: 7</p>
+<p><img src="1-2.png" alt="7"></p>
+<ol start="2">
+<li>Damping Factor:</li>
+</ol>
+<p>Damping Factor = 0.5      --&gt;      Time = 0.8640606880187988 seconds.<br>
+Damping Factor = 0.9      --&gt;      Time = 1.2220699787139893 seconds.</p>
+<h2 id="所有球員資料-all-players">所有球員資料 All players:</h2>
+<p><img src="2-1.png" alt="2-1">   <img src="2-2.png" alt="2-2"></p>
+<h2 id="依球員打球的位置-according-to-position">依球員打球的位置 According to position</h2>
+<ol>
+<li>
+<p>center © : 8群集數<br>
+<img src="3-1.png" alt="3-1"></p>
+</li>
+<li>
+<p>power forward (PF) : 8群集數<br>
+<img src="3-2.png" alt="3-2"></p>
+</li>
+<li>
+<p>small forward (SF) : 12群集數<br>
+<img src="3-3.png" alt="3-3"></p>
+</li>
+<li>
+<p>point guard (PG) : 11群集數<br>
+<img src="3-4.png" alt="3-4"></p>
+</li>
+<li>
+<p>shooting guard (SG) : 4群集數<br>
+<img src="3-5.png" alt="3-5"></p>
+</li>
+</ol>
+<h2 id="依不同屬性">依不同屬性</h2>
+<p>進攻性質 or 防守性質…</p>
+<hr>
+<h1 id="延伸探討-any-imperfect">延伸探討  Any imperfect ?</h1>
+<p>然而在我們丟入的data有其盲點存在,NBA的老闆或球隊在選擇球員上,並不會只觀看球員在場上的數據表現,還包括許多因素,事無法量化或在數據表現出來的(包括球員心理狀態、球員間磨合度…)</p>
+<p>However, the data we throw in has its  blind spots. The NBA boss or team is not only watching the performance of the players on the field, but also includes many factors, which cannot be quantified or expressed in the data. (including the player’s mental state, the player’s running-in…)</p>
+<p>如下:</p>
+<p>❖商業價值 ex: Dwyane Wade<br>
+Wade是大家耳熟能詳的巨星,層經出現在2K遊戲的封面上,但最近的數據表現並不如其他球員出色,但仍是有淺力的球員,也累積許多粉絲,粉絲能帶來商業價值。<br>
+<img src="4-1.png" alt="4-1"></p>
+<p>❖球員背景 ex: Jeremy Lin<br>
+Jeremy是著名的台裔球員,能吸引亞洲地區的球迷觀注其球隊,帶來利益。<br>
+<img src="4-2.png" alt="4-2"></p>
+<p>❖健康因素 ex: Derrick Rose<br>
+Rose是最年輕獲選MVP的球員,但由於前幾賽季腳傷原因,造成都個<br>
+賽季缺賽,而傷後復出便不如以前突出,這也是無法顯現在數據上的。<br>
+<img src="4-3.png" alt="4-3"></p>
+<hr>
+<h1 id="參考資料">參考資料</h1>
+<p>(<a href="https://zi.media/@yidianzixun/post/uKZUFF?fbclid=IwAR1Dib-4T5MkM2x_helYBtq0TgTD871fAixs-4sBivOUXUNjuMl07xFahOs" target="_blank" rel="noopener">https://zi.media/@yidianzixun/post/uKZUFF?fbclid=IwAR1Dib-4T5MkM2x_helYBtq0TgTD871fAixs-4sBivOUXUNjuMl07xFahOs</a>)</p>
+<p>(<a href="https://www.cnblogs.com/huadongw/p/4202492.html?fbclid=IwAR3PHEOcrAar0rCI1e9AeYBxV0fI6JKJIRqGAJ3ag9BnlleT5M9v_8oNiy0" target="_blank" rel="noopener">https://www.cnblogs.com/huadongw/p/4202492.html?fbclid=IwAR3PHEOcrAar0rCI1e9AeYBxV0fI6JKJIRqGAJ3ag9BnlleT5M9v_8oNiy0</a>)</p>
+<p>(<a href="https://www.itread01.com/articles/1495821610.html?fbclid=IwAR1Ssz1ZCdqnxtT6obwpx0AFRDBEGrqKK0BXmMGPK-I1lvNwqJuif9EhZt0" target="_blank" rel="noopener">https://www.itread01.com/articles/1495821610.html?fbclid=IwAR1Ssz1ZCdqnxtT6obwpx0AFRDBEGrqKK0BXmMGPK-I1lvNwqJuif9EhZt0</a>)</p>
+<p>(<a href="https://scikit-learn.org/stable/auto_examples/applications/plot_stock_market.html?fbclid=IwAR29Qcy3SrWFDjHAJGF--XO-0zW2FWt8t4dYZT0lsYxUDqJpBz17ds2pQQM" target="_blank" rel="noopener">https://scikit-learn.org/stable/auto_examples/applications/plot_stock_market.html?fbclid=IwAR29Qcy3SrWFDjHAJGF–XO-0zW2FWt8t4dYZT0lsYxUDqJpBz17ds2pQQM</a>)</p>
+<p>(<a href="https://scikit-learn.org/stable/auto_examples/cluster/plot_affinity_propagation.html?fbclid=IwAR2SsWtrb5MJdypMha6G59nWSeEwf7QK5vzmCa_UefR9mHDT0WzLgEbqng4#sphx-glr-auto-examples-cluster-plot-affinity-propagation-py" target="_blank" rel="noopener">https://scikit-learn.org/stable/auto_examples/cluster/plot_affinity_propagation.html?fbclid=IwAR2SsWtrb5MJdypMha6G59nWSeEwf7QK5vzmCa_UefR9mHDT0WzLgEbqng4#sphx-glr-auto-examples-cluster-plot-affinity-propagation-py</a>)</p>
 ]]></content>
       <tags>
-        <tag>Blog</tag>
+        <tag>Work</tag>
       </tags>
   </entry>
   <entry>
@@ -248,91 +248,6 @@ AR、VR 在軟硬體的高速發展，使其將成為未來的趨勢及主流，
 [17] C# 語言簡介，取自 Duran 的技術冶煉廠: <a href="http://dog0416.blogspot.com/2017/08/cvisual-studio-c.html" target="_blank" rel="noopener">http://dog0416.blogspot.com/2017/08/cvisual-studio-c.html</a><br>
 [18] SketchUp 教學，取自 CG 數位學習網: <a href="http://www.cg.com.tw/SketchUp/Content/SketchUp_01.php" target="_blank" rel="noopener">http://www.cg.com.tw/SketchUp/Content/SketchUp_01.php</a><br>
 [19] Swift 新手系列之一: 打造你的第一個 iOSApp，取自APPCODA: <a href="https://www.appcoda.com.tw/hello-world-app-swift/" target="_blank" rel="noopener">https://www.appcoda.com.tw/hello-world-app-swift/</a></p>
-]]></content>
-      <tags>
-        <tag>Work</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>NBA老闆的慧眼 - Affinity Propagation</title>
-    <url>/myblog/2019/01/29/AP-algo/</url>
-    <content><![CDATA[<h1 id="概念發想concept">概念發想Concept</h1>
-<hr>
-<p><a href="https://github.com/LawrenceGao0224/Intelligence-Oriented-Management-Decision/tree/master/%E6%99%BA%E6%85%A7%E5%9E%8B%E6%9C%9F%E6%9C%AB%E5%A0%B1%E5%91%8A">程式碼連結Click On Me</a></p>
-<p><img src="NBA.jpg" alt="NBA"></p>
-<p>我們將自己設想為球隊分析師，並希望能遞上一份不讓老闆&quot;打臉&quot;的分群資料，提供球隊高層在球員交易、補強、替代方案上有份合理客觀的依據。</p>
-<p>We envision ourselves as team analysts, and hope to hand over a group of information that provides the team’s top management with a reasonable and objective basis for player trading, reinforcement, and alternatives.</p>
-<hr>
-<h1 id="操作方法operation">操作方法Operation</h1>
-<p>將NBA所有球員資料(Ex: 薪水、年齡、得分、助攻、有效命中率、真實命中率、球權佔有率、籃板率、效率值…)，以AP演算法實作，計算各球員資料的負歐積里德距離，調整preference、Damping Factor參數，求出k個高質量聚類，且我們將多維度的資料透過PCA()方法壓縮為低維度的資料，實現可視化。</p>
-<p>All NBA player information (Ex: salary, age, score, assists, effective hit rate, true hit rate, possession rate, rebound rate, efficiency value…) is calculated by AP algorithm to calculate each player’s data. The negative Ourich Reed distance, adjust the preferences, Damping Factor parameters, find k high-quality clusters, and we compress the multi-dimensional data into low-dimensional data through PCA () method to achieve visualization</p>
-<p>資料來源 ： (<a href="https://www.kaggle.com/acasalan/nba-player-stats-201718" target="_blank" rel="noopener">https://www.kaggle.com/acasalan/nba-player-stats-201718</a>)</p>
-<hr>
-<h1 id="實作結果-result">實作結果 Result</h1>
-<h2 id="調整參數-adjust-parameter">調整參數 Adjust parameter:</h2>
-<ol>
-<li>Preference:<br>
-Preference = 中位數(-62.5683289159)<br>
-群集數: 43</li>
-</ol>
-<p><img src="1-1.png" alt="43"></p>
-<p>Preference = -500<br>
-群集數: 7</p>
-<p><img src="1-2.png" alt="7"></p>
-<ol start="2">
-<li>Damping Factor:</li>
-</ol>
-<p>Damping Factor = 0.5      --&gt;      Time = 0.8640606880187988 seconds.<br>
-Damping Factor = 0.9      --&gt;      Time = 1.2220699787139893 seconds.</p>
-<h2 id="所有球員資料-all-players">所有球員資料 All players:</h2>
-<p><img src="2-1.png" alt="2-1">   <img src="2-2.png" alt="2-2"></p>
-<h2 id="依球員打球的位置-according-to-position">依球員打球的位置 According to position</h2>
-<ol>
-<li>
-<p>center © : 8群集數<br>
-<img src="3-1.png" alt="3-1"></p>
-</li>
-<li>
-<p>power forward (PF) : 8群集數<br>
-<img src="3-2.png" alt="3-2"></p>
-</li>
-<li>
-<p>small forward (SF) : 12群集數<br>
-<img src="3-3.png" alt="3-3"></p>
-</li>
-<li>
-<p>point guard (PG) : 11群集數<br>
-<img src="3-4.png" alt="3-4"></p>
-</li>
-<li>
-<p>shooting guard (SG) : 4群集數<br>
-<img src="3-5.png" alt="3-5"></p>
-</li>
-</ol>
-<h2 id="依不同屬性">依不同屬性</h2>
-<p>進攻性質 or 防守性質…</p>
-<hr>
-<h1 id="延伸探討-any-imperfect">延伸探討  Any imperfect ?</h1>
-<p>然而在我們丟入的data有其盲點存在,NBA的老闆或球隊在選擇球員上,並不會只觀看球員在場上的數據表現,還包括許多因素,事無法量化或在數據表現出來的(包括球員心理狀態、球員間磨合度…)</p>
-<p>However, the data we throw in has its  blind spots. The NBA boss or team is not only watching the performance of the players on the field, but also includes many factors, which cannot be quantified or expressed in the data. (including the player’s mental state, the player’s running-in…)</p>
-<p>如下:</p>
-<p>❖商業價值 ex: Dwyane Wade<br>
-Wade是大家耳熟能詳的巨星,層經出現在2K遊戲的封面上,但最近的數據表現並不如其他球員出色,但仍是有淺力的球員,也累積許多粉絲,粉絲能帶來商業價值。<br>
-<img src="4-1.png" alt="4-1"></p>
-<p>❖球員背景 ex: Jeremy Lin<br>
-Jeremy是著名的台裔球員,能吸引亞洲地區的球迷觀注其球隊,帶來利益。<br>
-<img src="4-2.png" alt="4-2"></p>
-<p>❖健康因素 ex: Derrick Rose<br>
-Rose是最年輕獲選MVP的球員,但由於前幾賽季腳傷原因,造成都個<br>
-賽季缺賽,而傷後復出便不如以前突出,這也是無法顯現在數據上的。<br>
-<img src="4-3.png" alt="4-3"></p>
-<hr>
-<h1 id="參考資料">參考資料</h1>
-<p>(<a href="https://zi.media/@yidianzixun/post/uKZUFF?fbclid=IwAR1Dib-4T5MkM2x_helYBtq0TgTD871fAixs-4sBivOUXUNjuMl07xFahOs" target="_blank" rel="noopener">https://zi.media/@yidianzixun/post/uKZUFF?fbclid=IwAR1Dib-4T5MkM2x_helYBtq0TgTD871fAixs-4sBivOUXUNjuMl07xFahOs</a>)</p>
-<p>(<a href="https://www.cnblogs.com/huadongw/p/4202492.html?fbclid=IwAR3PHEOcrAar0rCI1e9AeYBxV0fI6JKJIRqGAJ3ag9BnlleT5M9v_8oNiy0" target="_blank" rel="noopener">https://www.cnblogs.com/huadongw/p/4202492.html?fbclid=IwAR3PHEOcrAar0rCI1e9AeYBxV0fI6JKJIRqGAJ3ag9BnlleT5M9v_8oNiy0</a>)</p>
-<p>(<a href="https://www.itread01.com/articles/1495821610.html?fbclid=IwAR1Ssz1ZCdqnxtT6obwpx0AFRDBEGrqKK0BXmMGPK-I1lvNwqJuif9EhZt0" target="_blank" rel="noopener">https://www.itread01.com/articles/1495821610.html?fbclid=IwAR1Ssz1ZCdqnxtT6obwpx0AFRDBEGrqKK0BXmMGPK-I1lvNwqJuif9EhZt0</a>)</p>
-<p>(<a href="https://scikit-learn.org/stable/auto_examples/applications/plot_stock_market.html?fbclid=IwAR29Qcy3SrWFDjHAJGF--XO-0zW2FWt8t4dYZT0lsYxUDqJpBz17ds2pQQM" target="_blank" rel="noopener">https://scikit-learn.org/stable/auto_examples/applications/plot_stock_market.html?fbclid=IwAR29Qcy3SrWFDjHAJGF–XO-0zW2FWt8t4dYZT0lsYxUDqJpBz17ds2pQQM</a>)</p>
-<p>(<a href="https://scikit-learn.org/stable/auto_examples/cluster/plot_affinity_propagation.html?fbclid=IwAR2SsWtrb5MJdypMha6G59nWSeEwf7QK5vzmCa_UefR9mHDT0WzLgEbqng4#sphx-glr-auto-examples-cluster-plot-affinity-propagation-py" target="_blank" rel="noopener">https://scikit-learn.org/stable/auto_examples/cluster/plot_affinity_propagation.html?fbclid=IwAR2SsWtrb5MJdypMha6G59nWSeEwf7QK5vzmCa_UefR9mHDT0WzLgEbqng4#sphx-glr-auto-examples-cluster-plot-affinity-propagation-py</a>)</p>
 ]]></content>
       <tags>
         <tag>Work</tag>
@@ -587,96 +502,6 @@ LeetCode great solutions: <a href="https://www.youtube.com/channel/UC_mYaQAE6-71
       </tags>
   </entry>
   <entry>
-    <title>大馬遊2018/7/21~2018/7/29</title>
-    <url>/myblog/2018/07/30/Malaysia/</url>
-    <content><![CDATA[<blockquote>
-<p>馬六甲(Malacca)&gt;吉隆坡(Kuala Lumpur)&gt;檳城(Penang)&gt;蘭卡威(langkawi)&gt;雲頂高原(Genting highlands)&gt;柔佛(Johor)&gt;新加坡</p>
-</blockquote>
-<p><img src="lankawei.jpg" alt="蘭卡威"></p>
-<hr>
-<h1 id="行程規畫">行程規畫</h1>
-<p><a href="https://gsy-life.webnode.tw/_files/200000006-8a0808b03e/%E9%A6%AC%E4%BE%86%E8%A5%BF%E4%BA%9E%E4%B9%8B%E6%97%85.pdf" target="_blank" rel="noopener">行程規劃 : Click On Me</a></p>
-<hr>
-<h1 id="行前準備">行前準備</h1>
-<p>由於是在暑假熱季前往，衣物方面幾乎都是短袖短褲（但是要注意可能因為機上冷氣太強，所以有攜帶薄襯衫），還要攜帶泳褲以便下水，防曬物品更不能少（我就被曬傷了 嚴重脫皮) &gt;&lt;</p>
-<hr>
-<h1 id="travel">Travel</h1>
-<h2 id="day-1">Day 1</h2>
-<p>坐飛機到Ｍalaysia時間大約為4小時，到達 Kuala Lumpur 已經是晚上8、9點，出機場直達麥當勞，他們的麥當勞比台灣便宜，而且有魚漢堡（1馬幣=7.6台幣），也是出國後才知道只有台灣麥當勞垃圾要自己收（好習慣😊）。<br>
-接著放完行李後，前往麻六甲(Malacca)品嚐道地沙爹，口味偏重、調味多，醬料如果沒有攪拌，下層便會燒焦，點飲料時推薦100plus(像有氣的舒跑)</p>
-<p><img src="1.jpg" alt="Day1"></p>
-<h2 id="day-2">Day 2</h2>
-<p>在麻六甲，先是前往著名地標，而後到顛倒屋拍照，再坐車前往吉隆坡玩水上樂園Sunway（門票好像要快130RM 約930NTD)，印象海盜船沒有360度，但這裡的有，這裡還有人造浪，還好都有玩到，晚上前往雙子星大樓（著名地標），在周邊吃小吃，印度薄餅好吃～</p>
-<p><img src="2.jpg" alt="Day2-1">   <img src="3.jpg" alt="Day2-2"></p>
-<h2 id="day-3">Day 3</h2>
-<p>前往蝙蝠洞，在階梯上充滿了獼猴，雖然可愛，會搶人的物品或食物<br>
-結束早上行程後，前往檳城，到達時間已是下午5點，購買後天前往蘭卡威的船票，晚上吃當地的夜市，再去逛阿凡達館（好像是東西都亮亮的像阿凡達？有點不懂）</p>
-<p><img src="4.jpg" alt="Day3"></p>
-<h2 id="day-4">Day 4</h2>
-<p>早起前往當地有名的早餐店多春，吃完逛鬼怪博物館，再逛歷史博物館，整天走走逛逛的行程，晚上開車去洗衣店洗衣服</p>
-<p><img src="6.jpg" alt="Day4-1">   <img src="5.jpg" alt="Day4-2"></p>
-<h2 id="day-5">Day 5</h2>
-<p>早起搭船前往蘭卡威，一下船，便有人推銷我們套票行程，每人200RM 大約1500NTD，便能租車、潛水，我們便購買了此行程，坐船到達許多分散的島嶼，還有很多沙灘，有些景點無聊且東西貴，晚上去吃一間華人開的餐廳，一個人台幣大約300左右，但超好吃也超級飽</p>
-<p><img src="7.jpg" alt="Day5"></p>
-<h2 id="day-6">Day 6</h2>
-<p>早起吃了早餐今天搭船前往沙灘潛水，那裡無限制潛水，而且沒有人會攔你要游到哪，只是有個邊界，累了可以上岸休息，傍晚時，我們回到飯店旁的沙灘玩遊樂設施，晚上吃馬來人開的店（有貴到、而且吃不飽），馬來西亞的朋友說有點被騙了，到馬來人開的餐廳要注意，最後逛了shopping mall，結束一天</p>
-<p><img src="8.jpg" alt="Day6"></p>
-<h2 id="day-7">Day 7</h2>
-<p>一大早大雨滂沱，朋友鑰匙差點搞丟，找了半天，原來掉在昨天吃飯的地方，一大早坐計程車趕車到搭船點，幸好及時趕上船班，離開蘭卡威、離開檳城，一路南下至雲頂，今晚的落角：雲頂高原（Genting Highland)裡面有很大型的賭場，我們吃完飯便去賭場，有生第一次去賭場，好像電影的場景都搬到眼前，進出口都有安檢檢查是否成年</p>
-<p>(賭場不能拍照)</p>
-<h2 id="day-89">Day 8,9</h2>
-<p>離開雲頂，前往馬來西亞朋友住家，住了一天，隔天到新加坡坐飛機回台灣，只在新加坡待了2小時</p>
-<p><img src="9.jpg" alt="Day8-9"></p>
-<h1 id="總結">總結</h1>
-<blockquote>
-<p>有吉隆坡的車牌好像大家會讓你 因為吉隆坡的人開車很兇<br>
-機車也可以騎高速公路 也不時看到泰國車牌<br>
-油價便宜 95汽油 一公升16塊台幣左右<br>
-馬來西亞朋友都會至少五種語言 跟當地人溝通不停切換 我當神拜<br>
-食物重口味又辣 大推沙爹、肉骨茶、Roti tissue<br>
-飲料推 100 plus、奶茶、milo 、涼茶<br>
-蘭卡威（langkawi)的酒比珍奶便宜<br>
-馬來西亞真的是美食天堂～</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Travel</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Micron Intern in DEG  2019/7/1 ~ 2019/8/30</title>
-    <url>/myblog/2019/08/30/Micron/</url>
-    <content><![CDATA[<blockquote>
-<p>外商公司不喜歡你加班 自律是關鍵<br>
-英文很重要 溝通能力<br>
-環境自由 放鬆但不是隨便<br>
-待人處事態度 與同事們培養默契與團隊精神</p>
-</blockquote>
-<hr>
-<h1 id="面試">面試</h1>
-<p>面試記得要準備中英文的自我介紹  並做個人的作品集會更加分 記得投地公司官網（我丟104都沒消息）</p>
-<h2 id="關卡-1-電話">關卡 1. 電話</h2>
-<p>這個關卡我沒有遇到，但身邊朋友幾個都有接到電話英文面試，自我介紹等等</p>
-<h2 id="關卡-2-face-to-face">關卡 2. Face to face</h2>
-<p>我面對三個主管，首先要你自我介紹，並知道美光是什麼公司，還有能解釋記憶體的架構還有你的了解（聽說正職會問程式題，我個人作品集是做程式相關的，所以沒有被問到）</p>
-<h2 id="關卡-3-英文邏輯測驗">關卡 3. 英文,邏輯測驗</h2>
-<p>寫個英文題目及性向測驗題</p>
-<h2 id="關卡-4-hr面談">關卡 4. HR面談</h2>
-<p>基本上問你為何想來面試這職位 了解你的動機跟穩重度</p>
-<hr>
-<h1 id="實習生活">實習生活</h1>
-<p>從軟體踏入硬體領域，許多新的知識需要吸收，前三天都會有新人訓，並且每個禮拜五部門都會有課程，關於DRAM的知識，因此慢慢學習吸收。<br>
-美光在我這屆有48個新生，認識到許多朋友，同時也能建立人脈！<br>
-PS : 在這些具有製成、高階技術研發的公司，資訊安全與公司機密是很重要的事，公司會不斷強調不能隨便在內部拍照也不能外流內部文件等！</p>
-<p><img src="1.png" alt="1"><br>
-<img src="2.png" alt="2"><br>
-<img src="3.png" alt="3"></p>
-]]></content>
-      <tags>
-        <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>閱讀心路歷程與想法</title>
     <url>/myblog/2021/06/19/Reading/</url>
     <content><![CDATA[<blockquote>
@@ -777,46 +602,89 @@ By 查理．蒙格</p>
       </tags>
   </entry>
   <entry>
-    <title>台南打工換宿 2020.8.17-2020.8.26</title>
-    <url>/myblog/2020/08/26/Tainan/</url>
+    <title>Micron Intern in DEG  2019/7/1 ~ 2019/8/30</title>
+    <url>/myblog/2019/08/30/Micron/</url>
     <content><![CDATA[<blockquote>
-<p>原本抱著等待兵役空檔玩台南順便當個老幫手 同時體驗台南美食<br>
-沒想到學習以後可能不會再接觸到的木工、油漆及裝潢設計等 🚪<br>
-大家愛恭台語 我就操玲呆(有點進步)<br>
-Reggie教導我們各項技術還有如何衝浪🏄！他什麼都會！真的是偶像！<br>
-每晚Candy的心靈雞湯 學習人生經驗 團隊合作及錯中學習 是人生的導師也是永遠好的朋友<br>
-其他小幫手 每個都有自己的特色 以及願意付出的心 成就這次的工程</p>
+<p>外商公司不喜歡你加班 自律是關鍵<br>
+英文很重要 溝通能力<br>
+環境自由 放鬆但不是隨便<br>
+待人處事態度 與同事們培養默契與團隊精神</p>
 </blockquote>
 <hr>
-<p><img src="2.jpg" alt="2"></p>
-<h1 id="工作-working">工作 Working</h1>
-<p>本次的任務：</p>
-<ol>
-<li>主要是將頂樓天臺整理並規劃成交誼的空間</li>
-<li>同時整理房務工作打掃等</li>
-</ol>
-<p><img src="3.png" alt="3"> <img src="4.png" alt="4"></p>
+<h1 id="面試">面試</h1>
+<p>面試記得要準備中英文的自我介紹  並做個人的作品集會更加分 記得投地公司官網（我丟104都沒消息）</p>
+<h2 id="關卡-1-電話">關卡 1. 電話</h2>
+<p>這個關卡我沒有遇到，但身邊朋友幾個都有接到電話英文面試，自我介紹等等</p>
+<h2 id="關卡-2-face-to-face">關卡 2. Face to face</h2>
+<p>我面對三個主管，首先要你自我介紹，並知道美光是什麼公司，還有能解釋記憶體的架構還有你的了解（聽說正職會問程式題，我個人作品集是做程式相關的，所以沒有被問到）</p>
+<h2 id="關卡-3-英文邏輯測驗">關卡 3. 英文,邏輯測驗</h2>
+<p>寫個英文題目及性向測驗題</p>
+<h2 id="關卡-4-hr面談">關卡 4. HR面談</h2>
+<p>基本上問你為何想來面試這職位 了解你的動機跟穩重度</p>
 <hr>
-<h1 id="度假-holiday">度假 Holiday</h1>
-<p>台南的景點還滿多的，在第二天晚上，老闆帶著我們深度探索台南，同時介紹每個建築物的歷史<br>
-以前從來不會特別去在意的廟宇建築外觀，現在都覺得好神奇，讓我對台灣的歷史更有興趣<br>
-從台南圓環24hr Donutes，沿路走經過台灣第一間廟、蝸牛巷、台南州廳、全美戲院、台南美術館1、2館、司法博物館、林百貨等（沒按照順序）<br>
-對先人留下的遺址及智慧讚嘆不已<br>
-期間老闆帶我們連續兩天假日去漁光島衝浪，生平第一次衝浪就獻給你們了，不過我第二天就站起來兩次，超開心＾＾<br>
-幾日後前往奇美博物館，到的時候已是下午5點，5:30就關門，因此在建築外與這大片美景拍照，佔地9.5公頃的博物館，典藏無數珍貴的國際級藝術品，許文龍先生留給台南最美的博物館</p>
-<p><img src="5.jpg" alt="5"></p>
+<h1 id="實習生活">實習生活</h1>
+<p>從軟體踏入硬體領域，許多新的知識需要吸收，前三天都會有新人訓，並且每個禮拜五部門都會有課程，關於DRAM的知識，因此慢慢學習吸收。<br>
+美光在我這屆有48個新生，認識到許多朋友，同時也能建立人脈！<br>
+PS : 在這些具有製成、高階技術研發的公司，資訊安全與公司機密是很重要的事，公司會不斷強調不能隨便在內部拍照也不能外流內部文件等！</p>
+<p><img src="1.png" alt="1"><br>
+<img src="2.png" alt="2"><br>
+<img src="3.png" alt="3"></p>
+]]></content>
+      <tags>
+        <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大馬遊2018/7/21~2018/7/29</title>
+    <url>/myblog/2018/07/30/Malaysia/</url>
+    <content><![CDATA[<blockquote>
+<p>馬六甲(Malacca)&gt;吉隆坡(Kuala Lumpur)&gt;檳城(Penang)&gt;蘭卡威(langkawi)&gt;雲頂高原(Genting highlands)&gt;柔佛(Johor)&gt;新加坡</p>
+</blockquote>
+<p><img src="lankawei.jpg" alt="蘭卡威"></p>
 <hr>
-<h1 id="working-holiday">Working Holiday</h1>
-<p>這次的換宿經驗讓我學到不論是技術上的技巧更是心靈上的成長<br>
-民宿店的老闆Reggie，雖然只大我6歲，但想法、人生歷練、享受人生都是我遙不可及的目標<br>
-更發現大片藍海市場，想到極為可創性的目標<br>
-我自己也憧憬能像他做自己喜歡的事的念頭 期許未來能更往目標前進！<br>
-此外，帶領我們的是另一位衝浪店（宜蘭烏石）的老闆Candy，對於團隊管理非常有經驗，還是許多大學的講師<br>
-每晚給我們滿滿的知識與做人處事的道理，讓我意識到過去一直忽略掉的貼心，心靈雞湯溫飽我們求知的心!</p>
-<p><img src="1.png" alt="1"></p>
+<h1 id="行程規畫">行程規畫</h1>
+<p><a href="https://gsy-life.webnode.tw/_files/200000006-8a0808b03e/%E9%A6%AC%E4%BE%86%E8%A5%BF%E4%BA%9E%E4%B9%8B%E6%97%85.pdf" target="_blank" rel="noopener">行程規劃 : Click On Me</a></p>
+<hr>
+<h1 id="行前準備">行前準備</h1>
+<p>由於是在暑假熱季前往，衣物方面幾乎都是短袖短褲（但是要注意可能因為機上冷氣太強，所以有攜帶薄襯衫），還要攜帶泳褲以便下水，防曬物品更不能少（我就被曬傷了 嚴重脫皮) &gt;&lt;</p>
+<hr>
+<h1 id="travel">Travel</h1>
+<h2 id="day-1">Day 1</h2>
+<p>坐飛機到Ｍalaysia時間大約為4小時，到達 Kuala Lumpur 已經是晚上8、9點，出機場直達麥當勞，他們的麥當勞比台灣便宜，而且有魚漢堡（1馬幣=7.6台幣），也是出國後才知道只有台灣麥當勞垃圾要自己收（好習慣😊）。<br>
+接著放完行李後，前往麻六甲(Malacca)品嚐道地沙爹，口味偏重、調味多，醬料如果沒有攪拌，下層便會燒焦，點飲料時推薦100plus(像有氣的舒跑)</p>
+<p><img src="1.jpg" alt="Day1"></p>
+<h2 id="day-2">Day 2</h2>
+<p>在麻六甲，先是前往著名地標，而後到顛倒屋拍照，再坐車前往吉隆坡玩水上樂園Sunway（門票好像要快130RM 約930NTD)，印象海盜船沒有360度，但這裡的有，這裡還有人造浪，還好都有玩到，晚上前往雙子星大樓（著名地標），在周邊吃小吃，印度薄餅好吃～</p>
+<p><img src="2.jpg" alt="Day2-1">   <img src="3.jpg" alt="Day2-2"></p>
+<h2 id="day-3">Day 3</h2>
+<p>前往蝙蝠洞，在階梯上充滿了獼猴，雖然可愛，會搶人的物品或食物<br>
+結束早上行程後，前往檳城，到達時間已是下午5點，購買後天前往蘭卡威的船票，晚上吃當地的夜市，再去逛阿凡達館（好像是東西都亮亮的像阿凡達？有點不懂）</p>
+<p><img src="4.jpg" alt="Day3"></p>
+<h2 id="day-4">Day 4</h2>
+<p>早起前往當地有名的早餐店多春，吃完逛鬼怪博物館，再逛歷史博物館，整天走走逛逛的行程，晚上開車去洗衣店洗衣服</p>
+<p><img src="6.jpg" alt="Day4-1">   <img src="5.jpg" alt="Day4-2"></p>
+<h2 id="day-5">Day 5</h2>
+<p>早起搭船前往蘭卡威，一下船，便有人推銷我們套票行程，每人200RM 大約1500NTD，便能租車、潛水，我們便購買了此行程，坐船到達許多分散的島嶼，還有很多沙灘，有些景點無聊且東西貴，晚上去吃一間華人開的餐廳，一個人台幣大約300左右，但超好吃也超級飽</p>
+<p><img src="7.jpg" alt="Day5"></p>
+<h2 id="day-6">Day 6</h2>
+<p>早起吃了早餐今天搭船前往沙灘潛水，那裡無限制潛水，而且沒有人會攔你要游到哪，只是有個邊界，累了可以上岸休息，傍晚時，我們回到飯店旁的沙灘玩遊樂設施，晚上吃馬來人開的店（有貴到、而且吃不飽），馬來西亞的朋友說有點被騙了，到馬來人開的餐廳要注意，最後逛了shopping mall，結束一天</p>
+<p><img src="8.jpg" alt="Day6"></p>
+<h2 id="day-7">Day 7</h2>
+<p>一大早大雨滂沱，朋友鑰匙差點搞丟，找了半天，原來掉在昨天吃飯的地方，一大早坐計程車趕車到搭船點，幸好及時趕上船班，離開蘭卡威、離開檳城，一路南下至雲頂，今晚的落角：雲頂高原（Genting Highland)裡面有很大型的賭場，我們吃完飯便去賭場，有生第一次去賭場，好像電影的場景都搬到眼前，進出口都有安檢檢查是否成年</p>
+<p>(賭場不能拍照)</p>
+<h2 id="day-89">Day 8,9</h2>
+<p>離開雲頂，前往馬來西亞朋友住家，住了一天，隔天到新加坡坐飛機回台灣，只在新加坡待了2小時</p>
+<p><img src="9.jpg" alt="Day8-9"></p>
+<h1 id="總結">總結</h1>
 <blockquote>
-<p>謝謝巷仔邸換宿帶給我寶貴的經驗！<br>
-#巷子邸At The End #小幫手 #台南 #奇美博物館 #漁光島 #學台語 #做工的人 #等待兵役</p>
+<p>有吉隆坡的車牌好像大家會讓你 因為吉隆坡的人開車很兇<br>
+機車也可以騎高速公路 也不時看到泰國車牌<br>
+油價便宜 95汽油 一公升16塊台幣左右<br>
+馬來西亞朋友都會至少五種語言 跟當地人溝通不停切換 我當神拜<br>
+食物重口味又辣 大推沙爹、肉骨茶、Roti tissue<br>
+飲料推 100 plus、奶茶、milo 、涼茶<br>
+蘭卡威（langkawi)的酒比珍奶便宜<br>
+馬來西亞真的是美食天堂～</p>
 </blockquote>
 ]]></content>
       <tags>
@@ -868,6 +736,138 @@ Reggie教導我們各項技術還有如何衝浪🏄！他什麼都會！真的�
 ]]></content>
       <tags>
         <tag>Travel</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>台南打工換宿 2020.8.17-2020.8.26</title>
+    <url>/myblog/2020/08/26/Tainan/</url>
+    <content><![CDATA[<blockquote>
+<p>原本抱著等待兵役空檔玩台南順便當個老幫手 同時體驗台南美食<br>
+沒想到學習以後可能不會再接觸到的木工、油漆及裝潢設計等 🚪<br>
+大家愛恭台語 我就操玲呆(有點進步)<br>
+Reggie教導我們各項技術還有如何衝浪🏄！他什麼都會！真的是偶像！<br>
+每晚Candy的心靈雞湯 學習人生經驗 團隊合作及錯中學習 是人生的導師也是永遠好的朋友<br>
+其他小幫手 每個都有自己的特色 以及願意付出的心 成就這次的工程</p>
+</blockquote>
+<hr>
+<p><img src="2.jpg" alt="2"></p>
+<h1 id="工作-working">工作 Working</h1>
+<p>本次的任務：</p>
+<ol>
+<li>主要是將頂樓天臺整理並規劃成交誼的空間</li>
+<li>同時整理房務工作打掃等</li>
+</ol>
+<p><img src="3.png" alt="3"> <img src="4.png" alt="4"></p>
+<hr>
+<h1 id="度假-holiday">度假 Holiday</h1>
+<p>台南的景點還滿多的，在第二天晚上，老闆帶著我們深度探索台南，同時介紹每個建築物的歷史<br>
+以前從來不會特別去在意的廟宇建築外觀，現在都覺得好神奇，讓我對台灣的歷史更有興趣<br>
+從台南圓環24hr Donutes，沿路走經過台灣第一間廟、蝸牛巷、台南州廳、全美戲院、台南美術館1、2館、司法博物館、林百貨等（沒按照順序）<br>
+對先人留下的遺址及智慧讚嘆不已<br>
+期間老闆帶我們連續兩天假日去漁光島衝浪，生平第一次衝浪就獻給你們了，不過我第二天就站起來兩次，超開心＾＾<br>
+幾日後前往奇美博物館，到的時候已是下午5點，5:30就關門，因此在建築外與這大片美景拍照，佔地9.5公頃的博物館，典藏無數珍貴的國際級藝術品，許文龍先生留給台南最美的博物館</p>
+<p><img src="5.jpg" alt="5"></p>
+<hr>
+<h1 id="working-holiday">Working Holiday</h1>
+<p>這次的換宿經驗讓我學到不論是技術上的技巧更是心靈上的成長<br>
+民宿店的老闆Reggie，雖然只大我6歲，但想法、人生歷練、享受人生都是我遙不可及的目標<br>
+更發現大片藍海市場，想到極為可創性的目標<br>
+我自己也憧憬能像他做自己喜歡的事的念頭 期許未來能更往目標前進！<br>
+此外，帶領我們的是另一位衝浪店（宜蘭烏石）的老闆Candy，對於團隊管理非常有經驗，還是許多大學的講師<br>
+每晚給我們滿滿的知識與做人處事的道理，讓我意識到過去一直忽略掉的貼心，心靈雞湯溫飽我們求知的心!</p>
+<p><img src="1.png" alt="1"></p>
+<blockquote>
+<p>謝謝巷仔邸換宿帶給我寶貴的經驗！<br>
+#巷子邸At The End #小幫手 #台南 #奇美博物館 #漁光島 #學台語 #做工的人 #等待兵役</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Travel</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>仙女散落的珍珠 - 加羅湖</title>
+    <url>/myblog/2022/03/01/Jialuo/</url>
+    <content><![CDATA[<blockquote>
+<p>出發前才知道要爬的是加羅湖不是嘉明湖<br>
+登山新手的挑戰</p>
+</blockquote>
+<hr>
+<p><img src="22.jpg" alt="1"></p>
+<h1 id="加羅湖簡介">加羅湖簡介</h1>
+<p>加羅湖位於宜蘭縣大同鄉四季村、中橫北支線加羅山區，坐落於中央山脈南湖大山和三星山的山地交會點，里洛山北到太平山之間的陵脈上，因為鄰近加羅山故名為加羅湖，湖泊呈現為南北走向，是加納富溪的源頭；加羅湖標高為2242公尺，是一個湖群，因此除了加羅湖外還有撤退池、豪邁池、偉蛋池、墨池、日湖、月湖、天池、檜木池、水池、綠池等眾多高山湖泊，目前發現共有18個；在眾多的高山湖泊中以加羅湖的面積最為廣闊，其長度約為300公尺，寬約150公尺、深度約15公尺。<br>
+加羅湖的傳說－『散落的珍珠』<br>
+加羅湖的傳說十分夢幻，相傳在遠古時代有一位貌美的仙女，當他正在梳妝打扮的同時，一個閃神不小心將桌上的明鏡給打破了，而亮麗如鑽石般的碎片便粒粒如雨下般的灑落於加羅山區，交織成了為數眾多、美如幻境的湖泊群；加羅湖群水時清澈、光線充足，也因為其週遭的美麗景致被稱之為『散落的珍珠』。<br>
+<a href="https://www.travelking.com.tw/tourguide/scenery103360.html" target="_blank" rel="noopener">資料來源：https://www.travelking.com.tw/tourguide/scenery103360.html</a></p>
+<h1 id="近代登山史中加羅湖的重新被發現">近代登山史中加羅湖的重新被發現</h1>
+<p>在1987年元月，當時台大登山社5名社員組成了加羅湖與加羅山首登勘察隊，在加羅山西南稜，也就是靠近現今撤退池的附近，誤走山徑，因而沒能登上加羅山，後經紮營，隔日回撤重新出發後才找著正確的路，並且成功進入加羅湖區。當晚他們在第一個遇見的盆地水池畔紮營，並將此池命名為「加羅湖」。不過，當第二天繼續前進而與更寬闊的湖面相遇時，隊員們就改變了心意，將「加羅湖」改賦予眼前的大池(即現今的加羅湖)，而昨天誤入山徑，差點以撤退收場，紮營的小池就另給了一個帶點紀念行程一波三折意味的名字，「撤退池」。</p>
+<h1 id="行程規劃">行程規劃</h1>
+<p><img src="1.jpeg" alt="1"><br>
+<img src="2.jpeg" alt="2"></p>
+<p>建議兩天行程，當天來回會很辛苦，尤其宜蘭山區極易下雨，可能抵達時下午霧氣擋住加羅湖美景，隔日一早霧氣才飄散<br>
+第一天：四季林道→鐵柵欄→加納富溪→巨木登山口→撤退池→偉蛋池→加羅湖<br>
+第二天：加羅湖→偉蛋池→撤退池→巨木登山口→加納富溪→鐵柵欄→四季林道</p>
+<h1 id="入山證申請">入山證申請</h1>
+<p>出發前5日至30日至<a href="https://nv2.npa.gov.tw/NM107-604Client/" target="_blank" rel="noopener">內政部警政署網站</a>申請，或前往加羅湖當日先至宜蘭縣警察局三星分局、大同分駐所、太平山派出所、明池派出所、蘇澳分局、澳花派出所、碧候派出所，任一處辦理入山證。<a href="https://www.ilcpb.gov.tw/?aspxerrorpath=/main/page_view.aspx" target="_blank" rel="noopener">（資料來源：宜蘭縣政府警察局）</a></p>
+<h1 id="行前準備">行前準備</h1>
+<ol>
+<li>行動糧（高熱量巧克力、能量棒、麵包…）</li>
+<li>建議至少2000cc的水</li>
+<li>鹽糖 (電解質補給)</li>
+<li>保暖衣物（山上非常冷，尤其我去的時間到午夜溫度是-2度Ｃ，還有建議襪子穿兩層厚度）</li>
+<li>登山杖</li>
+<li>雨靴（建議高筒，很多地方泥濘不堪）</li>
+<li>帳篷、睡墊</li>
+<li>衛生用品</li>
+<li>急救用品<br>
+（ＰＳ：如果是新手，建議找協作訂餐、租借帳篷及睡墊，減少背包的重量）<br>
+（ＰＳ：建議洋蔥式穿法，爬行過程會非常炎熱，因此穿脫方便為宜）</li>
+</ol>
+<h1 id="加羅湖路徑詳述">加羅湖路徑詳述</h1>
+<p>起先搭接駁抵達著名紅色柵欄的登山口</p>
+<div align="left"><img src="3.jpg" width="500" height="500"> </div>
+<p>入柵欄後，開始行走四季林道，路上都是大小石頭，要小心打滑</p>
+<div align="left"><img src="4.jpg" width="500" height="500"> </div>
+<div align="left"><img src="5.jpg" width="500" height="500"> </div>
+<p>走近3.7K就會抵達四季養護所（廢棄工寮），上面被別人寫著許多到此一遊</p>
+<div align="left"><img src="6.jpg" width="500" height="500"> </div>
+<div align="left"><img src="7.jpg" width="500" height="500"> </div>
+<p>再走一小端路就抵達加納富溪，最後的取水點</p>
+<div align="left"><img src="8.jpg" width="500" height="500"> </div>
+<p>馬上就抵達巨木登山口，是此處最巨大的神木，感受大自然的鬼斧神工</p>
+<div align="left"><img src="9.jpg" width="500" height="500"> </div>
+<p>從此之後都是陡上的路徑，有近2.9K，沿路樹木被綠色植披覆蓋，猶如夢幻世界</p>
+<div align="left"><img src="10.jpg" width="500" height="500"> </div>
+<div align="left"><img src="11.jpg" width="500" height="500"> </div>
+<p>抵達1.9K處時建議稍作停留，此後將難以收到訊號，路途也變得較艱辛</p>
+<div align="left"><img src="12.jpg" width="500" height="500"> </div>
+<p>映入眼簾就是芒草區，建議長袖長褲避免刮傷</p>
+<div align="left"><img src="13.jpg" width="500" height="500"> </div>
+<p>由於我們行走前一週連日下雨，地面非常泥濘，腳一陷入，哭著找媽媽</p>
+<div align="left"><img src="14.jpg" width="500" height="500"> </div>
+<p>抵達偉蛋池，那時還有霧氣，猶如仙境</p>
+<div align="left"><img src="15.jpg" width="500" height="500"> </div>
+<p>在行走一段路程即抵達加羅湖，美麗的景色，建議先換上衣物再探索湖周遭，避免著涼</p>
+<div align="left"><img src="16.jpg" width="500" height="500"> </div>
+<div align="left"><img src="17.jpg" width="500" height="500"> </div>
+<div align="left"><img src="23.jpg" width="500" height="500"> </div>
+<p>協作準備的晚餐飯菜，大家的評價都滿好吃，我也很滿意，吃完可以在承裝，千萬不要浪費</p>
+<div align="left"><img src="18.jpg" width="500" height="500"> </div>
+<p>夜晚的各位等待裝飯，氣溫也逐漸降低</p>
+<div align="left"><img src="19.jpg" width="500" height="500"> </div>
+<div align="left"><img src="20.jpg" width="500" height="500"> </div>
+<p>夜晚美麗的星空</p>
+<div align="left"><img src="24.jpg" width="500" height="500"> </div>
+<p>清晨的加羅湖，很可惜到離開前都還是濃濃霧氣</p>
+<div align="left"><img src="21.jpg" width="500" height="500"> </div>
+<h1 id="總結">總結</h1>
+<p>自己本身是登山菜雞，這是以個人角度做的評分，覺得難度中上，全程9Ｋ，來回18K，在來之前要做好訓練，不要低估了！</p>
+<p>難易度  ： ◼️ ◼️ ◼️ ◼️ ◻️<br>
+危險度  ： ◼️ ◼️ ◼️ ◼️ ◻️<br>
+值得程度： ◼️ ◼️ ◼️ ◼️ ◼️</p>
+]]></content>
+      <tags>
+        <tag>Blog</tag>
       </tags>
   </entry>
   <entry>
@@ -944,6 +944,43 @@ To be continued…</p>
       </tags>
   </entry>
   <entry>
+    <title>大學專題 Graduate Thesis- 僑牽ＯＣＣ</title>
+    <url>/myblog/2017/12/13/college-project/</url>
+    <content><![CDATA[<blockquote>
+<p>暨南大學是全台外籍生比例最高的學校 其中有非常大一部分是僑生<br>
+我們和僑生同學相處的日常 有溫馨、有歡笑、也有很多意想不到的趣事<br>
+「 僑牽 」是我們為僑生同學們打造的平台</p>
+<p>Nation Chi Nan University is the school with the highest proportion of foreign students in Taiwan. A very large part of it is overseas Chinese. The daily life we ​​spend with our overseas students is warm, funny, and there are many unexpected things. “Overseas Chinese” is our platform for overseas students.</p>
+</blockquote>
+<p><a href="https://www.facebook.com/ChiauChian.OCC/" target="_blank" rel="noopener">粉專 僑牽 ｜ ＯＣＣ</a></p>
+<div align="right"><img src="logo.png" width="150" height="150"> </div>
+<h1 id="想法與現況-concept">想法與現況 Concept：</h1>
+<hr>
+<p>依據教育部統計處發布資料顯示，臺灣現有近 12,000 名僑生，每年 約以 10%的比例快速成長。然而僑生來台前的資訊蒐集，多限於官方的 法規、政策、各校簡章等，生活問題少有相關文章可供參考。而來台後 面對文化與生活習慣差異，甚至是學業問題，多是仰賴同儕之間交流與 扶持。<br>
+在經過比較相關性高的各大交流平台中，我們選擇建立「僑牽」論 壇，除了可以讓資料有足夠地方可以彙整呈現，對於發問、交流等需求 也相當出色。另外現行社群媒體盛行，我們也將使用臉書作為推廣管道， 以觸及更多族群。<br>
+我們期盼透過創立臉書粉絲專頁以達到招攬使用者、宣傳活動等功 能;創立論壇以達到官方及非官方資訊彙整提供、諮詢空間、生活貼近 度等呈現。讓已來台僑生提供生活經驗分享，初來台之僑生更能融入台 灣的生活，欲來台僑生可初步認識台灣。更進一步希望台灣生也能了解 僑生們的不同文化民情，增進國際交流，擴展國際視野。<br>
+According to the statistics released by the Statistics Department of the Ministry of Education, there are nearly 12,000 overseas Chinese students in Taiwan, which grows rapidly by about 10% each year. However, the information gathering before the overseas Chinese came to Taiwan was mostly limited to official regulations, policies, and school briefs. There are few relevant articles on life issues for reference. After coming to Taiwan, facing the differences in culture and living habits, and even academic problems, most of them rely on exchanges and support between their peers.<br>
+Among the major exchange platforms that have been highly correlated, we chose to establish the “Overseas Chinese” forum. In addition to allowing the information to have enough places to be presented, the demand for questions and communication is also excellent. In addition, the current social media is prevalent, and we will also use Facebook as a promotion channel to reach more ethnic groups.<br>
+We look forward to the creation of Facebook fan pages to reach users, publicity activities, etc.; to create forums to achieve official and unofficial information collection, consultation space, life closeness and other presentations. Let the overseas Chinese students who have come to Taiwan provide life experience sharing. The overseas Chinese who come to Taiwan will be able to integrate into Taiwan’s life. Taiwanese who want to come to Taiwan can get to know Taiwan. I further hope that Taiwanese students can also understand the different cultures and customs of overseas Chinese, enhance international exchanges and expand their international horizons.</p>
+<p><img src="website.png" alt="網頁首頁"></p>
+<h1 id="進行步驟及活動成效-prcedure-and-result">進行步驟及活動成效 Prcedure and Result</h1>
+<hr>
+<h2 id="步驟-step">步驟 Step：</h2>
+<p>Step1. 建立粉絲專頁 Build Fan Page<br>
+Step2. 宣傳活動 Advertisement and Activities<br>
+Step3. 建置論壇 Build Website</p>
+<h2 id="成效-result">成效 Result：</h2>
+<hr>
+<p><img src="result1.jpg" alt="結果"> <img src="result2.png" alt="結果2"></p>
+<h1 id="書面資料-written-report">書面資料 Written Report</h1>
+<hr>
+<p><a href="https://drive.google.com/drive/folders/126sHSHVP27LjqDtpRQmMCpdwN5nUHcUu" target="_blank" rel="noopener">了解更多此專題 Click on me</a></p>
+]]></content>
+      <tags>
+        <tag>Work</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>我的第一座山 - 鳶嘴山 </title>
     <url>/myblog/2020/09/13/Yuanzui-Mountain/</url>
     <content><![CDATA[<blockquote>
@@ -983,43 +1020,6 @@ To be continued…</p>
 ]]></content>
       <tags>
         <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>大學專題 Graduate Thesis- 僑牽ＯＣＣ</title>
-    <url>/myblog/2017/12/13/college-project/</url>
-    <content><![CDATA[<blockquote>
-<p>暨南大學是全台外籍生比例最高的學校 其中有非常大一部分是僑生<br>
-我們和僑生同學相處的日常 有溫馨、有歡笑、也有很多意想不到的趣事<br>
-「 僑牽 」是我們為僑生同學們打造的平台</p>
-<p>Nation Chi Nan University is the school with the highest proportion of foreign students in Taiwan. A very large part of it is overseas Chinese. The daily life we ​​spend with our overseas students is warm, funny, and there are many unexpected things. “Overseas Chinese” is our platform for overseas students.</p>
-</blockquote>
-<p><a href="https://www.facebook.com/ChiauChian.OCC/" target="_blank" rel="noopener">粉專 僑牽 ｜ ＯＣＣ</a></p>
-<div align="right"><img src="logo.png" width="150" height="150"> </div>
-<h1 id="想法與現況-concept">想法與現況 Concept：</h1>
-<hr>
-<p>依據教育部統計處發布資料顯示，臺灣現有近 12,000 名僑生，每年 約以 10%的比例快速成長。然而僑生來台前的資訊蒐集，多限於官方的 法規、政策、各校簡章等，生活問題少有相關文章可供參考。而來台後 面對文化與生活習慣差異，甚至是學業問題，多是仰賴同儕之間交流與 扶持。<br>
-在經過比較相關性高的各大交流平台中，我們選擇建立「僑牽」論 壇，除了可以讓資料有足夠地方可以彙整呈現，對於發問、交流等需求 也相當出色。另外現行社群媒體盛行，我們也將使用臉書作為推廣管道， 以觸及更多族群。<br>
-我們期盼透過創立臉書粉絲專頁以達到招攬使用者、宣傳活動等功 能;創立論壇以達到官方及非官方資訊彙整提供、諮詢空間、生活貼近 度等呈現。讓已來台僑生提供生活經驗分享，初來台之僑生更能融入台 灣的生活，欲來台僑生可初步認識台灣。更進一步希望台灣生也能了解 僑生們的不同文化民情，增進國際交流，擴展國際視野。<br>
-According to the statistics released by the Statistics Department of the Ministry of Education, there are nearly 12,000 overseas Chinese students in Taiwan, which grows rapidly by about 10% each year. However, the information gathering before the overseas Chinese came to Taiwan was mostly limited to official regulations, policies, and school briefs. There are few relevant articles on life issues for reference. After coming to Taiwan, facing the differences in culture and living habits, and even academic problems, most of them rely on exchanges and support between their peers.<br>
-Among the major exchange platforms that have been highly correlated, we chose to establish the “Overseas Chinese” forum. In addition to allowing the information to have enough places to be presented, the demand for questions and communication is also excellent. In addition, the current social media is prevalent, and we will also use Facebook as a promotion channel to reach more ethnic groups.<br>
-We look forward to the creation of Facebook fan pages to reach users, publicity activities, etc.; to create forums to achieve official and unofficial information collection, consultation space, life closeness and other presentations. Let the overseas Chinese students who have come to Taiwan provide life experience sharing. The overseas Chinese who come to Taiwan will be able to integrate into Taiwan’s life. Taiwanese who want to come to Taiwan can get to know Taiwan. I further hope that Taiwanese students can also understand the different cultures and customs of overseas Chinese, enhance international exchanges and expand their international horizons.</p>
-<p><img src="website.png" alt="網頁首頁"></p>
-<h1 id="進行步驟及活動成效-prcedure-and-result">進行步驟及活動成效 Prcedure and Result</h1>
-<hr>
-<h2 id="步驟-step">步驟 Step：</h2>
-<p>Step1. 建立粉絲專頁 Build Fan Page<br>
-Step2. 宣傳活動 Advertisement and Activities<br>
-Step3. 建置論壇 Build Website</p>
-<h2 id="成效-result">成效 Result：</h2>
-<hr>
-<p><img src="result1.jpg" alt="結果"> <img src="result2.png" alt="結果2"></p>
-<h1 id="書面資料-written-report">書面資料 Written Report</h1>
-<hr>
-<p><a href="https://drive.google.com/drive/folders/126sHSHVP27LjqDtpRQmMCpdwN5nUHcUu" target="_blank" rel="noopener">了解更多此專題 Click on me</a></p>
-]]></content>
-      <tags>
-        <tag>Work</tag>
       </tags>
   </entry>
   <entry>
@@ -1246,65 +1246,6 @@ Maya is a 3D computer animation software with powerful modeling, color rendering
       </tags>
   </entry>
   <entry>
-    <title> 義務役 2020.9.22-2021.1.11 </title>
-    <url>/myblog/2020/10/01/military/</url>
-    <content><![CDATA[<blockquote>
-<p>2020年不平靜的一年，也在最後一天結束軍旅生涯…</p>
-</blockquote>
-<div align="left"><img src="5.JPG" width="500"> </div>
-<p>當兵所遇到的以及各種建議，將依以下方式作介紹<br>
-(1) 基本介紹（應帶物品、食衣住行育樂）<br>
-(2) 操課內容（一階段、二階段）<br>
-(3) 自我經驗及建議（我所遇到的事）<br>
-(4) 心得分享（所學與感想）</p>
-<hr>
-<h1 id="基本介紹">基本介紹</h1>
-<p>∙ 入伍時間：119T (2020/9/22-2021/1/11) 個人折抵9天，預計1/2退伍，但又遇上假日，提早至12/31退伍</p>
-<p>∙ 所屬連隊：2營1連 - 於北訓中心，共2營，每營有4連(第4連為營部連 意指直屬連負責在戰場上補給裝備、彈藥，但在義務役操課都沒差)，每連差不多10班(基本上都按照身高編排)，每班約10人，共約800多人</p>
-<p>∙ 地理位置：桃園楊梅太平里（步行至楊梅火車站約25分鐘）</p>
-<p>∙ 所屬班級：十班器材班，共10人，二階段之後開始職物輪替，如：打飯、軍械、資收、內掃、公差等</p>
-<h2 id="食衣住行育樂">食衣住行育樂</h2>
-<p>∙ 食：雖然在網路上看到大家都在批評北訓的食物，但沒到自己認為的難吃，頂多食物很常重複，我還常去加菜加飯呢～</p>
-<div align="left"><img src="2.jpeg" width="500" height="500"> </div>
-∙ 衣：第一天會統一去領取物品
-<p>應帶物品推薦大家參考: <a href="http://jimmytraveling.com/blog/post/68331786" target="_blank" rel="noopener">【2019最新】當兵入伍攜帶物品清單（義務役新訓必備）</a></p>
-<p>** 小筆記本、資料袋、衣架、肥皂、刮鬍刀、海綿等，在北訓中心是統一購買的一袋，很貴！420元，個人覺得價值才200吧</p>
-<p>∙ 住：宿舍為40人左右的大通舖，床有上下兩層，都有枕頭跟棉被 <img src="1.jpeg" alt="1"></p>
-<p>∙ 行：真心覺得貴，從營區到桃園火車站就要價120，到台北200，基隆250，宜蘭300，不過搭遊覽車還是方便啦，錢要代夠</p>
-<p>∙ 樂： 第二階段開始有許多社團課及休息時間，可以玩桌遊（是我玩過最多次狼人殺的時期），其他操課或聽招募聽講都會偷玩猜數字或Bingo</p>
-<hr>
-<h1 id="操課內容">操課內容</h1>
-<p>推薦參考：<a href="https://matters.news/@lushaoming/%E7%95%B6%E5%85%B5%E5%BF%85%E8%AE%80-%E6%A5%8A%E6%A2%85%E5%A4%AA%E5%B9%B3%E9%87%8C%E5%8C%97%E8%A8%93%E4%B8%AD%E5%BF%83-107-t-1-b1-c-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%B4%B9-bafyreigbzyqklgmqf5j3xd4lw3uhnj2o7lfxcwhtl3uwx4566kqvrxu77q" target="_blank" rel="noopener">【 當兵必讀 - 楊梅太平里北訓中心 107T 1B1C #基本介紹】</a></p>
-<hr>
-<h1 id="自我經驗與建議">自我經驗與建議</h1>
-<h2 id="輔導長公差">輔導長公差</h2>
-<p>記得入伍第一天，大家都還無頭緒時，輔導長便詢問有無自願當輔導長公差，我立馬舉手，可享有放假、免操課、吃零食的福利，但要負責收錢、打雜等文書作業，有時候都會比別人晚就寢，但還是建議可以擔任公差職務，大家無聊到發慌時，你還有事做XD。</p>
-<h2 id="同梯朋友">同梯朋友</h2>
-<p>班長有說我們這梯次都是高學歷份子，身邊幾乎都是大學、研究所的、還有醫學系的朋友，沒遇到所謂的8+9，此外，這梯都是來自桃園、台北、基隆、宜蘭地區，我的鄰兵們也都滿罩的，會提醒集合時間還有攜帶裝備等。</p>
-<h2 id="懇親會">懇親會</h2>
-<p>我們第二週就是懇親會，記住！如果家人可以來一定要請他們來，因為如果他們帶走我們就能12點離開，如果沒有家人來，只能1600離開，還要收拾垃圾、善後工作等。</p>
-<h2 id="招募與志願役">招募與志願役</h2>
-<p>第一週都是在聽招募，開始的時候是抱著可以偷懶去參訪，便勾選自己認為最帥也最操的特戰指揮部，原本完全沒有簽志願役的想法，然而當自己開始了解軍種制度（士兵、士官、軍官）的福利政策、薪資上看5W以及各項技能學習後，開始漸漸對國軍改觀，我不能說當軍人有多好，但是現在講求人性化操課、並有國家提供的考證照機制，讓軍人退伍後仍能透過證照取得其他工作，甚至從軍20年後享有終身俸，同時不會有超時加班的問題，每天上午兩節及下午兩節操課，下午4-6點有運動時間，顧及到每個人的健康，6點以後就是自由時間，住附近的(50km以內)可以住家裡，隔天7:30再到營區報到就好，類似一個公司的制度。去到參訪地點後，看到餐點的提供比北訓中心好十萬八千里，深深吸引到我，特戰指揮部還有個重點是要學跳傘，也是必備技能，在外跳傘是很貴的體驗，這裡是免費且必須的。<br>
-然而志願役一簽就是四年，四年後自幾可能難以回歸本行，雖然每天晚上都有時間進修自我，但我無法保證自己四年後會不會因軍中的弟兄影響我的進修，擁有研究所的學歷並不會在軍中有效用，頂多長官多關注你，最後，自己還是有更遠的志向抱負，想到外面更寬廣的世界看看。</p>
-<h2 id="打靶">打靶</h2>
-<p>第三週的第一天開始練習臥射、清槍的基本口令動作，為隔天打靶做準備，太平里打靶場距離營區路程約40分鐘，全副武裝步行至打靶場，當天風很大，紅土飛揚，視線時好時壞，打靶距離是175M，剛好是子彈彈道上揚的時候，因此瞄準靶的腰部位置，但是我至今仍不知道為什麼我命中0發，接著就是一直輪著打，大概打了8輪、60發左右的子彈，班長說領多少子彈就要打完多少，原本以為是像高中實彈射擊一人打個一輪就收工回家，沒想到一去就是一整天的實彈射擊，因此我們中午也是在靶場坐著吃午餐、睡午覺，打靶當下的聲音真的很震撼，就像煙火在耳邊爆炸的音量，同時強大的後座力會讓全身都在抖動，穩住氣再打、不要急，我也在試著抓到穩定點。</p>
-<h2 id="飯菜問題">飯菜問題</h2>
-<p>第三週，指揮官（營區最大的老大）接獲消息有人通報說飯菜難吃，而且吃不飽，所以親自前往餐廳視察，看到飯菜直接暴怒，大罵營長還有連長為何飯菜每個人的量不一樣，而且餐點沒變化等，當著所有人的面要營長改進，說完還回頭問：指揮官我帥不帥，感覺有像套好的劇情，但果真隔天的飯菜變得豐富而且好吃、份量也多，而且還吩咐以後每週四會進行用餐滿意度調查的統計，想改善餐點問題，指揮官日後告訴我們，要當個如何解決問題的人，而不是看到問題還不解決，讓我深深印在腦中。</p>
-<h2 id="鑑測當週的假日">鑑測當週的假日</h2>
-<p>指揮官說如果9項測驗全過，週五1400就可以走，少一項延後一小時，但最晚1700就離開，而收假是下週一的1900，北訓真是好地方</p>
-<hr>
-<h1 id="心得分享">心得分享</h1>
-<p>令我訝異的是帶我的班長們也都是很合理化、就事論事的領導者，也都會跟我們聊天打屁，不會一板一眼，該認真就認真，該輕鬆就輕鬆，比起外面說的不合理要求差得多，班長有說那是以前世代的作法，他們過去也有經歷那些世代的管制方法，現在都是追求與時俱進、不做出不合理要求。<br>
-此外，班長也希望我們帶上自己的書充實自我，因為退伍後基本上都要求職，更應該精進自己，真心佩服班長的體貼，雖然也遇到許多不公平的對待或缺乏效率的問題，但人人都可以試著透過溝通與諒解去平衡所遇到的狀況。<br>
-聽長官們說我們是末代的北區專長訓練中心，以後營區會改成109旅的駐點，因此日後應該不會看到新兵在北區服役了，此篇分享的內容會因不同連隊或地區而有所差異，若有要服役的可以參考看看。<br>
-這四個月下來，最讓我感到心煩的是每次的收假日以及越接近退伍日矛盾感越重，一方面很開心快退伍，一方面卻在為將來進入職場感到恐懼與擔憂，期望每個同梯弟兄都能達到自己的理想，以後再約！後會有期～</p>
-<p><img src="6.jpg" alt="6"></p>
-]]></content>
-      <tags>
-        <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>熱舞社 2014/10~2018/6/10</title>
     <url>/myblog/2018/06/10/pop-dance/</url>
     <content><![CDATA[<p><img src="1.jpg" alt="pop dance"></p>
@@ -1371,6 +1312,65 @@ From graph, we can see that the trend we predicted is similar to the actual situ
 ]]></content>
       <tags>
         <tag>Work</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title> 義務役 2020.9.22-2021.1.11 </title>
+    <url>/myblog/2020/10/01/military/</url>
+    <content><![CDATA[<blockquote>
+<p>2020年不平靜的一年，也在最後一天結束軍旅生涯…</p>
+</blockquote>
+<div align="left"><img src="5.JPG" width="500"> </div>
+<p>當兵所遇到的以及各種建議，將依以下方式作介紹<br>
+(1) 基本介紹（應帶物品、食衣住行育樂）<br>
+(2) 操課內容（一階段、二階段）<br>
+(3) 自我經驗及建議（我所遇到的事）<br>
+(4) 心得分享（所學與感想）</p>
+<hr>
+<h1 id="基本介紹">基本介紹</h1>
+<p>∙ 入伍時間：119T (2020/9/22-2021/1/11) 個人折抵9天，預計1/2退伍，但又遇上假日，提早至12/31退伍</p>
+<p>∙ 所屬連隊：2營1連 - 於北訓中心，共2營，每營有4連(第4連為營部連 意指直屬連負責在戰場上補給裝備、彈藥，但在義務役操課都沒差)，每連差不多10班(基本上都按照身高編排)，每班約10人，共約800多人</p>
+<p>∙ 地理位置：桃園楊梅太平里（步行至楊梅火車站約25分鐘）</p>
+<p>∙ 所屬班級：十班器材班，共10人，二階段之後開始職物輪替，如：打飯、軍械、資收、內掃、公差等</p>
+<h2 id="食衣住行育樂">食衣住行育樂</h2>
+<p>∙ 食：雖然在網路上看到大家都在批評北訓的食物，但沒到自己認為的難吃，頂多食物很常重複，我還常去加菜加飯呢～</p>
+<div align="left"><img src="2.jpeg" width="500" height="500"> </div>
+∙ 衣：第一天會統一去領取物品
+<p>應帶物品推薦大家參考: <a href="http://jimmytraveling.com/blog/post/68331786" target="_blank" rel="noopener">【2019最新】當兵入伍攜帶物品清單（義務役新訓必備）</a></p>
+<p>** 小筆記本、資料袋、衣架、肥皂、刮鬍刀、海綿等，在北訓中心是統一購買的一袋，很貴！420元，個人覺得價值才200吧</p>
+<p>∙ 住：宿舍為40人左右的大通舖，床有上下兩層，都有枕頭跟棉被 <img src="1.jpeg" alt="1"></p>
+<p>∙ 行：真心覺得貴，從營區到桃園火車站就要價120，到台北200，基隆250，宜蘭300，不過搭遊覽車還是方便啦，錢要代夠</p>
+<p>∙ 樂： 第二階段開始有許多社團課及休息時間，可以玩桌遊（是我玩過最多次狼人殺的時期），其他操課或聽招募聽講都會偷玩猜數字或Bingo</p>
+<hr>
+<h1 id="操課內容">操課內容</h1>
+<p>推薦參考：<a href="https://matters.news/@lushaoming/%E7%95%B6%E5%85%B5%E5%BF%85%E8%AE%80-%E6%A5%8A%E6%A2%85%E5%A4%AA%E5%B9%B3%E9%87%8C%E5%8C%97%E8%A8%93%E4%B8%AD%E5%BF%83-107-t-1-b1-c-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%B4%B9-bafyreigbzyqklgmqf5j3xd4lw3uhnj2o7lfxcwhtl3uwx4566kqvrxu77q" target="_blank" rel="noopener">【 當兵必讀 - 楊梅太平里北訓中心 107T 1B1C #基本介紹】</a></p>
+<hr>
+<h1 id="自我經驗與建議">自我經驗與建議</h1>
+<h2 id="輔導長公差">輔導長公差</h2>
+<p>記得入伍第一天，大家都還無頭緒時，輔導長便詢問有無自願當輔導長公差，我立馬舉手，可享有放假、免操課、吃零食的福利，但要負責收錢、打雜等文書作業，有時候都會比別人晚就寢，但還是建議可以擔任公差職務，大家無聊到發慌時，你還有事做XD。</p>
+<h2 id="同梯朋友">同梯朋友</h2>
+<p>班長有說我們這梯次都是高學歷份子，身邊幾乎都是大學、研究所的、還有醫學系的朋友，沒遇到所謂的8+9，此外，這梯都是來自桃園、台北、基隆、宜蘭地區，我的鄰兵們也都滿罩的，會提醒集合時間還有攜帶裝備等。</p>
+<h2 id="懇親會">懇親會</h2>
+<p>我們第二週就是懇親會，記住！如果家人可以來一定要請他們來，因為如果他們帶走我們就能12點離開，如果沒有家人來，只能1600離開，還要收拾垃圾、善後工作等。</p>
+<h2 id="招募與志願役">招募與志願役</h2>
+<p>第一週都是在聽招募，開始的時候是抱著可以偷懶去參訪，便勾選自己認為最帥也最操的特戰指揮部，原本完全沒有簽志願役的想法，然而當自己開始了解軍種制度（士兵、士官、軍官）的福利政策、薪資上看5W以及各項技能學習後，開始漸漸對國軍改觀，我不能說當軍人有多好，但是現在講求人性化操課、並有國家提供的考證照機制，讓軍人退伍後仍能透過證照取得其他工作，甚至從軍20年後享有終身俸，同時不會有超時加班的問題，每天上午兩節及下午兩節操課，下午4-6點有運動時間，顧及到每個人的健康，6點以後就是自由時間，住附近的(50km以內)可以住家裡，隔天7:30再到營區報到就好，類似一個公司的制度。去到參訪地點後，看到餐點的提供比北訓中心好十萬八千里，深深吸引到我，特戰指揮部還有個重點是要學跳傘，也是必備技能，在外跳傘是很貴的體驗，這裡是免費且必須的。<br>
+然而志願役一簽就是四年，四年後自幾可能難以回歸本行，雖然每天晚上都有時間進修自我，但我無法保證自己四年後會不會因軍中的弟兄影響我的進修，擁有研究所的學歷並不會在軍中有效用，頂多長官多關注你，最後，自己還是有更遠的志向抱負，想到外面更寬廣的世界看看。</p>
+<h2 id="打靶">打靶</h2>
+<p>第三週的第一天開始練習臥射、清槍的基本口令動作，為隔天打靶做準備，太平里打靶場距離營區路程約40分鐘，全副武裝步行至打靶場，當天風很大，紅土飛揚，視線時好時壞，打靶距離是175M，剛好是子彈彈道上揚的時候，因此瞄準靶的腰部位置，但是我至今仍不知道為什麼我命中0發，接著就是一直輪著打，大概打了8輪、60發左右的子彈，班長說領多少子彈就要打完多少，原本以為是像高中實彈射擊一人打個一輪就收工回家，沒想到一去就是一整天的實彈射擊，因此我們中午也是在靶場坐著吃午餐、睡午覺，打靶當下的聲音真的很震撼，就像煙火在耳邊爆炸的音量，同時強大的後座力會讓全身都在抖動，穩住氣再打、不要急，我也在試著抓到穩定點。</p>
+<h2 id="飯菜問題">飯菜問題</h2>
+<p>第三週，指揮官（營區最大的老大）接獲消息有人通報說飯菜難吃，而且吃不飽，所以親自前往餐廳視察，看到飯菜直接暴怒，大罵營長還有連長為何飯菜每個人的量不一樣，而且餐點沒變化等，當著所有人的面要營長改進，說完還回頭問：指揮官我帥不帥，感覺有像套好的劇情，但果真隔天的飯菜變得豐富而且好吃、份量也多，而且還吩咐以後每週四會進行用餐滿意度調查的統計，想改善餐點問題，指揮官日後告訴我們，要當個如何解決問題的人，而不是看到問題還不解決，讓我深深印在腦中。</p>
+<h2 id="鑑測當週的假日">鑑測當週的假日</h2>
+<p>指揮官說如果9項測驗全過，週五1400就可以走，少一項延後一小時，但最晚1700就離開，而收假是下週一的1900，北訓真是好地方</p>
+<hr>
+<h1 id="心得分享">心得分享</h1>
+<p>令我訝異的是帶我的班長們也都是很合理化、就事論事的領導者，也都會跟我們聊天打屁，不會一板一眼，該認真就認真，該輕鬆就輕鬆，比起外面說的不合理要求差得多，班長有說那是以前世代的作法，他們過去也有經歷那些世代的管制方法，現在都是追求與時俱進、不做出不合理要求。<br>
+此外，班長也希望我們帶上自己的書充實自我，因為退伍後基本上都要求職，更應該精進自己，真心佩服班長的體貼，雖然也遇到許多不公平的對待或缺乏效率的問題，但人人都可以試著透過溝通與諒解去平衡所遇到的狀況。<br>
+聽長官們說我們是末代的北區專長訓練中心，以後營區會改成109旅的駐點，因此日後應該不會看到新兵在北區服役了，此篇分享的內容會因不同連隊或地區而有所差異，若有要服役的可以參考看看。<br>
+這四個月下來，最讓我感到心煩的是每次的收假日以及越接近退伍日矛盾感越重，一方面很開心快退伍，一方面卻在為將來進入職場感到恐懼與擔憂，期望每個同梯弟兄都能達到自己的理想，以後再約！後會有期～</p>
+<p><img src="6.jpg" alt="6"></p>
+]]></content>
+      <tags>
+        <tag>Blog</tag>
       </tags>
   </entry>
 </search>
