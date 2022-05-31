@@ -280,6 +280,7 @@ AR、VR 在軟硬體的高速發展，使其將成為未來的趨勢及主流，
 也難怪我們爬起來很順，跟過去相比超級安全</p>
 <p><a href="https://www.welcometw.com/%E9%98%BF%E9%87%8C%E5%B1%B1%E7%9C%A0%E6%9C%88%E7%B7%9A-%E4%B8%80%E7%AF%87%E6%90%9E%E6%87%82%E7%99%BB%E5%B1%B1%E8%B7%AF%E7%B7%9A%E3%80%81%E5%A6%82%E4%BD%95%E7%94%B3%E8%AB%8B%E3%80%81%E6%B3%A8/" target="_blank" rel="noopener">資料來源：阿里山眠月線</a></p>
 <h1 id="眠月線登山路線">眠月線登山路線</h1>
+<div align="left"><img src="18.png" width="500" height="500"> </div>
 <p>阿里山眠月線步行路線一般以「沼平站」為起點，沼平站同時為祝山線與眠月線的起點車站，兩條支線共用約3公里的鐵路後才分開，抵達此處會看到聳動的告示</p>
 <div align="left"><img src="12.jpg" width="500" height="500"> </div>
 <div align="left"><img src="3.jpg" width="500" height="500"> </div>
@@ -648,6 +649,36 @@ LeetCode great solutions: <a href="https://www.youtube.com/channel/UC_mYaQAE6-71
       </tags>
   </entry>
   <entry>
+    <title>Red Hat Certified System Administrator (RHCSA8)</title>
+    <url>/myblog/2022/05/06/RHCSA/</url>
+    <content><![CDATA[<blockquote>
+<p>I can accept failure, but cannot accept to give up<br>
+考了兩次才通過</p>
+</blockquote>
+<h1 id="rhcsa介紹">RHCSA介紹</h1>
+<p>RHCSA認證是Red Hat公司於2011年3月所推出的新認證。RHCSA認證是取得RHCE認證的必要條件之一，RHCSA與RHCE認證取得兩者無先後順序，兩者均通過者才可完整取得RHCE證書。擁有RHCSA認證者能夠扮演著企業內各式各樣的角色，舉凡資料庫管理員，開發人員和技術支持人員…等職務，能重建與部署企業核心Linux環境，更能代表您具備管理技術與駕馭系統的能力。欲取得RHCSA認證您必須參加此認證考試，成功讓您成為兼具完整理論與實作技術的Linux專家。<br>
+<a href="https://www.uuu.com.tw/Course/Partner/RedHat%E7%B4%85%E5%B8%BD/section=rhcsa/title=RHCSA%E8%AA%8D%E8%AD%89%E8%88%87%E8%80%83%E8%A9%A6%E4%BB%8B%E7%B4%B9" target="_blank" rel="noopener">(資料來源：UCOM恆逸教育訓練)</a></p>
+<h1 id="考試測驗能力">考試測驗能力</h1>
+<p>可進入官網查看：<a href="https://www.redhat.com/en/services/training/ex200-red-hat-certified-system-administrator-rhcsa-exam?section=Objectives" target="_blank" rel="noopener">Red Hat Certified System Administrator (RHCSA) exam</a></p>
+<h1 id="考題整理">考題整理</h1>
+<p>網路整理考題：<a href="https://github.com/chlebik/rhcsa-practice-questions/tree/master/questions">https://github.com/chlebik/rhcsa-practice-questions/tree/master/questions</a></p>
+<p>RedHat8之後開始考了許多Container題目，如：<a href="https://tekneed.com/rhcsa-8-exam-practice-question-9-managing-containers/" target="_blank" rel="noopener">https://tekneed.com/rhcsa-8-exam-practice-question-9-managing-containers/</a></p>
+<h1 id="考試環境介紹">考試環境介紹</h1>
+<p>考試環境會提供兩台虛擬機，分別為node1, node2，（會建議開終端機連線兩台虛擬機，以方便複製考試時所用到的網址或名稱）</p>
+<h1 id="結論">結論</h1>
+<ol>
+<li>一定要一直反覆練習實作，才能訓練到，不能只用看的，因為可能發生你都想不到的問題。</li>
+<li>我考試時發生用root建立user，而user卻沒長出Home directory，後來才發現是當時系統沒裝好，但卻沒反應，應是浪費快一個小時</li>
+<li>還有Container的題目，真的有點難，我不懂為什麼都沒拿到分，明明都有做</li>
+<li>切割完硬碟後，一定要重開機看看能不能開機，能不能自動mount起來</li>
+<li>有疑問要提出，有可能真的是系統問題</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Work</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>大馬遊2018/7/21~2018/7/29</title>
     <url>/myblog/2018/07/30/Malaysia/</url>
     <content><![CDATA[<blockquote>
@@ -702,6 +733,39 @@ LeetCode great solutions: <a href="https://www.youtube.com/channel/UC_mYaQAE6-71
 ]]></content>
       <tags>
         <tag>Travel</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Micron Intern in DEG  2019/7/1 ~ 2019/8/30</title>
+    <url>/myblog/2019/08/30/Micron/</url>
+    <content><![CDATA[<blockquote>
+<p>外商公司不喜歡你加班 自律是關鍵<br>
+英文很重要 溝通能力<br>
+環境自由 放鬆但不是隨便<br>
+待人處事態度 與同事們培養默契與團隊精神</p>
+</blockquote>
+<hr>
+<h1 id="面試">面試</h1>
+<p>面試記得要準備中英文的自我介紹  並做個人的作品集會更加分 記得投地公司官網（我丟104都沒消息）</p>
+<h2 id="關卡-1-電話">關卡 1. 電話</h2>
+<p>這個關卡我沒有遇到，但身邊朋友幾個都有接到電話英文面試，自我介紹等等</p>
+<h2 id="關卡-2-face-to-face">關卡 2. Face to face</h2>
+<p>我面對三個主管，首先要你自我介紹，並知道美光是什麼公司，還有能解釋記憶體的架構還有你的了解（聽說正職會問程式題，我個人作品集是做程式相關的，所以沒有被問到）</p>
+<h2 id="關卡-3-英文邏輯測驗">關卡 3. 英文,邏輯測驗</h2>
+<p>寫個英文題目及性向測驗題</p>
+<h2 id="關卡-4-hr面談">關卡 4. HR面談</h2>
+<p>基本上問你為何想來面試這職位 了解你的動機跟穩重度</p>
+<hr>
+<h1 id="實習生活">實習生活</h1>
+<p>從軟體踏入硬體領域，許多新的知識需要吸收，前三天都會有新人訓，並且每個禮拜五部門都會有課程，關於DRAM的知識，因此慢慢學習吸收。<br>
+美光在我這屆有48個新生，認識到許多朋友，同時也能建立人脈！<br>
+PS : 在這些具有製成、高階技術研發的公司，資訊安全與公司機密是很重要的事，公司會不斷強調不能隨便在內部拍照也不能外流內部文件等！</p>
+<p><img src="1.png" alt="1"><br>
+<img src="2.png" alt="2"><br>
+<img src="3.png" alt="3"></p>
+]]></content>
+      <tags>
+        <tag>Blog</tag>
       </tags>
   </entry>
   <entry>
@@ -802,69 +866,6 @@ By 查理．蒙格</p>
 ]]></content>
       <tags>
         <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Micron Intern in DEG  2019/7/1 ~ 2019/8/30</title>
-    <url>/myblog/2019/08/30/Micron/</url>
-    <content><![CDATA[<blockquote>
-<p>外商公司不喜歡你加班 自律是關鍵<br>
-英文很重要 溝通能力<br>
-環境自由 放鬆但不是隨便<br>
-待人處事態度 與同事們培養默契與團隊精神</p>
-</blockquote>
-<hr>
-<h1 id="面試">面試</h1>
-<p>面試記得要準備中英文的自我介紹  並做個人的作品集會更加分 記得投地公司官網（我丟104都沒消息）</p>
-<h2 id="關卡-1-電話">關卡 1. 電話</h2>
-<p>這個關卡我沒有遇到，但身邊朋友幾個都有接到電話英文面試，自我介紹等等</p>
-<h2 id="關卡-2-face-to-face">關卡 2. Face to face</h2>
-<p>我面對三個主管，首先要你自我介紹，並知道美光是什麼公司，還有能解釋記憶體的架構還有你的了解（聽說正職會問程式題，我個人作品集是做程式相關的，所以沒有被問到）</p>
-<h2 id="關卡-3-英文邏輯測驗">關卡 3. 英文,邏輯測驗</h2>
-<p>寫個英文題目及性向測驗題</p>
-<h2 id="關卡-4-hr面談">關卡 4. HR面談</h2>
-<p>基本上問你為何想來面試這職位 了解你的動機跟穩重度</p>
-<hr>
-<h1 id="實習生活">實習生活</h1>
-<p>從軟體踏入硬體領域，許多新的知識需要吸收，前三天都會有新人訓，並且每個禮拜五部門都會有課程，關於DRAM的知識，因此慢慢學習吸收。<br>
-美光在我這屆有48個新生，認識到許多朋友，同時也能建立人脈！<br>
-PS : 在這些具有製成、高階技術研發的公司，資訊安全與公司機密是很重要的事，公司會不斷強調不能隨便在內部拍照也不能外流內部文件等！</p>
-<p><img src="1.png" alt="1"><br>
-<img src="2.png" alt="2"><br>
-<img src="3.png" alt="3"></p>
-]]></content>
-      <tags>
-        <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Red Hat Certified System Administrator (RHCSA8)</title>
-    <url>/myblog/2022/05/06/RHCSA/</url>
-    <content><![CDATA[<blockquote>
-<p>I can accept failure, but cannot accept to give up<br>
-考了兩次才通過</p>
-</blockquote>
-<h1 id="rhcsa介紹">RHCSA介紹</h1>
-<p>RHCSA認證是Red Hat公司於2011年3月所推出的新認證。RHCSA認證是取得RHCE認證的必要條件之一，RHCSA與RHCE認證取得兩者無先後順序，兩者均通過者才可完整取得RHCE證書。擁有RHCSA認證者能夠扮演著企業內各式各樣的角色，舉凡資料庫管理員，開發人員和技術支持人員…等職務，能重建與部署企業核心Linux環境，更能代表您具備管理技術與駕馭系統的能力。欲取得RHCSA認證您必須參加此認證考試，成功讓您成為兼具完整理論與實作技術的Linux專家。<br>
-<a href="https://www.uuu.com.tw/Course/Partner/RedHat%E7%B4%85%E5%B8%BD/section=rhcsa/title=RHCSA%E8%AA%8D%E8%AD%89%E8%88%87%E8%80%83%E8%A9%A6%E4%BB%8B%E7%B4%B9" target="_blank" rel="noopener">(資料來源：UCOM恆逸教育訓練)</a></p>
-<h1 id="考試測驗能力">考試測驗能力</h1>
-<p>可進入官網查看：<a href="https://www.redhat.com/en/services/training/ex200-red-hat-certified-system-administrator-rhcsa-exam?section=Objectives" target="_blank" rel="noopener">Red Hat Certified System Administrator (RHCSA) exam</a></p>
-<h1 id="考題整理">考題整理</h1>
-<p>網路整理考題：<a href="https://github.com/chlebik/rhcsa-practice-questions/tree/master/questions">https://github.com/chlebik/rhcsa-practice-questions/tree/master/questions</a></p>
-<p>RedHat8之後開始考了許多Container題目，如：<a href="https://tekneed.com/rhcsa-8-exam-practice-question-9-managing-containers/" target="_blank" rel="noopener">https://tekneed.com/rhcsa-8-exam-practice-question-9-managing-containers/</a></p>
-<h1 id="考試環境介紹">考試環境介紹</h1>
-<p>考試環境會提供兩台虛擬機，分別為node1, node2，（會建議開終端機連線兩台虛擬機，以方便複製考試時所用到的網址或名稱）</p>
-<h1 id="結論">結論</h1>
-<ol>
-<li>一定要一直反覆練習實作，才能訓練到，不能只用看的，因為可能發生你都想不到的問題。</li>
-<li>我考試時發生用root建立user，而user卻沒長出Home directory，後來才發現是當時系統沒裝好，但卻沒反應，應是浪費快一個小時</li>
-<li>還有Container的題目，真的有點難，我不懂為什麼都沒拿到分，明明都有做</li>
-<li>切割完硬碟後，一定要重開機看看能不能開機，能不能自動mount起來</li>
-<li>有疑問要提出，有可能真的是系統問題</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>Work</tag>
       </tags>
   </entry>
   <entry>
@@ -1077,233 +1078,6 @@ To be continued…</p>
       </tags>
   </entry>
   <entry>
-    <title>大學專題 Graduate Thesis- 僑牽ＯＣＣ</title>
-    <url>/myblog/2017/12/13/college-project/</url>
-    <content><![CDATA[<blockquote>
-<p>暨南大學是全台外籍生比例最高的學校 其中有非常大一部分是僑生<br>
-我們和僑生同學相處的日常 有溫馨、有歡笑、也有很多意想不到的趣事<br>
-「 僑牽 」是我們為僑生同學們打造的平台</p>
-<p>Nation Chi Nan University is the school with the highest proportion of foreign students in Taiwan. A very large part of it is overseas Chinese. The daily life we ​​spend with our overseas students is warm, funny, and there are many unexpected things. “Overseas Chinese” is our platform for overseas students.</p>
-</blockquote>
-<p><a href="https://www.facebook.com/ChiauChian.OCC/" target="_blank" rel="noopener">粉專 僑牽 ｜ ＯＣＣ</a></p>
-<div align="right"><img src="logo.png" width="150" height="150"> </div>
-<h1 id="想法與現況-concept">想法與現況 Concept：</h1>
-<hr>
-<p>依據教育部統計處發布資料顯示，臺灣現有近 12,000 名僑生，每年 約以 10%的比例快速成長。然而僑生來台前的資訊蒐集，多限於官方的 法規、政策、各校簡章等，生活問題少有相關文章可供參考。而來台後 面對文化與生活習慣差異，甚至是學業問題，多是仰賴同儕之間交流與 扶持。<br>
-在經過比較相關性高的各大交流平台中，我們選擇建立「僑牽」論 壇，除了可以讓資料有足夠地方可以彙整呈現，對於發問、交流等需求 也相當出色。另外現行社群媒體盛行，我們也將使用臉書作為推廣管道， 以觸及更多族群。<br>
-我們期盼透過創立臉書粉絲專頁以達到招攬使用者、宣傳活動等功 能;創立論壇以達到官方及非官方資訊彙整提供、諮詢空間、生活貼近 度等呈現。讓已來台僑生提供生活經驗分享，初來台之僑生更能融入台 灣的生活，欲來台僑生可初步認識台灣。更進一步希望台灣生也能了解 僑生們的不同文化民情，增進國際交流，擴展國際視野。<br>
-According to the statistics released by the Statistics Department of the Ministry of Education, there are nearly 12,000 overseas Chinese students in Taiwan, which grows rapidly by about 10% each year. However, the information gathering before the overseas Chinese came to Taiwan was mostly limited to official regulations, policies, and school briefs. There are few relevant articles on life issues for reference. After coming to Taiwan, facing the differences in culture and living habits, and even academic problems, most of them rely on exchanges and support between their peers.<br>
-Among the major exchange platforms that have been highly correlated, we chose to establish the “Overseas Chinese” forum. In addition to allowing the information to have enough places to be presented, the demand for questions and communication is also excellent. In addition, the current social media is prevalent, and we will also use Facebook as a promotion channel to reach more ethnic groups.<br>
-We look forward to the creation of Facebook fan pages to reach users, publicity activities, etc.; to create forums to achieve official and unofficial information collection, consultation space, life closeness and other presentations. Let the overseas Chinese students who have come to Taiwan provide life experience sharing. The overseas Chinese who come to Taiwan will be able to integrate into Taiwan’s life. Taiwanese who want to come to Taiwan can get to know Taiwan. I further hope that Taiwanese students can also understand the different cultures and customs of overseas Chinese, enhance international exchanges and expand their international horizons.</p>
-<p><img src="website.png" alt="網頁首頁"></p>
-<h1 id="進行步驟及活動成效-prcedure-and-result">進行步驟及活動成效 Prcedure and Result</h1>
-<hr>
-<h2 id="步驟-step">步驟 Step：</h2>
-<p>Step1. 建立粉絲專頁 Build Fan Page<br>
-Step2. 宣傳活動 Advertisement and Activities<br>
-Step3. 建置論壇 Build Website</p>
-<h2 id="成效-result">成效 Result：</h2>
-<hr>
-<p><img src="result1.jpg" alt="結果"> <img src="result2.png" alt="結果2"></p>
-<h1 id="書面資料-written-report">書面資料 Written Report</h1>
-<hr>
-<p><a href="https://drive.google.com/drive/folders/126sHSHVP27LjqDtpRQmMCpdwN5nUHcUu" target="_blank" rel="noopener">了解更多此專題 Click on me</a></p>
-]]></content>
-      <tags>
-        <tag>Work</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title> 義務役 2020.9.22-2021.1.11 </title>
-    <url>/myblog/2020/10/01/military/</url>
-    <content><![CDATA[<blockquote>
-<p>2020年不平靜的一年，也在最後一天結束軍旅生涯…</p>
-</blockquote>
-<div align="left"><img src="5.JPG" width="500"> </div>
-<p>當兵所遇到的以及各種建議，將依以下方式作介紹<br>
-(1) 基本介紹（應帶物品、食衣住行育樂）<br>
-(2) 操課內容（一階段、二階段）<br>
-(3) 自我經驗及建議（我所遇到的事）<br>
-(4) 心得分享（所學與感想）</p>
-<hr>
-<h1 id="基本介紹">基本介紹</h1>
-<p>∙ 入伍時間：119T (2020/9/22-2021/1/11) 個人折抵9天，預計1/2退伍，但又遇上假日，提早至12/31退伍</p>
-<p>∙ 所屬連隊：2營1連 - 於北訓中心，共2營，每營有4連(第4連為營部連 意指直屬連負責在戰場上補給裝備、彈藥，但在義務役操課都沒差)，每連差不多10班(基本上都按照身高編排)，每班約10人，共約800多人</p>
-<p>∙ 地理位置：桃園楊梅太平里（步行至楊梅火車站約25分鐘）</p>
-<p>∙ 所屬班級：十班器材班，共10人，二階段之後開始職物輪替，如：打飯、軍械、資收、內掃、公差等</p>
-<h2 id="食衣住行育樂">食衣住行育樂</h2>
-<p>∙ 食：雖然在網路上看到大家都在批評北訓的食物，但沒到自己認為的難吃，頂多食物很常重複，我還常去加菜加飯呢～</p>
-<div align="left"><img src="2.jpeg" width="500" height="500"> </div>
-∙ 衣：第一天會統一去領取物品
-<p>應帶物品推薦大家參考: <a href="http://jimmytraveling.com/blog/post/68331786" target="_blank" rel="noopener">【2019最新】當兵入伍攜帶物品清單（義務役新訓必備）</a></p>
-<p>** 小筆記本、資料袋、衣架、肥皂、刮鬍刀、海綿等，在北訓中心是統一購買的一袋，很貴！420元，個人覺得價值才200吧</p>
-<p>∙ 住：宿舍為40人左右的大通舖，床有上下兩層，都有枕頭跟棉被 <img src="1.jpeg" alt="1"></p>
-<p>∙ 行：真心覺得貴，從營區到桃園火車站就要價120，到台北200，基隆250，宜蘭300，不過搭遊覽車還是方便啦，錢要代夠</p>
-<p>∙ 樂： 第二階段開始有許多社團課及休息時間，可以玩桌遊（是我玩過最多次狼人殺的時期），其他操課或聽招募聽講都會偷玩猜數字或Bingo</p>
-<hr>
-<h1 id="操課內容">操課內容</h1>
-<p>推薦參考：<a href="https://matters.news/@lushaoming/%E7%95%B6%E5%85%B5%E5%BF%85%E8%AE%80-%E6%A5%8A%E6%A2%85%E5%A4%AA%E5%B9%B3%E9%87%8C%E5%8C%97%E8%A8%93%E4%B8%AD%E5%BF%83-107-t-1-b1-c-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%B4%B9-bafyreigbzyqklgmqf5j3xd4lw3uhnj2o7lfxcwhtl3uwx4566kqvrxu77q" target="_blank" rel="noopener">【 當兵必讀 - 楊梅太平里北訓中心 107T 1B1C #基本介紹】</a></p>
-<hr>
-<h1 id="自我經驗與建議">自我經驗與建議</h1>
-<h2 id="輔導長公差">輔導長公差</h2>
-<p>記得入伍第一天，大家都還無頭緒時，輔導長便詢問有無自願當輔導長公差，我立馬舉手，可享有放假、免操課、吃零食的福利，但要負責收錢、打雜等文書作業，有時候都會比別人晚就寢，但還是建議可以擔任公差職務，大家無聊到發慌時，你還有事做XD。</p>
-<h2 id="同梯朋友">同梯朋友</h2>
-<p>班長有說我們這梯次都是高學歷份子，身邊幾乎都是大學、研究所的、還有醫學系的朋友，沒遇到所謂的8+9，此外，這梯都是來自桃園、台北、基隆、宜蘭地區，我的鄰兵們也都滿罩的，會提醒集合時間還有攜帶裝備等。</p>
-<h2 id="懇親會">懇親會</h2>
-<p>我們第二週就是懇親會，記住！如果家人可以來一定要請他們來，因為如果他們帶走我們就能12點離開，如果沒有家人來，只能1600離開，還要收拾垃圾、善後工作等。</p>
-<h2 id="招募與志願役">招募與志願役</h2>
-<p>第一週都是在聽招募，開始的時候是抱著可以偷懶去參訪，便勾選自己認為最帥也最操的特戰指揮部，原本完全沒有簽志願役的想法，然而當自己開始了解軍種制度（士兵、士官、軍官）的福利政策、薪資上看5W以及各項技能學習後，開始漸漸對國軍改觀，我不能說當軍人有多好，但是現在講求人性化操課、並有國家提供的考證照機制，讓軍人退伍後仍能透過證照取得其他工作，甚至從軍20年後享有終身俸，同時不會有超時加班的問題，每天上午兩節及下午兩節操課，下午4-6點有運動時間，顧及到每個人的健康，6點以後就是自由時間，住附近的(50km以內)可以住家裡，隔天7:30再到營區報到就好，類似一個公司的制度。去到參訪地點後，看到餐點的提供比北訓中心好十萬八千里，深深吸引到我，特戰指揮部還有個重點是要學跳傘，也是必備技能，在外跳傘是很貴的體驗，這裡是免費且必須的。<br>
-然而志願役一簽就是四年，四年後自幾可能難以回歸本行，雖然每天晚上都有時間進修自我，但我無法保證自己四年後會不會因軍中的弟兄影響我的進修，擁有研究所的學歷並不會在軍中有效用，頂多長官多關注你，最後，自己還是有更遠的志向抱負，想到外面更寬廣的世界看看。</p>
-<h2 id="打靶">打靶</h2>
-<p>第三週的第一天開始練習臥射、清槍的基本口令動作，為隔天打靶做準備，太平里打靶場距離營區路程約40分鐘，全副武裝步行至打靶場，當天風很大，紅土飛揚，視線時好時壞，打靶距離是175M，剛好是子彈彈道上揚的時候，因此瞄準靶的腰部位置，但是我至今仍不知道為什麼我命中0發，接著就是一直輪著打，大概打了8輪、60發左右的子彈，班長說領多少子彈就要打完多少，原本以為是像高中實彈射擊一人打個一輪就收工回家，沒想到一去就是一整天的實彈射擊，因此我們中午也是在靶場坐著吃午餐、睡午覺，打靶當下的聲音真的很震撼，就像煙火在耳邊爆炸的音量，同時強大的後座力會讓全身都在抖動，穩住氣再打、不要急，我也在試著抓到穩定點。</p>
-<h2 id="飯菜問題">飯菜問題</h2>
-<p>第三週，指揮官（營區最大的老大）接獲消息有人通報說飯菜難吃，而且吃不飽，所以親自前往餐廳視察，看到飯菜直接暴怒，大罵營長還有連長為何飯菜每個人的量不一樣，而且餐點沒變化等，當著所有人的面要營長改進，說完還回頭問：指揮官我帥不帥，感覺有像套好的劇情，但果真隔天的飯菜變得豐富而且好吃、份量也多，而且還吩咐以後每週四會進行用餐滿意度調查的統計，想改善餐點問題，指揮官日後告訴我們，要當個如何解決問題的人，而不是看到問題還不解決，讓我深深印在腦中。</p>
-<h2 id="鑑測當週的假日">鑑測當週的假日</h2>
-<p>指揮官說如果9項測驗全過，週五1400就可以走，少一項延後一小時，但最晚1700就離開，而收假是下週一的1900，北訓真是好地方</p>
-<hr>
-<h1 id="心得分享">心得分享</h1>
-<p>令我訝異的是帶我的班長們也都是很合理化、就事論事的領導者，也都會跟我們聊天打屁，不會一板一眼，該認真就認真，該輕鬆就輕鬆，比起外面說的不合理要求差得多，班長有說那是以前世代的作法，他們過去也有經歷那些世代的管制方法，現在都是追求與時俱進、不做出不合理要求。<br>
-此外，班長也希望我們帶上自己的書充實自我，因為退伍後基本上都要求職，更應該精進自己，真心佩服班長的體貼，雖然也遇到許多不公平的對待或缺乏效率的問題，但人人都可以試著透過溝通與諒解去平衡所遇到的狀況。<br>
-聽長官們說我們是末代的北區專長訓練中心，以後營區會改成109旅的駐點，因此日後應該不會看到新兵在北區服役了，此篇分享的內容會因不同連隊或地區而有所差異，若有要服役的可以參考看看。<br>
-這四個月下來，最讓我感到心煩的是每次的收假日以及越接近退伍日矛盾感越重，一方面很開心快退伍，一方面卻在為將來進入職場感到恐懼與擔憂，期望每個同梯弟兄都能達到自己的理想，以後再約！後會有期～</p>
-<p><img src="6.jpg" alt="6"></p>
-]]></content>
-      <tags>
-        <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>熱舞社 2014/10~2018/6/10</title>
-    <url>/myblog/2018/06/10/pop-dance/</url>
-    <content><![CDATA[<p><img src="1.jpg" alt="pop dance"></p>
-<blockquote>
-<p>熱舞社 陪伴我大學整整四年的社團 有哭有笑 亦友亦親<br>
-是大學成長最多的時候<br>
-從個內向不敢表現 到建立自信 最後在大眾前表演<br>
-謝謝大學四年的陪伴</p>
-</blockquote>
-<hr>
-<h1 id="freshman">Freshman</h1>
-<p>第一次接觸跳舞，完全沒有基礎，慢慢學習，直到能站上舞台</p>
-<p><img src="2.png" alt="freshman"></p>
-<hr>
-<h1 id="personnel">Personnel</h1>
-<p>幹部期間 擔任器材長 當時總認為大家很自私 由於大家都很忙 只顧自己的事 事實上大家都還是很願意幫忙 也因此培養好感情 而自己開會時較少發言 當時有想法卻不敢表達 每次開會都到很晚 總是希望趕快結束回家 期許自己未來能適時說出自己的想法 幫助團隊</p>
-<p><img src="3.png" alt="Personnel"></p>
-<hr>
-<h1 id="退幹生活">退幹生活</h1>
-<p>偶爾回來跳跳舞 回來聊聊天 回來認識新朋友 看到熱舞社日漸蓬勃 覺得大家都長大了</p>
-<p><img src="4.png" alt="退幹生活"></p>
-<blockquote>
-<p>很慶幸自己當時決定加入熱舞社 改變我很多！</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>股價走勢預測-Stock Prediction </title>
-    <url>/myblog/2019/02/09/stock-prediction/</url>
-    <content><![CDATA[<blockquote>
-<p>利用三種不同的深度學習方法(RNN、LSTM、GRU)來預測IBM股價 走向並比較<br>
-Use three different deep learning methods (RNN, LSTM, GRU) to predict IBM stock price trends and compare them</p>
-</blockquote>
-<p><a href="https://github.com/LawrenceGao0224/data_mining/tree/main/datamining_final">程式碼＋報告PDF : Click On Me</a></p>
-<h1 id="前言">前言</h1>
-<hr>
-<p>一般投資者在投資各種金融商品時，往往都是大賠小賺，因投資者常聽信消息面及一時的衝動，或未作詳細的評估分析就輕易投資，若要單獨分析各種經濟資訊不僅需要蒐集繁多的相關資訊，不但非常費時且需要豐富的專業財經知識，而其預估未來的發展趨勢亦不一定準確，且通常經濟指標是落後市場反應的指標。<br>
-而人工智慧的發展日趨興盛，其被運用在多個領域中，尤其是在經融、財經領域中，以類神經網路來預測可說是相當熱門的，透過電腦運算快速的優勢，及多層神經網路，可輔助投資人進行預測。<br>
-When investing in various financial products, the average investor tends to make small profits. Because investors often listen to news and impulses, or do not make detailed assessments and analyze them easily. If you want to analyze various economic information separately, you need not only Collecting a lot of relevant information is not only very time-consuming but also requires a wealth of professional financial knowledge, and its estimated future development trend is not necessarily accurate.<br>
-The development of artificial intelligence is prosperous, and it is used in many fields, especially in the field of finance , the prediction of neural network is quite popular, and the advantages of computing are fast. Neural networks can help investors make predictions.</p>
-<hr>
-<h1 id="流程與實作結果">流程與實作結果</h1>
-<p><a href="https://www.kaggle.com/szrlee/stock-time-series-20050101-to-20171231" target="_blank" rel="noopener">Data Source 資料來源 Kaggle : Click On Me</a></p>
-<h2 id="流程-workflow">流程 Workflow :</h2>
-<p>本次實驗皆採用Keras來搭建深度學習模型，分別利用RNN、LSTM、GRU等深度學習方法來預測，並以均方根誤差(RMSE)來當作評估標準。<br>
-In this experiment, Keras was used to build a deep learning model, which was predicted by deep learning methods such as RNN, LSTM, and GRU, and the root mean square error (RMSE) was used as the evaluation standard.</p>
-<h2 id="實作結果-result">實作結果 Result：</h2>
-<p>(1)LSTM:<br>
-RMSE:2.5459669921977524.</p>
-<p><img src="LSTM.png" alt="LSTM"></p>
-<p>(2)RNN:<br>
-RMSE: 4.72949126626088.</p>
-<p><img src="RNN.png" alt="RNN"></p>
-<p>(3)GRU:<br>
-RMSE: 3.3223451158225696.</p>
-<p><img src="GRU.png" alt="GRU"></p>
-<hr>
-<h1 id="分析結果與討論-discussion">分析結果與討論 Discussion</h1>
-<p>從上面結果圖可以看出，我們所預測的走勢與實際情況相近，其中又以LSTM最佳，RNN最差，我們推測原因是因為RNN只考慮最近的狀態，而LSTM結構更為複雜，會將過去的輸出和當前的輸入concatenate到一起。 在現實中的股價波動往往並不單純只與前一天的股價相關，而是會與歷史 中的股價變化有所關連。<br>
-From graph, we can see that the trend we predicted is similar to the actual situation. Among them, LSTM is the best and RNN is the worst. We speculate that the reason is because RNN only considers the most recent state, and the LSTM structure is more complicated. The past output is concatenate with the current input. In reality, stock price volatility is often not only related to the stock price of the previous day, but it is related to change in stock prices in history.</p>
-]]></content>
-      <tags>
-        <tag>Work</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Maya學習成果</title>
-    <url>/myblog/2018/12/31/maya/</url>
-    <content><![CDATA[<blockquote>
-<p>Maya 是 3D 電腦動畫軟體，擁有強大的建模、彩現、模擬、材質設定和動畫工具，適用於美工人員、建模人員和動畫師<br>
-Maya is a 3D computer animation software with powerful modeling, color rendering, simulation, material settings, and animation tools for artists, modelers, and animators.</p>
-</blockquote>
-<div align="left"><img src="maya.jpg" width="150" height="150"> </div>
-<p><a href="https://www.autodesk.com/products/maya/overview" target="_blank" rel="noopener">Maya 官網</a></p>
-<h1 id="hw-1-低調奢華-mazda-elegant-m">HW 1 - 低調奢華 MAZDA Elegant M</h1>
-<hr>
-<h3 id="低調奢華-mazda-elegant-m">低調奢華 MAZDA Elegant M</h3>
-<blockquote>
-<p>第一次使用Maya軟體設計車子色調，想透過車子表達抽象概念</p>
-</blockquote>
-<p>伴隨優雅的琴聲，聲音迴盪於山谷間，餘波盪漾，山水鏡射，車裡車外相透射，你泥中有我，我泥中有你，全車身以玻璃、水、氣泡，使車體超自然、虛無飄渺，卻又貨真價實擺在眼前，氣泡外殼反射紫色光暈，透露淡淡奢華，玻璃握把、座位區可細看出車體的每個細節，及設計美學，金屬材質的車燈集LOGO，其餘以水進行設計，打造精細的現代感，呈現高雅細膩之感…</p>
-<hr>
-<p><a href="https://drive.google.com/drive/folders/1p1te08vQCDFEZ7dcw9FoyRvf9eRl5cJm" target="_blank" rel="noopener">作品呈現 Click On Me</a></p>
-<p><img src="%E8%BF%91%E6%99%AF.jpeg" alt="近景">   <img src="%E5%85%A7%E9%83%A8%E7%B4%B0%E7%AF%80.jpeg" alt="內部細節">   <img src="%E9%81%A0%E6%99%AF.jpeg" alt="遠景"></p>
-<h1 id="hw-2-老皮革才有的韻味">HW 2 - 老皮革才有的韻味</h1>
-<hr>
-<h3 id="老皮革才有的韻味">老皮革才有的韻味</h3>
-<blockquote>
-<p>這是牛皮經過時間的氧化、摩擦而變得光滑透亮,這個過程我們稱作「養皮」。皮革會慢慢吸收油分,遇光則會氧化產生變化,所以每個人養出來的皮都會長得不一樣。養皮大概就跟泡茶的人養茶壺是一樣的道裡吧!</p>
-</blockquote>
-<p>皮革經歷時間越久越有韻味 然而皮鞋穿久了卻是滿滿回憶</p>
-<p>The longer the leather has passed, the more it has the charm. However, the leather shoes are worn for a long time but full of memories.</p>
-<p>皮鞋變舊過程：</p>
-<ol>
-<li>會失去其光澤</li>
-<li>在長期穿過的指頭關節會有皺摺</li>
-<li>經歷雨水沖刷會有明顯褪色</li>
-<li>外觀變得些許粗糙</li>
-</ol>
-<hr>
-<p><a href="https://drive.google.com/drive/folders/1p63-EbCh_Vi1qWExLoqcV0_fTUuZE9nv" target="_blank" rel="noopener">作品呈現 Click On Me</a></p>
-<p><img src="shoes.png" alt="shoes"></p>
-<h1 id="hw-3-沙漠之心-文明之源">HW 3 - 沙漠之心 文明之源</h1>
-<h3 id="沙漠之心-文明之源">沙漠之心 文明之源</h3>
-<blockquote>
-<p>Atlantis is a fictional aquatic civilization appearing in American comic books published by DC Comics.</p>
-</blockquote>
-<h3 id="靈感發想-水行俠aquaman的亞特蘭提斯">靈感發想 : 水行俠Aquaman的亞特蘭提斯</h3>
-<p>據了解，這個地方在西方傳說中，是一個擁有高度文明的國度，可是這個地方在一萬多年前沉沒在大海中，而對於亞特蘭提斯最早的描述，要追溯至古希臘哲學家柏拉圖的著作《對話錄》中。柏拉圖指出，亞特蘭提斯是一個遍地黃金及白銀的國度，可惜最後因為大地震及洪水相繼發生，最終令亞特蘭提斯淹沒在大海之中。至於真相如何，相信目前仍沒有得到確實的解說。</p>
-<hr>
-<h5 id="作品呈現">作品呈現：</h5>
-<p>共分三層：</p>
-<p>第一層：沙漠 desert<br>
-沙漠乃生命起源</p>
-<p><img src="1.jpeg" alt="desert"></p>
-<p>第二層：海洋 ocean<br>
-沙漠下方隱匿世界部分海洋</p>
-<p><img src="2.jpeg" alt="ocean"></p>
-<p>第三層：雲朵 + 城市 cloud + city<br>
-海洋下 其實有雲朵及荒廢的文明 其受到沙漠唯一的缺口照亮</p>
-<p><img src="3.jpeg" alt="city"></p>
-<p><img src="4.jpeg" alt="full">   <img src="5.jpeg" alt="city1">   <img src="6.jpeg" alt="city2">   <img src="7.jpeg" alt="ocean2"></p>
-]]></content>
-      <tags>
-        <tag>Work</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo &amp; GitHub 建置部落格</title>
     <url>/myblog/2020/09/02/github-and-hexo/</url>
     <content><![CDATA[<blockquote>
@@ -1459,6 +1233,233 @@ Maya is a 3D computer animation software with powerful modeling, color rendering
 <p>由於GitHub August 13, 2021 &quot;support for password authentication was removed&quot;<br>
 請參考以下連結：<br>
 <a href="https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Fix-GitHubs-support-for-password-authentication-was-removed-error" target="_blank" rel="noopener">Fix GitHub’s ‘support for password authentication was removed’ error</a></p>
+]]></content>
+      <tags>
+        <tag>Work</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大學專題 Graduate Thesis- 僑牽ＯＣＣ</title>
+    <url>/myblog/2017/12/13/college-project/</url>
+    <content><![CDATA[<blockquote>
+<p>暨南大學是全台外籍生比例最高的學校 其中有非常大一部分是僑生<br>
+我們和僑生同學相處的日常 有溫馨、有歡笑、也有很多意想不到的趣事<br>
+「 僑牽 」是我們為僑生同學們打造的平台</p>
+<p>Nation Chi Nan University is the school with the highest proportion of foreign students in Taiwan. A very large part of it is overseas Chinese. The daily life we ​​spend with our overseas students is warm, funny, and there are many unexpected things. “Overseas Chinese” is our platform for overseas students.</p>
+</blockquote>
+<p><a href="https://www.facebook.com/ChiauChian.OCC/" target="_blank" rel="noopener">粉專 僑牽 ｜ ＯＣＣ</a></p>
+<div align="right"><img src="logo.png" width="150" height="150"> </div>
+<h1 id="想法與現況-concept">想法與現況 Concept：</h1>
+<hr>
+<p>依據教育部統計處發布資料顯示，臺灣現有近 12,000 名僑生，每年 約以 10%的比例快速成長。然而僑生來台前的資訊蒐集，多限於官方的 法規、政策、各校簡章等，生活問題少有相關文章可供參考。而來台後 面對文化與生活習慣差異，甚至是學業問題，多是仰賴同儕之間交流與 扶持。<br>
+在經過比較相關性高的各大交流平台中，我們選擇建立「僑牽」論 壇，除了可以讓資料有足夠地方可以彙整呈現，對於發問、交流等需求 也相當出色。另外現行社群媒體盛行，我們也將使用臉書作為推廣管道， 以觸及更多族群。<br>
+我們期盼透過創立臉書粉絲專頁以達到招攬使用者、宣傳活動等功 能;創立論壇以達到官方及非官方資訊彙整提供、諮詢空間、生活貼近 度等呈現。讓已來台僑生提供生活經驗分享，初來台之僑生更能融入台 灣的生活，欲來台僑生可初步認識台灣。更進一步希望台灣生也能了解 僑生們的不同文化民情，增進國際交流，擴展國際視野。<br>
+According to the statistics released by the Statistics Department of the Ministry of Education, there are nearly 12,000 overseas Chinese students in Taiwan, which grows rapidly by about 10% each year. However, the information gathering before the overseas Chinese came to Taiwan was mostly limited to official regulations, policies, and school briefs. There are few relevant articles on life issues for reference. After coming to Taiwan, facing the differences in culture and living habits, and even academic problems, most of them rely on exchanges and support between their peers.<br>
+Among the major exchange platforms that have been highly correlated, we chose to establish the “Overseas Chinese” forum. In addition to allowing the information to have enough places to be presented, the demand for questions and communication is also excellent. In addition, the current social media is prevalent, and we will also use Facebook as a promotion channel to reach more ethnic groups.<br>
+We look forward to the creation of Facebook fan pages to reach users, publicity activities, etc.; to create forums to achieve official and unofficial information collection, consultation space, life closeness and other presentations. Let the overseas Chinese students who have come to Taiwan provide life experience sharing. The overseas Chinese who come to Taiwan will be able to integrate into Taiwan’s life. Taiwanese who want to come to Taiwan can get to know Taiwan. I further hope that Taiwanese students can also understand the different cultures and customs of overseas Chinese, enhance international exchanges and expand their international horizons.</p>
+<p><img src="website.png" alt="網頁首頁"></p>
+<h1 id="進行步驟及活動成效-prcedure-and-result">進行步驟及活動成效 Prcedure and Result</h1>
+<hr>
+<h2 id="步驟-step">步驟 Step：</h2>
+<p>Step1. 建立粉絲專頁 Build Fan Page<br>
+Step2. 宣傳活動 Advertisement and Activities<br>
+Step3. 建置論壇 Build Website</p>
+<h2 id="成效-result">成效 Result：</h2>
+<hr>
+<p><img src="result1.jpg" alt="結果"> <img src="result2.png" alt="結果2"></p>
+<h1 id="書面資料-written-report">書面資料 Written Report</h1>
+<hr>
+<p><a href="https://drive.google.com/drive/folders/126sHSHVP27LjqDtpRQmMCpdwN5nUHcUu" target="_blank" rel="noopener">了解更多此專題 Click on me</a></p>
+]]></content>
+      <tags>
+        <tag>Work</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Maya學習成果</title>
+    <url>/myblog/2018/12/31/maya/</url>
+    <content><![CDATA[<blockquote>
+<p>Maya 是 3D 電腦動畫軟體，擁有強大的建模、彩現、模擬、材質設定和動畫工具，適用於美工人員、建模人員和動畫師<br>
+Maya is a 3D computer animation software with powerful modeling, color rendering, simulation, material settings, and animation tools for artists, modelers, and animators.</p>
+</blockquote>
+<div align="left"><img src="maya.jpg" width="150" height="150"> </div>
+<p><a href="https://www.autodesk.com/products/maya/overview" target="_blank" rel="noopener">Maya 官網</a></p>
+<h1 id="hw-1-低調奢華-mazda-elegant-m">HW 1 - 低調奢華 MAZDA Elegant M</h1>
+<hr>
+<h3 id="低調奢華-mazda-elegant-m">低調奢華 MAZDA Elegant M</h3>
+<blockquote>
+<p>第一次使用Maya軟體設計車子色調，想透過車子表達抽象概念</p>
+</blockquote>
+<p>伴隨優雅的琴聲，聲音迴盪於山谷間，餘波盪漾，山水鏡射，車裡車外相透射，你泥中有我，我泥中有你，全車身以玻璃、水、氣泡，使車體超自然、虛無飄渺，卻又貨真價實擺在眼前，氣泡外殼反射紫色光暈，透露淡淡奢華，玻璃握把、座位區可細看出車體的每個細節，及設計美學，金屬材質的車燈集LOGO，其餘以水進行設計，打造精細的現代感，呈現高雅細膩之感…</p>
+<hr>
+<p><a href="https://drive.google.com/drive/folders/1p1te08vQCDFEZ7dcw9FoyRvf9eRl5cJm" target="_blank" rel="noopener">作品呈現 Click On Me</a></p>
+<p><img src="%E8%BF%91%E6%99%AF.jpeg" alt="近景">   <img src="%E5%85%A7%E9%83%A8%E7%B4%B0%E7%AF%80.jpeg" alt="內部細節">   <img src="%E9%81%A0%E6%99%AF.jpeg" alt="遠景"></p>
+<h1 id="hw-2-老皮革才有的韻味">HW 2 - 老皮革才有的韻味</h1>
+<hr>
+<h3 id="老皮革才有的韻味">老皮革才有的韻味</h3>
+<blockquote>
+<p>這是牛皮經過時間的氧化、摩擦而變得光滑透亮,這個過程我們稱作「養皮」。皮革會慢慢吸收油分,遇光則會氧化產生變化,所以每個人養出來的皮都會長得不一樣。養皮大概就跟泡茶的人養茶壺是一樣的道裡吧!</p>
+</blockquote>
+<p>皮革經歷時間越久越有韻味 然而皮鞋穿久了卻是滿滿回憶</p>
+<p>The longer the leather has passed, the more it has the charm. However, the leather shoes are worn for a long time but full of memories.</p>
+<p>皮鞋變舊過程：</p>
+<ol>
+<li>會失去其光澤</li>
+<li>在長期穿過的指頭關節會有皺摺</li>
+<li>經歷雨水沖刷會有明顯褪色</li>
+<li>外觀變得些許粗糙</li>
+</ol>
+<hr>
+<p><a href="https://drive.google.com/drive/folders/1p63-EbCh_Vi1qWExLoqcV0_fTUuZE9nv" target="_blank" rel="noopener">作品呈現 Click On Me</a></p>
+<p><img src="shoes.png" alt="shoes"></p>
+<h1 id="hw-3-沙漠之心-文明之源">HW 3 - 沙漠之心 文明之源</h1>
+<h3 id="沙漠之心-文明之源">沙漠之心 文明之源</h3>
+<blockquote>
+<p>Atlantis is a fictional aquatic civilization appearing in American comic books published by DC Comics.</p>
+</blockquote>
+<h3 id="靈感發想-水行俠aquaman的亞特蘭提斯">靈感發想 : 水行俠Aquaman的亞特蘭提斯</h3>
+<p>據了解，這個地方在西方傳說中，是一個擁有高度文明的國度，可是這個地方在一萬多年前沉沒在大海中，而對於亞特蘭提斯最早的描述，要追溯至古希臘哲學家柏拉圖的著作《對話錄》中。柏拉圖指出，亞特蘭提斯是一個遍地黃金及白銀的國度，可惜最後因為大地震及洪水相繼發生，最終令亞特蘭提斯淹沒在大海之中。至於真相如何，相信目前仍沒有得到確實的解說。</p>
+<hr>
+<h5 id="作品呈現">作品呈現：</h5>
+<p>共分三層：</p>
+<p>第一層：沙漠 desert<br>
+沙漠乃生命起源</p>
+<p><img src="1.jpeg" alt="desert"></p>
+<p>第二層：海洋 ocean<br>
+沙漠下方隱匿世界部分海洋</p>
+<p><img src="2.jpeg" alt="ocean"></p>
+<p>第三層：雲朵 + 城市 cloud + city<br>
+海洋下 其實有雲朵及荒廢的文明 其受到沙漠唯一的缺口照亮</p>
+<p><img src="3.jpeg" alt="city"></p>
+<p><img src="4.jpeg" alt="full">   <img src="5.jpeg" alt="city1">   <img src="6.jpeg" alt="city2">   <img src="7.jpeg" alt="ocean2"></p>
+]]></content>
+      <tags>
+        <tag>Work</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title> 義務役 2020.9.22-2021.1.11 </title>
+    <url>/myblog/2020/10/01/military/</url>
+    <content><![CDATA[<blockquote>
+<p>2020年不平靜的一年，也在最後一天結束軍旅生涯…</p>
+</blockquote>
+<div align="left"><img src="5.JPG" width="500"> </div>
+<p>當兵所遇到的以及各種建議，將依以下方式作介紹<br>
+(1) 基本介紹（應帶物品、食衣住行育樂）<br>
+(2) 操課內容（一階段、二階段）<br>
+(3) 自我經驗及建議（我所遇到的事）<br>
+(4) 心得分享（所學與感想）</p>
+<hr>
+<h1 id="基本介紹">基本介紹</h1>
+<p>∙ 入伍時間：119T (2020/9/22-2021/1/11) 個人折抵9天，預計1/2退伍，但又遇上假日，提早至12/31退伍</p>
+<p>∙ 所屬連隊：2營1連 - 於北訓中心，共2營，每營有4連(第4連為營部連 意指直屬連負責在戰場上補給裝備、彈藥，但在義務役操課都沒差)，每連差不多10班(基本上都按照身高編排)，每班約10人，共約800多人</p>
+<p>∙ 地理位置：桃園楊梅太平里（步行至楊梅火車站約25分鐘）</p>
+<p>∙ 所屬班級：十班器材班，共10人，二階段之後開始職物輪替，如：打飯、軍械、資收、內掃、公差等</p>
+<h2 id="食衣住行育樂">食衣住行育樂</h2>
+<p>∙ 食：雖然在網路上看到大家都在批評北訓的食物，但沒到自己認為的難吃，頂多食物很常重複，我還常去加菜加飯呢～</p>
+<div align="left"><img src="2.jpeg" width="500" height="500"> </div>
+∙ 衣：第一天會統一去領取物品
+<p>應帶物品推薦大家參考: <a href="http://jimmytraveling.com/blog/post/68331786" target="_blank" rel="noopener">【2019最新】當兵入伍攜帶物品清單（義務役新訓必備）</a></p>
+<p>** 小筆記本、資料袋、衣架、肥皂、刮鬍刀、海綿等，在北訓中心是統一購買的一袋，很貴！420元，個人覺得價值才200吧</p>
+<p>∙ 住：宿舍為40人左右的大通舖，床有上下兩層，都有枕頭跟棉被 <img src="1.jpeg" alt="1"></p>
+<p>∙ 行：真心覺得貴，從營區到桃園火車站就要價120，到台北200，基隆250，宜蘭300，不過搭遊覽車還是方便啦，錢要代夠</p>
+<p>∙ 樂： 第二階段開始有許多社團課及休息時間，可以玩桌遊（是我玩過最多次狼人殺的時期），其他操課或聽招募聽講都會偷玩猜數字或Bingo</p>
+<hr>
+<h1 id="操課內容">操課內容</h1>
+<p>推薦參考：<a href="https://matters.news/@lushaoming/%E7%95%B6%E5%85%B5%E5%BF%85%E8%AE%80-%E6%A5%8A%E6%A2%85%E5%A4%AA%E5%B9%B3%E9%87%8C%E5%8C%97%E8%A8%93%E4%B8%AD%E5%BF%83-107-t-1-b1-c-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%B4%B9-bafyreigbzyqklgmqf5j3xd4lw3uhnj2o7lfxcwhtl3uwx4566kqvrxu77q" target="_blank" rel="noopener">【 當兵必讀 - 楊梅太平里北訓中心 107T 1B1C #基本介紹】</a></p>
+<hr>
+<h1 id="自我經驗與建議">自我經驗與建議</h1>
+<h2 id="輔導長公差">輔導長公差</h2>
+<p>記得入伍第一天，大家都還無頭緒時，輔導長便詢問有無自願當輔導長公差，我立馬舉手，可享有放假、免操課、吃零食的福利，但要負責收錢、打雜等文書作業，有時候都會比別人晚就寢，但還是建議可以擔任公差職務，大家無聊到發慌時，你還有事做XD。</p>
+<h2 id="同梯朋友">同梯朋友</h2>
+<p>班長有說我們這梯次都是高學歷份子，身邊幾乎都是大學、研究所的、還有醫學系的朋友，沒遇到所謂的8+9，此外，這梯都是來自桃園、台北、基隆、宜蘭地區，我的鄰兵們也都滿罩的，會提醒集合時間還有攜帶裝備等。</p>
+<h2 id="懇親會">懇親會</h2>
+<p>我們第二週就是懇親會，記住！如果家人可以來一定要請他們來，因為如果他們帶走我們就能12點離開，如果沒有家人來，只能1600離開，還要收拾垃圾、善後工作等。</p>
+<h2 id="招募與志願役">招募與志願役</h2>
+<p>第一週都是在聽招募，開始的時候是抱著可以偷懶去參訪，便勾選自己認為最帥也最操的特戰指揮部，原本完全沒有簽志願役的想法，然而當自己開始了解軍種制度（士兵、士官、軍官）的福利政策、薪資上看5W以及各項技能學習後，開始漸漸對國軍改觀，我不能說當軍人有多好，但是現在講求人性化操課、並有國家提供的考證照機制，讓軍人退伍後仍能透過證照取得其他工作，甚至從軍20年後享有終身俸，同時不會有超時加班的問題，每天上午兩節及下午兩節操課，下午4-6點有運動時間，顧及到每個人的健康，6點以後就是自由時間，住附近的(50km以內)可以住家裡，隔天7:30再到營區報到就好，類似一個公司的制度。去到參訪地點後，看到餐點的提供比北訓中心好十萬八千里，深深吸引到我，特戰指揮部還有個重點是要學跳傘，也是必備技能，在外跳傘是很貴的體驗，這裡是免費且必須的。<br>
+然而志願役一簽就是四年，四年後自幾可能難以回歸本行，雖然每天晚上都有時間進修自我，但我無法保證自己四年後會不會因軍中的弟兄影響我的進修，擁有研究所的學歷並不會在軍中有效用，頂多長官多關注你，最後，自己還是有更遠的志向抱負，想到外面更寬廣的世界看看。</p>
+<h2 id="打靶">打靶</h2>
+<p>第三週的第一天開始練習臥射、清槍的基本口令動作，為隔天打靶做準備，太平里打靶場距離營區路程約40分鐘，全副武裝步行至打靶場，當天風很大，紅土飛揚，視線時好時壞，打靶距離是175M，剛好是子彈彈道上揚的時候，因此瞄準靶的腰部位置，但是我至今仍不知道為什麼我命中0發，接著就是一直輪著打，大概打了8輪、60發左右的子彈，班長說領多少子彈就要打完多少，原本以為是像高中實彈射擊一人打個一輪就收工回家，沒想到一去就是一整天的實彈射擊，因此我們中午也是在靶場坐著吃午餐、睡午覺，打靶當下的聲音真的很震撼，就像煙火在耳邊爆炸的音量，同時強大的後座力會讓全身都在抖動，穩住氣再打、不要急，我也在試著抓到穩定點。</p>
+<h2 id="飯菜問題">飯菜問題</h2>
+<p>第三週，指揮官（營區最大的老大）接獲消息有人通報說飯菜難吃，而且吃不飽，所以親自前往餐廳視察，看到飯菜直接暴怒，大罵營長還有連長為何飯菜每個人的量不一樣，而且餐點沒變化等，當著所有人的面要營長改進，說完還回頭問：指揮官我帥不帥，感覺有像套好的劇情，但果真隔天的飯菜變得豐富而且好吃、份量也多，而且還吩咐以後每週四會進行用餐滿意度調查的統計，想改善餐點問題，指揮官日後告訴我們，要當個如何解決問題的人，而不是看到問題還不解決，讓我深深印在腦中。</p>
+<h2 id="鑑測當週的假日">鑑測當週的假日</h2>
+<p>指揮官說如果9項測驗全過，週五1400就可以走，少一項延後一小時，但最晚1700就離開，而收假是下週一的1900，北訓真是好地方</p>
+<hr>
+<h1 id="心得分享">心得分享</h1>
+<p>令我訝異的是帶我的班長們也都是很合理化、就事論事的領導者，也都會跟我們聊天打屁，不會一板一眼，該認真就認真，該輕鬆就輕鬆，比起外面說的不合理要求差得多，班長有說那是以前世代的作法，他們過去也有經歷那些世代的管制方法，現在都是追求與時俱進、不做出不合理要求。<br>
+此外，班長也希望我們帶上自己的書充實自我，因為退伍後基本上都要求職，更應該精進自己，真心佩服班長的體貼，雖然也遇到許多不公平的對待或缺乏效率的問題，但人人都可以試著透過溝通與諒解去平衡所遇到的狀況。<br>
+聽長官們說我們是末代的北區專長訓練中心，以後營區會改成109旅的駐點，因此日後應該不會看到新兵在北區服役了，此篇分享的內容會因不同連隊或地區而有所差異，若有要服役的可以參考看看。<br>
+這四個月下來，最讓我感到心煩的是每次的收假日以及越接近退伍日矛盾感越重，一方面很開心快退伍，一方面卻在為將來進入職場感到恐懼與擔憂，期望每個同梯弟兄都能達到自己的理想，以後再約！後會有期～</p>
+<p><img src="6.jpg" alt="6"></p>
+]]></content>
+      <tags>
+        <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>熱舞社 2014/10~2018/6/10</title>
+    <url>/myblog/2018/06/10/pop-dance/</url>
+    <content><![CDATA[<p><img src="1.jpg" alt="pop dance"></p>
+<blockquote>
+<p>熱舞社 陪伴我大學整整四年的社團 有哭有笑 亦友亦親<br>
+是大學成長最多的時候<br>
+從個內向不敢表現 到建立自信 最後在大眾前表演<br>
+謝謝大學四年的陪伴</p>
+</blockquote>
+<hr>
+<h1 id="freshman">Freshman</h1>
+<p>第一次接觸跳舞，完全沒有基礎，慢慢學習，直到能站上舞台</p>
+<p><img src="2.png" alt="freshman"></p>
+<hr>
+<h1 id="personnel">Personnel</h1>
+<p>幹部期間 擔任器材長 當時總認為大家很自私 由於大家都很忙 只顧自己的事 事實上大家都還是很願意幫忙 也因此培養好感情 而自己開會時較少發言 當時有想法卻不敢表達 每次開會都到很晚 總是希望趕快結束回家 期許自己未來能適時說出自己的想法 幫助團隊</p>
+<p><img src="3.png" alt="Personnel"></p>
+<hr>
+<h1 id="退幹生活">退幹生活</h1>
+<p>偶爾回來跳跳舞 回來聊聊天 回來認識新朋友 看到熱舞社日漸蓬勃 覺得大家都長大了</p>
+<p><img src="4.png" alt="退幹生活"></p>
+<blockquote>
+<p>很慶幸自己當時決定加入熱舞社 改變我很多！</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>股價走勢預測-Stock Prediction </title>
+    <url>/myblog/2019/02/09/stock-prediction/</url>
+    <content><![CDATA[<blockquote>
+<p>利用三種不同的深度學習方法(RNN、LSTM、GRU)來預測IBM股價 走向並比較<br>
+Use three different deep learning methods (RNN, LSTM, GRU) to predict IBM stock price trends and compare them</p>
+</blockquote>
+<p><a href="https://github.com/LawrenceGao0224/data_mining/tree/main/datamining_final">程式碼＋報告PDF : Click On Me</a></p>
+<h1 id="前言">前言</h1>
+<hr>
+<p>一般投資者在投資各種金融商品時，往往都是大賠小賺，因投資者常聽信消息面及一時的衝動，或未作詳細的評估分析就輕易投資，若要單獨分析各種經濟資訊不僅需要蒐集繁多的相關資訊，不但非常費時且需要豐富的專業財經知識，而其預估未來的發展趨勢亦不一定準確，且通常經濟指標是落後市場反應的指標。<br>
+而人工智慧的發展日趨興盛，其被運用在多個領域中，尤其是在經融、財經領域中，以類神經網路來預測可說是相當熱門的，透過電腦運算快速的優勢，及多層神經網路，可輔助投資人進行預測。<br>
+When investing in various financial products, the average investor tends to make small profits. Because investors often listen to news and impulses, or do not make detailed assessments and analyze them easily. If you want to analyze various economic information separately, you need not only Collecting a lot of relevant information is not only very time-consuming but also requires a wealth of professional financial knowledge, and its estimated future development trend is not necessarily accurate.<br>
+The development of artificial intelligence is prosperous, and it is used in many fields, especially in the field of finance , the prediction of neural network is quite popular, and the advantages of computing are fast. Neural networks can help investors make predictions.</p>
+<hr>
+<h1 id="流程與實作結果">流程與實作結果</h1>
+<p><a href="https://www.kaggle.com/szrlee/stock-time-series-20050101-to-20171231" target="_blank" rel="noopener">Data Source 資料來源 Kaggle : Click On Me</a></p>
+<h2 id="流程-workflow">流程 Workflow :</h2>
+<p>本次實驗皆採用Keras來搭建深度學習模型，分別利用RNN、LSTM、GRU等深度學習方法來預測，並以均方根誤差(RMSE)來當作評估標準。<br>
+In this experiment, Keras was used to build a deep learning model, which was predicted by deep learning methods such as RNN, LSTM, and GRU, and the root mean square error (RMSE) was used as the evaluation standard.</p>
+<h2 id="實作結果-result">實作結果 Result：</h2>
+<p>(1)LSTM:<br>
+RMSE:2.5459669921977524.</p>
+<p><img src="LSTM.png" alt="LSTM"></p>
+<p>(2)RNN:<br>
+RMSE: 4.72949126626088.</p>
+<p><img src="RNN.png" alt="RNN"></p>
+<p>(3)GRU:<br>
+RMSE: 3.3223451158225696.</p>
+<p><img src="GRU.png" alt="GRU"></p>
+<hr>
+<h1 id="分析結果與討論-discussion">分析結果與討論 Discussion</h1>
+<p>從上面結果圖可以看出，我們所預測的走勢與實際情況相近，其中又以LSTM最佳，RNN最差，我們推測原因是因為RNN只考慮最近的狀態，而LSTM結構更為複雜，會將過去的輸出和當前的輸入concatenate到一起。 在現實中的股價波動往往並不單純只與前一天的股價相關，而是會與歷史 中的股價變化有所關連。<br>
+From graph, we can see that the trend we predicted is similar to the actual situation. Among them, LSTM is the best and RNN is the worst. We speculate that the reason is because RNN only considers the most recent state, and the LSTM structure is more complicated. The past output is concatenate with the current input. In reality, stock price volatility is often not only related to the stock price of the previous day, but it is related to change in stock prices in history.</p>
 ]]></content>
       <tags>
         <tag>Work</tag>
