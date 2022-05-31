@@ -1,91 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>NBA老闆的慧眼 - Affinity Propagation</title>
-    <url>/myblog/2019/01/29/AP-algo/</url>
-    <content><![CDATA[<h1 id="概念發想concept">概念發想Concept</h1>
-<hr>
-<p><a href="https://github.com/LawrenceGao0224/Intelligence-Oriented-Management-Decision/tree/master/%E6%99%BA%E6%85%A7%E5%9E%8B%E6%9C%9F%E6%9C%AB%E5%A0%B1%E5%91%8A">程式碼連結Click On Me</a></p>
-<p><img src="NBA.jpg" alt="NBA"></p>
-<p>我們將自己設想為球隊分析師，並希望能遞上一份不讓老闆&quot;打臉&quot;的分群資料，提供球隊高層在球員交易、補強、替代方案上有份合理客觀的依據。</p>
-<p>We envision ourselves as team analysts, and hope to hand over a group of information that provides the team’s top management with a reasonable and objective basis for player trading, reinforcement, and alternatives.</p>
-<hr>
-<h1 id="操作方法operation">操作方法Operation</h1>
-<p>將NBA所有球員資料(Ex: 薪水、年齡、得分、助攻、有效命中率、真實命中率、球權佔有率、籃板率、效率值…)，以AP演算法實作，計算各球員資料的負歐積里德距離，調整preference、Damping Factor參數，求出k個高質量聚類，且我們將多維度的資料透過PCA()方法壓縮為低維度的資料，實現可視化。</p>
-<p>All NBA player information (Ex: salary, age, score, assists, effective hit rate, true hit rate, possession rate, rebound rate, efficiency value…) is calculated by AP algorithm to calculate each player’s data. The negative Ourich Reed distance, adjust the preferences, Damping Factor parameters, find k high-quality clusters, and we compress the multi-dimensional data into low-dimensional data through PCA () method to achieve visualization</p>
-<p>資料來源 ： (<a href="https://www.kaggle.com/acasalan/nba-player-stats-201718" target="_blank" rel="noopener">https://www.kaggle.com/acasalan/nba-player-stats-201718</a>)</p>
-<hr>
-<h1 id="實作結果-result">實作結果 Result</h1>
-<h2 id="調整參數-adjust-parameter">調整參數 Adjust parameter:</h2>
-<ol>
-<li>Preference:<br>
-Preference = 中位數(-62.5683289159)<br>
-群集數: 43</li>
-</ol>
-<p><img src="1-1.png" alt="43"></p>
-<p>Preference = -500<br>
-群集數: 7</p>
-<p><img src="1-2.png" alt="7"></p>
-<ol start="2">
-<li>Damping Factor:</li>
-</ol>
-<p>Damping Factor = 0.5      --&gt;      Time = 0.8640606880187988 seconds.<br>
-Damping Factor = 0.9      --&gt;      Time = 1.2220699787139893 seconds.</p>
-<h2 id="所有球員資料-all-players">所有球員資料 All players:</h2>
-<p><img src="2-1.png" alt="2-1">   <img src="2-2.png" alt="2-2"></p>
-<h2 id="依球員打球的位置-according-to-position">依球員打球的位置 According to position</h2>
-<ol>
-<li>
-<p>center © : 8群集數<br>
-<img src="3-1.png" alt="3-1"></p>
-</li>
-<li>
-<p>power forward (PF) : 8群集數<br>
-<img src="3-2.png" alt="3-2"></p>
-</li>
-<li>
-<p>small forward (SF) : 12群集數<br>
-<img src="3-3.png" alt="3-3"></p>
-</li>
-<li>
-<p>point guard (PG) : 11群集數<br>
-<img src="3-4.png" alt="3-4"></p>
-</li>
-<li>
-<p>shooting guard (SG) : 4群集數<br>
-<img src="3-5.png" alt="3-5"></p>
-</li>
-</ol>
-<h2 id="依不同屬性">依不同屬性</h2>
-<p>進攻性質 or 防守性質…</p>
-<hr>
-<h1 id="延伸探討-any-imperfect">延伸探討  Any imperfect ?</h1>
-<p>然而在我們丟入的data有其盲點存在,NBA的老闆或球隊在選擇球員上,並不會只觀看球員在場上的數據表現,還包括許多因素,事無法量化或在數據表現出來的(包括球員心理狀態、球員間磨合度…)</p>
-<p>However, the data we throw in has its  blind spots. The NBA boss or team is not only watching the performance of the players on the field, but also includes many factors, which cannot be quantified or expressed in the data. (including the player’s mental state, the player’s running-in…)</p>
-<p>如下:</p>
-<p>❖商業價值 ex: Dwyane Wade<br>
-Wade是大家耳熟能詳的巨星,層經出現在2K遊戲的封面上,但最近的數據表現並不如其他球員出色,但仍是有淺力的球員,也累積許多粉絲,粉絲能帶來商業價值。<br>
-<img src="4-1.png" alt="4-1"></p>
-<p>❖球員背景 ex: Jeremy Lin<br>
-Jeremy是著名的台裔球員,能吸引亞洲地區的球迷觀注其球隊,帶來利益。<br>
-<img src="4-2.png" alt="4-2"></p>
-<p>❖健康因素 ex: Derrick Rose<br>
-Rose是最年輕獲選MVP的球員,但由於前幾賽季腳傷原因,造成都個<br>
-賽季缺賽,而傷後復出便不如以前突出,這也是無法顯現在數據上的。<br>
-<img src="4-3.png" alt="4-3"></p>
-<hr>
-<h1 id="參考資料">參考資料</h1>
-<p>(<a href="https://zi.media/@yidianzixun/post/uKZUFF?fbclid=IwAR1Dib-4T5MkM2x_helYBtq0TgTD871fAixs-4sBivOUXUNjuMl07xFahOs" target="_blank" rel="noopener">https://zi.media/@yidianzixun/post/uKZUFF?fbclid=IwAR1Dib-4T5MkM2x_helYBtq0TgTD871fAixs-4sBivOUXUNjuMl07xFahOs</a>)</p>
-<p>(<a href="https://www.cnblogs.com/huadongw/p/4202492.html?fbclid=IwAR3PHEOcrAar0rCI1e9AeYBxV0fI6JKJIRqGAJ3ag9BnlleT5M9v_8oNiy0" target="_blank" rel="noopener">https://www.cnblogs.com/huadongw/p/4202492.html?fbclid=IwAR3PHEOcrAar0rCI1e9AeYBxV0fI6JKJIRqGAJ3ag9BnlleT5M9v_8oNiy0</a>)</p>
-<p>(<a href="https://www.itread01.com/articles/1495821610.html?fbclid=IwAR1Ssz1ZCdqnxtT6obwpx0AFRDBEGrqKK0BXmMGPK-I1lvNwqJuif9EhZt0" target="_blank" rel="noopener">https://www.itread01.com/articles/1495821610.html?fbclid=IwAR1Ssz1ZCdqnxtT6obwpx0AFRDBEGrqKK0BXmMGPK-I1lvNwqJuif9EhZt0</a>)</p>
-<p>(<a href="https://scikit-learn.org/stable/auto_examples/applications/plot_stock_market.html?fbclid=IwAR29Qcy3SrWFDjHAJGF--XO-0zW2FWt8t4dYZT0lsYxUDqJpBz17ds2pQQM" target="_blank" rel="noopener">https://scikit-learn.org/stable/auto_examples/applications/plot_stock_market.html?fbclid=IwAR29Qcy3SrWFDjHAJGF–XO-0zW2FWt8t4dYZT0lsYxUDqJpBz17ds2pQQM</a>)</p>
-<p>(<a href="https://scikit-learn.org/stable/auto_examples/cluster/plot_affinity_propagation.html?fbclid=IwAR2SsWtrb5MJdypMha6G59nWSeEwf7QK5vzmCa_UefR9mHDT0WzLgEbqng4#sphx-glr-auto-examples-cluster-plot-affinity-propagation-py" target="_blank" rel="noopener">https://scikit-learn.org/stable/auto_examples/cluster/plot_affinity_propagation.html?fbclid=IwAR2SsWtrb5MJdypMha6G59nWSeEwf7QK5vzmCa_UefR9mHDT0WzLgEbqng4#sphx-glr-auto-examples-cluster-plot-affinity-propagation-py</a>)</p>
-]]></content>
-      <tags>
-        <tag>Work</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>故宮沉浸式展場系統</title>
     <url>/myblog/2020/05/25/ARKit/</url>
     <content><![CDATA[<blockquote>
@@ -254,65 +169,134 @@ AR、VR 在軟硬體的高速發展，使其將成為未來的趨勢及主流，
       </tags>
   </entry>
   <entry>
-    <title>阿里山眠月線單攻 2022.5.29</title>
-    <url>/myblog/2022/05/30/Alishan/</url>
-    <content><![CDATA[<blockquote>
-<p>前幾天都是大雨滂沱，當我們來到時晴空萬里<br>
-也在離開時，下起大雨，猶如山神含著淚告訴我們一定要再來</p>
-</blockquote>
-<h1 id="阿里山眠月線歷史背景">阿里山眠月線歷史背景</h1>
-<p>阿里山眠月線為日治時期修築的鐵路，目的為搬運砍伐的巨木而建造，而後發展為觀光，也有小火車提供載客服務。眠月線為其中一個支線，止於石猴站，全長「9.2公里」，沿途共經過「24個橋樑與12個隧道」。</p>
-<div align="left"><img src="7.jpg" width="500" height="500"> </div>
-<p>1999年因為921大地震，鐵路坍方而停駛，而後經過一番修復曾經短暫恢復通車，不料2008年又遭遇八八風災再度損毀，至今未再復駛。由於其平坦且優美的景色，使其成為著名的景點。</p>
-<h1 id="行前準備">行前準備</h1>
-<p>由於眠月線為台灣特有種一葉蘭的保護區，因此須先上<a href="https://pa.forest.gov.tw/?utm_source=%E5%A5%BD%E5%A5%BD%E7%8E%A9%E5%8F%B0%E7%81%A3blog&amp;utm_medium=%E9%98%BF%E9%87%8C%E5%B1%B1%E7%9C%A0%E6%9C%88%E7%B7%9A-%E4%B8%80%E7%AF%87%E6%90%9E%E6%87%82%E7%99%BB%E5%B1%B1%E8%B7%AF%E7%B7%9A%E3%80%81%E5%A6%82%E4%BD%95%E7%94%B3%E8%AB%8B%E3%80%81%E6%B3%A8&amp;utm_campaign=%E9%98%BF%E9%87%8C%E5%B1%B1%E7%9C%A0%E6%9C%88%E7%B7%9A%EF%BD%9C%E5%A4%B1%E8%90%BD%E4%B9%8B%E5%9C%B0%E3%80%8C%E7%9C%A0%E6%9C%88%E7%B7%9A%E3%80%8D%E6%98%8E%E5%B9%B4%E5%8D%B3%E5%B0%87%E5%B0%81%E9%96%89%EF%BC%8C%E6%87%B6%E4%BA%BA%E5%8C%85%E5%85%88%E6%94%B6%E8%97%8F%E3%80%90%E7%99%BB%E5%B1%B1%E8%B7%AF%E7%B7%9A/%E5%A6%82%E4%BD%95%E7%94%B3%E8%AB%8B/%E4%BA%A4%E9%80%9A%E6%96%B9%E5%BC%8F/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85%E3%80%91&amp;utm_term=&amp;utm_content=" target="_blank" rel="noopener">林務局網站</a>申請入園許可，選擇區域：「台灣一葉蘭自然保留區」。<br>
-※管制人數為每日500人</p>
-<div align="left"><img src="6.jpg" width="500" height="500"> </div>
-<p>建議需要帶的物品：</p>
+    <title>NBA老闆的慧眼 - Affinity Propagation</title>
+    <url>/myblog/2019/01/29/AP-algo/</url>
+    <content><![CDATA[<h1 id="概念發想concept">概念發想Concept</h1>
+<hr>
+<p><a href="https://github.com/LawrenceGao0224/Intelligence-Oriented-Management-Decision/tree/master/%E6%99%BA%E6%85%A7%E5%9E%8B%E6%9C%9F%E6%9C%AB%E5%A0%B1%E5%91%8A">程式碼連結Click On Me</a></p>
+<p><img src="NBA.jpg" alt="NBA"></p>
+<p>我們將自己設想為球隊分析師，並希望能遞上一份不讓老闆&quot;打臉&quot;的分群資料，提供球隊高層在球員交易、補強、替代方案上有份合理客觀的依據。</p>
+<p>We envision ourselves as team analysts, and hope to hand over a group of information that provides the team’s top management with a reasonable and objective basis for player trading, reinforcement, and alternatives.</p>
+<hr>
+<h1 id="操作方法operation">操作方法Operation</h1>
+<p>將NBA所有球員資料(Ex: 薪水、年齡、得分、助攻、有效命中率、真實命中率、球權佔有率、籃板率、效率值…)，以AP演算法實作，計算各球員資料的負歐積里德距離，調整preference、Damping Factor參數，求出k個高質量聚類，且我們將多維度的資料透過PCA()方法壓縮為低維度的資料，實現可視化。</p>
+<p>All NBA player information (Ex: salary, age, score, assists, effective hit rate, true hit rate, possession rate, rebound rate, efficiency value…) is calculated by AP algorithm to calculate each player’s data. The negative Ourich Reed distance, adjust the preferences, Damping Factor parameters, find k high-quality clusters, and we compress the multi-dimensional data into low-dimensional data through PCA () method to achieve visualization</p>
+<p>資料來源 ： (<a href="https://www.kaggle.com/acasalan/nba-player-stats-201718" target="_blank" rel="noopener">https://www.kaggle.com/acasalan/nba-player-stats-201718</a>)</p>
+<hr>
+<h1 id="實作結果-result">實作結果 Result</h1>
+<h2 id="調整參數-adjust-parameter">調整參數 Adjust parameter:</h2>
 <ol>
-<li>頭燈：因為有許多隧道且非常陰暗，建議要攜帶</li>
-<li>登山鞋或雨鞋：路上多處泥濘，真心建議不要像我一樣New Balance，回去洗得很痛苦</li>
-<li>行動糧：可以買些巧克力、麵包、鹽糖等，隨時補充</li>
-<li>水： 網上許多人建議2000c.c，因人而異，我個人是600c.c.搞定<br>
-（以上建議為單攻，若要扎營可參考其他）</li>
+<li>Preference:<br>
+Preference = 中位數(-62.5683289159)<br>
+群集數: 43</li>
 </ol>
-<p>由於近期意外事故不斷，讓阿里山林業鐵路及文化資產管理處決定，於2022年的1月17日至4月30日封閉施整修，此次封閉將規畫更換、加寬既有木板，增加止滑效果。<br>
-也難怪我們爬起來很順，跟過去相比超級安全</p>
-<p><a href="https://www.welcometw.com/%E9%98%BF%E9%87%8C%E5%B1%B1%E7%9C%A0%E6%9C%88%E7%B7%9A-%E4%B8%80%E7%AF%87%E6%90%9E%E6%87%82%E7%99%BB%E5%B1%B1%E8%B7%AF%E7%B7%9A%E3%80%81%E5%A6%82%E4%BD%95%E7%94%B3%E8%AB%8B%E3%80%81%E6%B3%A8/" target="_blank" rel="noopener">資料來源：阿里山眠月線</a></p>
-<h1 id="眠月線登山路線">眠月線登山路線</h1>
-<div align="left"><img src="18.png" width="500" height="500"> </div>
-<p>阿里山眠月線步行路線一般以「沼平站」為起點，沼平站同時為祝山線與眠月線的起點車站，兩條支線共用約3公里的鐵路後才分開，抵達此處會看到聳動的告示</p>
-<div align="left"><img src="12.jpg" width="500" height="500"> </div>
-<div align="left"><img src="3.jpg" width="500" height="500"> </div>
-<p>沿著鐵軌一直行走～</p>
-<div align="left"><img src="8.jpg" width="500" height="500"> </div>
-<p>走到過去坍方處，這裏也是暴雨後最多人受困的地方</p>
-<div align="left"><img src="6.jpg" width="500" height="500"> </div>
-<p>接著沒多久就會進入隧道，其中一個隧道最長，裡面也有土石坍方，這時非常需要頭燈的協助</p>
-<div align="left"><img src="14.jpg" width="500" height="500"> </div>
-<div align="left"><img src="15.jpg" width="500" height="500"> </div>
-<p>出洞穴後抵達過去月台</p>
-<div align="left"><img src="4.jpg" width="500" height="500"> </div>
-<p>沿路的鐵軌經重新修築後安全了許多</p>
-<div align="left"><img src="5.jpg" width="500" height="500"> </div>
-<div align="left"><img src="10.jpg" width="500" height="500"> </div>
-<div align="left"><img src="17.jpg" width="500" height="500"> </div>
-<p>洞穴內的積水有時很深，強烈建議要登山鞋</p>
-<div align="left"><img src="11.jpg" width="500" height="500"> </div>
-<p>抵達終點石猴站</p>
-<div align="left"><img src="16.jpg" width="500" height="500"> </div>
-<p>離開前在大門口紀錄神聖的時刻</p>
-<div align="left"><img src="9.jpg" width="500" height="500"> </div>
-<p>回嘉義市區的路上，濃霧跟大雨滂沱</p>
-<div align="left"><img src="13.jpg" width="500" height="500"> </div>
-<h1 id="總結">總結</h1>
-<p>本身是登山菜雞，這是以個人角度做的評分，覺得難度中下，全長9.2公里的眠月線，一路起伏僅約100公尺，相當平緩好走，且夏天山上溫度10多度，非常舒服，我們11點左右出發抵達終點大概兩點初，單程行走時間約為3-4小時，回程聽見打雷聲，我們加緊腳步，僅花一半的時間回到「沼平站」。</p>
-<p>難易度  ： ◼️ ◼️ ◻️ ◻️ ◻️<br>
-危險度  ： ◼️ ◼️ ◼️ ◻️ ◻️<br>
-值得程度： ◼️ ◼️ ◼️ ◼️ ◼️</p>
+<p><img src="1-1.png" alt="43"></p>
+<p>Preference = -500<br>
+群集數: 7</p>
+<p><img src="1-2.png" alt="7"></p>
+<ol start="2">
+<li>Damping Factor:</li>
+</ol>
+<p>Damping Factor = 0.5      --&gt;      Time = 0.8640606880187988 seconds.<br>
+Damping Factor = 0.9      --&gt;      Time = 1.2220699787139893 seconds.</p>
+<h2 id="所有球員資料-all-players">所有球員資料 All players:</h2>
+<p><img src="2-1.png" alt="2-1">   <img src="2-2.png" alt="2-2"></p>
+<h2 id="依球員打球的位置-according-to-position">依球員打球的位置 According to position</h2>
+<ol>
+<li>
+<p>center © : 8群集數<br>
+<img src="3-1.png" alt="3-1"></p>
+</li>
+<li>
+<p>power forward (PF) : 8群集數<br>
+<img src="3-2.png" alt="3-2"></p>
+</li>
+<li>
+<p>small forward (SF) : 12群集數<br>
+<img src="3-3.png" alt="3-3"></p>
+</li>
+<li>
+<p>point guard (PG) : 11群集數<br>
+<img src="3-4.png" alt="3-4"></p>
+</li>
+<li>
+<p>shooting guard (SG) : 4群集數<br>
+<img src="3-5.png" alt="3-5"></p>
+</li>
+</ol>
+<h2 id="依不同屬性">依不同屬性</h2>
+<p>進攻性質 or 防守性質…</p>
+<hr>
+<h1 id="延伸探討-any-imperfect">延伸探討  Any imperfect ?</h1>
+<p>然而在我們丟入的data有其盲點存在,NBA的老闆或球隊在選擇球員上,並不會只觀看球員在場上的數據表現,還包括許多因素,事無法量化或在數據表現出來的(包括球員心理狀態、球員間磨合度…)</p>
+<p>However, the data we throw in has its  blind spots. The NBA boss or team is not only watching the performance of the players on the field, but also includes many factors, which cannot be quantified or expressed in the data. (including the player’s mental state, the player’s running-in…)</p>
+<p>如下:</p>
+<p>❖商業價值 ex: Dwyane Wade<br>
+Wade是大家耳熟能詳的巨星,層經出現在2K遊戲的封面上,但最近的數據表現並不如其他球員出色,但仍是有淺力的球員,也累積許多粉絲,粉絲能帶來商業價值。<br>
+<img src="4-1.png" alt="4-1"></p>
+<p>❖球員背景 ex: Jeremy Lin<br>
+Jeremy是著名的台裔球員,能吸引亞洲地區的球迷觀注其球隊,帶來利益。<br>
+<img src="4-2.png" alt="4-2"></p>
+<p>❖健康因素 ex: Derrick Rose<br>
+Rose是最年輕獲選MVP的球員,但由於前幾賽季腳傷原因,造成都個<br>
+賽季缺賽,而傷後復出便不如以前突出,這也是無法顯現在數據上的。<br>
+<img src="4-3.png" alt="4-3"></p>
+<hr>
+<h1 id="參考資料">參考資料</h1>
+<p>(<a href="https://zi.media/@yidianzixun/post/uKZUFF?fbclid=IwAR1Dib-4T5MkM2x_helYBtq0TgTD871fAixs-4sBivOUXUNjuMl07xFahOs" target="_blank" rel="noopener">https://zi.media/@yidianzixun/post/uKZUFF?fbclid=IwAR1Dib-4T5MkM2x_helYBtq0TgTD871fAixs-4sBivOUXUNjuMl07xFahOs</a>)</p>
+<p>(<a href="https://www.cnblogs.com/huadongw/p/4202492.html?fbclid=IwAR3PHEOcrAar0rCI1e9AeYBxV0fI6JKJIRqGAJ3ag9BnlleT5M9v_8oNiy0" target="_blank" rel="noopener">https://www.cnblogs.com/huadongw/p/4202492.html?fbclid=IwAR3PHEOcrAar0rCI1e9AeYBxV0fI6JKJIRqGAJ3ag9BnlleT5M9v_8oNiy0</a>)</p>
+<p>(<a href="https://www.itread01.com/articles/1495821610.html?fbclid=IwAR1Ssz1ZCdqnxtT6obwpx0AFRDBEGrqKK0BXmMGPK-I1lvNwqJuif9EhZt0" target="_blank" rel="noopener">https://www.itread01.com/articles/1495821610.html?fbclid=IwAR1Ssz1ZCdqnxtT6obwpx0AFRDBEGrqKK0BXmMGPK-I1lvNwqJuif9EhZt0</a>)</p>
+<p>(<a href="https://scikit-learn.org/stable/auto_examples/applications/plot_stock_market.html?fbclid=IwAR29Qcy3SrWFDjHAJGF--XO-0zW2FWt8t4dYZT0lsYxUDqJpBz17ds2pQQM" target="_blank" rel="noopener">https://scikit-learn.org/stable/auto_examples/applications/plot_stock_market.html?fbclid=IwAR29Qcy3SrWFDjHAJGF–XO-0zW2FWt8t4dYZT0lsYxUDqJpBz17ds2pQQM</a>)</p>
+<p>(<a href="https://scikit-learn.org/stable/auto_examples/cluster/plot_affinity_propagation.html?fbclid=IwAR2SsWtrb5MJdypMha6G59nWSeEwf7QK5vzmCa_UefR9mHDT0WzLgEbqng4#sphx-glr-auto-examples-cluster-plot-affinity-propagation-py" target="_blank" rel="noopener">https://scikit-learn.org/stable/auto_examples/cluster/plot_affinity_propagation.html?fbclid=IwAR2SsWtrb5MJdypMha6G59nWSeEwf7QK5vzmCa_UefR9mHDT0WzLgEbqng4#sphx-glr-auto-examples-cluster-plot-affinity-propagation-py</a>)</p>
 ]]></content>
       <tags>
-        <tag>Blog</tag>
+        <tag>Work</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>墾丁打工換宿 2018/8/5~2018/8/25</title>
+    <url>/myblog/2018/08/25/Kenting-WH/</url>
+    <content><![CDATA[<blockquote>
+<p>謝謝每位我在這裡遇到的朋友<br>
+離開太趕 沒能全部拍到照 有緣再見<br>
+結束最後暑假 研究所人生準備開跑<br>
+#鹿境 #小幫手 #恆春 #海</p>
+</blockquote>
+<h1 id="前言">前言</h1>
+<p>你憧憬未來的時候，不會去想著把所有的事聯繫起來；只有在回憶過去的時候，才會將這點點滴滴聯繫在一起。一定要相信，這些生活的點滴會在你未來的某一天產生聯繫。一定要相信：勇氣、目標、生命、緣起…一切都不會令你失望，只會增加你的與眾不同。</p>
+<p><img src="1.png" alt="1"><br>
+<img src="2.png" alt="2"></p>
+<h1 id="工作-working">工作 Working</h1>
+<p>其實工作內容很間單，分爲吧台、鹿園兩區的工作</p>
+<h2 id="在吧台負責">在吧台負責：</h2>
+<ol>
+<li>飲料餐點</li>
+<li>外頭的商品部擺放、補貨(拆線、吊牌剪掉、檢查不良品)</li>
+<li>幫訂午餐、晚餐</li>
+<li>廁所打掃（每1hr巡一次）</li>
+<li>外頭路面地面整潔</li>
+</ol>
+<h2 id="在鹿園負責">在鹿園負責：</h2>
+<ol>
+<li>割草（沒體驗到 但要搬運20多公斤草）</li>
+<li>切紅蘿菠、地瓜</li>
+<li>打掃鹿園（沒體驗到 很臭）</li>
+<li>解說員（有人體驗到）</li>
+</ol>
+<p><img src="3.png" alt="3"></p>
+<h1 id="度假-holiday">度假 Holiday</h1>
+<p>其實幾乎只有第一週體驗到 剩下都待在鹿境工作 還有最後一週連日的大雨打壞行程（只找到一天沒雨空擋去環屏東）</p>
+<p>8/5 浮潛+逛恆春夜市<br>
+8/6 帆船石+麋谷<br>
+8/7 聚餐 美式餐廳 +打牌<br>
+8/8 七孔瀑布 + cafe cinema<br>
+8/9 古城家常菜+白沙灣<br>
+8/10 深潛+海生館+肥春號<br>
+8/11 吉普車（大腳168車隊）</p>
+<p>Last week :車程福安宮+牡丹水庫+牡丹國小+旭海+九鵬大沙漠+港仔大沙漠+風吹砂+龍磐+台灣最南點</p>
+]]></content>
+      <tags>
+        <tag>Travel</tag>
       </tags>
   </entry>
   <entry>
@@ -401,52 +385,6 @@ AR、VR 在軟硬體的高速發展，使其將成為未來的趨勢及主流，
       </tags>
   </entry>
   <entry>
-    <title>墾丁打工換宿 2018/8/5~2018/8/25</title>
-    <url>/myblog/2018/08/25/Kenting-WH/</url>
-    <content><![CDATA[<blockquote>
-<p>謝謝每位我在這裡遇到的朋友<br>
-離開太趕 沒能全部拍到照 有緣再見<br>
-結束最後暑假 研究所人生準備開跑<br>
-#鹿境 #小幫手 #恆春 #海</p>
-</blockquote>
-<h1 id="前言">前言</h1>
-<p>你憧憬未來的時候，不會去想著把所有的事聯繫起來；只有在回憶過去的時候，才會將這點點滴滴聯繫在一起。一定要相信，這些生活的點滴會在你未來的某一天產生聯繫。一定要相信：勇氣、目標、生命、緣起…一切都不會令你失望，只會增加你的與眾不同。</p>
-<p><img src="1.png" alt="1"><br>
-<img src="2.png" alt="2"></p>
-<h1 id="工作-working">工作 Working</h1>
-<p>其實工作內容很間單，分爲吧台、鹿園兩區的工作</p>
-<h2 id="在吧台負責">在吧台負責：</h2>
-<ol>
-<li>飲料餐點</li>
-<li>外頭的商品部擺放、補貨(拆線、吊牌剪掉、檢查不良品)</li>
-<li>幫訂午餐、晚餐</li>
-<li>廁所打掃（每1hr巡一次）</li>
-<li>外頭路面地面整潔</li>
-</ol>
-<h2 id="在鹿園負責">在鹿園負責：</h2>
-<ol>
-<li>割草（沒體驗到 但要搬運20多公斤草）</li>
-<li>切紅蘿菠、地瓜</li>
-<li>打掃鹿園（沒體驗到 很臭）</li>
-<li>解說員（有人體驗到）</li>
-</ol>
-<p><img src="3.png" alt="3"></p>
-<h1 id="度假-holiday">度假 Holiday</h1>
-<p>其實幾乎只有第一週體驗到 剩下都待在鹿境工作 還有最後一週連日的大雨打壞行程（只找到一天沒雨空擋去環屏東）</p>
-<p>8/5 浮潛+逛恆春夜市<br>
-8/6 帆船石+麋谷<br>
-8/7 聚餐 美式餐廳 +打牌<br>
-8/8 七孔瀑布 + cafe cinema<br>
-8/9 古城家常菜+白沙灣<br>
-8/10 深潛+海生館+肥春號<br>
-8/11 吉普車（大腳168車隊）</p>
-<p>Last week :車程福安宮+牡丹水庫+牡丹國小+旭海+九鵬大沙漠+港仔大沙漠+風吹砂+龍磐+台灣最南點</p>
-]]></content>
-      <tags>
-        <tag>Travel</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>蘭嶼Lanyu遊 2020.7.21-2020.7.24</title>
     <url>/myblog/2020/07/24/Lanyu/</url>
     <content><![CDATA[<blockquote>
@@ -516,6 +454,172 @@ Soak in your own world!</p>
 ]]></content>
       <tags>
         <tag>Travel</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大馬遊2018/7/21~2018/7/29</title>
+    <url>/myblog/2018/07/30/Malaysia/</url>
+    <content><![CDATA[<blockquote>
+<p>馬六甲(Malacca)&gt;吉隆坡(Kuala Lumpur)&gt;檳城(Penang)&gt;蘭卡威(langkawi)&gt;雲頂高原(Genting highlands)&gt;柔佛(Johor)&gt;新加坡</p>
+</blockquote>
+<p><img src="lankawei.jpg" alt="蘭卡威"></p>
+<hr>
+<h1 id="行程規畫">行程規畫</h1>
+<p><a href="https://gsy-life.webnode.tw/_files/200000006-8a0808b03e/%E9%A6%AC%E4%BE%86%E8%A5%BF%E4%BA%9E%E4%B9%8B%E6%97%85.pdf" target="_blank" rel="noopener">行程規劃 : Click On Me</a></p>
+<hr>
+<h1 id="行前準備">行前準備</h1>
+<p>由於是在暑假熱季前往，衣物方面幾乎都是短袖短褲（但是要注意可能因為機上冷氣太強，所以有攜帶薄襯衫），還要攜帶泳褲以便下水，防曬物品更不能少（我就被曬傷了 嚴重脫皮) &gt;&lt;</p>
+<hr>
+<h1 id="travel">Travel</h1>
+<h2 id="day-1">Day 1</h2>
+<p>坐飛機到Ｍalaysia時間大約為4小時，到達 Kuala Lumpur 已經是晚上8、9點，出機場直達麥當勞，他們的麥當勞比台灣便宜，而且有魚漢堡（1馬幣=7.6台幣），也是出國後才知道只有台灣麥當勞垃圾要自己收（好習慣😊）。<br>
+接著放完行李後，前往麻六甲(Malacca)品嚐道地沙爹，口味偏重、調味多，醬料如果沒有攪拌，下層便會燒焦，點飲料時推薦100plus(像有氣的舒跑)</p>
+<p><img src="1.jpg" alt="Day1"></p>
+<h2 id="day-2">Day 2</h2>
+<p>在麻六甲，先是前往著名地標，而後到顛倒屋拍照，再坐車前往吉隆坡玩水上樂園Sunway（門票好像要快130RM 約930NTD)，印象海盜船沒有360度，但這裡的有，這裡還有人造浪，還好都有玩到，晚上前往雙子星大樓（著名地標），在周邊吃小吃，印度薄餅好吃～</p>
+<p><img src="2.jpg" alt="Day2-1">   <img src="3.jpg" alt="Day2-2"></p>
+<h2 id="day-3">Day 3</h2>
+<p>前往蝙蝠洞，在階梯上充滿了獼猴，雖然可愛，會搶人的物品或食物<br>
+結束早上行程後，前往檳城，到達時間已是下午5點，購買後天前往蘭卡威的船票，晚上吃當地的夜市，再去逛阿凡達館（好像是東西都亮亮的像阿凡達？有點不懂）</p>
+<p><img src="4.jpg" alt="Day3"></p>
+<h2 id="day-4">Day 4</h2>
+<p>早起前往當地有名的早餐店多春，吃完逛鬼怪博物館，再逛歷史博物館，整天走走逛逛的行程，晚上開車去洗衣店洗衣服</p>
+<p><img src="6.jpg" alt="Day4-1">   <img src="5.jpg" alt="Day4-2"></p>
+<h2 id="day-5">Day 5</h2>
+<p>早起搭船前往蘭卡威，一下船，便有人推銷我們套票行程，每人200RM 大約1500NTD，便能租車、潛水，我們便購買了此行程，坐船到達許多分散的島嶼，還有很多沙灘，有些景點無聊且東西貴，晚上去吃一間華人開的餐廳，一個人台幣大約300左右，但超好吃也超級飽</p>
+<p><img src="7.jpg" alt="Day5"></p>
+<h2 id="day-6">Day 6</h2>
+<p>早起吃了早餐今天搭船前往沙灘潛水，那裡無限制潛水，而且沒有人會攔你要游到哪，只是有個邊界，累了可以上岸休息，傍晚時，我們回到飯店旁的沙灘玩遊樂設施，晚上吃馬來人開的店（有貴到、而且吃不飽），馬來西亞的朋友說有點被騙了，到馬來人開的餐廳要注意，最後逛了shopping mall，結束一天</p>
+<p><img src="8.jpg" alt="Day6"></p>
+<h2 id="day-7">Day 7</h2>
+<p>一大早大雨滂沱，朋友鑰匙差點搞丟，找了半天，原來掉在昨天吃飯的地方，一大早坐計程車趕車到搭船點，幸好及時趕上船班，離開蘭卡威、離開檳城，一路南下至雲頂，今晚的落角：雲頂高原（Genting Highland)裡面有很大型的賭場，我們吃完飯便去賭場，有生第一次去賭場，好像電影的場景都搬到眼前，進出口都有安檢檢查是否成年</p>
+<p>(賭場不能拍照)</p>
+<h2 id="day-89">Day 8,9</h2>
+<p>離開雲頂，前往馬來西亞朋友住家，住了一天，隔天到新加坡坐飛機回台灣，只在新加坡待了2小時</p>
+<p><img src="9.jpg" alt="Day8-9"></p>
+<h1 id="總結">總結</h1>
+<blockquote>
+<p>有吉隆坡的車牌好像大家會讓你 因為吉隆坡的人開車很兇<br>
+機車也可以騎高速公路 也不時看到泰國車牌<br>
+油價便宜 95汽油 一公升16塊台幣左右<br>
+馬來西亞朋友都會至少五種語言 跟當地人溝通不停切換 我當神拜<br>
+食物重口味又辣 大推沙爹、肉骨茶、Roti tissue<br>
+飲料推 100 plus、奶茶、milo 、涼茶<br>
+蘭卡威（langkawi)的酒比珍奶便宜<br>
+馬來西亞真的是美食天堂～</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Travel</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>台南打工換宿 2020.8.17-2020.8.26</title>
+    <url>/myblog/2020/08/26/Tainan/</url>
+    <content><![CDATA[<blockquote>
+<p>原本抱著等待兵役空檔玩台南順便當個老幫手 同時體驗台南美食<br>
+沒想到學習以後可能不會再接觸到的木工、油漆及裝潢設計等 🚪<br>
+大家愛恭台語 我就操玲呆(有點進步)<br>
+Reggie教導我們各項技術還有如何衝浪🏄！他什麼都會！真的是偶像！<br>
+每晚Candy的心靈雞湯 學習人生經驗 團隊合作及錯中學習 是人生的導師也是永遠好的朋友<br>
+其他小幫手 每個都有自己的特色 以及願意付出的心 成就這次的工程</p>
+</blockquote>
+<hr>
+<p><img src="2.jpg" alt="2"></p>
+<h1 id="工作-working">工作 Working</h1>
+<p>本次的任務：</p>
+<ol>
+<li>主要是將頂樓天臺整理並規劃成交誼的空間</li>
+<li>同時整理房務工作打掃等</li>
+</ol>
+<p><img src="3.png" alt="3"> <img src="4.png" alt="4"></p>
+<hr>
+<h1 id="度假-holiday">度假 Holiday</h1>
+<p>台南的景點還滿多的，在第二天晚上，老闆帶著我們深度探索台南，同時介紹每個建築物的歷史<br>
+以前從來不會特別去在意的廟宇建築外觀，現在都覺得好神奇，讓我對台灣的歷史更有興趣<br>
+從台南圓環24hr Donutes，沿路走經過台灣第一間廟、蝸牛巷、台南州廳、全美戲院、台南美術館1、2館、司法博物館、林百貨等（沒按照順序）<br>
+對先人留下的遺址及智慧讚嘆不已<br>
+期間老闆帶我們連續兩天假日去漁光島衝浪，生平第一次衝浪就獻給你們了，不過我第二天就站起來兩次，超開心＾＾<br>
+幾日後前往奇美博物館，到的時候已是下午5點，5:30就關門，因此在建築外與這大片美景拍照，佔地9.5公頃的博物館，典藏無數珍貴的國際級藝術品，許文龍先生留給台南最美的博物館</p>
+<p><img src="5.jpg" alt="5"></p>
+<hr>
+<h1 id="working-holiday">Working Holiday</h1>
+<p>這次的換宿經驗讓我學到不論是技術上的技巧更是心靈上的成長<br>
+民宿店的老闆Reggie，雖然只大我6歲，但想法、人生歷練、享受人生都是我遙不可及的目標<br>
+更發現大片藍海市場，想到極為可創性的目標<br>
+我自己也憧憬能像他做自己喜歡的事的念頭 期許未來能更往目標前進！<br>
+此外，帶領我們的是另一位衝浪店（宜蘭烏石）的老闆Candy，對於團隊管理非常有經驗，還是許多大學的講師<br>
+每晚給我們滿滿的知識與做人處事的道理，讓我意識到過去一直忽略掉的貼心，心靈雞湯溫飽我們求知的心!</p>
+<p><img src="1.png" alt="1"></p>
+<blockquote>
+<p>謝謝巷仔邸換宿帶給我寶貴的經驗！<br>
+#巷子邸At The End #小幫手 #台南 #奇美博物館 #漁光島 #學台語 #做工的人 #等待兵役</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Travel</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>阿里山眠月線單攻 2022.5.29</title>
+    <url>/myblog/2022/05/30/Alishan/</url>
+    <content><![CDATA[<blockquote>
+<p>前幾天都是大雨滂沱，當我們來到時晴空萬里<br>
+也在離開時，下起大雨，猶如山神含著淚告訴我們一定要再來</p>
+</blockquote>
+<h1 id="阿里山眠月線歷史背景">阿里山眠月線歷史背景</h1>
+<p>阿里山眠月線為日治時期修築的鐵路，目的為搬運砍伐的巨木而建造，而後發展為觀光，也有小火車提供載客服務。眠月線為其中一個支線，止於石猴站，全長「9.2公里」，沿途共經過「24個橋樑與12個隧道」。</p>
+<div align="left"><img src="7.jpg" width="500" height="500"> </div>
+<p>1999年因為921大地震，鐵路坍方而停駛，而後經過一番修復曾經短暫恢復通車，不料2008年又遭遇八八風災再度損毀，至今未再復駛。由於其平坦且優美的景色，使其成為著名的景點。</p>
+<h1 id="行前準備">行前準備</h1>
+<p>由於眠月線為台灣特有種一葉蘭的保護區，因此須先上<a href="https://pa.forest.gov.tw/?utm_source=%E5%A5%BD%E5%A5%BD%E7%8E%A9%E5%8F%B0%E7%81%A3blog&amp;utm_medium=%E9%98%BF%E9%87%8C%E5%B1%B1%E7%9C%A0%E6%9C%88%E7%B7%9A-%E4%B8%80%E7%AF%87%E6%90%9E%E6%87%82%E7%99%BB%E5%B1%B1%E8%B7%AF%E7%B7%9A%E3%80%81%E5%A6%82%E4%BD%95%E7%94%B3%E8%AB%8B%E3%80%81%E6%B3%A8&amp;utm_campaign=%E9%98%BF%E9%87%8C%E5%B1%B1%E7%9C%A0%E6%9C%88%E7%B7%9A%EF%BD%9C%E5%A4%B1%E8%90%BD%E4%B9%8B%E5%9C%B0%E3%80%8C%E7%9C%A0%E6%9C%88%E7%B7%9A%E3%80%8D%E6%98%8E%E5%B9%B4%E5%8D%B3%E5%B0%87%E5%B0%81%E9%96%89%EF%BC%8C%E6%87%B6%E4%BA%BA%E5%8C%85%E5%85%88%E6%94%B6%E8%97%8F%E3%80%90%E7%99%BB%E5%B1%B1%E8%B7%AF%E7%B7%9A/%E5%A6%82%E4%BD%95%E7%94%B3%E8%AB%8B/%E4%BA%A4%E9%80%9A%E6%96%B9%E5%BC%8F/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85%E3%80%91&amp;utm_term=&amp;utm_content=" target="_blank" rel="noopener">林務局網站</a>申請入園許可，選擇區域：「台灣一葉蘭自然保留區」。<br>
+※管制人數為每日500人</p>
+<div align="left"><img src="19.jpg" width="500" height="500"> </div>
+<p>建議需要帶的物品：</p>
+<ol>
+<li>頭燈：因為有許多隧道且非常陰暗，建議要攜帶</li>
+<li>登山鞋或雨鞋：路上多處泥濘，真心建議不要像我一樣New Balance，回去洗得很痛苦</li>
+<li>行動糧：可以買些巧克力、麵包、鹽糖等，隨時補充</li>
+<li>水： 網上許多人建議2000c.c，因人而異，我個人是600c.c.搞定<br>
+（以上建議為單攻，若要扎營可參考其他）</li>
+</ol>
+<p>由於近期意外事故不斷，讓阿里山林業鐵路及文化資產管理處決定，於2022年的1月17日至4月30日封閉施整修，此次封閉將規畫更換、加寬既有木板，增加止滑效果。<br>
+也難怪我們爬起來很順，跟過去相比超級安全</p>
+<p><a href="https://www.welcometw.com/%E9%98%BF%E9%87%8C%E5%B1%B1%E7%9C%A0%E6%9C%88%E7%B7%9A-%E4%B8%80%E7%AF%87%E6%90%9E%E6%87%82%E7%99%BB%E5%B1%B1%E8%B7%AF%E7%B7%9A%E3%80%81%E5%A6%82%E4%BD%95%E7%94%B3%E8%AB%8B%E3%80%81%E6%B3%A8/" target="_blank" rel="noopener">資料來源：阿里山眠月線</a></p>
+<h1 id="眠月線登山路線">眠月線登山路線</h1>
+<div align="left"><img src="18.png" width="500" height="500"> </div>
+<p>阿里山眠月線步行路線一般以「沼平站」為起點，沼平站同時為祝山線與眠月線的起點車站，兩條支線共用約3公里的鐵路後才分開，抵達此處會看到聳動的告示</p>
+<div align="left"><img src="12.jpg" width="500" height="500"> </div>
+<div align="left"><img src="3.jpg" width="500" height="500"> </div>
+<p>沿著鐵軌一直行走～</p>
+<div align="left"><img src="8.jpg" width="500" height="500"> </div>
+<p>走到過去坍方處，這裏也是暴雨後最多人受困的地方</p>
+<div align="left"><img src="6.jpg" width="500" height="500"> </div>
+<p>接著沒多久就會進入隧道，其中一個隧道最長，裡面也有土石坍方，這時非常需要頭燈的協助</p>
+<div align="left"><img src="14.jpg" width="500" height="500"> </div>
+<div align="left"><img src="15.jpg" width="500" height="500"> </div>
+<p>出洞穴後抵達過去月台</p>
+<div align="left"><img src="4.jpg" width="500" height="500"> </div>
+<p>沿路的鐵軌經重新修築後安全了許多</p>
+<div align="left"><img src="5.jpg" width="500" height="500"> </div>
+<div align="left"><img src="10.jpg" width="500" height="500"> </div>
+<div align="left"><img src="17.jpg" width="500" height="500"> </div>
+<p>洞穴內的積水有時很深，強烈建議要登山鞋</p>
+<div align="left"><img src="11.jpg" width="500" height="500"> </div>
+<p>抵達終點石猴站</p>
+<div align="left"><img src="16.jpg" width="500" height="500"> </div>
+<p>離開前在大門口紀錄神聖的時刻</p>
+<div align="left"><img src="9.jpg" width="500" height="500"> </div>
+<p>回嘉義市區的路上，濃霧跟大雨滂沱</p>
+<div align="left"><img src="13.jpg" width="500" height="500"> </div>
+<h1 id="總結">總結</h1>
+<p>本身是登山菜雞，這是以個人角度做的評分，覺得難度中下，全長9.2公里的眠月線，一路起伏僅約100公尺，相當平緩好走，且夏天山上溫度10多度，非常舒服，我們11點左右出發抵達終點大概兩點初，單程行走時間約為3-4小時，回程聽見打雷聲，我們加緊腳步，僅花一半的時間回到「沼平站」。</p>
+<p>難易度  ： ◼️ ◼️ ◻️ ◻️ ◻️<br>
+危險度  ： ◼️ ◼️ ◼️ ◻️ ◻️<br>
+值得程度： ◼️ ◼️ ◼️ ◼️ ◼️</p>
+]]></content>
+      <tags>
+        <tag>Blog</tag>
       </tags>
   </entry>
   <entry>
@@ -646,93 +750,6 @@ LeetCode great solutions: <a href="https://www.youtube.com/channel/UC_mYaQAE6-71
 ]]></content>
       <tags>
         <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Red Hat Certified System Administrator (RHCSA8)</title>
-    <url>/myblog/2022/05/06/RHCSA/</url>
-    <content><![CDATA[<blockquote>
-<p>I can accept failure, but cannot accept to give up<br>
-考了兩次才通過</p>
-</blockquote>
-<h1 id="rhcsa介紹">RHCSA介紹</h1>
-<p>RHCSA認證是Red Hat公司於2011年3月所推出的新認證。RHCSA認證是取得RHCE認證的必要條件之一，RHCSA與RHCE認證取得兩者無先後順序，兩者均通過者才可完整取得RHCE證書。擁有RHCSA認證者能夠扮演著企業內各式各樣的角色，舉凡資料庫管理員，開發人員和技術支持人員…等職務，能重建與部署企業核心Linux環境，更能代表您具備管理技術與駕馭系統的能力。欲取得RHCSA認證您必須參加此認證考試，成功讓您成為兼具完整理論與實作技術的Linux專家。<br>
-<a href="https://www.uuu.com.tw/Course/Partner/RedHat%E7%B4%85%E5%B8%BD/section=rhcsa/title=RHCSA%E8%AA%8D%E8%AD%89%E8%88%87%E8%80%83%E8%A9%A6%E4%BB%8B%E7%B4%B9" target="_blank" rel="noopener">(資料來源：UCOM恆逸教育訓練)</a></p>
-<h1 id="考試測驗能力">考試測驗能力</h1>
-<p>可進入官網查看：<a href="https://www.redhat.com/en/services/training/ex200-red-hat-certified-system-administrator-rhcsa-exam?section=Objectives" target="_blank" rel="noopener">Red Hat Certified System Administrator (RHCSA) exam</a></p>
-<h1 id="考題整理">考題整理</h1>
-<p>網路整理考題：<a href="https://github.com/chlebik/rhcsa-practice-questions/tree/master/questions">https://github.com/chlebik/rhcsa-practice-questions/tree/master/questions</a></p>
-<p>RedHat8之後開始考了許多Container題目，如：<a href="https://tekneed.com/rhcsa-8-exam-practice-question-9-managing-containers/" target="_blank" rel="noopener">https://tekneed.com/rhcsa-8-exam-practice-question-9-managing-containers/</a></p>
-<h1 id="考試環境介紹">考試環境介紹</h1>
-<p>考試環境會提供兩台虛擬機，分別為node1, node2，（會建議開終端機連線兩台虛擬機，以方便複製考試時所用到的網址或名稱）</p>
-<h1 id="結論">結論</h1>
-<ol>
-<li>一定要一直反覆練習實作，才能訓練到，不能只用看的，因為可能發生你都想不到的問題。</li>
-<li>我考試時發生用root建立user，而user卻沒長出Home directory，後來才發現是當時系統沒裝好，但卻沒反應，應是浪費快一個小時</li>
-<li>還有Container的題目，真的有點難，我不懂為什麼都沒拿到分，明明都有做</li>
-<li>切割完硬碟後，一定要重開機看看能不能開機，能不能自動mount起來</li>
-<li>有疑問要提出，有可能真的是系統問題</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>Work</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>大馬遊2018/7/21~2018/7/29</title>
-    <url>/myblog/2018/07/30/Malaysia/</url>
-    <content><![CDATA[<blockquote>
-<p>馬六甲(Malacca)&gt;吉隆坡(Kuala Lumpur)&gt;檳城(Penang)&gt;蘭卡威(langkawi)&gt;雲頂高原(Genting highlands)&gt;柔佛(Johor)&gt;新加坡</p>
-</blockquote>
-<p><img src="lankawei.jpg" alt="蘭卡威"></p>
-<hr>
-<h1 id="行程規畫">行程規畫</h1>
-<p><a href="https://gsy-life.webnode.tw/_files/200000006-8a0808b03e/%E9%A6%AC%E4%BE%86%E8%A5%BF%E4%BA%9E%E4%B9%8B%E6%97%85.pdf" target="_blank" rel="noopener">行程規劃 : Click On Me</a></p>
-<hr>
-<h1 id="行前準備">行前準備</h1>
-<p>由於是在暑假熱季前往，衣物方面幾乎都是短袖短褲（但是要注意可能因為機上冷氣太強，所以有攜帶薄襯衫），還要攜帶泳褲以便下水，防曬物品更不能少（我就被曬傷了 嚴重脫皮) &gt;&lt;</p>
-<hr>
-<h1 id="travel">Travel</h1>
-<h2 id="day-1">Day 1</h2>
-<p>坐飛機到Ｍalaysia時間大約為4小時，到達 Kuala Lumpur 已經是晚上8、9點，出機場直達麥當勞，他們的麥當勞比台灣便宜，而且有魚漢堡（1馬幣=7.6台幣），也是出國後才知道只有台灣麥當勞垃圾要自己收（好習慣😊）。<br>
-接著放完行李後，前往麻六甲(Malacca)品嚐道地沙爹，口味偏重、調味多，醬料如果沒有攪拌，下層便會燒焦，點飲料時推薦100plus(像有氣的舒跑)</p>
-<p><img src="1.jpg" alt="Day1"></p>
-<h2 id="day-2">Day 2</h2>
-<p>在麻六甲，先是前往著名地標，而後到顛倒屋拍照，再坐車前往吉隆坡玩水上樂園Sunway（門票好像要快130RM 約930NTD)，印象海盜船沒有360度，但這裡的有，這裡還有人造浪，還好都有玩到，晚上前往雙子星大樓（著名地標），在周邊吃小吃，印度薄餅好吃～</p>
-<p><img src="2.jpg" alt="Day2-1">   <img src="3.jpg" alt="Day2-2"></p>
-<h2 id="day-3">Day 3</h2>
-<p>前往蝙蝠洞，在階梯上充滿了獼猴，雖然可愛，會搶人的物品或食物<br>
-結束早上行程後，前往檳城，到達時間已是下午5點，購買後天前往蘭卡威的船票，晚上吃當地的夜市，再去逛阿凡達館（好像是東西都亮亮的像阿凡達？有點不懂）</p>
-<p><img src="4.jpg" alt="Day3"></p>
-<h2 id="day-4">Day 4</h2>
-<p>早起前往當地有名的早餐店多春，吃完逛鬼怪博物館，再逛歷史博物館，整天走走逛逛的行程，晚上開車去洗衣店洗衣服</p>
-<p><img src="6.jpg" alt="Day4-1">   <img src="5.jpg" alt="Day4-2"></p>
-<h2 id="day-5">Day 5</h2>
-<p>早起搭船前往蘭卡威，一下船，便有人推銷我們套票行程，每人200RM 大約1500NTD，便能租車、潛水，我們便購買了此行程，坐船到達許多分散的島嶼，還有很多沙灘，有些景點無聊且東西貴，晚上去吃一間華人開的餐廳，一個人台幣大約300左右，但超好吃也超級飽</p>
-<p><img src="7.jpg" alt="Day5"></p>
-<h2 id="day-6">Day 6</h2>
-<p>早起吃了早餐今天搭船前往沙灘潛水，那裡無限制潛水，而且沒有人會攔你要游到哪，只是有個邊界，累了可以上岸休息，傍晚時，我們回到飯店旁的沙灘玩遊樂設施，晚上吃馬來人開的店（有貴到、而且吃不飽），馬來西亞的朋友說有點被騙了，到馬來人開的餐廳要注意，最後逛了shopping mall，結束一天</p>
-<p><img src="8.jpg" alt="Day6"></p>
-<h2 id="day-7">Day 7</h2>
-<p>一大早大雨滂沱，朋友鑰匙差點搞丟，找了半天，原來掉在昨天吃飯的地方，一大早坐計程車趕車到搭船點，幸好及時趕上船班，離開蘭卡威、離開檳城，一路南下至雲頂，今晚的落角：雲頂高原（Genting Highland)裡面有很大型的賭場，我們吃完飯便去賭場，有生第一次去賭場，好像電影的場景都搬到眼前，進出口都有安檢檢查是否成年</p>
-<p>(賭場不能拍照)</p>
-<h2 id="day-89">Day 8,9</h2>
-<p>離開雲頂，前往馬來西亞朋友住家，住了一天，隔天到新加坡坐飛機回台灣，只在新加坡待了2小時</p>
-<p><img src="9.jpg" alt="Day8-9"></p>
-<h1 id="總結">總結</h1>
-<blockquote>
-<p>有吉隆坡的車牌好像大家會讓你 因為吉隆坡的人開車很兇<br>
-機車也可以騎高速公路 也不時看到泰國車牌<br>
-油價便宜 95汽油 一公升16塊台幣左右<br>
-馬來西亞朋友都會至少五種語言 跟當地人溝通不停切換 我當神拜<br>
-食物重口味又辣 大推沙爹、肉骨茶、Roti tissue<br>
-飲料推 100 plus、奶茶、milo 、涼茶<br>
-蘭卡威（langkawi)的酒比珍奶便宜<br>
-馬來西亞真的是美食天堂～</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Travel</tag>
       </tags>
   </entry>
   <entry>
@@ -869,53 +886,6 @@ By 查理．蒙格</p>
       </tags>
   </entry>
   <entry>
-    <title>台南打工換宿 2020.8.17-2020.8.26</title>
-    <url>/myblog/2020/08/26/Tainan/</url>
-    <content><![CDATA[<blockquote>
-<p>原本抱著等待兵役空檔玩台南順便當個老幫手 同時體驗台南美食<br>
-沒想到學習以後可能不會再接觸到的木工、油漆及裝潢設計等 🚪<br>
-大家愛恭台語 我就操玲呆(有點進步)<br>
-Reggie教導我們各項技術還有如何衝浪🏄！他什麼都會！真的是偶像！<br>
-每晚Candy的心靈雞湯 學習人生經驗 團隊合作及錯中學習 是人生的導師也是永遠好的朋友<br>
-其他小幫手 每個都有自己的特色 以及願意付出的心 成就這次的工程</p>
-</blockquote>
-<hr>
-<p><img src="2.jpg" alt="2"></p>
-<h1 id="工作-working">工作 Working</h1>
-<p>本次的任務：</p>
-<ol>
-<li>主要是將頂樓天臺整理並規劃成交誼的空間</li>
-<li>同時整理房務工作打掃等</li>
-</ol>
-<p><img src="3.png" alt="3"> <img src="4.png" alt="4"></p>
-<hr>
-<h1 id="度假-holiday">度假 Holiday</h1>
-<p>台南的景點還滿多的，在第二天晚上，老闆帶著我們深度探索台南，同時介紹每個建築物的歷史<br>
-以前從來不會特別去在意的廟宇建築外觀，現在都覺得好神奇，讓我對台灣的歷史更有興趣<br>
-從台南圓環24hr Donutes，沿路走經過台灣第一間廟、蝸牛巷、台南州廳、全美戲院、台南美術館1、2館、司法博物館、林百貨等（沒按照順序）<br>
-對先人留下的遺址及智慧讚嘆不已<br>
-期間老闆帶我們連續兩天假日去漁光島衝浪，生平第一次衝浪就獻給你們了，不過我第二天就站起來兩次，超開心＾＾<br>
-幾日後前往奇美博物館，到的時候已是下午5點，5:30就關門，因此在建築外與這大片美景拍照，佔地9.5公頃的博物館，典藏無數珍貴的國際級藝術品，許文龍先生留給台南最美的博物館</p>
-<p><img src="5.jpg" alt="5"></p>
-<hr>
-<h1 id="working-holiday">Working Holiday</h1>
-<p>這次的換宿經驗讓我學到不論是技術上的技巧更是心靈上的成長<br>
-民宿店的老闆Reggie，雖然只大我6歲，但想法、人生歷練、享受人生都是我遙不可及的目標<br>
-更發現大片藍海市場，想到極為可創性的目標<br>
-我自己也憧憬能像他做自己喜歡的事的念頭 期許未來能更往目標前進！<br>
-此外，帶領我們的是另一位衝浪店（宜蘭烏石）的老闆Candy，對於團隊管理非常有經驗，還是許多大學的講師<br>
-每晚給我們滿滿的知識與做人處事的道理，讓我意識到過去一直忽略掉的貼心，心靈雞湯溫飽我們求知的心!</p>
-<p><img src="1.png" alt="1"></p>
-<blockquote>
-<p>謝謝巷仔邸換宿帶給我寶貴的經驗！<br>
-#巷子邸At The End #小幫手 #台南 #奇美博物館 #漁光島 #學台語 #做工的人 #等待兵役</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Travel</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>泰好玩! Thailand 2018/2/26~2018/3/4</title>
     <url>/myblog/2018/03/04/Thailand/</url>
     <content><![CDATA[<blockquote>
@@ -1036,45 +1006,70 @@ To be continued…</p>
       </tags>
   </entry>
   <entry>
-    <title>我的第一座山 - 鳶嘴山 </title>
-    <url>/myblog/2020/09/13/Yuanzui-Mountain/</url>
+    <title>Red Hat Certified System Administrator (RHCSA8)</title>
+    <url>/myblog/2022/05/06/RHCSA/</url>
     <content><![CDATA[<blockquote>
-<p>最厲害的不是登頂<br>
-而是製作步道跟繩索的人</p>
+<p>I can accept failure, but cannot accept to give up<br>
+考了兩次才通過</p>
 </blockquote>
-<hr>
-<h1 id="行前準備">行前準備</h1>
+<h1 id="rhcsa介紹">RHCSA介紹</h1>
+<p>RHCSA認證是Red Hat公司於2011年3月所推出的新認證。RHCSA認證是取得RHCE認證的必要條件之一，RHCSA與RHCE認證取得兩者無先後順序，兩者均通過者才可完整取得RHCE證書。擁有RHCSA認證者能夠扮演著企業內各式各樣的角色，舉凡資料庫管理員，開發人員和技術支持人員…等職務，能重建與部署企業核心Linux環境，更能代表您具備管理技術與駕馭系統的能力。欲取得RHCSA認證您必須參加此認證考試，成功讓您成為兼具完整理論與實作技術的Linux專家。<br>
+<a href="https://www.uuu.com.tw/Course/Partner/RedHat%E7%B4%85%E5%B8%BD/section=rhcsa/title=RHCSA%E8%AA%8D%E8%AD%89%E8%88%87%E8%80%83%E8%A9%A6%E4%BB%8B%E7%B4%B9" target="_blank" rel="noopener">(資料來源：UCOM恆逸教育訓練)</a></p>
+<h1 id="考試測驗能力">考試測驗能力</h1>
+<p>可進入官網查看：<a href="https://www.redhat.com/en/services/training/ex200-red-hat-certified-system-administrator-rhcsa-exam?section=Objectives" target="_blank" rel="noopener">Red Hat Certified System Administrator (RHCSA) exam</a></p>
+<h1 id="考題整理">考題整理</h1>
+<p>網路整理考題：<a href="https://github.com/chlebik/rhcsa-practice-questions/tree/master/questions">https://github.com/chlebik/rhcsa-practice-questions/tree/master/questions</a></p>
+<p>RedHat8之後開始考了許多Container題目，如：<a href="https://tekneed.com/rhcsa-8-exam-practice-question-9-managing-containers/" target="_blank" rel="noopener">https://tekneed.com/rhcsa-8-exam-practice-question-9-managing-containers/</a></p>
+<h1 id="考試環境介紹">考試環境介紹</h1>
+<p>考試環境會提供兩台虛擬機，分別為node1, node2，（會建議開終端機連線兩台虛擬機，以方便複製考試時所用到的網址或名稱）</p>
+<h1 id="結論">結論</h1>
 <ol>
-<li>建議保旅平險</li>
-<li>登山包要帶1.5升以上飲水、(雨衣)、保暖外套、(手套)、(暖暖包)、(頭燈)、行動糧、鹽糖</li>
-<li>另準備一包行李放車上帶一套新的衣物、午餐、水、睡袋</li>
-<li>衣著：運動鞋、運動長褲、排汗衫（袖套）、毛巾、太陽眼鏡、遮陽帽</li>
-<li>記得行李輕便為主</li>
+<li>一定要一直反覆練習實作，才能訓練到，不能只用看的，因為可能發生你都想不到的問題。</li>
+<li>我考試時發生用root建立user，而user卻沒長出Home directory，後來才發現是當時系統沒裝好，但卻沒反應，應是浪費快一個小時</li>
+<li>還有Container的題目，真的有點難，我不懂為什麼都沒拿到分，明明都有做</li>
+<li>切割完硬碟後，一定要重開機看看能不能開機，能不能自動mount起來</li>
+<li>有疑問要提出，有可能真的是系統問題</li>
 </ol>
-<hr>
-<h1 id="當天行程">當天行程</h1>
-<p>選擇一大早出發不僅可以避開人潮且較有車位停車同時可以避免午後雷陣雨，不過許多人前一天就在此地露營，所以還是有點難找停車位<br>
-<img src="1.JPG" alt="1"></p>
-<p>週日凌晨2點半出發、4點到登山口、休息小睡1個小時、5點半開爬、來回實際上只需大約三小時（沒有太多人排隊的話）、10點回登山口休息一下、下山吃午餐</p>
-<hr>
-<h1 id="山況說明">山況說明</h1>
-<p>27k的登山口上山後，起初為較好走的人造木階，但由於每個木階的高度都很高，因此相對較吃力<br>
-<img src="2.jpg" alt="2"></p>
-<p>而隨著高度增加 難度也越來越大<br>
-<img src="3.jpg" alt="3"> <img src="4.jpg" alt="4"></p>
-<p>後面開始有大石塊及繩索，有些必須踩入石塊縫隙中，並以繩索輔助，以及木梯（當時搬來的人真的很厲害）<br>
-<img src="5.jpg" alt="5"> <img src="6.JPG" alt="6"></p>
-<p>陸續爬到頂峰，鳶嘴山頂高度為2180公尺，絕美的風景只以大約1.5小時的路程非常值得<br>
-<img src="7.jpg" alt="7"> <img src="8.jpg" alt="8"></p>
-<hr>
-<h1 id="總結">總結</h1>
-<p>自己本身是登山菜雞，這是以個人角度做的評分，主要是因為路程短不需背重物，因此不會太困難</p>
-<p>難易度  ： ◼️ ◼️ ◼️ ◻️ ◻️<br>
-危險度  ： ◼️ ◼️ ◼️ ◼️ ◻️<br>
-值得程度： ◼️ ◼️ ◼️ ◼️ ◼️</p>
 ]]></content>
       <tags>
-        <tag>Blog</tag>
+        <tag>Work</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>大學專題 Graduate Thesis- 僑牽ＯＣＣ</title>
+    <url>/myblog/2017/12/13/college-project/</url>
+    <content><![CDATA[<blockquote>
+<p>暨南大學是全台外籍生比例最高的學校 其中有非常大一部分是僑生<br>
+我們和僑生同學相處的日常 有溫馨、有歡笑、也有很多意想不到的趣事<br>
+「 僑牽 」是我們為僑生同學們打造的平台</p>
+<p>Nation Chi Nan University is the school with the highest proportion of foreign students in Taiwan. A very large part of it is overseas Chinese. The daily life we ​​spend with our overseas students is warm, funny, and there are many unexpected things. “Overseas Chinese” is our platform for overseas students.</p>
+</blockquote>
+<p><a href="https://www.facebook.com/ChiauChian.OCC/" target="_blank" rel="noopener">粉專 僑牽 ｜ ＯＣＣ</a></p>
+<div align="right"><img src="logo.png" width="150" height="150"> </div>
+<h1 id="想法與現況-concept">想法與現況 Concept：</h1>
+<hr>
+<p>依據教育部統計處發布資料顯示，臺灣現有近 12,000 名僑生，每年 約以 10%的比例快速成長。然而僑生來台前的資訊蒐集，多限於官方的 法規、政策、各校簡章等，生活問題少有相關文章可供參考。而來台後 面對文化與生活習慣差異，甚至是學業問題，多是仰賴同儕之間交流與 扶持。<br>
+在經過比較相關性高的各大交流平台中，我們選擇建立「僑牽」論 壇，除了可以讓資料有足夠地方可以彙整呈現，對於發問、交流等需求 也相當出色。另外現行社群媒體盛行，我們也將使用臉書作為推廣管道， 以觸及更多族群。<br>
+我們期盼透過創立臉書粉絲專頁以達到招攬使用者、宣傳活動等功 能;創立論壇以達到官方及非官方資訊彙整提供、諮詢空間、生活貼近 度等呈現。讓已來台僑生提供生活經驗分享，初來台之僑生更能融入台 灣的生活，欲來台僑生可初步認識台灣。更進一步希望台灣生也能了解 僑生們的不同文化民情，增進國際交流，擴展國際視野。<br>
+According to the statistics released by the Statistics Department of the Ministry of Education, there are nearly 12,000 overseas Chinese students in Taiwan, which grows rapidly by about 10% each year. However, the information gathering before the overseas Chinese came to Taiwan was mostly limited to official regulations, policies, and school briefs. There are few relevant articles on life issues for reference. After coming to Taiwan, facing the differences in culture and living habits, and even academic problems, most of them rely on exchanges and support between their peers.<br>
+Among the major exchange platforms that have been highly correlated, we chose to establish the “Overseas Chinese” forum. In addition to allowing the information to have enough places to be presented, the demand for questions and communication is also excellent. In addition, the current social media is prevalent, and we will also use Facebook as a promotion channel to reach more ethnic groups.<br>
+We look forward to the creation of Facebook fan pages to reach users, publicity activities, etc.; to create forums to achieve official and unofficial information collection, consultation space, life closeness and other presentations. Let the overseas Chinese students who have come to Taiwan provide life experience sharing. The overseas Chinese who come to Taiwan will be able to integrate into Taiwan’s life. Taiwanese who want to come to Taiwan can get to know Taiwan. I further hope that Taiwanese students can also understand the different cultures and customs of overseas Chinese, enhance international exchanges and expand their international horizons.</p>
+<p><img src="website.png" alt="網頁首頁"></p>
+<h1 id="進行步驟及活動成效-prcedure-and-result">進行步驟及活動成效 Prcedure and Result</h1>
+<hr>
+<h2 id="步驟-step">步驟 Step：</h2>
+<p>Step1. 建立粉絲專頁 Build Fan Page<br>
+Step2. 宣傳活動 Advertisement and Activities<br>
+Step3. 建置論壇 Build Website</p>
+<h2 id="成效-result">成效 Result：</h2>
+<hr>
+<p><img src="result1.jpg" alt="結果"> <img src="result2.png" alt="結果2"></p>
+<h1 id="書面資料-written-report">書面資料 Written Report</h1>
+<hr>
+<p><a href="https://drive.google.com/drive/folders/126sHSHVP27LjqDtpRQmMCpdwN5nUHcUu" target="_blank" rel="noopener">了解更多此專題 Click on me</a></p>
+]]></content>
+      <tags>
+        <tag>Work</tag>
       </tags>
   </entry>
   <entry>
@@ -1239,40 +1234,45 @@ To be continued…</p>
       </tags>
   </entry>
   <entry>
-    <title>大學專題 Graduate Thesis- 僑牽ＯＣＣ</title>
-    <url>/myblog/2017/12/13/college-project/</url>
+    <title>我的第一座山 - 鳶嘴山 </title>
+    <url>/myblog/2020/09/13/Yuanzui-Mountain/</url>
     <content><![CDATA[<blockquote>
-<p>暨南大學是全台外籍生比例最高的學校 其中有非常大一部分是僑生<br>
-我們和僑生同學相處的日常 有溫馨、有歡笑、也有很多意想不到的趣事<br>
-「 僑牽 」是我們為僑生同學們打造的平台</p>
-<p>Nation Chi Nan University is the school with the highest proportion of foreign students in Taiwan. A very large part of it is overseas Chinese. The daily life we ​​spend with our overseas students is warm, funny, and there are many unexpected things. “Overseas Chinese” is our platform for overseas students.</p>
+<p>最厲害的不是登頂<br>
+而是製作步道跟繩索的人</p>
 </blockquote>
-<p><a href="https://www.facebook.com/ChiauChian.OCC/" target="_blank" rel="noopener">粉專 僑牽 ｜ ＯＣＣ</a></p>
-<div align="right"><img src="logo.png" width="150" height="150"> </div>
-<h1 id="想法與現況-concept">想法與現況 Concept：</h1>
 <hr>
-<p>依據教育部統計處發布資料顯示，臺灣現有近 12,000 名僑生，每年 約以 10%的比例快速成長。然而僑生來台前的資訊蒐集，多限於官方的 法規、政策、各校簡章等，生活問題少有相關文章可供參考。而來台後 面對文化與生活習慣差異，甚至是學業問題，多是仰賴同儕之間交流與 扶持。<br>
-在經過比較相關性高的各大交流平台中，我們選擇建立「僑牽」論 壇，除了可以讓資料有足夠地方可以彙整呈現，對於發問、交流等需求 也相當出色。另外現行社群媒體盛行，我們也將使用臉書作為推廣管道， 以觸及更多族群。<br>
-我們期盼透過創立臉書粉絲專頁以達到招攬使用者、宣傳活動等功 能;創立論壇以達到官方及非官方資訊彙整提供、諮詢空間、生活貼近 度等呈現。讓已來台僑生提供生活經驗分享，初來台之僑生更能融入台 灣的生活，欲來台僑生可初步認識台灣。更進一步希望台灣生也能了解 僑生們的不同文化民情，增進國際交流，擴展國際視野。<br>
-According to the statistics released by the Statistics Department of the Ministry of Education, there are nearly 12,000 overseas Chinese students in Taiwan, which grows rapidly by about 10% each year. However, the information gathering before the overseas Chinese came to Taiwan was mostly limited to official regulations, policies, and school briefs. There are few relevant articles on life issues for reference. After coming to Taiwan, facing the differences in culture and living habits, and even academic problems, most of them rely on exchanges and support between their peers.<br>
-Among the major exchange platforms that have been highly correlated, we chose to establish the “Overseas Chinese” forum. In addition to allowing the information to have enough places to be presented, the demand for questions and communication is also excellent. In addition, the current social media is prevalent, and we will also use Facebook as a promotion channel to reach more ethnic groups.<br>
-We look forward to the creation of Facebook fan pages to reach users, publicity activities, etc.; to create forums to achieve official and unofficial information collection, consultation space, life closeness and other presentations. Let the overseas Chinese students who have come to Taiwan provide life experience sharing. The overseas Chinese who come to Taiwan will be able to integrate into Taiwan’s life. Taiwanese who want to come to Taiwan can get to know Taiwan. I further hope that Taiwanese students can also understand the different cultures and customs of overseas Chinese, enhance international exchanges and expand their international horizons.</p>
-<p><img src="website.png" alt="網頁首頁"></p>
-<h1 id="進行步驟及活動成效-prcedure-and-result">進行步驟及活動成效 Prcedure and Result</h1>
+<h1 id="行前準備">行前準備</h1>
+<ol>
+<li>建議保旅平險</li>
+<li>登山包要帶1.5升以上飲水、(雨衣)、保暖外套、(手套)、(暖暖包)、(頭燈)、行動糧、鹽糖</li>
+<li>另準備一包行李放車上帶一套新的衣物、午餐、水、睡袋</li>
+<li>衣著：運動鞋、運動長褲、排汗衫（袖套）、毛巾、太陽眼鏡、遮陽帽</li>
+<li>記得行李輕便為主</li>
+</ol>
 <hr>
-<h2 id="步驟-step">步驟 Step：</h2>
-<p>Step1. 建立粉絲專頁 Build Fan Page<br>
-Step2. 宣傳活動 Advertisement and Activities<br>
-Step3. 建置論壇 Build Website</p>
-<h2 id="成效-result">成效 Result：</h2>
+<h1 id="當天行程">當天行程</h1>
+<p>選擇一大早出發不僅可以避開人潮且較有車位停車同時可以避免午後雷陣雨，不過許多人前一天就在此地露營，所以還是有點難找停車位<br>
+<img src="1.JPG" alt="1"></p>
+<p>週日凌晨2點半出發、4點到登山口、休息小睡1個小時、5點半開爬、來回實際上只需大約三小時（沒有太多人排隊的話）、10點回登山口休息一下、下山吃午餐</p>
 <hr>
-<p><img src="result1.jpg" alt="結果"> <img src="result2.png" alt="結果2"></p>
-<h1 id="書面資料-written-report">書面資料 Written Report</h1>
+<h1 id="山況說明">山況說明</h1>
+<p>27k的登山口上山後，起初為較好走的人造木階，但由於每個木階的高度都很高，因此相對較吃力<br>
+<img src="2.jpg" alt="2"></p>
+<p>而隨著高度增加 難度也越來越大<br>
+<img src="3.jpg" alt="3"> <img src="4.jpg" alt="4"></p>
+<p>後面開始有大石塊及繩索，有些必須踩入石塊縫隙中，並以繩索輔助，以及木梯（當時搬來的人真的很厲害）<br>
+<img src="5.jpg" alt="5"> <img src="6.JPG" alt="6"></p>
+<p>陸續爬到頂峰，鳶嘴山頂高度為2180公尺，絕美的風景只以大約1.5小時的路程非常值得<br>
+<img src="7.jpg" alt="7"> <img src="8.jpg" alt="8"></p>
 <hr>
-<p><a href="https://drive.google.com/drive/folders/126sHSHVP27LjqDtpRQmMCpdwN5nUHcUu" target="_blank" rel="noopener">了解更多此專題 Click on me</a></p>
+<h1 id="總結">總結</h1>
+<p>自己本身是登山菜雞，這是以個人角度做的評分，主要是因為路程短不需背重物，因此不會太困難</p>
+<p>難易度  ： ◼️ ◼️ ◼️ ◻️ ◻️<br>
+危險度  ： ◼️ ◼️ ◼️ ◼️ ◻️<br>
+值得程度： ◼️ ◼️ ◼️ ◼️ ◼️</p>
 ]]></content>
       <tags>
-        <tag>Work</tag>
+        <tag>Blog</tag>
       </tags>
   </entry>
   <entry>
@@ -1332,6 +1332,45 @@ Maya is a 3D computer animation software with powerful modeling, color rendering
 海洋下 其實有雲朵及荒廢的文明 其受到沙漠唯一的缺口照亮</p>
 <p><img src="3.jpeg" alt="city"></p>
 <p><img src="4.jpeg" alt="full">   <img src="5.jpeg" alt="city1">   <img src="6.jpeg" alt="city2">   <img src="7.jpeg" alt="ocean2"></p>
+]]></content>
+      <tags>
+        <tag>Work</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>股價走勢預測-Stock Prediction </title>
+    <url>/myblog/2019/02/09/stock-prediction/</url>
+    <content><![CDATA[<blockquote>
+<p>利用三種不同的深度學習方法(RNN、LSTM、GRU)來預測IBM股價 走向並比較<br>
+Use three different deep learning methods (RNN, LSTM, GRU) to predict IBM stock price trends and compare them</p>
+</blockquote>
+<p><a href="https://github.com/LawrenceGao0224/data_mining/tree/main/datamining_final">程式碼＋報告PDF : Click On Me</a></p>
+<h1 id="前言">前言</h1>
+<hr>
+<p>一般投資者在投資各種金融商品時，往往都是大賠小賺，因投資者常聽信消息面及一時的衝動，或未作詳細的評估分析就輕易投資，若要單獨分析各種經濟資訊不僅需要蒐集繁多的相關資訊，不但非常費時且需要豐富的專業財經知識，而其預估未來的發展趨勢亦不一定準確，且通常經濟指標是落後市場反應的指標。<br>
+而人工智慧的發展日趨興盛，其被運用在多個領域中，尤其是在經融、財經領域中，以類神經網路來預測可說是相當熱門的，透過電腦運算快速的優勢，及多層神經網路，可輔助投資人進行預測。<br>
+When investing in various financial products, the average investor tends to make small profits. Because investors often listen to news and impulses, or do not make detailed assessments and analyze them easily. If you want to analyze various economic information separately, you need not only Collecting a lot of relevant information is not only very time-consuming but also requires a wealth of professional financial knowledge, and its estimated future development trend is not necessarily accurate.<br>
+The development of artificial intelligence is prosperous, and it is used in many fields, especially in the field of finance , the prediction of neural network is quite popular, and the advantages of computing are fast. Neural networks can help investors make predictions.</p>
+<hr>
+<h1 id="流程與實作結果">流程與實作結果</h1>
+<p><a href="https://www.kaggle.com/szrlee/stock-time-series-20050101-to-20171231" target="_blank" rel="noopener">Data Source 資料來源 Kaggle : Click On Me</a></p>
+<h2 id="流程-workflow">流程 Workflow :</h2>
+<p>本次實驗皆採用Keras來搭建深度學習模型，分別利用RNN、LSTM、GRU等深度學習方法來預測，並以均方根誤差(RMSE)來當作評估標準。<br>
+In this experiment, Keras was used to build a deep learning model, which was predicted by deep learning methods such as RNN, LSTM, and GRU, and the root mean square error (RMSE) was used as the evaluation standard.</p>
+<h2 id="實作結果-result">實作結果 Result：</h2>
+<p>(1)LSTM:<br>
+RMSE:2.5459669921977524.</p>
+<p><img src="LSTM.png" alt="LSTM"></p>
+<p>(2)RNN:<br>
+RMSE: 4.72949126626088.</p>
+<p><img src="RNN.png" alt="RNN"></p>
+<p>(3)GRU:<br>
+RMSE: 3.3223451158225696.</p>
+<p><img src="GRU.png" alt="GRU"></p>
+<hr>
+<h1 id="分析結果與討論-discussion">分析結果與討論 Discussion</h1>
+<p>從上面結果圖可以看出，我們所預測的走勢與實際情況相近，其中又以LSTM最佳，RNN最差，我們推測原因是因為RNN只考慮最近的狀態，而LSTM結構更為複雜，會將過去的輸出和當前的輸入concatenate到一起。 在現實中的股價波動往往並不單純只與前一天的股價相關，而是會與歷史 中的股價變化有所關連。<br>
+From graph, we can see that the trend we predicted is similar to the actual situation. Among them, LSTM is the best and RNN is the worst. We speculate that the reason is because RNN only considers the most recent state, and the LSTM structure is more complicated. The past output is concatenate with the current input. In reality, stock price volatility is often not only related to the stock price of the previous day, but it is related to change in stock prices in history.</p>
 ]]></content>
       <tags>
         <tag>Work</tag>
@@ -1424,45 +1463,6 @@ Maya is a 3D computer animation software with powerful modeling, color rendering
 ]]></content>
       <tags>
         <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>股價走勢預測-Stock Prediction </title>
-    <url>/myblog/2019/02/09/stock-prediction/</url>
-    <content><![CDATA[<blockquote>
-<p>利用三種不同的深度學習方法(RNN、LSTM、GRU)來預測IBM股價 走向並比較<br>
-Use three different deep learning methods (RNN, LSTM, GRU) to predict IBM stock price trends and compare them</p>
-</blockquote>
-<p><a href="https://github.com/LawrenceGao0224/data_mining/tree/main/datamining_final">程式碼＋報告PDF : Click On Me</a></p>
-<h1 id="前言">前言</h1>
-<hr>
-<p>一般投資者在投資各種金融商品時，往往都是大賠小賺，因投資者常聽信消息面及一時的衝動，或未作詳細的評估分析就輕易投資，若要單獨分析各種經濟資訊不僅需要蒐集繁多的相關資訊，不但非常費時且需要豐富的專業財經知識，而其預估未來的發展趨勢亦不一定準確，且通常經濟指標是落後市場反應的指標。<br>
-而人工智慧的發展日趨興盛，其被運用在多個領域中，尤其是在經融、財經領域中，以類神經網路來預測可說是相當熱門的，透過電腦運算快速的優勢，及多層神經網路，可輔助投資人進行預測。<br>
-When investing in various financial products, the average investor tends to make small profits. Because investors often listen to news and impulses, or do not make detailed assessments and analyze them easily. If you want to analyze various economic information separately, you need not only Collecting a lot of relevant information is not only very time-consuming but also requires a wealth of professional financial knowledge, and its estimated future development trend is not necessarily accurate.<br>
-The development of artificial intelligence is prosperous, and it is used in many fields, especially in the field of finance , the prediction of neural network is quite popular, and the advantages of computing are fast. Neural networks can help investors make predictions.</p>
-<hr>
-<h1 id="流程與實作結果">流程與實作結果</h1>
-<p><a href="https://www.kaggle.com/szrlee/stock-time-series-20050101-to-20171231" target="_blank" rel="noopener">Data Source 資料來源 Kaggle : Click On Me</a></p>
-<h2 id="流程-workflow">流程 Workflow :</h2>
-<p>本次實驗皆採用Keras來搭建深度學習模型，分別利用RNN、LSTM、GRU等深度學習方法來預測，並以均方根誤差(RMSE)來當作評估標準。<br>
-In this experiment, Keras was used to build a deep learning model, which was predicted by deep learning methods such as RNN, LSTM, and GRU, and the root mean square error (RMSE) was used as the evaluation standard.</p>
-<h2 id="實作結果-result">實作結果 Result：</h2>
-<p>(1)LSTM:<br>
-RMSE:2.5459669921977524.</p>
-<p><img src="LSTM.png" alt="LSTM"></p>
-<p>(2)RNN:<br>
-RMSE: 4.72949126626088.</p>
-<p><img src="RNN.png" alt="RNN"></p>
-<p>(3)GRU:<br>
-RMSE: 3.3223451158225696.</p>
-<p><img src="GRU.png" alt="GRU"></p>
-<hr>
-<h1 id="分析結果與討論-discussion">分析結果與討論 Discussion</h1>
-<p>從上面結果圖可以看出，我們所預測的走勢與實際情況相近，其中又以LSTM最佳，RNN最差，我們推測原因是因為RNN只考慮最近的狀態，而LSTM結構更為複雜，會將過去的輸出和當前的輸入concatenate到一起。 在現實中的股價波動往往並不單純只與前一天的股價相關，而是會與歷史 中的股價變化有所關連。<br>
-From graph, we can see that the trend we predicted is similar to the actual situation. Among them, LSTM is the best and RNN is the worst. We speculate that the reason is because RNN only considers the most recent state, and the LSTM structure is more complicated. The past output is concatenate with the current input. In reality, stock price volatility is often not only related to the stock price of the previous day, but it is related to change in stock prices in history.</p>
-]]></content>
-      <tags>
-        <tag>Work</tag>
       </tags>
   </entry>
 </search>
