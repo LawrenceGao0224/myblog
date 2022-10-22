@@ -145,13 +145,6 @@
 
                         
                         <li>
-                            <a href="/myblog/archive/">Posts</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
                             <a href="/myblog/about/">About Ｍe</a>
                         </li>
                         
@@ -160,6 +153,13 @@
                         
                         <li>
                             <a href="/myblog/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/myblog/archive/">Posts</a>
                         </li>
                         
                     
@@ -216,11 +216,12 @@
                 post-container">
 
                 <blockquote>
-<p>故宮沈浸式展場系統將，展場環境呈現於行動裝置中，使用者 能走訪於虛擬搭建的展場，且不受地域限制，提升博物館觀光的趣味，降低參展 的成本。本系統先將故宮 Open Data 之中國畫作、國外知名畫作及中西方雕像進 行蒐集，再將展場空間設計搭建，並放置畫作於展場空間內。最後透過 ARKit 技術將畫面投射行動裝置中，即時呈現影像。未來若可結合智慧眼鏡，將可帶來更 多應用。</p>
+<p>故宮沈浸式展場系統將，展場環境呈現於行動裝置中，使用者 能走訪於虛擬搭建的展場，且不受地域限制，提升博物館觀光的趣味，降低參展 的成本。本系統先將故宮 Open Data 之中國畫作、國外知名畫作及中西方雕像進 行蒐集，再將展場空間設計搭建，並放置畫作於展場空間內。最後透過 ARKit 技術將畫面投射行動裝置中，即時呈現影像。未來若可結合智慧眼鏡，將可帶來更 多應用。<br>
+The research develops an immersive exhibition system in National Palace Museum and presents the exhibition environment in a mobile device. Users can visit the virtually constructed exhibition venue without geographical restrictions, enhancing the interest of museum tourism and reducing the cost of participation. This system collects Chinese paintings of open data in National Palace Museum, well-known western paintings and Western statues. And then we design the exhibition space and place the paintings there. Finally, through ARKit technology, the image is presented and projected on the screen of mobile device in real time. If smart glasses can be combined in the future, it will bring more applications.</p>
 </blockquote>
 <hr>
-<h1 id="緒論">緒論</h1>
-<h2 id="動機與目的">動機與目的</h2>
+<h1 id="緒論-objective">緒論 Objective</h1>
+<h2 id="動機與目的-motivation-and-purpose">動機與目的 Motivation and Purpose</h2>
 <p>依據文化統計調查顯示，現今許多博物館皆面臨瀏覽人次減少問題，因此各大博物館希望透過 科技，建置現代結合過去，製造反差，改變大家以往對博物館的傳統思想，打造 創新的博物館，吸引更多遊客前來參觀。<br>
 過去擴增實境 (AR) 最早用於軍事方面，但隨著軟硬體的發展，目前應用在 日常生活及遊戲產業中，Apple.Inc 推出的 iOS13 版本內，搭載以 AR 量測物體大 小及尺寸的工具，使用者不須透過尺規即可得知物體大小，使 AR 應用更為寬廣及 普及。<br>
 沉浸式一詞為新興的概念，通俗定義為「物理存在於非物理世界中的感知」， 在提到沉浸式電影時，通常意指虛擬實境電影，也就是觀眾可透過 VR 裝置進入 360 的影像以及環繞音響中，仿如置身於另外的世界中，有時甚至還有嗅覺與觸覺 的體驗。在強調全身及全方位的感官體驗上，以科技藝術空間沉浸體驗為例，如 過去日本 teamLab 的作品也透過虛擬實境裝置體供使用者彷如在虛擬空間行走。<br>
@@ -229,51 +230,82 @@
 (1) 結合故宮 Open Data 專區之古畫、西方著名畫作與實境技術結合，設計一 影像互動式系統。<br>
 (2) 使用 Unity 及 SketchUp 軟體建立展場空間與擺設展品，並結合 ARKit 做實境技術運用，使系統更具有互動性。<br>
 (3) 將規劃展場空間，實作虛擬展場，並提供參展地圖，予使用者方便走訪</p>
+<p>According to cultural statistics surveys, many museums today are facing the problem of a decrease in the number of visitors. Therefore, major museums hope to use technology to combine the modern with the past, create contrast, change people’s traditional thinking about museums in the past, and create innovative museums to attract more Tourists come to visit.<br>
+In the past, augmented reality (AR) was first used in the military, but with the development of software and hardware, it is currently used in daily life and the game industry. In the iOS13 version launched by Apple.Inc, it is equipped with AR to measure the size of objects and The size tool allows users to know the size of an object without using a ruler, making AR applications wider and more popular.<br>
+The term immersion is an emerging concept, which is colloquially defined as “perception of physical existence in a non-physical world”. When referring to immersive movies, it usually means virtual reality movies, that is, the audience can enter 3D through VR devices. In the video and surround sound, it is like being in another world, and sometimes there is even an experience of smell and touch. In emphasizing the whole body and all-round sensory experience, taking the immersion experience of technology and art space as an example, for example, the works of teamLab in Japan in the past also used virtual reality installations for users to walk in virtual space.<br>
+If the object of immersion is used to distinguish, it can be divided into the following six different types: sensory, ontology, sense of fun, spatial cognition, emotional immersion and narrative immersion. These six can be combined with each other at the same time, or can exist in a work of art at the same time.</p>
+<p>Summarizing the above research motivations, the research objectives of this study are as follows:<br>
+(1) Combining ancient paintings in the Open Data area of ​​the Forbidden City, famous western paintings and real-world technology to design an interactive video system.<br>
+(2) Use Unity and SketchUp software to create exhibition space and display exhibits, and combine ARKit for real-world technology to make the system more interactive.<br>
+(3) The exhibition space will be planned, a virtual exhibition will be implemented, and a map of the exhibition will be provided for users to easily visit</p>
 <hr>
-<h2 id="相關研究">相關研究</h2>
+<h2 id="相關研究-related-research">相關研究 Related Research</h2>
 <p>影像處理及硬體性能高速發展下，擴增實境、虛擬實境已不再只有軍事發展 或實驗而已，近年來更加入人們的日常生活及遊戲產業中，如 2016 年起於世界各 地發行的寶可夢盛行全球，雖然其非首度應用擴增實境技術之手機遊戲，但卻為 眾人皆知的擴增實境遊戲，還有其他包括遠程會議、培訓及醫療上的應用。<br>
-擴增實境技術的蓬勃發展，除了歸功於學術上的努力，也使更多商業團隊致 力於研究如何結合日常生活，加速便利性與有效性，以此開拓更廣大的消費市場。 以下列出近來商業界與學術界中，擴增實境相關應用的實際案例。</p>
+擴增實境技術的蓬勃發展，除了歸功於學術上的努力，也使更多商業團隊致 力於研究如何結合日常生活，加速便利性與有效性，以此開拓更廣大的消費市場。 以下列出近來商業界與學術界中，擴增實境相關應用的實際案例。<br>
+With the rapid development of image processing and hardware performance, augmented reality and virtual reality are no longer just military development or experiments. In recent years, they have also become part of people’s daily life and the game industry. Pokémon is popular all over the world. Although it is not the first mobile game to use augmented reality technology, it is well-known for augmented reality games, as well as other applications including teleconferencing, training and medical care.<br>
+The vigorous development of augmented reality technology is not only due to academic efforts, but also enables more business teams to study how to integrate daily life, accelerate convenience and effectiveness, and open up a wider consumer market. The following is a list of recent practical examples of AR-related applications in business and academia.</p>
 <p>(1) ARKit 與ARCore技術<br>
 APPLE 公司所提供 ARKit，讓開發者實現 AR 的畫面，但不需要知道背後複 雜的成像及定位技術，只需要專注在如何設計 AR 的身歷其境經驗及場景搭建。 ARKit 原理是使用者可以在移動裝置下，同時改變虛擬物件的呈現方式，以追蹤虛 擬物件，再者，ARKit 可以執行 2D 和 3D 物件的追蹤效果，使用者可以與虛擬物 件做互動，更多可運用於遊戲產業。然而，ARKit 並不包含任何圖型 API，只提供 追蹤虛擬物件與與表面偵測的能力，所以需要搭配 RealityKit、SceneKit、Metal 之類 Apple 的其他 Framework。<br>
-而 ARKit 也有其軟硬體的限制，軟體限制為開發工具為 Xcode、iOS11 版本或以上、 MacOS 10.12.4 或以上版本;硬體限制為處理器 A9 或以上的 iPhone 或<br>
-iPad 設備( iPhone6S 為 A9 處理器)。<br>
-此外，Google 也有開發類似 ARKit 的技術，稱為「ARCore」，此技術可開發 於 Android 系統中，且有硬體設備的限制，其比較如表. 1.2。<br>
+而 ARKit 也有其軟硬體的限制，軟體限制為開發工具為 Xcode、iOS11 版本或以上、 MacOS 10.12.4 或以上版本;硬體限制為處理器 A9 或以上的 iPhone 或iPad 設備( iPhone6S 為 A9 處理器)。<br>
+此外，Google 也有開發類似 ARKit 的技術，稱為「ARCore」，此技術可開發 於 Android 系統中，且有硬體設備的限制，其比較如下。<br>
+The ARKit provided by APPLE allows developers to realize AR images, but they do not need to know the complex imaging and positioning technology behind them. They only need to focus on how to design AR immersive experience and scene construction. The principle of ARKit is that users can change the presentation of virtual objects on mobile devices at the same time to track virtual objects. Furthermore, ARKit can perform tracking effects of 2D and 3D objects, and users can interact with virtual objects. Used in the game industry. However, ARKit does not contain any graphics API, and only provides the ability to track virtual objects and surface detection, so it needs to be paired with other Apple frameworks such as RealityKit, SceneKit, and Metal.<br>
+ARKit also has its software and hardware limitations. The software is limited to Xcode, iOS11 version or above, MacOS 10.12.4 or above, and the hardware is limited to iPhone or iPad devices with processor A9 or above (iPhone6S is processed by A9). device).<br>
+In addition, Google has also developed a technology similar to ARKit, called “ARCore”, which can be developed in the Android system and is limited by hardware devices. The comparison is as below.<br>
 <img src="1.png" alt="1"></p>
 <p>(2) Vuforia: Market-Leading Enterprise AR<br>
-Vuforia 為知名手機晶片大廠高通(Qualcomm)公司的 AR 擴增實境平台，於 2015 年 PTC 參數科技以 6500 萬美元收購。Vuforia 提供基本的 SDK 軟體開發擴 增現實應用程序套件可於 Unity 上進行使用，讓使用者製作各種平台的開發與擴 增實境應用。過去 AR 開發工具 ARToolKit、Lyteshot、Unifeye 等軟體的入門門 檻高且價格高，然而 Vuforia 可以免費下載提供開發者開發測試，相對容易入門。</p>
+Vuforia 為知名手機晶片大廠高通(Qualcomm)公司的 AR 擴增實境平台，於 2015 年 PTC 參數科技以 6500 萬美元收購。Vuforia 提供基本的 SDK 軟體開發擴 增現實應用程序套件可於 Unity 上進行使用，讓使用者製作各種平台的開發與擴 增實境應用。過去 AR 開發工具 ARToolKit、Lyteshot、Unifeye 等軟體的入門門 檻高且價格高，然而 Vuforia 可以免費下載提供開發者開發測試，相對容易入門。<br>
+Vuforia is the AR augmented reality platform of Qualcomm, a well-known mobile phone chip maker, and was acquired by PTC Parametric Technology for $65 million in 2015. Vuforia provides a basic SDK software development augmented reality application suite that can be used on Unity, allowing users to create development and augmented reality applications for various platforms. In the past, AR development tools such as ARToolKit, Lyteshot, Unifeye and other software had high entry barriers and high prices. However, Vuforia can be downloaded for free for developers to develop and test, making it relatively easy to get started.</p>
 <p>(3) Google Glass<br>
 Google 眼鏡是一款由 Google 設計開發，裝配有光學式頭戴顯示器(OHMD) 的可穿戴電腦，其宗旨為能製造出符合普羅大眾消費者的行動裝置。其以免手持、 並與智慧型手機相似之方式顯示各種資訊，尤其導航功能是最大的看點。<br>
 軍方從 1995 年起著手於研究光學式頭戴型裝置，而後 Google 於 2012 年起開 始測試並研發有關智慧眼鏡的各項功能應用，並於同年首次展示拍攝功能且相較 過去更輕薄。現今，其裝置已涵蓋觸控板、相機、顯示器、交通資訊和地圖服務 及遊戲等。<br>
+Google Glass is a wearable computer with an optical head-mounted display (OHMD) designed and developed by Google to create a mobile device for the general public. It can display various information in a manner similar to that of a smart phone without being held by hand, especially the navigation function is the biggest attraction.<br>
+The military started researching optical head-mounted devices in 1995, and then Google began to test and develop various functional applications of smart glasses in 2012, and in the same year, it demonstrated the shooting function for the first time and was thinner and lighter than in the past. Today, its devices include touchpads, cameras, monitors, traffic information and map services, and games.<br>
 <img src="2.png" alt="2"></p>
 <hr>
-<h2 id="本系統簡介與特色">本系統簡介與特色</h2>
+<h2 id="本系統簡介與特色-system-introduction">本系統簡介與特色 System Introduction</h2>
 <p>此系統以 Apple.Inc 所提供的 ARKit 為擴增實境主體，將 Unity 為開發媒介， 運用其內部所提供之 ProBuilder 為展場空間建模並擺放虛擬物件於展場空間，在其 中針對各物品的建材、材質、透明度做調整，以及展場內部光影強弱微調，使遊 客可以直接透過手機或平板，在空曠地區，即時地、快速地欣賞展場，並可以透 過下方按鈕顯示展品資訊。<br>
 此系統除了將故宮 Open Data 專區的數位化圖像放置於展區，也加入了具中國 風之展品(中式建築、兵馬俑等)，更加入西方著名八幅畫作與西方著名雕 像(大衛像、維納斯像、運動員)放置於左側，期望達到中西對比，與目前熱門 的實境技術結合，達到使用者可方便瀏覽，同時得到相當驚豔的效果。<br>
-(1) 使用者端 :<br>
-對於使用者而言，此系統操作簡單，只需透過一台手機或平板即可運行，在空曠的場域中，使用者手持裝置，放置於眼前，裝置即可因為使用者行走、奔跑，計算所在位置與距離，即時呈現各個物品之相對位置，在系統左下方設置按鈕提供使用者在想了解作品時點擊，即時顯示作品資訊，能因此增加趣味，同時讓使用者增加對畫作的了解。</p>
-<p>(2) 開發者端 :<br>
-本研究將各項展覽作品透過 Unity 內部提供之 ProBuilder 建造而成，其操作簡單，只需隨開發者欲建制的空間設定，就能產生空間，並透過各展品 自由拉移擺放，並於最後設定 ARKit 與預期顯示之項目，即可呈現。</p>
-<p>(3) 博物館端 :<br>
-此系統提供欲參訪博物館或展場的遊客使用、還有無法到達的民眾可以使用，同時能給予博物館設計展場前、設計此系統後，觀看內部空間與擺設狀態，以降低不必要的成本，同時提供此作為宣傳目的。另外，博物館若需在展覽時提供多種展場，可嘗試建立於雲端中，供民眾下載參考。</p>
+This system uses ARKit provided by Apple.Inc as the main body of the augmented reality, uses Unity as the development medium, and uses the internally provided ProBuilder to model the exhibition space and place virtual objects in the exhibition space. The building materials, materials, and transparency of the items are adjusted, as well as the fine-tuning of the intensity of light and shadow inside the exhibition hall, so that visitors can directly and quickly appreciate the exhibition hall through mobile phones or tablets in open areas, and display the exhibit information through the buttons below.<br>
+In addition to placing the digital images of the Open Data area of the Forbidden City in the exhibition area, this system also adds Chinese-style exhibits (Chinese-style buildings, terracotta warriors, etc.), as well as eight famous Western paintings and famous Western statues (Statue of David, Venus statues, athletes) are placed on the left side, hoping to achieve a contrast between Chinese and Western, and combine with the current popular reality technology, so that users can browse easily, and at the same time get quite amazing results.</p>
+<p>(1) 使用者端 Client:<br>
+對於使用者而言，此系統操作簡單，只需透過一台手機或平板即可運行，在空曠的場域中，使用者手持裝置，放置於眼前，裝置即可因為使用者行走、奔跑，計算所在位置與距離，即時呈現各個物品之相對位置，在系統左下方設置按鈕提供使用者在想了解作品時點擊，即時顯示作品資訊，能因此增加趣味，同時讓使用者增加對畫作的了解。<br>
+For users, this system is easy to operate, and only needs to be run through a mobile phone or tablet. In an open area, the user holds the device and places it in front of his eyes, and the device can run, run, and calculate as the user walks and runs. The location and distance show the relative position of each item in real time. The button is set at the bottom left of the system for users to click when they want to know the work, and the information of the work will be displayed in real time, which can increase the interest and increase the user’s understanding of the painting.</p>
+<p>(2) 開發者端 Developer:<br>
+本研究將各項展覽作品透過 Unity 內部提供之 ProBuilder 建造而成，其操作簡單，只需隨開發者欲建制的空間設定，就能產生空間，並透過各展品 自由拉移擺放，並於最後設定 ARKit 與預期顯示之項目，即可呈現。<br>
+In this research, various exhibition works are built through the ProBuilder provided by Unity. The operation is simple. You only need to set the space according to the developer’s desire to create a space. You can freely move and place the exhibits through each exhibit. Set ARKit and the expected display item, and it’s ready to be rendered.</p>
+<p>(3) 博物館端 Museum side:<br>
+此系統提供欲參訪博物館或展場的遊客使用、還有無法到達的民眾可以使用，同時能給予博物館設計展場前、設計此系統後，觀看內部空間與擺設狀態，以降低不必要的成本，同時提供此作為宣傳目的。另外，博物館若需在展覽時提供多種展場，可嘗試建立於雲端中，供民眾下載參考。<br>
+This system can be used by tourists who want to visit the museum or exhibition hall, as well as people who cannot reach it. At the same time, it can be used by the museum to view the internal space and decoration status before and after the design of the exhibition hall, so as to reduce unnecessary costs. , while providing this for promotional purposes. In addition, if the museum needs to provide a variety of exhibition venues during the exhibition, it can try to build it in the cloud for the public to download and reference.</p>
 <hr>
-<h1 id="系統關鍵技術">系統關鍵技術</h1>
-<p>本系統的關鍵技術主要分成兩大部分，一為 Apple.Inc 所開發的 ARKit 技術，另一為 Unity 及 SketchUp 所提供的建模方法。</p>
+<h1 id="系統關鍵技術-system-related-technique">系統關鍵技術 System related Technique</h1>
+<p>本系統的關鍵技術主要分成兩大部分，一為 Apple.Inc 所開發的 ARKit 技術，另一為 Unity 及 SketchUp 所提供的建模方法。<br>
+The key technology of this system is mainly divided into two parts, one is the ARKit technology developed by Apple.Inc, and the other is the modeling method provided by Unity and SketchUp.</p>
 <h2 id="arkit-api">ARKit API</h2>
-<p>本研究主要針對 ARKit 作為開發支持，在此說明 ARKit 之底層技術。</p>
-<h3 id="arkit-的關鍵技術">ARKit 的關鍵技術</h3>
+<p>本研究主要針對 ARKit 作為開發支持，在此說明 ARKit 之底層技術。<br>
+This research is mainly aimed at ARKit as development support, and the underlying technology of ARKit is explained here.</p>
+<h3 id="arkit-的關鍵技術-key-technique">ARKit 的關鍵技術 Key Technique</h3>
 <p>ARKit 其中的技術原理為視覺慣性測量(VIO)系統及平面檢測兩大關鍵 技術，視覺慣性測試(VIO)即系統會隨時追蹤使用者在空間的位置，其記錄 著 iPhone 在 6DoF 空間中經過的距離(6DoF 即沿著 xyz 軸移動，加上俯仰、 旋轉、滾動等)，如下圖，螢幕在每幀畫面刷新時，動作會被立即重新計 算，畫面的刷新率為每秒 30fps 或以上，而這個刷新計算會同時被兩個系統 所計算，一為照相鏡頭與現實世界中的點將每幀畫面相匹配，此時使用者 動作會被計算。另一為動作被慣性系統所追蹤，以陀螺儀及加速度計兩慣 性測量單位(IMU)實作。最後透過卡爾曼濾波器(Kalman Filter)將其進行整 合，並計算出最佳真實位置(Ground Truth)。<br>
-平面檢測即以地面做為參考物以計算位置訊息，藉此確立物體能平放 於平面上，以避免虛擬物體漂浮。任三點決定一平面，通過計算將特徵點 平均化，得到參考平面。</p>
+平面檢測即以地面做為參考物以計算位置訊息，藉此確立物體能平放 於平面上，以避免虛擬物體漂浮。任三點決定一平面，通過計算將特徵點 平均化，得到參考平面。<br>
+The technical principle of ARKit is the visual inertial measurement (VIO) system and the two key technologies of plane detection. The visual inertial measurement (VIO) means that the system will track the user’s position in space at any time, and it records the distance that the iPhone travels in the 6DoF space. (6DoF means moving along the xyz axis, plus pitch, rotation, roll, etc.), as shown in the figure below, when the screen refreshes every frame, the action will be recalculated immediately, and the refresh rate of the screen is 30fps or more per second, and this The refresh calculation will be calculated by two systems at the same time, one is to match each frame of the camera lens with the point in the real world, and the user action will be calculated at this time. The other is that the movement is tracked by the inertial system, which is implemented with two inertial measurement units (IMU), gyroscope and accelerometer. Finally, it is integrated through Kalman Filter, and the best ground truth position is calculated.<br>
+The plane detection is to use the ground as a reference to calculate the position information, thereby establishing that the object can lie flat on the plane, so as to prevent the virtual object from floating. Any three points determine a plane, and the feature points are averaged through calculation to obtain the reference plane.</p>
 <div align="left"><img src="3.png" width="400" height="400"> </div>
 <hr>
-<h3 id="arkit-的架構">ARKit 的架構</h3>
-<p>ARKit 定義了簡單的 API，以下對 ARKit 組成進行分類，如: ARSession、ARSessionConfigration、ARFrame、ARCamera 等。其中 ARSession 為整個系統核心，其實現了 AR 效果，包括世界追蹤及場景解析等，而 ARFrame 包含有 ARSession 所輸出的信息，為渲染關鍵資料來源，其架構如下圖。<br>
+<h3 id="arkit-的架構-architecture">ARKit 的架構 Architecture</h3>
+<p>ARKit 定義了簡單的 API，以下對 ARKit 組成進行分類，如: ARSession、ARSessionConfigration、ARFrame、ARCamera 等。其中 ARSession 為整個系統核心，其實現了 AR 效果，包括世界追蹤及場景解析等，而 ARFrame 包含有 ARSession 所輸出的信息，為渲染關鍵資料來源，其架構如下圖。<br>
+ARKit defines a simple API. The components of ARKit are classified as follows: ARSession, ARSessionConfigration, ARFrame, ARCamera, etc. Among them, ARSession is the core of the entire system, which realizes AR effects, including world tracking and scene analysis, and ARFrame contains the information output by ARSession, which is the key source of rendering data. Its architecture is as follows.<br>
 <img src="4.png" alt="4"></p>
-<p>真實世界追蹤 : ARKit 在此使用 ARWorldTrackingSessionConfiguration 提供 6DoF 追蹤取得的六個參數，同時，AVCaptureSession 獲取照相機所拍 攝的影片(一幀一幀的圖像)，ARSession 根據獲取 6DoF 的 6 個參數及一幀 一幀的圖像序列進行分析，輸出給 ARFrame，此時 ARFrame 就包含有渲染 虛擬世界所需的訊息。ARCamera 為 ARFrame 中的一個屬性，其提供相機 捕捉到的圖像長度及寬度(以像素為單位)，以及 intrinsics (為 3 x 3 之矩陣)， 目的將現實世界中三維座標的點映射至相機捕捉的圖像中。</p>
+<p>真實世界追蹤 : ARKit 在此使用 ARWorldTrackingSessionConfiguration 提供 6DoF 追蹤取得的六個參數，同時，AVCaptureSession 獲取照相機所拍 攝的影片(一幀一幀的圖像)，ARSession 根據獲取 6DoF 的 6 個參數及一幀 一幀的圖像序列進行分析，輸出給 ARFrame，此時 ARFrame 就包含有渲染 虛擬世界所需的訊息。ARCamera 為 ARFrame 中的一個屬性，其提供相機 捕捉到的圖像長度及寬度(以像素為單位)，以及 intrinsics (為 3 x 3 之矩陣)， 目的將現實世界中三維座標的點映射至相機捕捉的圖像中。<br>
+Real-world tracking: ARKit uses ARWorldTrackingSessionConfiguration to provide six parameters obtained by 6DoF tracking. At the same time, AVCaptureSession obtains the video captured by the camera (one frame by one image), and ARSession obtains the six parameters of 6DoF and one frame by one frame. The image sequence is analyzed and output to ARFrame. At this time, ARFrame contains the information needed to render the virtual world. ARCamera is an attribute in ARFrame that provides the length and width (in pixels) of the image captured by the camera, as well as intrinsics (a 3 x 3 matrix), for the purpose of mapping points of 3D coordinates in the real world to the camera capture in the image.</p>
 <p>渲染 : ARSCNView 進行以下事件<br>
 (1) 將真實世界作為背景。<br>
 (2) 處理光照訊息，不斷更新光照強度。<br>
 (3) 不斷更新相機位置及角度。<br>
-(4) 將坐標系結合到 AR 世界的座標系中，不斷渲染場景到真實世界的畫面中。</p>
+(4) 將坐標系結合到 AR 世界的座標系中，不斷渲染場景到真實世界的畫面中。<br>
+Rendering: ARSCNView does the following events<br>
+(1) Use the real world as a background.<br>
+(2) Process the light information and continuously update the light intensity.<br>
+(3) Constantly update the camera position and angle.<br>
+(4) Combine the coordinate system with the coordinate system of the AR world, and continuously render the scene to the real world picture.</p>
 <hr>
 <h2 id="本文場景設計與物體搭建">本文場景設計與物體搭建</h2>
 <p>(1) Unity – ProBuilder<br>
@@ -414,7 +446,7 @@ AR、VR 在軟硬體的高速發展，使其將成為未來的趨勢及主流，
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#緒論"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">緒論</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#動機與目的"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">動機與目的</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#相關研究"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">相關研究</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#本系統簡介與特色"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">本系統簡介與特色</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#系統關鍵技術"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">系統關鍵技術</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#arkit-api"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">ARKit API</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#arkit-的關鍵技術"><span class="toc-nav-number">2.1.1.</span> <span class="toc-nav-text">ARKit 的關鍵技術</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#arkit-的架構"><span class="toc-nav-number">2.1.2.</span> <span class="toc-nav-text">ARKit 的架構</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#本文場景設計與物體搭建"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">本文場景設計與物體搭建</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#本文方法與現有方法之比較"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">本文方法與現有方法之比較</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#系統實作"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">系統實作</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#開發流程"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">開發流程</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#使用技術與工具"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">使用技術與工具</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#系統展示"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">系統展示</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#系統入口"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">系統入口</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#系統操作步驟"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">系統操作步驟</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#未來研究方向與應用"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">未來研究方向與應用</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#結論"><span class="toc-nav-number">5.1.</span> <span class="toc-nav-text">結論</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#未來研究方向"><span class="toc-nav-number">5.2.</span> <span class="toc-nav-text">未來研究方向</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#參考文獻"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">參考文獻</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#緒論-objective"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">緒論 Objective</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#動機與目的-motivation-and-purpose"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">動機與目的 Motivation and Purpose</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#相關研究-related-research"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">相關研究 Related Research</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#本系統簡介與特色-system-introduction"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">本系統簡介與特色 System Introduction</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#系統關鍵技術-system-related-technique"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">系統關鍵技術 System related Technique</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#arkit-api"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">ARKit API</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#arkit-的關鍵技術-key-technique"><span class="toc-nav-number">2.1.1.</span> <span class="toc-nav-text">ARKit 的關鍵技術 Key Technique</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#arkit-的架構-architecture"><span class="toc-nav-number">2.1.2.</span> <span class="toc-nav-text">ARKit 的架構 Architecture</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#本文場景設計與物體搭建"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">本文場景設計與物體搭建</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#本文方法與現有方法之比較"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">本文方法與現有方法之比較</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#系統實作"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">系統實作</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#開發流程"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">開發流程</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#使用技術與工具"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">使用技術與工具</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#系統展示"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">系統展示</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#系統入口"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">系統入口</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#系統操作步驟"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">系統操作步驟</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#未來研究方向與應用"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">未來研究方向與應用</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#結論"><span class="toc-nav-number">5.1.</span> <span class="toc-nav-text">結論</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#未來研究方向"><span class="toc-nav-number">5.2.</span> <span class="toc-nav-text">未來研究方向</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#參考文獻"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">參考文獻</span></a></li></ol>
         
         </div>
       </aside>
