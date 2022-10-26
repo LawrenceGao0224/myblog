@@ -2,14 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://github.com/LawrenceGao0224/myblog.git/2020/09/02/github-and-hexo/</loc>
+    <loc>https://github.com/LawrenceGao0224/myblog.git/2022/03/01/Jialuo/</loc>
     
-    <lastmod>2022-10-22</lastmod>
+    <lastmod>2022-10-26</lastmod>
     
   </url>
   
   <url>
     <loc>https://github.com/LawrenceGao0224/myblog.git/2020/05/25/ARKit/</loc>
+    
+    <lastmod>2022-10-26</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://github.com/LawrenceGao0224/myblog.git/2020/09/02/github-and-hexo/</loc>
     
     <lastmod>2022-10-22</lastmod>
     
@@ -47,13 +54,6 @@
     <loc>https://github.com/LawrenceGao0224/myblog.git/about/index.html</loc>
     
     <lastmod>2022-05-06</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://github.com/LawrenceGao0224/myblog.git/2022/03/01/Jialuo/</loc>
-    
-    <lastmod>2022-03-21</lastmod>
     
   </url>
   
@@ -186,7 +186,7 @@
 
   <url>
     <loc>https://github.com/LawrenceGao0224/myblog.git</loc>
-    <lastmod>2022-10-22</lastmod>
+    <lastmod>2022-10-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -194,21 +194,21 @@
   
   <url>
     <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Work/</loc>
-    <lastmod>2022-10-22</lastmod>
+    <lastmod>2022-10-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Blog/</loc>
-    <lastmod>2022-10-22</lastmod>
+    <lastmod>2022-10-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Travel/</loc>
-    <lastmod>2022-10-22</lastmod>
+    <lastmod>2022-10-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
