@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://github.com/LawrenceGao0224/myblog.git/2022/06/27/penghu/</loc>
+    <loc>https://github.com/LawrenceGao0224/myblog.git/2023/01/03/AroundTaiwan/</loc>
     
     <lastmod>2023-01-03</lastmod>
     
   </url>
   
   <url>
-    <loc>https://github.com/LawrenceGao0224/myblog.git/2023/01/03/AroundTaiwan/</loc>
+    <loc>https://github.com/LawrenceGao0224/myblog.git/2022/06/27/penghu/</loc>
     
     <lastmod>2023-01-03</lastmod>
     
@@ -200,6 +200,13 @@
 
   
   <url>
+    <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Work/</loc>
+    <lastmod>2023-01-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Blog/</loc>
     <lastmod>2023-01-03</lastmod>
     <changefreq>daily</changefreq>
@@ -208,13 +215,6 @@
   
   <url>
     <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Travel/</loc>
-    <lastmod>2023-01-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Work/</loc>
     <lastmod>2023-01-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
