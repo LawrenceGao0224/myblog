@@ -1,6 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>NBA老闆的慧眼 NBA bosses&#39; wisdom - Affinity Propagation</title>
+    <url>/myblog/2019/01/29/AP-algo/</url>
+    <content><![CDATA[<h1 id="概念發想-concept">概念發想 Concept</h1>
+<hr>
+<p><a href="https://github.com/LawrenceGao0224/Intelligence-Oriented-Management-Decision/tree/master/%E6%99%BA%E6%85%A7%E5%9E%8B%E6%9C%9F%E6%9C%AB%E5%A0%B1%E5%91%8A">程式碼連結 Program Click On Me</a></p>
+<p><img src="NBA.jpg" alt="NBA"></p>
+<p>我們將自己設想為球隊分析師，並希望能遞上一份不讓老闆&quot;打臉&quot;的分群資料，提供球隊高層在球員交易、補強、替代方案上有份合理客觀的依據。</p>
+<p>We envision ourselves as team analysts, and hope to hand over a group of information that provides the team’s top management with a reasonable and objective basis for player trading, reinforcement, and alternatives.</p>
+<hr>
+<h1 id="操作方法-operation">操作方法 Operation</h1>
+<p>將NBA所有球員資料(Ex: 薪水、年齡、得分、助攻、有效命中率、真實命中率、球權佔有率、籃板率、效率值…)，以AP演算法實作，計算各球員資料的負歐積里德距離，調整preference、Damping Factor參數，求出k個高質量聚類，且我們將多維度的資料透過PCA()方法壓縮為低維度的資料，實現可視化。</p>
+<p>All NBA player information (Ex: salary, age, score, assists, effective hit rate, true hit rate, possession rate, rebound rate, efficiency value…) is calculated by AP algorithm to calculate each player’s data. The negative Ourich Reed distance, adjust the preferences, Damping Factor parameters, find k high-quality clusters, and we compress the multi-dimensional data into low-dimensional data through PCA () method to achieve visualization</p>
+<p>資料來源 ： (<a href="https://www.kaggle.com/acasalan/nba-player-stats-201718" target="_blank" rel="noopener">https://www.kaggle.com/acasalan/nba-player-stats-201718</a>)</p>
+<hr>
+<h1 id="實作結果-result">實作結果 Result</h1>
+<h2 id="調整參數-adjust-parameter">調整參數 Adjust parameter:</h2>
+<ol>
+<li>Preference:<br>
+Preference = 中位數(-62.5683289159)<br>
+群集數: 43</li>
+</ol>
+<p><img src="1-1.png" alt="43"></p>
+<p>Preference = -500<br>
+群集數: 7</p>
+<p><img src="1-2.png" alt="7"></p>
+<ol start="2">
+<li>Damping Factor:</li>
+</ol>
+<p>Damping Factor = 0.5      --&gt;      Time = 0.8640606880187988 seconds.<br>
+Damping Factor = 0.9      --&gt;      Time = 1.2220699787139893 seconds.</p>
+<h2 id="所有球員資料-all-players">所有球員資料 All players:</h2>
+<p><img src="2-1.png" alt="2-1">   <img src="2-2.png" alt="2-2"></p>
+<h2 id="依球員打球的位置-according-to-position">依球員打球的位置 According to position</h2>
+<ol>
+<li>
+<p>center © : 8群集數<br>
+<img src="3-1.png" alt="3-1"></p>
+</li>
+<li>
+<p>power forward (PF) : 8群集數<br>
+<img src="3-2.png" alt="3-2"></p>
+</li>
+<li>
+<p>small forward (SF) : 12群集數<br>
+<img src="3-3.png" alt="3-3"></p>
+</li>
+<li>
+<p>point guard (PG) : 11群集數<br>
+<img src="3-4.png" alt="3-4"></p>
+</li>
+<li>
+<p>shooting guard (SG) : 4群集數<br>
+<img src="3-5.png" alt="3-5"></p>
+</li>
+</ol>
+<h2 id="依不同屬性">依不同屬性</h2>
+<p>進攻性質 or 防守性質…</p>
+<hr>
+<h1 id="延伸探討-any-imperfect">延伸探討  Any imperfect ?</h1>
+<p>然而在我們丟入的data有其盲點存在,NBA的老闆或球隊在選擇球員上,並不會只觀看球員在場上的數據表現,還包括許多因素,事無法量化或在數據表現出來的(包括球員心理狀態、球員間磨合度…)</p>
+<p>However, the data we throw in has its  blind spots. The NBA boss or team is not only watching the performance of the players on the field, but also includes many factors, which cannot be quantified or expressed in the data. (including the player’s mental state, the player’s running-in…)</p>
+<p>如下:</p>
+<p>❖商業價值 Business Value ex: Dwyane Wade<br>
+Wade是大家耳熟能詳的巨星,層經出現在2K遊戲的封面上,但最近的數據表現並不如其他球員出色,但仍是有淺力的球員,也累積許多粉絲,粉絲能帶來商業價值。<br>
+Wade is a well-known superstar. He has appeared on the cover of 2K games, but his recent data performance is not as good as other players, but he is still a shallow player and has accumulated many fans. Fans can bring commercial value.<br>
+<img src="4-1.png" alt="4-1"></p>
+<p>❖球員背景 Player’s Background ex: Jeremy Lin<br>
+Jeremy是著名的台裔球員,能吸引亞洲地區的球迷觀注其球隊,帶來利益。<br>
+Jeremy is a famous Taiwanese player who can attract fans in Asia to watch his team and bring benefits.<br>
+<img src="4-2.png" alt="4-2"></p>
+<p>❖健康因素 Health factor ex: Derrick Rose<br>
+Rose是最年輕獲選MVP的球員,但由於前幾賽季腳傷原因,造成都個賽季缺賽,而傷後復出便不如以前突出,這也是無法顯現在數據上的。<br>
+Rose is the youngest player to be elected MVP, but due to the foot injury in previous seasons, he missed all seasons, and his comeback after injury is not as prominent as before, which cannot be shown in the data.<br>
+<img src="4-3.png" alt="4-3"></p>
+<hr>
+<h1 id="參考資料-reference">參考資料 Reference</h1>
+<p>(<a href="https://zi.media/@yidianzixun/post/uKZUFF?fbclid=IwAR1Dib-4T5MkM2x_helYBtq0TgTD871fAixs-4sBivOUXUNjuMl07xFahOs" target="_blank" rel="noopener">https://zi.media/@yidianzixun/post/uKZUFF?fbclid=IwAR1Dib-4T5MkM2x_helYBtq0TgTD871fAixs-4sBivOUXUNjuMl07xFahOs</a>)</p>
+<p>(<a href="https://www.cnblogs.com/huadongw/p/4202492.html?fbclid=IwAR3PHEOcrAar0rCI1e9AeYBxV0fI6JKJIRqGAJ3ag9BnlleT5M9v_8oNiy0" target="_blank" rel="noopener">https://www.cnblogs.com/huadongw/p/4202492.html?fbclid=IwAR3PHEOcrAar0rCI1e9AeYBxV0fI6JKJIRqGAJ3ag9BnlleT5M9v_8oNiy0</a>)</p>
+<p>(<a href="https://www.itread01.com/articles/1495821610.html?fbclid=IwAR1Ssz1ZCdqnxtT6obwpx0AFRDBEGrqKK0BXmMGPK-I1lvNwqJuif9EhZt0" target="_blank" rel="noopener">https://www.itread01.com/articles/1495821610.html?fbclid=IwAR1Ssz1ZCdqnxtT6obwpx0AFRDBEGrqKK0BXmMGPK-I1lvNwqJuif9EhZt0</a>)</p>
+<p>(<a href="https://scikit-learn.org/stable/auto_examples/applications/plot_stock_market.html?fbclid=IwAR29Qcy3SrWFDjHAJGF--XO-0zW2FWt8t4dYZT0lsYxUDqJpBz17ds2pQQM" target="_blank" rel="noopener">https://scikit-learn.org/stable/auto_examples/applications/plot_stock_market.html?fbclid=IwAR29Qcy3SrWFDjHAJGF–XO-0zW2FWt8t4dYZT0lsYxUDqJpBz17ds2pQQM</a>)</p>
+<p>(<a href="https://scikit-learn.org/stable/auto_examples/cluster/plot_affinity_propagation.html?fbclid=IwAR2SsWtrb5MJdypMha6G59nWSeEwf7QK5vzmCa_UefR9mHDT0WzLgEbqng4#sphx-glr-auto-examples-cluster-plot-affinity-propagation-py" target="_blank" rel="noopener">https://scikit-learn.org/stable/auto_examples/cluster/plot_affinity_propagation.html?fbclid=IwAR2SsWtrb5MJdypMha6G59nWSeEwf7QK5vzmCa_UefR9mHDT0WzLgEbqng4#sphx-glr-auto-examples-cluster-plot-affinity-propagation-py</a>)</p>
+]]></content>
+      <tags>
+        <tag>Work</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>故宮沉浸式展場系統</title>
     <url>/myblog/2020/05/25/ARKit/</url>
     <content><![CDATA[<blockquote>
@@ -202,93 +289,6 @@ AR、VR 在軟硬體的高速發展，使其將成為未來的趨勢及主流，
 [17] C# 語言簡介，取自 Duran 的技術冶煉廠: <a href="http://dog0416.blogspot.com/2017/08/cvisual-studio-c.html" target="_blank" rel="noopener">http://dog0416.blogspot.com/2017/08/cvisual-studio-c.html</a><br>
 [18] SketchUp 教學，取自 CG 數位學習網: <a href="http://www.cg.com.tw/SketchUp/Content/SketchUp_01.php" target="_blank" rel="noopener">http://www.cg.com.tw/SketchUp/Content/SketchUp_01.php</a><br>
 [19] Swift 新手系列之一: 打造你的第一個 iOSApp，取自APPCODA: <a href="https://www.appcoda.com.tw/hello-world-app-swift/" target="_blank" rel="noopener">https://www.appcoda.com.tw/hello-world-app-swift/</a></p>
-]]></content>
-      <tags>
-        <tag>Work</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>NBA老闆的慧眼 NBA bosses&#39; wisdom - Affinity Propagation</title>
-    <url>/myblog/2019/01/29/AP-algo/</url>
-    <content><![CDATA[<h1 id="概念發想-concept">概念發想 Concept</h1>
-<hr>
-<p><a href="https://github.com/LawrenceGao0224/Intelligence-Oriented-Management-Decision/tree/master/%E6%99%BA%E6%85%A7%E5%9E%8B%E6%9C%9F%E6%9C%AB%E5%A0%B1%E5%91%8A">程式碼連結 Program Click On Me</a></p>
-<p><img src="NBA.jpg" alt="NBA"></p>
-<p>我們將自己設想為球隊分析師，並希望能遞上一份不讓老闆&quot;打臉&quot;的分群資料，提供球隊高層在球員交易、補強、替代方案上有份合理客觀的依據。</p>
-<p>We envision ourselves as team analysts, and hope to hand over a group of information that provides the team’s top management with a reasonable and objective basis for player trading, reinforcement, and alternatives.</p>
-<hr>
-<h1 id="操作方法-operation">操作方法 Operation</h1>
-<p>將NBA所有球員資料(Ex: 薪水、年齡、得分、助攻、有效命中率、真實命中率、球權佔有率、籃板率、效率值…)，以AP演算法實作，計算各球員資料的負歐積里德距離，調整preference、Damping Factor參數，求出k個高質量聚類，且我們將多維度的資料透過PCA()方法壓縮為低維度的資料，實現可視化。</p>
-<p>All NBA player information (Ex: salary, age, score, assists, effective hit rate, true hit rate, possession rate, rebound rate, efficiency value…) is calculated by AP algorithm to calculate each player’s data. The negative Ourich Reed distance, adjust the preferences, Damping Factor parameters, find k high-quality clusters, and we compress the multi-dimensional data into low-dimensional data through PCA () method to achieve visualization</p>
-<p>資料來源 ： (<a href="https://www.kaggle.com/acasalan/nba-player-stats-201718" target="_blank" rel="noopener">https://www.kaggle.com/acasalan/nba-player-stats-201718</a>)</p>
-<hr>
-<h1 id="實作結果-result">實作結果 Result</h1>
-<h2 id="調整參數-adjust-parameter">調整參數 Adjust parameter:</h2>
-<ol>
-<li>Preference:<br>
-Preference = 中位數(-62.5683289159)<br>
-群集數: 43</li>
-</ol>
-<p><img src="1-1.png" alt="43"></p>
-<p>Preference = -500<br>
-群集數: 7</p>
-<p><img src="1-2.png" alt="7"></p>
-<ol start="2">
-<li>Damping Factor:</li>
-</ol>
-<p>Damping Factor = 0.5      --&gt;      Time = 0.8640606880187988 seconds.<br>
-Damping Factor = 0.9      --&gt;      Time = 1.2220699787139893 seconds.</p>
-<h2 id="所有球員資料-all-players">所有球員資料 All players:</h2>
-<p><img src="2-1.png" alt="2-1">   <img src="2-2.png" alt="2-2"></p>
-<h2 id="依球員打球的位置-according-to-position">依球員打球的位置 According to position</h2>
-<ol>
-<li>
-<p>center © : 8群集數<br>
-<img src="3-1.png" alt="3-1"></p>
-</li>
-<li>
-<p>power forward (PF) : 8群集數<br>
-<img src="3-2.png" alt="3-2"></p>
-</li>
-<li>
-<p>small forward (SF) : 12群集數<br>
-<img src="3-3.png" alt="3-3"></p>
-</li>
-<li>
-<p>point guard (PG) : 11群集數<br>
-<img src="3-4.png" alt="3-4"></p>
-</li>
-<li>
-<p>shooting guard (SG) : 4群集數<br>
-<img src="3-5.png" alt="3-5"></p>
-</li>
-</ol>
-<h2 id="依不同屬性">依不同屬性</h2>
-<p>進攻性質 or 防守性質…</p>
-<hr>
-<h1 id="延伸探討-any-imperfect">延伸探討  Any imperfect ?</h1>
-<p>然而在我們丟入的data有其盲點存在,NBA的老闆或球隊在選擇球員上,並不會只觀看球員在場上的數據表現,還包括許多因素,事無法量化或在數據表現出來的(包括球員心理狀態、球員間磨合度…)</p>
-<p>However, the data we throw in has its  blind spots. The NBA boss or team is not only watching the performance of the players on the field, but also includes many factors, which cannot be quantified or expressed in the data. (including the player’s mental state, the player’s running-in…)</p>
-<p>如下:</p>
-<p>❖商業價值 Business Value ex: Dwyane Wade<br>
-Wade是大家耳熟能詳的巨星,層經出現在2K遊戲的封面上,但最近的數據表現並不如其他球員出色,但仍是有淺力的球員,也累積許多粉絲,粉絲能帶來商業價值。<br>
-Wade is a well-known superstar. He has appeared on the cover of 2K games, but his recent data performance is not as good as other players, but he is still a shallow player and has accumulated many fans. Fans can bring commercial value.<br>
-<img src="4-1.png" alt="4-1"></p>
-<p>❖球員背景 Player’s Background ex: Jeremy Lin<br>
-Jeremy是著名的台裔球員,能吸引亞洲地區的球迷觀注其球隊,帶來利益。<br>
-Jeremy is a famous Taiwanese player who can attract fans in Asia to watch his team and bring benefits.<br>
-<img src="4-2.png" alt="4-2"></p>
-<p>❖健康因素 Health factor ex: Derrick Rose<br>
-Rose是最年輕獲選MVP的球員,但由於前幾賽季腳傷原因,造成都個賽季缺賽,而傷後復出便不如以前突出,這也是無法顯現在數據上的。<br>
-Rose is the youngest player to be elected MVP, but due to the foot injury in previous seasons, he missed all seasons, and his comeback after injury is not as prominent as before, which cannot be shown in the data.<br>
-<img src="4-3.png" alt="4-3"></p>
-<hr>
-<h1 id="參考資料-reference">參考資料 Reference</h1>
-<p>(<a href="https://zi.media/@yidianzixun/post/uKZUFF?fbclid=IwAR1Dib-4T5MkM2x_helYBtq0TgTD871fAixs-4sBivOUXUNjuMl07xFahOs" target="_blank" rel="noopener">https://zi.media/@yidianzixun/post/uKZUFF?fbclid=IwAR1Dib-4T5MkM2x_helYBtq0TgTD871fAixs-4sBivOUXUNjuMl07xFahOs</a>)</p>
-<p>(<a href="https://www.cnblogs.com/huadongw/p/4202492.html?fbclid=IwAR3PHEOcrAar0rCI1e9AeYBxV0fI6JKJIRqGAJ3ag9BnlleT5M9v_8oNiy0" target="_blank" rel="noopener">https://www.cnblogs.com/huadongw/p/4202492.html?fbclid=IwAR3PHEOcrAar0rCI1e9AeYBxV0fI6JKJIRqGAJ3ag9BnlleT5M9v_8oNiy0</a>)</p>
-<p>(<a href="https://www.itread01.com/articles/1495821610.html?fbclid=IwAR1Ssz1ZCdqnxtT6obwpx0AFRDBEGrqKK0BXmMGPK-I1lvNwqJuif9EhZt0" target="_blank" rel="noopener">https://www.itread01.com/articles/1495821610.html?fbclid=IwAR1Ssz1ZCdqnxtT6obwpx0AFRDBEGrqKK0BXmMGPK-I1lvNwqJuif9EhZt0</a>)</p>
-<p>(<a href="https://scikit-learn.org/stable/auto_examples/applications/plot_stock_market.html?fbclid=IwAR29Qcy3SrWFDjHAJGF--XO-0zW2FWt8t4dYZT0lsYxUDqJpBz17ds2pQQM" target="_blank" rel="noopener">https://scikit-learn.org/stable/auto_examples/applications/plot_stock_market.html?fbclid=IwAR29Qcy3SrWFDjHAJGF–XO-0zW2FWt8t4dYZT0lsYxUDqJpBz17ds2pQQM</a>)</p>
-<p>(<a href="https://scikit-learn.org/stable/auto_examples/cluster/plot_affinity_propagation.html?fbclid=IwAR2SsWtrb5MJdypMha6G59nWSeEwf7QK5vzmCa_UefR9mHDT0WzLgEbqng4#sphx-glr-auto-examples-cluster-plot-affinity-propagation-py" target="_blank" rel="noopener">https://scikit-learn.org/stable/auto_examples/cluster/plot_affinity_propagation.html?fbclid=IwAR2SsWtrb5MJdypMha6G59nWSeEwf7QK5vzmCa_UefR9mHDT0WzLgEbqng4#sphx-glr-auto-examples-cluster-plot-affinity-propagation-py</a>)</p>
 ]]></content>
       <tags>
         <tag>Work</tag>
@@ -508,6 +508,82 @@ I am an entry-level of mountaineering. The  following is a personal rating. I th
       </tags>
   </entry>
   <entry>
+    <title>蘭嶼Lanyu遊 2020.7.21-2020.7.24</title>
+    <url>/myblog/2020/07/24/Lanyu/</url>
+    <content><![CDATA[<blockquote>
+<p>蘭嶼夜晚星空真的美<br>
+處處有山羊🐐<br>
+網路卡卡頓<br>
+物價媲美歐美<br>
+The starry sky is really beautiful at night<br>
+There are goats everywhere 🐐<br>
+Network is poor<br>
+Foods are expensive</p>
+</blockquote>
+<hr>
+<p><img src="1.jpg" alt="1"></p>
+<h1 id="行程-itinerary">行程 Itinerary</h1>
+<h2 id="day-1-亞比亞民宿-東-yabia-homestay-east">Day 1 亞比亞民宿 (東) Yabia Homestay (East)</h2>
+<p>16:00到達蘭嶼 16:00 Arrive at Lanyu<br>
+回民宿休息一下 Go to the homestay and take a rest<br>
+東清小夜市吃蔥油餅 Eat scallion pancakes at Dongqing Night Market<br>
+希蕊娜莉晚餐 Dinner<br>
+回民宿休息 Take a rest at the homestay<br>
+十一鄰酒吧 Bar</p>
+<h2 id="day-2-南-south">Day 2 (南) (South)</h2>
+<p>看日出 watch the sunrise<br>
+看完回去睡 Back to sleep<br>
+蘭嶼冷泉 Lanyu Cold Spring<br>
+看蘭嶼地下屋 Visit the Lanyu underground house<br>
+漂流木餐廳 Driftwood Restaurant (not sure english name)<br>
+西岸海邊玩水 Playing in the water on the west coast<br>
+繞南部蘭嶼一圈 hang out in the south of Lanyu<br>
+回民宿休息（走中橫）Go back to the homestay to rest (walk across the middle)<br>
+青青草原看夕陽 Green Grassland Watching the Sunset<br>
+蘭嶼哇哇複合式餐飲晚餐 Dinner<br>
+去附近商店買紀念品、郵局領錢 Go to a nearby store to buy souvenirs, and pick up money at the post office<br>
+回去路上看星星 Watch the beautiful stars in the sky<br>
+回民宿 Back to homestay<br>
+去雜貨店買酒回民宿喝 buy some drink at the grocery store and back to the hotel</p>
+<h2 id="day-3-北-north">Day 3 (北) (North)</h2>
+<p>早上藍海屋潛水 （不太推浮淺 有點雷 但聽說深淺很棒）Snorkeling at the Blue Ocean House in the morning (not recommend, but<br>
+回民宿洗澡 Back to home stay<br>
+午餐 人魚和貓 lunch<br>
+開始北繞蘭嶼（情人洞、蘭嶼鬼洞、貝殼砂、很深之意、雙獅岩、像水渠一樣 拍照）Start to circle around Lanyu in the north (Lover’s Cave, Lanyu Ghost Cave, Shell Sand, Deep Meaning, Shuangshi Rock, taking pictures)<br>
+沿路冰店吃冰 Eat icecream on the way<br>
+小攤販吃飛魚卵小吃 Eating flying fish roe snacks<br>
+蘭嶼氣象站 Lanyu Weather Station<br>
+回民宿 back to homestay<br>
+等八點吃 燒烤吃到飽 Wait until eight o’clock to eat BBQ all you can eat<br>
+小七買酒回民宿 Buy some drinks in a convenient store</p>
+<h2 id="day-4">Day 4</h2>
+<p>看日出 watch the sunrise<br>
+看完回去睡 Go back to sleep<br>
+東清三十三早午餐 Brunch<br>
+回民宿收拾行李 pack our luggage<br>
+舊蘭嶼燈塔拍照 Photograph at Old Lanyu Lighthouse<br>
+等搭船回本島 Back to Taiwan</p>
+<h2 id="原訂行程但沒去-the-original-itinerary-but-did-not-go">原訂行程但沒去： The original itinerary but did not go</h2>
+<p>雯雯冰店<br>
+安逸酒吧 Angit Bar<br>
+M cafe喝酒<br>
+旅人。Rove喝酒<br>
+蘭嶼在地美食-小米阿粨<br>
+蘭嶼反核bar<br>
+瑟郎冰沙吃冰<br>
+自由潛水 free diving</p>
+<p><img src="2.png" alt="2"> <img src="3.jpg" alt="3"></p>
+<blockquote>
+<p>總歸一句 Summary：<br>
+抱持放鬆的心態來就好 Relax~~<br>
+Soak in your own world!</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Travel</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>仙女散落的珍珠 - 加羅湖 Jialuo Lake</title>
     <url>/myblog/2022/03/01/Jialuo/</url>
     <content><![CDATA[<blockquote>
@@ -673,82 +749,6 @@ Drive to Fu’an Palace + Mu-tan Reservoir + Mu-tan Elementary School + Syuhai G
       </tags>
   </entry>
   <entry>
-    <title>蘭嶼Lanyu遊 2020.7.21-2020.7.24</title>
-    <url>/myblog/2020/07/24/Lanyu/</url>
-    <content><![CDATA[<blockquote>
-<p>蘭嶼夜晚星空真的美<br>
-處處有山羊🐐<br>
-網路卡卡頓<br>
-物價媲美歐美<br>
-The starry sky is really beautiful at night<br>
-There are goats everywhere 🐐<br>
-Network is poor<br>
-Foods are expensive</p>
-</blockquote>
-<hr>
-<p><img src="1.jpg" alt="1"></p>
-<h1 id="行程-itinerary">行程 Itinerary</h1>
-<h2 id="day-1-亞比亞民宿-東-yabia-homestay-east">Day 1 亞比亞民宿 (東) Yabia Homestay (East)</h2>
-<p>16:00到達蘭嶼 16:00 Arrive at Lanyu<br>
-回民宿休息一下 Go to the homestay and take a rest<br>
-東清小夜市吃蔥油餅 Eat scallion pancakes at Dongqing Night Market<br>
-希蕊娜莉晚餐 Dinner<br>
-回民宿休息 Take a rest at the homestay<br>
-十一鄰酒吧 Bar</p>
-<h2 id="day-2-南-south">Day 2 (南) (South)</h2>
-<p>看日出 watch the sunrise<br>
-看完回去睡 Back to sleep<br>
-蘭嶼冷泉 Lanyu Cold Spring<br>
-看蘭嶼地下屋 Visit the Lanyu underground house<br>
-漂流木餐廳 Driftwood Restaurant (not sure english name)<br>
-西岸海邊玩水 Playing in the water on the west coast<br>
-繞南部蘭嶼一圈 hang out in the south of Lanyu<br>
-回民宿休息（走中橫）Go back to the homestay to rest (walk across the middle)<br>
-青青草原看夕陽 Green Grassland Watching the Sunset<br>
-蘭嶼哇哇複合式餐飲晚餐 Dinner<br>
-去附近商店買紀念品、郵局領錢 Go to a nearby store to buy souvenirs, and pick up money at the post office<br>
-回去路上看星星 Watch the beautiful stars in the sky<br>
-回民宿 Back to homestay<br>
-去雜貨店買酒回民宿喝 buy some drink at the grocery store and back to the hotel</p>
-<h2 id="day-3-北-north">Day 3 (北) (North)</h2>
-<p>早上藍海屋潛水 （不太推浮淺 有點雷 但聽說深淺很棒）Snorkeling at the Blue Ocean House in the morning (not recommend, but<br>
-回民宿洗澡 Back to home stay<br>
-午餐 人魚和貓 lunch<br>
-開始北繞蘭嶼（情人洞、蘭嶼鬼洞、貝殼砂、很深之意、雙獅岩、像水渠一樣 拍照）Start to circle around Lanyu in the north (Lover’s Cave, Lanyu Ghost Cave, Shell Sand, Deep Meaning, Shuangshi Rock, taking pictures)<br>
-沿路冰店吃冰 Eat icecream on the way<br>
-小攤販吃飛魚卵小吃 Eating flying fish roe snacks<br>
-蘭嶼氣象站 Lanyu Weather Station<br>
-回民宿 back to homestay<br>
-等八點吃 燒烤吃到飽 Wait until eight o’clock to eat BBQ all you can eat<br>
-小七買酒回民宿 Buy some drinks in a convenient store</p>
-<h2 id="day-4">Day 4</h2>
-<p>看日出 watch the sunrise<br>
-看完回去睡 Go back to sleep<br>
-東清三十三早午餐 Brunch<br>
-回民宿收拾行李 pack our luggage<br>
-舊蘭嶼燈塔拍照 Photograph at Old Lanyu Lighthouse<br>
-等搭船回本島 Back to Taiwan</p>
-<h2 id="原訂行程但沒去-the-original-itinerary-but-did-not-go">原訂行程但沒去： The original itinerary but did not go</h2>
-<p>雯雯冰店<br>
-安逸酒吧 Angit Bar<br>
-M cafe喝酒<br>
-旅人。Rove喝酒<br>
-蘭嶼在地美食-小米阿粨<br>
-蘭嶼反核bar<br>
-瑟郎冰沙吃冰<br>
-自由潛水 free diving</p>
-<p><img src="2.png" alt="2"> <img src="3.jpg" alt="3"></p>
-<blockquote>
-<p>總歸一句 Summary：<br>
-抱持放鬆的心態來就好 Relax~~<br>
-Soak in your own world!</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Travel</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>找工作心路歷程 2021.1-2021.4</title>
     <url>/myblog/2021/04/14/Lookforjobs/</url>
     <content><![CDATA[<blockquote>
@@ -879,39 +879,6 @@ LeetCode great solutions: <a href="https://www.youtube.com/channel/UC_mYaQAE6-71
       </tags>
   </entry>
   <entry>
-    <title>Micron Intern in DEG  2019/7/1 ~ 2019/8/30</title>
-    <url>/myblog/2019/08/30/Micron/</url>
-    <content><![CDATA[<blockquote>
-<p>外商公司不喜歡你加班 自律是關鍵<br>
-英文很重要 溝通能力<br>
-環境自由 放鬆但不是隨便<br>
-待人處事態度 與同事們培養默契與團隊精神</p>
-</blockquote>
-<hr>
-<h1 id="面試">面試</h1>
-<p>面試記得要準備中英文的自我介紹  並做個人的作品集會更加分 記得投地公司官網（我丟104都沒消息）</p>
-<h2 id="關卡-1-電話">關卡 1. 電話</h2>
-<p>這個關卡我沒有遇到，但身邊朋友幾個都有接到電話英文面試，自我介紹等等</p>
-<h2 id="關卡-2-face-to-face">關卡 2. Face to face</h2>
-<p>我面對三個主管，首先要你自我介紹，並知道美光是什麼公司，還有能解釋記憶體的架構還有你的了解（聽說正職會問程式題，我個人作品集是做程式相關的，所以沒有被問到）</p>
-<h2 id="關卡-3-英文邏輯測驗">關卡 3. 英文,邏輯測驗</h2>
-<p>寫個英文題目及性向測驗題</p>
-<h2 id="關卡-4-hr面談">關卡 4. HR面談</h2>
-<p>基本上問你為何想來面試這職位 了解你的動機跟穩重度</p>
-<hr>
-<h1 id="實習生活">實習生活</h1>
-<p>從軟體踏入硬體領域，許多新的知識需要吸收，前三天都會有新人訓，並且每個禮拜五部門都會有課程，關於DRAM的知識，因此慢慢學習吸收。<br>
-美光在我這屆有48個新生，認識到許多朋友，同時也能建立人脈！<br>
-PS : 在這些具有製成、高階技術研發的公司，資訊安全與公司機密是很重要的事，公司會不斷強調不能隨便在內部拍照也不能外流內部文件等！</p>
-<p><img src="1.png" alt="1"><br>
-<img src="2.png" alt="2"><br>
-<img src="3.png" alt="3"></p>
-]]></content>
-      <tags>
-        <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>大馬遊 Malaysia 2018/7/21~2018/7/29</title>
     <url>/myblog/2018/07/30/Malaysia/</url>
     <content><![CDATA[<blockquote>
@@ -970,6 +937,69 @@ In Malacca, we first went to the famous landmarks, then went to the Upside Down 
 ]]></content>
       <tags>
         <tag>Travel</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Micron Intern in DEG  2019/7/1 ~ 2019/8/30</title>
+    <url>/myblog/2019/08/30/Micron/</url>
+    <content><![CDATA[<blockquote>
+<p>外商公司不喜歡你加班 自律是關鍵<br>
+英文很重要 溝通能力<br>
+環境自由 放鬆但不是隨便<br>
+待人處事態度 與同事們培養默契與團隊精神</p>
+</blockquote>
+<hr>
+<h1 id="面試">面試</h1>
+<p>面試記得要準備中英文的自我介紹  並做個人的作品集會更加分 記得投地公司官網（我丟104都沒消息）</p>
+<h2 id="關卡-1-電話">關卡 1. 電話</h2>
+<p>這個關卡我沒有遇到，但身邊朋友幾個都有接到電話英文面試，自我介紹等等</p>
+<h2 id="關卡-2-face-to-face">關卡 2. Face to face</h2>
+<p>我面對三個主管，首先要你自我介紹，並知道美光是什麼公司，還有能解釋記憶體的架構還有你的了解（聽說正職會問程式題，我個人作品集是做程式相關的，所以沒有被問到）</p>
+<h2 id="關卡-3-英文邏輯測驗">關卡 3. 英文,邏輯測驗</h2>
+<p>寫個英文題目及性向測驗題</p>
+<h2 id="關卡-4-hr面談">關卡 4. HR面談</h2>
+<p>基本上問你為何想來面試這職位 了解你的動機跟穩重度</p>
+<hr>
+<h1 id="實習生活">實習生活</h1>
+<p>從軟體踏入硬體領域，許多新的知識需要吸收，前三天都會有新人訓，並且每個禮拜五部門都會有課程，關於DRAM的知識，因此慢慢學習吸收。<br>
+美光在我這屆有48個新生，認識到許多朋友，同時也能建立人脈！<br>
+PS : 在這些具有製成、高階技術研發的公司，資訊安全與公司機密是很重要的事，公司會不斷強調不能隨便在內部拍照也不能外流內部文件等！</p>
+<p><img src="1.png" alt="1"><br>
+<img src="2.png" alt="2"><br>
+<img src="3.png" alt="3"></p>
+]]></content>
+      <tags>
+        <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Red Hat Certified System Administrator (RHCSA8)</title>
+    <url>/myblog/2022/05/06/RHCSA/</url>
+    <content><![CDATA[<blockquote>
+<p>I can accept failure, but cannot accept to give up<br>
+考了兩次才通過</p>
+</blockquote>
+<h1 id="rhcsa介紹">RHCSA介紹</h1>
+<p>RHCSA認證是Red Hat公司於2011年3月所推出的新認證。RHCSA認證是取得RHCE認證的必要條件之一，RHCSA與RHCE認證取得兩者無先後順序，兩者均通過者才可完整取得RHCE證書。擁有RHCSA認證者能夠扮演著企業內各式各樣的角色，舉凡資料庫管理員，開發人員和技術支持人員…等職務，能重建與部署企業核心Linux環境，更能代表您具備管理技術與駕馭系統的能力。欲取得RHCSA認證您必須參加此認證考試，成功讓您成為兼具完整理論與實作技術的Linux專家。<br>
+<a href="https://www.uuu.com.tw/Course/Partner/RedHat%E7%B4%85%E5%B8%BD/section=rhcsa/title=RHCSA%E8%AA%8D%E8%AD%89%E8%88%87%E8%80%83%E8%A9%A6%E4%BB%8B%E7%B4%B9" target="_blank" rel="noopener">(資料來源：UCOM恆逸教育訓練)</a></p>
+<h1 id="考試測驗能力">考試測驗能力</h1>
+<p>可進入官網查看：<a href="https://www.redhat.com/en/services/training/ex200-red-hat-certified-system-administrator-rhcsa-exam?section=Objectives" target="_blank" rel="noopener">Red Hat Certified System Administrator (RHCSA) exam</a></p>
+<h1 id="考題整理">考題整理</h1>
+<p>網路整理考題：<a href="https://github.com/chlebik/rhcsa-practice-questions/tree/master/questions">https://github.com/chlebik/rhcsa-practice-questions/tree/master/questions</a></p>
+<p>RedHat8之後開始考了許多Container題目，如：<a href="https://tekneed.com/rhcsa-8-exam-practice-question-9-managing-containers/" target="_blank" rel="noopener">https://tekneed.com/rhcsa-8-exam-practice-question-9-managing-containers/</a></p>
+<h1 id="考試環境介紹">考試環境介紹</h1>
+<p>考試環境會提供兩台虛擬機，分別為node1, node2，（會建議開終端機連線兩台虛擬機，以方便複製考試時所用到的網址或名稱）</p>
+<h1 id="結論">結論</h1>
+<ol>
+<li>一定要一直反覆練習實作，才能訓練到，不能只用看的，因為可能發生你都想不到的問題。</li>
+<li>我考試時發生用root建立user，而user卻沒長出Home directory，後來才發現是當時系統沒裝好，但卻沒反應，應是浪費快一個小時</li>
+<li>還有Container的題目，真的有點難，我不懂為什麼都沒拿到分，明明都有做</li>
+<li>切割完硬碟後，一定要重開機看看能不能開機，能不能自動mount起來</li>
+<li>有疑問要提出，有可能真的是系統問題</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Work</tag>
       </tags>
   </entry>
   <entry>
@@ -1058,6 +1088,53 @@ In Malacca, we first went to the famous landmarks, then went to the Upside Down 
 ]]></content>
       <tags>
         <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>台南打工換宿 2020.8.17-2020.8.26</title>
+    <url>/myblog/2020/08/26/Tainan/</url>
+    <content><![CDATA[<blockquote>
+<p>原本抱著等待兵役空檔玩台南順便當個老幫手 同時體驗台南美食<br>
+沒想到學習以後可能不會再接觸到的木工、油漆及裝潢設計等 🚪<br>
+大家愛恭台語 我就操玲呆(有點進步)<br>
+Reggie教導我們各項技術還有如何衝浪🏄！他什麼都會！真的是偶像！<br>
+每晚Candy的心靈雞湯 學習人生經驗 團隊合作及錯中學習 是人生的導師也是永遠好的朋友<br>
+其他小幫手 每個都有自己的特色 以及願意付出的心 成就這次的工程</p>
+</blockquote>
+<hr>
+<p><img src="2.jpg" alt="2"></p>
+<h1 id="工作-working">工作 Working</h1>
+<p>本次的任務：</p>
+<ol>
+<li>主要是將頂樓天臺整理並規劃成交誼的空間</li>
+<li>同時整理房務工作打掃等</li>
+</ol>
+<p><img src="3.png" alt="3"> <img src="4.png" alt="4"></p>
+<hr>
+<h1 id="度假-holiday">度假 Holiday</h1>
+<p>台南的景點還滿多的，在第二天晚上，老闆帶著我們深度探索台南，同時介紹每個建築物的歷史<br>
+以前從來不會特別去在意的廟宇建築外觀，現在都覺得好神奇，讓我對台灣的歷史更有興趣<br>
+從台南圓環24hr Donutes，沿路走經過台灣第一間廟、蝸牛巷、台南州廳、全美戲院、台南美術館1、2館、司法博物館、林百貨等（沒按照順序）<br>
+對先人留下的遺址及智慧讚嘆不已<br>
+期間老闆帶我們連續兩天假日去漁光島衝浪，生平第一次衝浪就獻給你們了，不過我第二天就站起來兩次，超開心＾＾<br>
+幾日後前往奇美博物館，到的時候已是下午5點，5:30就關門，因此在建築外與這大片美景拍照，佔地9.5公頃的博物館，典藏無數珍貴的國際級藝術品，許文龍先生留給台南最美的博物館</p>
+<p><img src="5.jpg" alt="5"></p>
+<hr>
+<h1 id="working-holiday">Working Holiday</h1>
+<p>這次的換宿經驗讓我學到不論是技術上的技巧更是心靈上的成長<br>
+民宿店的老闆Reggie，雖然只大我6歲，但想法、人生歷練、享受人生都是我遙不可及的目標<br>
+更發現大片藍海市場，想到極為可創性的目標<br>
+我自己也憧憬能像他做自己喜歡的事的念頭 期許未來能更往目標前進！<br>
+此外，帶領我們的是另一位衝浪店（宜蘭烏石）的老闆Candy，對於團隊管理非常有經驗，還是許多大學的講師<br>
+每晚給我們滿滿的知識與做人處事的道理，讓我意識到過去一直忽略掉的貼心，心靈雞湯溫飽我們求知的心!</p>
+<p><img src="1.png" alt="1"></p>
+<blockquote>
+<p>謝謝巷仔邸換宿帶給我寶貴的經驗！<br>
+#巷子邸At The End #小幫手 #台南 #奇美博物館 #漁光島 #學台語 #做工的人 #等待兵役</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Travel</tag>
       </tags>
   </entry>
   <entry>
@@ -1161,83 +1238,6 @@ By 查理．蒙格</p>
       </tags>
   </entry>
   <entry>
-    <title>台南打工換宿 2020.8.17-2020.8.26</title>
-    <url>/myblog/2020/08/26/Tainan/</url>
-    <content><![CDATA[<blockquote>
-<p>原本抱著等待兵役空檔玩台南順便當個老幫手 同時體驗台南美食<br>
-沒想到學習以後可能不會再接觸到的木工、油漆及裝潢設計等 🚪<br>
-大家愛恭台語 我就操玲呆(有點進步)<br>
-Reggie教導我們各項技術還有如何衝浪🏄！他什麼都會！真的是偶像！<br>
-每晚Candy的心靈雞湯 學習人生經驗 團隊合作及錯中學習 是人生的導師也是永遠好的朋友<br>
-其他小幫手 每個都有自己的特色 以及願意付出的心 成就這次的工程</p>
-</blockquote>
-<hr>
-<p><img src="2.jpg" alt="2"></p>
-<h1 id="工作-working">工作 Working</h1>
-<p>本次的任務：</p>
-<ol>
-<li>主要是將頂樓天臺整理並規劃成交誼的空間</li>
-<li>同時整理房務工作打掃等</li>
-</ol>
-<p><img src="3.png" alt="3"> <img src="4.png" alt="4"></p>
-<hr>
-<h1 id="度假-holiday">度假 Holiday</h1>
-<p>台南的景點還滿多的，在第二天晚上，老闆帶著我們深度探索台南，同時介紹每個建築物的歷史<br>
-以前從來不會特別去在意的廟宇建築外觀，現在都覺得好神奇，讓我對台灣的歷史更有興趣<br>
-從台南圓環24hr Donutes，沿路走經過台灣第一間廟、蝸牛巷、台南州廳、全美戲院、台南美術館1、2館、司法博物館、林百貨等（沒按照順序）<br>
-對先人留下的遺址及智慧讚嘆不已<br>
-期間老闆帶我們連續兩天假日去漁光島衝浪，生平第一次衝浪就獻給你們了，不過我第二天就站起來兩次，超開心＾＾<br>
-幾日後前往奇美博物館，到的時候已是下午5點，5:30就關門，因此在建築外與這大片美景拍照，佔地9.5公頃的博物館，典藏無數珍貴的國際級藝術品，許文龍先生留給台南最美的博物館</p>
-<p><img src="5.jpg" alt="5"></p>
-<hr>
-<h1 id="working-holiday">Working Holiday</h1>
-<p>這次的換宿經驗讓我學到不論是技術上的技巧更是心靈上的成長<br>
-民宿店的老闆Reggie，雖然只大我6歲，但想法、人生歷練、享受人生都是我遙不可及的目標<br>
-更發現大片藍海市場，想到極為可創性的目標<br>
-我自己也憧憬能像他做自己喜歡的事的念頭 期許未來能更往目標前進！<br>
-此外，帶領我們的是另一位衝浪店（宜蘭烏石）的老闆Candy，對於團隊管理非常有經驗，還是許多大學的講師<br>
-每晚給我們滿滿的知識與做人處事的道理，讓我意識到過去一直忽略掉的貼心，心靈雞湯溫飽我們求知的心!</p>
-<p><img src="1.png" alt="1"></p>
-<blockquote>
-<p>謝謝巷仔邸換宿帶給我寶貴的經驗！<br>
-#巷子邸At The End #小幫手 #台南 #奇美博物館 #漁光島 #學台語 #做工的人 #等待兵役</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Travel</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Red Hat Certified System Administrator (RHCSA8)</title>
-    <url>/myblog/2022/05/06/RHCSA/</url>
-    <content><![CDATA[<blockquote>
-<p>I can accept failure, but cannot accept to give up<br>
-考了兩次才通過</p>
-</blockquote>
-<h1 id="rhcsa介紹">RHCSA介紹</h1>
-<p>RHCSA認證是Red Hat公司於2011年3月所推出的新認證。RHCSA認證是取得RHCE認證的必要條件之一，RHCSA與RHCE認證取得兩者無先後順序，兩者均通過者才可完整取得RHCE證書。擁有RHCSA認證者能夠扮演著企業內各式各樣的角色，舉凡資料庫管理員，開發人員和技術支持人員…等職務，能重建與部署企業核心Linux環境，更能代表您具備管理技術與駕馭系統的能力。欲取得RHCSA認證您必須參加此認證考試，成功讓您成為兼具完整理論與實作技術的Linux專家。<br>
-<a href="https://www.uuu.com.tw/Course/Partner/RedHat%E7%B4%85%E5%B8%BD/section=rhcsa/title=RHCSA%E8%AA%8D%E8%AD%89%E8%88%87%E8%80%83%E8%A9%A6%E4%BB%8B%E7%B4%B9" target="_blank" rel="noopener">(資料來源：UCOM恆逸教育訓練)</a></p>
-<h1 id="考試測驗能力">考試測驗能力</h1>
-<p>可進入官網查看：<a href="https://www.redhat.com/en/services/training/ex200-red-hat-certified-system-administrator-rhcsa-exam?section=Objectives" target="_blank" rel="noopener">Red Hat Certified System Administrator (RHCSA) exam</a></p>
-<h1 id="考題整理">考題整理</h1>
-<p>網路整理考題：<a href="https://github.com/chlebik/rhcsa-practice-questions/tree/master/questions">https://github.com/chlebik/rhcsa-practice-questions/tree/master/questions</a></p>
-<p>RedHat8之後開始考了許多Container題目，如：<a href="https://tekneed.com/rhcsa-8-exam-practice-question-9-managing-containers/" target="_blank" rel="noopener">https://tekneed.com/rhcsa-8-exam-practice-question-9-managing-containers/</a></p>
-<h1 id="考試環境介紹">考試環境介紹</h1>
-<p>考試環境會提供兩台虛擬機，分別為node1, node2，（會建議開終端機連線兩台虛擬機，以方便複製考試時所用到的網址或名稱）</p>
-<h1 id="結論">結論</h1>
-<ol>
-<li>一定要一直反覆練習實作，才能訓練到，不能只用看的，因為可能發生你都想不到的問題。</li>
-<li>我考試時發生用root建立user，而user卻沒長出Home directory，後來才發現是當時系統沒裝好，但卻沒反應，應是浪費快一個小時</li>
-<li>還有Container的題目，真的有點難，我不懂為什麼都沒拿到分，明明都有做</li>
-<li>切割完硬碟後，一定要重開機看看能不能開機，能不能自動mount起來</li>
-<li>有疑問要提出，有可能真的是系統問題</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>Work</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>泰好玩! Thailand 2018/2/26~2018/3/4</title>
     <url>/myblog/2018/03/04/Thailand/</url>
     <content><![CDATA[<blockquote>
@@ -1278,79 +1278,6 @@ Reggie教導我們各項技術還有如何衝浪🏄！他什麼都會！真的�
 <hr>
 <blockquote>
 <p>回來後得到重感冒… 但是泰國好好玩喔</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Travel</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>越南遊2019/6/22~ 2019/6/29</title>
-    <url>/myblog/2019/06/29/Vietnam/</url>
-    <content><![CDATA[<blockquote>
-<p>一週的越南🇻🇳旅程<br>
-過去印象的越南: 路上很多買炸昆蟲🐛、沒有什麼汽車、傳統市場很多<br>
-但來了才知道 其實跟台灣很像 摩托車很多 交通繁忙 商店攤販密密麻麻 許多舊式建築翻修後很有風味 文創產業盛行 年輕人多喜歡跟流行 而且很哈韓<br>
-而這裡不同的是<br>
-🏍️馬路超危險 摩托車亂鑽 喇叭按不停 地上垃圾多 路面坑洞較多 (保險業應該很適合在這邊）安全帽幾乎西瓜皮 而且沒擋風鏡 下雨超痛 還有每家店前都會有警衛幫忙移車<br>
-在路上不敢隨便拿手機出來 🚕搭Grab便宜 但記得要鎖車門（還是要看你使用的APP) 比台灣便宜很多<br>
-🍹飲料都滿甜的 食物很多要沾魚露 味道比較重<br>
-夜晚溫度比台灣涼 不會很悶熱<br>
-來這裡覺得大部分的人講話都滿輕聲細語 感覺脾氣很好😂</p>
-</blockquote>
-<hr>
-<h1 id="行程規劃">行程規劃</h1>
-<p>6/22 11點多放東西 吃河粉</p>
-<p>6/23</p>
-<ul>
-<li>9:30 吃早餐(烤肉飯)</li>
-<li>10:30中央郵局 書街 西貢聖母大教堂(紅教堂) 濱城市場順便午餐、甜點</li>
-<li>下午：市集、回家洗澡</li>
-<li>6:00 跟朋友喝飲料吃晚餐 （咖啡公寓 歌劇院 阮惠步行街）</li>
-</ul>
-<p>6/24</p>
-<ul>
-<li>早點起來去第一郡喝咖啡、逛逛、買東東</li>
-<li>回家洗澡</li>
-<li>晚上 跟舅舅吃飯</li>
-</ul>
-<p>6/25</p>
-<ul>
-<li>早上8:30吃早餐(順化牛肉檬粉)完</li>
-<li>10:00 去慈善機構</li>
-<li>午餐：牛肉爐 回家</li>
-<li>晚上 吃bun dau mam tom</li>
-<li>去Bitexco金融塔</li>
-<li>買飲料奶蓋回家喝</li>
-</ul>
-<p>6/26</p>
-<ul>
-<li>6:00 吃早餐(煨麵)</li>
-<li>買福隆</li>
-<li>前往頭頓</li>
-<li>玩水</li>
-<li>洗澡休息</li>
-<li>下午去拍照</li>
-<li>晚上吃海鮮 逛海灘 吃冰淇淋</li>
-</ul>
-<p>6/27 頭頓（在去頭頓的前一天，吃壞了肚子）</p>
-<ul>
-<li>早點起來看日出</li>
-<li>回家洗澡去喝咖啡 吃早餐</li>
-<li>去玩 拍照</li>
-<li>晚上5:00 上車回西貢</li>
-<li>洗澡 吃羊肉爐</li>
-<li>咖啡公寓 歌劇院 阮惠步行街</li>
-</ul>
-<p>6/28 遊樂園 買菜煮晚餐</p>
-<p>6/29 for free</p>
-<p><img src="1.PNG" alt="1"> <img src="2.PNG" alt="2"> <img src="3.PNG" alt="3"></p>
-<p>餐點：<br>
-bánh tráng trộn, bánh tráng cuộn, cơm cháy chà bông, bông lan trứng muối, ts tá lả, ts ali, ts tik tak, phúc long, bún đậu mắm tôm, nước mía, trà đào nhà hát tp, sinh tố, gỏi cuốn, lẩu dê</p>
-<p><img src="4.PNG" alt="4"></p>
-<blockquote>
-<p>Hope to come back again~<br>
-To be continued…</p>
 </blockquote>
 ]]></content>
       <tags>
@@ -1434,6 +1361,79 @@ Step3. 建置論壇 Build Website</p>
 ]]></content>
       <tags>
         <tag>Work</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>越南遊2019/6/22~ 2019/6/29</title>
+    <url>/myblog/2019/06/29/Vietnam/</url>
+    <content><![CDATA[<blockquote>
+<p>一週的越南🇻🇳旅程<br>
+過去印象的越南: 路上很多買炸昆蟲🐛、沒有什麼汽車、傳統市場很多<br>
+但來了才知道 其實跟台灣很像 摩托車很多 交通繁忙 商店攤販密密麻麻 許多舊式建築翻修後很有風味 文創產業盛行 年輕人多喜歡跟流行 而且很哈韓<br>
+而這裡不同的是<br>
+🏍️馬路超危險 摩托車亂鑽 喇叭按不停 地上垃圾多 路面坑洞較多 (保險業應該很適合在這邊）安全帽幾乎西瓜皮 而且沒擋風鏡 下雨超痛 還有每家店前都會有警衛幫忙移車<br>
+在路上不敢隨便拿手機出來 🚕搭Grab便宜 但記得要鎖車門（還是要看你使用的APP) 比台灣便宜很多<br>
+🍹飲料都滿甜的 食物很多要沾魚露 味道比較重<br>
+夜晚溫度比台灣涼 不會很悶熱<br>
+來這裡覺得大部分的人講話都滿輕聲細語 感覺脾氣很好😂</p>
+</blockquote>
+<hr>
+<h1 id="行程規劃">行程規劃</h1>
+<p>6/22 11點多放東西 吃河粉</p>
+<p>6/23</p>
+<ul>
+<li>9:30 吃早餐(烤肉飯)</li>
+<li>10:30中央郵局 書街 西貢聖母大教堂(紅教堂) 濱城市場順便午餐、甜點</li>
+<li>下午：市集、回家洗澡</li>
+<li>6:00 跟朋友喝飲料吃晚餐 （咖啡公寓 歌劇院 阮惠步行街）</li>
+</ul>
+<p>6/24</p>
+<ul>
+<li>早點起來去第一郡喝咖啡、逛逛、買東東</li>
+<li>回家洗澡</li>
+<li>晚上 跟舅舅吃飯</li>
+</ul>
+<p>6/25</p>
+<ul>
+<li>早上8:30吃早餐(順化牛肉檬粉)完</li>
+<li>10:00 去慈善機構</li>
+<li>午餐：牛肉爐 回家</li>
+<li>晚上 吃bun dau mam tom</li>
+<li>去Bitexco金融塔</li>
+<li>買飲料奶蓋回家喝</li>
+</ul>
+<p>6/26</p>
+<ul>
+<li>6:00 吃早餐(煨麵)</li>
+<li>買福隆</li>
+<li>前往頭頓</li>
+<li>玩水</li>
+<li>洗澡休息</li>
+<li>下午去拍照</li>
+<li>晚上吃海鮮 逛海灘 吃冰淇淋</li>
+</ul>
+<p>6/27 頭頓（在去頭頓的前一天，吃壞了肚子）</p>
+<ul>
+<li>早點起來看日出</li>
+<li>回家洗澡去喝咖啡 吃早餐</li>
+<li>去玩 拍照</li>
+<li>晚上5:00 上車回西貢</li>
+<li>洗澡 吃羊肉爐</li>
+<li>咖啡公寓 歌劇院 阮惠步行街</li>
+</ul>
+<p>6/28 遊樂園 買菜煮晚餐</p>
+<p>6/29 for free</p>
+<p><img src="1.PNG" alt="1"> <img src="2.PNG" alt="2"> <img src="3.PNG" alt="3"></p>
+<p>餐點：<br>
+bánh tráng trộn, bánh tráng cuộn, cơm cháy chà bông, bông lan trứng muối, ts tá lả, ts ali, ts tik tak, phúc long, bún đậu mắm tôm, nước mía, trà đào nhà hát tp, sinh tố, gỏi cuốn, lẩu dê</p>
+<p><img src="4.PNG" alt="4"></p>
+<blockquote>
+<p>Hope to come back again~<br>
+To be continued…</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Travel</tag>
       </tags>
   </entry>
   <entry>
@@ -1673,65 +1673,6 @@ Maya is a 3D computer animation software with powerful modeling, color rendering
       </tags>
   </entry>
   <entry>
-    <title> 義務役 2020.9.22-2021.1.11 </title>
-    <url>/myblog/2020/10/01/military/</url>
-    <content><![CDATA[<blockquote>
-<p>2020年不平靜的一年，也在最後一天結束軍旅生涯…</p>
-</blockquote>
-<div align="left"><img src="5.JPG" width="500"> </div>
-<p>當兵所遇到的以及各種建議，將依以下方式作介紹<br>
-(1) 基本介紹（應帶物品、食衣住行育樂）<br>
-(2) 操課內容（一階段、二階段）<br>
-(3) 自我經驗及建議（我所遇到的事）<br>
-(4) 心得分享（所學與感想）</p>
-<hr>
-<h1 id="基本介紹">基本介紹</h1>
-<p>∙ 入伍時間：119T (2020/9/22-2021/1/11) 個人折抵9天，預計1/2退伍，但又遇上假日，提早至12/31退伍</p>
-<p>∙ 所屬連隊：2營1連 - 於北訓中心，共2營，每營有4連(第4連為營部連 意指直屬連負責在戰場上補給裝備、彈藥，但在義務役操課都沒差)，每連差不多10班(基本上都按照身高編排)，每班約10人，共約800多人</p>
-<p>∙ 地理位置：桃園楊梅太平里（步行至楊梅火車站約25分鐘）</p>
-<p>∙ 所屬班級：十班器材班，共10人，二階段之後開始職物輪替，如：打飯、軍械、資收、內掃、公差等</p>
-<h2 id="食衣住行育樂">食衣住行育樂</h2>
-<p>∙ 食：雖然在網路上看到大家都在批評北訓的食物，但沒到自己認為的難吃，頂多食物很常重複，我還常去加菜加飯呢～</p>
-<div align="left"><img src="2.jpeg" width="500" height="500"> </div>
-∙ 衣：第一天會統一去領取物品
-<p>應帶物品推薦大家參考: <a href="http://jimmytraveling.com/blog/post/68331786" target="_blank" rel="noopener">【2019最新】當兵入伍攜帶物品清單（義務役新訓必備）</a></p>
-<p>** 小筆記本、資料袋、衣架、肥皂、刮鬍刀、海綿等，在北訓中心是統一購買的一袋，很貴！420元，個人覺得價值才200吧</p>
-<p>∙ 住：宿舍為40人左右的大通舖，床有上下兩層，都有枕頭跟棉被 <img src="1.jpeg" alt="1"></p>
-<p>∙ 行：真心覺得貴，從營區到桃園火車站就要價120，到台北200，基隆250，宜蘭300，不過搭遊覽車還是方便啦，錢要代夠</p>
-<p>∙ 樂： 第二階段開始有許多社團課及休息時間，可以玩桌遊（是我玩過最多次狼人殺的時期），其他操課或聽招募聽講都會偷玩猜數字或Bingo</p>
-<hr>
-<h1 id="操課內容">操課內容</h1>
-<p>推薦參考：<a href="https://matters.news/@lushaoming/%E7%95%B6%E5%85%B5%E5%BF%85%E8%AE%80-%E6%A5%8A%E6%A2%85%E5%A4%AA%E5%B9%B3%E9%87%8C%E5%8C%97%E8%A8%93%E4%B8%AD%E5%BF%83-107-t-1-b1-c-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%B4%B9-bafyreigbzyqklgmqf5j3xd4lw3uhnj2o7lfxcwhtl3uwx4566kqvrxu77q" target="_blank" rel="noopener">【 當兵必讀 - 楊梅太平里北訓中心 107T 1B1C #基本介紹】</a></p>
-<hr>
-<h1 id="自我經驗與建議">自我經驗與建議</h1>
-<h2 id="輔導長公差">輔導長公差</h2>
-<p>記得入伍第一天，大家都還無頭緒時，輔導長便詢問有無自願當輔導長公差，我立馬舉手，可享有放假、免操課、吃零食的福利，但要負責收錢、打雜等文書作業，有時候都會比別人晚就寢，但還是建議可以擔任公差職務，大家無聊到發慌時，你還有事做XD。</p>
-<h2 id="同梯朋友">同梯朋友</h2>
-<p>班長有說我們這梯次都是高學歷份子，身邊幾乎都是大學、研究所的、還有醫學系的朋友，沒遇到所謂的8+9，此外，這梯都是來自桃園、台北、基隆、宜蘭地區，我的鄰兵們也都滿罩的，會提醒集合時間還有攜帶裝備等。</p>
-<h2 id="懇親會">懇親會</h2>
-<p>我們第二週就是懇親會，記住！如果家人可以來一定要請他們來，因為如果他們帶走我們就能12點離開，如果沒有家人來，只能1600離開，還要收拾垃圾、善後工作等。</p>
-<h2 id="招募與志願役">招募與志願役</h2>
-<p>第一週都是在聽招募，開始的時候是抱著可以偷懶去參訪，便勾選自己認為最帥也最操的特戰指揮部，原本完全沒有簽志願役的想法，然而當自己開始了解軍種制度（士兵、士官、軍官）的福利政策、薪資上看5W以及各項技能學習後，開始漸漸對國軍改觀，我不能說當軍人有多好，但是現在講求人性化操課、並有國家提供的考證照機制，讓軍人退伍後仍能透過證照取得其他工作，甚至從軍20年後享有終身俸，同時不會有超時加班的問題，每天上午兩節及下午兩節操課，下午4-6點有運動時間，顧及到每個人的健康，6點以後就是自由時間，住附近的(50km以內)可以住家裡，隔天7:30再到營區報到就好，類似一個公司的制度。去到參訪地點後，看到餐點的提供比北訓中心好十萬八千里，深深吸引到我，特戰指揮部還有個重點是要學跳傘，也是必備技能，在外跳傘是很貴的體驗，這裡是免費且必須的。<br>
-然而志願役一簽就是四年，四年後自幾可能難以回歸本行，雖然每天晚上都有時間進修自我，但我無法保證自己四年後會不會因軍中的弟兄影響我的進修，擁有研究所的學歷並不會在軍中有效用，頂多長官多關注你，最後，自己還是有更遠的志向抱負，想到外面更寬廣的世界看看。</p>
-<h2 id="打靶">打靶</h2>
-<p>第三週的第一天開始練習臥射、清槍的基本口令動作，為隔天打靶做準備，太平里打靶場距離營區路程約40分鐘，全副武裝步行至打靶場，當天風很大，紅土飛揚，視線時好時壞，打靶距離是175M，剛好是子彈彈道上揚的時候，因此瞄準靶的腰部位置，但是我至今仍不知道為什麼我命中0發，接著就是一直輪著打，大概打了8輪、60發左右的子彈，班長說領多少子彈就要打完多少，原本以為是像高中實彈射擊一人打個一輪就收工回家，沒想到一去就是一整天的實彈射擊，因此我們中午也是在靶場坐著吃午餐、睡午覺，打靶當下的聲音真的很震撼，就像煙火在耳邊爆炸的音量，同時強大的後座力會讓全身都在抖動，穩住氣再打、不要急，我也在試著抓到穩定點。</p>
-<h2 id="飯菜問題">飯菜問題</h2>
-<p>第三週，指揮官（營區最大的老大）接獲消息有人通報說飯菜難吃，而且吃不飽，所以親自前往餐廳視察，看到飯菜直接暴怒，大罵營長還有連長為何飯菜每個人的量不一樣，而且餐點沒變化等，當著所有人的面要營長改進，說完還回頭問：指揮官我帥不帥，感覺有像套好的劇情，但果真隔天的飯菜變得豐富而且好吃、份量也多，而且還吩咐以後每週四會進行用餐滿意度調查的統計，想改善餐點問題，指揮官日後告訴我們，要當個如何解決問題的人，而不是看到問題還不解決，讓我深深印在腦中。</p>
-<h2 id="鑑測當週的假日">鑑測當週的假日</h2>
-<p>指揮官說如果9項測驗全過，週五1400就可以走，少一項延後一小時，但最晚1700就離開，而收假是下週一的1900，北訓真是好地方</p>
-<hr>
-<h1 id="心得分享">心得分享</h1>
-<p>令我訝異的是帶我的班長們也都是很合理化、就事論事的領導者，也都會跟我們聊天打屁，不會一板一眼，該認真就認真，該輕鬆就輕鬆，比起外面說的不合理要求差得多，班長有說那是以前世代的作法，他們過去也有經歷那些世代的管制方法，現在都是追求與時俱進、不做出不合理要求。<br>
-此外，班長也希望我們帶上自己的書充實自我，因為退伍後基本上都要求職，更應該精進自己，真心佩服班長的體貼，雖然也遇到許多不公平的對待或缺乏效率的問題，但人人都可以試著透過溝通與諒解去平衡所遇到的狀況。<br>
-聽長官們說我們是末代的北區專長訓練中心，以後營區會改成109旅的駐點，因此日後應該不會看到新兵在北區服役了，此篇分享的內容會因不同連隊或地區而有所差異，若有要服役的可以參考看看。<br>
-這四個月下來，最讓我感到心煩的是每次的收假日以及越接近退伍日矛盾感越重，一方面很開心快退伍，一方面卻在為將來進入職場感到恐懼與擔憂，期望每個同梯弟兄都能達到自己的理想，以後再約！後會有期～</p>
-<p><img src="6.jpg" alt="6"></p>
-]]></content>
-      <tags>
-        <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>澎湖三日遊 2022/6/24 ~ 2022/6/26</title>
     <url>/myblog/2022/06/27/penghu/</url>
     <content><![CDATA[<blockquote>
@@ -1822,6 +1763,65 @@ Beacon說酒人<br>
 清香海鮮餐廳</p>
 <h1 id="學到經驗">學到經驗</h1>
 <p>最後一天還車時，發現有被擦撞到的刮痕，租車公司說等師傅來報價，要我們押證件跟押金3000，先搭飛機回去，等等傳訊息多退少補，結果回到機場，跟我們報價12700元，被說是紅色烤漆較貴，還有小島價壓我們，整個生氣，朋友問認識修車行，說這報價有些不合理，因此持續與老闆議價，我們願意賠償，但是價格不太合理。</p>
+]]></content>
+      <tags>
+        <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title> 義務役 2020.9.22-2021.1.11 </title>
+    <url>/myblog/2020/10/01/military/</url>
+    <content><![CDATA[<blockquote>
+<p>2020年不平靜的一年，也在最後一天結束軍旅生涯…</p>
+</blockquote>
+<div align="left"><img src="5.JPG" width="500"> </div>
+<p>當兵所遇到的以及各種建議，將依以下方式作介紹<br>
+(1) 基本介紹（應帶物品、食衣住行育樂）<br>
+(2) 操課內容（一階段、二階段）<br>
+(3) 自我經驗及建議（我所遇到的事）<br>
+(4) 心得分享（所學與感想）</p>
+<hr>
+<h1 id="基本介紹">基本介紹</h1>
+<p>∙ 入伍時間：119T (2020/9/22-2021/1/11) 個人折抵9天，預計1/2退伍，但又遇上假日，提早至12/31退伍</p>
+<p>∙ 所屬連隊：2營1連 - 於北訓中心，共2營，每營有4連(第4連為營部連 意指直屬連負責在戰場上補給裝備、彈藥，但在義務役操課都沒差)，每連差不多10班(基本上都按照身高編排)，每班約10人，共約800多人</p>
+<p>∙ 地理位置：桃園楊梅太平里（步行至楊梅火車站約25分鐘）</p>
+<p>∙ 所屬班級：十班器材班，共10人，二階段之後開始職物輪替，如：打飯、軍械、資收、內掃、公差等</p>
+<h2 id="食衣住行育樂">食衣住行育樂</h2>
+<p>∙ 食：雖然在網路上看到大家都在批評北訓的食物，但沒到自己認為的難吃，頂多食物很常重複，我還常去加菜加飯呢～</p>
+<div align="left"><img src="2.jpeg" width="500" height="500"> </div>
+∙ 衣：第一天會統一去領取物品
+<p>應帶物品推薦大家參考: <a href="http://jimmytraveling.com/blog/post/68331786" target="_blank" rel="noopener">【2019最新】當兵入伍攜帶物品清單（義務役新訓必備）</a></p>
+<p>** 小筆記本、資料袋、衣架、肥皂、刮鬍刀、海綿等，在北訓中心是統一購買的一袋，很貴！420元，個人覺得價值才200吧</p>
+<p>∙ 住：宿舍為40人左右的大通舖，床有上下兩層，都有枕頭跟棉被 <img src="1.jpeg" alt="1"></p>
+<p>∙ 行：真心覺得貴，從營區到桃園火車站就要價120，到台北200，基隆250，宜蘭300，不過搭遊覽車還是方便啦，錢要代夠</p>
+<p>∙ 樂： 第二階段開始有許多社團課及休息時間，可以玩桌遊（是我玩過最多次狼人殺的時期），其他操課或聽招募聽講都會偷玩猜數字或Bingo</p>
+<hr>
+<h1 id="操課內容">操課內容</h1>
+<p>推薦參考：<a href="https://matters.news/@lushaoming/%E7%95%B6%E5%85%B5%E5%BF%85%E8%AE%80-%E6%A5%8A%E6%A2%85%E5%A4%AA%E5%B9%B3%E9%87%8C%E5%8C%97%E8%A8%93%E4%B8%AD%E5%BF%83-107-t-1-b1-c-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%B4%B9-bafyreigbzyqklgmqf5j3xd4lw3uhnj2o7lfxcwhtl3uwx4566kqvrxu77q" target="_blank" rel="noopener">【 當兵必讀 - 楊梅太平里北訓中心 107T 1B1C #基本介紹】</a></p>
+<hr>
+<h1 id="自我經驗與建議">自我經驗與建議</h1>
+<h2 id="輔導長公差">輔導長公差</h2>
+<p>記得入伍第一天，大家都還無頭緒時，輔導長便詢問有無自願當輔導長公差，我立馬舉手，可享有放假、免操課、吃零食的福利，但要負責收錢、打雜等文書作業，有時候都會比別人晚就寢，但還是建議可以擔任公差職務，大家無聊到發慌時，你還有事做XD。</p>
+<h2 id="同梯朋友">同梯朋友</h2>
+<p>班長有說我們這梯次都是高學歷份子，身邊幾乎都是大學、研究所的、還有醫學系的朋友，沒遇到所謂的8+9，此外，這梯都是來自桃園、台北、基隆、宜蘭地區，我的鄰兵們也都滿罩的，會提醒集合時間還有攜帶裝備等。</p>
+<h2 id="懇親會">懇親會</h2>
+<p>我們第二週就是懇親會，記住！如果家人可以來一定要請他們來，因為如果他們帶走我們就能12點離開，如果沒有家人來，只能1600離開，還要收拾垃圾、善後工作等。</p>
+<h2 id="招募與志願役">招募與志願役</h2>
+<p>第一週都是在聽招募，開始的時候是抱著可以偷懶去參訪，便勾選自己認為最帥也最操的特戰指揮部，原本完全沒有簽志願役的想法，然而當自己開始了解軍種制度（士兵、士官、軍官）的福利政策、薪資上看5W以及各項技能學習後，開始漸漸對國軍改觀，我不能說當軍人有多好，但是現在講求人性化操課、並有國家提供的考證照機制，讓軍人退伍後仍能透過證照取得其他工作，甚至從軍20年後享有終身俸，同時不會有超時加班的問題，每天上午兩節及下午兩節操課，下午4-6點有運動時間，顧及到每個人的健康，6點以後就是自由時間，住附近的(50km以內)可以住家裡，隔天7:30再到營區報到就好，類似一個公司的制度。去到參訪地點後，看到餐點的提供比北訓中心好十萬八千里，深深吸引到我，特戰指揮部還有個重點是要學跳傘，也是必備技能，在外跳傘是很貴的體驗，這裡是免費且必須的。<br>
+然而志願役一簽就是四年，四年後自幾可能難以回歸本行，雖然每天晚上都有時間進修自我，但我無法保證自己四年後會不會因軍中的弟兄影響我的進修，擁有研究所的學歷並不會在軍中有效用，頂多長官多關注你，最後，自己還是有更遠的志向抱負，想到外面更寬廣的世界看看。</p>
+<h2 id="打靶">打靶</h2>
+<p>第三週的第一天開始練習臥射、清槍的基本口令動作，為隔天打靶做準備，太平里打靶場距離營區路程約40分鐘，全副武裝步行至打靶場，當天風很大，紅土飛揚，視線時好時壞，打靶距離是175M，剛好是子彈彈道上揚的時候，因此瞄準靶的腰部位置，但是我至今仍不知道為什麼我命中0發，接著就是一直輪著打，大概打了8輪、60發左右的子彈，班長說領多少子彈就要打完多少，原本以為是像高中實彈射擊一人打個一輪就收工回家，沒想到一去就是一整天的實彈射擊，因此我們中午也是在靶場坐著吃午餐、睡午覺，打靶當下的聲音真的很震撼，就像煙火在耳邊爆炸的音量，同時強大的後座力會讓全身都在抖動，穩住氣再打、不要急，我也在試著抓到穩定點。</p>
+<h2 id="飯菜問題">飯菜問題</h2>
+<p>第三週，指揮官（營區最大的老大）接獲消息有人通報說飯菜難吃，而且吃不飽，所以親自前往餐廳視察，看到飯菜直接暴怒，大罵營長還有連長為何飯菜每個人的量不一樣，而且餐點沒變化等，當著所有人的面要營長改進，說完還回頭問：指揮官我帥不帥，感覺有像套好的劇情，但果真隔天的飯菜變得豐富而且好吃、份量也多，而且還吩咐以後每週四會進行用餐滿意度調查的統計，想改善餐點問題，指揮官日後告訴我們，要當個如何解決問題的人，而不是看到問題還不解決，讓我深深印在腦中。</p>
+<h2 id="鑑測當週的假日">鑑測當週的假日</h2>
+<p>指揮官說如果9項測驗全過，週五1400就可以走，少一項延後一小時，但最晚1700就離開，而收假是下週一的1900，北訓真是好地方</p>
+<hr>
+<h1 id="心得分享">心得分享</h1>
+<p>令我訝異的是帶我的班長們也都是很合理化、就事論事的領導者，也都會跟我們聊天打屁，不會一板一眼，該認真就認真，該輕鬆就輕鬆，比起外面說的不合理要求差得多，班長有說那是以前世代的作法，他們過去也有經歷那些世代的管制方法，現在都是追求與時俱進、不做出不合理要求。<br>
+此外，班長也希望我們帶上自己的書充實自我，因為退伍後基本上都要求職，更應該精進自己，真心佩服班長的體貼，雖然也遇到許多不公平的對待或缺乏效率的問題，但人人都可以試著透過溝通與諒解去平衡所遇到的狀況。<br>
+聽長官們說我們是末代的北區專長訓練中心，以後營區會改成109旅的駐點，因此日後應該不會看到新兵在北區服役了，此篇分享的內容會因不同連隊或地區而有所差異，若有要服役的可以參考看看。<br>
+這四個月下來，最讓我感到心煩的是每次的收假日以及越接近退伍日矛盾感越重，一方面很開心快退伍，一方面卻在為將來進入職場感到恐懼與擔憂，期望每個同梯弟兄都能達到自己的理想，以後再約！後會有期～</p>
+<p><img src="6.jpg" alt="6"></p>
 ]]></content>
       <tags>
         <tag>Blog</tag>
