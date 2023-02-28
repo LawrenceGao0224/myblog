@@ -207,14 +207,14 @@
 
   
   <url>
-    <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Work/</loc>
+    <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Blog/</loc>
     <lastmod>2023-02-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Blog/</loc>
+    <loc>https://github.com/LawrenceGao0224/myblog.git/tags/Work/</loc>
     <lastmod>2023-02-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
