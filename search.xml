@@ -208,93 +208,6 @@ AR、VR 在軟硬體的高速發展，使其將成為未來的趨勢及主流，
       </tags>
   </entry>
   <entry>
-    <title>NBA老闆的慧眼 NBA bosses&#39; wisdom - Affinity Propagation</title>
-    <url>/myblog/2019/01/29/AP-algo/</url>
-    <content><![CDATA[<h1 id="概念發想-concept">概念發想 Concept</h1>
-<hr>
-<p><a href="https://github.com/LawrenceGao0224/Intelligence-Oriented-Management-Decision/tree/master/%E6%99%BA%E6%85%A7%E5%9E%8B%E6%9C%9F%E6%9C%AB%E5%A0%B1%E5%91%8A">程式碼連結 Program Click On Me</a></p>
-<p><img src="NBA.jpg" alt="NBA"></p>
-<p>我們將自己設想為球隊分析師，並希望能遞上一份不讓老闆&quot;打臉&quot;的分群資料，提供球隊高層在球員交易、補強、替代方案上有份合理客觀的依據。</p>
-<p>We envision ourselves as team analysts, and hope to hand over a group of information that provides the team’s top management with a reasonable and objective basis for player trading, reinforcement, and alternatives.</p>
-<hr>
-<h1 id="操作方法-operation">操作方法 Operation</h1>
-<p>將NBA所有球員資料(Ex: 薪水、年齡、得分、助攻、有效命中率、真實命中率、球權佔有率、籃板率、效率值…)，以AP演算法實作，計算各球員資料的負歐積里德距離，調整preference、Damping Factor參數，求出k個高質量聚類，且我們將多維度的資料透過PCA()方法壓縮為低維度的資料，實現可視化。</p>
-<p>All NBA player information (Ex: salary, age, score, assists, effective hit rate, true hit rate, possession rate, rebound rate, efficiency value…) is calculated by AP algorithm to calculate each player’s data. The negative Ourich Reed distance, adjust the preferences, Damping Factor parameters, find k high-quality clusters, and we compress the multi-dimensional data into low-dimensional data through PCA () method to achieve visualization</p>
-<p>資料來源 ： (<a href="https://www.kaggle.com/acasalan/nba-player-stats-201718" target="_blank" rel="noopener">https://www.kaggle.com/acasalan/nba-player-stats-201718</a>)</p>
-<hr>
-<h1 id="實作結果-result">實作結果 Result</h1>
-<h2 id="調整參數-adjust-parameter">調整參數 Adjust parameter:</h2>
-<ol>
-<li>Preference:<br>
-Preference = 中位數(-62.5683289159)<br>
-群集數: 43</li>
-</ol>
-<p><img src="1-1.png" alt="43"></p>
-<p>Preference = -500<br>
-群集數: 7</p>
-<p><img src="1-2.png" alt="7"></p>
-<ol start="2">
-<li>Damping Factor:</li>
-</ol>
-<p>Damping Factor = 0.5      --&gt;      Time = 0.8640606880187988 seconds.<br>
-Damping Factor = 0.9      --&gt;      Time = 1.2220699787139893 seconds.</p>
-<h2 id="所有球員資料-all-players">所有球員資料 All players:</h2>
-<p><img src="2-1.png" alt="2-1">   <img src="2-2.png" alt="2-2"></p>
-<h2 id="依球員打球的位置-according-to-position">依球員打球的位置 According to position</h2>
-<ol>
-<li>
-<p>center © : 8群集數<br>
-<img src="3-1.png" alt="3-1"></p>
-</li>
-<li>
-<p>power forward (PF) : 8群集數<br>
-<img src="3-2.png" alt="3-2"></p>
-</li>
-<li>
-<p>small forward (SF) : 12群集數<br>
-<img src="3-3.png" alt="3-3"></p>
-</li>
-<li>
-<p>point guard (PG) : 11群集數<br>
-<img src="3-4.png" alt="3-4"></p>
-</li>
-<li>
-<p>shooting guard (SG) : 4群集數<br>
-<img src="3-5.png" alt="3-5"></p>
-</li>
-</ol>
-<h2 id="依不同屬性">依不同屬性</h2>
-<p>進攻性質 or 防守性質…</p>
-<hr>
-<h1 id="延伸探討-any-imperfect">延伸探討  Any imperfect ?</h1>
-<p>然而在我們丟入的data有其盲點存在,NBA的老闆或球隊在選擇球員上,並不會只觀看球員在場上的數據表現,還包括許多因素,事無法量化或在數據表現出來的(包括球員心理狀態、球員間磨合度…)</p>
-<p>However, the data we throw in has its  blind spots. The NBA boss or team is not only watching the performance of the players on the field, but also includes many factors, which cannot be quantified or expressed in the data. (including the player’s mental state, the player’s running-in…)</p>
-<p>如下:</p>
-<p>❖商業價值 Business Value ex: Dwyane Wade<br>
-Wade是大家耳熟能詳的巨星,層經出現在2K遊戲的封面上,但最近的數據表現並不如其他球員出色,但仍是有淺力的球員,也累積許多粉絲,粉絲能帶來商業價值。<br>
-Wade is a well-known superstar. He has appeared on the cover of 2K games, but his recent data performance is not as good as other players, but he is still a shallow player and has accumulated many fans. Fans can bring commercial value.<br>
-<img src="4-1.png" alt="4-1"></p>
-<p>❖球員背景 Player’s Background ex: Jeremy Lin<br>
-Jeremy是著名的台裔球員,能吸引亞洲地區的球迷觀注其球隊,帶來利益。<br>
-Jeremy is a famous Taiwanese player who can attract fans in Asia to watch his team and bring benefits.<br>
-<img src="4-2.png" alt="4-2"></p>
-<p>❖健康因素 Health factor ex: Derrick Rose<br>
-Rose是最年輕獲選MVP的球員,但由於前幾賽季腳傷原因,造成都個賽季缺賽,而傷後復出便不如以前突出,這也是無法顯現在數據上的。<br>
-Rose is the youngest player to be elected MVP, but due to the foot injury in previous seasons, he missed all seasons, and his comeback after injury is not as prominent as before, which cannot be shown in the data.<br>
-<img src="4-3.png" alt="4-3"></p>
-<hr>
-<h1 id="參考資料-reference">參考資料 Reference</h1>
-<p>(<a href="https://zi.media/@yidianzixun/post/uKZUFF?fbclid=IwAR1Dib-4T5MkM2x_helYBtq0TgTD871fAixs-4sBivOUXUNjuMl07xFahOs" target="_blank" rel="noopener">https://zi.media/@yidianzixun/post/uKZUFF?fbclid=IwAR1Dib-4T5MkM2x_helYBtq0TgTD871fAixs-4sBivOUXUNjuMl07xFahOs</a>)</p>
-<p>(<a href="https://www.cnblogs.com/huadongw/p/4202492.html?fbclid=IwAR3PHEOcrAar0rCI1e9AeYBxV0fI6JKJIRqGAJ3ag9BnlleT5M9v_8oNiy0" target="_blank" rel="noopener">https://www.cnblogs.com/huadongw/p/4202492.html?fbclid=IwAR3PHEOcrAar0rCI1e9AeYBxV0fI6JKJIRqGAJ3ag9BnlleT5M9v_8oNiy0</a>)</p>
-<p>(<a href="https://www.itread01.com/articles/1495821610.html?fbclid=IwAR1Ssz1ZCdqnxtT6obwpx0AFRDBEGrqKK0BXmMGPK-I1lvNwqJuif9EhZt0" target="_blank" rel="noopener">https://www.itread01.com/articles/1495821610.html?fbclid=IwAR1Ssz1ZCdqnxtT6obwpx0AFRDBEGrqKK0BXmMGPK-I1lvNwqJuif9EhZt0</a>)</p>
-<p>(<a href="https://scikit-learn.org/stable/auto_examples/applications/plot_stock_market.html?fbclid=IwAR29Qcy3SrWFDjHAJGF--XO-0zW2FWt8t4dYZT0lsYxUDqJpBz17ds2pQQM" target="_blank" rel="noopener">https://scikit-learn.org/stable/auto_examples/applications/plot_stock_market.html?fbclid=IwAR29Qcy3SrWFDjHAJGF–XO-0zW2FWt8t4dYZT0lsYxUDqJpBz17ds2pQQM</a>)</p>
-<p>(<a href="https://scikit-learn.org/stable/auto_examples/cluster/plot_affinity_propagation.html?fbclid=IwAR2SsWtrb5MJdypMha6G59nWSeEwf7QK5vzmCa_UefR9mHDT0WzLgEbqng4#sphx-glr-auto-examples-cluster-plot-affinity-propagation-py" target="_blank" rel="noopener">https://scikit-learn.org/stable/auto_examples/cluster/plot_affinity_propagation.html?fbclid=IwAR2SsWtrb5MJdypMha6G59nWSeEwf7QK5vzmCa_UefR9mHDT0WzLgEbqng4#sphx-glr-auto-examples-cluster-plot-affinity-propagation-py</a>)</p>
-]]></content>
-      <tags>
-        <tag>Work</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>阿里山眠月線單攻 Alishan Mountain 2022.5.29</title>
     <url>/myblog/2022/05/30/Alishan/</url>
     <content><![CDATA[<blockquote>
@@ -381,6 +294,93 @@ I am an entry-level of mountaineering. The  following is a personal rating. I th
 ]]></content>
       <tags>
         <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>NBA老闆的慧眼 NBA bosses&#39; wisdom - Affinity Propagation</title>
+    <url>/myblog/2019/01/29/AP-algo/</url>
+    <content><![CDATA[<h1 id="概念發想-concept">概念發想 Concept</h1>
+<hr>
+<p><a href="https://github.com/LawrenceGao0224/Intelligence-Oriented-Management-Decision/tree/master/%E6%99%BA%E6%85%A7%E5%9E%8B%E6%9C%9F%E6%9C%AB%E5%A0%B1%E5%91%8A">程式碼連結 Program Click On Me</a></p>
+<p><img src="NBA.jpg" alt="NBA"></p>
+<p>我們將自己設想為球隊分析師，並希望能遞上一份不讓老闆&quot;打臉&quot;的分群資料，提供球隊高層在球員交易、補強、替代方案上有份合理客觀的依據。</p>
+<p>We envision ourselves as team analysts, and hope to hand over a group of information that provides the team’s top management with a reasonable and objective basis for player trading, reinforcement, and alternatives.</p>
+<hr>
+<h1 id="操作方法-operation">操作方法 Operation</h1>
+<p>將NBA所有球員資料(Ex: 薪水、年齡、得分、助攻、有效命中率、真實命中率、球權佔有率、籃板率、效率值…)，以AP演算法實作，計算各球員資料的負歐積里德距離，調整preference、Damping Factor參數，求出k個高質量聚類，且我們將多維度的資料透過PCA()方法壓縮為低維度的資料，實現可視化。</p>
+<p>All NBA player information (Ex: salary, age, score, assists, effective hit rate, true hit rate, possession rate, rebound rate, efficiency value…) is calculated by AP algorithm to calculate each player’s data. The negative Ourich Reed distance, adjust the preferences, Damping Factor parameters, find k high-quality clusters, and we compress the multi-dimensional data into low-dimensional data through PCA () method to achieve visualization</p>
+<p>資料來源 ： (<a href="https://www.kaggle.com/acasalan/nba-player-stats-201718" target="_blank" rel="noopener">https://www.kaggle.com/acasalan/nba-player-stats-201718</a>)</p>
+<hr>
+<h1 id="實作結果-result">實作結果 Result</h1>
+<h2 id="調整參數-adjust-parameter">調整參數 Adjust parameter:</h2>
+<ol>
+<li>Preference:<br>
+Preference = 中位數(-62.5683289159)<br>
+群集數: 43</li>
+</ol>
+<p><img src="1-1.png" alt="43"></p>
+<p>Preference = -500<br>
+群集數: 7</p>
+<p><img src="1-2.png" alt="7"></p>
+<ol start="2">
+<li>Damping Factor:</li>
+</ol>
+<p>Damping Factor = 0.5      --&gt;      Time = 0.8640606880187988 seconds.<br>
+Damping Factor = 0.9      --&gt;      Time = 1.2220699787139893 seconds.</p>
+<h2 id="所有球員資料-all-players">所有球員資料 All players:</h2>
+<p><img src="2-1.png" alt="2-1">   <img src="2-2.png" alt="2-2"></p>
+<h2 id="依球員打球的位置-according-to-position">依球員打球的位置 According to position</h2>
+<ol>
+<li>
+<p>center © : 8群集數<br>
+<img src="3-1.png" alt="3-1"></p>
+</li>
+<li>
+<p>power forward (PF) : 8群集數<br>
+<img src="3-2.png" alt="3-2"></p>
+</li>
+<li>
+<p>small forward (SF) : 12群集數<br>
+<img src="3-3.png" alt="3-3"></p>
+</li>
+<li>
+<p>point guard (PG) : 11群集數<br>
+<img src="3-4.png" alt="3-4"></p>
+</li>
+<li>
+<p>shooting guard (SG) : 4群集數<br>
+<img src="3-5.png" alt="3-5"></p>
+</li>
+</ol>
+<h2 id="依不同屬性">依不同屬性</h2>
+<p>進攻性質 or 防守性質…</p>
+<hr>
+<h1 id="延伸探討-any-imperfect">延伸探討  Any imperfect ?</h1>
+<p>然而在我們丟入的data有其盲點存在,NBA的老闆或球隊在選擇球員上,並不會只觀看球員在場上的數據表現,還包括許多因素,事無法量化或在數據表現出來的(包括球員心理狀態、球員間磨合度…)</p>
+<p>However, the data we throw in has its  blind spots. The NBA boss or team is not only watching the performance of the players on the field, but also includes many factors, which cannot be quantified or expressed in the data. (including the player’s mental state, the player’s running-in…)</p>
+<p>如下:</p>
+<p>❖商業價值 Business Value ex: Dwyane Wade<br>
+Wade是大家耳熟能詳的巨星,層經出現在2K遊戲的封面上,但最近的數據表現並不如其他球員出色,但仍是有淺力的球員,也累積許多粉絲,粉絲能帶來商業價值。<br>
+Wade is a well-known superstar. He has appeared on the cover of 2K games, but his recent data performance is not as good as other players, but he is still a shallow player and has accumulated many fans. Fans can bring commercial value.<br>
+<img src="4-1.png" alt="4-1"></p>
+<p>❖球員背景 Player’s Background ex: Jeremy Lin<br>
+Jeremy是著名的台裔球員,能吸引亞洲地區的球迷觀注其球隊,帶來利益。<br>
+Jeremy is a famous Taiwanese player who can attract fans in Asia to watch his team and bring benefits.<br>
+<img src="4-2.png" alt="4-2"></p>
+<p>❖健康因素 Health factor ex: Derrick Rose<br>
+Rose是最年輕獲選MVP的球員,但由於前幾賽季腳傷原因,造成都個賽季缺賽,而傷後復出便不如以前突出,這也是無法顯現在數據上的。<br>
+Rose is the youngest player to be elected MVP, but due to the foot injury in previous seasons, he missed all seasons, and his comeback after injury is not as prominent as before, which cannot be shown in the data.<br>
+<img src="4-3.png" alt="4-3"></p>
+<hr>
+<h1 id="參考資料-reference">參考資料 Reference</h1>
+<p>(<a href="https://zi.media/@yidianzixun/post/uKZUFF?fbclid=IwAR1Dib-4T5MkM2x_helYBtq0TgTD871fAixs-4sBivOUXUNjuMl07xFahOs" target="_blank" rel="noopener">https://zi.media/@yidianzixun/post/uKZUFF?fbclid=IwAR1Dib-4T5MkM2x_helYBtq0TgTD871fAixs-4sBivOUXUNjuMl07xFahOs</a>)</p>
+<p>(<a href="https://www.cnblogs.com/huadongw/p/4202492.html?fbclid=IwAR3PHEOcrAar0rCI1e9AeYBxV0fI6JKJIRqGAJ3ag9BnlleT5M9v_8oNiy0" target="_blank" rel="noopener">https://www.cnblogs.com/huadongw/p/4202492.html?fbclid=IwAR3PHEOcrAar0rCI1e9AeYBxV0fI6JKJIRqGAJ3ag9BnlleT5M9v_8oNiy0</a>)</p>
+<p>(<a href="https://www.itread01.com/articles/1495821610.html?fbclid=IwAR1Ssz1ZCdqnxtT6obwpx0AFRDBEGrqKK0BXmMGPK-I1lvNwqJuif9EhZt0" target="_blank" rel="noopener">https://www.itread01.com/articles/1495821610.html?fbclid=IwAR1Ssz1ZCdqnxtT6obwpx0AFRDBEGrqKK0BXmMGPK-I1lvNwqJuif9EhZt0</a>)</p>
+<p>(<a href="https://scikit-learn.org/stable/auto_examples/applications/plot_stock_market.html?fbclid=IwAR29Qcy3SrWFDjHAJGF--XO-0zW2FWt8t4dYZT0lsYxUDqJpBz17ds2pQQM" target="_blank" rel="noopener">https://scikit-learn.org/stable/auto_examples/applications/plot_stock_market.html?fbclid=IwAR29Qcy3SrWFDjHAJGF–XO-0zW2FWt8t4dYZT0lsYxUDqJpBz17ds2pQQM</a>)</p>
+<p>(<a href="https://scikit-learn.org/stable/auto_examples/cluster/plot_affinity_propagation.html?fbclid=IwAR2SsWtrb5MJdypMha6G59nWSeEwf7QK5vzmCa_UefR9mHDT0WzLgEbqng4#sphx-glr-auto-examples-cluster-plot-affinity-propagation-py" target="_blank" rel="noopener">https://scikit-learn.org/stable/auto_examples/cluster/plot_affinity_propagation.html?fbclid=IwAR2SsWtrb5MJdypMha6G59nWSeEwf7QK5vzmCa_UefR9mHDT0WzLgEbqng4#sphx-glr-auto-examples-cluster-plot-affinity-propagation-py</a>)</p>
+]]></content>
+      <tags>
+        <tag>Work</tag>
       </tags>
   </entry>
   <entry>
@@ -603,7 +603,7 @@ And don't miss out on this Good Luck Buddha cake. It's fluffy with a sweet filli
 <ol>
 <li><a href="https://www.tokyodisneyresort.jp/en/tds/attraction/detail/223/" target="_blank" rel="noopener">Journey to the Centre of the Earth</a> (9/10)</li>
 <li><a href="https://www.tokyodisneyresort.jp/en/tds/attraction/detail/222/" target="_blank" rel="noopener">Indiana Jones Adventure: Temple of the Crystal Skull</a> (10/10)</li>
-<li><a href="https://www.tokyodisneyresort.jp/en/tds/attraction/detail/218/" target="_blank" rel="noopener">Toy Story Mania!</a> (99/10)</li>
+<li><a href="https://www.tokyodisneyresort.jp/en/tds/attraction/detail/218/" target="_blank" rel="noopener">Toy Story Mania!</a> (100/10)</li>
 <li><a href="https://www.tokyodisneyresort.jp/en/tds/attraction/detail/219/" target="_blank" rel="noopener">Soaring: Fantastic Flight</a> (Unfortunately, We did not play because too many people there!!)</li>
 </ol>
 <p><a href="https://www.tokyoweekender.com/japan-life/guide-tokyo-disneysea/" target="_blank" rel="noopener">* A Guide to Tokyo DisneySea: Best Rides and Snacks</a><br>
@@ -663,120 +663,39 @@ See you Tokyo~
 <p><a href="https://jw-webmagazine.com/5-best-japanese-drugstores-cc1305f73a77/" target="_blank" rel="noopener">5 Best Japanese Drugstores</a></p>
 <p>We bought all the drugs and supplements in <strong>松本清（Matsumoto Kiyoshi，マツキヨ)</strong>, because we found some products are cheaper than other stores.</p>
 <p><a href="https://japanobjects.com/features/buy-japan-cosmetics" target="_blank" rel="noopener">75 Helpful Japanese Beauty Products for Every Skin Type</a></p>
+<h1 id="the-desert-i-bought-all-recommend">The desert I bought (All Recommend)</h1>
+<ol>
+<li><a href="https://hokkaido-omiyage.shop/collections/ishiya-%E7%99%BD%E3%81%84%E6%81%8B%E4%BA%BA" target="_blank" rel="noopener">白色戀人</a> (8/10)：<br>
+This is a famous dessert that everyone would buy, and I love it.</li>
+</ol>
+<div align="left"><img src="55.jpg" width="300" height="300"> </div>
+<ol start="2">
+<li><a href="https://www.sweetsburger.jp/" target="_blank" rel="noopener">Captain Sweet Burger</a> (8.5/10):<br>
+I bought 3 flavors, and my favorite is original. It’s not too sweet and really yummy.</li>
+</ol>
+<div align="left"><img src="56.jpg" width="300" height="300"> </div>
+<ol start="3">
+<li><a href="https://suposaka.net/cute-damn-good-how-about-some-sweets-that-will-make-anyone-happy-as-a-souvenir/" target="_blank" rel="noopener">Hanako 喫茶店に恋して Honey Toast Sable</a> (8.5/10):<br>
+The cominatin if honey and the cream is perfect. It’s tasty.</li>
+</ol>
+<div align="left"><img src="57.jpg" width="300" height="300"> </div>
+<ol start="4">
+<li><a href="https://japanselects.com/collections/campaign-newyork-perfect-cheese-cookie" target="_blank" rel="noopener">New York Perfect Cheese</a> (9/10):<br>
+You can buy it in 羽田airport and Tokyo station. The cheese and cream combine with swet cookie amazingly.</li>
+</ol>
+<div align="left"><img src="58.jpg" width="300" height="300"> </div>
+<ol start="5">
+<li><a href="https://buttersand.com/en/" target="_blank" rel="noopener">Press Butter Sand</a> (10/10):<br>
+My favorite one, it’s really yummy. The cookie outside is not hard to bite, you can easily finished it.</li>
+</ol>
+<div align="left"><img src="59.jpg" width="300" height="300"> </div>
+<ol start="6">
+<li><a href="https://www.kadenjapan.store/item/Hanako-%E5%96%AB%E8%8C%B6%E5%BA%97%E3%81%AB%E6%81%8B%E3%81%97%E3%81%A6%E3%80%82Creme-Br%C3%BBl%C3%A9e-Tart-%E7%84%A6%E7%B3%96%E5%B8%83%E4%B8%81%E6%92%BB/6212712493875200?lang=zh-Hant" target="_blank" rel="noopener">Hanako 喫茶店に恋して。Creme Brûlée Tart 焦糖布丁撻</a> (10/10):<br>
+Too tasty that I forgot to take photos.</li>
+</ol>
 ]]></content>
       <tags>
         <tag>Travel</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>仙女散落的珍珠 - 加羅湖 Jialuo Lake</title>
-    <url>/myblog/2022/03/01/Jialuo/</url>
-    <content><![CDATA[<blockquote>
-<p>出發前才知道要爬的是加羅湖不是嘉明湖<br>
-登山新手的挑戰</p>
-</blockquote>
-<hr>
-<p><img src="22.jpg" alt="1"></p>
-<h1 id="加羅湖簡介-introduction">加羅湖簡介 Introduction</h1>
-<p>加羅湖位於宜蘭縣大同鄉四季村、中橫北支線加羅山區，坐落於中央山脈南湖大山和三星山的山地交會點，里洛山北到太平山之間的陵脈上，因為鄰近加羅山故名為加羅湖，湖泊呈現為南北走向，是加納富溪的源頭；加羅湖標高為2242公尺，是一個湖群，因此除了加羅湖外還有撤退池、豪邁池、偉蛋池、墨池、日湖、月湖、天池、檜木池、水池、綠池等眾多高山湖泊，目前發現共有18個；在眾多的高山湖泊中以加羅湖的面積最為廣闊，其長度約為300公尺，寬約150公尺、深度約15公尺。<br>
-加羅湖的傳說－『散落的珍珠』<br>
-加羅湖的傳說十分夢幻，相傳在遠古時代有一位貌美的仙女，當他正在梳妝打扮的同時，一個閃神不小心將桌上的明鏡給打破了，而亮麗如鑽石般的碎片便粒粒如雨下般的灑落於加羅山區，交織成了為數眾多、美如幻境的湖泊群；加羅湖群水時清澈、光線充足，也因為其週遭的美麗景致被稱之為『散落的珍珠』。<br>
-Jialuo Lake is located in Siji Village, Datong Township, Yilan County, and Jialuo Mountain Area of ​​the North Branch Line of Zhongheng. Called Garo Lake, the lake presents a north-south direction and is the source of the rich stream in Ghana; Garo Lake is 2242 meters above sea level and is a lake group. Therefore, in addition to Garo Lake, there are Retreat Pool, Haomai Pool, Weidan Pool and Mochi. , Sun Lake, Moon Lake, Tianchi, Cypress Pond, Shui Pond, Green Pond and many other alpine lakes, a total of 18 have been found so far; among the many alpine lakes, Jialuo Lake has the largest area, with a length of about 300 meters and a width of about 300 meters. About 150 meters, about 15 meters deep.<br>
-The legend of Lake Garo - &quot;The Scattered Pearls&quot;<br>
-The legend of Garo Lake is very dreamy. According to legend, in ancient times, there was a beautiful fairy. While he was dressing up, a Shining God accidentally broke the mirror on the table, and the bright diamond-like fragments were like small pieces. The rain falls on the Garo Mountains, interweaving into numerous lakes that are as beautiful as a fantasy; the Garo Lakes are clear and well-lit, and are also called “scattered pearls” because of the beautiful scenery around them.<br>
-<a href="https://www.travelking.com.tw/tourguide/scenery103360.html" target="_blank" rel="noopener">資料來源：https://www.travelking.com.tw/tourguide/scenery103360.html</a></p>
-<h1 id="近代登山史中加羅湖的重新被發現-rediscovered">近代登山史中加羅湖的重新被發現 Rediscovered</h1>
-<p>在1987年元月，當時台大登山社5名社員組成了加羅湖與加羅山首登勘察隊，在加羅山西南稜，也就是靠近現今撤退池的附近，誤走山徑，因而沒能登上加羅山，後經紮營，隔日回撤重新出發後才找著正確的路，並且成功進入加羅湖區。當晚他們在第一個遇見的盆地水池畔紮營，並將此池命名為「加羅湖」。不過，當第二天繼續前進而與更寬闊的湖面相遇時，隊員們就改變了心意，將「加羅湖」改賦予眼前的大池(即現今的加羅湖)，而昨天誤入山徑，差點以撤退收場，紮營的小池就另給了一個帶點紀念行程一波三折意味的名字，「撤退池」。<br>
-In January 1987, five members of the National Taiwan University Mountaineering Club formed the first climbing survey team of Jialuo Lake and Jialuo Mountain. At the southwest edge of Jialuo Mountain, that is, near the current retreat pool, they mistakenly took the mountain trail and failed to climb the Jialuo Mountain. Luoshan, after setting up camp, retreated the next day and set off again to find the right way, and successfully entered the Garo Lake area. That night they camped at the first basin pool they encountered, which they named “Lake Garo”. However, when they continued to move forward the next day and encountered a wider lake, the team members changed their minds and gave the “Jaro Lake” to the big pond in front of them (that is, the current Jia Luo Lake). They strayed into the mountain trail yesterday and almost After the retreat ended, Koike, who was camping, gave another name, “Retreat Pond”, which was a little bit of a commemorative trip with twists and turns.</p>
-<h1 id="行程規劃-schedule-plan">行程規劃 Schedule Plan</h1>
-<p><img src="1.jpeg" alt="1"><br>
-<img src="2.jpeg" alt="2"></p>
-<p>建議兩天行程，當天來回會很辛苦，尤其宜蘭山區極易下雨，可能抵達時下午霧氣擋住加羅湖美景，隔日一早霧氣才飄散<br>
-第一天：四季林道→鐵柵欄→加納富溪→巨木登山口→撤退池→偉蛋池→加羅湖<br>
-第二天：加羅湖→偉蛋池→撤退池→巨木登山口→加納富溪→鐵柵欄→四季林道<br>
-It is recommended to travel for two days. It will be very hard to go back and forth on the same day, especially in the mountainous area of Yilan. It is very easy to rain. It may be blocked by the fog in the afternoon when you arrive, and the fog will not drift away until the next morning.<br>
-Day 1: Four Seasons Forest Road→Iron Fencer→Ghana Fuxi→Jumu Mountain Pass→Retreat Pool→Weidan Pool→Jaro Lake<br>
-Day 2: Jialuo Lake → Weidan Pool → Retreat Pool → Jumu Mountain Pass → Ghana Fuxi → Iron Fence → Four Seasons Forest Road</p>
-<h1 id="入山證申請-apply-for-entering-the-mountain">入山證申請 Apply for entering the mountain</h1>
-<p>出發前5日至30日至<a href="https://nv2.npa.gov.tw/NM107-604Client/" target="_blank" rel="noopener">內政部警政署網站</a>申請，或前往加羅湖當日先至宜蘭縣警察局三星分局、大同分駐所、太平山派出所、明池派出所、蘇澳分局、澳花派出所、碧候派出所，任一處辦理入山證。<a href="https://www.ilcpb.gov.tw/?aspxerrorpath=/main/page_view.aspx" target="_blank" rel="noopener">（資料來源：宜蘭縣政府警察局）</a><br>
-Apply before 5 to 30 days from the links.</p>
-<h1 id="行前準備-preparation">行前準備 Preparation</h1>
-<ol>
-<li>行動糧（高熱量巧克力、能量棒、麵包…）foods (high-calorie chocolate, energy bars, bread…)</li>
-<li>建議至少2000cc的水 At least 2000cc of water is recommended</li>
-<li>鹽糖 (電解質補給) Salt candy (electrolyte replenishment)</li>
-<li>保暖衣物（山上非常冷，尤其我去的時間到午夜溫度是-2度Ｃ，還有建議襪子穿兩層厚度）Warm clothes (it is very cold on the mountain, especially when I go to midnight, the temperature is -2 degrees C, and it is recommended to wear two layers of socks)</li>
-<li>登山杖 Alpenstock</li>
-<li>雨靴（建議高筒，很多地方泥濘不堪）Rain boots (high tube is recommended, many places are muddy)</li>
-<li>帳篷、睡墊 Tent, sleeping pad</li>
-<li>衛生用品 Tissue paper</li>
-<li>急救用品 mergency supplies<br>
-(PS：如果是新手，建議找協作訂餐、租借帳篷及睡墊，減少背包的重量）<br>
-(PS：建議洋蔥式穿法，爬行過程會非常炎熱，因此穿脫方便為宜）<br>
-(PS: If you are a novice, it is recommended to find cooperative ordering, rent tents and sleeping pads, and reduce the weight of the backpack)<br>
-(PS: It is recommended to wear the onion style, the crawling process will be very hot, so it is appropriate to put on and take off easily)</li>
-</ol>
-<h1 id="加羅湖路徑詳述-routes-in-detail">加羅湖路徑詳述 Routes in detail</h1>
-<p>起先搭接駁抵達著名紅色柵欄的登山口<br>
-Arrived the climbing entrance of the red fence</p>
-<div align="left"><img src="3.jpg" width="500" height="500"> </div>
-<p>入柵欄後，開始行走四季林道，路上都是大小石頭，要小心打滑<br>
-After entering the fence, start walking on the “Four-Season Forest Road”. The road is full of large and small stones, so be careful of slipping</p>
-<div align="left"><img src="4.jpg" width="500" height="500"> </div>
-<div align="left"><img src="5.jpg" width="500" height="500"> </div>
-<p>走近3.7K就會抵達四季養護所（廢棄工寮），上面被別人寫著許多到此一遊<br>
-Approaching 3.7K, you will arrive at the “Four Seasons Nursing Center” (abandoned labor camp)</p>
-<div align="left"><img src="6.jpg" width="500" height="500"> </div>
-<div align="left"><img src="7.jpg" width="500" height="500"> </div>
-<p>再走一小端路就抵達加納富溪，最後的取水點<br>
-After a short walk, you will arrive at Ghana Phu Creek.</p>
-<div align="left"><img src="8.jpg" width="500" height="500"> </div>
-<p>馬上就抵達巨木登山口，是此處最巨大的神木，感受大自然的鬼斧神工<br>
-Immediately arrive at the entrance of the giant tree, which is the largest sacred tree here, and feel the magic of nature.</p>
-<div align="left"><img src="9.jpg" width="500" height="500"> </div>
-<p>從此之後都是陡上的路徑，有近2.9K，沿路樹木被綠色植披覆蓋，猶如夢幻世界<br>
-Since then, it has been a steep path with nearly 2.9K. The trees along the road are covered with green plants, like a dream world.</p>
-<div align="left"><img src="10.jpg" width="500" height="500"> </div>
-<div align="left"><img src="11.jpg" width="500" height="500"> </div>
-<p>抵達1.9K處時建議稍作停留，此後將難以收到訊號，路途也變得較艱辛<br>
-It is recommended to stop for a while when you reach 1.9K, after that it will be difficult to receive signals and the road will become more difficult.</p>
-<div align="left"><img src="12.jpg" width="500" height="500"> </div>
-<p>映入眼簾就是芒草區，建議長袖長褲避免刮傷<br>
-Long-sleeved trousers are recommended to avoid scratches.</p>
-<div align="left"><img src="13.jpg" width="500" height="500"> </div>
-<p>由於我們行走前一週連日下雨，地面非常泥濘，腳一陷入，哭著找媽媽<br>
-The ground is very muddy</p>
-<div align="left"><img src="14.jpg" width="500" height="500"> </div>
-<p>抵達偉蛋池，那時還有霧氣，猶如仙境<br>
-Arrived at Weidan Pond, there was still fog, like a fairyland</p>
-<div align="left"><img src="15.jpg" width="500" height="500"> </div>
-<p>在行走一段路程即抵達加羅湖，美麗的景色，建議先換上衣物再探索湖周遭，避免著涼<br>
-After walking for a while, you will arrive at Garo Lake. It is a beautiful scenery. It is recommended to change clothes before exploring around the lake to avoid catching a cold.</p>
-<div align="left"><img src="16.jpg" width="500" height="500"> </div>
-<div align="left"><img src="17.jpg" width="500" height="500"> </div>
-<div align="left"><img src="23.jpg" width="500" height="500"> </div>
-<p>協作準備的晚餐飯菜，大家的評價都滿好吃，我也很滿意，吃完可以在承裝，千萬不要浪費<br>
-I’m really satisfied with the dinner.</p>
-<div align="left"><img src="18.jpg" width="500" height="500"> </div>
-<p>夜晚的各位等待裝飯，氣溫也逐漸降低<br>
-Temperature is gradually dropping.</p>
-<div align="left"><img src="19.jpg" width="500" height="500"> </div>
-<div align="left"><img src="20.jpg" width="500" height="500"> </div>
-<p>夜晚美麗的星空<br>
-Beautiful night sky.</p>
-<div align="left"><img src="24.jpg" width="500" height="500"> </div>
-<p>清晨的加羅湖，很可惜到離開前都還是濃濃霧氣<br>
-Unfortunately, there is still thick fog in the morning before leaving.</p>
-<div align="left"><img src="21.jpg" width="500" height="500"> </div>
-<h1 id="總結-summary">總結 Summary</h1>
-<p>自己本身是登山菜雞，這是以個人角度做的評分，覺得難度中上，全程9Ｋ，來回18K，在來之前要做好訓練，不要低估了！<br>
-This is a rating from a personal point of view. I feel that the difficulty is medium, the whole process is 9K, and the back and forth is 18K. Before coming, you must do a good job of training, don’t underestimate it!</p>
-<p>難易度 Difficulty   ： ◼️ ◼️ ◼️ ◼️ ◻️<br>
-危險度 Risk         ： ◼️ ◼️ ◼️ ◼️ ◻️<br>
-值得程度 Worth rate ： ◼️ ◼️ ◼️ ◼️ ◼️</p>
-]]></content>
-      <tags>
-        <tag>Blog</tag>
       </tags>
   </entry>
   <entry>
@@ -910,6 +829,117 @@ Soak in your own world!</p>
       </tags>
   </entry>
   <entry>
+    <title>仙女散落的珍珠 - 加羅湖 Jialuo Lake</title>
+    <url>/myblog/2022/03/01/Jialuo/</url>
+    <content><![CDATA[<blockquote>
+<p>出發前才知道要爬的是加羅湖不是嘉明湖<br>
+登山新手的挑戰</p>
+</blockquote>
+<hr>
+<p><img src="22.jpg" alt="1"></p>
+<h1 id="加羅湖簡介-introduction">加羅湖簡介 Introduction</h1>
+<p>加羅湖位於宜蘭縣大同鄉四季村、中橫北支線加羅山區，坐落於中央山脈南湖大山和三星山的山地交會點，里洛山北到太平山之間的陵脈上，因為鄰近加羅山故名為加羅湖，湖泊呈現為南北走向，是加納富溪的源頭；加羅湖標高為2242公尺，是一個湖群，因此除了加羅湖外還有撤退池、豪邁池、偉蛋池、墨池、日湖、月湖、天池、檜木池、水池、綠池等眾多高山湖泊，目前發現共有18個；在眾多的高山湖泊中以加羅湖的面積最為廣闊，其長度約為300公尺，寬約150公尺、深度約15公尺。<br>
+加羅湖的傳說－『散落的珍珠』<br>
+加羅湖的傳說十分夢幻，相傳在遠古時代有一位貌美的仙女，當他正在梳妝打扮的同時，一個閃神不小心將桌上的明鏡給打破了，而亮麗如鑽石般的碎片便粒粒如雨下般的灑落於加羅山區，交織成了為數眾多、美如幻境的湖泊群；加羅湖群水時清澈、光線充足，也因為其週遭的美麗景致被稱之為『散落的珍珠』。<br>
+Jialuo Lake is located in Siji Village, Datong Township, Yilan County, and Jialuo Mountain Area of ​​the North Branch Line of Zhongheng. Called Garo Lake, the lake presents a north-south direction and is the source of the rich stream in Ghana; Garo Lake is 2242 meters above sea level and is a lake group. Therefore, in addition to Garo Lake, there are Retreat Pool, Haomai Pool, Weidan Pool and Mochi. , Sun Lake, Moon Lake, Tianchi, Cypress Pond, Shui Pond, Green Pond and many other alpine lakes, a total of 18 have been found so far; among the many alpine lakes, Jialuo Lake has the largest area, with a length of about 300 meters and a width of about 300 meters. About 150 meters, about 15 meters deep.<br>
+The legend of Lake Garo - &quot;The Scattered Pearls&quot;<br>
+The legend of Garo Lake is very dreamy. According to legend, in ancient times, there was a beautiful fairy. While he was dressing up, a Shining God accidentally broke the mirror on the table, and the bright diamond-like fragments were like small pieces. The rain falls on the Garo Mountains, interweaving into numerous lakes that are as beautiful as a fantasy; the Garo Lakes are clear and well-lit, and are also called “scattered pearls” because of the beautiful scenery around them.<br>
+<a href="https://www.travelking.com.tw/tourguide/scenery103360.html" target="_blank" rel="noopener">資料來源：https://www.travelking.com.tw/tourguide/scenery103360.html</a></p>
+<h1 id="近代登山史中加羅湖的重新被發現-rediscovered">近代登山史中加羅湖的重新被發現 Rediscovered</h1>
+<p>在1987年元月，當時台大登山社5名社員組成了加羅湖與加羅山首登勘察隊，在加羅山西南稜，也就是靠近現今撤退池的附近，誤走山徑，因而沒能登上加羅山，後經紮營，隔日回撤重新出發後才找著正確的路，並且成功進入加羅湖區。當晚他們在第一個遇見的盆地水池畔紮營，並將此池命名為「加羅湖」。不過，當第二天繼續前進而與更寬闊的湖面相遇時，隊員們就改變了心意，將「加羅湖」改賦予眼前的大池(即現今的加羅湖)，而昨天誤入山徑，差點以撤退收場，紮營的小池就另給了一個帶點紀念行程一波三折意味的名字，「撤退池」。<br>
+In January 1987, five members of the National Taiwan University Mountaineering Club formed the first climbing survey team of Jialuo Lake and Jialuo Mountain. At the southwest edge of Jialuo Mountain, that is, near the current retreat pool, they mistakenly took the mountain trail and failed to climb the Jialuo Mountain. Luoshan, after setting up camp, retreated the next day and set off again to find the right way, and successfully entered the Garo Lake area. That night they camped at the first basin pool they encountered, which they named “Lake Garo”. However, when they continued to move forward the next day and encountered a wider lake, the team members changed their minds and gave the “Jaro Lake” to the big pond in front of them (that is, the current Jia Luo Lake). They strayed into the mountain trail yesterday and almost After the retreat ended, Koike, who was camping, gave another name, “Retreat Pond”, which was a little bit of a commemorative trip with twists and turns.</p>
+<h1 id="行程規劃-schedule-plan">行程規劃 Schedule Plan</h1>
+<p><img src="1.jpeg" alt="1"><br>
+<img src="2.jpeg" alt="2"></p>
+<p>建議兩天行程，當天來回會很辛苦，尤其宜蘭山區極易下雨，可能抵達時下午霧氣擋住加羅湖美景，隔日一早霧氣才飄散<br>
+第一天：四季林道→鐵柵欄→加納富溪→巨木登山口→撤退池→偉蛋池→加羅湖<br>
+第二天：加羅湖→偉蛋池→撤退池→巨木登山口→加納富溪→鐵柵欄→四季林道<br>
+It is recommended to travel for two days. It will be very hard to go back and forth on the same day, especially in the mountainous area of Yilan. It is very easy to rain. It may be blocked by the fog in the afternoon when you arrive, and the fog will not drift away until the next morning.<br>
+Day 1: Four Seasons Forest Road→Iron Fencer→Ghana Fuxi→Jumu Mountain Pass→Retreat Pool→Weidan Pool→Jaro Lake<br>
+Day 2: Jialuo Lake → Weidan Pool → Retreat Pool → Jumu Mountain Pass → Ghana Fuxi → Iron Fence → Four Seasons Forest Road</p>
+<h1 id="入山證申請-apply-for-entering-the-mountain">入山證申請 Apply for entering the mountain</h1>
+<p>出發前5日至30日至<a href="https://nv2.npa.gov.tw/NM107-604Client/" target="_blank" rel="noopener">內政部警政署網站</a>申請，或前往加羅湖當日先至宜蘭縣警察局三星分局、大同分駐所、太平山派出所、明池派出所、蘇澳分局、澳花派出所、碧候派出所，任一處辦理入山證。<a href="https://www.ilcpb.gov.tw/?aspxerrorpath=/main/page_view.aspx" target="_blank" rel="noopener">（資料來源：宜蘭縣政府警察局）</a><br>
+Apply before 5 to 30 days from the links.</p>
+<h1 id="行前準備-preparation">行前準備 Preparation</h1>
+<ol>
+<li>行動糧（高熱量巧克力、能量棒、麵包…）foods (high-calorie chocolate, energy bars, bread…)</li>
+<li>建議至少2000cc的水 At least 2000cc of water is recommended</li>
+<li>鹽糖 (電解質補給) Salt candy (electrolyte replenishment)</li>
+<li>保暖衣物（山上非常冷，尤其我去的時間到午夜溫度是-2度Ｃ，還有建議襪子穿兩層厚度）Warm clothes (it is very cold on the mountain, especially when I go to midnight, the temperature is -2 degrees C, and it is recommended to wear two layers of socks)</li>
+<li>登山杖 Alpenstock</li>
+<li>雨靴（建議高筒，很多地方泥濘不堪）Rain boots (high tube is recommended, many places are muddy)</li>
+<li>帳篷、睡墊 Tent, sleeping pad</li>
+<li>衛生用品 Tissue paper</li>
+<li>急救用品 mergency supplies<br>
+(PS：如果是新手，建議找協作訂餐、租借帳篷及睡墊，減少背包的重量）<br>
+(PS：建議洋蔥式穿法，爬行過程會非常炎熱，因此穿脫方便為宜）<br>
+(PS: If you are a novice, it is recommended to find cooperative ordering, rent tents and sleeping pads, and reduce the weight of the backpack)<br>
+(PS: It is recommended to wear the onion style, the crawling process will be very hot, so it is appropriate to put on and take off easily)</li>
+</ol>
+<h1 id="加羅湖路徑詳述-routes-in-detail">加羅湖路徑詳述 Routes in detail</h1>
+<p>起先搭接駁抵達著名紅色柵欄的登山口<br>
+Arrived the climbing entrance of the red fence</p>
+<div align="left"><img src="3.jpg" width="500" height="500"> </div>
+<p>入柵欄後，開始行走四季林道，路上都是大小石頭，要小心打滑<br>
+After entering the fence, start walking on the “Four-Season Forest Road”. The road is full of large and small stones, so be careful of slipping</p>
+<div align="left"><img src="4.jpg" width="500" height="500"> </div>
+<div align="left"><img src="5.jpg" width="500" height="500"> </div>
+<p>走近3.7K就會抵達四季養護所（廢棄工寮），上面被別人寫著許多到此一遊<br>
+Approaching 3.7K, you will arrive at the “Four Seasons Nursing Center” (abandoned labor camp)</p>
+<div align="left"><img src="6.jpg" width="500" height="500"> </div>
+<div align="left"><img src="7.jpg" width="500" height="500"> </div>
+<p>再走一小端路就抵達加納富溪，最後的取水點<br>
+After a short walk, you will arrive at Ghana Phu Creek.</p>
+<div align="left"><img src="8.jpg" width="500" height="500"> </div>
+<p>馬上就抵達巨木登山口，是此處最巨大的神木，感受大自然的鬼斧神工<br>
+Immediately arrive at the entrance of the giant tree, which is the largest sacred tree here, and feel the magic of nature.</p>
+<div align="left"><img src="9.jpg" width="500" height="500"> </div>
+<p>從此之後都是陡上的路徑，有近2.9K，沿路樹木被綠色植披覆蓋，猶如夢幻世界<br>
+Since then, it has been a steep path with nearly 2.9K. The trees along the road are covered with green plants, like a dream world.</p>
+<div align="left"><img src="10.jpg" width="500" height="500"> </div>
+<div align="left"><img src="11.jpg" width="500" height="500"> </div>
+<p>抵達1.9K處時建議稍作停留，此後將難以收到訊號，路途也變得較艱辛<br>
+It is recommended to stop for a while when you reach 1.9K, after that it will be difficult to receive signals and the road will become more difficult.</p>
+<div align="left"><img src="12.jpg" width="500" height="500"> </div>
+<p>映入眼簾就是芒草區，建議長袖長褲避免刮傷<br>
+Long-sleeved trousers are recommended to avoid scratches.</p>
+<div align="left"><img src="13.jpg" width="500" height="500"> </div>
+<p>由於我們行走前一週連日下雨，地面非常泥濘，腳一陷入，哭著找媽媽<br>
+The ground is very muddy</p>
+<div align="left"><img src="14.jpg" width="500" height="500"> </div>
+<p>抵達偉蛋池，那時還有霧氣，猶如仙境<br>
+Arrived at Weidan Pond, there was still fog, like a fairyland</p>
+<div align="left"><img src="15.jpg" width="500" height="500"> </div>
+<p>在行走一段路程即抵達加羅湖，美麗的景色，建議先換上衣物再探索湖周遭，避免著涼<br>
+After walking for a while, you will arrive at Garo Lake. It is a beautiful scenery. It is recommended to change clothes before exploring around the lake to avoid catching a cold.</p>
+<div align="left"><img src="16.jpg" width="500" height="500"> </div>
+<div align="left"><img src="17.jpg" width="500" height="500"> </div>
+<div align="left"><img src="23.jpg" width="500" height="500"> </div>
+<p>協作準備的晚餐飯菜，大家的評價都滿好吃，我也很滿意，吃完可以在承裝，千萬不要浪費<br>
+I’m really satisfied with the dinner.</p>
+<div align="left"><img src="18.jpg" width="500" height="500"> </div>
+<p>夜晚的各位等待裝飯，氣溫也逐漸降低<br>
+Temperature is gradually dropping.</p>
+<div align="left"><img src="19.jpg" width="500" height="500"> </div>
+<div align="left"><img src="20.jpg" width="500" height="500"> </div>
+<p>夜晚美麗的星空<br>
+Beautiful night sky.</p>
+<div align="left"><img src="24.jpg" width="500" height="500"> </div>
+<p>清晨的加羅湖，很可惜到離開前都還是濃濃霧氣<br>
+Unfortunately, there is still thick fog in the morning before leaving.</p>
+<div align="left"><img src="21.jpg" width="500" height="500"> </div>
+<h1 id="總結-summary">總結 Summary</h1>
+<p>自己本身是登山菜雞，這是以個人角度做的評分，覺得難度中上，全程9Ｋ，來回18K，在來之前要做好訓練，不要低估了！<br>
+This is a rating from a personal point of view. I feel that the difficulty is medium, the whole process is 9K, and the back and forth is 18K. Before coming, you must do a good job of training, don’t underestimate it!</p>
+<p>難易度 Difficulty   ： ◼️ ◼️ ◼️ ◼️ ◻️<br>
+危險度 Risk         ： ◼️ ◼️ ◼️ ◼️ ◻️<br>
+值得程度 Worth rate ： ◼️ ◼️ ◼️ ◼️ ◼️</p>
+]]></content>
+      <tags>
+        <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>找工作心路歷程 2021.1-2021.4</title>
     <url>/myblog/2021/04/14/Lookforjobs/</url>
     <content><![CDATA[<blockquote>
@@ -1040,39 +1070,6 @@ LeetCode great solutions: <a href="https://www.youtube.com/channel/UC_mYaQAE6-71
       </tags>
   </entry>
   <entry>
-    <title>Micron Intern in DEG  2019/7/1 ~ 2019/8/30</title>
-    <url>/myblog/2019/08/30/Micron/</url>
-    <content><![CDATA[<blockquote>
-<p>外商公司不喜歡你加班 自律是關鍵<br>
-英文很重要 溝通能力<br>
-環境自由 放鬆但不是隨便<br>
-待人處事態度 與同事們培養默契與團隊精神</p>
-</blockquote>
-<hr>
-<h1 id="面試">面試</h1>
-<p>面試記得要準備中英文的自我介紹  並做個人的作品集會更加分 記得投地公司官網（我丟104都沒消息）</p>
-<h2 id="關卡-1-電話">關卡 1. 電話</h2>
-<p>這個關卡我沒有遇到，但身邊朋友幾個都有接到電話英文面試，自我介紹等等</p>
-<h2 id="關卡-2-face-to-face">關卡 2. Face to face</h2>
-<p>我面對三個主管，首先要你自我介紹，並知道美光是什麼公司，還有能解釋記憶體的架構還有你的了解（聽說正職會問程式題，我個人作品集是做程式相關的，所以沒有被問到）</p>
-<h2 id="關卡-3-英文邏輯測驗">關卡 3. 英文,邏輯測驗</h2>
-<p>寫個英文題目及性向測驗題</p>
-<h2 id="關卡-4-hr面談">關卡 4. HR面談</h2>
-<p>基本上問你為何想來面試這職位 了解你的動機跟穩重度</p>
-<hr>
-<h1 id="實習生活">實習生活</h1>
-<p>從軟體踏入硬體領域，許多新的知識需要吸收，前三天都會有新人訓，並且每個禮拜五部門都會有課程，關於DRAM的知識，因此慢慢學習吸收。<br>
-美光在我這屆有48個新生，認識到許多朋友，同時也能建立人脈！<br>
-PS : 在這些具有製成、高階技術研發的公司，資訊安全與公司機密是很重要的事，公司會不斷強調不能隨便在內部拍照也不能外流內部文件等！</p>
-<p><img src="1.png" alt="1"><br>
-<img src="2.png" alt="2"><br>
-<img src="3.png" alt="3"></p>
-]]></content>
-      <tags>
-        <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>大馬遊 Malaysia 2018/7/21~2018/7/29</title>
     <url>/myblog/2018/07/30/Malaysia/</url>
     <content><![CDATA[<blockquote>
@@ -1131,6 +1128,69 @@ In Malacca, we first went to the famous landmarks, then went to the Upside Down 
 ]]></content>
       <tags>
         <tag>Travel</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Micron Intern in DEG  2019/7/1 ~ 2019/8/30</title>
+    <url>/myblog/2019/08/30/Micron/</url>
+    <content><![CDATA[<blockquote>
+<p>外商公司不喜歡你加班 自律是關鍵<br>
+英文很重要 溝通能力<br>
+環境自由 放鬆但不是隨便<br>
+待人處事態度 與同事們培養默契與團隊精神</p>
+</blockquote>
+<hr>
+<h1 id="面試">面試</h1>
+<p>面試記得要準備中英文的自我介紹  並做個人的作品集會更加分 記得投地公司官網（我丟104都沒消息）</p>
+<h2 id="關卡-1-電話">關卡 1. 電話</h2>
+<p>這個關卡我沒有遇到，但身邊朋友幾個都有接到電話英文面試，自我介紹等等</p>
+<h2 id="關卡-2-face-to-face">關卡 2. Face to face</h2>
+<p>我面對三個主管，首先要你自我介紹，並知道美光是什麼公司，還有能解釋記憶體的架構還有你的了解（聽說正職會問程式題，我個人作品集是做程式相關的，所以沒有被問到）</p>
+<h2 id="關卡-3-英文邏輯測驗">關卡 3. 英文,邏輯測驗</h2>
+<p>寫個英文題目及性向測驗題</p>
+<h2 id="關卡-4-hr面談">關卡 4. HR面談</h2>
+<p>基本上問你為何想來面試這職位 了解你的動機跟穩重度</p>
+<hr>
+<h1 id="實習生活">實習生活</h1>
+<p>從軟體踏入硬體領域，許多新的知識需要吸收，前三天都會有新人訓，並且每個禮拜五部門都會有課程，關於DRAM的知識，因此慢慢學習吸收。<br>
+美光在我這屆有48個新生，認識到許多朋友，同時也能建立人脈！<br>
+PS : 在這些具有製成、高階技術研發的公司，資訊安全與公司機密是很重要的事，公司會不斷強調不能隨便在內部拍照也不能外流內部文件等！</p>
+<p><img src="1.png" alt="1"><br>
+<img src="2.png" alt="2"><br>
+<img src="3.png" alt="3"></p>
+]]></content>
+      <tags>
+        <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Red Hat Certified System Administrator (RHCSA8)</title>
+    <url>/myblog/2022/05/06/RHCSA/</url>
+    <content><![CDATA[<blockquote>
+<p>I can accept failure, but cannot accept to give up<br>
+考了兩次才通過</p>
+</blockquote>
+<h1 id="rhcsa介紹">RHCSA介紹</h1>
+<p>RHCSA認證是Red Hat公司於2011年3月所推出的新認證。RHCSA認證是取得RHCE認證的必要條件之一，RHCSA與RHCE認證取得兩者無先後順序，兩者均通過者才可完整取得RHCE證書。擁有RHCSA認證者能夠扮演著企業內各式各樣的角色，舉凡資料庫管理員，開發人員和技術支持人員…等職務，能重建與部署企業核心Linux環境，更能代表您具備管理技術與駕馭系統的能力。欲取得RHCSA認證您必須參加此認證考試，成功讓您成為兼具完整理論與實作技術的Linux專家。<br>
+<a href="https://www.uuu.com.tw/Course/Partner/RedHat%E7%B4%85%E5%B8%BD/section=rhcsa/title=RHCSA%E8%AA%8D%E8%AD%89%E8%88%87%E8%80%83%E8%A9%A6%E4%BB%8B%E7%B4%B9" target="_blank" rel="noopener">(資料來源：UCOM恆逸教育訓練)</a></p>
+<h1 id="考試測驗能力">考試測驗能力</h1>
+<p>可進入官網查看：<a href="https://www.redhat.com/en/services/training/ex200-red-hat-certified-system-administrator-rhcsa-exam?section=Objectives" target="_blank" rel="noopener">Red Hat Certified System Administrator (RHCSA) exam</a></p>
+<h1 id="考題整理">考題整理</h1>
+<p>網路整理考題：<a href="https://github.com/chlebik/rhcsa-practice-questions/tree/master/questions">https://github.com/chlebik/rhcsa-practice-questions/tree/master/questions</a></p>
+<p>RedHat8之後開始考了許多Container題目，如：<a href="https://tekneed.com/rhcsa-8-exam-practice-question-9-managing-containers/" target="_blank" rel="noopener">https://tekneed.com/rhcsa-8-exam-practice-question-9-managing-containers/</a></p>
+<h1 id="考試環境介紹">考試環境介紹</h1>
+<p>考試環境會提供兩台虛擬機，分別為node1, node2，（會建議開終端機連線兩台虛擬機，以方便複製考試時所用到的網址或名稱）</p>
+<h1 id="結論">結論</h1>
+<ol>
+<li>一定要一直反覆練習實作，才能訓練到，不能只用看的，因為可能發生你都想不到的問題。</li>
+<li>我考試時發生用root建立user，而user卻沒長出Home directory，後來才發現是當時系統沒裝好，但卻沒反應，應是浪費快一個小時</li>
+<li>還有Container的題目，真的有點難，我不懂為什麼都沒拿到分，明明都有做</li>
+<li>切割完硬碟後，一定要重開機看看能不能開機，能不能自動mount起來</li>
+<li>有疑問要提出，有可能真的是系統問題</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Work</tag>
       </tags>
   </entry>
   <entry>
@@ -1219,36 +1279,6 @@ In Malacca, we first went to the famous landmarks, then went to the Upside Down 
 ]]></content>
       <tags>
         <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Red Hat Certified System Administrator (RHCSA8)</title>
-    <url>/myblog/2022/05/06/RHCSA/</url>
-    <content><![CDATA[<blockquote>
-<p>I can accept failure, but cannot accept to give up<br>
-考了兩次才通過</p>
-</blockquote>
-<h1 id="rhcsa介紹">RHCSA介紹</h1>
-<p>RHCSA認證是Red Hat公司於2011年3月所推出的新認證。RHCSA認證是取得RHCE認證的必要條件之一，RHCSA與RHCE認證取得兩者無先後順序，兩者均通過者才可完整取得RHCE證書。擁有RHCSA認證者能夠扮演著企業內各式各樣的角色，舉凡資料庫管理員，開發人員和技術支持人員…等職務，能重建與部署企業核心Linux環境，更能代表您具備管理技術與駕馭系統的能力。欲取得RHCSA認證您必須參加此認證考試，成功讓您成為兼具完整理論與實作技術的Linux專家。<br>
-<a href="https://www.uuu.com.tw/Course/Partner/RedHat%E7%B4%85%E5%B8%BD/section=rhcsa/title=RHCSA%E8%AA%8D%E8%AD%89%E8%88%87%E8%80%83%E8%A9%A6%E4%BB%8B%E7%B4%B9" target="_blank" rel="noopener">(資料來源：UCOM恆逸教育訓練)</a></p>
-<h1 id="考試測驗能力">考試測驗能力</h1>
-<p>可進入官網查看：<a href="https://www.redhat.com/en/services/training/ex200-red-hat-certified-system-administrator-rhcsa-exam?section=Objectives" target="_blank" rel="noopener">Red Hat Certified System Administrator (RHCSA) exam</a></p>
-<h1 id="考題整理">考題整理</h1>
-<p>網路整理考題：<a href="https://github.com/chlebik/rhcsa-practice-questions/tree/master/questions">https://github.com/chlebik/rhcsa-practice-questions/tree/master/questions</a></p>
-<p>RedHat8之後開始考了許多Container題目，如：<a href="https://tekneed.com/rhcsa-8-exam-practice-question-9-managing-containers/" target="_blank" rel="noopener">https://tekneed.com/rhcsa-8-exam-practice-question-9-managing-containers/</a></p>
-<h1 id="考試環境介紹">考試環境介紹</h1>
-<p>考試環境會提供兩台虛擬機，分別為node1, node2，（會建議開終端機連線兩台虛擬機，以方便複製考試時所用到的網址或名稱）</p>
-<h1 id="結論">結論</h1>
-<ol>
-<li>一定要一直反覆練習實作，才能訓練到，不能只用看的，因為可能發生你都想不到的問題。</li>
-<li>我考試時發生用root建立user，而user卻沒長出Home directory，後來才發現是當時系統沒裝好，但卻沒反應，應是浪費快一個小時</li>
-<li>還有Container的題目，真的有點難，我不懂為什麼都沒拿到分，明明都有做</li>
-<li>切割完硬碟後，一定要重開機看看能不能開機，能不能自動mount起來</li>
-<li>有疑問要提出，有可能真的是系統問題</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>Work</tag>
       </tags>
   </entry>
   <entry>
@@ -1446,6 +1476,48 @@ Reggie教導我們各項技術還有如何衝浪🏄！他什麼都會！真的�
       </tags>
   </entry>
   <entry>
+    <title>我的第一座山 - 鳶嘴山 </title>
+    <url>/myblog/2020/09/13/Yuanzui-Mountain/</url>
+    <content><![CDATA[<blockquote>
+<p>最厲害的不是登頂<br>
+而是製作步道跟繩索的人</p>
+</blockquote>
+<hr>
+<h1 id="行前準備">行前準備</h1>
+<ol>
+<li>建議保旅平險</li>
+<li>登山包要帶1.5升以上飲水、(雨衣)、保暖外套、(手套)、(暖暖包)、(頭燈)、行動糧、鹽糖</li>
+<li>另準備一包行李放車上帶一套新的衣物、午餐、水、睡袋</li>
+<li>衣著：運動鞋、運動長褲、排汗衫（袖套）、毛巾、太陽眼鏡、遮陽帽</li>
+<li>記得行李輕便為主</li>
+</ol>
+<hr>
+<h1 id="當天行程">當天行程</h1>
+<p>選擇一大早出發不僅可以避開人潮且較有車位停車同時可以避免午後雷陣雨，不過許多人前一天就在此地露營，所以還是有點難找停車位<br>
+<img src="1.JPG" alt="1"></p>
+<p>週日凌晨2點半出發、4點到登山口、休息小睡1個小時、5點半開爬、來回實際上只需大約三小時（沒有太多人排隊的話）、10點回登山口休息一下、下山吃午餐</p>
+<hr>
+<h1 id="山況說明">山況說明</h1>
+<p>27k的登山口上山後，起初為較好走的人造木階，但由於每個木階的高度都很高，因此相對較吃力<br>
+<img src="2.jpg" alt="2"></p>
+<p>而隨著高度增加 難度也越來越大<br>
+<img src="3.jpg" alt="3"> <img src="4.jpg" alt="4"></p>
+<p>後面開始有大石塊及繩索，有些必須踩入石塊縫隙中，並以繩索輔助，以及木梯（當時搬來的人真的很厲害）<br>
+<img src="5.jpg" alt="5"> <img src="6.JPG" alt="6"></p>
+<p>陸續爬到頂峰，鳶嘴山頂高度為2180公尺，絕美的風景只以大約1.5小時的路程非常值得<br>
+<img src="7.jpg" alt="7"> <img src="8.jpg" alt="8"></p>
+<hr>
+<h1 id="總結">總結</h1>
+<p>自己本身是登山菜雞，這是以個人角度做的評分，主要是因為路程短不需背重物，因此不會太困難</p>
+<p>難易度  ： ◼️ ◼️ ◼️ ◻️ ◻️<br>
+危險度  ： ◼️ ◼️ ◼️ ◼️ ◻️<br>
+值得程度： ◼️ ◼️ ◼️ ◼️ ◼️</p>
+]]></content>
+      <tags>
+        <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>越南遊2019/6/22~ 2019/6/29</title>
     <url>/myblog/2019/06/29/Vietnam/</url>
     <content><![CDATA[<blockquote>
@@ -1516,48 +1588,6 @@ To be continued…</p>
 ]]></content>
       <tags>
         <tag>Travel</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>我的第一座山 - 鳶嘴山 </title>
-    <url>/myblog/2020/09/13/Yuanzui-Mountain/</url>
-    <content><![CDATA[<blockquote>
-<p>最厲害的不是登頂<br>
-而是製作步道跟繩索的人</p>
-</blockquote>
-<hr>
-<h1 id="行前準備">行前準備</h1>
-<ol>
-<li>建議保旅平險</li>
-<li>登山包要帶1.5升以上飲水、(雨衣)、保暖外套、(手套)、(暖暖包)、(頭燈)、行動糧、鹽糖</li>
-<li>另準備一包行李放車上帶一套新的衣物、午餐、水、睡袋</li>
-<li>衣著：運動鞋、運動長褲、排汗衫（袖套）、毛巾、太陽眼鏡、遮陽帽</li>
-<li>記得行李輕便為主</li>
-</ol>
-<hr>
-<h1 id="當天行程">當天行程</h1>
-<p>選擇一大早出發不僅可以避開人潮且較有車位停車同時可以避免午後雷陣雨，不過許多人前一天就在此地露營，所以還是有點難找停車位<br>
-<img src="1.JPG" alt="1"></p>
-<p>週日凌晨2點半出發、4點到登山口、休息小睡1個小時、5點半開爬、來回實際上只需大約三小時（沒有太多人排隊的話）、10點回登山口休息一下、下山吃午餐</p>
-<hr>
-<h1 id="山況說明">山況說明</h1>
-<p>27k的登山口上山後，起初為較好走的人造木階，但由於每個木階的高度都很高，因此相對較吃力<br>
-<img src="2.jpg" alt="2"></p>
-<p>而隨著高度增加 難度也越來越大<br>
-<img src="3.jpg" alt="3"> <img src="4.jpg" alt="4"></p>
-<p>後面開始有大石塊及繩索，有些必須踩入石塊縫隙中，並以繩索輔助，以及木梯（當時搬來的人真的很厲害）<br>
-<img src="5.jpg" alt="5"> <img src="6.JPG" alt="6"></p>
-<p>陸續爬到頂峰，鳶嘴山頂高度為2180公尺，絕美的風景只以大約1.5小時的路程非常值得<br>
-<img src="7.jpg" alt="7"> <img src="8.jpg" alt="8"></p>
-<hr>
-<h1 id="總結">總結</h1>
-<p>自己本身是登山菜雞，這是以個人角度做的評分，主要是因為路程短不需背重物，因此不會太困難</p>
-<p>難易度  ： ◼️ ◼️ ◼️ ◻️ ◻️<br>
-危險度  ： ◼️ ◼️ ◼️ ◼️ ◻️<br>
-值得程度： ◼️ ◼️ ◼️ ◼️ ◼️</p>
-]]></content>
-      <tags>
-        <tag>Blog</tag>
       </tags>
   </entry>
   <entry>
@@ -1989,36 +2019,6 @@ Beacon說酒人<br>
       </tags>
   </entry>
   <entry>
-    <title>熱舞社 2014/10~2018/6/10</title>
-    <url>/myblog/2018/06/10/pop-dance/</url>
-    <content><![CDATA[<p><img src="1.jpg" alt="pop dance"></p>
-<blockquote>
-<p>熱舞社 陪伴我大學整整四年的社團 有哭有笑 亦友亦親<br>
-是大學成長最多的時候<br>
-從個內向不敢表現 到建立自信 最後在大眾前表演<br>
-謝謝大學四年的陪伴</p>
-</blockquote>
-<hr>
-<h1 id="freshman">Freshman</h1>
-<p>第一次接觸跳舞，完全沒有基礎，慢慢學習，直到能站上舞台</p>
-<p><img src="2.png" alt="freshman"></p>
-<hr>
-<h1 id="personnel">Personnel</h1>
-<p>幹部期間 擔任器材長 當時總認為大家很自私 由於大家都很忙 只顧自己的事 事實上大家都還是很願意幫忙 也因此培養好感情 而自己開會時較少發言 當時有想法卻不敢表達 每次開會都到很晚 總是希望趕快結束回家 期許自己未來能適時說出自己的想法 幫助團隊</p>
-<p><img src="3.png" alt="Personnel"></p>
-<hr>
-<h1 id="退幹生活">退幹生活</h1>
-<p>偶爾回來跳跳舞 回來聊聊天 回來認識新朋友 看到熱舞社日漸蓬勃 覺得大家都長大了</p>
-<p><img src="4.png" alt="退幹生活"></p>
-<blockquote>
-<p>很慶幸自己當時決定加入熱舞社 改變我很多！</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>股價走勢預測-Stock Prediction </title>
     <url>/myblog/2019/02/09/stock-prediction/</url>
     <content><![CDATA[<blockquote>
@@ -2055,6 +2055,36 @@ From graph, we can see that the trend we predicted is similar to the actual situ
 ]]></content>
       <tags>
         <tag>Work</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>熱舞社 2014/10~2018/6/10</title>
+    <url>/myblog/2018/06/10/pop-dance/</url>
+    <content><![CDATA[<p><img src="1.jpg" alt="pop dance"></p>
+<blockquote>
+<p>熱舞社 陪伴我大學整整四年的社團 有哭有笑 亦友亦親<br>
+是大學成長最多的時候<br>
+從個內向不敢表現 到建立自信 最後在大眾前表演<br>
+謝謝大學四年的陪伴</p>
+</blockquote>
+<hr>
+<h1 id="freshman">Freshman</h1>
+<p>第一次接觸跳舞，完全沒有基礎，慢慢學習，直到能站上舞台</p>
+<p><img src="2.png" alt="freshman"></p>
+<hr>
+<h1 id="personnel">Personnel</h1>
+<p>幹部期間 擔任器材長 當時總認為大家很自私 由於大家都很忙 只顧自己的事 事實上大家都還是很願意幫忙 也因此培養好感情 而自己開會時較少發言 當時有想法卻不敢表達 每次開會都到很晚 總是希望趕快結束回家 期許自己未來能適時說出自己的想法 幫助團隊</p>
+<p><img src="3.png" alt="Personnel"></p>
+<hr>
+<h1 id="退幹生活">退幹生活</h1>
+<p>偶爾回來跳跳舞 回來聊聊天 回來認識新朋友 看到熱舞社日漸蓬勃 覺得大家都長大了</p>
+<p><img src="4.png" alt="退幹生活"></p>
+<blockquote>
+<p>很慶幸自己當時決定加入熱舞社 改變我很多！</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Blog</tag>
       </tags>
   </entry>
 </search>
