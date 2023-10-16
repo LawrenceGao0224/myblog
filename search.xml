@@ -1,6 +1,306 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>NBA老闆的慧眼 NBA bosses&#39; wisdom - Affinity Propagation</title>
+    <url>/myblog/2019/01/29/AP-algo/</url>
+    <content><![CDATA[<h1 id="概念發想-concept">概念發想 Concept</h1>
+<hr>
+<p><a href="https://github.com/LawrenceGao0224/Intelligence-Oriented-Management-Decision/tree/master/%E6%99%BA%E6%85%A7%E5%9E%8B%E6%9C%9F%E6%9C%AB%E5%A0%B1%E5%91%8A">程式碼連結 Program Click On Me</a></p>
+<p><img src="NBA.jpg" alt="NBA"></p>
+<p>我們將自己設想為球隊分析師，並希望能遞上一份不讓老闆&quot;打臉&quot;的分群資料，提供球隊高層在球員交易、補強、替代方案上有份合理客觀的依據。</p>
+<p>We envision ourselves as team analysts, and hope to hand over a group of information that provides the team’s top management with a reasonable and objective basis for player trading, reinforcement, and alternatives.</p>
+<hr>
+<h1 id="操作方法-operation">操作方法 Operation</h1>
+<p>將NBA所有球員資料(Ex: 薪水、年齡、得分、助攻、有效命中率、真實命中率、球權佔有率、籃板率、效率值…)，以AP演算法實作，計算各球員資料的負歐積里德距離，調整preference、Damping Factor參數，求出k個高質量聚類，且我們將多維度的資料透過PCA()方法壓縮為低維度的資料，實現可視化。</p>
+<p>All NBA player information (Ex: salary, age, score, assists, effective hit rate, true hit rate, possession rate, rebound rate, efficiency value…) is calculated by AP algorithm to calculate each player’s data. The negative Ourich Reed distance, adjust the preferences, Damping Factor parameters, find k high-quality clusters, and we compress the multi-dimensional data into low-dimensional data through PCA () method to achieve visualization</p>
+<p>資料來源 ： (<a href="https://www.kaggle.com/acasalan/nba-player-stats-201718" target="_blank" rel="noopener">https://www.kaggle.com/acasalan/nba-player-stats-201718</a>)</p>
+<hr>
+<h1 id="實作結果-result">實作結果 Result</h1>
+<h2 id="調整參數-adjust-parameter">調整參數 Adjust parameter:</h2>
+<ol>
+<li>Preference:<br>
+Preference = 中位數(-62.5683289159)<br>
+群集數: 43</li>
+</ol>
+<p><img src="1-1.png" alt="43"></p>
+<p>Preference = -500<br>
+群集數: 7</p>
+<p><img src="1-2.png" alt="7"></p>
+<ol start="2">
+<li>Damping Factor:</li>
+</ol>
+<p>Damping Factor = 0.5      --&gt;      Time = 0.8640606880187988 seconds.<br>
+Damping Factor = 0.9      --&gt;      Time = 1.2220699787139893 seconds.</p>
+<h2 id="所有球員資料-all-players">所有球員資料 All players:</h2>
+<p><img src="2-1.png" alt="2-1">   <img src="2-2.png" alt="2-2"></p>
+<h2 id="依球員打球的位置-according-to-position">依球員打球的位置 According to position</h2>
+<ol>
+<li>
+<p>center © : 8群集數<br>
+<img src="3-1.png" alt="3-1"></p>
+</li>
+<li>
+<p>power forward (PF) : 8群集數<br>
+<img src="3-2.png" alt="3-2"></p>
+</li>
+<li>
+<p>small forward (SF) : 12群集數<br>
+<img src="3-3.png" alt="3-3"></p>
+</li>
+<li>
+<p>point guard (PG) : 11群集數<br>
+<img src="3-4.png" alt="3-4"></p>
+</li>
+<li>
+<p>shooting guard (SG) : 4群集數<br>
+<img src="3-5.png" alt="3-5"></p>
+</li>
+</ol>
+<h2 id="依不同屬性">依不同屬性</h2>
+<p>進攻性質 or 防守性質…</p>
+<hr>
+<h1 id="延伸探討-any-imperfect">延伸探討  Any imperfect ?</h1>
+<p>然而在我們丟入的data有其盲點存在,NBA的老闆或球隊在選擇球員上,並不會只觀看球員在場上的數據表現,還包括許多因素,事無法量化或在數據表現出來的(包括球員心理狀態、球員間磨合度…)</p>
+<p>However, the data we throw in has its  blind spots. The NBA boss or team is not only watching the performance of the players on the field, but also includes many factors, which cannot be quantified or expressed in the data. (including the player’s mental state, the player’s running-in…)</p>
+<p>如下:</p>
+<p>❖商業價值 Business Value ex: Dwyane Wade<br>
+Wade是大家耳熟能詳的巨星,層經出現在2K遊戲的封面上,但最近的數據表現並不如其他球員出色,但仍是有淺力的球員,也累積許多粉絲,粉絲能帶來商業價值。<br>
+Wade is a well-known superstar. He has appeared on the cover of 2K games, but his recent data performance is not as good as other players, but he is still a shallow player and has accumulated many fans. Fans can bring commercial value.<br>
+<img src="4-1.png" alt="4-1"></p>
+<p>❖球員背景 Player’s Background ex: Jeremy Lin<br>
+Jeremy是著名的台裔球員,能吸引亞洲地區的球迷觀注其球隊,帶來利益。<br>
+Jeremy is a famous Taiwanese player who can attract fans in Asia to watch his team and bring benefits.<br>
+<img src="4-2.png" alt="4-2"></p>
+<p>❖健康因素 Health factor ex: Derrick Rose<br>
+Rose是最年輕獲選MVP的球員,但由於前幾賽季腳傷原因,造成都個賽季缺賽,而傷後復出便不如以前突出,這也是無法顯現在數據上的。<br>
+Rose is the youngest player to be elected MVP, but due to the foot injury in previous seasons, he missed all seasons, and his comeback after injury is not as prominent as before, which cannot be shown in the data.<br>
+<img src="4-3.png" alt="4-3"></p>
+<hr>
+<h1 id="參考資料-reference">參考資料 Reference</h1>
+<p>(<a href="https://zi.media/@yidianzixun/post/uKZUFF?fbclid=IwAR1Dib-4T5MkM2x_helYBtq0TgTD871fAixs-4sBivOUXUNjuMl07xFahOs" target="_blank" rel="noopener">https://zi.media/@yidianzixun/post/uKZUFF?fbclid=IwAR1Dib-4T5MkM2x_helYBtq0TgTD871fAixs-4sBivOUXUNjuMl07xFahOs</a>)</p>
+<p>(<a href="https://www.cnblogs.com/huadongw/p/4202492.html?fbclid=IwAR3PHEOcrAar0rCI1e9AeYBxV0fI6JKJIRqGAJ3ag9BnlleT5M9v_8oNiy0" target="_blank" rel="noopener">https://www.cnblogs.com/huadongw/p/4202492.html?fbclid=IwAR3PHEOcrAar0rCI1e9AeYBxV0fI6JKJIRqGAJ3ag9BnlleT5M9v_8oNiy0</a>)</p>
+<p>(<a href="https://www.itread01.com/articles/1495821610.html?fbclid=IwAR1Ssz1ZCdqnxtT6obwpx0AFRDBEGrqKK0BXmMGPK-I1lvNwqJuif9EhZt0" target="_blank" rel="noopener">https://www.itread01.com/articles/1495821610.html?fbclid=IwAR1Ssz1ZCdqnxtT6obwpx0AFRDBEGrqKK0BXmMGPK-I1lvNwqJuif9EhZt0</a>)</p>
+<p>(<a href="https://scikit-learn.org/stable/auto_examples/applications/plot_stock_market.html?fbclid=IwAR29Qcy3SrWFDjHAJGF--XO-0zW2FWt8t4dYZT0lsYxUDqJpBz17ds2pQQM" target="_blank" rel="noopener">https://scikit-learn.org/stable/auto_examples/applications/plot_stock_market.html?fbclid=IwAR29Qcy3SrWFDjHAJGF–XO-0zW2FWt8t4dYZT0lsYxUDqJpBz17ds2pQQM</a>)</p>
+<p>(<a href="https://scikit-learn.org/stable/auto_examples/cluster/plot_affinity_propagation.html?fbclid=IwAR2SsWtrb5MJdypMha6G59nWSeEwf7QK5vzmCa_UefR9mHDT0WzLgEbqng4#sphx-glr-auto-examples-cluster-plot-affinity-propagation-py" target="_blank" rel="noopener">https://scikit-learn.org/stable/auto_examples/cluster/plot_affinity_propagation.html?fbclid=IwAR2SsWtrb5MJdypMha6G59nWSeEwf7QK5vzmCa_UefR9mHDT0WzLgEbqng4#sphx-glr-auto-examples-cluster-plot-affinity-propagation-py</a>)</p>
+]]></content>
+      <tags>
+        <tag>Work</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>阿里山眠月線單攻 Alishan Mountain 2022.5.29</title>
+    <url>/myblog/2022/05/30/Alishan/</url>
+    <content><![CDATA[<blockquote>
+<p>前幾天都是大雨滂沱，當我們來到時晴空萬里<br>
+也在離開時，下起大雨，猶如山神含著淚告訴我們一定要再來<br>
+It had been raining heavily the past few days, and the sky was clear when we arrived<br>
+When we were leaving, it rained heavily, as if the mountain god told us with tears that we must come again</p>
+</blockquote>
+<h1 id="阿里山眠月線歷史背景-backgroud-history">阿里山眠月線歷史背景 Backgroud history</h1>
+<p>阿里山眠月線為日治時期修築的鐵路，目的為搬運砍伐的巨木而建造，而後發展為觀光，也有小火車提供載客服務。眠月線為其中一個支線，止於石猴站，全長「9.2公里」，沿途共經過「24個橋樑與12個隧道」。<br>
+The Alishan Mianyue Line is a railway built during the Japanese colonial period. It was built for the transportation of giant trees, and then developed as a tourist spot. There are also trains for passenger services. The Mianyue Line is one of the branch lines, ending at Shihou Station, with a total length of “9.2 kilometers” and a total of “24 bridges and 12 tunnels” along the way.</p>
+<div align="left"><img src="7.jpg" width="500" height="500"> </div>
+<p>1999年因為921大地震，鐵路坍方而停駛，而後經過一番修復曾經短暫恢復通車，不料2008年又遭遇八八風災再度損毀，至今未再復駛。由於其平坦且優美的景色，使其成為著名的景點。<br>
+In 1999, the railway was suspended due to the collapse of the “921 earthquake”. After some repairs, it was briefly restored to traffic. However, in 2008, it was damaged again by the typhoon and has not resumed operation. It is a famous attraction due to its flat and beautiful scenaries.</p>
+<h1 id="行前準備-preparation">行前準備 Preparation</h1>
+<p>由於眠月線為台灣特有種一葉蘭的保護區，因此須先上<a href="https://pa.forest.gov.tw/?utm_source=%E5%A5%BD%E5%A5%BD%E7%8E%A9%E5%8F%B0%E7%81%A3blog&amp;utm_medium=%E9%98%BF%E9%87%8C%E5%B1%B1%E7%9C%A0%E6%9C%88%E7%B7%9A-%E4%B8%80%E7%AF%87%E6%90%9E%E6%87%82%E7%99%BB%E5%B1%B1%E8%B7%AF%E7%B7%9A%E3%80%81%E5%A6%82%E4%BD%95%E7%94%B3%E8%AB%8B%E3%80%81%E6%B3%A8&amp;utm_campaign=%E9%98%BF%E9%87%8C%E5%B1%B1%E7%9C%A0%E6%9C%88%E7%B7%9A%EF%BD%9C%E5%A4%B1%E8%90%BD%E4%B9%8B%E5%9C%B0%E3%80%8C%E7%9C%A0%E6%9C%88%E7%B7%9A%E3%80%8D%E6%98%8E%E5%B9%B4%E5%8D%B3%E5%B0%87%E5%B0%81%E9%96%89%EF%BC%8C%E6%87%B6%E4%BA%BA%E5%8C%85%E5%85%88%E6%94%B6%E8%97%8F%E3%80%90%E7%99%BB%E5%B1%B1%E8%B7%AF%E7%B7%9A/%E5%A6%82%E4%BD%95%E7%94%B3%E8%AB%8B/%E4%BA%A4%E9%80%9A%E6%96%B9%E5%BC%8F/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85%E3%80%91&amp;utm_term=&amp;utm_content=" target="_blank" rel="noopener">林務局網站</a>申請入園許可，選擇區域：「台灣一葉蘭自然保留區」。<br>
+※管制人數為每日500人<br>
+Since the Mianyue Line is a protected area for the endemic species of Orchid japonica in Taiwan, it is necessary to go to the website of the Forest Service to apply for permission to enter the park, and select the area: “Taiwan Echidonia Natural Reserve”.<br>
+※The number of people under control is 500 people per day</p>
+<div align="left"><img src="19.jpg" width="500" height="500"> </div>
+<p>建議需要帶的物品：</p>
+<ol>
+<li>頭燈：因為有許多隧道且非常陰暗，建議要攜帶</li>
+<li>登山鞋或雨鞋：路上多處泥濘，真心建議不要像我一樣New Balance，回去洗得很痛苦</li>
+<li>行動糧：可以買些巧克力、麵包、鹽糖等，隨時補充</li>
+<li>水： 網上許多人建議2000c.c，因人而異，我個人是600c.c.搞定<br>
+（以上建議為單攻，若要扎營可參考其他）</li>
+</ol>
+<p>由於近期意外事故不斷，讓阿里山林業鐵路及文化資產管理處決定，於2022年的1月17日至4月30日封閉施整修，此次封閉將規畫更換、加寬既有木板，增加止滑效果。<br>
+也難怪我們爬起來很順，跟過去相比超級安全</p>
+<p>Suggested items:</p>
+<ol>
+<li>Headlights: Because tunnels are very dark, it is suggested to bring</li>
+<li>Hiking shoes or rain boots: There are many muddy places on the road.</li>
+<li>Action food: you can buy some chocolate, bread, and salt candy, etc., and eat them at any time</li>
+<li>Water: Many people recommend 2000c.c, it depends, I personally bring with 600c.c. water.<br>
+(The above suggestion is for one day trip, if you want to camp, you can refer to others)</li>
+</ol>
+<p>Due to recent accidents, the Alishan Forestry Railway and Cultural Assets Management Office decided to close for renovations from January 17 to April 30, 2022. This closure would plan to replace and widen the existing wooden boards to increase the Anti-slip effect.<br>
+No wonder we climbed up very smoothly, super safe compared to the past.</p>
+<p><a href="https://www.welcometw.com/%E9%98%BF%E9%87%8C%E5%B1%B1%E7%9C%A0%E6%9C%88%E7%B7%9A-%E4%B8%80%E7%AF%87%E6%90%9E%E6%87%82%E7%99%BB%E5%B1%B1%E8%B7%AF%E7%B7%9A%E3%80%81%E5%A6%82%E4%BD%95%E7%94%B3%E8%AB%8B%E3%80%81%E6%B3%A8/" target="_blank" rel="noopener">資料來源：阿里山眠月線</a></p>
+<h1 id="眠月線登山路線-walking-route">眠月線登山路線 Walking Route</h1>
+<div align="left"><img src="18.png" width="500" height="500"> </div>
+<p>阿里山眠月線步行路線一般以「沼平站」為起點，沼平站同時為祝山線與眠月線的起點車站，兩條支線共用約3公里的鐵路後才分開，抵達此處會看到聳動的告示<br>
+The walking route of Alishan Mianyue Line generally starts from “Numaping Station”, which is also the starting point of Zhushan Line and Mianyue Line. The two branch lines share about 3 kilometers of railway before they separate. When you arrive here, you will see to the notice</p>
+<div align="left"><img src="12.jpg" width="500" height="500"> </div>
+<div align="left"><img src="3.jpg" width="500" height="500"> </div>
+<p>沿著鐵軌一直行走～<br>
+Keep goning!</p>
+<div align="left"><img src="8.jpg" width="500" height="500"> </div>
+<p>走到過去坍方處，這裏也是暴雨後最多人受困的地方<br>
+Go through the collapse. The place is that the most people are trapped after the rainstorm</p>
+<div align="left"><img src="6.jpg" width="500" height="500"> </div>
+<p>接著沒多久就會進入隧道，其中一個隧道最長，裡面也有土石坍方，這時非常需要頭燈的協助<br>
+It won’t take long for you to enter the tunnels, one of which is the longest, and there are collapses in it. At this time, you need the assistance of a headlight.</p>
+<div align="left"><img src="14.jpg" width="500" height="500"> </div>
+<div align="left"><img src="15.jpg" width="500" height="500"> </div>
+<p>出洞穴後抵達過去月台<br>
+After leaving the cave, reach the platform</p>
+<div align="left"><img src="4.jpg" width="500" height="500"> </div>
+<p>沿路的鐵軌經重新修築後安全了許多<br>
+The tracks along the road are much safer after being rebuilt</p>
+<div align="left"><img src="5.jpg" width="500" height="500"> </div>
+<div align="left"><img src="10.jpg" width="500" height="500"> </div>
+<div align="left"><img src="17.jpg" width="500" height="500"> </div>
+<p>洞穴內的積水有時很深，強烈建議要登山鞋<br>
+The water in the cave is sometimes deep, hiking shoes are strongly recommended</p>
+<div align="left"><img src="11.jpg" width="500" height="500"> </div>
+<p>抵達終點石猴站<br>
+Arrive at Stone Monkey Station</p>
+<div align="left"><img src="16.jpg" width="500" height="500"> </div>
+<p>離開前在大門口紀錄神聖的時刻<br>
+Capture the sacred moment at the gate before leaving</p>
+<div align="left"><img src="9.jpg" width="500" height="500"> </div>
+<p>回嘉義市區的路上，濃霧跟大雨滂沱<br>
+On the way back to downtown Chiayi, there is fog and heavy rain</p>
+<div align="left"><img src="13.jpg" width="500" height="500"> </div>
+<h1 id="總結-summary">總結 Summary</h1>
+<p>本身是登山菜雞，這是以個人角度做的評分，覺得難度中下，全長9.2公里的眠月線，一路起伏僅約100公尺，相當平緩好走，且夏天山上溫度10多度，非常舒服，我們11點左右出發抵達終點大概兩點初，單程行走時間約為3-4小時，回程聽見打雷聲，我們加緊腳步，僅花一半的時間回到「沼平站」。<br>
+I am an entry-level of mountaineering. The  following is a personal rating. I think it is mid-level of  difficulty. The 9.2-kilometer Mianyue line has only about 100 meters of height difference. It is quite gentle and easy to walk. In summer, the temperature on the mountain is about 10 degrees, which is very Comfortable, we started at around 11:00 and arrived at the end at about 2:00. The one-way walking time is about 3-4 hours. On the return journey, we heard thunder, so we stepped up our pace and only spent half the time back to “Numaping Station”.</p>
+<p>難易度 Difficulty ： ◼️ ◼️ ◻️ ◻️ ◻️<br>
+危險度 Danger degree ： ◼️ ◼️ ◼️ ◻️ ◻️<br>
+值得程度 Worth rate： ◼️ ◼️ ◼️ ◼️ ◼️</p>
+]]></content>
+      <tags>
+        <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>冬季環島 2022.12.24 - 2022.12.30</title>
+    <url>/myblog/2023/01/03/AroundTaiwan/</url>
+    <content><![CDATA[<blockquote>
+<p>趁年輕完成一項人生清單<br>
+受上天眷顧整趟行程都沒有下雨<br>
+排隊美食都沒排到隊<br>
+台灣真的好美</p>
+</blockquote>
+<h1 id="行前考量">行前考量</h1>
+<p>原本在規劃想要去的景點與交通方式時，發現只有四個縣市(花蓮、台東、高雄、台南)是我們特別想去的，而又正值冬季，東北季風讓北部容易下大雨，因此決定半搭車半騎車的方式，不僅能讓花東停留的時間更久，也能避開東北角容易下雨的危險</p>
+<h1 id="路線規畫">路線規畫</h1>
+<p>順時針繞行，台北出發—&gt;花蓮(2D)—&gt;台東(2D)—&gt;高雄(1D)—&gt;台南(2D)—&gt;台北</p>
+<h1 id="主要行程規劃目的">主要行程規劃目的</h1>
+<h2 id="第一天">第一天</h2>
+<p>花蓮： 曼波海灘、七星潭、四八高地、東大門夜市、花蓮車站</p>
+<p>抵達花蓮車站</p>
+<div align="left"><img src="1.jpg" width="400" height="400"> </div>
+<p>黑點師蚵子滷肉飯加蛋必點～超好吃</p>
+<div align="left"><img src="2.JPG" width="400" height="400"> </div>
+<p>曼波海灘玩沙灘車（月牙灣），我們就像VIP，都沒有其他人，備受招待，然後拍照鏡頭前後對比＾＾</p>
+<div align="left"><img src="3.jpg" width="400" height="400"> </div>
+<div align="left"><img src="4.jpg" width="400" height="400"> </div>
+<p>七星潭傍晚時刻</p>
+<div align="left"><img src="5.JPG" width="400" height="400"> </div>
+<p>炸彈蔥油餅－藍車～好好吃</p>
+<div align="left"><img src="6.jpg" width="400" height="400"> </div>
+<p>東大門夜市，人沒有很多～</p>
+<div align="left"><img src="7.jpg" width="400" height="400"> </div>
+<h2 id="第二天">第二天</h2>
+<p>花蓮： 七星潭日出、國立東華大學、雲山水夢幻湖、瑞穗牧場、玉里</p>
+<p>七星潭日出</p>
+<div align="left"><img src="8.JPG" width="400" height="400"> </div>
+<p>漫步在七星潭旁</p>
+<div align="left"><img src="8-1.JPG" width="400" height="400"> </div>
+<p>錢記早餐的炒麵加蛋必點</p>
+<div align="left"><img src="9.jpg" width="400" height="400"> </div>
+<p>無名早餐店的肉餅早早被賣完，很可惜～燒餅蛋餅也好吃</p>
+<div align="left"><img src="10.jpg" width="400" height="400"> </div>
+<p>美麗的東華大學</p>
+<div align="left"><img src="11.jpg" width="400" height="400"> </div>
+<p>雲山水夢幻湖美景，很好拍照，但人有點多～</p>
+<div align="left"><img src="12.jpg" width="400" height="400"> </div>
+<div align="left"><img src="13.JPG" width="400" height="400"> </div>
+<div align="left"><img src="14.JPG" width="400" height="400"> </div>
+<p>瑞穗牧場</p>
+<div align="left"><img src="15.jpg" width="400" height="400"> </div>
+<h2 id="第三天">第三天</h2>
+<p>台東： 三仙台、池上大坡池、池上伯朗大道</p>
+<p>三仙台早上太陽很大</p>
+<div align="left"><img src="16.JPG" width="400" height="400"> </div>
+<p>環島的全副武裝</p>
+<div align="left"><img src="17.JPG" width="400" height="400"> </div>
+<p>大坡池－裝置藝術－釣魚老翁</p>
+<div align="left"><img src="18.jpg" width="400" height="400"> </div>
+<p>池上伯朗大道街拍</p>
+<div align="left"><img src="19.JPG" width="400" height="400"> </div>
+<p>池上豆之味，很精緻但很貴</p>
+<div align="left"><img src="20.jpg" width="400" height="400"> </div>
+<p>池上福原豆腐，外酥內嫩</p>
+<div align="left"><img src="21.jpg" width="400" height="400"> </div>
+<p>池上悟饕便當</p>
+<div align="left"><img src="22.jpg" width="400" height="400"> </div>
+<p>夜晚客棧</p>
+<div align="left"><img src="23.jpg" width="400" height="400"> </div>
+<h2 id="第四天">第四天</h2>
+<p>台東： 關山永和豆漿、鹿野神社、K2 Hostel（背包客棧）、台東大學、海濱公園、台東森林公園、鐵花村音樂聚落</p>
+<p>關山永和豆漿，超級便宜，這樣才130</p>
+<div align="left"><img src="24.JPG" width="400" height="400"> </div>
+<p>鹿野神社，小小的景點</p>
+<div align="left"><img src="25.jpg" width="400" height="400"> </div>
+<p>台東大學的圖書館</p>
+<div align="left"><img src="26.jpg" width="400" height="400"> </div>
+<p>台東阿伯小白屋，是一個很讓人難過的故事，拾荒阿伯親手用搜集而來的材料字既搭建而成，但聽說阿伯已過世了</p>
+<div align="left"><img src="27.jpg" width="400" height="400"> </div>
+<p>台東森林公園，裡面很大，我們只到了琵琶湖</p>
+<div align="left"><img src="28-1.jpg" width="400" height="400"> </div>
+<p>墾墨咖啡～很美的咖啡廳</p>
+<div align="left"><img src="28.jpg" width="400" height="400"> </div>
+<p>鐵花村音樂聚落，那裡有為素人歌手唱個超級好聽～</p>
+<div align="left"><img src="29.jpg" width="400" height="400"> </div>
+<div align="left"><img src="30.jpg" width="400" height="400"> </div>
+<h2 id="第五天">第五天</h2>
+<p>高雄： 高雄車站、光榮碼頭、高雄海洋文化及流行中心、駁二藝術特區、西子灣、鴨肉珍、衛武營、六合夜市</p>
+<p>從台東搭往高雄行經南迴景色</p>
+<div align="left"><img src="31.jpg" width="400" height="400"> </div>
+<p>高雄海洋文化及流行中心</p>
+<div align="left"><img src="32.jpg" width="400" height="400"> </div>
+<p>駁二藝術特區</p>
+<div align="left"><img src="33.jpg" width="400" height="400"> </div>
+<p>西子灣中山大學</p>
+<div align="left"><img src="34.jpg" width="400" height="400"> </div>
+<p>衛武營音樂廳</p>
+<p>夜晚客棧</p>
+<div align="left"><img src="35.jpg" width="400" height="400"> </div>
+<h2 id="第六天">第六天</h2>
+<p>台南： 奇美博物館、十鼓仁糖文創園區、台南車站</p>
+<p>最近奇美博物館剛好有展覽：時代的臉孔：從莎士比亞到紅髮愛德</p>
+<div align="left"><img src="36.jpg" width="400" height="400"> </div>
+<p>夜晚的奇美點燈後好美</p>
+<div align="left"><img src="37.jpg" width="400" height="400"> </div>
+<p>十鼓仁糖文創園區，夜晚都沒什麼人的星光票，超划算又都玩一輪，但是有些設施不在晚上開放</p>
+<div align="left"><img src="38.jpg" width="400" height="400"> </div>
+<div align="left"><img src="39.jpg" width="400" height="400"> </div>
+<p>結束後大小包行囊回旅宿</p>
+<div align="left"><img src="40.jpg" width="400" height="400"> </div>
+<h2 id="第七天">第七天</h2>
+<p>台南： 三井Outlet</p>
+<p>陪嘉宏逛三井</p>
+<div align="left"><img src="41.jpg" width="400" height="400"> </div>
+<p>返回台北～結束旅程</p>
+<div align="left"><img src="42.jpg" width="400" height="400"> </div>
+<h1 id="遺珠之憾-想去但沒去">遺珠之憾 - 想去但沒去</h1>
+<p>花蓮：山度空間、七七高地</p>
+<p>台東：太麻里</p>
+<p>高雄：高雄市立圖書館總館、Lotus WakePark、蓮池潭風景區、夢時代高雄之眼摩天輪</p>
+<p>花蓮：遠雄海洋公園、大石鼻山步道｜龜庵山步道、石門洞（麻糬洞、March洞）</p>
+<h1 id="體悟">體悟</h1>
+<p>在工作了一年多後，因緣際會安排自己一直未能實現的環島夢，說走就走的行程，，雖然沒有全部的城市都去到，但這樣反而讓我們更深入玩到每個縣市，尤其在花蓮玉里，原本安排計畫時沒有想到要在此度過一晚，但因朋友說：玉里麵必吃，我們因此駐足於此地，也認識民宿老闆，跟自己有著相同熱血的心，說而言不如起而行，也品嘗到玉里麵（感覺很像陽春麵，但做法不同，我吃不出來）及當地厲害的米達炭烤雞排。有時人生就是因為意想不到，才顯得更精彩，因緣探索難以挖掘的樂趣，在世界每個土地上，每個人都用不同的方式，活出自己的人生。</p>
+]]></content>
+      <tags>
+        <tag>Travel</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>故宮沉浸式展場系統</title>
     <url>/myblog/2020/05/25/ARKit/</url>
     <content><![CDATA[<blockquote>
@@ -208,307 +508,7 @@ AR、VR 在軟硬體的高速發展，使其將成為未來的趨勢及主流，
       </tags>
   </entry>
   <entry>
-    <title>阿里山眠月線單攻 Alishan Mountain 2022.5.29</title>
-    <url>/myblog/2022/05/30/Alishan/</url>
-    <content><![CDATA[<blockquote>
-<p>前幾天都是大雨滂沱，當我們來到時晴空萬里<br>
-也在離開時，下起大雨，猶如山神含著淚告訴我們一定要再來<br>
-It had been raining heavily the past few days, and the sky was clear when we arrived<br>
-When we were leaving, it rained heavily, as if the mountain god told us with tears that we must come again</p>
-</blockquote>
-<h1 id="阿里山眠月線歷史背景-backgroud-history">阿里山眠月線歷史背景 Backgroud history</h1>
-<p>阿里山眠月線為日治時期修築的鐵路，目的為搬運砍伐的巨木而建造，而後發展為觀光，也有小火車提供載客服務。眠月線為其中一個支線，止於石猴站，全長「9.2公里」，沿途共經過「24個橋樑與12個隧道」。<br>
-The Alishan Mianyue Line is a railway built during the Japanese colonial period. It was built for the transportation of giant trees, and then developed as a tourist spot. There are also trains for passenger services. The Mianyue Line is one of the branch lines, ending at Shihou Station, with a total length of “9.2 kilometers” and a total of “24 bridges and 12 tunnels” along the way.</p>
-<div align="left"><img src="7.jpg" width="500" height="500"> </div>
-<p>1999年因為921大地震，鐵路坍方而停駛，而後經過一番修復曾經短暫恢復通車，不料2008年又遭遇八八風災再度損毀，至今未再復駛。由於其平坦且優美的景色，使其成為著名的景點。<br>
-In 1999, the railway was suspended due to the collapse of the “921 earthquake”. After some repairs, it was briefly restored to traffic. However, in 2008, it was damaged again by the typhoon and has not resumed operation. It is a famous attraction due to its flat and beautiful scenaries.</p>
-<h1 id="行前準備-preparation">行前準備 Preparation</h1>
-<p>由於眠月線為台灣特有種一葉蘭的保護區，因此須先上<a href="https://pa.forest.gov.tw/?utm_source=%E5%A5%BD%E5%A5%BD%E7%8E%A9%E5%8F%B0%E7%81%A3blog&amp;utm_medium=%E9%98%BF%E9%87%8C%E5%B1%B1%E7%9C%A0%E6%9C%88%E7%B7%9A-%E4%B8%80%E7%AF%87%E6%90%9E%E6%87%82%E7%99%BB%E5%B1%B1%E8%B7%AF%E7%B7%9A%E3%80%81%E5%A6%82%E4%BD%95%E7%94%B3%E8%AB%8B%E3%80%81%E6%B3%A8&amp;utm_campaign=%E9%98%BF%E9%87%8C%E5%B1%B1%E7%9C%A0%E6%9C%88%E7%B7%9A%EF%BD%9C%E5%A4%B1%E8%90%BD%E4%B9%8B%E5%9C%B0%E3%80%8C%E7%9C%A0%E6%9C%88%E7%B7%9A%E3%80%8D%E6%98%8E%E5%B9%B4%E5%8D%B3%E5%B0%87%E5%B0%81%E9%96%89%EF%BC%8C%E6%87%B6%E4%BA%BA%E5%8C%85%E5%85%88%E6%94%B6%E8%97%8F%E3%80%90%E7%99%BB%E5%B1%B1%E8%B7%AF%E7%B7%9A/%E5%A6%82%E4%BD%95%E7%94%B3%E8%AB%8B/%E4%BA%A4%E9%80%9A%E6%96%B9%E5%BC%8F/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85%E3%80%91&amp;utm_term=&amp;utm_content=" target="_blank" rel="noopener">林務局網站</a>申請入園許可，選擇區域：「台灣一葉蘭自然保留區」。<br>
-※管制人數為每日500人<br>
-Since the Mianyue Line is a protected area for the endemic species of Orchid japonica in Taiwan, it is necessary to go to the website of the Forest Service to apply for permission to enter the park, and select the area: “Taiwan Echidonia Natural Reserve”.<br>
-※The number of people under control is 500 people per day</p>
-<div align="left"><img src="19.jpg" width="500" height="500"> </div>
-<p>建議需要帶的物品：</p>
-<ol>
-<li>頭燈：因為有許多隧道且非常陰暗，建議要攜帶</li>
-<li>登山鞋或雨鞋：路上多處泥濘，真心建議不要像我一樣New Balance，回去洗得很痛苦</li>
-<li>行動糧：可以買些巧克力、麵包、鹽糖等，隨時補充</li>
-<li>水： 網上許多人建議2000c.c，因人而異，我個人是600c.c.搞定<br>
-（以上建議為單攻，若要扎營可參考其他）</li>
-</ol>
-<p>由於近期意外事故不斷，讓阿里山林業鐵路及文化資產管理處決定，於2022年的1月17日至4月30日封閉施整修，此次封閉將規畫更換、加寬既有木板，增加止滑效果。<br>
-也難怪我們爬起來很順，跟過去相比超級安全</p>
-<p>Suggested items:</p>
-<ol>
-<li>Headlights: Because tunnels are very dark, it is suggested to bring</li>
-<li>Hiking shoes or rain boots: There are many muddy places on the road.</li>
-<li>Action food: you can buy some chocolate, bread, and salt candy, etc., and eat them at any time</li>
-<li>Water: Many people recommend 2000c.c, it depends, I personally bring with 600c.c. water.<br>
-(The above suggestion is for one day trip, if you want to camp, you can refer to others)</li>
-</ol>
-<p>Due to recent accidents, the Alishan Forestry Railway and Cultural Assets Management Office decided to close for renovations from January 17 to April 30, 2022. This closure would plan to replace and widen the existing wooden boards to increase the Anti-slip effect.<br>
-No wonder we climbed up very smoothly, super safe compared to the past.</p>
-<p><a href="https://www.welcometw.com/%E9%98%BF%E9%87%8C%E5%B1%B1%E7%9C%A0%E6%9C%88%E7%B7%9A-%E4%B8%80%E7%AF%87%E6%90%9E%E6%87%82%E7%99%BB%E5%B1%B1%E8%B7%AF%E7%B7%9A%E3%80%81%E5%A6%82%E4%BD%95%E7%94%B3%E8%AB%8B%E3%80%81%E6%B3%A8/" target="_blank" rel="noopener">資料來源：阿里山眠月線</a></p>
-<h1 id="眠月線登山路線-walking-route">眠月線登山路線 Walking Route</h1>
-<div align="left"><img src="18.png" width="500" height="500"> </div>
-<p>阿里山眠月線步行路線一般以「沼平站」為起點，沼平站同時為祝山線與眠月線的起點車站，兩條支線共用約3公里的鐵路後才分開，抵達此處會看到聳動的告示<br>
-The walking route of Alishan Mianyue Line generally starts from “Numaping Station”, which is also the starting point of Zhushan Line and Mianyue Line. The two branch lines share about 3 kilometers of railway before they separate. When you arrive here, you will see to the notice</p>
-<div align="left"><img src="12.jpg" width="500" height="500"> </div>
-<div align="left"><img src="3.jpg" width="500" height="500"> </div>
-<p>沿著鐵軌一直行走～<br>
-Keep goning!</p>
-<div align="left"><img src="8.jpg" width="500" height="500"> </div>
-<p>走到過去坍方處，這裏也是暴雨後最多人受困的地方<br>
-Go through the collapse. The place is that the most people are trapped after the rainstorm</p>
-<div align="left"><img src="6.jpg" width="500" height="500"> </div>
-<p>接著沒多久就會進入隧道，其中一個隧道最長，裡面也有土石坍方，這時非常需要頭燈的協助<br>
-It won’t take long for you to enter the tunnels, one of which is the longest, and there are collapses in it. At this time, you need the assistance of a headlight.</p>
-<div align="left"><img src="14.jpg" width="500" height="500"> </div>
-<div align="left"><img src="15.jpg" width="500" height="500"> </div>
-<p>出洞穴後抵達過去月台<br>
-After leaving the cave, reach the platform</p>
-<div align="left"><img src="4.jpg" width="500" height="500"> </div>
-<p>沿路的鐵軌經重新修築後安全了許多<br>
-The tracks along the road are much safer after being rebuilt</p>
-<div align="left"><img src="5.jpg" width="500" height="500"> </div>
-<div align="left"><img src="10.jpg" width="500" height="500"> </div>
-<div align="left"><img src="17.jpg" width="500" height="500"> </div>
-<p>洞穴內的積水有時很深，強烈建議要登山鞋<br>
-The water in the cave is sometimes deep, hiking shoes are strongly recommended</p>
-<div align="left"><img src="11.jpg" width="500" height="500"> </div>
-<p>抵達終點石猴站<br>
-Arrive at Stone Monkey Station</p>
-<div align="left"><img src="16.jpg" width="500" height="500"> </div>
-<p>離開前在大門口紀錄神聖的時刻<br>
-Capture the sacred moment at the gate before leaving</p>
-<div align="left"><img src="9.jpg" width="500" height="500"> </div>
-<p>回嘉義市區的路上，濃霧跟大雨滂沱<br>
-On the way back to downtown Chiayi, there is fog and heavy rain</p>
-<div align="left"><img src="13.jpg" width="500" height="500"> </div>
-<h1 id="總結-summary">總結 Summary</h1>
-<p>本身是登山菜雞，這是以個人角度做的評分，覺得難度中下，全長9.2公里的眠月線，一路起伏僅約100公尺，相當平緩好走，且夏天山上溫度10多度，非常舒服，我們11點左右出發抵達終點大概兩點初，單程行走時間約為3-4小時，回程聽見打雷聲，我們加緊腳步，僅花一半的時間回到「沼平站」。<br>
-I am an entry-level of mountaineering. The  following is a personal rating. I think it is mid-level of  difficulty. The 9.2-kilometer Mianyue line has only about 100 meters of height difference. It is quite gentle and easy to walk. In summer, the temperature on the mountain is about 10 degrees, which is very Comfortable, we started at around 11:00 and arrived at the end at about 2:00. The one-way walking time is about 3-4 hours. On the return journey, we heard thunder, so we stepped up our pace and only spent half the time back to “Numaping Station”.</p>
-<p>難易度 Difficulty ： ◼️ ◼️ ◻️ ◻️ ◻️<br>
-危險度 Danger degree ： ◼️ ◼️ ◼️ ◻️ ◻️<br>
-值得程度 Worth rate： ◼️ ◼️ ◼️ ◼️ ◼️</p>
-]]></content>
-      <tags>
-        <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>NBA老闆的慧眼 NBA bosses&#39; wisdom - Affinity Propagation</title>
-    <url>/myblog/2019/01/29/AP-algo/</url>
-    <content><![CDATA[<h1 id="概念發想-concept">概念發想 Concept</h1>
-<hr>
-<p><a href="https://github.com/LawrenceGao0224/Intelligence-Oriented-Management-Decision/tree/master/%E6%99%BA%E6%85%A7%E5%9E%8B%E6%9C%9F%E6%9C%AB%E5%A0%B1%E5%91%8A">程式碼連結 Program Click On Me</a></p>
-<p><img src="NBA.jpg" alt="NBA"></p>
-<p>我們將自己設想為球隊分析師，並希望能遞上一份不讓老闆&quot;打臉&quot;的分群資料，提供球隊高層在球員交易、補強、替代方案上有份合理客觀的依據。</p>
-<p>We envision ourselves as team analysts, and hope to hand over a group of information that provides the team’s top management with a reasonable and objective basis for player trading, reinforcement, and alternatives.</p>
-<hr>
-<h1 id="操作方法-operation">操作方法 Operation</h1>
-<p>將NBA所有球員資料(Ex: 薪水、年齡、得分、助攻、有效命中率、真實命中率、球權佔有率、籃板率、效率值…)，以AP演算法實作，計算各球員資料的負歐積里德距離，調整preference、Damping Factor參數，求出k個高質量聚類，且我們將多維度的資料透過PCA()方法壓縮為低維度的資料，實現可視化。</p>
-<p>All NBA player information (Ex: salary, age, score, assists, effective hit rate, true hit rate, possession rate, rebound rate, efficiency value…) is calculated by AP algorithm to calculate each player’s data. The negative Ourich Reed distance, adjust the preferences, Damping Factor parameters, find k high-quality clusters, and we compress the multi-dimensional data into low-dimensional data through PCA () method to achieve visualization</p>
-<p>資料來源 ： (<a href="https://www.kaggle.com/acasalan/nba-player-stats-201718" target="_blank" rel="noopener">https://www.kaggle.com/acasalan/nba-player-stats-201718</a>)</p>
-<hr>
-<h1 id="實作結果-result">實作結果 Result</h1>
-<h2 id="調整參數-adjust-parameter">調整參數 Adjust parameter:</h2>
-<ol>
-<li>Preference:<br>
-Preference = 中位數(-62.5683289159)<br>
-群集數: 43</li>
-</ol>
-<p><img src="1-1.png" alt="43"></p>
-<p>Preference = -500<br>
-群集數: 7</p>
-<p><img src="1-2.png" alt="7"></p>
-<ol start="2">
-<li>Damping Factor:</li>
-</ol>
-<p>Damping Factor = 0.5      --&gt;      Time = 0.8640606880187988 seconds.<br>
-Damping Factor = 0.9      --&gt;      Time = 1.2220699787139893 seconds.</p>
-<h2 id="所有球員資料-all-players">所有球員資料 All players:</h2>
-<p><img src="2-1.png" alt="2-1">   <img src="2-2.png" alt="2-2"></p>
-<h2 id="依球員打球的位置-according-to-position">依球員打球的位置 According to position</h2>
-<ol>
-<li>
-<p>center © : 8群集數<br>
-<img src="3-1.png" alt="3-1"></p>
-</li>
-<li>
-<p>power forward (PF) : 8群集數<br>
-<img src="3-2.png" alt="3-2"></p>
-</li>
-<li>
-<p>small forward (SF) : 12群集數<br>
-<img src="3-3.png" alt="3-3"></p>
-</li>
-<li>
-<p>point guard (PG) : 11群集數<br>
-<img src="3-4.png" alt="3-4"></p>
-</li>
-<li>
-<p>shooting guard (SG) : 4群集數<br>
-<img src="3-5.png" alt="3-5"></p>
-</li>
-</ol>
-<h2 id="依不同屬性">依不同屬性</h2>
-<p>進攻性質 or 防守性質…</p>
-<hr>
-<h1 id="延伸探討-any-imperfect">延伸探討  Any imperfect ?</h1>
-<p>然而在我們丟入的data有其盲點存在,NBA的老闆或球隊在選擇球員上,並不會只觀看球員在場上的數據表現,還包括許多因素,事無法量化或在數據表現出來的(包括球員心理狀態、球員間磨合度…)</p>
-<p>However, the data we throw in has its  blind spots. The NBA boss or team is not only watching the performance of the players on the field, but also includes many factors, which cannot be quantified or expressed in the data. (including the player’s mental state, the player’s running-in…)</p>
-<p>如下:</p>
-<p>❖商業價值 Business Value ex: Dwyane Wade<br>
-Wade是大家耳熟能詳的巨星,層經出現在2K遊戲的封面上,但最近的數據表現並不如其他球員出色,但仍是有淺力的球員,也累積許多粉絲,粉絲能帶來商業價值。<br>
-Wade is a well-known superstar. He has appeared on the cover of 2K games, but his recent data performance is not as good as other players, but he is still a shallow player and has accumulated many fans. Fans can bring commercial value.<br>
-<img src="4-1.png" alt="4-1"></p>
-<p>❖球員背景 Player’s Background ex: Jeremy Lin<br>
-Jeremy是著名的台裔球員,能吸引亞洲地區的球迷觀注其球隊,帶來利益。<br>
-Jeremy is a famous Taiwanese player who can attract fans in Asia to watch his team and bring benefits.<br>
-<img src="4-2.png" alt="4-2"></p>
-<p>❖健康因素 Health factor ex: Derrick Rose<br>
-Rose是最年輕獲選MVP的球員,但由於前幾賽季腳傷原因,造成都個賽季缺賽,而傷後復出便不如以前突出,這也是無法顯現在數據上的。<br>
-Rose is the youngest player to be elected MVP, but due to the foot injury in previous seasons, he missed all seasons, and his comeback after injury is not as prominent as before, which cannot be shown in the data.<br>
-<img src="4-3.png" alt="4-3"></p>
-<hr>
-<h1 id="參考資料-reference">參考資料 Reference</h1>
-<p>(<a href="https://zi.media/@yidianzixun/post/uKZUFF?fbclid=IwAR1Dib-4T5MkM2x_helYBtq0TgTD871fAixs-4sBivOUXUNjuMl07xFahOs" target="_blank" rel="noopener">https://zi.media/@yidianzixun/post/uKZUFF?fbclid=IwAR1Dib-4T5MkM2x_helYBtq0TgTD871fAixs-4sBivOUXUNjuMl07xFahOs</a>)</p>
-<p>(<a href="https://www.cnblogs.com/huadongw/p/4202492.html?fbclid=IwAR3PHEOcrAar0rCI1e9AeYBxV0fI6JKJIRqGAJ3ag9BnlleT5M9v_8oNiy0" target="_blank" rel="noopener">https://www.cnblogs.com/huadongw/p/4202492.html?fbclid=IwAR3PHEOcrAar0rCI1e9AeYBxV0fI6JKJIRqGAJ3ag9BnlleT5M9v_8oNiy0</a>)</p>
-<p>(<a href="https://www.itread01.com/articles/1495821610.html?fbclid=IwAR1Ssz1ZCdqnxtT6obwpx0AFRDBEGrqKK0BXmMGPK-I1lvNwqJuif9EhZt0" target="_blank" rel="noopener">https://www.itread01.com/articles/1495821610.html?fbclid=IwAR1Ssz1ZCdqnxtT6obwpx0AFRDBEGrqKK0BXmMGPK-I1lvNwqJuif9EhZt0</a>)</p>
-<p>(<a href="https://scikit-learn.org/stable/auto_examples/applications/plot_stock_market.html?fbclid=IwAR29Qcy3SrWFDjHAJGF--XO-0zW2FWt8t4dYZT0lsYxUDqJpBz17ds2pQQM" target="_blank" rel="noopener">https://scikit-learn.org/stable/auto_examples/applications/plot_stock_market.html?fbclid=IwAR29Qcy3SrWFDjHAJGF–XO-0zW2FWt8t4dYZT0lsYxUDqJpBz17ds2pQQM</a>)</p>
-<p>(<a href="https://scikit-learn.org/stable/auto_examples/cluster/plot_affinity_propagation.html?fbclid=IwAR2SsWtrb5MJdypMha6G59nWSeEwf7QK5vzmCa_UefR9mHDT0WzLgEbqng4#sphx-glr-auto-examples-cluster-plot-affinity-propagation-py" target="_blank" rel="noopener">https://scikit-learn.org/stable/auto_examples/cluster/plot_affinity_propagation.html?fbclid=IwAR2SsWtrb5MJdypMha6G59nWSeEwf7QK5vzmCa_UefR9mHDT0WzLgEbqng4#sphx-glr-auto-examples-cluster-plot-affinity-propagation-py</a>)</p>
-]]></content>
-      <tags>
-        <tag>Work</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>冬季環島 2022.12.24 - 2022.12.30</title>
-    <url>/myblog/2023/01/03/AroundTaiwan/</url>
-    <content><![CDATA[<blockquote>
-<p>趁年輕完成一項人生清單<br>
-受上天眷顧整趟行程都沒有下雨<br>
-排隊美食都沒排到隊<br>
-台灣真的好美</p>
-</blockquote>
-<h1 id="行前考量">行前考量</h1>
-<p>原本在規劃想要去的景點與交通方式時，發現只有四個縣市(花蓮、台東、高雄、台南)是我們特別想去的，而又正值冬季，東北季風讓北部容易下大雨，因此決定半搭車半騎車的方式，不僅能讓花東停留的時間更久，也能避開東北角容易下雨的危險</p>
-<h1 id="路線規畫">路線規畫</h1>
-<p>順時針繞行，台北出發—&gt;花蓮(2D)—&gt;台東(2D)—&gt;高雄(1D)—&gt;台南(2D)—&gt;台北</p>
-<h1 id="主要行程規劃目的">主要行程規劃目的</h1>
-<h2 id="第一天">第一天</h2>
-<p>花蓮： 曼波海灘、七星潭、四八高地、東大門夜市、花蓮車站</p>
-<p>抵達花蓮車站</p>
-<div align="left"><img src="1.jpg" width="400" height="400"> </div>
-<p>黑點師蚵子滷肉飯加蛋必點～超好吃</p>
-<div align="left"><img src="2.JPG" width="400" height="400"> </div>
-<p>曼波海灘玩沙灘車（月牙灣），我們就像VIP，都沒有其他人，備受招待，然後拍照鏡頭前後對比＾＾</p>
-<div align="left"><img src="3.jpg" width="400" height="400"> </div>
-<div align="left"><img src="4.jpg" width="400" height="400"> </div>
-<p>七星潭傍晚時刻</p>
-<div align="left"><img src="5.JPG" width="400" height="400"> </div>
-<p>炸彈蔥油餅－藍車～好好吃</p>
-<div align="left"><img src="6.jpg" width="400" height="400"> </div>
-<p>東大門夜市，人沒有很多～</p>
-<div align="left"><img src="7.jpg" width="400" height="400"> </div>
-<h2 id="第二天">第二天</h2>
-<p>花蓮： 七星潭日出、國立東華大學、雲山水夢幻湖、瑞穗牧場、玉里</p>
-<p>七星潭日出</p>
-<div align="left"><img src="8.JPG" width="400" height="400"> </div>
-<p>漫步在七星潭旁</p>
-<div align="left"><img src="8-1.JPG" width="400" height="400"> </div>
-<p>錢記早餐的炒麵加蛋必點</p>
-<div align="left"><img src="9.jpg" width="400" height="400"> </div>
-<p>無名早餐店的肉餅早早被賣完，很可惜～燒餅蛋餅也好吃</p>
-<div align="left"><img src="10.jpg" width="400" height="400"> </div>
-<p>美麗的東華大學</p>
-<div align="left"><img src="11.jpg" width="400" height="400"> </div>
-<p>雲山水夢幻湖美景，很好拍照，但人有點多～</p>
-<div align="left"><img src="12.jpg" width="400" height="400"> </div>
-<div align="left"><img src="13.JPG" width="400" height="400"> </div>
-<div align="left"><img src="14.JPG" width="400" height="400"> </div>
-<p>瑞穗牧場</p>
-<div align="left"><img src="15.jpg" width="400" height="400"> </div>
-<h2 id="第三天">第三天</h2>
-<p>台東： 三仙台、池上大坡池、池上伯朗大道</p>
-<p>三仙台早上太陽很大</p>
-<div align="left"><img src="16.JPG" width="400" height="400"> </div>
-<p>環島的全副武裝</p>
-<div align="left"><img src="17.JPG" width="400" height="400"> </div>
-<p>大坡池－裝置藝術－釣魚老翁</p>
-<div align="left"><img src="18.jpg" width="400" height="400"> </div>
-<p>池上伯朗大道街拍</p>
-<div align="left"><img src="19.JPG" width="400" height="400"> </div>
-<p>池上豆之味，很精緻但很貴</p>
-<div align="left"><img src="20.jpg" width="400" height="400"> </div>
-<p>池上福原豆腐，外酥內嫩</p>
-<div align="left"><img src="21.jpg" width="400" height="400"> </div>
-<p>池上悟饕便當</p>
-<div align="left"><img src="22.jpg" width="400" height="400"> </div>
-<p>夜晚客棧</p>
-<div align="left"><img src="23.jpg" width="400" height="400"> </div>
-<h2 id="第四天">第四天</h2>
-<p>台東： 關山永和豆漿、鹿野神社、K2 Hostel（背包客棧）、台東大學、海濱公園、台東森林公園、鐵花村音樂聚落</p>
-<p>關山永和豆漿，超級便宜，這樣才130</p>
-<div align="left"><img src="24.JPG" width="400" height="400"> </div>
-<p>鹿野神社，小小的景點</p>
-<div align="left"><img src="25.jpg" width="400" height="400"> </div>
-<p>台東大學的圖書館</p>
-<div align="left"><img src="26.jpg" width="400" height="400"> </div>
-<p>台東阿伯小白屋，是一個很讓人難過的故事，拾荒阿伯親手用搜集而來的材料字既搭建而成，但聽說阿伯已過世了</p>
-<div align="left"><img src="27.jpg" width="400" height="400"> </div>
-<p>台東森林公園，裡面很大，我們只到了琵琶湖</p>
-<div align="left"><img src="28-1.jpg" width="400" height="400"> </div>
-<p>墾墨咖啡～很美的咖啡廳</p>
-<div align="left"><img src="28.jpg" width="400" height="400"> </div>
-<p>鐵花村音樂聚落，那裡有為素人歌手唱個超級好聽～</p>
-<div align="left"><img src="29.jpg" width="400" height="400"> </div>
-<div align="left"><img src="30.jpg" width="400" height="400"> </div>
-<h2 id="第五天">第五天</h2>
-<p>高雄： 高雄車站、光榮碼頭、高雄海洋文化及流行中心、駁二藝術特區、西子灣、鴨肉珍、衛武營、六合夜市</p>
-<p>從台東搭往高雄行經南迴景色</p>
-<div align="left"><img src="31.jpg" width="400" height="400"> </div>
-<p>高雄海洋文化及流行中心</p>
-<div align="left"><img src="32.jpg" width="400" height="400"> </div>
-<p>駁二藝術特區</p>
-<div align="left"><img src="33.jpg" width="400" height="400"> </div>
-<p>西子灣中山大學</p>
-<div align="left"><img src="34.jpg" width="400" height="400"> </div>
-<p>衛武營音樂廳</p>
-<p>夜晚客棧</p>
-<div align="left"><img src="35.jpg" width="400" height="400"> </div>
-<h2 id="第六天">第六天</h2>
-<p>台南： 奇美博物館、十鼓仁糖文創園區、台南車站</p>
-<p>最近奇美博物館剛好有展覽：時代的臉孔：從莎士比亞到紅髮愛德</p>
-<div align="left"><img src="36.jpg" width="400" height="400"> </div>
-<p>夜晚的奇美點燈後好美</p>
-<div align="left"><img src="37.jpg" width="400" height="400"> </div>
-<p>十鼓仁糖文創園區，夜晚都沒什麼人的星光票，超划算又都玩一輪，但是有些設施不在晚上開放</p>
-<div align="left"><img src="38.jpg" width="400" height="400"> </div>
-<div align="left"><img src="39.jpg" width="400" height="400"> </div>
-<p>結束後大小包行囊回旅宿</p>
-<div align="left"><img src="40.jpg" width="400" height="400"> </div>
-<h2 id="第七天">第七天</h2>
-<p>台南： 三井Outlet</p>
-<p>陪嘉宏逛三井</p>
-<div align="left"><img src="41.jpg" width="400" height="400"> </div>
-<p>返回台北～結束旅程</p>
-<div align="left"><img src="42.jpg" width="400" height="400"> </div>
-<h1 id="遺珠之憾-想去但沒去">遺珠之憾 - 想去但沒去</h1>
-<p>花蓮：山度空間、七七高地</p>
-<p>台東：太麻里</p>
-<p>高雄：高雄市立圖書館總館、Lotus WakePark、蓮池潭風景區、夢時代高雄之眼摩天輪</p>
-<p>花蓮：遠雄海洋公園、大石鼻山步道｜龜庵山步道、石門洞（麻糬洞、March洞）</p>
-<h1 id="體悟">體悟</h1>
-<p>在工作了一年多後，因緣際會安排自己一直未能實現的環島夢，說走就走的行程，，雖然沒有全部的城市都去到，但這樣反而讓我們更深入玩到每個縣市，尤其在花蓮玉里，原本安排計畫時沒有想到要在此度過一晚，但因朋友說：玉里麵必吃，我們因此駐足於此地，也認識民宿老闆，跟自己有著相同熱血的心，說而言不如起而行，也品嘗到玉里麵（感覺很像陽春麵，但做法不同，我吃不出來）及當地厲害的米達炭烤雞排。有時人生就是因為意想不到，才顯得更精彩，因緣探索難以挖掘的樂趣，在世界每個土地上，每個人都用不同的方式，活出自己的人生。</p>
-]]></content>
-      <tags>
-        <tag>Travel</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>東京熱不熱 - Japan Tokyo (Updating)</title>
+    <title>東京熱不熱 - Japan Tokyo</title>
     <url>/myblog/2023/10/11/Japan-Tokyo/</url>
     <content><![CDATA[<blockquote>
 <p>First time in Japan, charmed and fascinated.<br>
@@ -521,16 +521,16 @@ In this vibrant city, cherished memories are found.</p>
 <div align="left"><img src="54.jpg" width="300" height="300"> </div>
 <hr>
 <h1 id="行前準備-reparation">行前準備 reparation</h1>
-<p>Flight bookings: Remember to book the tickets correctly, especially the name spelling and passport number, because I typed my girlfriend’s name wrongly until the day before the flight we realized.</p>
-<p>hotels: Because the great hotels are quickly to be fully booked. We used <a href="http://booking.com" target="_blank" rel="noopener">booking.com</a> and <a href="http://agoda.com" target="_blank" rel="noopener">agoda.com</a> to compare the price and make a reservation.</p>
-<p>Weather: When we arrived, it was really hot but 3 days after, it went to be chill at about 20 degree Celsius.</p>
+<p>Flight bookings: Remember to book the tickets correctly, especially the name spelling and passport number, because I typed my girlfriend’s name incorrectly until the day before the flight, and we only realized the mistake then.</p>
+<p>hotels: Because the great hotels tend to get fully booked quickly, we used <a href="http://booking.com" target="_blank" rel="noopener">booking.com</a> and <a href="http://agoda.com" target="_blank" rel="noopener">agoda.com</a> to compare prices and make reservations.</p>
+<p>Weather: When we arrived, it was really hot, but three days later, it became quite chilly, with temperatures at about 20 degrees Celsius.</p>
 <p>clothing &amp; Necessity:</p>
 <p><a href="https://livejapan.com/en/article-a0000218/" target="_blank" rel="noopener">What to Pack for Japan: 8 Essential Things for a Hassle-Free Trip | LIVE JAPAN travel guide</a></p>
 <h1 id="day-schedule">Day schedule</h1>
 <h2 id="day-1-taiwan-to-japan">Day 1 : Taiwan to Japan</h2>
 <p>Our plane is departed at 14:25, and arrival time is 18:50.</p>
 <div align="left"><img src="1.jpg" width="300" height="300"> </div>
-<p>While we arrived at Japan (成田国際空港) Narita International Airport, my suitcase was broken. ****We checked in the hotel first and went to a barbeque restaurant nearby called<a href="https://maps.app.goo.gl/oHD24i5YBM2QxgQK8" target="_blank" rel="noopener">一頭牛燒肉 房家</a></p>
+<p>When we arrived at Japan’s Narita International Airport (成田国際空港), my suitcase was broken. We checked into the hotel first and then went to a nearby barbecue restaurant called<a href="https://maps.app.goo.gl/oHD24i5YBM2QxgQK8" target="_blank" rel="noopener">一頭牛燒肉 房家</a></p>
 <div align="left"><img src="2.jpg" width="300" height="300"> </div>
 <div align="left"><img src="3.jpg" width="300" height="300"> </div>
 <h2 id="day-2-鎌倉-kamakura-amp-江ノ島-enoshima">Day 2 : 鎌倉 Kamakura &amp; 江ノ島 Enoshima</h2>
@@ -557,35 +557,31 @@ And don't miss out on this Good Luck Buddha cake. It's fluffy with a sweet filli
 <div align="left"><img src="11.jpg" width="300" height="300"> </div>
 <div align="left"><img src="10.jpg" width="300" height="300"> </div>
 <h2 id="day-3-銀座-ginza-amp-teamlab">Day 3 : 銀座 Ginza &amp; Teamlab</h2>
-<p>We went to the <a href="https://maps.app.goo.gl/PN9RiVsrxWGHEPGX7" target="_blank" rel="noopener">皇居Kokyo Higashi Gyoen Garden</a> near Tokyo Station, right by the Imperial Palace. It’s super cool and quiet there, but we couldn’t actually go inside the palace, so we just strolled around the garden.</p>
+<p>We went to the <a href="https://maps.app.goo.gl/PN9RiVsrxWGHEPGX7" target="_blank" rel="noopener">皇居 Kokyo Higashi Gyoen Garden</a> near Tokyo Station, right by the Imperial Palace. It’s a super cool and quiet place, but we couldn’t actually go inside the palace, so we just strolled around the garden.</p>
 <div align="left"><img src="14.jpg" width="300" height="300"> </div>
 <div align="left"><img src="15.jpg" width="300" height="300"> </div>
-<p>Around 10 in the morning, we hit up Ginza and walked all over the place. There’s a time when the street is only for people, no cars allowed. It’s full of fancy stores and famous restaurants. We checked out Uniqlo and MUJI, and let me tell you, they’ve got everything you could want. I even bought some clothes there; it’s like a shopping heaven.</p>
+<p>Around 10 in the morning, we visited Ginza and explored the area. There’s a time when the street is only for pedestrians, with no cars allowed. It’s filled with upscale stores and renowned restaurants. We checked out Uniqlo and MUJI, and let me tell you, they have everything you could want. I even bought some clothes there; it’s like a shopping paradise.</p>
 <div align="left"><img src="17.jpg" width="300" height="300"> </div>
 <div align="left"><img src="19.jpg" width="300" height="300"> </div>
-<p>For lunch, we tried some local Ramen<a href="https://maps.app.goo.gl/VuGF1eRXcUuzV2vY9" target="_blank" rel="noopener">銀座 嚆矢</a><br>
-. The soup was pretty strong, and I loved it, but my girlfriend thought it was too salty.</p>
+<p>For lunch, we tried some local Ramen at <a href="https://maps.app.goo.gl/VuGF1eRXcUuzV2vY9" target="_blank" rel="noopener">銀座 嚆矢</a>. The soup was quite robust, and I loved it, but my girlfriend found it a bit too salty.</p>
 <div align="left"><img src="16.jpg" width="300" height="300"> </div>
-<p>Lastly, we visited <a href="https://maps.app.goo.gl/LL7ML45QgBjLUuDj9" target="_blank" rel="noopener">TeamLab Planets</a><br>
-, but make sure you book your tickets ahead of time, or you’ll have to wait in line forever. It was packed with folks, but totally worth it. You have to really dive into the whole experience, and it’s kind of mysterious and cool. You can feel the lights and sounds with your whole body, and even the ground, the water, and the floor. It was my first time experiencing something like that, and it felt like a total miracle.</p>
+<p>Lastly, we visited <a href="https://maps.app.goo.gl/LL7ML45QgBjLUuDj9" target="_blank" rel="noopener">TeamLab Planets</a>. Make sure you book your tickets ahead of time, or you’ll have to wait in line forever. It was crowded, but completely worth it. You have to immerse yourself in the entire experience, and it’s kind of mysterious and cool. You can feel the lights and sounds throughout your whole body, even the ground, the water, and the floor. It was my first time experiencing something like that, and it felt like a complete miracle.</p>
 <div align="left"><img src="18.jpg" width="300" height="300"> </div>
 <h2 id="day-4-原宿-harajuku-新宿-shinjuku-涉谷-shibuya">Day 4 : 原宿 Harajuku、新宿 Shinjuku + 涉谷 Shibuya</h2>
-<p>We got to the <a href="https://maps.app.goo.gl/m3KBL9d2bpvWaz3j9" target="_blank" rel="noopener">明治神宮</a> at about 9 in the morning. It’s quiet but packed with people, and the shrine itself is peaceful. This place is known for the <strong>明治維新, the goal was to combine “modern advances” with traditional “eastern” values.</strong></p>
+<p>We arrived at <a href="https://maps.app.goo.gl/m3KBL9d2bpvWaz3j9" target="_blank" rel="noopener">明治神宮</a> at about 9 in the morning. It’s tranquil but bustling with people, and the shrine itself exudes peace. This place is renowned for the <strong>明治維新</strong> (Meiji Restoration), which aimed to merge “modern advances” with traditional “eastern” values.</p>
 <div align="left"><img src="24.jpg" width="300" height="300"> </div>
-<p>Around 10:30, we hit up some thrift stores in Harajuku. I didn’t buy any clothes, but I’d totally recommend checking it out. There are some cool streets and spots tucked away there.</p>
+<p>Around 10:30, we visited some thrift stores in Harajuku. I didn’t purchase any clothes, but I would definitely recommend checking them out. There are some cool streets and hidden spots in that area.</p>
 <div align="left"><img src="20.jpg" width="300" height="300"> </div>
-<p>Lunchtime! We had sushi at this kinda hidden place <a href="https://maps.app.goo.gl/M7ZXdKsVyo7PAztS7" target="_blank" rel="noopener">Sanaka</a><br>
-. It’s small, but the food’s awesome for the price. We didn’t wait too long, but when we left, there was a line forming outside.</p>
+<p>Lunchtime! We had sushi at this somewhat hidden place, <a href="https://maps.app.goo.gl/M7ZXdKsVyo7PAztS7" target="_blank" rel="noopener">Sanaka</a>. It’s a small restaurant, but the food is fantastic for the price. We didn’t have to wait too long, but when we left, there was a line forming outside.</p>
 <div align="left"><img src="21.jpg" width="300" height="300"> </div>
-<p>Later, we swung by Shibuya at about 3:30. There were so many people; it felt like the whole world was crossing the Shibuya intersection <a href="https://maps.app.goo.gl/NnqAayUgA52uWddB6" target="_blank" rel="noopener">渋谷スクランブル交差点</a><br>
-. We checked out some stores and even the Disney shop. I ended up scoring some cheap shoes at ABC-Mart. We wanted to go to the Shibuya Sky, but it was packed, so we just chilled at the Starbucks right above the crossing. Watching everyone go by was pretty fun.</p>
+<p>Later, we swung by Shibuya around 3:30. There were so many people; it felt like the whole world was crossing the Shibuya intersection, <a href="https://maps.app.goo.gl/NnqAayUgA52uWddB6" target="_blank" rel="noopener">渋谷スクランブル交差点</a>. We visited some stores, including the Disney shop. I ended up finding some affordable shoes at ABC-Mart. We had intended to go to the Shibuya Sky, but it was crowded, so we just relaxed at the Starbucks right above the crossing. Watching everyone pass by was quite enjoyable.</p>
 <div align="left"><img src="22.jpg" width="300" height="300"> </div>
 <p>We headed back to Ueno and had some tasty and affordable fried pork chops <a href="https://maps.app.goo.gl/h6yDvymHHUDTseWN6" target="_blank" rel="noopener">とんかつ山家 上野店</a><br>
 . That pretty much wrapped up our day.</p>
 <div align="left"><img src="23.jpg" width="300" height="300"> </div>
 <h2 id="day-5-富士山-mount-fuji-歌舞伎町-kabukicho-藥妝-drugstore">Day 5: 富士山 Mount Fuji + 歌舞伎町 kabukicho + 藥妝 Drugstore</h2>
-<p>We joined a KKdays trip that took us from Shinjuku to Mount Fuji. The package covered tickets, a tour guide, and transportation, but not food or drinks.</p>
-<p>Our first stop was <a href="https://maps.app.goo.gl/gY3JSubaG6kecdh4A" target="_blank" rel="noopener">新倉山淺間公園 Yamanashi Kankou </a>, just a 5-10 minute walk from Shimo-Yoshida Station <a href="https://maps.app.goo.gl/ktMk67rKct4E6UUU7" target="_blank" rel="noopener">下吉田</a>. I was blown away by the view from the temple, even though the top of Fuji was hidden by clouds, and there wasn’t any snow. It didn’t look as amazing as the photos I’d seen.</p>
+<p>We joined a KKdays trip that took us from Shinjuku to Mount Fuji. The package included tickets, a tour guide, and transportation, but it did not cover food or drinks.</p>
+<p>Our first stop was <a href="https://maps.app.goo.gl/gY3JSubaG6kecdh4A" target="_blank" rel="noopener">新倉山淺間公園 Yamanashi Kankou </a>, just a 5-10 minute walk from Shimo-Yoshida Station <a href="https://maps.app.goo.gl/ktMk67rKct4E6UUU7" target="_blank" rel="noopener">下吉田</a>. I was captivated by the view from the temple, even though the top of Fuji was obscured by clouds, and there was no snow. It didn’t look as spectacular as the photos I had seen.</p>
 <div align="left"><img src="25.jpg" width="300" height="300"> </div>
 <p>Next, we hit up <a href="https://maps.app.goo.gl/J23EcGzJgiT2jUncA" target="_blank" rel="noopener">Shimoyoshida Honcho Street(Fuji Scenic View)</a><br>
 , a famous spot for photos. But with so many tourists on the road, it was getting tricky for the locals. Let’s all follow the rules and not bother the folks who live here. We managed to snap a few pics, and luckily, the cloud didn’t cover Fuji’s peak.</p>
@@ -599,7 +595,7 @@ And don't miss out on this Good Luck Buddha cake. It's fluffy with a sweet filli
 <p>For dinner, we chose a place called <a href="https://maps.app.goo.gl/AF3XBq9wPE68955G7" target="_blank" rel="noopener">炸牛排本村(新宿ALTA後側店)</a>. We waited for about an hour, but it was totally worth it. The beef was crispy on the outside and tender inside, and you could cook it to your liking on the iron panel in front of you. It was super yummy.</p>
 <p>I loved this trip because it saved us the hassle of booking tickets from Tokyo to Mount Fuji and planning out our day at the tourist spots.</p>
 <h2 id="day-6-disneysea">Day 6: DisneySea</h2>
-<p>We got up at around 6:30 AM. We hopped on the subway from Ueno to Disneysea and arrived at about 7:30 AM. The train from Maihama to Disneysea is super cute inside. There are loads of people, so I’d suggest everyone get there early. Arround 8 AM, the entrance started to open up. I really think you should hit up the popular rides as soon as you get into the park because if you spend too much time shopping or walking slowly, you’ll end up waiting forever. Here are some of the top rides:</p>
+<p>We got up at around 6:30 AM and took the subway from Ueno to Disneysea, arriving at about 7:30 AM. The train from Maihama to Disneysea is really cute inside. Since there are a lot of people, I would suggest arriving early. Around 8 AM, the entrance began to open. I strongly recommend going for the popular rides as soon as you enter the park because if you spend too much time shopping or walking slowly, you’ll end up waiting forever. Here are some of the top rides:</p>
 <ol>
 <li><a href="https://www.tokyodisneyresort.jp/en/tds/attraction/detail/223/" target="_blank" rel="noopener">Journey to the Centre of the Earth</a> (9/10)</li>
 <li><a href="https://www.tokyodisneyresort.jp/en/tds/attraction/detail/222/" target="_blank" rel="noopener">Indiana Jones Adventure: Temple of the Crystal Skull</a> (10/10)</li>
@@ -693,136 +689,6 @@ My favorite one, it’s really yummy. The cookie outside is not hard to bite, yo
 <li><a href="https://www.kadenjapan.store/item/Hanako-%E5%96%AB%E8%8C%B6%E5%BA%97%E3%81%AB%E6%81%8B%E3%81%97%E3%81%A6%E3%80%82Creme-Br%C3%BBl%C3%A9e-Tart-%E7%84%A6%E7%B3%96%E5%B8%83%E4%B8%81%E6%92%BB/6212712493875200?lang=zh-Hant" target="_blank" rel="noopener">Hanako 喫茶店に恋して。Creme Brûlée Tart 焦糖布丁撻</a> (10/10):<br>
 Too tasty that I forgot to take photos.</li>
 </ol>
-]]></content>
-      <tags>
-        <tag>Travel</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>墾丁打工換宿 Kenting Working-Holiday 2018/8/5~2018/8/25</title>
-    <url>/myblog/2018/08/25/Kenting-WH/</url>
-    <content><![CDATA[<blockquote>
-<p>謝謝每位我在這裡遇到的朋友<br>
-離開太趕 沒能全部拍到照 有緣再見<br>
-結束最後暑假 研究所人生準備開跑<br>
-#鹿境 #小幫手 #恆春 #海<br>
-Thank you to everyone I have met here<br>
-I left in a hurry and couldn’t take all the photos. Goodbye…<br>
-The last summer vacation is over, the life of the master school is about to start</p>
-</blockquote>
-<h1 id="前言-briefly">前言 Briefly</h1>
-<p>你憧憬未來的時候，不會去想著把所有事聯繫起來；只有在回憶過去的時候，才會將這點點滴滴聯繫在一起。一定要相信，這些生活的點滴會在你未來的某一天產生聯繫。一定要相信：勇氣、目標、生命、緣起…一切都不會令你失望，只會增加你的與眾不同。<br>
-When you look forward to the future, you don’t try to connect everything happens to you; only when you think about the past, you start to connect all the memory. Be sure to believe that these little moments of life will be connected someday in your future. Be sure to believe: courage, purpose, life, origin…all will not disappoint you, but will only increase your uniqueness.</p>
-<p><img src="1.png" alt="1"><br>
-<img src="2.png" alt="2"></p>
-<h1 id="工作-working">工作 Working</h1>
-<p>其實工作內容很間單，分爲吧台、鹿園兩區的工作<br>
-In fact, the content of the work is very simple, divided into two parts: the bar and the deer area.</p>
-<h2 id="在吧台負責-responsibility-in-bar">在吧台負責 Responsibility in bar：</h2>
-<ol>
-<li>飲料餐點 Drinks and meals</li>
-<li>外頭的商品部擺放、補貨(拆線、吊牌剪掉、檢查不良品) Arrangement and replenishment of the merchandise department outside (remove stitches, cut off tags, check defective products)</li>
-<li>幫訂午餐、晚餐 Order lunch and dinner for everyone</li>
-<li>廁所打掃（每1hr巡一次）Toilet cleaning (once an hour)</li>
-<li>外頭路面地面整潔 Cleaning whole area</li>
-</ol>
-<h2 id="在鹿園負責-responsibility-in-dear-area">在鹿園負責 Responsibility in dear area：</h2>
-<ol>
-<li>割草（沒體驗到 但要搬運20多公斤草）Mowing (didn’t experience it, but need to carry more than 20 kilograms of grass)</li>
-<li>切紅蘿菠、地瓜 Sliced carrots, sweet potatoes</li>
-<li>打掃鹿園（沒體驗到 很臭）Clean the deer area (didn’t experience it, it stinks)</li>
-<li>解說員（有人體驗到）Narrator (experienced by someone)</li>
-</ol>
-<p><img src="3.png" alt="3"></p>
-<h1 id="度假-holiday">度假 Holiday</h1>
-<p>其實幾乎只有第一週體驗到 剩下都待在鹿境工作 還有最後一週連日的大雨打壞行程（只找到一天沒雨空擋去環屏東）<br>
-In fact, I only enjoyed outdoor activities in the first week, the heavy rain in the last week ruined the itinerary (I only found a day without rain to go traveling around Pingtung).</p>
-<p>8/5 浮潛+逛恆春夜市 Snorkeling + visiting Hengchun Night Market<br>
-8/6 帆船石+麋谷 Sailboat Rock + Moose Valley (Tourist spots)<br>
-8/7 聚餐 美式餐廳 +打牌 Dining American restaurant + playing cards<br>
-8/8 七孔瀑布 Waterfall + cafe<br>
-8/9 古城家常菜+白沙灣 Home-cooked dishes in the ancient city + beach<br>
-8/10 深潛+海生館+肥春號 Deep Dive + Marine Life Museum<br>
-8/11 吉普車（大腳168車隊）Jeep</p>
-<p>Last week :車程福安宮+牡丹水庫+牡丹國小+旭海+九鵬大沙漠+港仔大沙漠+風吹砂+龍磐+台灣最南點<br>
-Drive to Fu’an Palace + Mu-tan Reservoir + Mu-tan Elementary School + Syuhai Grassland Recreation Area + Jiupeng Desert + Gangzai Desert + Wind Chuisha + Longpan + the southernmost point of Taiwan<br>
-(Sorry they are all Chinese name…)</p>
-]]></content>
-      <tags>
-        <tag>Travel</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>蘭嶼Lanyu遊 2020.7.21-2020.7.24</title>
-    <url>/myblog/2020/07/24/Lanyu/</url>
-    <content><![CDATA[<blockquote>
-<p>蘭嶼夜晚星空真的美<br>
-處處有山羊🐐<br>
-網路卡卡頓<br>
-物價媲美歐美<br>
-The starry sky is really beautiful at night<br>
-There are goats everywhere 🐐<br>
-Network is poor<br>
-Foods are expensive</p>
-</blockquote>
-<hr>
-<p><img src="1.jpg" alt="1"></p>
-<h1 id="行程-itinerary">行程 Itinerary</h1>
-<h2 id="day-1-亞比亞民宿-東-yabia-homestay-east">Day 1 亞比亞民宿 (東) Yabia Homestay (East)</h2>
-<p>16:00到達蘭嶼 16:00 Arrive at Lanyu<br>
-回民宿休息一下 Go to the homestay and take a rest<br>
-東清小夜市吃蔥油餅 Eat scallion pancakes at Dongqing Night Market<br>
-希蕊娜莉晚餐 Dinner<br>
-回民宿休息 Take a rest at the homestay<br>
-十一鄰酒吧 Bar</p>
-<h2 id="day-2-南-south">Day 2 (南) (South)</h2>
-<p>看日出 watch the sunrise<br>
-看完回去睡 Back to sleep<br>
-蘭嶼冷泉 Lanyu Cold Spring<br>
-看蘭嶼地下屋 Visit the Lanyu underground house<br>
-漂流木餐廳 Driftwood Restaurant (not sure english name)<br>
-西岸海邊玩水 Playing in the water on the west coast<br>
-繞南部蘭嶼一圈 hang out in the south of Lanyu<br>
-回民宿休息（走中橫）Go back to the homestay to rest (walk across the middle)<br>
-青青草原看夕陽 Green Grassland Watching the Sunset<br>
-蘭嶼哇哇複合式餐飲晚餐 Dinner<br>
-去附近商店買紀念品、郵局領錢 Go to a nearby store to buy souvenirs, and pick up money at the post office<br>
-回去路上看星星 Watch the beautiful stars in the sky<br>
-回民宿 Back to homestay<br>
-去雜貨店買酒回民宿喝 buy some drink at the grocery store and back to the hotel</p>
-<h2 id="day-3-北-north">Day 3 (北) (North)</h2>
-<p>早上藍海屋潛水 （不太推浮淺 有點雷 但聽說深淺很棒）Snorkeling at the Blue Ocean House in the morning (not recommend, but<br>
-回民宿洗澡 Back to home stay<br>
-午餐 人魚和貓 lunch<br>
-開始北繞蘭嶼（情人洞、蘭嶼鬼洞、貝殼砂、很深之意、雙獅岩、像水渠一樣 拍照）Start to circle around Lanyu in the north (Lover’s Cave, Lanyu Ghost Cave, Shell Sand, Deep Meaning, Shuangshi Rock, taking pictures)<br>
-沿路冰店吃冰 Eat icecream on the way<br>
-小攤販吃飛魚卵小吃 Eating flying fish roe snacks<br>
-蘭嶼氣象站 Lanyu Weather Station<br>
-回民宿 back to homestay<br>
-等八點吃 燒烤吃到飽 Wait until eight o’clock to eat BBQ all you can eat<br>
-小七買酒回民宿 Buy some drinks in a convenient store</p>
-<h2 id="day-4">Day 4</h2>
-<p>看日出 watch the sunrise<br>
-看完回去睡 Go back to sleep<br>
-東清三十三早午餐 Brunch<br>
-回民宿收拾行李 pack our luggage<br>
-舊蘭嶼燈塔拍照 Photograph at Old Lanyu Lighthouse<br>
-等搭船回本島 Back to Taiwan</p>
-<h2 id="原訂行程但沒去-the-original-itinerary-but-did-not-go">原訂行程但沒去： The original itinerary but did not go</h2>
-<p>雯雯冰店<br>
-安逸酒吧 Angit Bar<br>
-M cafe喝酒<br>
-旅人。Rove喝酒<br>
-蘭嶼在地美食-小米阿粨<br>
-蘭嶼反核bar<br>
-瑟郎冰沙吃冰<br>
-自由潛水 free diving</p>
-<p><img src="2.png" alt="2"> <img src="3.jpg" alt="3"></p>
-<blockquote>
-<p>總歸一句 Summary：<br>
-抱持放鬆的心態來就好 Relax~~<br>
-Soak in your own world!</p>
-</blockquote>
 ]]></content>
       <tags>
         <tag>Travel</tag>
@@ -937,6 +803,136 @@ This is a rating from a personal point of view. I feel that the difficulty is me
 ]]></content>
       <tags>
         <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>蘭嶼Lanyu遊 2020.7.21-2020.7.24</title>
+    <url>/myblog/2020/07/24/Lanyu/</url>
+    <content><![CDATA[<blockquote>
+<p>蘭嶼夜晚星空真的美<br>
+處處有山羊🐐<br>
+網路卡卡頓<br>
+物價媲美歐美<br>
+The starry sky is really beautiful at night<br>
+There are goats everywhere 🐐<br>
+Network is poor<br>
+Foods are expensive</p>
+</blockquote>
+<hr>
+<p><img src="1.jpg" alt="1"></p>
+<h1 id="行程-itinerary">行程 Itinerary</h1>
+<h2 id="day-1-亞比亞民宿-東-yabia-homestay-east">Day 1 亞比亞民宿 (東) Yabia Homestay (East)</h2>
+<p>16:00到達蘭嶼 16:00 Arrive at Lanyu<br>
+回民宿休息一下 Go to the homestay and take a rest<br>
+東清小夜市吃蔥油餅 Eat scallion pancakes at Dongqing Night Market<br>
+希蕊娜莉晚餐 Dinner<br>
+回民宿休息 Take a rest at the homestay<br>
+十一鄰酒吧 Bar</p>
+<h2 id="day-2-南-south">Day 2 (南) (South)</h2>
+<p>看日出 watch the sunrise<br>
+看完回去睡 Back to sleep<br>
+蘭嶼冷泉 Lanyu Cold Spring<br>
+看蘭嶼地下屋 Visit the Lanyu underground house<br>
+漂流木餐廳 Driftwood Restaurant (not sure english name)<br>
+西岸海邊玩水 Playing in the water on the west coast<br>
+繞南部蘭嶼一圈 hang out in the south of Lanyu<br>
+回民宿休息（走中橫）Go back to the homestay to rest (walk across the middle)<br>
+青青草原看夕陽 Green Grassland Watching the Sunset<br>
+蘭嶼哇哇複合式餐飲晚餐 Dinner<br>
+去附近商店買紀念品、郵局領錢 Go to a nearby store to buy souvenirs, and pick up money at the post office<br>
+回去路上看星星 Watch the beautiful stars in the sky<br>
+回民宿 Back to homestay<br>
+去雜貨店買酒回民宿喝 buy some drink at the grocery store and back to the hotel</p>
+<h2 id="day-3-北-north">Day 3 (北) (North)</h2>
+<p>早上藍海屋潛水 （不太推浮淺 有點雷 但聽說深淺很棒）Snorkeling at the Blue Ocean House in the morning (not recommend, but<br>
+回民宿洗澡 Back to home stay<br>
+午餐 人魚和貓 lunch<br>
+開始北繞蘭嶼（情人洞、蘭嶼鬼洞、貝殼砂、很深之意、雙獅岩、像水渠一樣 拍照）Start to circle around Lanyu in the north (Lover’s Cave, Lanyu Ghost Cave, Shell Sand, Deep Meaning, Shuangshi Rock, taking pictures)<br>
+沿路冰店吃冰 Eat icecream on the way<br>
+小攤販吃飛魚卵小吃 Eating flying fish roe snacks<br>
+蘭嶼氣象站 Lanyu Weather Station<br>
+回民宿 back to homestay<br>
+等八點吃 燒烤吃到飽 Wait until eight o’clock to eat BBQ all you can eat<br>
+小七買酒回民宿 Buy some drinks in a convenient store</p>
+<h2 id="day-4">Day 4</h2>
+<p>看日出 watch the sunrise<br>
+看完回去睡 Go back to sleep<br>
+東清三十三早午餐 Brunch<br>
+回民宿收拾行李 pack our luggage<br>
+舊蘭嶼燈塔拍照 Photograph at Old Lanyu Lighthouse<br>
+等搭船回本島 Back to Taiwan</p>
+<h2 id="原訂行程但沒去-the-original-itinerary-but-did-not-go">原訂行程但沒去： The original itinerary but did not go</h2>
+<p>雯雯冰店<br>
+安逸酒吧 Angit Bar<br>
+M cafe喝酒<br>
+旅人。Rove喝酒<br>
+蘭嶼在地美食-小米阿粨<br>
+蘭嶼反核bar<br>
+瑟郎冰沙吃冰<br>
+自由潛水 free diving</p>
+<p><img src="2.png" alt="2"> <img src="3.jpg" alt="3"></p>
+<blockquote>
+<p>總歸一句 Summary：<br>
+抱持放鬆的心態來就好 Relax~~<br>
+Soak in your own world!</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Travel</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>墾丁打工換宿 Kenting Working-Holiday 2018/8/5~2018/8/25</title>
+    <url>/myblog/2018/08/25/Kenting-WH/</url>
+    <content><![CDATA[<blockquote>
+<p>謝謝每位我在這裡遇到的朋友<br>
+離開太趕 沒能全部拍到照 有緣再見<br>
+結束最後暑假 研究所人生準備開跑<br>
+#鹿境 #小幫手 #恆春 #海<br>
+Thank you to everyone I have met here<br>
+I left in a hurry and couldn’t take all the photos. Goodbye…<br>
+The last summer vacation is over, the life of the master school is about to start</p>
+</blockquote>
+<h1 id="前言-briefly">前言 Briefly</h1>
+<p>你憧憬未來的時候，不會去想著把所有事聯繫起來；只有在回憶過去的時候，才會將這點點滴滴聯繫在一起。一定要相信，這些生活的點滴會在你未來的某一天產生聯繫。一定要相信：勇氣、目標、生命、緣起…一切都不會令你失望，只會增加你的與眾不同。<br>
+When you look forward to the future, you don’t try to connect everything happens to you; only when you think about the past, you start to connect all the memory. Be sure to believe that these little moments of life will be connected someday in your future. Be sure to believe: courage, purpose, life, origin…all will not disappoint you, but will only increase your uniqueness.</p>
+<p><img src="1.png" alt="1"><br>
+<img src="2.png" alt="2"></p>
+<h1 id="工作-working">工作 Working</h1>
+<p>其實工作內容很間單，分爲吧台、鹿園兩區的工作<br>
+In fact, the content of the work is very simple, divided into two parts: the bar and the deer area.</p>
+<h2 id="在吧台負責-responsibility-in-bar">在吧台負責 Responsibility in bar：</h2>
+<ol>
+<li>飲料餐點 Drinks and meals</li>
+<li>外頭的商品部擺放、補貨(拆線、吊牌剪掉、檢查不良品) Arrangement and replenishment of the merchandise department outside (remove stitches, cut off tags, check defective products)</li>
+<li>幫訂午餐、晚餐 Order lunch and dinner for everyone</li>
+<li>廁所打掃（每1hr巡一次）Toilet cleaning (once an hour)</li>
+<li>外頭路面地面整潔 Cleaning whole area</li>
+</ol>
+<h2 id="在鹿園負責-responsibility-in-dear-area">在鹿園負責 Responsibility in dear area：</h2>
+<ol>
+<li>割草（沒體驗到 但要搬運20多公斤草）Mowing (didn’t experience it, but need to carry more than 20 kilograms of grass)</li>
+<li>切紅蘿菠、地瓜 Sliced carrots, sweet potatoes</li>
+<li>打掃鹿園（沒體驗到 很臭）Clean the deer area (didn’t experience it, it stinks)</li>
+<li>解說員（有人體驗到）Narrator (experienced by someone)</li>
+</ol>
+<p><img src="3.png" alt="3"></p>
+<h1 id="度假-holiday">度假 Holiday</h1>
+<p>其實幾乎只有第一週體驗到 剩下都待在鹿境工作 還有最後一週連日的大雨打壞行程（只找到一天沒雨空擋去環屏東）<br>
+In fact, I only enjoyed outdoor activities in the first week, the heavy rain in the last week ruined the itinerary (I only found a day without rain to go traveling around Pingtung).</p>
+<p>8/5 浮潛+逛恆春夜市 Snorkeling + visiting Hengchun Night Market<br>
+8/6 帆船石+麋谷 Sailboat Rock + Moose Valley (Tourist spots)<br>
+8/7 聚餐 美式餐廳 +打牌 Dining American restaurant + playing cards<br>
+8/8 七孔瀑布 Waterfall + cafe<br>
+8/9 古城家常菜+白沙灣 Home-cooked dishes in the ancient city + beach<br>
+8/10 深潛+海生館+肥春號 Deep Dive + Marine Life Museum<br>
+8/11 吉普車（大腳168車隊）Jeep</p>
+<p>Last week :車程福安宮+牡丹水庫+牡丹國小+旭海+九鵬大沙漠+港仔大沙漠+風吹砂+龍磐+台灣最南點<br>
+Drive to Fu’an Palace + Mu-tan Reservoir + Mu-tan Elementary School + Syuhai Grassland Recreation Area + Jiupeng Desert + Gangzai Desert + Wind Chuisha + Longpan + the southernmost point of Taiwan<br>
+(Sorry they are all Chinese name…)</p>
+]]></content>
+      <tags>
+        <tag>Travel</tag>
       </tags>
   </entry>
   <entry>
@@ -1070,6 +1066,39 @@ LeetCode great solutions: <a href="https://www.youtube.com/channel/UC_mYaQAE6-71
       </tags>
   </entry>
   <entry>
+    <title>Micron Intern in DEG  2019/7/1 ~ 2019/8/30</title>
+    <url>/myblog/2019/08/30/Micron/</url>
+    <content><![CDATA[<blockquote>
+<p>外商公司不喜歡你加班 自律是關鍵<br>
+英文很重要 溝通能力<br>
+環境自由 放鬆但不是隨便<br>
+待人處事態度 與同事們培養默契與團隊精神</p>
+</blockquote>
+<hr>
+<h1 id="面試">面試</h1>
+<p>面試記得要準備中英文的自我介紹  並做個人的作品集會更加分 記得投地公司官網（我丟104都沒消息）</p>
+<h2 id="關卡-1-電話">關卡 1. 電話</h2>
+<p>這個關卡我沒有遇到，但身邊朋友幾個都有接到電話英文面試，自我介紹等等</p>
+<h2 id="關卡-2-face-to-face">關卡 2. Face to face</h2>
+<p>我面對三個主管，首先要你自我介紹，並知道美光是什麼公司，還有能解釋記憶體的架構還有你的了解（聽說正職會問程式題，我個人作品集是做程式相關的，所以沒有被問到）</p>
+<h2 id="關卡-3-英文邏輯測驗">關卡 3. 英文,邏輯測驗</h2>
+<p>寫個英文題目及性向測驗題</p>
+<h2 id="關卡-4-hr面談">關卡 4. HR面談</h2>
+<p>基本上問你為何想來面試這職位 了解你的動機跟穩重度</p>
+<hr>
+<h1 id="實習生活">實習生活</h1>
+<p>從軟體踏入硬體領域，許多新的知識需要吸收，前三天都會有新人訓，並且每個禮拜五部門都會有課程，關於DRAM的知識，因此慢慢學習吸收。<br>
+美光在我這屆有48個新生，認識到許多朋友，同時也能建立人脈！<br>
+PS : 在這些具有製成、高階技術研發的公司，資訊安全與公司機密是很重要的事，公司會不斷強調不能隨便在內部拍照也不能外流內部文件等！</p>
+<p><img src="1.png" alt="1"><br>
+<img src="2.png" alt="2"><br>
+<img src="3.png" alt="3"></p>
+]]></content>
+      <tags>
+        <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>大馬遊 Malaysia 2018/7/21~2018/7/29</title>
     <url>/myblog/2018/07/30/Malaysia/</url>
     <content><![CDATA[<blockquote>
@@ -1128,69 +1157,6 @@ In Malacca, we first went to the famous landmarks, then went to the Upside Down 
 ]]></content>
       <tags>
         <tag>Travel</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Micron Intern in DEG  2019/7/1 ~ 2019/8/30</title>
-    <url>/myblog/2019/08/30/Micron/</url>
-    <content><![CDATA[<blockquote>
-<p>外商公司不喜歡你加班 自律是關鍵<br>
-英文很重要 溝通能力<br>
-環境自由 放鬆但不是隨便<br>
-待人處事態度 與同事們培養默契與團隊精神</p>
-</blockquote>
-<hr>
-<h1 id="面試">面試</h1>
-<p>面試記得要準備中英文的自我介紹  並做個人的作品集會更加分 記得投地公司官網（我丟104都沒消息）</p>
-<h2 id="關卡-1-電話">關卡 1. 電話</h2>
-<p>這個關卡我沒有遇到，但身邊朋友幾個都有接到電話英文面試，自我介紹等等</p>
-<h2 id="關卡-2-face-to-face">關卡 2. Face to face</h2>
-<p>我面對三個主管，首先要你自我介紹，並知道美光是什麼公司，還有能解釋記憶體的架構還有你的了解（聽說正職會問程式題，我個人作品集是做程式相關的，所以沒有被問到）</p>
-<h2 id="關卡-3-英文邏輯測驗">關卡 3. 英文,邏輯測驗</h2>
-<p>寫個英文題目及性向測驗題</p>
-<h2 id="關卡-4-hr面談">關卡 4. HR面談</h2>
-<p>基本上問你為何想來面試這職位 了解你的動機跟穩重度</p>
-<hr>
-<h1 id="實習生活">實習生活</h1>
-<p>從軟體踏入硬體領域，許多新的知識需要吸收，前三天都會有新人訓，並且每個禮拜五部門都會有課程，關於DRAM的知識，因此慢慢學習吸收。<br>
-美光在我這屆有48個新生，認識到許多朋友，同時也能建立人脈！<br>
-PS : 在這些具有製成、高階技術研發的公司，資訊安全與公司機密是很重要的事，公司會不斷強調不能隨便在內部拍照也不能外流內部文件等！</p>
-<p><img src="1.png" alt="1"><br>
-<img src="2.png" alt="2"><br>
-<img src="3.png" alt="3"></p>
-]]></content>
-      <tags>
-        <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Red Hat Certified System Administrator (RHCSA8)</title>
-    <url>/myblog/2022/05/06/RHCSA/</url>
-    <content><![CDATA[<blockquote>
-<p>I can accept failure, but cannot accept to give up<br>
-考了兩次才通過</p>
-</blockquote>
-<h1 id="rhcsa介紹">RHCSA介紹</h1>
-<p>RHCSA認證是Red Hat公司於2011年3月所推出的新認證。RHCSA認證是取得RHCE認證的必要條件之一，RHCSA與RHCE認證取得兩者無先後順序，兩者均通過者才可完整取得RHCE證書。擁有RHCSA認證者能夠扮演著企業內各式各樣的角色，舉凡資料庫管理員，開發人員和技術支持人員…等職務，能重建與部署企業核心Linux環境，更能代表您具備管理技術與駕馭系統的能力。欲取得RHCSA認證您必須參加此認證考試，成功讓您成為兼具完整理論與實作技術的Linux專家。<br>
-<a href="https://www.uuu.com.tw/Course/Partner/RedHat%E7%B4%85%E5%B8%BD/section=rhcsa/title=RHCSA%E8%AA%8D%E8%AD%89%E8%88%87%E8%80%83%E8%A9%A6%E4%BB%8B%E7%B4%B9" target="_blank" rel="noopener">(資料來源：UCOM恆逸教育訓練)</a></p>
-<h1 id="考試測驗能力">考試測驗能力</h1>
-<p>可進入官網查看：<a href="https://www.redhat.com/en/services/training/ex200-red-hat-certified-system-administrator-rhcsa-exam?section=Objectives" target="_blank" rel="noopener">Red Hat Certified System Administrator (RHCSA) exam</a></p>
-<h1 id="考題整理">考題整理</h1>
-<p>網路整理考題：<a href="https://github.com/chlebik/rhcsa-practice-questions/tree/master/questions">https://github.com/chlebik/rhcsa-practice-questions/tree/master/questions</a></p>
-<p>RedHat8之後開始考了許多Container題目，如：<a href="https://tekneed.com/rhcsa-8-exam-practice-question-9-managing-containers/" target="_blank" rel="noopener">https://tekneed.com/rhcsa-8-exam-practice-question-9-managing-containers/</a></p>
-<h1 id="考試環境介紹">考試環境介紹</h1>
-<p>考試環境會提供兩台虛擬機，分別為node1, node2，（會建議開終端機連線兩台虛擬機，以方便複製考試時所用到的網址或名稱）</p>
-<h1 id="結論">結論</h1>
-<ol>
-<li>一定要一直反覆練習實作，才能訓練到，不能只用看的，因為可能發生你都想不到的問題。</li>
-<li>我考試時發生用root建立user，而user卻沒長出Home directory，後來才發現是當時系統沒裝好，但卻沒反應，應是浪費快一個小時</li>
-<li>還有Container的題目，真的有點難，我不懂為什麼都沒拿到分，明明都有做</li>
-<li>切割完硬碟後，一定要重開機看看能不能開機，能不能自動mount起來</li>
-<li>有疑問要提出，有可能真的是系統問題</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>Work</tag>
       </tags>
   </entry>
   <entry>
@@ -1279,6 +1245,83 @@ PS : 在這些具有製成、高階技術研發的公司，資訊安全與公司
 ]]></content>
       <tags>
         <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Red Hat Certified System Administrator (RHCSA8)</title>
+    <url>/myblog/2022/05/06/RHCSA/</url>
+    <content><![CDATA[<blockquote>
+<p>I can accept failure, but cannot accept to give up<br>
+考了兩次才通過</p>
+</blockquote>
+<h1 id="rhcsa介紹">RHCSA介紹</h1>
+<p>RHCSA認證是Red Hat公司於2011年3月所推出的新認證。RHCSA認證是取得RHCE認證的必要條件之一，RHCSA與RHCE認證取得兩者無先後順序，兩者均通過者才可完整取得RHCE證書。擁有RHCSA認證者能夠扮演著企業內各式各樣的角色，舉凡資料庫管理員，開發人員和技術支持人員…等職務，能重建與部署企業核心Linux環境，更能代表您具備管理技術與駕馭系統的能力。欲取得RHCSA認證您必須參加此認證考試，成功讓您成為兼具完整理論與實作技術的Linux專家。<br>
+<a href="https://www.uuu.com.tw/Course/Partner/RedHat%E7%B4%85%E5%B8%BD/section=rhcsa/title=RHCSA%E8%AA%8D%E8%AD%89%E8%88%87%E8%80%83%E8%A9%A6%E4%BB%8B%E7%B4%B9" target="_blank" rel="noopener">(資料來源：UCOM恆逸教育訓練)</a></p>
+<h1 id="考試測驗能力">考試測驗能力</h1>
+<p>可進入官網查看：<a href="https://www.redhat.com/en/services/training/ex200-red-hat-certified-system-administrator-rhcsa-exam?section=Objectives" target="_blank" rel="noopener">Red Hat Certified System Administrator (RHCSA) exam</a></p>
+<h1 id="考題整理">考題整理</h1>
+<p>網路整理考題：<a href="https://github.com/chlebik/rhcsa-practice-questions/tree/master/questions">https://github.com/chlebik/rhcsa-practice-questions/tree/master/questions</a></p>
+<p>RedHat8之後開始考了許多Container題目，如：<a href="https://tekneed.com/rhcsa-8-exam-practice-question-9-managing-containers/" target="_blank" rel="noopener">https://tekneed.com/rhcsa-8-exam-practice-question-9-managing-containers/</a></p>
+<h1 id="考試環境介紹">考試環境介紹</h1>
+<p>考試環境會提供兩台虛擬機，分別為node1, node2，（會建議開終端機連線兩台虛擬機，以方便複製考試時所用到的網址或名稱）</p>
+<h1 id="結論">結論</h1>
+<ol>
+<li>一定要一直反覆練習實作，才能訓練到，不能只用看的，因為可能發生你都想不到的問題。</li>
+<li>我考試時發生用root建立user，而user卻沒長出Home directory，後來才發現是當時系統沒裝好，但卻沒反應，應是浪費快一個小時</li>
+<li>還有Container的題目，真的有點難，我不懂為什麼都沒拿到分，明明都有做</li>
+<li>切割完硬碟後，一定要重開機看看能不能開機，能不能自動mount起來</li>
+<li>有疑問要提出，有可能真的是系統問題</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Work</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>台南打工換宿 2020.8.17-2020.8.26</title>
+    <url>/myblog/2020/08/26/Tainan/</url>
+    <content><![CDATA[<blockquote>
+<p>原本抱著等待兵役空檔玩台南順便當個老幫手 同時體驗台南美食<br>
+沒想到學習以後可能不會再接觸到的木工、油漆及裝潢設計等 🚪<br>
+大家愛恭台語 我就操玲呆(有點進步)<br>
+Reggie教導我們各項技術還有如何衝浪🏄！他什麼都會！真的是偶像！<br>
+每晚Candy的心靈雞湯 學習人生經驗 團隊合作及錯中學習 是人生的導師也是永遠好的朋友<br>
+其他小幫手 每個都有自己的特色 以及願意付出的心 成就這次的工程</p>
+</blockquote>
+<hr>
+<p><img src="2.jpg" alt="2"></p>
+<h1 id="工作-working">工作 Working</h1>
+<p>本次的任務：</p>
+<ol>
+<li>主要是將頂樓天臺整理並規劃成交誼的空間</li>
+<li>同時整理房務工作打掃等</li>
+</ol>
+<p><img src="3.png" alt="3"> <img src="4.png" alt="4"></p>
+<hr>
+<h1 id="度假-holiday">度假 Holiday</h1>
+<p>台南的景點還滿多的，在第二天晚上，老闆帶著我們深度探索台南，同時介紹每個建築物的歷史<br>
+以前從來不會特別去在意的廟宇建築外觀，現在都覺得好神奇，讓我對台灣的歷史更有興趣<br>
+從台南圓環24hr Donutes，沿路走經過台灣第一間廟、蝸牛巷、台南州廳、全美戲院、台南美術館1、2館、司法博物館、林百貨等（沒按照順序）<br>
+對先人留下的遺址及智慧讚嘆不已<br>
+期間老闆帶我們連續兩天假日去漁光島衝浪，生平第一次衝浪就獻給你們了，不過我第二天就站起來兩次，超開心＾＾<br>
+幾日後前往奇美博物館，到的時候已是下午5點，5:30就關門，因此在建築外與這大片美景拍照，佔地9.5公頃的博物館，典藏無數珍貴的國際級藝術品，許文龍先生留給台南最美的博物館</p>
+<p><img src="5.jpg" alt="5"></p>
+<hr>
+<h1 id="working-holiday">Working Holiday</h1>
+<p>這次的換宿經驗讓我學到不論是技術上的技巧更是心靈上的成長<br>
+民宿店的老闆Reggie，雖然只大我6歲，但想法、人生歷練、享受人生都是我遙不可及的目標<br>
+更發現大片藍海市場，想到極為可創性的目標<br>
+我自己也憧憬能像他做自己喜歡的事的念頭 期許未來能更往目標前進！<br>
+此外，帶領我們的是另一位衝浪店（宜蘭烏石）的老闆Candy，對於團隊管理非常有經驗，還是許多大學的講師<br>
+每晚給我們滿滿的知識與做人處事的道理，讓我意識到過去一直忽略掉的貼心，心靈雞湯溫飽我們求知的心!</p>
+<p><img src="1.png" alt="1"></p>
+<blockquote>
+<p>謝謝巷仔邸換宿帶給我寶貴的經驗！<br>
+#巷子邸At The End #小幫手 #台南 #奇美博物館 #漁光島 #學台語 #做工的人 #等待兵役</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Travel</tag>
       </tags>
   </entry>
   <entry>
@@ -1382,142 +1425,6 @@ By 查理．蒙格</p>
       </tags>
   </entry>
   <entry>
-    <title>台南打工換宿 2020.8.17-2020.8.26</title>
-    <url>/myblog/2020/08/26/Tainan/</url>
-    <content><![CDATA[<blockquote>
-<p>原本抱著等待兵役空檔玩台南順便當個老幫手 同時體驗台南美食<br>
-沒想到學習以後可能不會再接觸到的木工、油漆及裝潢設計等 🚪<br>
-大家愛恭台語 我就操玲呆(有點進步)<br>
-Reggie教導我們各項技術還有如何衝浪🏄！他什麼都會！真的是偶像！<br>
-每晚Candy的心靈雞湯 學習人生經驗 團隊合作及錯中學習 是人生的導師也是永遠好的朋友<br>
-其他小幫手 每個都有自己的特色 以及願意付出的心 成就這次的工程</p>
-</blockquote>
-<hr>
-<p><img src="2.jpg" alt="2"></p>
-<h1 id="工作-working">工作 Working</h1>
-<p>本次的任務：</p>
-<ol>
-<li>主要是將頂樓天臺整理並規劃成交誼的空間</li>
-<li>同時整理房務工作打掃等</li>
-</ol>
-<p><img src="3.png" alt="3"> <img src="4.png" alt="4"></p>
-<hr>
-<h1 id="度假-holiday">度假 Holiday</h1>
-<p>台南的景點還滿多的，在第二天晚上，老闆帶著我們深度探索台南，同時介紹每個建築物的歷史<br>
-以前從來不會特別去在意的廟宇建築外觀，現在都覺得好神奇，讓我對台灣的歷史更有興趣<br>
-從台南圓環24hr Donutes，沿路走經過台灣第一間廟、蝸牛巷、台南州廳、全美戲院、台南美術館1、2館、司法博物館、林百貨等（沒按照順序）<br>
-對先人留下的遺址及智慧讚嘆不已<br>
-期間老闆帶我們連續兩天假日去漁光島衝浪，生平第一次衝浪就獻給你們了，不過我第二天就站起來兩次，超開心＾＾<br>
-幾日後前往奇美博物館，到的時候已是下午5點，5:30就關門，因此在建築外與這大片美景拍照，佔地9.5公頃的博物館，典藏無數珍貴的國際級藝術品，許文龍先生留給台南最美的博物館</p>
-<p><img src="5.jpg" alt="5"></p>
-<hr>
-<h1 id="working-holiday">Working Holiday</h1>
-<p>這次的換宿經驗讓我學到不論是技術上的技巧更是心靈上的成長<br>
-民宿店的老闆Reggie，雖然只大我6歲，但想法、人生歷練、享受人生都是我遙不可及的目標<br>
-更發現大片藍海市場，想到極為可創性的目標<br>
-我自己也憧憬能像他做自己喜歡的事的念頭 期許未來能更往目標前進！<br>
-此外，帶領我們的是另一位衝浪店（宜蘭烏石）的老闆Candy，對於團隊管理非常有經驗，還是許多大學的講師<br>
-每晚給我們滿滿的知識與做人處事的道理，讓我意識到過去一直忽略掉的貼心，心靈雞湯溫飽我們求知的心!</p>
-<p><img src="1.png" alt="1"></p>
-<blockquote>
-<p>謝謝巷仔邸換宿帶給我寶貴的經驗！<br>
-#巷子邸At The End #小幫手 #台南 #奇美博物館 #漁光島 #學台語 #做工的人 #等待兵役</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Travel</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>泰好玩! Thailand 2018/2/26~2018/3/4</title>
-    <url>/myblog/2018/03/04/Thailand/</url>
-    <content><![CDATA[<blockquote>
-<p>生平第一出國、大學第一次畢旅<br>
-體驗到泰式食物的辣、泰式按摩的力道、泰國天氣的熱、泰國文化的風情<br>
-才剛回國就想念泰國的總總回憶 認識很多朋友（跟輔大、中原、東吳的學生同團） 都很有趣也都很好相處 謝謝領隊導遊在一旁照顧我們 期待下次大家再一起出去玩 也希望大家在未來都能達到自己夢想</p>
-</blockquote>
-<p><img src="skybar.jpg" alt="Skybar"></p>
-<hr>
-<h1 id="行程規劃">行程規劃</h1>
-<p>這次旅行交由大樂旅行社幫忙規劃安排</p>
-<p><a href="https://drive.google.com/file/d/0B_MUcnppdaa7VWM0SmxFWHVISkU/view" target="_blank" rel="noopener">行程 : Click On Me</a></p>
-<hr>
-<h1 id="行前準備">行前準備</h1>
-<p>雖然2、3月在台灣是在冬季末，但泰國（曼谷、芭達雅）長年25~35度，攜帶衣物短袖短褲輕便即可，多帶薄長袖較佳，防曬物品更不能少</p>
-<hr>
-<h1 id="travel">TRAVEL</h1>
-<h2 id="day-12">Day 1,2</h2>
-<p>第一晚上飛機已是11點，到達曼谷已經2、3點了，直接睡到9點<br>
-第二天一早搭上遊覽車，出發前往芭達雅，第一站前往當地動物園，著名的有鱷魚表演、吃老虎奶的豬、豬的賽跑跟厲害的豬算數學，下午來桑一下（記得當天也是許多研究所的放榜日，看個表演就收到哪間有上、哪間沒上很刺激），飽飯過後晚上直接回旅館，休息片刻後，相約到附近7-11及小吃光顧，7-11有個熱壓吐司，是我覺得最好吃印象最深的。</p>
-<p><img src="1.png" alt="Day1,2"></p>
-<h2 id="day-3">Day 3</h2>
-<p>起床一樣搭上遊覽車直達芭達雅海邊，直接在海上度過了半天，船上有海上遊樂設施，午餐在船上吃海鮮，直接唱爆嗨歌，唱完就來垂釣個，結束後回到飯店整理儀容，前往當地夜店（是我有生以來第一次去夜店），那間夜店內部禁菸，當晚很嗨，可樂配威士忌，跟中原的同學玩敲敲杯，又上台熱舞，場子好像被台灣人包場，全部是中文歌</p>
-<p><img src="2.png" alt="Day3"></p>
-<h2 id="day-4">Day 4</h2>
-<p>這天一早去四方水上市集，下午去東芭樂園，體驗潑水大戰，每個人都卯起來，結束後再去海邊悠閒享受風景，在海邊還被要求solo跳舞，之後晚餐吃泰國的燒烤火鍋，結束後去芭達雅海邊的商店(美軍不夜城徒步街)逛逛，很多形形色色的人，而後跟導遊去吃水果（山竹、榴槤、紅毛氈），回飯店，夜晚有泰國浴行程，自由參加</p>
-<p><img src="3.png" alt="Day4"></p>
-<h2 id="day-5">Day 5</h2>
-<p>先是去高空滑樓55層樓，下午去一個聽說是去很很很有錢的一個地主的家，整座山都是他的裡面充斥超跑、跟很多裝飾品，園區內有大象表演，之後又去桑一下，但我們沒有多加時間，所以在外面跟輔大的朋友待著等其他人結束，而後去看泰拳，晚上去看人妖秀</p>
-<p><img src="4.png" alt="Day5"></p>
-<h2 id="day-6">Day 6</h2>
-<p>前兩天玩太累了，開始走逛行程，回到曼谷，到Terminal 21的地鐵搭車，到他們的百貨公司、還有著名的四面佛在附近，逛了整天下來，下午去七珍佛山拍學士照，（我晚上直接在那買了件Ｈ＆Ｍ的衣服1799泰銖，台灣還更便宜＝＝），晚上到sky bar享受美景</p>
-<p><img src="5.JPG" alt="Day6-1"> <img src="6.JPG" alt="Day6-2"></p>
-<h2 id="day-7">Day 7</h2>
-<p>旅程到了尾聲，早上先去Chatuchak market逛街，皮皮（領隊）發起交換禮物的想法，我們買晚上要交換禮物的東西，我買了很多薄荷棒（在台灣很有名）通鼻子（100泰銖）還有捕夢網（190泰銖），當時還陪朋友買裝飾燈泡送他女友，後來下午去搭船到鄭王廟參觀，河裡的魚聽說餵麵包的時候說：💰錢錢，象徵可以賺大錢，傍晚直接到旅行社合作的賣場大買零食，我花了將近1500泰銖買了pocky、海苔、糖果、果乾…，最後再去Mekkog逛夜市，晚餐到對面吃泰國的海南雞飯，真的好吃～～讚不絕口！ 全部行程結束後，大家到房間休息一下就到大廳集合，開始交換禮物，我們又被cue要solo跳舞，我用泰國圖案的包包換到泰國大象杯子<br>
-回到房間，就去其他房跟他們打牌到3點多到準備搭飛機，飛機是6點多，結束旅程～</p>
-<p><img src="7.png" alt="Day7"></p>
-<hr>
-<blockquote>
-<p>回來後得到重感冒… 但是泰國好好玩喔</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Travel</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>我的第一座山 - 鳶嘴山 </title>
-    <url>/myblog/2020/09/13/Yuanzui-Mountain/</url>
-    <content><![CDATA[<blockquote>
-<p>最厲害的不是登頂<br>
-而是製作步道跟繩索的人</p>
-</blockquote>
-<hr>
-<h1 id="行前準備">行前準備</h1>
-<ol>
-<li>建議保旅平險</li>
-<li>登山包要帶1.5升以上飲水、(雨衣)、保暖外套、(手套)、(暖暖包)、(頭燈)、行動糧、鹽糖</li>
-<li>另準備一包行李放車上帶一套新的衣物、午餐、水、睡袋</li>
-<li>衣著：運動鞋、運動長褲、排汗衫（袖套）、毛巾、太陽眼鏡、遮陽帽</li>
-<li>記得行李輕便為主</li>
-</ol>
-<hr>
-<h1 id="當天行程">當天行程</h1>
-<p>選擇一大早出發不僅可以避開人潮且較有車位停車同時可以避免午後雷陣雨，不過許多人前一天就在此地露營，所以還是有點難找停車位<br>
-<img src="1.JPG" alt="1"></p>
-<p>週日凌晨2點半出發、4點到登山口、休息小睡1個小時、5點半開爬、來回實際上只需大約三小時（沒有太多人排隊的話）、10點回登山口休息一下、下山吃午餐</p>
-<hr>
-<h1 id="山況說明">山況說明</h1>
-<p>27k的登山口上山後，起初為較好走的人造木階，但由於每個木階的高度都很高，因此相對較吃力<br>
-<img src="2.jpg" alt="2"></p>
-<p>而隨著高度增加 難度也越來越大<br>
-<img src="3.jpg" alt="3"> <img src="4.jpg" alt="4"></p>
-<p>後面開始有大石塊及繩索，有些必須踩入石塊縫隙中，並以繩索輔助，以及木梯（當時搬來的人真的很厲害）<br>
-<img src="5.jpg" alt="5"> <img src="6.JPG" alt="6"></p>
-<p>陸續爬到頂峰，鳶嘴山頂高度為2180公尺，絕美的風景只以大約1.5小時的路程非常值得<br>
-<img src="7.jpg" alt="7"> <img src="8.jpg" alt="8"></p>
-<hr>
-<h1 id="總結">總結</h1>
-<p>自己本身是登山菜雞，這是以個人角度做的評分，主要是因為路程短不需背重物，因此不會太困難</p>
-<p>難易度  ： ◼️ ◼️ ◼️ ◻️ ◻️<br>
-危險度  ： ◼️ ◼️ ◼️ ◼️ ◻️<br>
-值得程度： ◼️ ◼️ ◼️ ◼️ ◼️</p>
-]]></content>
-      <tags>
-        <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>越南遊2019/6/22~ 2019/6/29</title>
     <url>/myblog/2019/06/29/Vietnam/</url>
     <content><![CDATA[<blockquote>
@@ -1591,6 +1498,53 @@ To be continued…</p>
       </tags>
   </entry>
   <entry>
+    <title>泰好玩! Thailand 2018/2/26~2018/3/4</title>
+    <url>/myblog/2018/03/04/Thailand/</url>
+    <content><![CDATA[<blockquote>
+<p>生平第一出國、大學第一次畢旅<br>
+體驗到泰式食物的辣、泰式按摩的力道、泰國天氣的熱、泰國文化的風情<br>
+才剛回國就想念泰國的總總回憶 認識很多朋友（跟輔大、中原、東吳的學生同團） 都很有趣也都很好相處 謝謝領隊導遊在一旁照顧我們 期待下次大家再一起出去玩 也希望大家在未來都能達到自己夢想</p>
+</blockquote>
+<p><img src="skybar.jpg" alt="Skybar"></p>
+<hr>
+<h1 id="行程規劃">行程規劃</h1>
+<p>這次旅行交由大樂旅行社幫忙規劃安排</p>
+<p><a href="https://drive.google.com/file/d/0B_MUcnppdaa7VWM0SmxFWHVISkU/view" target="_blank" rel="noopener">行程 : Click On Me</a></p>
+<hr>
+<h1 id="行前準備">行前準備</h1>
+<p>雖然2、3月在台灣是在冬季末，但泰國（曼谷、芭達雅）長年25~35度，攜帶衣物短袖短褲輕便即可，多帶薄長袖較佳，防曬物品更不能少</p>
+<hr>
+<h1 id="travel">TRAVEL</h1>
+<h2 id="day-12">Day 1,2</h2>
+<p>第一晚上飛機已是11點，到達曼谷已經2、3點了，直接睡到9點<br>
+第二天一早搭上遊覽車，出發前往芭達雅，第一站前往當地動物園，著名的有鱷魚表演、吃老虎奶的豬、豬的賽跑跟厲害的豬算數學，下午來桑一下（記得當天也是許多研究所的放榜日，看個表演就收到哪間有上、哪間沒上很刺激），飽飯過後晚上直接回旅館，休息片刻後，相約到附近7-11及小吃光顧，7-11有個熱壓吐司，是我覺得最好吃印象最深的。</p>
+<p><img src="1.png" alt="Day1,2"></p>
+<h2 id="day-3">Day 3</h2>
+<p>起床一樣搭上遊覽車直達芭達雅海邊，直接在海上度過了半天，船上有海上遊樂設施，午餐在船上吃海鮮，直接唱爆嗨歌，唱完就來垂釣個，結束後回到飯店整理儀容，前往當地夜店（是我有生以來第一次去夜店），那間夜店內部禁菸，當晚很嗨，可樂配威士忌，跟中原的同學玩敲敲杯，又上台熱舞，場子好像被台灣人包場，全部是中文歌</p>
+<p><img src="2.png" alt="Day3"></p>
+<h2 id="day-4">Day 4</h2>
+<p>這天一早去四方水上市集，下午去東芭樂園，體驗潑水大戰，每個人都卯起來，結束後再去海邊悠閒享受風景，在海邊還被要求solo跳舞，之後晚餐吃泰國的燒烤火鍋，結束後去芭達雅海邊的商店(美軍不夜城徒步街)逛逛，很多形形色色的人，而後跟導遊去吃水果（山竹、榴槤、紅毛氈），回飯店，夜晚有泰國浴行程，自由參加</p>
+<p><img src="3.png" alt="Day4"></p>
+<h2 id="day-5">Day 5</h2>
+<p>先是去高空滑樓55層樓，下午去一個聽說是去很很很有錢的一個地主的家，整座山都是他的裡面充斥超跑、跟很多裝飾品，園區內有大象表演，之後又去桑一下，但我們沒有多加時間，所以在外面跟輔大的朋友待著等其他人結束，而後去看泰拳，晚上去看人妖秀</p>
+<p><img src="4.png" alt="Day5"></p>
+<h2 id="day-6">Day 6</h2>
+<p>前兩天玩太累了，開始走逛行程，回到曼谷，到Terminal 21的地鐵搭車，到他們的百貨公司、還有著名的四面佛在附近，逛了整天下來，下午去七珍佛山拍學士照，（我晚上直接在那買了件Ｈ＆Ｍ的衣服1799泰銖，台灣還更便宜＝＝），晚上到sky bar享受美景</p>
+<p><img src="5.JPG" alt="Day6-1"> <img src="6.JPG" alt="Day6-2"></p>
+<h2 id="day-7">Day 7</h2>
+<p>旅程到了尾聲，早上先去Chatuchak market逛街，皮皮（領隊）發起交換禮物的想法，我們買晚上要交換禮物的東西，我買了很多薄荷棒（在台灣很有名）通鼻子（100泰銖）還有捕夢網（190泰銖），當時還陪朋友買裝飾燈泡送他女友，後來下午去搭船到鄭王廟參觀，河裡的魚聽說餵麵包的時候說：💰錢錢，象徵可以賺大錢，傍晚直接到旅行社合作的賣場大買零食，我花了將近1500泰銖買了pocky、海苔、糖果、果乾…，最後再去Mekkog逛夜市，晚餐到對面吃泰國的海南雞飯，真的好吃～～讚不絕口！ 全部行程結束後，大家到房間休息一下就到大廳集合，開始交換禮物，我們又被cue要solo跳舞，我用泰國圖案的包包換到泰國大象杯子<br>
+回到房間，就去其他房跟他們打牌到3點多到準備搭飛機，飛機是6點多，結束旅程～</p>
+<p><img src="7.png" alt="Day7"></p>
+<hr>
+<blockquote>
+<p>回來後得到重感冒… 但是泰國好好玩喔</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Travel</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>大學專題 Graduate Thesis- 僑牽ＯＣＣ</title>
     <url>/myblog/2017/12/13/college-project/</url>
     <content><![CDATA[<blockquote>
@@ -1625,6 +1579,144 @@ Step3. 建置論壇 Build Website</p>
 ]]></content>
       <tags>
         <tag>Work</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我的第一座山 - 鳶嘴山 </title>
+    <url>/myblog/2020/09/13/Yuanzui-Mountain/</url>
+    <content><![CDATA[<blockquote>
+<p>最厲害的不是登頂<br>
+而是製作步道跟繩索的人</p>
+</blockquote>
+<hr>
+<h1 id="行前準備">行前準備</h1>
+<ol>
+<li>建議保旅平險</li>
+<li>登山包要帶1.5升以上飲水、(雨衣)、保暖外套、(手套)、(暖暖包)、(頭燈)、行動糧、鹽糖</li>
+<li>另準備一包行李放車上帶一套新的衣物、午餐、水、睡袋</li>
+<li>衣著：運動鞋、運動長褲、排汗衫（袖套）、毛巾、太陽眼鏡、遮陽帽</li>
+<li>記得行李輕便為主</li>
+</ol>
+<hr>
+<h1 id="當天行程">當天行程</h1>
+<p>選擇一大早出發不僅可以避開人潮且較有車位停車同時可以避免午後雷陣雨，不過許多人前一天就在此地露營，所以還是有點難找停車位<br>
+<img src="1.JPG" alt="1"></p>
+<p>週日凌晨2點半出發、4點到登山口、休息小睡1個小時、5點半開爬、來回實際上只需大約三小時（沒有太多人排隊的話）、10點回登山口休息一下、下山吃午餐</p>
+<hr>
+<h1 id="山況說明">山況說明</h1>
+<p>27k的登山口上山後，起初為較好走的人造木階，但由於每個木階的高度都很高，因此相對較吃力<br>
+<img src="2.jpg" alt="2"></p>
+<p>而隨著高度增加 難度也越來越大<br>
+<img src="3.jpg" alt="3"> <img src="4.jpg" alt="4"></p>
+<p>後面開始有大石塊及繩索，有些必須踩入石塊縫隙中，並以繩索輔助，以及木梯（當時搬來的人真的很厲害）<br>
+<img src="5.jpg" alt="5"> <img src="6.JPG" alt="6"></p>
+<p>陸續爬到頂峰，鳶嘴山頂高度為2180公尺，絕美的風景只以大約1.5小時的路程非常值得<br>
+<img src="7.jpg" alt="7"> <img src="8.jpg" alt="8"></p>
+<hr>
+<h1 id="總結">總結</h1>
+<p>自己本身是登山菜雞，這是以個人角度做的評分，主要是因為路程短不需背重物，因此不會太困難</p>
+<p>難易度  ： ◼️ ◼️ ◼️ ◻️ ◻️<br>
+危險度  ： ◼️ ◼️ ◼️ ◼️ ◻️<br>
+值得程度： ◼️ ◼️ ◼️ ◼️ ◼️</p>
+]]></content>
+      <tags>
+        <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>澎湖三日遊 2022/6/24 ~ 2022/6/26</title>
+    <url>/myblog/2022/06/27/penghu/</url>
+    <content><![CDATA[<blockquote>
+<p>熱舞社難得再次出遊<br>
+澎湖美得不像話</p>
+</blockquote>
+<p><a href="https://m.youtube.com/watch?fbclid=PAAaZAPuTQnvVmQuKya51FloPhzsLSGRYZiyv43dj9BRyOOjQtZQuQkVk-HrI&amp;v=3kW1WoxQE_s&amp;feature=youtu.be" target="_blank" rel="noopener">旅遊影片回憶：YouTube</a></p>
+<div align="left"><img src="9.jpg" width="500" height="500"> </div>
+<h1 id="澎湖簡介">澎湖簡介</h1>
+<div align="left"><img src="22.jpeg" width="500" height="500"> </div>
+<p>圖片來源：<a href="https://www.travelking.com.tw/tourguide/penghu/attraction.asp" target="_blank" rel="noopener">https://www.travelking.com.tw/tourguide/penghu/attraction.asp</a></p>
+<p>[背包攻略](<a href="https://www.backpackers.com.tw/guide/index.php/%E6%BE%8E%E6%B9%96%E7%B8%A3%EF%BC%89" target="_blank" rel="noopener">https://www.backpackers.com.tw/guide/index.php/澎湖縣）</a></p>
+<h1 id="必帶物品">必帶物品</h1>
+<ol>
+<li>太陽眼鏡</li>
+<li>防曬裝備(帽子、防曬乳、薄外套)</li>
+<li>泳具</li>
+<li>蘆薈</li>
+<li>拖鞋</li>
+<li>毛巾</li>
+<li>防水袋</li>
+<li>衛生紙</li>
+</ol>
+<h1 id="行程規劃">行程規劃</h1>
+<h2 id="day1">Day1</h2>
+<div align="left"><img src="19.jpg" width="500" height="500"> </div>
+<p>10:00 的飛機，10:50抵達澎湖</p>
+<p>午餐：馬益路燒肉飯、劉正港檸檬冰、小管麵線、澎湖龜鮮奶雞蛋糕</p>
+<p>澎湖天后宮小巷弄走走逛逛</p>
+<div align="left"><img src="6.jpg" width="500" height="500"> </div>
+<p>摩西分海</p>
+<div align="left"><img src="1.jpg" width="500" height="500"> </div>
+裡正角沙灘
+<div align="left"><img src="2.jpg" width="500" height="500"> </div>
+<div align="left"><img src="3.jpg" width="500" height="500"> </div>
+<p>隘門沙灘</p>
+<p>晚餐：澎湖山水夏日炭烤</p>
+<div align="left"><img src="4.jpg" width="500" height="500"> </div>
+<p>民宿：諾雅方舟民宿</p>
+<h2 id="day2">Day2</h2>
+<div align="left"><img src="20.jpg" width="500" height="500"> </div>
+<p>早餐：澎湖赤崁朗哥早餐店(激推海菜燒肉蛋餅)</p>
+<div align="left"><img src="5.jpg" width="500" height="500"> </div>
+<p>搭船前往吉貝島（買套票行程）<br>
+玩香蕉船、水上設施、浮淺<br>
+吉貝島沙尾（必去點！）</p>
+<div align="left"><img src="7.jpg" width="500" height="500"> </div>
+<div align="left"><img src="8.jpg" width="500" height="500"> </div>
+<div align="left"><img src="9.jpg" width="500" height="500"> </div>
+<p>午餐：三布五食平價海鮮（不推）<br>
+環吉貝島</p>
+<div align="left"><img src="10.jpg" width="500" height="500"> </div>
+<div align="left"><img src="11.jpg" width="500" height="500"> </div>
+<div align="left"><img src="14.jpg" width="500" height="500"> </div>
+<p>搭船返回白沙<br>
+澎湖跨海大橋看夕陽</p>
+<div align="left"><img src="12.jpg" width="500" height="500"> </div>
+<div align="left"><img src="15.jpg" width="500" height="500"> </div>
+<div align="left"><img src="16.jpg" width="500" height="500"> </div>
+<p>晚餐：青峰海鮮 (超推)<br>
+岐頭沙灘玩仙女棒</p>
+<div align="left"><img src="17.jpg" width="500" height="500"> </div>
+<p>回民宿：澎湖鎮海灣民宿</p>
+<h2 id="day3">Day3</h2>
+<div align="left"><img src="21.jpg" width="500" height="500"> </div>
+<p>民宿早餐<br>
+珍珍海產買伴手禮<br>
+玉冠嫩仙草<br>
+觀音亭親水遊憩區</p>
+<div align="left"><img src="18.jpg" width="500" height="500"> </div>
+還車前往機場
+13:35飛機回松山機場
+<h1 id="遺珠之憾">遺珠之憾</h1>
+<p>回家炸粿<br>
+福哥紅姐現煮熱炒<br>
+阿志冬瓜糕 (必須提早兩三天訂)<br>
+二崁杏仁茶<br>
+Beacon說酒人<br>
+鮮食堂海鮮蒸鍋<br>
+自由伯-澎湖第一仙人掌冰<br>
+紫玉仙草冰<br>
+59號地瓜球<br>
+阿爆香腸<br>
+瑞師父海菜煎餅<br>
+國統紅豆湯圓<br>
+鍋道熱(火鍋)<br>
+甲貳(火鍋)<br>
+清香海鮮餐廳</p>
+<h1 id="學到經驗">學到經驗</h1>
+<p>最後一天還車時，發現有被擦撞到的刮痕，租車公司說等師傅來報價，要我們押證件跟押金3000，先搭飛機回去，等等傳訊息多退少補，結果回到機場，跟我們報價12700元，被說是紅色烤漆較貴，還有小島價壓我們，整個生氣，朋友問認識修車行，說這報價有些不合理，因此持續與老闆議價，我們願意賠償，但是價格不太合理。</p>
+]]></content>
+      <tags>
+        <tag>Blog</tag>
       </tags>
   </entry>
   <entry>
@@ -1802,65 +1894,6 @@ At first, I have used Webnode to build a personal tribe and a famous WordPress s
       </tags>
   </entry>
   <entry>
-    <title> 義務役 2020.9.22-2021.1.11 </title>
-    <url>/myblog/2020/10/01/military/</url>
-    <content><![CDATA[<blockquote>
-<p>2020年不平靜的一年，也在最後一天結束軍旅生涯…</p>
-</blockquote>
-<div align="left"><img src="5.JPG" width="500"> </div>
-<p>當兵所遇到的以及各種建議，將依以下方式作介紹<br>
-(1) 基本介紹（應帶物品、食衣住行育樂）<br>
-(2) 操課內容（一階段、二階段）<br>
-(3) 自我經驗及建議（我所遇到的事）<br>
-(4) 心得分享（所學與感想）</p>
-<hr>
-<h1 id="基本介紹">基本介紹</h1>
-<p>∙ 入伍時間：119T (2020/9/22-2021/1/11) 個人折抵9天，預計1/2退伍，但又遇上假日，提早至12/31退伍</p>
-<p>∙ 所屬連隊：2營1連 - 於北訓中心，共2營，每營有4連(第4連為營部連 意指直屬連負責在戰場上補給裝備、彈藥，但在義務役操課都沒差)，每連差不多10班(基本上都按照身高編排)，每班約10人，共約800多人</p>
-<p>∙ 地理位置：桃園楊梅太平里（步行至楊梅火車站約25分鐘）</p>
-<p>∙ 所屬班級：十班器材班，共10人，二階段之後開始職物輪替，如：打飯、軍械、資收、內掃、公差等</p>
-<h2 id="食衣住行育樂">食衣住行育樂</h2>
-<p>∙ 食：雖然在網路上看到大家都在批評北訓的食物，但沒到自己認為的難吃，頂多食物很常重複，我還常去加菜加飯呢～</p>
-<div align="left"><img src="2.jpeg" width="500" height="500"> </div>
-∙ 衣：第一天會統一去領取物品
-<p>應帶物品推薦大家參考: <a href="http://jimmytraveling.com/blog/post/68331786" target="_blank" rel="noopener">【2019最新】當兵入伍攜帶物品清單（義務役新訓必備）</a></p>
-<p>** 小筆記本、資料袋、衣架、肥皂、刮鬍刀、海綿等，在北訓中心是統一購買的一袋，很貴！420元，個人覺得價值才200吧</p>
-<p>∙ 住：宿舍為40人左右的大通舖，床有上下兩層，都有枕頭跟棉被 <img src="1.jpeg" alt="1"></p>
-<p>∙ 行：真心覺得貴，從營區到桃園火車站就要價120，到台北200，基隆250，宜蘭300，不過搭遊覽車還是方便啦，錢要代夠</p>
-<p>∙ 樂： 第二階段開始有許多社團課及休息時間，可以玩桌遊（是我玩過最多次狼人殺的時期），其他操課或聽招募聽講都會偷玩猜數字或Bingo</p>
-<hr>
-<h1 id="操課內容">操課內容</h1>
-<p>推薦參考：<a href="https://matters.news/@lushaoming/%E7%95%B6%E5%85%B5%E5%BF%85%E8%AE%80-%E6%A5%8A%E6%A2%85%E5%A4%AA%E5%B9%B3%E9%87%8C%E5%8C%97%E8%A8%93%E4%B8%AD%E5%BF%83-107-t-1-b1-c-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%B4%B9-bafyreigbzyqklgmqf5j3xd4lw3uhnj2o7lfxcwhtl3uwx4566kqvrxu77q" target="_blank" rel="noopener">【 當兵必讀 - 楊梅太平里北訓中心 107T 1B1C #基本介紹】</a></p>
-<hr>
-<h1 id="自我經驗與建議">自我經驗與建議</h1>
-<h2 id="輔導長公差">輔導長公差</h2>
-<p>記得入伍第一天，大家都還無頭緒時，輔導長便詢問有無自願當輔導長公差，我立馬舉手，可享有放假、免操課、吃零食的福利，但要負責收錢、打雜等文書作業，有時候都會比別人晚就寢，但還是建議可以擔任公差職務，大家無聊到發慌時，你還有事做XD。</p>
-<h2 id="同梯朋友">同梯朋友</h2>
-<p>班長有說我們這梯次都是高學歷份子，身邊幾乎都是大學、研究所的、還有醫學系的朋友，沒遇到所謂的8+9，此外，這梯都是來自桃園、台北、基隆、宜蘭地區，我的鄰兵們也都滿罩的，會提醒集合時間還有攜帶裝備等。</p>
-<h2 id="懇親會">懇親會</h2>
-<p>我們第二週就是懇親會，記住！如果家人可以來一定要請他們來，因為如果他們帶走我們就能12點離開，如果沒有家人來，只能1600離開，還要收拾垃圾、善後工作等。</p>
-<h2 id="招募與志願役">招募與志願役</h2>
-<p>第一週都是在聽招募，開始的時候是抱著可以偷懶去參訪，便勾選自己認為最帥也最操的特戰指揮部，原本完全沒有簽志願役的想法，然而當自己開始了解軍種制度（士兵、士官、軍官）的福利政策、薪資上看5W以及各項技能學習後，開始漸漸對國軍改觀，我不能說當軍人有多好，但是現在講求人性化操課、並有國家提供的考證照機制，讓軍人退伍後仍能透過證照取得其他工作，甚至從軍20年後享有終身俸，同時不會有超時加班的問題，每天上午兩節及下午兩節操課，下午4-6點有運動時間，顧及到每個人的健康，6點以後就是自由時間，住附近的(50km以內)可以住家裡，隔天7:30再到營區報到就好，類似一個公司的制度。去到參訪地點後，看到餐點的提供比北訓中心好十萬八千里，深深吸引到我，特戰指揮部還有個重點是要學跳傘，也是必備技能，在外跳傘是很貴的體驗，這裡是免費且必須的。<br>
-然而志願役一簽就是四年，四年後自幾可能難以回歸本行，雖然每天晚上都有時間進修自我，但我無法保證自己四年後會不會因軍中的弟兄影響我的進修，擁有研究所的學歷並不會在軍中有效用，頂多長官多關注你，最後，自己還是有更遠的志向抱負，想到外面更寬廣的世界看看。</p>
-<h2 id="打靶">打靶</h2>
-<p>第三週的第一天開始練習臥射、清槍的基本口令動作，為隔天打靶做準備，太平里打靶場距離營區路程約40分鐘，全副武裝步行至打靶場，當天風很大，紅土飛揚，視線時好時壞，打靶距離是175M，剛好是子彈彈道上揚的時候，因此瞄準靶的腰部位置，但是我至今仍不知道為什麼我命中0發，接著就是一直輪著打，大概打了8輪、60發左右的子彈，班長說領多少子彈就要打完多少，原本以為是像高中實彈射擊一人打個一輪就收工回家，沒想到一去就是一整天的實彈射擊，因此我們中午也是在靶場坐著吃午餐、睡午覺，打靶當下的聲音真的很震撼，就像煙火在耳邊爆炸的音量，同時強大的後座力會讓全身都在抖動，穩住氣再打、不要急，我也在試著抓到穩定點。</p>
-<h2 id="飯菜問題">飯菜問題</h2>
-<p>第三週，指揮官（營區最大的老大）接獲消息有人通報說飯菜難吃，而且吃不飽，所以親自前往餐廳視察，看到飯菜直接暴怒，大罵營長還有連長為何飯菜每個人的量不一樣，而且餐點沒變化等，當著所有人的面要營長改進，說完還回頭問：指揮官我帥不帥，感覺有像套好的劇情，但果真隔天的飯菜變得豐富而且好吃、份量也多，而且還吩咐以後每週四會進行用餐滿意度調查的統計，想改善餐點問題，指揮官日後告訴我們，要當個如何解決問題的人，而不是看到問題還不解決，讓我深深印在腦中。</p>
-<h2 id="鑑測當週的假日">鑑測當週的假日</h2>
-<p>指揮官說如果9項測驗全過，週五1400就可以走，少一項延後一小時，但最晚1700就離開，而收假是下週一的1900，北訓真是好地方</p>
-<hr>
-<h1 id="心得分享">心得分享</h1>
-<p>令我訝異的是帶我的班長們也都是很合理化、就事論事的領導者，也都會跟我們聊天打屁，不會一板一眼，該認真就認真，該輕鬆就輕鬆，比起外面說的不合理要求差得多，班長有說那是以前世代的作法，他們過去也有經歷那些世代的管制方法，現在都是追求與時俱進、不做出不合理要求。<br>
-此外，班長也希望我們帶上自己的書充實自我，因為退伍後基本上都要求職，更應該精進自己，真心佩服班長的體貼，雖然也遇到許多不公平的對待或缺乏效率的問題，但人人都可以試著透過溝通與諒解去平衡所遇到的狀況。<br>
-聽長官們說我們是末代的北區專長訓練中心，以後營區會改成109旅的駐點，因此日後應該不會看到新兵在北區服役了，此篇分享的內容會因不同連隊或地區而有所差異，若有要服役的可以參考看看。<br>
-這四個月下來，最讓我感到心煩的是每次的收假日以及越接近退伍日矛盾感越重，一方面很開心快退伍，一方面卻在為將來進入職場感到恐懼與擔憂，期望每個同梯弟兄都能達到自己的理想，以後再約！後會有期～</p>
-<p><img src="6.jpg" alt="6"></p>
-]]></content>
-      <tags>
-        <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Maya學習成果</title>
     <url>/myblog/2018/12/31/maya/</url>
     <content><![CDATA[<blockquote>
@@ -1923,96 +1956,89 @@ Maya is a 3D computer animation software with powerful modeling, color rendering
       </tags>
   </entry>
   <entry>
-    <title>澎湖三日遊 2022/6/24 ~ 2022/6/26</title>
-    <url>/myblog/2022/06/27/penghu/</url>
+    <title> 義務役 2020.9.22-2021.1.11 </title>
+    <url>/myblog/2020/10/01/military/</url>
     <content><![CDATA[<blockquote>
-<p>熱舞社難得再次出遊<br>
-澎湖美得不像話</p>
+<p>2020年不平靜的一年，也在最後一天結束軍旅生涯…</p>
 </blockquote>
-<p><a href="https://m.youtube.com/watch?fbclid=PAAaZAPuTQnvVmQuKya51FloPhzsLSGRYZiyv43dj9BRyOOjQtZQuQkVk-HrI&amp;v=3kW1WoxQE_s&amp;feature=youtu.be" target="_blank" rel="noopener">旅遊影片回憶：YouTube</a></p>
-<div align="left"><img src="9.jpg" width="500" height="500"> </div>
-<h1 id="澎湖簡介">澎湖簡介</h1>
-<div align="left"><img src="22.jpeg" width="500" height="500"> </div>
-<p>圖片來源：<a href="https://www.travelking.com.tw/tourguide/penghu/attraction.asp" target="_blank" rel="noopener">https://www.travelking.com.tw/tourguide/penghu/attraction.asp</a></p>
-<p>[背包攻略](<a href="https://www.backpackers.com.tw/guide/index.php/%E6%BE%8E%E6%B9%96%E7%B8%A3%EF%BC%89" target="_blank" rel="noopener">https://www.backpackers.com.tw/guide/index.php/澎湖縣）</a></p>
-<h1 id="必帶物品">必帶物品</h1>
-<ol>
-<li>太陽眼鏡</li>
-<li>防曬裝備(帽子、防曬乳、薄外套)</li>
-<li>泳具</li>
-<li>蘆薈</li>
-<li>拖鞋</li>
-<li>毛巾</li>
-<li>防水袋</li>
-<li>衛生紙</li>
-</ol>
-<h1 id="行程規劃">行程規劃</h1>
-<h2 id="day1">Day1</h2>
-<div align="left"><img src="19.jpg" width="500" height="500"> </div>
-<p>10:00 的飛機，10:50抵達澎湖</p>
-<p>午餐：馬益路燒肉飯、劉正港檸檬冰、小管麵線、澎湖龜鮮奶雞蛋糕</p>
-<p>澎湖天后宮小巷弄走走逛逛</p>
-<div align="left"><img src="6.jpg" width="500" height="500"> </div>
-<p>摩西分海</p>
-<div align="left"><img src="1.jpg" width="500" height="500"> </div>
-裡正角沙灘
-<div align="left"><img src="2.jpg" width="500" height="500"> </div>
-<div align="left"><img src="3.jpg" width="500" height="500"> </div>
-<p>隘門沙灘</p>
-<p>晚餐：澎湖山水夏日炭烤</p>
-<div align="left"><img src="4.jpg" width="500" height="500"> </div>
-<p>民宿：諾雅方舟民宿</p>
-<h2 id="day2">Day2</h2>
-<div align="left"><img src="20.jpg" width="500" height="500"> </div>
-<p>早餐：澎湖赤崁朗哥早餐店(激推海菜燒肉蛋餅)</p>
-<div align="left"><img src="5.jpg" width="500" height="500"> </div>
-<p>搭船前往吉貝島（買套票行程）<br>
-玩香蕉船、水上設施、浮淺<br>
-吉貝島沙尾（必去點！）</p>
-<div align="left"><img src="7.jpg" width="500" height="500"> </div>
-<div align="left"><img src="8.jpg" width="500" height="500"> </div>
-<div align="left"><img src="9.jpg" width="500" height="500"> </div>
-<p>午餐：三布五食平價海鮮（不推）<br>
-環吉貝島</p>
-<div align="left"><img src="10.jpg" width="500" height="500"> </div>
-<div align="left"><img src="11.jpg" width="500" height="500"> </div>
-<div align="left"><img src="14.jpg" width="500" height="500"> </div>
-<p>搭船返回白沙<br>
-澎湖跨海大橋看夕陽</p>
-<div align="left"><img src="12.jpg" width="500" height="500"> </div>
-<div align="left"><img src="15.jpg" width="500" height="500"> </div>
-<div align="left"><img src="16.jpg" width="500" height="500"> </div>
-<p>晚餐：青峰海鮮 (超推)<br>
-岐頭沙灘玩仙女棒</p>
-<div align="left"><img src="17.jpg" width="500" height="500"> </div>
-<p>回民宿：澎湖鎮海灣民宿</p>
-<h2 id="day3">Day3</h2>
-<div align="left"><img src="21.jpg" width="500" height="500"> </div>
-<p>民宿早餐<br>
-珍珍海產買伴手禮<br>
-玉冠嫩仙草<br>
-觀音亭親水遊憩區</p>
-<div align="left"><img src="18.jpg" width="500" height="500"> </div>
-還車前往機場
-13:35飛機回松山機場
-<h1 id="遺珠之憾">遺珠之憾</h1>
-<p>回家炸粿<br>
-福哥紅姐現煮熱炒<br>
-阿志冬瓜糕 (必須提早兩三天訂)<br>
-二崁杏仁茶<br>
-Beacon說酒人<br>
-鮮食堂海鮮蒸鍋<br>
-自由伯-澎湖第一仙人掌冰<br>
-紫玉仙草冰<br>
-59號地瓜球<br>
-阿爆香腸<br>
-瑞師父海菜煎餅<br>
-國統紅豆湯圓<br>
-鍋道熱(火鍋)<br>
-甲貳(火鍋)<br>
-清香海鮮餐廳</p>
-<h1 id="學到經驗">學到經驗</h1>
-<p>最後一天還車時，發現有被擦撞到的刮痕，租車公司說等師傅來報價，要我們押證件跟押金3000，先搭飛機回去，等等傳訊息多退少補，結果回到機場，跟我們報價12700元，被說是紅色烤漆較貴，還有小島價壓我們，整個生氣，朋友問認識修車行，說這報價有些不合理，因此持續與老闆議價，我們願意賠償，但是價格不太合理。</p>
+<div align="left"><img src="5.JPG" width="500"> </div>
+<p>當兵所遇到的以及各種建議，將依以下方式作介紹<br>
+(1) 基本介紹（應帶物品、食衣住行育樂）<br>
+(2) 操課內容（一階段、二階段）<br>
+(3) 自我經驗及建議（我所遇到的事）<br>
+(4) 心得分享（所學與感想）</p>
+<hr>
+<h1 id="基本介紹">基本介紹</h1>
+<p>∙ 入伍時間：119T (2020/9/22-2021/1/11) 個人折抵9天，預計1/2退伍，但又遇上假日，提早至12/31退伍</p>
+<p>∙ 所屬連隊：2營1連 - 於北訓中心，共2營，每營有4連(第4連為營部連 意指直屬連負責在戰場上補給裝備、彈藥，但在義務役操課都沒差)，每連差不多10班(基本上都按照身高編排)，每班約10人，共約800多人</p>
+<p>∙ 地理位置：桃園楊梅太平里（步行至楊梅火車站約25分鐘）</p>
+<p>∙ 所屬班級：十班器材班，共10人，二階段之後開始職物輪替，如：打飯、軍械、資收、內掃、公差等</p>
+<h2 id="食衣住行育樂">食衣住行育樂</h2>
+<p>∙ 食：雖然在網路上看到大家都在批評北訓的食物，但沒到自己認為的難吃，頂多食物很常重複，我還常去加菜加飯呢～</p>
+<div align="left"><img src="2.jpeg" width="500" height="500"> </div>
+∙ 衣：第一天會統一去領取物品
+<p>應帶物品推薦大家參考: <a href="http://jimmytraveling.com/blog/post/68331786" target="_blank" rel="noopener">【2019最新】當兵入伍攜帶物品清單（義務役新訓必備）</a></p>
+<p>** 小筆記本、資料袋、衣架、肥皂、刮鬍刀、海綿等，在北訓中心是統一購買的一袋，很貴！420元，個人覺得價值才200吧</p>
+<p>∙ 住：宿舍為40人左右的大通舖，床有上下兩層，都有枕頭跟棉被 <img src="1.jpeg" alt="1"></p>
+<p>∙ 行：真心覺得貴，從營區到桃園火車站就要價120，到台北200，基隆250，宜蘭300，不過搭遊覽車還是方便啦，錢要代夠</p>
+<p>∙ 樂： 第二階段開始有許多社團課及休息時間，可以玩桌遊（是我玩過最多次狼人殺的時期），其他操課或聽招募聽講都會偷玩猜數字或Bingo</p>
+<hr>
+<h1 id="操課內容">操課內容</h1>
+<p>推薦參考：<a href="https://matters.news/@lushaoming/%E7%95%B6%E5%85%B5%E5%BF%85%E8%AE%80-%E6%A5%8A%E6%A2%85%E5%A4%AA%E5%B9%B3%E9%87%8C%E5%8C%97%E8%A8%93%E4%B8%AD%E5%BF%83-107-t-1-b1-c-%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%B4%B9-bafyreigbzyqklgmqf5j3xd4lw3uhnj2o7lfxcwhtl3uwx4566kqvrxu77q" target="_blank" rel="noopener">【 當兵必讀 - 楊梅太平里北訓中心 107T 1B1C #基本介紹】</a></p>
+<hr>
+<h1 id="自我經驗與建議">自我經驗與建議</h1>
+<h2 id="輔導長公差">輔導長公差</h2>
+<p>記得入伍第一天，大家都還無頭緒時，輔導長便詢問有無自願當輔導長公差，我立馬舉手，可享有放假、免操課、吃零食的福利，但要負責收錢、打雜等文書作業，有時候都會比別人晚就寢，但還是建議可以擔任公差職務，大家無聊到發慌時，你還有事做XD。</p>
+<h2 id="同梯朋友">同梯朋友</h2>
+<p>班長有說我們這梯次都是高學歷份子，身邊幾乎都是大學、研究所的、還有醫學系的朋友，沒遇到所謂的8+9，此外，這梯都是來自桃園、台北、基隆、宜蘭地區，我的鄰兵們也都滿罩的，會提醒集合時間還有攜帶裝備等。</p>
+<h2 id="懇親會">懇親會</h2>
+<p>我們第二週就是懇親會，記住！如果家人可以來一定要請他們來，因為如果他們帶走我們就能12點離開，如果沒有家人來，只能1600離開，還要收拾垃圾、善後工作等。</p>
+<h2 id="招募與志願役">招募與志願役</h2>
+<p>第一週都是在聽招募，開始的時候是抱著可以偷懶去參訪，便勾選自己認為最帥也最操的特戰指揮部，原本完全沒有簽志願役的想法，然而當自己開始了解軍種制度（士兵、士官、軍官）的福利政策、薪資上看5W以及各項技能學習後，開始漸漸對國軍改觀，我不能說當軍人有多好，但是現在講求人性化操課、並有國家提供的考證照機制，讓軍人退伍後仍能透過證照取得其他工作，甚至從軍20年後享有終身俸，同時不會有超時加班的問題，每天上午兩節及下午兩節操課，下午4-6點有運動時間，顧及到每個人的健康，6點以後就是自由時間，住附近的(50km以內)可以住家裡，隔天7:30再到營區報到就好，類似一個公司的制度。去到參訪地點後，看到餐點的提供比北訓中心好十萬八千里，深深吸引到我，特戰指揮部還有個重點是要學跳傘，也是必備技能，在外跳傘是很貴的體驗，這裡是免費且必須的。<br>
+然而志願役一簽就是四年，四年後自幾可能難以回歸本行，雖然每天晚上都有時間進修自我，但我無法保證自己四年後會不會因軍中的弟兄影響我的進修，擁有研究所的學歷並不會在軍中有效用，頂多長官多關注你，最後，自己還是有更遠的志向抱負，想到外面更寬廣的世界看看。</p>
+<h2 id="打靶">打靶</h2>
+<p>第三週的第一天開始練習臥射、清槍的基本口令動作，為隔天打靶做準備，太平里打靶場距離營區路程約40分鐘，全副武裝步行至打靶場，當天風很大，紅土飛揚，視線時好時壞，打靶距離是175M，剛好是子彈彈道上揚的時候，因此瞄準靶的腰部位置，但是我至今仍不知道為什麼我命中0發，接著就是一直輪著打，大概打了8輪、60發左右的子彈，班長說領多少子彈就要打完多少，原本以為是像高中實彈射擊一人打個一輪就收工回家，沒想到一去就是一整天的實彈射擊，因此我們中午也是在靶場坐著吃午餐、睡午覺，打靶當下的聲音真的很震撼，就像煙火在耳邊爆炸的音量，同時強大的後座力會讓全身都在抖動，穩住氣再打、不要急，我也在試著抓到穩定點。</p>
+<h2 id="飯菜問題">飯菜問題</h2>
+<p>第三週，指揮官（營區最大的老大）接獲消息有人通報說飯菜難吃，而且吃不飽，所以親自前往餐廳視察，看到飯菜直接暴怒，大罵營長還有連長為何飯菜每個人的量不一樣，而且餐點沒變化等，當著所有人的面要營長改進，說完還回頭問：指揮官我帥不帥，感覺有像套好的劇情，但果真隔天的飯菜變得豐富而且好吃、份量也多，而且還吩咐以後每週四會進行用餐滿意度調查的統計，想改善餐點問題，指揮官日後告訴我們，要當個如何解決問題的人，而不是看到問題還不解決，讓我深深印在腦中。</p>
+<h2 id="鑑測當週的假日">鑑測當週的假日</h2>
+<p>指揮官說如果9項測驗全過，週五1400就可以走，少一項延後一小時，但最晚1700就離開，而收假是下週一的1900，北訓真是好地方</p>
+<hr>
+<h1 id="心得分享">心得分享</h1>
+<p>令我訝異的是帶我的班長們也都是很合理化、就事論事的領導者，也都會跟我們聊天打屁，不會一板一眼，該認真就認真，該輕鬆就輕鬆，比起外面說的不合理要求差得多，班長有說那是以前世代的作法，他們過去也有經歷那些世代的管制方法，現在都是追求與時俱進、不做出不合理要求。<br>
+此外，班長也希望我們帶上自己的書充實自我，因為退伍後基本上都要求職，更應該精進自己，真心佩服班長的體貼，雖然也遇到許多不公平的對待或缺乏效率的問題，但人人都可以試著透過溝通與諒解去平衡所遇到的狀況。<br>
+聽長官們說我們是末代的北區專長訓練中心，以後營區會改成109旅的駐點，因此日後應該不會看到新兵在北區服役了，此篇分享的內容會因不同連隊或地區而有所差異，若有要服役的可以參考看看。<br>
+這四個月下來，最讓我感到心煩的是每次的收假日以及越接近退伍日矛盾感越重，一方面很開心快退伍，一方面卻在為將來進入職場感到恐懼與擔憂，期望每個同梯弟兄都能達到自己的理想，以後再約！後會有期～</p>
+<p><img src="6.jpg" alt="6"></p>
+]]></content>
+      <tags>
+        <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>熱舞社 2014/10~2018/6/10</title>
+    <url>/myblog/2018/06/10/pop-dance/</url>
+    <content><![CDATA[<p><img src="1.jpg" alt="pop dance"></p>
+<blockquote>
+<p>熱舞社 陪伴我大學整整四年的社團 有哭有笑 亦友亦親<br>
+是大學成長最多的時候<br>
+從個內向不敢表現 到建立自信 最後在大眾前表演<br>
+謝謝大學四年的陪伴</p>
+</blockquote>
+<hr>
+<h1 id="freshman">Freshman</h1>
+<p>第一次接觸跳舞，完全沒有基礎，慢慢學習，直到能站上舞台</p>
+<p><img src="2.png" alt="freshman"></p>
+<hr>
+<h1 id="personnel">Personnel</h1>
+<p>幹部期間 擔任器材長 當時總認為大家很自私 由於大家都很忙 只顧自己的事 事實上大家都還是很願意幫忙 也因此培養好感情 而自己開會時較少發言 當時有想法卻不敢表達 每次開會都到很晚 總是希望趕快結束回家 期許自己未來能適時說出自己的想法 幫助團隊</p>
+<p><img src="3.png" alt="Personnel"></p>
+<hr>
+<h1 id="退幹生活">退幹生活</h1>
+<p>偶爾回來跳跳舞 回來聊聊天 回來認識新朋友 看到熱舞社日漸蓬勃 覺得大家都長大了</p>
+<p><img src="4.png" alt="退幹生活"></p>
+<blockquote>
+<p>很慶幸自己當時決定加入熱舞社 改變我很多！</p>
+</blockquote>
 ]]></content>
       <tags>
         <tag>Blog</tag>
@@ -2055,36 +2081,6 @@ From graph, we can see that the trend we predicted is similar to the actual situ
 ]]></content>
       <tags>
         <tag>Work</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>熱舞社 2014/10~2018/6/10</title>
-    <url>/myblog/2018/06/10/pop-dance/</url>
-    <content><![CDATA[<p><img src="1.jpg" alt="pop dance"></p>
-<blockquote>
-<p>熱舞社 陪伴我大學整整四年的社團 有哭有笑 亦友亦親<br>
-是大學成長最多的時候<br>
-從個內向不敢表現 到建立自信 最後在大眾前表演<br>
-謝謝大學四年的陪伴</p>
-</blockquote>
-<hr>
-<h1 id="freshman">Freshman</h1>
-<p>第一次接觸跳舞，完全沒有基礎，慢慢學習，直到能站上舞台</p>
-<p><img src="2.png" alt="freshman"></p>
-<hr>
-<h1 id="personnel">Personnel</h1>
-<p>幹部期間 擔任器材長 當時總認為大家很自私 由於大家都很忙 只顧自己的事 事實上大家都還是很願意幫忙 也因此培養好感情 而自己開會時較少發言 當時有想法卻不敢表達 每次開會都到很晚 總是希望趕快結束回家 期許自己未來能適時說出自己的想法 幫助團隊</p>
-<p><img src="3.png" alt="Personnel"></p>
-<hr>
-<h1 id="退幹生活">退幹生活</h1>
-<p>偶爾回來跳跳舞 回來聊聊天 回來認識新朋友 看到熱舞社日漸蓬勃 覺得大家都長大了</p>
-<p><img src="4.png" alt="退幹生活"></p>
-<blockquote>
-<p>很慶幸自己當時決定加入熱舞社 改變我很多！</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Blog</tag>
       </tags>
   </entry>
 </search>
