@@ -88,6 +88,213 @@ Rose is the youngest player to be elected MVP, but due to the foot injury in pre
       </tags>
   </entry>
   <entry>
+    <title>故宮沉浸式展場系統</title>
+    <url>/myblog/2020/05/25/ARKit/</url>
+    <content><![CDATA[<blockquote>
+<p>故宮沈浸式展場系統將，展場環境呈現於行動裝置中，使用者 能走訪於虛擬搭建的展場，且不受地域限制，提升博物館觀光的趣味，降低參展 的成本。本系統先將故宮 Open Data 之中國畫作、國外知名畫作及中西方雕像進 行蒐集，再將展場空間設計搭建，並放置畫作於展場空間內。最後透過 ARKit 技術將畫面投射行動裝置中，即時呈現影像。未來若可結合智慧眼鏡，將可帶來更 多應用。<br>
+The research develops an immersive exhibition system in National Palace Museum and presents the exhibition environment in a mobile device. Users can visit the virtually constructed exhibition venue without geographical restrictions, enhancing the interest of museum tourism and reducing the cost of participation. This system collects Chinese paintings of open data in National Palace Museum, well-known western paintings and Western statues. And then we design the exhibition space and place the paintings there. Finally, through ARKit technology, the image is presented and projected on the screen of mobile device in real time. If smart glasses can be combined in the future, it will bring more applications.</p>
+</blockquote>
+<hr>
+<h1 id="緒論-objective">緒論 Objective</h1>
+<h2 id="動機與目的-motivation-and-purpose">動機與目的 Motivation and Purpose</h2>
+<p>依據文化統計調查顯示，現今許多博物館皆面臨瀏覽人次減少問題，因此各大博物館希望透過 科技，建置現代結合過去，製造反差，改變大家以往對博物館的傳統思想，打造 創新的博物館，吸引更多遊客前來參觀。<br>
+過去擴增實境 (AR) 最早用於軍事方面，但隨著軟硬體的發展，目前應用在 日常生活及遊戲產業中，Apple.Inc 推出的 iOS13 版本內，搭載以 AR 量測物體大 小及尺寸的工具，使用者不須透過尺規即可得知物體大小，使 AR 應用更為寬廣及 普及。<br>
+沉浸式一詞為新興的概念，通俗定義為「物理存在於非物理世界中的感知」， 在提到沉浸式電影時，通常意指虛擬實境電影，也就是觀眾可透過 VR 裝置進入 360 的影像以及環繞音響中，仿如置身於另外的世界中，有時甚至還有嗅覺與觸覺 的體驗。在強調全身及全方位的感官體驗上，以科技藝術空間沉浸體驗為例，如 過去日本 teamLab 的作品也透過虛擬實境裝置體供使用者彷如在虛擬空間行走。<br>
+若用沉浸感受的對象作區分，可分為以下六種不同類型:感官、本體、趣味感、 空間認知、情緒沉浸以及敘事沉浸等。這六種可同時作相互搭配，或同時存在一 個藝術作品中。</p>
+<p>總結以上研究動機，本研究之研究目的有三點 :<br>
+(1) 結合故宮 Open Data 專區之古畫、西方著名畫作與實境技術結合，設計一 影像互動式系統。<br>
+(2) 使用 Unity 及 SketchUp 軟體建立展場空間與擺設展品，並結合 ARKit 做實境技術運用，使系統更具有互動性。<br>
+(3) 將規劃展場空間，實作虛擬展場，並提供參展地圖，予使用者方便走訪</p>
+<p>According to cultural statistics surveys, many museums today are facing the problem of a decrease in the number of visitors. Therefore, major museums hope to use technology to combine the modern with the past, create contrast, change people’s traditional thinking about museums in the past, and create innovative museums to attract more Tourists come to visit.<br>
+In the past, augmented reality (AR) was first used in the military, but with the development of software and hardware, it is currently used in daily life and the game industry. In the iOS13 version launched by Apple.Inc, it is equipped with AR to measure the size of objects and The size tool allows users to know the size of an object without using a ruler, making AR applications wider and more popular.<br>
+The term immersion is an emerging concept, which is colloquially defined as “perception of physical existence in a non-physical world”. When referring to immersive movies, it usually means virtual reality movies, that is, the audience can enter 3D through VR devices. In the video and surround sound, it is like being in another world, and sometimes there is even an experience of smell and touch. In emphasizing the whole body and all-round sensory experience, taking the immersion experience of technology and art space as an example, for example, the works of teamLab in Japan in the past also used virtual reality installations for users to walk in virtual space.<br>
+If the object of immersion is used to distinguish, it can be divided into the following six different types: sensory, ontology, sense of fun, spatial cognition, emotional immersion and narrative immersion. These six can be combined with each other at the same time, or can exist in a work of art at the same time.</p>
+<p>Summarizing the above research motivations, the research objectives of this study are as follows:<br>
+(1) Combining ancient paintings in the Open Data area of ​​the Forbidden City, famous western paintings and real-world technology to design an interactive video system.<br>
+(2) Use Unity and SketchUp software to create exhibition space and display exhibits, and combine ARKit for real-world technology to make the system more interactive.<br>
+(3) The exhibition space will be planned, a virtual exhibition will be implemented, and a map of the exhibition will be provided for users to easily visit</p>
+<hr>
+<h2 id="相關研究-related-research">相關研究 Related Research</h2>
+<p>影像處理及硬體性能高速發展下，擴增實境、虛擬實境已不再只有軍事發展 或實驗而已，近年來更加入人們的日常生活及遊戲產業中，如 2016 年起於世界各 地發行的寶可夢盛行全球，雖然其非首度應用擴增實境技術之手機遊戲，但卻為 眾人皆知的擴增實境遊戲，還有其他包括遠程會議、培訓及醫療上的應用。<br>
+擴增實境技術的蓬勃發展，除了歸功於學術上的努力，也使更多商業團隊致 力於研究如何結合日常生活，加速便利性與有效性，以此開拓更廣大的消費市場。 以下列出近來商業界與學術界中，擴增實境相關應用的實際案例。<br>
+With the rapid development of image processing and hardware performance, augmented reality and virtual reality are no longer just military development or experiments. In recent years, they have also become part of people’s daily life and the game industry. Pokémon is popular all over the world. Although it is not the first mobile game to use augmented reality technology, it is well-known for augmented reality games, as well as other applications including teleconferencing, training and medical care.<br>
+The vigorous development of augmented reality technology is not only due to academic efforts, but also enables more business teams to study how to integrate daily life, accelerate convenience and effectiveness, and open up a wider consumer market. The following is a list of recent practical examples of AR-related applications in business and academia.</p>
+<p>(1) ARKit 與ARCore技術<br>
+APPLE 公司所提供 ARKit，讓開發者實現 AR 的畫面，但不需要知道背後複 雜的成像及定位技術，只需要專注在如何設計 AR 的身歷其境經驗及場景搭建。 ARKit 原理是使用者可以在移動裝置下，同時改變虛擬物件的呈現方式，以追蹤虛 擬物件，再者，ARKit 可以執行 2D 和 3D 物件的追蹤效果，使用者可以與虛擬物 件做互動，更多可運用於遊戲產業。然而，ARKit 並不包含任何圖型 API，只提供 追蹤虛擬物件與與表面偵測的能力，所以需要搭配 RealityKit、SceneKit、Metal 之類 Apple 的其他 Framework。<br>
+而 ARKit 也有其軟硬體的限制，軟體限制為開發工具為 Xcode、iOS11 版本或以上、 MacOS 10.12.4 或以上版本;硬體限制為處理器 A9 或以上的 iPhone 或iPad 設備( iPhone6S 為 A9 處理器)。<br>
+此外，Google 也有開發類似 ARKit 的技術，稱為「ARCore」，此技術可開發 於 Android 系統中，且有硬體設備的限制，其比較如下。<br>
+The ARKit provided by APPLE allows developers to realize AR images, but they do not need to know the complex imaging and positioning technology behind them. They only need to focus on how to design AR immersive experience and scene construction. The principle of ARKit is that users can change the presentation of virtual objects on mobile devices at the same time to track virtual objects. Furthermore, ARKit can perform tracking effects of 2D and 3D objects, and users can interact with virtual objects. Used in the game industry. However, ARKit does not contain any graphics API, and only provides the ability to track virtual objects and surface detection, so it needs to be paired with other Apple frameworks such as RealityKit, SceneKit, and Metal.<br>
+ARKit also has its software and hardware limitations. The software is limited to Xcode, iOS11 version or above, MacOS 10.12.4 or above, and the hardware is limited to iPhone or iPad devices with processor A9 or above (iPhone6S is processed by A9). device).<br>
+In addition, Google has also developed a technology similar to ARKit, called “ARCore”, which can be developed in the Android system and is limited by hardware devices. The comparison is as below.<br>
+<img src="1.png" alt="1"></p>
+<p>(2) Vuforia: Market-Leading Enterprise AR<br>
+Vuforia 為知名手機晶片大廠高通(Qualcomm)公司的 AR 擴增實境平台，於 2015 年 PTC 參數科技以 6500 萬美元收購。Vuforia 提供基本的 SDK 軟體開發擴 增現實應用程序套件可於 Unity 上進行使用，讓使用者製作各種平台的開發與擴 增實境應用。過去 AR 開發工具 ARToolKit、Lyteshot、Unifeye 等軟體的入門門 檻高且價格高，然而 Vuforia 可以免費下載提供開發者開發測試，相對容易入門。<br>
+Vuforia is the AR augmented reality platform of Qualcomm, a well-known mobile phone chip maker, and was acquired by PTC Parametric Technology for $65 million in 2015. Vuforia provides a basic SDK software development augmented reality application suite that can be used on Unity, allowing users to create development and augmented reality applications for various platforms. In the past, AR development tools such as ARToolKit, Lyteshot, Unifeye and other software had high entry barriers and high prices. However, Vuforia can be downloaded for free for developers to develop and test, making it relatively easy to get started.</p>
+<p>(3) Google Glass<br>
+Google 眼鏡是一款由 Google 設計開發，裝配有光學式頭戴顯示器(OHMD) 的可穿戴電腦，其宗旨為能製造出符合普羅大眾消費者的行動裝置。其以免手持、 並與智慧型手機相似之方式顯示各種資訊，尤其導航功能是最大的看點。<br>
+軍方從 1995 年起著手於研究光學式頭戴型裝置，而後 Google 於 2012 年起開 始測試並研發有關智慧眼鏡的各項功能應用，並於同年首次展示拍攝功能且相較 過去更輕薄。現今，其裝置已涵蓋觸控板、相機、顯示器、交通資訊和地圖服務 及遊戲等。<br>
+Google Glass is a wearable computer with an optical head-mounted display (OHMD) designed and developed by Google to create a mobile device for the general public. It can display various information in a manner similar to that of a smart phone without being held by hand, especially the navigation function is the biggest attraction.<br>
+The military started researching optical head-mounted devices in 1995, and then Google began to test and develop various functional applications of smart glasses in 2012, and in the same year, it demonstrated the shooting function for the first time and was thinner and lighter than in the past. Today, its devices include touchpads, cameras, monitors, traffic information and map services, and games.<br>
+<img src="2.png" alt="2"></p>
+<hr>
+<h2 id="本系統簡介與特色-system-introduction">本系統簡介與特色 System Introduction</h2>
+<p>此系統以 Apple.Inc 所提供的 ARKit 為擴增實境主體，將 Unity 為開發媒介， 運用其內部所提供之 ProBuilder 為展場空間建模並擺放虛擬物件於展場空間，在其 中針對各物品的建材、材質、透明度做調整，以及展場內部光影強弱微調，使遊 客可以直接透過手機或平板，在空曠地區，即時地、快速地欣賞展場，並可以透 過下方按鈕顯示展品資訊。<br>
+此系統除了將故宮 Open Data 專區的數位化圖像放置於展區，也加入了具中國 風之展品(中式建築、兵馬俑等)，更加入西方著名八幅畫作與西方著名雕 像(大衛像、維納斯像、運動員)放置於左側，期望達到中西對比，與目前熱門 的實境技術結合，達到使用者可方便瀏覽，同時得到相當驚豔的效果。<br>
+This system uses ARKit provided by Apple.Inc as the main body of the augmented reality, uses Unity as the development medium, and uses the internally provided ProBuilder to model the exhibition space and place virtual objects in the exhibition space. The building materials, materials, and transparency of the items are adjusted, as well as the fine-tuning of the intensity of light and shadow inside the exhibition hall, so that visitors can directly and quickly appreciate the exhibition hall through mobile phones or tablets in open areas, and display the exhibit information through the buttons below.<br>
+In addition to placing the digital images of the Open Data area of the Forbidden City in the exhibition area, this system also adds Chinese-style exhibits (Chinese-style buildings, terracotta warriors, etc.), as well as eight famous Western paintings and famous Western statues (Statue of David, Venus statues, athletes) are placed on the left side, hoping to achieve a contrast between Chinese and Western, and combine with the current popular reality technology, so that users can browse easily, and at the same time get quite amazing results.</p>
+<p>(1) 使用者端 Client:<br>
+對於使用者而言，此系統操作簡單，只需透過一台手機或平板即可運行，在空曠的場域中，使用者手持裝置，放置於眼前，裝置即可因為使用者行走、奔跑，計算所在位置與距離，即時呈現各個物品之相對位置，在系統左下方設置按鈕提供使用者在想了解作品時點擊，即時顯示作品資訊，能因此增加趣味，同時讓使用者增加對畫作的了解。<br>
+For users, this system is easy to operate, and only needs to be run through a mobile phone or tablet. In an open area, the user holds the device and places it in front of his eyes, and the device can run, run, and calculate as the user walks and runs. The location and distance show the relative position of each item in real time. The button is set at the bottom left of the system for users to click when they want to know the work, and the information of the work will be displayed in real time, which can increase the interest and increase the user’s understanding of the painting.</p>
+<p>(2) 開發者端 Developer:<br>
+本研究將各項展覽作品透過 Unity 內部提供之 ProBuilder 建造而成，其操作簡單，只需隨開發者欲建制的空間設定，就能產生空間，並透過各展品 自由拉移擺放，並於最後設定 ARKit 與預期顯示之項目，即可呈現。<br>
+In this research, various exhibition works are built through the ProBuilder provided by Unity. The operation is simple. You only need to set the space according to the developer’s desire to create a space. You can freely move and place the exhibits through each exhibit. Set ARKit and the expected display item, and it’s ready to be rendered.</p>
+<p>(3) 博物館端 Museum side:<br>
+此系統提供欲參訪博物館或展場的遊客使用、還有無法到達的民眾可以使用，同時能給予博物館設計展場前、設計此系統後，觀看內部空間與擺設狀態，以降低不必要的成本，同時提供此作為宣傳目的。另外，博物館若需在展覽時提供多種展場，可嘗試建立於雲端中，供民眾下載參考。<br>
+This system can be used by tourists who want to visit the museum or exhibition hall, as well as people who cannot reach it. At the same time, it can be used by the museum to view the internal space and decoration status before and after the design of the exhibition hall, so as to reduce unnecessary costs. , while providing this for promotional purposes. In addition, if the museum needs to provide a variety of exhibition venues during the exhibition, it can try to build it in the cloud for the public to download and reference.</p>
+<hr>
+<h1 id="系統關鍵技術-system-related-technique">系統關鍵技術 System related Technique</h1>
+<p>本系統的關鍵技術主要分成兩大部分，一為 Apple.Inc 所開發的 ARKit 技術，另一為 Unity 及 SketchUp 所提供的建模方法。<br>
+The key technology of this system is mainly divided into two parts, one is the ARKit technology developed by Apple.Inc, and the other is the modeling method provided by Unity and SketchUp.</p>
+<h2 id="arkit-api">ARKit API</h2>
+<p>本研究主要針對 ARKit 作為開發支持，在此說明 ARKit 之底層技術。<br>
+This research is mainly aimed at ARKit as development support, and the underlying technology of ARKit is explained here.</p>
+<h3 id="arkit-的關鍵技術-key-technique">ARKit 的關鍵技術 Key Technique</h3>
+<p>ARKit 其中的技術原理為視覺慣性測量(VIO)系統及平面檢測兩大關鍵 技術，視覺慣性測試(VIO)即系統會隨時追蹤使用者在空間的位置，其記錄 著 iPhone 在 6DoF 空間中經過的距離(6DoF 即沿著 xyz 軸移動，加上俯仰、 旋轉、滾動等)，如下圖，螢幕在每幀畫面刷新時，動作會被立即重新計 算，畫面的刷新率為每秒 30fps 或以上，而這個刷新計算會同時被兩個系統 所計算，一為照相鏡頭與現實世界中的點將每幀畫面相匹配，此時使用者 動作會被計算。另一為動作被慣性系統所追蹤，以陀螺儀及加速度計兩慣 性測量單位(IMU)實作。最後透過卡爾曼濾波器(Kalman Filter)將其進行整 合，並計算出最佳真實位置(Ground Truth)。<br>
+平面檢測即以地面做為參考物以計算位置訊息，藉此確立物體能平放 於平面上，以避免虛擬物體漂浮。任三點決定一平面，通過計算將特徵點 平均化，得到參考平面。<br>
+The technical principle of ARKit is the visual inertial measurement (VIO) system and the two key technologies of plane detection. The visual inertial measurement (VIO) means that the system will track the user’s position in space at any time, and it records the distance that the iPhone travels in the 6DoF space. (6DoF means moving along the xyz axis, plus pitch, rotation, roll, etc.), as shown in the figure below, when the screen refreshes every frame, the action will be recalculated immediately, and the refresh rate of the screen is 30fps or more per second, and this The refresh calculation will be calculated by two systems at the same time, one is to match each frame of the camera lens with the point in the real world, and the user action will be calculated at this time. The other is that the movement is tracked by the inertial system, which is implemented with two inertial measurement units (IMU), gyroscope and accelerometer. Finally, it is integrated through Kalman Filter, and the best ground truth position is calculated.<br>
+The plane detection is to use the ground as a reference to calculate the position information, thereby establishing that the object can lie flat on the plane, so as to prevent the virtual object from floating. Any three points determine a plane, and the feature points are averaged through calculation to obtain the reference plane.</p>
+<div align="left"><img src="3.png" width="400" height="400"> </div>
+<hr>
+<h3 id="arkit-的架構-architecture">ARKit 的架構 Architecture</h3>
+<p>ARKit 定義了簡單的 API，以下對 ARKit 組成進行分類，如: ARSession、ARSessionConfigration、ARFrame、ARCamera 等。其中 ARSession 為整個系統核心，其實現了 AR 效果，包括世界追蹤及場景解析等，而 ARFrame 包含有 ARSession 所輸出的信息，為渲染關鍵資料來源，其架構如下圖。<br>
+ARKit defines a simple API. The components of ARKit are classified as follows: ARSession, ARSessionConfigration, ARFrame, ARCamera, etc. Among them, ARSession is the core of the entire system, which realizes AR effects, including world tracking and scene analysis, and ARFrame contains the information output by ARSession, which is the key source of rendering data. Its architecture is as follows.<br>
+<img src="4.png" alt="4"></p>
+<p>真實世界追蹤 : ARKit 在此使用 ARWorldTrackingSessionConfiguration 提供 6DoF 追蹤取得的六個參數，同時，AVCaptureSession 獲取照相機所拍 攝的影片(一幀一幀的圖像)，ARSession 根據獲取 6DoF 的 6 個參數及一幀 一幀的圖像序列進行分析，輸出給 ARFrame，此時 ARFrame 就包含有渲染 虛擬世界所需的訊息。ARCamera 為 ARFrame 中的一個屬性，其提供相機 捕捉到的圖像長度及寬度(以像素為單位)，以及 intrinsics (為 3 x 3 之矩陣)， 目的將現實世界中三維座標的點映射至相機捕捉的圖像中。<br>
+Real-world tracking: ARKit uses ARWorldTrackingSessionConfiguration to provide six parameters obtained by 6DoF tracking. At the same time, AVCaptureSession obtains the video captured by the camera (one frame by one image), and ARSession obtains the six parameters of 6DoF and one frame by one frame. The image sequence is analyzed and output to ARFrame. At this time, ARFrame contains the information needed to render the virtual world. ARCamera is an attribute in ARFrame that provides the length and width (in pixels) of the image captured by the camera, as well as intrinsics (a 3 x 3 matrix), for the purpose of mapping points of 3D coordinates in the real world to the camera capture in the image.</p>
+<p>渲染 : ARSCNView 進行以下事件<br>
+(1) 將真實世界作為背景。<br>
+(2) 處理光照訊息，不斷更新光照強度。<br>
+(3) 不斷更新相機位置及角度。<br>
+(4) 將坐標系結合到 AR 世界的座標系中，不斷渲染場景到真實世界的畫面中。<br>
+Rendering: ARSCNView does the following events<br>
+(1) Use the real world as a background.<br>
+(2) Process the light information and continuously update the light intensity.<br>
+(3) Constantly update the camera position and angle.<br>
+(4) Combine the coordinate system with the coordinate system of the AR world, and continuously render the scene to the real world picture.</p>
+<hr>
+<h2 id="本文場景設計與物體搭建-background-design-and-object-built">本文場景設計與物體搭建 Background Design and Object Built</h2>
+<p>(1) Unity – ProBuilder<br>
+本研究所使用開發媒介為 Unity，場景建置為 Unity 所提供之ProBuilder，ProBuilder 自開發以來，廣受遊戲開發者好評，針對 簡單的幾何結構建構進行優化，提供簡單快速的建模方式，快速構建原型 結構、複雜地形特徵、車輛和武器等。提供遊戲開發者選擇外型，可針對材質、紋理、形狀做任意搭配，並 可設定物體長度、寬度、高度，以達需求。<br>
+The scene construction is ProBuilder provided by Unity. Since its development, ProBuilder has been widely praised by game developers. It is optimized for simple geometric structure construction, and provides a simple and fast modeling method. Prototype structures, complex terrain features, vehicles and weapons, etc. Provide game developers to choose the appearance, can do any combination of materials, textures, and shapes, and can set the length, width, and height of objects to meet their needs.</p>
+<p>(2) SketchUp<br>
+本研究在物體建構中，運用模型建構軟體 SketchUp，適用於電腦動畫，擁有強大的建模、材質、模擬，其可達極為精細的設定，達到擬真效果。<br>
+In the construction of objects, this research uses the model construction software SketchUp, which is suitable for computer animation and has powerful modeling, material, and simulation, which can achieve extremely detailed settings and achieve realistic effects.</p>
+<hr>
+<h2 id="本文方法與現有方法之比較-comparison-with-current-application">本文方法與現有方法之比較 Comparison with current application</h2>
+<p>(1) AR 美術館 AR museum<br>
+取自論文“ A digital look at physical museum exhibits: Designing personalized stories with handheld Augmented Reality in museums ” Jens Keil ; Laia Pujol ; Maria Roussou ; Timo Engelke ; Michael Schmitt ; Ulrich Bockholt ; Stamatia Elefthe<br>
+將希臘的衛城博物館 (Acropolis Museum) 設計故事及動畫，並運用 AR 實作，不侷限在白紙黑字上，其添加互動及探索性，使博物館更具吸引力。其最大的特點為遊客可手持手機或平板，自行在博物館中觀覽自己喜 愛的作品，透過照相機辨識，並可顯示展品動畫與其欲傳達之資訊。<br>
+然而在此研究中，展品須事先搭建於展場中，且須有實體物品或圖像 給予裝置感應，這也是 AR 技術必須透過辨識才能達成其目的，而此方法無 法提供使用者於任意地點使用，使其侷限於只有展品擺放的地點才能使用。<br>
+The Acropolis Museum in Greece is designed with stories and animations, and implemented using AR, which is not limited to black and white, adding interactivity and exploration, making the museum more attractive. Its biggest feature is that visitors can hold mobile phones or tablets to view their favorite works in the museum by themselves, identify them through cameras, and display animations of exhibits and the information they want to convey.<br>
+However, in this study, the exhibits must be built in the exhibition site in advance, and there must be physical objects or images to give the device induction, which is also the AR technology must be recognized to achieve its purpose, and this method cannot provide users to use it anywhere. , so that it can only be used where the exhibits are placed.<br>
+<img src="5.png" alt="5"></p>
+<p>(2) HTC 與故宮合作 HTC cooperate with National Palace Museum<br>
+自 2015 年，故宮開始與 HTC 合作開發虛擬實境，在 VIVI 平台開發VR 的藝術作品，從虛擬書畫展廳到「自敘心境」(懷素《自敘帖》)、「神遊 幻境」(趙孟頫《鵲華秋色圖》)，將數位藝術帶入博物館。而後，於 2018 年 10 月 15 日推出「再現傳奇-VR 藝術體驗特展」，發表清明上河圖 VR，以故宮《清明上河圖》為本，包含畫作欣賞及遊戲體驗等，尋人物、玩遊戲、體會古人生活與智慧。另外，2019 年 12 月 17 日至 2020 年 5 月 26 日，推出《故宮南院奇幻嘉年華:21 世紀博物館特展》，故宮南院與全世界各大博物館、美術館合作，展出包括今年於法國羅浮宮《達 文西 500 週年特展》展出的《蒙娜麗莎:越界視野》、法國橘園美術館齊力 完成的《莫內:傾慕睡蓮》等著名巨作。<br>
+然而，於這兩次的展覽中，皆須透過 HTC 的 VR 裝置進行互動體驗，若在沒有 VR 裝置下，無法進行體驗，甚至容易造成頭暈、想吐等狀況;另外，在設計上，開發所需的人力及遊戲設計，開發成本相對較高，利用此 方法對於使用者的裝置硬體需求較高，同時降低便利性。<br>
+Since 2015, the National Palace Museum has cooperated with HTC to develop virtual reality, and developed VR art works on the VIVI platform.<br>
+However, in these two exhibitions, the interactive experience must be carried out through HTC’s VR device. If there is no VR device, the experience cannot be performed, and it may even cause dizziness and nausea. In addition, in terms of design, the development team The manpower and game design required are relatively high, and the development cost is relatively high. Using this method requires high device hardware for users and reduces convenience.<br>
+<img src="6.png" alt="6"></p>
+<hr>
+<h1 id="系統實作-system-implement">系統實作 System Implement</h1>
+<h2 id="開發流程-development-flow">開發流程 Development Flow</h2>
+<p>本系統之系統開發模式採用快速雛型法(Rapid Prototyping Model)。初期，採用漸進模型(Incremental Model)將系統做開發，其細部功能及擴充功能尚未建立，而 後再對系統與現況做評估，透過給同學及老師實測並給予建議後做修正，再進行 下一步驟的流程，每次增加一個功能就評估一次，遞增至所有的功能都做完，透 過將主要功能完成後再進行附加功能的設計，可使流程更方便管理、維護，同時 更能在有限的時間內將系統達成進度。<br>
+The system development mode of this system adopts Rapid Prototyping Model. In the initial stage, the system was developed using the Incremental Model, and its detailed functions and extended functions have not yet been established. Then, the system and the current situation were evaluated, and corrections were made through actual testing and suggestions for students and teachers, and then proceed to the next step. Each time a function is added, it is evaluated once, and it is incremented until all functions are completed. By completing the main function and then designing additional functions, the process can be more convenient to manage and maintain. The system will achieve progress within the system.</p>
+<p>(1) 國立故宮博物院 Open Data 專區資料及西方古畫蒐集 Open Data from the National Palace Museum and collection of Western ancient paintings<br>
+本系統主要透過故宮古畫及西方知名畫作做為展品陳列，因此首先蒐集故宮古畫。在此次資料蒐集中，將明朝仇英之畫作做為本次畫展區展覽 主題，找尋明朝仇英之畫作的第一步驟為透過故宮博物院的 Open Data 專區 中的「精選圖像下載」進行搜尋，在類別中選擇「繪畫」，再以關鍵字搜尋 「仇英」，在下方顯示所有仇英之繪畫，從顯自資料中出現的 46 筆仇英畫 作中，以圖畫整體的「線條複雜度」及「色彩鮮豔度」為依據，挑選 5 張 做為本次展場中主要的畫作，分別為「宋人十八學士圖」、「明仇英西園雅 集圖」、「明仇英秋獵圖」、「明仇英清明上河圖」、「明仇英觀榜圖」。 另外，在西方畫作中，從 The Artist 網站中將耳熟能詳的 8 幅著名畫 作，在 Google 以「進階搜尋」選擇「可任意使用、分享或修改」， 搜尋圖片後，進行下載，其中選擇的畫作為 「Mona Lisa」 、 「The Starry Night」 、 「The Scream」 、 「Girl with a Pearl Earring」 、 「A Sunday Afternoon on the Island of La Grande Jatte」、「Guernica」、「The Kiss」、 「American Gothic」。<br>
+This system mainly uses ancient paintings of the National Palace Museum and well-known Western paintings as exhibits for display, so we first collect ancient paintings of the National Palace Museum. In this data collection, the paintings of Qiu Yingzhi in the Ming Dynasty are used as the theme of this exhibition area. The first step to find the paintings of Qiu Yingzhi in the Ming Dynasty is to search through the “Selected Image Download” in the Open Data section of the Palace Museum. , select “painting” in the category, and then search for “Qiu Ying” with the keyword, all the paintings of Qiu Ying are displayed below. Based on the “color vividness”, 5 paintings were selected as the main paintings in this exhibition, namely “The Eighteen Bachelors of Song Dynasty”, “Ming Chou Ying’s Elegant Collection in the West Garden”, “Ming Chou Ying’s Autumn Hunting Picture”, “Ming Chou Ying’s Autumn Hunting Picture” Ming Chouying’s Qingming Riverside Map&quot; and “Ming Chouying’s Viewing the List”. In addition, among Western paintings, select 8 well-known paintings from The Artist website, select “Can be used, shared or modified freely” in “Advanced Search” on Google, search for pictures, and download them. As “Mona Lisa”, “The Starry Night”, “The Scream”, “Girl with a Pearl Earring”, “A Sunday Afternoon on the Island of La Grande Jatte”, “Guernica”, “The Kiss”, “American Gothic” &quot;.</p>
+<p>(2) Unity-ProBuilder 場景搭建及展品擺放<br>
+從「Asset Store」搜尋「ProBuilder」後，將「ProBuilder」導入至 Unity中，使用其欄位下方之「New Shape」功能，建立展場空間，在本研究之展 場建立為一長方體空間，其設定大小為 X:10m Y:10m Z:12m，並確立門口的 位置，將門口也透過「New Shape」產生門，建立門口確保使用者可以以這 門口為動線，進出該門，在此即搭建完成展場空間。<br>
+將系統畫面左邊做為西方，即西方畫作的擺設，故透過材質選用及環 境設計時，將畫面左邊以大理石、石膏及玄柱為基礎，選擇「Material Editor」，將所蒐集到的大理石、石膏材質放置於各欄位中，即可轉化各個 牆面及物品的材質，打造出西方文化氣息;同時欲將上步驟所蒐集的西方 畫作放置於場景中，選擇「New Shape」功能建立相框，在此，依各個畫作 的比例，選擇畫框的長寬度，並將畫作拖拉至相框內，然而，畫作會因參 考點位置，而產生重疊狀況，克服方法為點選「UV Editor」，可以透過重新 調整畫面起始位置或修正大小，達成目的。另外，在放置完展品 後，決定將展場前方設定為雕像陳列區，Sketchfab 網站所提供之 3D 作品為「可任意使用、分享或修改」，並選擇西方著名的三個雕像，分別為 「Venus」、「David」、「Discobolus」，作為展場雕像。<br>
+而系統畫面的右邊作為東方，即中國畫作的擺設，材質選用木材、陶 土等，其做法與上述相同，在此同時，加入中國書法、中式建築(透過 SketchUp 軟體建模)等，並加入兵馬俑雕像，使畫面右邊更具東方特色。<br>
+最後，建立材質球，在右方欄位的「Shader」屬性中選擇「Custom」的「Mask」，並把「Render Queue」數值調成 1999，目的是達成外牆不可見， 而後將此材質指配到展場建築物的四面八方，使建築物整體不可視，只留下通道的門。</p>
+<p>(3) ARKit 與 Unity 整合設計<br>
+此系統主要以 iOS 為核心開發，因此以 ARKit 為 AR 核心，到「Unity-Technologies / unity-arkit-plugin — Bitbucket」，將 ARKit-Plugin 載入 Unity 中，將其檔案內的「UnityARKitPlugin」之「Example」的 「UnityARKitScene」 點選進行 AR 整合，並將先前製作的展場拉入此專案 中，並在展場模型建立「Unity AR Hit Test Example」的 Script，並將「Hit Transform」指定展場本身，即完成整合。</p>
+<p>(4) Xcode 編譯並發布至 iOS 裝置中<br>
+此系統主要的隨身裝置為 iOS 系統，在發布時，點選 「File」的「Build Settings」，並選擇 iOS 裝置，並進行建置。這過程必須於 iOS 系統中完成， 將所發布的專案開啟，點選「Unity-iPhone.xcodeproj」，透過 Xcode 開啟， 在 Team 選項中選擇自己，因為只在自己的裝置上開發，此並無發布於 App Store 中，故 Product Name 可自行選擇，也因此產品從安裝於裝置到失效只 有 6 天的時間，若有需發布於 App Store 中，需先申請 Apple Developer，並繳付費用。而後欲設定產品名稱並上架等，需開啟 Unity 中 Build Settings 的 PlayerSettings 設定，在部分設定中填寫，如在 Product Name 中輸入遊戲的名稱(可為英文或中文)，而 Default Icon 是讓開發者選 擇應用程式的圖示(本系統已故宮外觀製作為圖式)，結果將會出現在行動裝 置的畫面中，如果沒有選擇圖示，則只會出現 Unity 的 Logo。</p>
+<p>(5) 系統測試並修正<br>
+本系統在實際測試中，給予不同性別及身高的使用者使用，面臨幾個問題，例如: 當使用者身高的不同以及手拿裝置的角度不同出現展場的門口過高或過低，因此透過調整門口高度至平均值上下 160 公分左右，即可得到改善，另外，在展場環境中的亮度會受到外在環境光線的影響，因此透過加入光源於展場中，即可解決光度不足的問題。</p>
+<hr>
+<h2 id="使用技術與工具">使用技術與工具</h2>
+<p>(1) C#<br>
+C#<a href="http://xn--3js033a2ja.NET" target="_blank" rel="noopener">是基於.NET</a> 框架、物件導向的進階程式語言。其語法與 Java、 Javascript、C++相似，為 ECMA 標準。其效能不錯外，<a href="http://xn--h6q49cs42a.NET" target="_blank" rel="noopener">又具有.NET</a> Framework 作為根基，因此能讓程式設計師進行快速開發。C#可作為各種程式的開發 工具，從大型作業系統到小型嵌入式系統都可使用。</p>
+<p>(2) SketchUp<br>
+SketchUp 是適用於遊戲、建築、模型、室內外設計的一套電腦輔助繪圖軟體。其提供簡易、直觀的繪圖工具，相較於其他 CAD 軟體，介面更簡 單、容易上手。此外，他擁有豐富的模型資料庫，來自世界各地人們的模 型設計，提供免費下載，可節省額外小物件的設計成本，同時軟體介面相 容性高，可導入及匯出各種形式的檔案如 CAD、3DMAX 及其他軟體支援 的檔案格式以供使用。</p>
+<p>(3) Xcode<br>
+Xcode 是一個提供開發人員為 Apple 開發應用程式的工具應用平台如(iPhone、iPad、Mac 等)，用於 OS X、iOS、watchOS，程式語言主要為 Swift 及Object-C，同時包含 C++與 C。內含有 iOS SDK、程式編輯器、除錯等 工具。其中，更提供模擬器功能，使開發者不需直接以手機或平板，即可 於 Xcode 中模擬執行 App。</p>
+<hr>
+<h1 id="系統展示">系統展示</h1>
+<h2 id="系統入口">系統入口</h2>
+<p>系統入口為 Unity 作成之 iPhone(或 iPad)的 App，其圖示為參考國立故宮博物院之外觀後，自行設計。</p>
+<div align="left"><img src="7.png" width="300" height="300"> </div>
+<p>點擊 App 後，可見到視覺化的門口作為展場的入口，同時周圍可看到真實的場景。</p>
+<hr>
+<h2 id="系統操作步驟">系統操作步驟</h2>
+<p><img src="8.png" alt="8"></p>
+<p>顯示展品資訊 走入門口後，即可見到所有展品陳列於使用者眼前，當使用者想了解展品資訊時，在螢幕左下方有「Show All」的按鈕，即可展示所有畫作的資 訊(作者、時間、類型、描述等)，以呈現給使用者。<br>
+<img src="9.png" alt="9"></p>
+<p><a href="https://www.youtube.com/watch?v=y6X5S8tKC08&amp;feature=youtu.be" target="_blank" rel="noopener">系統Demo影片 : Click On Me</a></p>
+<hr>
+<p>此外，本研究以交大圖書館為基礎，修改、建置一虛擬展場，以明仇英與明 唐寅的畫作為展品，並提供展場地圖予使用者了解展場概況與展品擺置位置等。</p>
+<p>(1) 本系統的入口以展場 3D 樣式為圖式</p>
+<div align="left"><img src="10.png" width="300" height="300"> </div>
+<p>(2) 本系統的展場地圖<br>
+<img src="11.png" alt="11"></p>
+<p><a href="https://www.youtube.com/watch?v=spNBQXed0aM&amp;feature=youtu.be" target="_blank" rel="noopener">系統Demo影片 : Click On Me</a></p>
+<hr>
+<h1 id="未來研究方向與應用">未來研究方向與應用</h1>
+<h2 id="結論">結論</h2>
+<p>故宮沉浸式展場系統可以增加展場的彈性運用，不僅可以快速調整展品內 容，更能讓使用者與系統做互動，即時顯示展品內容，並不受地域限制，隨處皆 可操作系統。此外可應用於佈展前做為展場的規劃，事先將展場的內容呈現於系 統，及時了解展出時的狀態及所遇到的問題，降低成本。相較於現今的 AR 系統相 關應用，皆需有實際展場動線與實體辨識，反凸顯故宮沉浸式展場系統的方便性 與可攜帶性。<br>
+AR、VR 在軟硬體的高速發展，使其將成為未來的趨勢及主流，扮演生活中 不可或缺的一部分，藉由結合科技與古代文物所激發出的美麗火花，不僅在台灣， 更能成為世界各地非同凡響的應用。</p>
+<hr>
+<h2 id="未來研究方向">未來研究方向</h2>
+<p>近來，博物館及美術館正積極與科技廠商合作並發展創新應用，可將人類歷 史存在數位資料中，可不佔空間的保存於世，也開始讓人好奇博物館未來將發展 到何種地步。想像漫步於博物館或美術館中，各個透明櫥窗如哈利波特魔法學校 內的畫作栩栩如生，並且跟觀眾互動，能與遊客對話聊天，甚至還能當朋友，想 必能吸引更多遊客、更驚艷世人。</p>
+<p>(1) 結合雲端即時變換展品與提供編輯功能<br>
+目前本系統需事先在 Unity 中編輯，在軟體中更動展品位置及場景等，然而此操作仍有其不便之處，因此希望在未來能將系統結合雲端的方式，將展品存於雲端資料庫中，方便於系統中即時更改、編輯，並根據展場需求做調整。</p>
+<p>(2) 提供語音資訊導覽<br>
+在遊客瀏覽此系統時，目前僅有視覺上的反饋，而無語音上的互動，因此希望未來能添加語音導覽的方式，可透過按鈕或即時播放的方式，讓展覽更生動，使遊客更了解整個展品內容與展場目的等。</p>
+<p>(3) 結合智慧眼鏡<br>
+在操作此系統時，目前僅限於手機或平板等，為了省去手持所造成的不便，並期望達到更沉浸的互動模式，可透過目前各大廠商在開發的智慧眼鏡， 提供使用者在戴上眼鏡後，呈現展品內容於使用者眼前，且能感受到環景 360 的效果。</p>
+<p>(4) 製成遊戲提供娛樂性<br>
+在此系統中，目前僅止於參觀與瀏覽，然而未來希望能把展覽內容結合遊戲，提供具有故事性或益智性的遊戲，例如: 展場的主題為秦朝，遊客可 以化身為秦朝官員，與當地的居民互動，了解當時發展的小篆文字與度量衡 統一等，並探索秦朝宮殿。</p>
+<p>(5) 應用於其他領域提供經濟價值<br>
+在此系統，其概念不僅止於美術展品的呈現，在醫療、建築、娛樂等，皆能應用此系統的概念做為延伸，舉例建築，可透過系統的沉浸式建立建築模型，並事先觀看建築架構與室內規劃，並於開工前達成消費者需求，避免想法及預期落差，以滿足消費者期望。</p>
+<hr>
+<h1 id="參考文獻">參考文獻</h1>
+<p>[1] 施政計畫、業務統計及研究報告，2020. 取自國立故宮博物院博物館行政: <a href="https://www.npm.gov.tw/Article.aspx?sNo=03006230" target="_blank" rel="noopener">https://www.npm.gov.tw/Article.aspx?sNo=03006230</a><br>
+[2] 腦中乾坤 : 心智的生物學，2016. 取自國立自然科學博物館: <a href="http://web2.nmns.edu.tw/Exhibits/105/Brain/" target="_blank" rel="noopener">http://web2.nmns.edu.tw/Exhibits/105/Brain/</a><br>
+[3] 上河藝影—故宮 x 衛武營新媒體藝術展，2019. 取自國立故宮博物院展覽回 顧: <a href="https://theme.npm.edu.tw/exh108/npmweiwuying/" target="_blank" rel="noopener">https://theme.npm.edu.tw/exh108/npmweiwuying/</a><br>
+[4] 林逸清(2019)，一 LINE 上博物館智能導覽系統設計，國立交通大學資訊管理 所碩士論文。<br>
+[5] Pokémon Go，取自 Wikipedia : <a href="https://en.wikipedia.org/wiki/Pokemon_Go" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Pokemon_Go</a><br>
+[6] Augment Reality : ARKit3，取自 Apple Developer : <a href="https://developer.apple.com/augmented-reality/" target="_blank" rel="noopener">https://developer.apple.com/augmented-reality/</a><br>
+[7] Vuforia: Market-Leading Enterprise AR，取自 PTC : <a href="https://www.vuforia.com" target="_blank" rel="noopener">https://www.vuforia.com</a><br>
+[8] Google Glass : DISCOVER GLASS ENTERPRISE EDITION，取自 Google : <a href="https://www.google.com/glass/start/" target="_blank" rel="noopener">https://www.google.com/glass/start/</a><br>
+[9] 國立故宮博物院 Open Data 政府資料開放免費下載，取自國立故宮博物院 : <a href="https://theme.npm.edu.tw/opendata/" target="_blank" rel="noopener">https://theme.npm.edu.tw/opendata/</a><br>
+[10] 8 Most Famous Paintings In Western Art ，取自 The Artists : <a href="https://www.the-artists.org/most-famous-paintings-in-western-art/?fbclid=IwAR3PS6rCe7qIdUSr22kHIvRmBwHdGiDa84yhBzdvY906qf7N-tKPxIBBedI" target="_blank" rel="noopener">https://www.the-artists.org/most-famous-paintings-in-western-art/?fbclid=IwAR3PS6rCe7qIdUSr22kHIvRmBwHdGiDa84yhBzdvY906qf7N-tKPxIBBedI</a><br>
+[11] Jens Keil ; Laia Pujol ; Maria Roussou ; Timo Engelke ; Michael Schmitt ; Ulrich Bockholt ; Stamatia Elefthe (2013) , A digital look at physical museum exhibits: Designing personalized stories with handheld Augmented Reality in museums<br>
+[12] 再現傳奇 - VR 藝術特展，取自國立故宮博物院: <a href="https://theme.npm.edu.tw/exh107/VRart/" target="_blank" rel="noopener">https://theme.npm.edu.tw/exh107/VRart/</a><br>
+[13] 奇幻嘉年華-21世紀博物館特展，取自國立故宮博物院南部院區: <a href="https://south.npm.gov.tw/ExhibitionsDetailC003110.aspx?Cond=6d4d3215-793a-48e1-b450-f2e41116e6e5&amp;appname=Exhibition3112" target="_blank" rel="noopener">https://south.npm.gov.tw/ExhibitionsDetailC003110.aspx?Cond=6d4d3215-793a-48e1-b450-f2e41116e6e5&amp;appname=Exhibition3112</a><br>
+[14] Sketckfab官網，取自Sketckfab:<a href="https://sketchfab.com/" target="_blank" rel="noopener">https://sketchfab.com/</a><br>
+[15] 兵馬傭雕像，取自Thingiverse:<a href="https://www.thingiverse.com/thing:1028560/" target="_blank" rel="noopener">https://www.thingiverse.com/thing:1028560/</a><br>
+[16] ARKit-Plugin，取自Unity: <a href="https://bitbucket.org/Unity-Technologies/unity-arkit-plugin/src/default/" target="_blank" rel="noopener">https://bitbucket.org/Unity-Technologies/unity-arkit-plugin/src/default/</a><br>
+[17] C# 語言簡介，取自 Duran 的技術冶煉廠: <a href="http://dog0416.blogspot.com/2017/08/cvisual-studio-c.html" target="_blank" rel="noopener">http://dog0416.blogspot.com/2017/08/cvisual-studio-c.html</a><br>
+[18] SketchUp 教學，取自 CG 數位學習網: <a href="http://www.cg.com.tw/SketchUp/Content/SketchUp_01.php" target="_blank" rel="noopener">http://www.cg.com.tw/SketchUp/Content/SketchUp_01.php</a><br>
+[19] Swift 新手系列之一: 打造你的第一個 iOSApp，取自APPCODA: <a href="https://www.appcoda.com.tw/hello-world-app-swift/" target="_blank" rel="noopener">https://www.appcoda.com.tw/hello-world-app-swift/</a></p>
+]]></content>
+      <tags>
+        <tag>Work</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>阿里山眠月線單攻 Alishan Mountain 2022.5.29</title>
     <url>/myblog/2022/05/30/Alishan/</url>
     <content><![CDATA[<blockquote>
@@ -301,213 +508,6 @@ I am an entry-level of mountaineering. The  following is a personal rating. I th
       </tags>
   </entry>
   <entry>
-    <title>故宮沉浸式展場系統</title>
-    <url>/myblog/2020/05/25/ARKit/</url>
-    <content><![CDATA[<blockquote>
-<p>故宮沈浸式展場系統將，展場環境呈現於行動裝置中，使用者 能走訪於虛擬搭建的展場，且不受地域限制，提升博物館觀光的趣味，降低參展 的成本。本系統先將故宮 Open Data 之中國畫作、國外知名畫作及中西方雕像進 行蒐集，再將展場空間設計搭建，並放置畫作於展場空間內。最後透過 ARKit 技術將畫面投射行動裝置中，即時呈現影像。未來若可結合智慧眼鏡，將可帶來更 多應用。<br>
-The research develops an immersive exhibition system in National Palace Museum and presents the exhibition environment in a mobile device. Users can visit the virtually constructed exhibition venue without geographical restrictions, enhancing the interest of museum tourism and reducing the cost of participation. This system collects Chinese paintings of open data in National Palace Museum, well-known western paintings and Western statues. And then we design the exhibition space and place the paintings there. Finally, through ARKit technology, the image is presented and projected on the screen of mobile device in real time. If smart glasses can be combined in the future, it will bring more applications.</p>
-</blockquote>
-<hr>
-<h1 id="緒論-objective">緒論 Objective</h1>
-<h2 id="動機與目的-motivation-and-purpose">動機與目的 Motivation and Purpose</h2>
-<p>依據文化統計調查顯示，現今許多博物館皆面臨瀏覽人次減少問題，因此各大博物館希望透過 科技，建置現代結合過去，製造反差，改變大家以往對博物館的傳統思想，打造 創新的博物館，吸引更多遊客前來參觀。<br>
-過去擴增實境 (AR) 最早用於軍事方面，但隨著軟硬體的發展，目前應用在 日常生活及遊戲產業中，Apple.Inc 推出的 iOS13 版本內，搭載以 AR 量測物體大 小及尺寸的工具，使用者不須透過尺規即可得知物體大小，使 AR 應用更為寬廣及 普及。<br>
-沉浸式一詞為新興的概念，通俗定義為「物理存在於非物理世界中的感知」， 在提到沉浸式電影時，通常意指虛擬實境電影，也就是觀眾可透過 VR 裝置進入 360 的影像以及環繞音響中，仿如置身於另外的世界中，有時甚至還有嗅覺與觸覺 的體驗。在強調全身及全方位的感官體驗上，以科技藝術空間沉浸體驗為例，如 過去日本 teamLab 的作品也透過虛擬實境裝置體供使用者彷如在虛擬空間行走。<br>
-若用沉浸感受的對象作區分，可分為以下六種不同類型:感官、本體、趣味感、 空間認知、情緒沉浸以及敘事沉浸等。這六種可同時作相互搭配，或同時存在一 個藝術作品中。</p>
-<p>總結以上研究動機，本研究之研究目的有三點 :<br>
-(1) 結合故宮 Open Data 專區之古畫、西方著名畫作與實境技術結合，設計一 影像互動式系統。<br>
-(2) 使用 Unity 及 SketchUp 軟體建立展場空間與擺設展品，並結合 ARKit 做實境技術運用，使系統更具有互動性。<br>
-(3) 將規劃展場空間，實作虛擬展場，並提供參展地圖，予使用者方便走訪</p>
-<p>According to cultural statistics surveys, many museums today are facing the problem of a decrease in the number of visitors. Therefore, major museums hope to use technology to combine the modern with the past, create contrast, change people’s traditional thinking about museums in the past, and create innovative museums to attract more Tourists come to visit.<br>
-In the past, augmented reality (AR) was first used in the military, but with the development of software and hardware, it is currently used in daily life and the game industry. In the iOS13 version launched by Apple.Inc, it is equipped with AR to measure the size of objects and The size tool allows users to know the size of an object without using a ruler, making AR applications wider and more popular.<br>
-The term immersion is an emerging concept, which is colloquially defined as “perception of physical existence in a non-physical world”. When referring to immersive movies, it usually means virtual reality movies, that is, the audience can enter 3D through VR devices. In the video and surround sound, it is like being in another world, and sometimes there is even an experience of smell and touch. In emphasizing the whole body and all-round sensory experience, taking the immersion experience of technology and art space as an example, for example, the works of teamLab in Japan in the past also used virtual reality installations for users to walk in virtual space.<br>
-If the object of immersion is used to distinguish, it can be divided into the following six different types: sensory, ontology, sense of fun, spatial cognition, emotional immersion and narrative immersion. These six can be combined with each other at the same time, or can exist in a work of art at the same time.</p>
-<p>Summarizing the above research motivations, the research objectives of this study are as follows:<br>
-(1) Combining ancient paintings in the Open Data area of ​​the Forbidden City, famous western paintings and real-world technology to design an interactive video system.<br>
-(2) Use Unity and SketchUp software to create exhibition space and display exhibits, and combine ARKit for real-world technology to make the system more interactive.<br>
-(3) The exhibition space will be planned, a virtual exhibition will be implemented, and a map of the exhibition will be provided for users to easily visit</p>
-<hr>
-<h2 id="相關研究-related-research">相關研究 Related Research</h2>
-<p>影像處理及硬體性能高速發展下，擴增實境、虛擬實境已不再只有軍事發展 或實驗而已，近年來更加入人們的日常生活及遊戲產業中，如 2016 年起於世界各 地發行的寶可夢盛行全球，雖然其非首度應用擴增實境技術之手機遊戲，但卻為 眾人皆知的擴增實境遊戲，還有其他包括遠程會議、培訓及醫療上的應用。<br>
-擴增實境技術的蓬勃發展，除了歸功於學術上的努力，也使更多商業團隊致 力於研究如何結合日常生活，加速便利性與有效性，以此開拓更廣大的消費市場。 以下列出近來商業界與學術界中，擴增實境相關應用的實際案例。<br>
-With the rapid development of image processing and hardware performance, augmented reality and virtual reality are no longer just military development or experiments. In recent years, they have also become part of people’s daily life and the game industry. Pokémon is popular all over the world. Although it is not the first mobile game to use augmented reality technology, it is well-known for augmented reality games, as well as other applications including teleconferencing, training and medical care.<br>
-The vigorous development of augmented reality technology is not only due to academic efforts, but also enables more business teams to study how to integrate daily life, accelerate convenience and effectiveness, and open up a wider consumer market. The following is a list of recent practical examples of AR-related applications in business and academia.</p>
-<p>(1) ARKit 與ARCore技術<br>
-APPLE 公司所提供 ARKit，讓開發者實現 AR 的畫面，但不需要知道背後複 雜的成像及定位技術，只需要專注在如何設計 AR 的身歷其境經驗及場景搭建。 ARKit 原理是使用者可以在移動裝置下，同時改變虛擬物件的呈現方式，以追蹤虛 擬物件，再者，ARKit 可以執行 2D 和 3D 物件的追蹤效果，使用者可以與虛擬物 件做互動，更多可運用於遊戲產業。然而，ARKit 並不包含任何圖型 API，只提供 追蹤虛擬物件與與表面偵測的能力，所以需要搭配 RealityKit、SceneKit、Metal 之類 Apple 的其他 Framework。<br>
-而 ARKit 也有其軟硬體的限制，軟體限制為開發工具為 Xcode、iOS11 版本或以上、 MacOS 10.12.4 或以上版本;硬體限制為處理器 A9 或以上的 iPhone 或iPad 設備( iPhone6S 為 A9 處理器)。<br>
-此外，Google 也有開發類似 ARKit 的技術，稱為「ARCore」，此技術可開發 於 Android 系統中，且有硬體設備的限制，其比較如下。<br>
-The ARKit provided by APPLE allows developers to realize AR images, but they do not need to know the complex imaging and positioning technology behind them. They only need to focus on how to design AR immersive experience and scene construction. The principle of ARKit is that users can change the presentation of virtual objects on mobile devices at the same time to track virtual objects. Furthermore, ARKit can perform tracking effects of 2D and 3D objects, and users can interact with virtual objects. Used in the game industry. However, ARKit does not contain any graphics API, and only provides the ability to track virtual objects and surface detection, so it needs to be paired with other Apple frameworks such as RealityKit, SceneKit, and Metal.<br>
-ARKit also has its software and hardware limitations. The software is limited to Xcode, iOS11 version or above, MacOS 10.12.4 or above, and the hardware is limited to iPhone or iPad devices with processor A9 or above (iPhone6S is processed by A9). device).<br>
-In addition, Google has also developed a technology similar to ARKit, called “ARCore”, which can be developed in the Android system and is limited by hardware devices. The comparison is as below.<br>
-<img src="1.png" alt="1"></p>
-<p>(2) Vuforia: Market-Leading Enterprise AR<br>
-Vuforia 為知名手機晶片大廠高通(Qualcomm)公司的 AR 擴增實境平台，於 2015 年 PTC 參數科技以 6500 萬美元收購。Vuforia 提供基本的 SDK 軟體開發擴 增現實應用程序套件可於 Unity 上進行使用，讓使用者製作各種平台的開發與擴 增實境應用。過去 AR 開發工具 ARToolKit、Lyteshot、Unifeye 等軟體的入門門 檻高且價格高，然而 Vuforia 可以免費下載提供開發者開發測試，相對容易入門。<br>
-Vuforia is the AR augmented reality platform of Qualcomm, a well-known mobile phone chip maker, and was acquired by PTC Parametric Technology for $65 million in 2015. Vuforia provides a basic SDK software development augmented reality application suite that can be used on Unity, allowing users to create development and augmented reality applications for various platforms. In the past, AR development tools such as ARToolKit, Lyteshot, Unifeye and other software had high entry barriers and high prices. However, Vuforia can be downloaded for free for developers to develop and test, making it relatively easy to get started.</p>
-<p>(3) Google Glass<br>
-Google 眼鏡是一款由 Google 設計開發，裝配有光學式頭戴顯示器(OHMD) 的可穿戴電腦，其宗旨為能製造出符合普羅大眾消費者的行動裝置。其以免手持、 並與智慧型手機相似之方式顯示各種資訊，尤其導航功能是最大的看點。<br>
-軍方從 1995 年起著手於研究光學式頭戴型裝置，而後 Google 於 2012 年起開 始測試並研發有關智慧眼鏡的各項功能應用，並於同年首次展示拍攝功能且相較 過去更輕薄。現今，其裝置已涵蓋觸控板、相機、顯示器、交通資訊和地圖服務 及遊戲等。<br>
-Google Glass is a wearable computer with an optical head-mounted display (OHMD) designed and developed by Google to create a mobile device for the general public. It can display various information in a manner similar to that of a smart phone without being held by hand, especially the navigation function is the biggest attraction.<br>
-The military started researching optical head-mounted devices in 1995, and then Google began to test and develop various functional applications of smart glasses in 2012, and in the same year, it demonstrated the shooting function for the first time and was thinner and lighter than in the past. Today, its devices include touchpads, cameras, monitors, traffic information and map services, and games.<br>
-<img src="2.png" alt="2"></p>
-<hr>
-<h2 id="本系統簡介與特色-system-introduction">本系統簡介與特色 System Introduction</h2>
-<p>此系統以 Apple.Inc 所提供的 ARKit 為擴增實境主體，將 Unity 為開發媒介， 運用其內部所提供之 ProBuilder 為展場空間建模並擺放虛擬物件於展場空間，在其 中針對各物品的建材、材質、透明度做調整，以及展場內部光影強弱微調，使遊 客可以直接透過手機或平板，在空曠地區，即時地、快速地欣賞展場，並可以透 過下方按鈕顯示展品資訊。<br>
-此系統除了將故宮 Open Data 專區的數位化圖像放置於展區，也加入了具中國 風之展品(中式建築、兵馬俑等)，更加入西方著名八幅畫作與西方著名雕 像(大衛像、維納斯像、運動員)放置於左側，期望達到中西對比，與目前熱門 的實境技術結合，達到使用者可方便瀏覽，同時得到相當驚豔的效果。<br>
-This system uses ARKit provided by Apple.Inc as the main body of the augmented reality, uses Unity as the development medium, and uses the internally provided ProBuilder to model the exhibition space and place virtual objects in the exhibition space. The building materials, materials, and transparency of the items are adjusted, as well as the fine-tuning of the intensity of light and shadow inside the exhibition hall, so that visitors can directly and quickly appreciate the exhibition hall through mobile phones or tablets in open areas, and display the exhibit information through the buttons below.<br>
-In addition to placing the digital images of the Open Data area of the Forbidden City in the exhibition area, this system also adds Chinese-style exhibits (Chinese-style buildings, terracotta warriors, etc.), as well as eight famous Western paintings and famous Western statues (Statue of David, Venus statues, athletes) are placed on the left side, hoping to achieve a contrast between Chinese and Western, and combine with the current popular reality technology, so that users can browse easily, and at the same time get quite amazing results.</p>
-<p>(1) 使用者端 Client:<br>
-對於使用者而言，此系統操作簡單，只需透過一台手機或平板即可運行，在空曠的場域中，使用者手持裝置，放置於眼前，裝置即可因為使用者行走、奔跑，計算所在位置與距離，即時呈現各個物品之相對位置，在系統左下方設置按鈕提供使用者在想了解作品時點擊，即時顯示作品資訊，能因此增加趣味，同時讓使用者增加對畫作的了解。<br>
-For users, this system is easy to operate, and only needs to be run through a mobile phone or tablet. In an open area, the user holds the device and places it in front of his eyes, and the device can run, run, and calculate as the user walks and runs. The location and distance show the relative position of each item in real time. The button is set at the bottom left of the system for users to click when they want to know the work, and the information of the work will be displayed in real time, which can increase the interest and increase the user’s understanding of the painting.</p>
-<p>(2) 開發者端 Developer:<br>
-本研究將各項展覽作品透過 Unity 內部提供之 ProBuilder 建造而成，其操作簡單，只需隨開發者欲建制的空間設定，就能產生空間，並透過各展品 自由拉移擺放，並於最後設定 ARKit 與預期顯示之項目，即可呈現。<br>
-In this research, various exhibition works are built through the ProBuilder provided by Unity. The operation is simple. You only need to set the space according to the developer’s desire to create a space. You can freely move and place the exhibits through each exhibit. Set ARKit and the expected display item, and it’s ready to be rendered.</p>
-<p>(3) 博物館端 Museum side:<br>
-此系統提供欲參訪博物館或展場的遊客使用、還有無法到達的民眾可以使用，同時能給予博物館設計展場前、設計此系統後，觀看內部空間與擺設狀態，以降低不必要的成本，同時提供此作為宣傳目的。另外，博物館若需在展覽時提供多種展場，可嘗試建立於雲端中，供民眾下載參考。<br>
-This system can be used by tourists who want to visit the museum or exhibition hall, as well as people who cannot reach it. At the same time, it can be used by the museum to view the internal space and decoration status before and after the design of the exhibition hall, so as to reduce unnecessary costs. , while providing this for promotional purposes. In addition, if the museum needs to provide a variety of exhibition venues during the exhibition, it can try to build it in the cloud for the public to download and reference.</p>
-<hr>
-<h1 id="系統關鍵技術-system-related-technique">系統關鍵技術 System related Technique</h1>
-<p>本系統的關鍵技術主要分成兩大部分，一為 Apple.Inc 所開發的 ARKit 技術，另一為 Unity 及 SketchUp 所提供的建模方法。<br>
-The key technology of this system is mainly divided into two parts, one is the ARKit technology developed by Apple.Inc, and the other is the modeling method provided by Unity and SketchUp.</p>
-<h2 id="arkit-api">ARKit API</h2>
-<p>本研究主要針對 ARKit 作為開發支持，在此說明 ARKit 之底層技術。<br>
-This research is mainly aimed at ARKit as development support, and the underlying technology of ARKit is explained here.</p>
-<h3 id="arkit-的關鍵技術-key-technique">ARKit 的關鍵技術 Key Technique</h3>
-<p>ARKit 其中的技術原理為視覺慣性測量(VIO)系統及平面檢測兩大關鍵 技術，視覺慣性測試(VIO)即系統會隨時追蹤使用者在空間的位置，其記錄 著 iPhone 在 6DoF 空間中經過的距離(6DoF 即沿著 xyz 軸移動，加上俯仰、 旋轉、滾動等)，如下圖，螢幕在每幀畫面刷新時，動作會被立即重新計 算，畫面的刷新率為每秒 30fps 或以上，而這個刷新計算會同時被兩個系統 所計算，一為照相鏡頭與現實世界中的點將每幀畫面相匹配，此時使用者 動作會被計算。另一為動作被慣性系統所追蹤，以陀螺儀及加速度計兩慣 性測量單位(IMU)實作。最後透過卡爾曼濾波器(Kalman Filter)將其進行整 合，並計算出最佳真實位置(Ground Truth)。<br>
-平面檢測即以地面做為參考物以計算位置訊息，藉此確立物體能平放 於平面上，以避免虛擬物體漂浮。任三點決定一平面，通過計算將特徵點 平均化，得到參考平面。<br>
-The technical principle of ARKit is the visual inertial measurement (VIO) system and the two key technologies of plane detection. The visual inertial measurement (VIO) means that the system will track the user’s position in space at any time, and it records the distance that the iPhone travels in the 6DoF space. (6DoF means moving along the xyz axis, plus pitch, rotation, roll, etc.), as shown in the figure below, when the screen refreshes every frame, the action will be recalculated immediately, and the refresh rate of the screen is 30fps or more per second, and this The refresh calculation will be calculated by two systems at the same time, one is to match each frame of the camera lens with the point in the real world, and the user action will be calculated at this time. The other is that the movement is tracked by the inertial system, which is implemented with two inertial measurement units (IMU), gyroscope and accelerometer. Finally, it is integrated through Kalman Filter, and the best ground truth position is calculated.<br>
-The plane detection is to use the ground as a reference to calculate the position information, thereby establishing that the object can lie flat on the plane, so as to prevent the virtual object from floating. Any three points determine a plane, and the feature points are averaged through calculation to obtain the reference plane.</p>
-<div align="left"><img src="3.png" width="400" height="400"> </div>
-<hr>
-<h3 id="arkit-的架構-architecture">ARKit 的架構 Architecture</h3>
-<p>ARKit 定義了簡單的 API，以下對 ARKit 組成進行分類，如: ARSession、ARSessionConfigration、ARFrame、ARCamera 等。其中 ARSession 為整個系統核心，其實現了 AR 效果，包括世界追蹤及場景解析等，而 ARFrame 包含有 ARSession 所輸出的信息，為渲染關鍵資料來源，其架構如下圖。<br>
-ARKit defines a simple API. The components of ARKit are classified as follows: ARSession, ARSessionConfigration, ARFrame, ARCamera, etc. Among them, ARSession is the core of the entire system, which realizes AR effects, including world tracking and scene analysis, and ARFrame contains the information output by ARSession, which is the key source of rendering data. Its architecture is as follows.<br>
-<img src="4.png" alt="4"></p>
-<p>真實世界追蹤 : ARKit 在此使用 ARWorldTrackingSessionConfiguration 提供 6DoF 追蹤取得的六個參數，同時，AVCaptureSession 獲取照相機所拍 攝的影片(一幀一幀的圖像)，ARSession 根據獲取 6DoF 的 6 個參數及一幀 一幀的圖像序列進行分析，輸出給 ARFrame，此時 ARFrame 就包含有渲染 虛擬世界所需的訊息。ARCamera 為 ARFrame 中的一個屬性，其提供相機 捕捉到的圖像長度及寬度(以像素為單位)，以及 intrinsics (為 3 x 3 之矩陣)， 目的將現實世界中三維座標的點映射至相機捕捉的圖像中。<br>
-Real-world tracking: ARKit uses ARWorldTrackingSessionConfiguration to provide six parameters obtained by 6DoF tracking. At the same time, AVCaptureSession obtains the video captured by the camera (one frame by one image), and ARSession obtains the six parameters of 6DoF and one frame by one frame. The image sequence is analyzed and output to ARFrame. At this time, ARFrame contains the information needed to render the virtual world. ARCamera is an attribute in ARFrame that provides the length and width (in pixels) of the image captured by the camera, as well as intrinsics (a 3 x 3 matrix), for the purpose of mapping points of 3D coordinates in the real world to the camera capture in the image.</p>
-<p>渲染 : ARSCNView 進行以下事件<br>
-(1) 將真實世界作為背景。<br>
-(2) 處理光照訊息，不斷更新光照強度。<br>
-(3) 不斷更新相機位置及角度。<br>
-(4) 將坐標系結合到 AR 世界的座標系中，不斷渲染場景到真實世界的畫面中。<br>
-Rendering: ARSCNView does the following events<br>
-(1) Use the real world as a background.<br>
-(2) Process the light information and continuously update the light intensity.<br>
-(3) Constantly update the camera position and angle.<br>
-(4) Combine the coordinate system with the coordinate system of the AR world, and continuously render the scene to the real world picture.</p>
-<hr>
-<h2 id="本文場景設計與物體搭建-background-design-and-object-built">本文場景設計與物體搭建 Background Design and Object Built</h2>
-<p>(1) Unity – ProBuilder<br>
-本研究所使用開發媒介為 Unity，場景建置為 Unity 所提供之ProBuilder，ProBuilder 自開發以來，廣受遊戲開發者好評，針對 簡單的幾何結構建構進行優化，提供簡單快速的建模方式，快速構建原型 結構、複雜地形特徵、車輛和武器等。提供遊戲開發者選擇外型，可針對材質、紋理、形狀做任意搭配，並 可設定物體長度、寬度、高度，以達需求。<br>
-The scene construction is ProBuilder provided by Unity. Since its development, ProBuilder has been widely praised by game developers. It is optimized for simple geometric structure construction, and provides a simple and fast modeling method. Prototype structures, complex terrain features, vehicles and weapons, etc. Provide game developers to choose the appearance, can do any combination of materials, textures, and shapes, and can set the length, width, and height of objects to meet their needs.</p>
-<p>(2) SketchUp<br>
-本研究在物體建構中，運用模型建構軟體 SketchUp，適用於電腦動畫，擁有強大的建模、材質、模擬，其可達極為精細的設定，達到擬真效果。<br>
-In the construction of objects, this research uses the model construction software SketchUp, which is suitable for computer animation and has powerful modeling, material, and simulation, which can achieve extremely detailed settings and achieve realistic effects.</p>
-<hr>
-<h2 id="本文方法與現有方法之比較-comparison-with-current-application">本文方法與現有方法之比較 Comparison with current application</h2>
-<p>(1) AR 美術館 AR museum<br>
-取自論文“ A digital look at physical museum exhibits: Designing personalized stories with handheld Augmented Reality in museums ” Jens Keil ; Laia Pujol ; Maria Roussou ; Timo Engelke ; Michael Schmitt ; Ulrich Bockholt ; Stamatia Elefthe<br>
-將希臘的衛城博物館 (Acropolis Museum) 設計故事及動畫，並運用 AR 實作，不侷限在白紙黑字上，其添加互動及探索性，使博物館更具吸引力。其最大的特點為遊客可手持手機或平板，自行在博物館中觀覽自己喜 愛的作品，透過照相機辨識，並可顯示展品動畫與其欲傳達之資訊。<br>
-然而在此研究中，展品須事先搭建於展場中，且須有實體物品或圖像 給予裝置感應，這也是 AR 技術必須透過辨識才能達成其目的，而此方法無 法提供使用者於任意地點使用，使其侷限於只有展品擺放的地點才能使用。<br>
-The Acropolis Museum in Greece is designed with stories and animations, and implemented using AR, which is not limited to black and white, adding interactivity and exploration, making the museum more attractive. Its biggest feature is that visitors can hold mobile phones or tablets to view their favorite works in the museum by themselves, identify them through cameras, and display animations of exhibits and the information they want to convey.<br>
-However, in this study, the exhibits must be built in the exhibition site in advance, and there must be physical objects or images to give the device induction, which is also the AR technology must be recognized to achieve its purpose, and this method cannot provide users to use it anywhere. , so that it can only be used where the exhibits are placed.<br>
-<img src="5.png" alt="5"></p>
-<p>(2) HTC 與故宮合作 HTC cooperate with National Palace Museum<br>
-自 2015 年，故宮開始與 HTC 合作開發虛擬實境，在 VIVI 平台開發VR 的藝術作品，從虛擬書畫展廳到「自敘心境」(懷素《自敘帖》)、「神遊 幻境」(趙孟頫《鵲華秋色圖》)，將數位藝術帶入博物館。而後，於 2018 年 10 月 15 日推出「再現傳奇-VR 藝術體驗特展」，發表清明上河圖 VR，以故宮《清明上河圖》為本，包含畫作欣賞及遊戲體驗等，尋人物、玩遊戲、體會古人生活與智慧。另外，2019 年 12 月 17 日至 2020 年 5 月 26 日，推出《故宮南院奇幻嘉年華:21 世紀博物館特展》，故宮南院與全世界各大博物館、美術館合作，展出包括今年於法國羅浮宮《達 文西 500 週年特展》展出的《蒙娜麗莎:越界視野》、法國橘園美術館齊力 完成的《莫內:傾慕睡蓮》等著名巨作。<br>
-然而，於這兩次的展覽中，皆須透過 HTC 的 VR 裝置進行互動體驗，若在沒有 VR 裝置下，無法進行體驗，甚至容易造成頭暈、想吐等狀況;另外，在設計上，開發所需的人力及遊戲設計，開發成本相對較高，利用此 方法對於使用者的裝置硬體需求較高，同時降低便利性。<br>
-Since 2015, the National Palace Museum has cooperated with HTC to develop virtual reality, and developed VR art works on the VIVI platform.<br>
-However, in these two exhibitions, the interactive experience must be carried out through HTC’s VR device. If there is no VR device, the experience cannot be performed, and it may even cause dizziness and nausea. In addition, in terms of design, the development team The manpower and game design required are relatively high, and the development cost is relatively high. Using this method requires high device hardware for users and reduces convenience.<br>
-<img src="6.png" alt="6"></p>
-<hr>
-<h1 id="系統實作-system-implement">系統實作 System Implement</h1>
-<h2 id="開發流程-development-flow">開發流程 Development Flow</h2>
-<p>本系統之系統開發模式採用快速雛型法(Rapid Prototyping Model)。初期，採用漸進模型(Incremental Model)將系統做開發，其細部功能及擴充功能尚未建立，而 後再對系統與現況做評估，透過給同學及老師實測並給予建議後做修正，再進行 下一步驟的流程，每次增加一個功能就評估一次，遞增至所有的功能都做完，透 過將主要功能完成後再進行附加功能的設計，可使流程更方便管理、維護，同時 更能在有限的時間內將系統達成進度。<br>
-The system development mode of this system adopts Rapid Prototyping Model. In the initial stage, the system was developed using the Incremental Model, and its detailed functions and extended functions have not yet been established. Then, the system and the current situation were evaluated, and corrections were made through actual testing and suggestions for students and teachers, and then proceed to the next step. Each time a function is added, it is evaluated once, and it is incremented until all functions are completed. By completing the main function and then designing additional functions, the process can be more convenient to manage and maintain. The system will achieve progress within the system.</p>
-<p>(1) 國立故宮博物院 Open Data 專區資料及西方古畫蒐集 Open Data from the National Palace Museum and collection of Western ancient paintings<br>
-本系統主要透過故宮古畫及西方知名畫作做為展品陳列，因此首先蒐集故宮古畫。在此次資料蒐集中，將明朝仇英之畫作做為本次畫展區展覽 主題，找尋明朝仇英之畫作的第一步驟為透過故宮博物院的 Open Data 專區 中的「精選圖像下載」進行搜尋，在類別中選擇「繪畫」，再以關鍵字搜尋 「仇英」，在下方顯示所有仇英之繪畫，從顯自資料中出現的 46 筆仇英畫 作中，以圖畫整體的「線條複雜度」及「色彩鮮豔度」為依據，挑選 5 張 做為本次展場中主要的畫作，分別為「宋人十八學士圖」、「明仇英西園雅 集圖」、「明仇英秋獵圖」、「明仇英清明上河圖」、「明仇英觀榜圖」。 另外，在西方畫作中，從 The Artist 網站中將耳熟能詳的 8 幅著名畫 作，在 Google 以「進階搜尋」選擇「可任意使用、分享或修改」， 搜尋圖片後，進行下載，其中選擇的畫作為 「Mona Lisa」 、 「The Starry Night」 、 「The Scream」 、 「Girl with a Pearl Earring」 、 「A Sunday Afternoon on the Island of La Grande Jatte」、「Guernica」、「The Kiss」、 「American Gothic」。<br>
-This system mainly uses ancient paintings of the National Palace Museum and well-known Western paintings as exhibits for display, so we first collect ancient paintings of the National Palace Museum. In this data collection, the paintings of Qiu Yingzhi in the Ming Dynasty are used as the theme of this exhibition area. The first step to find the paintings of Qiu Yingzhi in the Ming Dynasty is to search through the “Selected Image Download” in the Open Data section of the Palace Museum. , select “painting” in the category, and then search for “Qiu Ying” with the keyword, all the paintings of Qiu Ying are displayed below. Based on the “color vividness”, 5 paintings were selected as the main paintings in this exhibition, namely “The Eighteen Bachelors of Song Dynasty”, “Ming Chou Ying’s Elegant Collection in the West Garden”, “Ming Chou Ying’s Autumn Hunting Picture”, “Ming Chou Ying’s Autumn Hunting Picture” Ming Chouying’s Qingming Riverside Map&quot; and “Ming Chouying’s Viewing the List”. In addition, among Western paintings, select 8 well-known paintings from The Artist website, select “Can be used, shared or modified freely” in “Advanced Search” on Google, search for pictures, and download them. As “Mona Lisa”, “The Starry Night”, “The Scream”, “Girl with a Pearl Earring”, “A Sunday Afternoon on the Island of La Grande Jatte”, “Guernica”, “The Kiss”, “American Gothic” &quot;.</p>
-<p>(2) Unity-ProBuilder 場景搭建及展品擺放<br>
-從「Asset Store」搜尋「ProBuilder」後，將「ProBuilder」導入至 Unity中，使用其欄位下方之「New Shape」功能，建立展場空間，在本研究之展 場建立為一長方體空間，其設定大小為 X:10m Y:10m Z:12m，並確立門口的 位置，將門口也透過「New Shape」產生門，建立門口確保使用者可以以這 門口為動線，進出該門，在此即搭建完成展場空間。<br>
-將系統畫面左邊做為西方，即西方畫作的擺設，故透過材質選用及環 境設計時，將畫面左邊以大理石、石膏及玄柱為基礎，選擇「Material Editor」，將所蒐集到的大理石、石膏材質放置於各欄位中，即可轉化各個 牆面及物品的材質，打造出西方文化氣息;同時欲將上步驟所蒐集的西方 畫作放置於場景中，選擇「New Shape」功能建立相框，在此，依各個畫作 的比例，選擇畫框的長寬度，並將畫作拖拉至相框內，然而，畫作會因參 考點位置，而產生重疊狀況，克服方法為點選「UV Editor」，可以透過重新 調整畫面起始位置或修正大小，達成目的。另外，在放置完展品 後，決定將展場前方設定為雕像陳列區，Sketchfab 網站所提供之 3D 作品為「可任意使用、分享或修改」，並選擇西方著名的三個雕像，分別為 「Venus」、「David」、「Discobolus」，作為展場雕像。<br>
-而系統畫面的右邊作為東方，即中國畫作的擺設，材質選用木材、陶 土等，其做法與上述相同，在此同時，加入中國書法、中式建築(透過 SketchUp 軟體建模)等，並加入兵馬俑雕像，使畫面右邊更具東方特色。<br>
-最後，建立材質球，在右方欄位的「Shader」屬性中選擇「Custom」的「Mask」，並把「Render Queue」數值調成 1999，目的是達成外牆不可見， 而後將此材質指配到展場建築物的四面八方，使建築物整體不可視，只留下通道的門。</p>
-<p>(3) ARKit 與 Unity 整合設計<br>
-此系統主要以 iOS 為核心開發，因此以 ARKit 為 AR 核心，到「Unity-Technologies / unity-arkit-plugin — Bitbucket」，將 ARKit-Plugin 載入 Unity 中，將其檔案內的「UnityARKitPlugin」之「Example」的 「UnityARKitScene」 點選進行 AR 整合，並將先前製作的展場拉入此專案 中，並在展場模型建立「Unity AR Hit Test Example」的 Script，並將「Hit Transform」指定展場本身，即完成整合。</p>
-<p>(4) Xcode 編譯並發布至 iOS 裝置中<br>
-此系統主要的隨身裝置為 iOS 系統，在發布時，點選 「File」的「Build Settings」，並選擇 iOS 裝置，並進行建置。這過程必須於 iOS 系統中完成， 將所發布的專案開啟，點選「Unity-iPhone.xcodeproj」，透過 Xcode 開啟， 在 Team 選項中選擇自己，因為只在自己的裝置上開發，此並無發布於 App Store 中，故 Product Name 可自行選擇，也因此產品從安裝於裝置到失效只 有 6 天的時間，若有需發布於 App Store 中，需先申請 Apple Developer，並繳付費用。而後欲設定產品名稱並上架等，需開啟 Unity 中 Build Settings 的 PlayerSettings 設定，在部分設定中填寫，如在 Product Name 中輸入遊戲的名稱(可為英文或中文)，而 Default Icon 是讓開發者選 擇應用程式的圖示(本系統已故宮外觀製作為圖式)，結果將會出現在行動裝 置的畫面中，如果沒有選擇圖示，則只會出現 Unity 的 Logo。</p>
-<p>(5) 系統測試並修正<br>
-本系統在實際測試中，給予不同性別及身高的使用者使用，面臨幾個問題，例如: 當使用者身高的不同以及手拿裝置的角度不同出現展場的門口過高或過低，因此透過調整門口高度至平均值上下 160 公分左右，即可得到改善，另外，在展場環境中的亮度會受到外在環境光線的影響，因此透過加入光源於展場中，即可解決光度不足的問題。</p>
-<hr>
-<h2 id="使用技術與工具">使用技術與工具</h2>
-<p>(1) C#<br>
-C#<a href="http://xn--3js033a2ja.NET" target="_blank" rel="noopener">是基於.NET</a> 框架、物件導向的進階程式語言。其語法與 Java、 Javascript、C++相似，為 ECMA 標準。其效能不錯外，<a href="http://xn--h6q49cs42a.NET" target="_blank" rel="noopener">又具有.NET</a> Framework 作為根基，因此能讓程式設計師進行快速開發。C#可作為各種程式的開發 工具，從大型作業系統到小型嵌入式系統都可使用。</p>
-<p>(2) SketchUp<br>
-SketchUp 是適用於遊戲、建築、模型、室內外設計的一套電腦輔助繪圖軟體。其提供簡易、直觀的繪圖工具，相較於其他 CAD 軟體，介面更簡 單、容易上手。此外，他擁有豐富的模型資料庫，來自世界各地人們的模 型設計，提供免費下載，可節省額外小物件的設計成本，同時軟體介面相 容性高，可導入及匯出各種形式的檔案如 CAD、3DMAX 及其他軟體支援 的檔案格式以供使用。</p>
-<p>(3) Xcode<br>
-Xcode 是一個提供開發人員為 Apple 開發應用程式的工具應用平台如(iPhone、iPad、Mac 等)，用於 OS X、iOS、watchOS，程式語言主要為 Swift 及Object-C，同時包含 C++與 C。內含有 iOS SDK、程式編輯器、除錯等 工具。其中，更提供模擬器功能，使開發者不需直接以手機或平板，即可 於 Xcode 中模擬執行 App。</p>
-<hr>
-<h1 id="系統展示">系統展示</h1>
-<h2 id="系統入口">系統入口</h2>
-<p>系統入口為 Unity 作成之 iPhone(或 iPad)的 App，其圖示為參考國立故宮博物院之外觀後，自行設計。</p>
-<div align="left"><img src="7.png" width="300" height="300"> </div>
-<p>點擊 App 後，可見到視覺化的門口作為展場的入口，同時周圍可看到真實的場景。</p>
-<hr>
-<h2 id="系統操作步驟">系統操作步驟</h2>
-<p><img src="8.png" alt="8"></p>
-<p>顯示展品資訊 走入門口後，即可見到所有展品陳列於使用者眼前，當使用者想了解展品資訊時，在螢幕左下方有「Show All」的按鈕，即可展示所有畫作的資 訊(作者、時間、類型、描述等)，以呈現給使用者。<br>
-<img src="9.png" alt="9"></p>
-<p><a href="https://www.youtube.com/watch?v=y6X5S8tKC08&amp;feature=youtu.be" target="_blank" rel="noopener">系統Demo影片 : Click On Me</a></p>
-<hr>
-<p>此外，本研究以交大圖書館為基礎，修改、建置一虛擬展場，以明仇英與明 唐寅的畫作為展品，並提供展場地圖予使用者了解展場概況與展品擺置位置等。</p>
-<p>(1) 本系統的入口以展場 3D 樣式為圖式</p>
-<div align="left"><img src="10.png" width="300" height="300"> </div>
-<p>(2) 本系統的展場地圖<br>
-<img src="11.png" alt="11"></p>
-<p><a href="https://www.youtube.com/watch?v=spNBQXed0aM&amp;feature=youtu.be" target="_blank" rel="noopener">系統Demo影片 : Click On Me</a></p>
-<hr>
-<h1 id="未來研究方向與應用">未來研究方向與應用</h1>
-<h2 id="結論">結論</h2>
-<p>故宮沉浸式展場系統可以增加展場的彈性運用，不僅可以快速調整展品內 容，更能讓使用者與系統做互動，即時顯示展品內容，並不受地域限制，隨處皆 可操作系統。此外可應用於佈展前做為展場的規劃，事先將展場的內容呈現於系 統，及時了解展出時的狀態及所遇到的問題，降低成本。相較於現今的 AR 系統相 關應用，皆需有實際展場動線與實體辨識，反凸顯故宮沉浸式展場系統的方便性 與可攜帶性。<br>
-AR、VR 在軟硬體的高速發展，使其將成為未來的趨勢及主流，扮演生活中 不可或缺的一部分，藉由結合科技與古代文物所激發出的美麗火花，不僅在台灣， 更能成為世界各地非同凡響的應用。</p>
-<hr>
-<h2 id="未來研究方向">未來研究方向</h2>
-<p>近來，博物館及美術館正積極與科技廠商合作並發展創新應用，可將人類歷 史存在數位資料中，可不佔空間的保存於世，也開始讓人好奇博物館未來將發展 到何種地步。想像漫步於博物館或美術館中，各個透明櫥窗如哈利波特魔法學校 內的畫作栩栩如生，並且跟觀眾互動，能與遊客對話聊天，甚至還能當朋友，想 必能吸引更多遊客、更驚艷世人。</p>
-<p>(1) 結合雲端即時變換展品與提供編輯功能<br>
-目前本系統需事先在 Unity 中編輯，在軟體中更動展品位置及場景等，然而此操作仍有其不便之處，因此希望在未來能將系統結合雲端的方式，將展品存於雲端資料庫中，方便於系統中即時更改、編輯，並根據展場需求做調整。</p>
-<p>(2) 提供語音資訊導覽<br>
-在遊客瀏覽此系統時，目前僅有視覺上的反饋，而無語音上的互動，因此希望未來能添加語音導覽的方式，可透過按鈕或即時播放的方式，讓展覽更生動，使遊客更了解整個展品內容與展場目的等。</p>
-<p>(3) 結合智慧眼鏡<br>
-在操作此系統時，目前僅限於手機或平板等，為了省去手持所造成的不便，並期望達到更沉浸的互動模式，可透過目前各大廠商在開發的智慧眼鏡， 提供使用者在戴上眼鏡後，呈現展品內容於使用者眼前，且能感受到環景 360 的效果。</p>
-<p>(4) 製成遊戲提供娛樂性<br>
-在此系統中，目前僅止於參觀與瀏覽，然而未來希望能把展覽內容結合遊戲，提供具有故事性或益智性的遊戲，例如: 展場的主題為秦朝，遊客可 以化身為秦朝官員，與當地的居民互動，了解當時發展的小篆文字與度量衡 統一等，並探索秦朝宮殿。</p>
-<p>(5) 應用於其他領域提供經濟價值<br>
-在此系統，其概念不僅止於美術展品的呈現，在醫療、建築、娛樂等，皆能應用此系統的概念做為延伸，舉例建築，可透過系統的沉浸式建立建築模型，並事先觀看建築架構與室內規劃，並於開工前達成消費者需求，避免想法及預期落差，以滿足消費者期望。</p>
-<hr>
-<h1 id="參考文獻">參考文獻</h1>
-<p>[1] 施政計畫、業務統計及研究報告，2020. 取自國立故宮博物院博物館行政: <a href="https://www.npm.gov.tw/Article.aspx?sNo=03006230" target="_blank" rel="noopener">https://www.npm.gov.tw/Article.aspx?sNo=03006230</a><br>
-[2] 腦中乾坤 : 心智的生物學，2016. 取自國立自然科學博物館: <a href="http://web2.nmns.edu.tw/Exhibits/105/Brain/" target="_blank" rel="noopener">http://web2.nmns.edu.tw/Exhibits/105/Brain/</a><br>
-[3] 上河藝影—故宮 x 衛武營新媒體藝術展，2019. 取自國立故宮博物院展覽回 顧: <a href="https://theme.npm.edu.tw/exh108/npmweiwuying/" target="_blank" rel="noopener">https://theme.npm.edu.tw/exh108/npmweiwuying/</a><br>
-[4] 林逸清(2019)，一 LINE 上博物館智能導覽系統設計，國立交通大學資訊管理 所碩士論文。<br>
-[5] Pokémon Go，取自 Wikipedia : <a href="https://en.wikipedia.org/wiki/Pokemon_Go" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Pokemon_Go</a><br>
-[6] Augment Reality : ARKit3，取自 Apple Developer : <a href="https://developer.apple.com/augmented-reality/" target="_blank" rel="noopener">https://developer.apple.com/augmented-reality/</a><br>
-[7] Vuforia: Market-Leading Enterprise AR，取自 PTC : <a href="https://www.vuforia.com" target="_blank" rel="noopener">https://www.vuforia.com</a><br>
-[8] Google Glass : DISCOVER GLASS ENTERPRISE EDITION，取自 Google : <a href="https://www.google.com/glass/start/" target="_blank" rel="noopener">https://www.google.com/glass/start/</a><br>
-[9] 國立故宮博物院 Open Data 政府資料開放免費下載，取自國立故宮博物院 : <a href="https://theme.npm.edu.tw/opendata/" target="_blank" rel="noopener">https://theme.npm.edu.tw/opendata/</a><br>
-[10] 8 Most Famous Paintings In Western Art ，取自 The Artists : <a href="https://www.the-artists.org/most-famous-paintings-in-western-art/?fbclid=IwAR3PS6rCe7qIdUSr22kHIvRmBwHdGiDa84yhBzdvY906qf7N-tKPxIBBedI" target="_blank" rel="noopener">https://www.the-artists.org/most-famous-paintings-in-western-art/?fbclid=IwAR3PS6rCe7qIdUSr22kHIvRmBwHdGiDa84yhBzdvY906qf7N-tKPxIBBedI</a><br>
-[11] Jens Keil ; Laia Pujol ; Maria Roussou ; Timo Engelke ; Michael Schmitt ; Ulrich Bockholt ; Stamatia Elefthe (2013) , A digital look at physical museum exhibits: Designing personalized stories with handheld Augmented Reality in museums<br>
-[12] 再現傳奇 - VR 藝術特展，取自國立故宮博物院: <a href="https://theme.npm.edu.tw/exh107/VRart/" target="_blank" rel="noopener">https://theme.npm.edu.tw/exh107/VRart/</a><br>
-[13] 奇幻嘉年華-21世紀博物館特展，取自國立故宮博物院南部院區: <a href="https://south.npm.gov.tw/ExhibitionsDetailC003110.aspx?Cond=6d4d3215-793a-48e1-b450-f2e41116e6e5&amp;appname=Exhibition3112" target="_blank" rel="noopener">https://south.npm.gov.tw/ExhibitionsDetailC003110.aspx?Cond=6d4d3215-793a-48e1-b450-f2e41116e6e5&amp;appname=Exhibition3112</a><br>
-[14] Sketckfab官網，取自Sketckfab:<a href="https://sketchfab.com/" target="_blank" rel="noopener">https://sketchfab.com/</a><br>
-[15] 兵馬傭雕像，取自Thingiverse:<a href="https://www.thingiverse.com/thing:1028560/" target="_blank" rel="noopener">https://www.thingiverse.com/thing:1028560/</a><br>
-[16] ARKit-Plugin，取自Unity: <a href="https://bitbucket.org/Unity-Technologies/unity-arkit-plugin/src/default/" target="_blank" rel="noopener">https://bitbucket.org/Unity-Technologies/unity-arkit-plugin/src/default/</a><br>
-[17] C# 語言簡介，取自 Duran 的技術冶煉廠: <a href="http://dog0416.blogspot.com/2017/08/cvisual-studio-c.html" target="_blank" rel="noopener">http://dog0416.blogspot.com/2017/08/cvisual-studio-c.html</a><br>
-[18] SketchUp 教學，取自 CG 數位學習網: <a href="http://www.cg.com.tw/SketchUp/Content/SketchUp_01.php" target="_blank" rel="noopener">http://www.cg.com.tw/SketchUp/Content/SketchUp_01.php</a><br>
-[19] Swift 新手系列之一: 打造你的第一個 iOSApp，取自APPCODA: <a href="https://www.appcoda.com.tw/hello-world-app-swift/" target="_blank" rel="noopener">https://www.appcoda.com.tw/hello-world-app-swift/</a></p>
-]]></content>
-      <tags>
-        <tag>Work</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>東京熱不熱 - Japan Tokyo</title>
     <url>/myblog/2023/10/11/Japan-Tokyo/</url>
     <content><![CDATA[<blockquote>
@@ -520,7 +520,7 @@ In this vibrant city, cherished memories are found.</p>
 <hr>
 <div align="left"><img src="54.jpg" width="300" height="300"> </div>
 <hr>
-<h1 id="行前準備-reparation">行前準備 reparation</h1>
+<h1 id="行前準備-preparation">行前準備 preparation</h1>
 <p>Flight bookings: Remember to book the tickets correctly, especially the name spelling and passport number, because I typed my girlfriend’s name incorrectly until the day before the flight, and we only realized the mistake then.</p>
 <p>hotels: Because the great hotels tend to get fully booked quickly, we used <a href="http://booking.com" target="_blank" rel="noopener">booking.com</a> and <a href="http://agoda.com" target="_blank" rel="noopener">agoda.com</a> to compare prices and make reservations.</p>
 <p>Weather: When we arrived, it was really hot, but three days later, it became quite chilly, with temperatures at about 20 degrees Celsius.</p>
@@ -695,247 +695,6 @@ Too tasty that I forgot to take photos.</li>
       </tags>
   </entry>
   <entry>
-    <title>仙女散落的珍珠 - 加羅湖 Jialuo Lake</title>
-    <url>/myblog/2022/03/01/Jialuo/</url>
-    <content><![CDATA[<blockquote>
-<p>出發前才知道要爬的是加羅湖不是嘉明湖<br>
-登山新手的挑戰</p>
-</blockquote>
-<hr>
-<p><img src="22.jpg" alt="1"></p>
-<h1 id="加羅湖簡介-introduction">加羅湖簡介 Introduction</h1>
-<p>加羅湖位於宜蘭縣大同鄉四季村、中橫北支線加羅山區，坐落於中央山脈南湖大山和三星山的山地交會點，里洛山北到太平山之間的陵脈上，因為鄰近加羅山故名為加羅湖，湖泊呈現為南北走向，是加納富溪的源頭；加羅湖標高為2242公尺，是一個湖群，因此除了加羅湖外還有撤退池、豪邁池、偉蛋池、墨池、日湖、月湖、天池、檜木池、水池、綠池等眾多高山湖泊，目前發現共有18個；在眾多的高山湖泊中以加羅湖的面積最為廣闊，其長度約為300公尺，寬約150公尺、深度約15公尺。<br>
-加羅湖的傳說－『散落的珍珠』<br>
-加羅湖的傳說十分夢幻，相傳在遠古時代有一位貌美的仙女，當他正在梳妝打扮的同時，一個閃神不小心將桌上的明鏡給打破了，而亮麗如鑽石般的碎片便粒粒如雨下般的灑落於加羅山區，交織成了為數眾多、美如幻境的湖泊群；加羅湖群水時清澈、光線充足，也因為其週遭的美麗景致被稱之為『散落的珍珠』。<br>
-Jialuo Lake is located in Siji Village, Datong Township, Yilan County, and Jialuo Mountain Area of ​​the North Branch Line of Zhongheng. Called Garo Lake, the lake presents a north-south direction and is the source of the rich stream in Ghana; Garo Lake is 2242 meters above sea level and is a lake group. Therefore, in addition to Garo Lake, there are Retreat Pool, Haomai Pool, Weidan Pool and Mochi. , Sun Lake, Moon Lake, Tianchi, Cypress Pond, Shui Pond, Green Pond and many other alpine lakes, a total of 18 have been found so far; among the many alpine lakes, Jialuo Lake has the largest area, with a length of about 300 meters and a width of about 300 meters. About 150 meters, about 15 meters deep.<br>
-The legend of Lake Garo - &quot;The Scattered Pearls&quot;<br>
-The legend of Garo Lake is very dreamy. According to legend, in ancient times, there was a beautiful fairy. While he was dressing up, a Shining God accidentally broke the mirror on the table, and the bright diamond-like fragments were like small pieces. The rain falls on the Garo Mountains, interweaving into numerous lakes that are as beautiful as a fantasy; the Garo Lakes are clear and well-lit, and are also called “scattered pearls” because of the beautiful scenery around them.<br>
-<a href="https://www.travelking.com.tw/tourguide/scenery103360.html" target="_blank" rel="noopener">資料來源：https://www.travelking.com.tw/tourguide/scenery103360.html</a></p>
-<h1 id="近代登山史中加羅湖的重新被發現-rediscovered">近代登山史中加羅湖的重新被發現 Rediscovered</h1>
-<p>在1987年元月，當時台大登山社5名社員組成了加羅湖與加羅山首登勘察隊，在加羅山西南稜，也就是靠近現今撤退池的附近，誤走山徑，因而沒能登上加羅山，後經紮營，隔日回撤重新出發後才找著正確的路，並且成功進入加羅湖區。當晚他們在第一個遇見的盆地水池畔紮營，並將此池命名為「加羅湖」。不過，當第二天繼續前進而與更寬闊的湖面相遇時，隊員們就改變了心意，將「加羅湖」改賦予眼前的大池(即現今的加羅湖)，而昨天誤入山徑，差點以撤退收場，紮營的小池就另給了一個帶點紀念行程一波三折意味的名字，「撤退池」。<br>
-In January 1987, five members of the National Taiwan University Mountaineering Club formed the first climbing survey team of Jialuo Lake and Jialuo Mountain. At the southwest edge of Jialuo Mountain, that is, near the current retreat pool, they mistakenly took the mountain trail and failed to climb the Jialuo Mountain. Luoshan, after setting up camp, retreated the next day and set off again to find the right way, and successfully entered the Garo Lake area. That night they camped at the first basin pool they encountered, which they named “Lake Garo”. However, when they continued to move forward the next day and encountered a wider lake, the team members changed their minds and gave the “Jaro Lake” to the big pond in front of them (that is, the current Jia Luo Lake). They strayed into the mountain trail yesterday and almost After the retreat ended, Koike, who was camping, gave another name, “Retreat Pond”, which was a little bit of a commemorative trip with twists and turns.</p>
-<h1 id="行程規劃-schedule-plan">行程規劃 Schedule Plan</h1>
-<p><img src="1.jpeg" alt="1"><br>
-<img src="2.jpeg" alt="2"></p>
-<p>建議兩天行程，當天來回會很辛苦，尤其宜蘭山區極易下雨，可能抵達時下午霧氣擋住加羅湖美景，隔日一早霧氣才飄散<br>
-第一天：四季林道→鐵柵欄→加納富溪→巨木登山口→撤退池→偉蛋池→加羅湖<br>
-第二天：加羅湖→偉蛋池→撤退池→巨木登山口→加納富溪→鐵柵欄→四季林道<br>
-It is recommended to travel for two days. It will be very hard to go back and forth on the same day, especially in the mountainous area of Yilan. It is very easy to rain. It may be blocked by the fog in the afternoon when you arrive, and the fog will not drift away until the next morning.<br>
-Day 1: Four Seasons Forest Road→Iron Fencer→Ghana Fuxi→Jumu Mountain Pass→Retreat Pool→Weidan Pool→Jaro Lake<br>
-Day 2: Jialuo Lake → Weidan Pool → Retreat Pool → Jumu Mountain Pass → Ghana Fuxi → Iron Fence → Four Seasons Forest Road</p>
-<h1 id="入山證申請-apply-for-entering-the-mountain">入山證申請 Apply for entering the mountain</h1>
-<p>出發前5日至30日至<a href="https://nv2.npa.gov.tw/NM107-604Client/" target="_blank" rel="noopener">內政部警政署網站</a>申請，或前往加羅湖當日先至宜蘭縣警察局三星分局、大同分駐所、太平山派出所、明池派出所、蘇澳分局、澳花派出所、碧候派出所，任一處辦理入山證。<a href="https://www.ilcpb.gov.tw/?aspxerrorpath=/main/page_view.aspx" target="_blank" rel="noopener">（資料來源：宜蘭縣政府警察局）</a><br>
-Apply before 5 to 30 days from the links.</p>
-<h1 id="行前準備-preparation">行前準備 Preparation</h1>
-<ol>
-<li>行動糧（高熱量巧克力、能量棒、麵包…）foods (high-calorie chocolate, energy bars, bread…)</li>
-<li>建議至少2000cc的水 At least 2000cc of water is recommended</li>
-<li>鹽糖 (電解質補給) Salt candy (electrolyte replenishment)</li>
-<li>保暖衣物（山上非常冷，尤其我去的時間到午夜溫度是-2度Ｃ，還有建議襪子穿兩層厚度）Warm clothes (it is very cold on the mountain, especially when I go to midnight, the temperature is -2 degrees C, and it is recommended to wear two layers of socks)</li>
-<li>登山杖 Alpenstock</li>
-<li>雨靴（建議高筒，很多地方泥濘不堪）Rain boots (high tube is recommended, many places are muddy)</li>
-<li>帳篷、睡墊 Tent, sleeping pad</li>
-<li>衛生用品 Tissue paper</li>
-<li>急救用品 mergency supplies<br>
-(PS：如果是新手，建議找協作訂餐、租借帳篷及睡墊，減少背包的重量）<br>
-(PS：建議洋蔥式穿法，爬行過程會非常炎熱，因此穿脫方便為宜）<br>
-(PS: If you are a novice, it is recommended to find cooperative ordering, rent tents and sleeping pads, and reduce the weight of the backpack)<br>
-(PS: It is recommended to wear the onion style, the crawling process will be very hot, so it is appropriate to put on and take off easily)</li>
-</ol>
-<h1 id="加羅湖路徑詳述-routes-in-detail">加羅湖路徑詳述 Routes in detail</h1>
-<p>起先搭接駁抵達著名紅色柵欄的登山口<br>
-Arrived the climbing entrance of the red fence</p>
-<div align="left"><img src="3.jpg" width="500" height="500"> </div>
-<p>入柵欄後，開始行走四季林道，路上都是大小石頭，要小心打滑<br>
-After entering the fence, start walking on the “Four-Season Forest Road”. The road is full of large and small stones, so be careful of slipping</p>
-<div align="left"><img src="4.jpg" width="500" height="500"> </div>
-<div align="left"><img src="5.jpg" width="500" height="500"> </div>
-<p>走近3.7K就會抵達四季養護所（廢棄工寮），上面被別人寫著許多到此一遊<br>
-Approaching 3.7K, you will arrive at the “Four Seasons Nursing Center” (abandoned labor camp)</p>
-<div align="left"><img src="6.jpg" width="500" height="500"> </div>
-<div align="left"><img src="7.jpg" width="500" height="500"> </div>
-<p>再走一小端路就抵達加納富溪，最後的取水點<br>
-After a short walk, you will arrive at Ghana Phu Creek.</p>
-<div align="left"><img src="8.jpg" width="500" height="500"> </div>
-<p>馬上就抵達巨木登山口，是此處最巨大的神木，感受大自然的鬼斧神工<br>
-Immediately arrive at the entrance of the giant tree, which is the largest sacred tree here, and feel the magic of nature.</p>
-<div align="left"><img src="9.jpg" width="500" height="500"> </div>
-<p>從此之後都是陡上的路徑，有近2.9K，沿路樹木被綠色植披覆蓋，猶如夢幻世界<br>
-Since then, it has been a steep path with nearly 2.9K. The trees along the road are covered with green plants, like a dream world.</p>
-<div align="left"><img src="10.jpg" width="500" height="500"> </div>
-<div align="left"><img src="11.jpg" width="500" height="500"> </div>
-<p>抵達1.9K處時建議稍作停留，此後將難以收到訊號，路途也變得較艱辛<br>
-It is recommended to stop for a while when you reach 1.9K, after that it will be difficult to receive signals and the road will become more difficult.</p>
-<div align="left"><img src="12.jpg" width="500" height="500"> </div>
-<p>映入眼簾就是芒草區，建議長袖長褲避免刮傷<br>
-Long-sleeved trousers are recommended to avoid scratches.</p>
-<div align="left"><img src="13.jpg" width="500" height="500"> </div>
-<p>由於我們行走前一週連日下雨，地面非常泥濘，腳一陷入，哭著找媽媽<br>
-The ground is very muddy</p>
-<div align="left"><img src="14.jpg" width="500" height="500"> </div>
-<p>抵達偉蛋池，那時還有霧氣，猶如仙境<br>
-Arrived at Weidan Pond, there was still fog, like a fairyland</p>
-<div align="left"><img src="15.jpg" width="500" height="500"> </div>
-<p>在行走一段路程即抵達加羅湖，美麗的景色，建議先換上衣物再探索湖周遭，避免著涼<br>
-After walking for a while, you will arrive at Garo Lake. It is a beautiful scenery. It is recommended to change clothes before exploring around the lake to avoid catching a cold.</p>
-<div align="left"><img src="16.jpg" width="500" height="500"> </div>
-<div align="left"><img src="17.jpg" width="500" height="500"> </div>
-<div align="left"><img src="23.jpg" width="500" height="500"> </div>
-<p>協作準備的晚餐飯菜，大家的評價都滿好吃，我也很滿意，吃完可以在承裝，千萬不要浪費<br>
-I’m really satisfied with the dinner.</p>
-<div align="left"><img src="18.jpg" width="500" height="500"> </div>
-<p>夜晚的各位等待裝飯，氣溫也逐漸降低<br>
-Temperature is gradually dropping.</p>
-<div align="left"><img src="19.jpg" width="500" height="500"> </div>
-<div align="left"><img src="20.jpg" width="500" height="500"> </div>
-<p>夜晚美麗的星空<br>
-Beautiful night sky.</p>
-<div align="left"><img src="24.jpg" width="500" height="500"> </div>
-<p>清晨的加羅湖，很可惜到離開前都還是濃濃霧氣<br>
-Unfortunately, there is still thick fog in the morning before leaving.</p>
-<div align="left"><img src="21.jpg" width="500" height="500"> </div>
-<h1 id="總結-summary">總結 Summary</h1>
-<p>自己本身是登山菜雞，這是以個人角度做的評分，覺得難度中上，全程9Ｋ，來回18K，在來之前要做好訓練，不要低估了！<br>
-This is a rating from a personal point of view. I feel that the difficulty is medium, the whole process is 9K, and the back and forth is 18K. Before coming, you must do a good job of training, don’t underestimate it!</p>
-<p>難易度 Difficulty   ： ◼️ ◼️ ◼️ ◼️ ◻️<br>
-危險度 Risk         ： ◼️ ◼️ ◼️ ◼️ ◻️<br>
-值得程度 Worth rate ： ◼️ ◼️ ◼️ ◼️ ◼️</p>
-]]></content>
-      <tags>
-        <tag>Blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>蘭嶼Lanyu遊 2020.7.21-2020.7.24</title>
-    <url>/myblog/2020/07/24/Lanyu/</url>
-    <content><![CDATA[<blockquote>
-<p>蘭嶼夜晚星空真的美<br>
-處處有山羊🐐<br>
-網路卡卡頓<br>
-物價媲美歐美<br>
-The starry sky is really beautiful at night<br>
-There are goats everywhere 🐐<br>
-Network is poor<br>
-Foods are expensive</p>
-</blockquote>
-<hr>
-<p><img src="1.jpg" alt="1"></p>
-<h1 id="行程-itinerary">行程 Itinerary</h1>
-<h2 id="day-1-亞比亞民宿-東-yabia-homestay-east">Day 1 亞比亞民宿 (東) Yabia Homestay (East)</h2>
-<p>16:00到達蘭嶼 16:00 Arrive at Lanyu<br>
-回民宿休息一下 Go to the homestay and take a rest<br>
-東清小夜市吃蔥油餅 Eat scallion pancakes at Dongqing Night Market<br>
-希蕊娜莉晚餐 Dinner<br>
-回民宿休息 Take a rest at the homestay<br>
-十一鄰酒吧 Bar</p>
-<h2 id="day-2-南-south">Day 2 (南) (South)</h2>
-<p>看日出 watch the sunrise<br>
-看完回去睡 Back to sleep<br>
-蘭嶼冷泉 Lanyu Cold Spring<br>
-看蘭嶼地下屋 Visit the Lanyu underground house<br>
-漂流木餐廳 Driftwood Restaurant (not sure english name)<br>
-西岸海邊玩水 Playing in the water on the west coast<br>
-繞南部蘭嶼一圈 hang out in the south of Lanyu<br>
-回民宿休息（走中橫）Go back to the homestay to rest (walk across the middle)<br>
-青青草原看夕陽 Green Grassland Watching the Sunset<br>
-蘭嶼哇哇複合式餐飲晚餐 Dinner<br>
-去附近商店買紀念品、郵局領錢 Go to a nearby store to buy souvenirs, and pick up money at the post office<br>
-回去路上看星星 Watch the beautiful stars in the sky<br>
-回民宿 Back to homestay<br>
-去雜貨店買酒回民宿喝 buy some drink at the grocery store and back to the hotel</p>
-<h2 id="day-3-北-north">Day 3 (北) (North)</h2>
-<p>早上藍海屋潛水 （不太推浮淺 有點雷 但聽說深淺很棒）Snorkeling at the Blue Ocean House in the morning (not recommend, but<br>
-回民宿洗澡 Back to home stay<br>
-午餐 人魚和貓 lunch<br>
-開始北繞蘭嶼（情人洞、蘭嶼鬼洞、貝殼砂、很深之意、雙獅岩、像水渠一樣 拍照）Start to circle around Lanyu in the north (Lover’s Cave, Lanyu Ghost Cave, Shell Sand, Deep Meaning, Shuangshi Rock, taking pictures)<br>
-沿路冰店吃冰 Eat icecream on the way<br>
-小攤販吃飛魚卵小吃 Eating flying fish roe snacks<br>
-蘭嶼氣象站 Lanyu Weather Station<br>
-回民宿 back to homestay<br>
-等八點吃 燒烤吃到飽 Wait until eight o’clock to eat BBQ all you can eat<br>
-小七買酒回民宿 Buy some drinks in a convenient store</p>
-<h2 id="day-4">Day 4</h2>
-<p>看日出 watch the sunrise<br>
-看完回去睡 Go back to sleep<br>
-東清三十三早午餐 Brunch<br>
-回民宿收拾行李 pack our luggage<br>
-舊蘭嶼燈塔拍照 Photograph at Old Lanyu Lighthouse<br>
-等搭船回本島 Back to Taiwan</p>
-<h2 id="原訂行程但沒去-the-original-itinerary-but-did-not-go">原訂行程但沒去： The original itinerary but did not go</h2>
-<p>雯雯冰店<br>
-安逸酒吧 Angit Bar<br>
-M cafe喝酒<br>
-旅人。Rove喝酒<br>
-蘭嶼在地美食-小米阿粨<br>
-蘭嶼反核bar<br>
-瑟郎冰沙吃冰<br>
-自由潛水 free diving</p>
-<p><img src="2.png" alt="2"> <img src="3.jpg" alt="3"></p>
-<blockquote>
-<p>總歸一句 Summary：<br>
-抱持放鬆的心態來就好 Relax~~<br>
-Soak in your own world!</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Travel</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>墾丁打工換宿 Kenting Working-Holiday 2018/8/5~2018/8/25</title>
-    <url>/myblog/2018/08/25/Kenting-WH/</url>
-    <content><![CDATA[<blockquote>
-<p>謝謝每位我在這裡遇到的朋友<br>
-離開太趕 沒能全部拍到照 有緣再見<br>
-結束最後暑假 研究所人生準備開跑<br>
-#鹿境 #小幫手 #恆春 #海<br>
-Thank you to everyone I have met here<br>
-I left in a hurry and couldn’t take all the photos. Goodbye…<br>
-The last summer vacation is over, the life of the master school is about to start</p>
-</blockquote>
-<h1 id="前言-briefly">前言 Briefly</h1>
-<p>你憧憬未來的時候，不會去想著把所有事聯繫起來；只有在回憶過去的時候，才會將這點點滴滴聯繫在一起。一定要相信，這些生活的點滴會在你未來的某一天產生聯繫。一定要相信：勇氣、目標、生命、緣起…一切都不會令你失望，只會增加你的與眾不同。<br>
-When you look forward to the future, you don’t try to connect everything happens to you; only when you think about the past, you start to connect all the memory. Be sure to believe that these little moments of life will be connected someday in your future. Be sure to believe: courage, purpose, life, origin…all will not disappoint you, but will only increase your uniqueness.</p>
-<p><img src="1.png" alt="1"><br>
-<img src="2.png" alt="2"></p>
-<h1 id="工作-working">工作 Working</h1>
-<p>其實工作內容很間單，分爲吧台、鹿園兩區的工作<br>
-In fact, the content of the work is very simple, divided into two parts: the bar and the deer area.</p>
-<h2 id="在吧台負責-responsibility-in-bar">在吧台負責 Responsibility in bar：</h2>
-<ol>
-<li>飲料餐點 Drinks and meals</li>
-<li>外頭的商品部擺放、補貨(拆線、吊牌剪掉、檢查不良品) Arrangement and replenishment of the merchandise department outside (remove stitches, cut off tags, check defective products)</li>
-<li>幫訂午餐、晚餐 Order lunch and dinner for everyone</li>
-<li>廁所打掃（每1hr巡一次）Toilet cleaning (once an hour)</li>
-<li>外頭路面地面整潔 Cleaning whole area</li>
-</ol>
-<h2 id="在鹿園負責-responsibility-in-dear-area">在鹿園負責 Responsibility in dear area：</h2>
-<ol>
-<li>割草（沒體驗到 但要搬運20多公斤草）Mowing (didn’t experience it, but need to carry more than 20 kilograms of grass)</li>
-<li>切紅蘿菠、地瓜 Sliced carrots, sweet potatoes</li>
-<li>打掃鹿園（沒體驗到 很臭）Clean the deer area (didn’t experience it, it stinks)</li>
-<li>解說員（有人體驗到）Narrator (experienced by someone)</li>
-</ol>
-<p><img src="3.png" alt="3"></p>
-<h1 id="度假-holiday">度假 Holiday</h1>
-<p>其實幾乎只有第一週體驗到 剩下都待在鹿境工作 還有最後一週連日的大雨打壞行程（只找到一天沒雨空擋去環屏東）<br>
-In fact, I only enjoyed outdoor activities in the first week, the heavy rain in the last week ruined the itinerary (I only found a day without rain to go traveling around Pingtung).</p>
-<p>8/5 浮潛+逛恆春夜市 Snorkeling + visiting Hengchun Night Market<br>
-8/6 帆船石+麋谷 Sailboat Rock + Moose Valley (Tourist spots)<br>
-8/7 聚餐 美式餐廳 +打牌 Dining American restaurant + playing cards<br>
-8/8 七孔瀑布 Waterfall + cafe<br>
-8/9 古城家常菜+白沙灣 Home-cooked dishes in the ancient city + beach<br>
-8/10 深潛+海生館+肥春號 Deep Dive + Marine Life Museum<br>
-8/11 吉普車（大腳168車隊）Jeep</p>
-<p>Last week :車程福安宮+牡丹水庫+牡丹國小+旭海+九鵬大沙漠+港仔大沙漠+風吹砂+龍磐+台灣最南點<br>
-Drive to Fu’an Palace + Mu-tan Reservoir + Mu-tan Elementary School + Syuhai Grassland Recreation Area + Jiupeng Desert + Gangzai Desert + Wind Chuisha + Longpan + the southernmost point of Taiwan<br>
-(Sorry they are all Chinese name…)</p>
-]]></content>
-      <tags>
-        <tag>Travel</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>找工作心路歷程 2021.1-2021.4</title>
     <url>/myblog/2021/04/14/Lookforjobs/</url>
     <content><![CDATA[<blockquote>
@@ -1063,6 +822,247 @@ LeetCode great solutions: <a href="https://www.youtube.com/channel/UC_mYaQAE6-71
 ]]></content>
       <tags>
         <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>蘭嶼Lanyu遊 2020.7.21-2020.7.24</title>
+    <url>/myblog/2020/07/24/Lanyu/</url>
+    <content><![CDATA[<blockquote>
+<p>蘭嶼夜晚星空真的美<br>
+處處有山羊🐐<br>
+網路卡卡頓<br>
+物價媲美歐美<br>
+The starry sky is really beautiful at night<br>
+There are goats everywhere 🐐<br>
+Network is poor<br>
+Foods are expensive</p>
+</blockquote>
+<hr>
+<p><img src="1.jpg" alt="1"></p>
+<h1 id="行程-itinerary">行程 Itinerary</h1>
+<h2 id="day-1-亞比亞民宿-東-yabia-homestay-east">Day 1 亞比亞民宿 (東) Yabia Homestay (East)</h2>
+<p>16:00到達蘭嶼 16:00 Arrive at Lanyu<br>
+回民宿休息一下 Go to the homestay and take a rest<br>
+東清小夜市吃蔥油餅 Eat scallion pancakes at Dongqing Night Market<br>
+希蕊娜莉晚餐 Dinner<br>
+回民宿休息 Take a rest at the homestay<br>
+十一鄰酒吧 Bar</p>
+<h2 id="day-2-南-south">Day 2 (南) (South)</h2>
+<p>看日出 watch the sunrise<br>
+看完回去睡 Back to sleep<br>
+蘭嶼冷泉 Lanyu Cold Spring<br>
+看蘭嶼地下屋 Visit the Lanyu underground house<br>
+漂流木餐廳 Driftwood Restaurant (not sure english name)<br>
+西岸海邊玩水 Playing in the water on the west coast<br>
+繞南部蘭嶼一圈 hang out in the south of Lanyu<br>
+回民宿休息（走中橫）Go back to the homestay to rest (walk across the middle)<br>
+青青草原看夕陽 Green Grassland Watching the Sunset<br>
+蘭嶼哇哇複合式餐飲晚餐 Dinner<br>
+去附近商店買紀念品、郵局領錢 Go to a nearby store to buy souvenirs, and pick up money at the post office<br>
+回去路上看星星 Watch the beautiful stars in the sky<br>
+回民宿 Back to homestay<br>
+去雜貨店買酒回民宿喝 buy some drink at the grocery store and back to the hotel</p>
+<h2 id="day-3-北-north">Day 3 (北) (North)</h2>
+<p>早上藍海屋潛水 （不太推浮淺 有點雷 但聽說深淺很棒）Snorkeling at the Blue Ocean House in the morning (not recommend, but<br>
+回民宿洗澡 Back to home stay<br>
+午餐 人魚和貓 lunch<br>
+開始北繞蘭嶼（情人洞、蘭嶼鬼洞、貝殼砂、很深之意、雙獅岩、像水渠一樣 拍照）Start to circle around Lanyu in the north (Lover’s Cave, Lanyu Ghost Cave, Shell Sand, Deep Meaning, Shuangshi Rock, taking pictures)<br>
+沿路冰店吃冰 Eat icecream on the way<br>
+小攤販吃飛魚卵小吃 Eating flying fish roe snacks<br>
+蘭嶼氣象站 Lanyu Weather Station<br>
+回民宿 back to homestay<br>
+等八點吃 燒烤吃到飽 Wait until eight o’clock to eat BBQ all you can eat<br>
+小七買酒回民宿 Buy some drinks in a convenient store</p>
+<h2 id="day-4">Day 4</h2>
+<p>看日出 watch the sunrise<br>
+看完回去睡 Go back to sleep<br>
+東清三十三早午餐 Brunch<br>
+回民宿收拾行李 pack our luggage<br>
+舊蘭嶼燈塔拍照 Photograph at Old Lanyu Lighthouse<br>
+等搭船回本島 Back to Taiwan</p>
+<h2 id="原訂行程但沒去-the-original-itinerary-but-did-not-go">原訂行程但沒去： The original itinerary but did not go</h2>
+<p>雯雯冰店<br>
+安逸酒吧 Angit Bar<br>
+M cafe喝酒<br>
+旅人。Rove喝酒<br>
+蘭嶼在地美食-小米阿粨<br>
+蘭嶼反核bar<br>
+瑟郎冰沙吃冰<br>
+自由潛水 free diving</p>
+<p><img src="2.png" alt="2"> <img src="3.jpg" alt="3"></p>
+<blockquote>
+<p>總歸一句 Summary：<br>
+抱持放鬆的心態來就好 Relax~~<br>
+Soak in your own world!</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Travel</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>仙女散落的珍珠 - 加羅湖 Jialuo Lake</title>
+    <url>/myblog/2022/03/01/Jialuo/</url>
+    <content><![CDATA[<blockquote>
+<p>出發前才知道要爬的是加羅湖不是嘉明湖<br>
+登山新手的挑戰</p>
+</blockquote>
+<hr>
+<p><img src="22.jpg" alt="1"></p>
+<h1 id="加羅湖簡介-introduction">加羅湖簡介 Introduction</h1>
+<p>加羅湖位於宜蘭縣大同鄉四季村、中橫北支線加羅山區，坐落於中央山脈南湖大山和三星山的山地交會點，里洛山北到太平山之間的陵脈上，因為鄰近加羅山故名為加羅湖，湖泊呈現為南北走向，是加納富溪的源頭；加羅湖標高為2242公尺，是一個湖群，因此除了加羅湖外還有撤退池、豪邁池、偉蛋池、墨池、日湖、月湖、天池、檜木池、水池、綠池等眾多高山湖泊，目前發現共有18個；在眾多的高山湖泊中以加羅湖的面積最為廣闊，其長度約為300公尺，寬約150公尺、深度約15公尺。<br>
+加羅湖的傳說－『散落的珍珠』<br>
+加羅湖的傳說十分夢幻，相傳在遠古時代有一位貌美的仙女，當他正在梳妝打扮的同時，一個閃神不小心將桌上的明鏡給打破了，而亮麗如鑽石般的碎片便粒粒如雨下般的灑落於加羅山區，交織成了為數眾多、美如幻境的湖泊群；加羅湖群水時清澈、光線充足，也因為其週遭的美麗景致被稱之為『散落的珍珠』。<br>
+Jialuo Lake is located in Siji Village, Datong Township, Yilan County, and Jialuo Mountain Area of ​​the North Branch Line of Zhongheng. Called Garo Lake, the lake presents a north-south direction and is the source of the rich stream in Ghana; Garo Lake is 2242 meters above sea level and is a lake group. Therefore, in addition to Garo Lake, there are Retreat Pool, Haomai Pool, Weidan Pool and Mochi. , Sun Lake, Moon Lake, Tianchi, Cypress Pond, Shui Pond, Green Pond and many other alpine lakes, a total of 18 have been found so far; among the many alpine lakes, Jialuo Lake has the largest area, with a length of about 300 meters and a width of about 300 meters. About 150 meters, about 15 meters deep.<br>
+The legend of Lake Garo - &quot;The Scattered Pearls&quot;<br>
+The legend of Garo Lake is very dreamy. According to legend, in ancient times, there was a beautiful fairy. While he was dressing up, a Shining God accidentally broke the mirror on the table, and the bright diamond-like fragments were like small pieces. The rain falls on the Garo Mountains, interweaving into numerous lakes that are as beautiful as a fantasy; the Garo Lakes are clear and well-lit, and are also called “scattered pearls” because of the beautiful scenery around them.<br>
+<a href="https://www.travelking.com.tw/tourguide/scenery103360.html" target="_blank" rel="noopener">資料來源：https://www.travelking.com.tw/tourguide/scenery103360.html</a></p>
+<h1 id="近代登山史中加羅湖的重新被發現-rediscovered">近代登山史中加羅湖的重新被發現 Rediscovered</h1>
+<p>在1987年元月，當時台大登山社5名社員組成了加羅湖與加羅山首登勘察隊，在加羅山西南稜，也就是靠近現今撤退池的附近，誤走山徑，因而沒能登上加羅山，後經紮營，隔日回撤重新出發後才找著正確的路，並且成功進入加羅湖區。當晚他們在第一個遇見的盆地水池畔紮營，並將此池命名為「加羅湖」。不過，當第二天繼續前進而與更寬闊的湖面相遇時，隊員們就改變了心意，將「加羅湖」改賦予眼前的大池(即現今的加羅湖)，而昨天誤入山徑，差點以撤退收場，紮營的小池就另給了一個帶點紀念行程一波三折意味的名字，「撤退池」。<br>
+In January 1987, five members of the National Taiwan University Mountaineering Club formed the first climbing survey team of Jialuo Lake and Jialuo Mountain. At the southwest edge of Jialuo Mountain, that is, near the current retreat pool, they mistakenly took the mountain trail and failed to climb the Jialuo Mountain. Luoshan, after setting up camp, retreated the next day and set off again to find the right way, and successfully entered the Garo Lake area. That night they camped at the first basin pool they encountered, which they named “Lake Garo”. However, when they continued to move forward the next day and encountered a wider lake, the team members changed their minds and gave the “Jaro Lake” to the big pond in front of them (that is, the current Jia Luo Lake). They strayed into the mountain trail yesterday and almost After the retreat ended, Koike, who was camping, gave another name, “Retreat Pond”, which was a little bit of a commemorative trip with twists and turns.</p>
+<h1 id="行程規劃-schedule-plan">行程規劃 Schedule Plan</h1>
+<p><img src="1.jpeg" alt="1"><br>
+<img src="2.jpeg" alt="2"></p>
+<p>建議兩天行程，當天來回會很辛苦，尤其宜蘭山區極易下雨，可能抵達時下午霧氣擋住加羅湖美景，隔日一早霧氣才飄散<br>
+第一天：四季林道→鐵柵欄→加納富溪→巨木登山口→撤退池→偉蛋池→加羅湖<br>
+第二天：加羅湖→偉蛋池→撤退池→巨木登山口→加納富溪→鐵柵欄→四季林道<br>
+It is recommended to travel for two days. It will be very hard to go back and forth on the same day, especially in the mountainous area of Yilan. It is very easy to rain. It may be blocked by the fog in the afternoon when you arrive, and the fog will not drift away until the next morning.<br>
+Day 1: Four Seasons Forest Road→Iron Fencer→Ghana Fuxi→Jumu Mountain Pass→Retreat Pool→Weidan Pool→Jaro Lake<br>
+Day 2: Jialuo Lake → Weidan Pool → Retreat Pool → Jumu Mountain Pass → Ghana Fuxi → Iron Fence → Four Seasons Forest Road</p>
+<h1 id="入山證申請-apply-for-entering-the-mountain">入山證申請 Apply for entering the mountain</h1>
+<p>出發前5日至30日至<a href="https://nv2.npa.gov.tw/NM107-604Client/" target="_blank" rel="noopener">內政部警政署網站</a>申請，或前往加羅湖當日先至宜蘭縣警察局三星分局、大同分駐所、太平山派出所、明池派出所、蘇澳分局、澳花派出所、碧候派出所，任一處辦理入山證。<a href="https://www.ilcpb.gov.tw/?aspxerrorpath=/main/page_view.aspx" target="_blank" rel="noopener">（資料來源：宜蘭縣政府警察局）</a><br>
+Apply before 5 to 30 days from the links.</p>
+<h1 id="行前準備-preparation">行前準備 Preparation</h1>
+<ol>
+<li>行動糧（高熱量巧克力、能量棒、麵包…）foods (high-calorie chocolate, energy bars, bread…)</li>
+<li>建議至少2000cc的水 At least 2000cc of water is recommended</li>
+<li>鹽糖 (電解質補給) Salt candy (electrolyte replenishment)</li>
+<li>保暖衣物（山上非常冷，尤其我去的時間到午夜溫度是-2度Ｃ，還有建議襪子穿兩層厚度）Warm clothes (it is very cold on the mountain, especially when I go to midnight, the temperature is -2 degrees C, and it is recommended to wear two layers of socks)</li>
+<li>登山杖 Alpenstock</li>
+<li>雨靴（建議高筒，很多地方泥濘不堪）Rain boots (high tube is recommended, many places are muddy)</li>
+<li>帳篷、睡墊 Tent, sleeping pad</li>
+<li>衛生用品 Tissue paper</li>
+<li>急救用品 mergency supplies<br>
+(PS：如果是新手，建議找協作訂餐、租借帳篷及睡墊，減少背包的重量）<br>
+(PS：建議洋蔥式穿法，爬行過程會非常炎熱，因此穿脫方便為宜）<br>
+(PS: If you are a novice, it is recommended to find cooperative ordering, rent tents and sleeping pads, and reduce the weight of the backpack)<br>
+(PS: It is recommended to wear the onion style, the crawling process will be very hot, so it is appropriate to put on and take off easily)</li>
+</ol>
+<h1 id="加羅湖路徑詳述-routes-in-detail">加羅湖路徑詳述 Routes in detail</h1>
+<p>起先搭接駁抵達著名紅色柵欄的登山口<br>
+Arrived the climbing entrance of the red fence</p>
+<div align="left"><img src="3.jpg" width="500" height="500"> </div>
+<p>入柵欄後，開始行走四季林道，路上都是大小石頭，要小心打滑<br>
+After entering the fence, start walking on the “Four-Season Forest Road”. The road is full of large and small stones, so be careful of slipping</p>
+<div align="left"><img src="4.jpg" width="500" height="500"> </div>
+<div align="left"><img src="5.jpg" width="500" height="500"> </div>
+<p>走近3.7K就會抵達四季養護所（廢棄工寮），上面被別人寫著許多到此一遊<br>
+Approaching 3.7K, you will arrive at the “Four Seasons Nursing Center” (abandoned labor camp)</p>
+<div align="left"><img src="6.jpg" width="500" height="500"> </div>
+<div align="left"><img src="7.jpg" width="500" height="500"> </div>
+<p>再走一小端路就抵達加納富溪，最後的取水點<br>
+After a short walk, you will arrive at Ghana Phu Creek.</p>
+<div align="left"><img src="8.jpg" width="500" height="500"> </div>
+<p>馬上就抵達巨木登山口，是此處最巨大的神木，感受大自然的鬼斧神工<br>
+Immediately arrive at the entrance of the giant tree, which is the largest sacred tree here, and feel the magic of nature.</p>
+<div align="left"><img src="9.jpg" width="500" height="500"> </div>
+<p>從此之後都是陡上的路徑，有近2.9K，沿路樹木被綠色植披覆蓋，猶如夢幻世界<br>
+Since then, it has been a steep path with nearly 2.9K. The trees along the road are covered with green plants, like a dream world.</p>
+<div align="left"><img src="10.jpg" width="500" height="500"> </div>
+<div align="left"><img src="11.jpg" width="500" height="500"> </div>
+<p>抵達1.9K處時建議稍作停留，此後將難以收到訊號，路途也變得較艱辛<br>
+It is recommended to stop for a while when you reach 1.9K, after that it will be difficult to receive signals and the road will become more difficult.</p>
+<div align="left"><img src="12.jpg" width="500" height="500"> </div>
+<p>映入眼簾就是芒草區，建議長袖長褲避免刮傷<br>
+Long-sleeved trousers are recommended to avoid scratches.</p>
+<div align="left"><img src="13.jpg" width="500" height="500"> </div>
+<p>由於我們行走前一週連日下雨，地面非常泥濘，腳一陷入，哭著找媽媽<br>
+The ground is very muddy</p>
+<div align="left"><img src="14.jpg" width="500" height="500"> </div>
+<p>抵達偉蛋池，那時還有霧氣，猶如仙境<br>
+Arrived at Weidan Pond, there was still fog, like a fairyland</p>
+<div align="left"><img src="15.jpg" width="500" height="500"> </div>
+<p>在行走一段路程即抵達加羅湖，美麗的景色，建議先換上衣物再探索湖周遭，避免著涼<br>
+After walking for a while, you will arrive at Garo Lake. It is a beautiful scenery. It is recommended to change clothes before exploring around the lake to avoid catching a cold.</p>
+<div align="left"><img src="16.jpg" width="500" height="500"> </div>
+<div align="left"><img src="17.jpg" width="500" height="500"> </div>
+<div align="left"><img src="23.jpg" width="500" height="500"> </div>
+<p>協作準備的晚餐飯菜，大家的評價都滿好吃，我也很滿意，吃完可以在承裝，千萬不要浪費<br>
+I’m really satisfied with the dinner.</p>
+<div align="left"><img src="18.jpg" width="500" height="500"> </div>
+<p>夜晚的各位等待裝飯，氣溫也逐漸降低<br>
+Temperature is gradually dropping.</p>
+<div align="left"><img src="19.jpg" width="500" height="500"> </div>
+<div align="left"><img src="20.jpg" width="500" height="500"> </div>
+<p>夜晚美麗的星空<br>
+Beautiful night sky.</p>
+<div align="left"><img src="24.jpg" width="500" height="500"> </div>
+<p>清晨的加羅湖，很可惜到離開前都還是濃濃霧氣<br>
+Unfortunately, there is still thick fog in the morning before leaving.</p>
+<div align="left"><img src="21.jpg" width="500" height="500"> </div>
+<h1 id="總結-summary">總結 Summary</h1>
+<p>自己本身是登山菜雞，這是以個人角度做的評分，覺得難度中上，全程9Ｋ，來回18K，在來之前要做好訓練，不要低估了！<br>
+This is a rating from a personal point of view. I feel that the difficulty is medium, the whole process is 9K, and the back and forth is 18K. Before coming, you must do a good job of training, don’t underestimate it!</p>
+<p>難易度 Difficulty   ： ◼️ ◼️ ◼️ ◼️ ◻️<br>
+危險度 Risk         ： ◼️ ◼️ ◼️ ◼️ ◻️<br>
+值得程度 Worth rate ： ◼️ ◼️ ◼️ ◼️ ◼️</p>
+]]></content>
+      <tags>
+        <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>墾丁打工換宿 Kenting Working-Holiday 2018/8/5~2018/8/25</title>
+    <url>/myblog/2018/08/25/Kenting-WH/</url>
+    <content><![CDATA[<blockquote>
+<p>謝謝每位我在這裡遇到的朋友<br>
+離開太趕 沒能全部拍到照 有緣再見<br>
+結束最後暑假 研究所人生準備開跑<br>
+#鹿境 #小幫手 #恆春 #海<br>
+Thank you to everyone I have met here<br>
+I left in a hurry and couldn’t take all the photos. Goodbye…<br>
+The last summer vacation is over, the life of the master school is about to start</p>
+</blockquote>
+<h1 id="前言-briefly">前言 Briefly</h1>
+<p>你憧憬未來的時候，不會去想著把所有事聯繫起來；只有在回憶過去的時候，才會將這點點滴滴聯繫在一起。一定要相信，這些生活的點滴會在你未來的某一天產生聯繫。一定要相信：勇氣、目標、生命、緣起…一切都不會令你失望，只會增加你的與眾不同。<br>
+When you look forward to the future, you don’t try to connect everything happens to you; only when you think about the past, you start to connect all the memory. Be sure to believe that these little moments of life will be connected someday in your future. Be sure to believe: courage, purpose, life, origin…all will not disappoint you, but will only increase your uniqueness.</p>
+<p><img src="1.png" alt="1"><br>
+<img src="2.png" alt="2"></p>
+<h1 id="工作-working">工作 Working</h1>
+<p>其實工作內容很間單，分爲吧台、鹿園兩區的工作<br>
+In fact, the content of the work is very simple, divided into two parts: the bar and the deer area.</p>
+<h2 id="在吧台負責-responsibility-in-bar">在吧台負責 Responsibility in bar：</h2>
+<ol>
+<li>飲料餐點 Drinks and meals</li>
+<li>外頭的商品部擺放、補貨(拆線、吊牌剪掉、檢查不良品) Arrangement and replenishment of the merchandise department outside (remove stitches, cut off tags, check defective products)</li>
+<li>幫訂午餐、晚餐 Order lunch and dinner for everyone</li>
+<li>廁所打掃（每1hr巡一次）Toilet cleaning (once an hour)</li>
+<li>外頭路面地面整潔 Cleaning whole area</li>
+</ol>
+<h2 id="在鹿園負責-responsibility-in-dear-area">在鹿園負責 Responsibility in dear area：</h2>
+<ol>
+<li>割草（沒體驗到 但要搬運20多公斤草）Mowing (didn’t experience it, but need to carry more than 20 kilograms of grass)</li>
+<li>切紅蘿菠、地瓜 Sliced carrots, sweet potatoes</li>
+<li>打掃鹿園（沒體驗到 很臭）Clean the deer area (didn’t experience it, it stinks)</li>
+<li>解說員（有人體驗到）Narrator (experienced by someone)</li>
+</ol>
+<p><img src="3.png" alt="3"></p>
+<h1 id="度假-holiday">度假 Holiday</h1>
+<p>其實幾乎只有第一週體驗到 剩下都待在鹿境工作 還有最後一週連日的大雨打壞行程（只找到一天沒雨空擋去環屏東）<br>
+In fact, I only enjoyed outdoor activities in the first week, the heavy rain in the last week ruined the itinerary (I only found a day without rain to go traveling around Pingtung).</p>
+<p>8/5 浮潛+逛恆春夜市 Snorkeling + visiting Hengchun Night Market<br>
+8/6 帆船石+麋谷 Sailboat Rock + Moose Valley (Tourist spots)<br>
+8/7 聚餐 美式餐廳 +打牌 Dining American restaurant + playing cards<br>
+8/8 七孔瀑布 Waterfall + cafe<br>
+8/9 古城家常菜+白沙灣 Home-cooked dishes in the ancient city + beach<br>
+8/10 深潛+海生館+肥春號 Deep Dive + Marine Life Museum<br>
+8/11 吉普車（大腳168車隊）Jeep</p>
+<p>Last week :車程福安宮+牡丹水庫+牡丹國小+旭海+九鵬大沙漠+港仔大沙漠+風吹砂+龍磐+台灣最南點<br>
+Drive to Fu’an Palace + Mu-tan Reservoir + Mu-tan Elementary School + Syuhai Grassland Recreation Area + Jiupeng Desert + Gangzai Desert + Wind Chuisha + Longpan + the southernmost point of Taiwan<br>
+(Sorry they are all Chinese name…)</p>
+]]></content>
+      <tags>
+        <tag>Travel</tag>
       </tags>
   </entry>
   <entry>
@@ -1278,53 +1278,6 @@ In Malacca, we first went to the famous landmarks, then went to the Upside Down 
       </tags>
   </entry>
   <entry>
-    <title>台南打工換宿 2020.8.17-2020.8.26</title>
-    <url>/myblog/2020/08/26/Tainan/</url>
-    <content><![CDATA[<blockquote>
-<p>原本抱著等待兵役空檔玩台南順便當個老幫手 同時體驗台南美食<br>
-沒想到學習以後可能不會再接觸到的木工、油漆及裝潢設計等 🚪<br>
-大家愛恭台語 我就操玲呆(有點進步)<br>
-Reggie教導我們各項技術還有如何衝浪🏄！他什麼都會！真的是偶像！<br>
-每晚Candy的心靈雞湯 學習人生經驗 團隊合作及錯中學習 是人生的導師也是永遠好的朋友<br>
-其他小幫手 每個都有自己的特色 以及願意付出的心 成就這次的工程</p>
-</blockquote>
-<hr>
-<p><img src="2.jpg" alt="2"></p>
-<h1 id="工作-working">工作 Working</h1>
-<p>本次的任務：</p>
-<ol>
-<li>主要是將頂樓天臺整理並規劃成交誼的空間</li>
-<li>同時整理房務工作打掃等</li>
-</ol>
-<p><img src="3.png" alt="3"> <img src="4.png" alt="4"></p>
-<hr>
-<h1 id="度假-holiday">度假 Holiday</h1>
-<p>台南的景點還滿多的，在第二天晚上，老闆帶著我們深度探索台南，同時介紹每個建築物的歷史<br>
-以前從來不會特別去在意的廟宇建築外觀，現在都覺得好神奇，讓我對台灣的歷史更有興趣<br>
-從台南圓環24hr Donutes，沿路走經過台灣第一間廟、蝸牛巷、台南州廳、全美戲院、台南美術館1、2館、司法博物館、林百貨等（沒按照順序）<br>
-對先人留下的遺址及智慧讚嘆不已<br>
-期間老闆帶我們連續兩天假日去漁光島衝浪，生平第一次衝浪就獻給你們了，不過我第二天就站起來兩次，超開心＾＾<br>
-幾日後前往奇美博物館，到的時候已是下午5點，5:30就關門，因此在建築外與這大片美景拍照，佔地9.5公頃的博物館，典藏無數珍貴的國際級藝術品，許文龍先生留給台南最美的博物館</p>
-<p><img src="5.jpg" alt="5"></p>
-<hr>
-<h1 id="working-holiday">Working Holiday</h1>
-<p>這次的換宿經驗讓我學到不論是技術上的技巧更是心靈上的成長<br>
-民宿店的老闆Reggie，雖然只大我6歲，但想法、人生歷練、享受人生都是我遙不可及的目標<br>
-更發現大片藍海市場，想到極為可創性的目標<br>
-我自己也憧憬能像他做自己喜歡的事的念頭 期許未來能更往目標前進！<br>
-此外，帶領我們的是另一位衝浪店（宜蘭烏石）的老闆Candy，對於團隊管理非常有經驗，還是許多大學的講師<br>
-每晚給我們滿滿的知識與做人處事的道理，讓我意識到過去一直忽略掉的貼心，心靈雞湯溫飽我們求知的心!</p>
-<p><img src="1.png" alt="1"></p>
-<blockquote>
-<p>謝謝巷仔邸換宿帶給我寶貴的經驗！<br>
-#巷子邸At The End #小幫手 #台南 #奇美博物館 #漁光島 #學台語 #做工的人 #等待兵役</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Travel</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>閱讀心路歷程與想法</title>
     <url>/myblog/2021/06/19/Reading/</url>
     <content><![CDATA[<blockquote>
@@ -1425,6 +1378,100 @@ By 查理．蒙格</p>
       </tags>
   </entry>
   <entry>
+    <title>台南打工換宿 2020.8.17-2020.8.26</title>
+    <url>/myblog/2020/08/26/Tainan/</url>
+    <content><![CDATA[<blockquote>
+<p>原本抱著等待兵役空檔玩台南順便當個老幫手 同時體驗台南美食<br>
+沒想到學習以後可能不會再接觸到的木工、油漆及裝潢設計等 🚪<br>
+大家愛恭台語 我就操玲呆(有點進步)<br>
+Reggie教導我們各項技術還有如何衝浪🏄！他什麼都會！真的是偶像！<br>
+每晚Candy的心靈雞湯 學習人生經驗 團隊合作及錯中學習 是人生的導師也是永遠好的朋友<br>
+其他小幫手 每個都有自己的特色 以及願意付出的心 成就這次的工程</p>
+</blockquote>
+<hr>
+<p><img src="2.jpg" alt="2"></p>
+<h1 id="工作-working">工作 Working</h1>
+<p>本次的任務：</p>
+<ol>
+<li>主要是將頂樓天臺整理並規劃成交誼的空間</li>
+<li>同時整理房務工作打掃等</li>
+</ol>
+<p><img src="3.png" alt="3"> <img src="4.png" alt="4"></p>
+<hr>
+<h1 id="度假-holiday">度假 Holiday</h1>
+<p>台南的景點還滿多的，在第二天晚上，老闆帶著我們深度探索台南，同時介紹每個建築物的歷史<br>
+以前從來不會特別去在意的廟宇建築外觀，現在都覺得好神奇，讓我對台灣的歷史更有興趣<br>
+從台南圓環24hr Donutes，沿路走經過台灣第一間廟、蝸牛巷、台南州廳、全美戲院、台南美術館1、2館、司法博物館、林百貨等（沒按照順序）<br>
+對先人留下的遺址及智慧讚嘆不已<br>
+期間老闆帶我們連續兩天假日去漁光島衝浪，生平第一次衝浪就獻給你們了，不過我第二天就站起來兩次，超開心＾＾<br>
+幾日後前往奇美博物館，到的時候已是下午5點，5:30就關門，因此在建築外與這大片美景拍照，佔地9.5公頃的博物館，典藏無數珍貴的國際級藝術品，許文龍先生留給台南最美的博物館</p>
+<p><img src="5.jpg" alt="5"></p>
+<hr>
+<h1 id="working-holiday">Working Holiday</h1>
+<p>這次的換宿經驗讓我學到不論是技術上的技巧更是心靈上的成長<br>
+民宿店的老闆Reggie，雖然只大我6歲，但想法、人生歷練、享受人生都是我遙不可及的目標<br>
+更發現大片藍海市場，想到極為可創性的目標<br>
+我自己也憧憬能像他做自己喜歡的事的念頭 期許未來能更往目標前進！<br>
+此外，帶領我們的是另一位衝浪店（宜蘭烏石）的老闆Candy，對於團隊管理非常有經驗，還是許多大學的講師<br>
+每晚給我們滿滿的知識與做人處事的道理，讓我意識到過去一直忽略掉的貼心，心靈雞湯溫飽我們求知的心!</p>
+<p><img src="1.png" alt="1"></p>
+<blockquote>
+<p>謝謝巷仔邸換宿帶給我寶貴的經驗！<br>
+#巷子邸At The End #小幫手 #台南 #奇美博物館 #漁光島 #學台語 #做工的人 #等待兵役</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Travel</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>泰好玩! Thailand 2018/2/26~2018/3/4</title>
+    <url>/myblog/2018/03/04/Thailand/</url>
+    <content><![CDATA[<blockquote>
+<p>生平第一出國、大學第一次畢旅<br>
+體驗到泰式食物的辣、泰式按摩的力道、泰國天氣的熱、泰國文化的風情<br>
+才剛回國就想念泰國的總總回憶 認識很多朋友（跟輔大、中原、東吳的學生同團） 都很有趣也都很好相處 謝謝領隊導遊在一旁照顧我們 期待下次大家再一起出去玩 也希望大家在未來都能達到自己夢想</p>
+</blockquote>
+<p><img src="skybar.jpg" alt="Skybar"></p>
+<hr>
+<h1 id="行程規劃">行程規劃</h1>
+<p>這次旅行交由大樂旅行社幫忙規劃安排</p>
+<p><a href="https://drive.google.com/file/d/0B_MUcnppdaa7VWM0SmxFWHVISkU/view" target="_blank" rel="noopener">行程 : Click On Me</a></p>
+<hr>
+<h1 id="行前準備">行前準備</h1>
+<p>雖然2、3月在台灣是在冬季末，但泰國（曼谷、芭達雅）長年25~35度，攜帶衣物短袖短褲輕便即可，多帶薄長袖較佳，防曬物品更不能少</p>
+<hr>
+<h1 id="travel">TRAVEL</h1>
+<h2 id="day-12">Day 1,2</h2>
+<p>第一晚上飛機已是11點，到達曼谷已經2、3點了，直接睡到9點<br>
+第二天一早搭上遊覽車，出發前往芭達雅，第一站前往當地動物園，著名的有鱷魚表演、吃老虎奶的豬、豬的賽跑跟厲害的豬算數學，下午來桑一下（記得當天也是許多研究所的放榜日，看個表演就收到哪間有上、哪間沒上很刺激），飽飯過後晚上直接回旅館，休息片刻後，相約到附近7-11及小吃光顧，7-11有個熱壓吐司，是我覺得最好吃印象最深的。</p>
+<p><img src="1.png" alt="Day1,2"></p>
+<h2 id="day-3">Day 3</h2>
+<p>起床一樣搭上遊覽車直達芭達雅海邊，直接在海上度過了半天，船上有海上遊樂設施，午餐在船上吃海鮮，直接唱爆嗨歌，唱完就來垂釣個，結束後回到飯店整理儀容，前往當地夜店（是我有生以來第一次去夜店），那間夜店內部禁菸，當晚很嗨，可樂配威士忌，跟中原的同學玩敲敲杯，又上台熱舞，場子好像被台灣人包場，全部是中文歌</p>
+<p><img src="2.png" alt="Day3"></p>
+<h2 id="day-4">Day 4</h2>
+<p>這天一早去四方水上市集，下午去東芭樂園，體驗潑水大戰，每個人都卯起來，結束後再去海邊悠閒享受風景，在海邊還被要求solo跳舞，之後晚餐吃泰國的燒烤火鍋，結束後去芭達雅海邊的商店(美軍不夜城徒步街)逛逛，很多形形色色的人，而後跟導遊去吃水果（山竹、榴槤、紅毛氈），回飯店，夜晚有泰國浴行程，自由參加</p>
+<p><img src="3.png" alt="Day4"></p>
+<h2 id="day-5">Day 5</h2>
+<p>先是去高空滑樓55層樓，下午去一個聽說是去很很很有錢的一個地主的家，整座山都是他的裡面充斥超跑、跟很多裝飾品，園區內有大象表演，之後又去桑一下，但我們沒有多加時間，所以在外面跟輔大的朋友待著等其他人結束，而後去看泰拳，晚上去看人妖秀</p>
+<p><img src="4.png" alt="Day5"></p>
+<h2 id="day-6">Day 6</h2>
+<p>前兩天玩太累了，開始走逛行程，回到曼谷，到Terminal 21的地鐵搭車，到他們的百貨公司、還有著名的四面佛在附近，逛了整天下來，下午去七珍佛山拍學士照，（我晚上直接在那買了件Ｈ＆Ｍ的衣服1799泰銖，台灣還更便宜＝＝），晚上到sky bar享受美景</p>
+<p><img src="5.JPG" alt="Day6-1"> <img src="6.JPG" alt="Day6-2"></p>
+<h2 id="day-7">Day 7</h2>
+<p>旅程到了尾聲，早上先去Chatuchak market逛街，皮皮（領隊）發起交換禮物的想法，我們買晚上要交換禮物的東西，我買了很多薄荷棒（在台灣很有名）通鼻子（100泰銖）還有捕夢網（190泰銖），當時還陪朋友買裝飾燈泡送他女友，後來下午去搭船到鄭王廟參觀，河裡的魚聽說餵麵包的時候說：💰錢錢，象徵可以賺大錢，傍晚直接到旅行社合作的賣場大買零食，我花了將近1500泰銖買了pocky、海苔、糖果、果乾…，最後再去Mekkog逛夜市，晚餐到對面吃泰國的海南雞飯，真的好吃～～讚不絕口！ 全部行程結束後，大家到房間休息一下就到大廳集合，開始交換禮物，我們又被cue要solo跳舞，我用泰國圖案的包包換到泰國大象杯子<br>
+回到房間，就去其他房跟他們打牌到3點多到準備搭飛機，飛機是6點多，結束旅程～</p>
+<p><img src="7.png" alt="Day7"></p>
+<hr>
+<blockquote>
+<p>回來後得到重感冒… 但是泰國好好玩喔</p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>Travel</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>越南遊2019/6/22~ 2019/6/29</title>
     <url>/myblog/2019/06/29/Vietnam/</url>
     <content><![CDATA[<blockquote>
@@ -1498,90 +1545,6 @@ To be continued…</p>
       </tags>
   </entry>
   <entry>
-    <title>泰好玩! Thailand 2018/2/26~2018/3/4</title>
-    <url>/myblog/2018/03/04/Thailand/</url>
-    <content><![CDATA[<blockquote>
-<p>生平第一出國、大學第一次畢旅<br>
-體驗到泰式食物的辣、泰式按摩的力道、泰國天氣的熱、泰國文化的風情<br>
-才剛回國就想念泰國的總總回憶 認識很多朋友（跟輔大、中原、東吳的學生同團） 都很有趣也都很好相處 謝謝領隊導遊在一旁照顧我們 期待下次大家再一起出去玩 也希望大家在未來都能達到自己夢想</p>
-</blockquote>
-<p><img src="skybar.jpg" alt="Skybar"></p>
-<hr>
-<h1 id="行程規劃">行程規劃</h1>
-<p>這次旅行交由大樂旅行社幫忙規劃安排</p>
-<p><a href="https://drive.google.com/file/d/0B_MUcnppdaa7VWM0SmxFWHVISkU/view" target="_blank" rel="noopener">行程 : Click On Me</a></p>
-<hr>
-<h1 id="行前準備">行前準備</h1>
-<p>雖然2、3月在台灣是在冬季末，但泰國（曼谷、芭達雅）長年25~35度，攜帶衣物短袖短褲輕便即可，多帶薄長袖較佳，防曬物品更不能少</p>
-<hr>
-<h1 id="travel">TRAVEL</h1>
-<h2 id="day-12">Day 1,2</h2>
-<p>第一晚上飛機已是11點，到達曼谷已經2、3點了，直接睡到9點<br>
-第二天一早搭上遊覽車，出發前往芭達雅，第一站前往當地動物園，著名的有鱷魚表演、吃老虎奶的豬、豬的賽跑跟厲害的豬算數學，下午來桑一下（記得當天也是許多研究所的放榜日，看個表演就收到哪間有上、哪間沒上很刺激），飽飯過後晚上直接回旅館，休息片刻後，相約到附近7-11及小吃光顧，7-11有個熱壓吐司，是我覺得最好吃印象最深的。</p>
-<p><img src="1.png" alt="Day1,2"></p>
-<h2 id="day-3">Day 3</h2>
-<p>起床一樣搭上遊覽車直達芭達雅海邊，直接在海上度過了半天，船上有海上遊樂設施，午餐在船上吃海鮮，直接唱爆嗨歌，唱完就來垂釣個，結束後回到飯店整理儀容，前往當地夜店（是我有生以來第一次去夜店），那間夜店內部禁菸，當晚很嗨，可樂配威士忌，跟中原的同學玩敲敲杯，又上台熱舞，場子好像被台灣人包場，全部是中文歌</p>
-<p><img src="2.png" alt="Day3"></p>
-<h2 id="day-4">Day 4</h2>
-<p>這天一早去四方水上市集，下午去東芭樂園，體驗潑水大戰，每個人都卯起來，結束後再去海邊悠閒享受風景，在海邊還被要求solo跳舞，之後晚餐吃泰國的燒烤火鍋，結束後去芭達雅海邊的商店(美軍不夜城徒步街)逛逛，很多形形色色的人，而後跟導遊去吃水果（山竹、榴槤、紅毛氈），回飯店，夜晚有泰國浴行程，自由參加</p>
-<p><img src="3.png" alt="Day4"></p>
-<h2 id="day-5">Day 5</h2>
-<p>先是去高空滑樓55層樓，下午去一個聽說是去很很很有錢的一個地主的家，整座山都是他的裡面充斥超跑、跟很多裝飾品，園區內有大象表演，之後又去桑一下，但我們沒有多加時間，所以在外面跟輔大的朋友待著等其他人結束，而後去看泰拳，晚上去看人妖秀</p>
-<p><img src="4.png" alt="Day5"></p>
-<h2 id="day-6">Day 6</h2>
-<p>前兩天玩太累了，開始走逛行程，回到曼谷，到Terminal 21的地鐵搭車，到他們的百貨公司、還有著名的四面佛在附近，逛了整天下來，下午去七珍佛山拍學士照，（我晚上直接在那買了件Ｈ＆Ｍ的衣服1799泰銖，台灣還更便宜＝＝），晚上到sky bar享受美景</p>
-<p><img src="5.JPG" alt="Day6-1"> <img src="6.JPG" alt="Day6-2"></p>
-<h2 id="day-7">Day 7</h2>
-<p>旅程到了尾聲，早上先去Chatuchak market逛街，皮皮（領隊）發起交換禮物的想法，我們買晚上要交換禮物的東西，我買了很多薄荷棒（在台灣很有名）通鼻子（100泰銖）還有捕夢網（190泰銖），當時還陪朋友買裝飾燈泡送他女友，後來下午去搭船到鄭王廟參觀，河裡的魚聽說餵麵包的時候說：💰錢錢，象徵可以賺大錢，傍晚直接到旅行社合作的賣場大買零食，我花了將近1500泰銖買了pocky、海苔、糖果、果乾…，最後再去Mekkog逛夜市，晚餐到對面吃泰國的海南雞飯，真的好吃～～讚不絕口！ 全部行程結束後，大家到房間休息一下就到大廳集合，開始交換禮物，我們又被cue要solo跳舞，我用泰國圖案的包包換到泰國大象杯子<br>
-回到房間，就去其他房跟他們打牌到3點多到準備搭飛機，飛機是6點多，結束旅程～</p>
-<p><img src="7.png" alt="Day7"></p>
-<hr>
-<blockquote>
-<p>回來後得到重感冒… 但是泰國好好玩喔</p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>Travel</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>大學專題 Graduate Thesis- 僑牽ＯＣＣ</title>
-    <url>/myblog/2017/12/13/college-project/</url>
-    <content><![CDATA[<blockquote>
-<p>暨南大學是全台外籍生比例最高的學校 其中有非常大一部分是僑生<br>
-我們和僑生同學相處的日常 有溫馨、有歡笑、也有很多意想不到的趣事<br>
-「 僑牽 」是我們為僑生同學們打造的平台</p>
-<p>Nation Chi Nan University is the school with the highest proportion of foreign students in Taiwan. A very large part of it is overseas Chinese. The daily life we ​​spend with our overseas students is warm, funny, and there are many unexpected things. “Overseas Chinese” is our platform for overseas students.</p>
-</blockquote>
-<p><a href="https://www.facebook.com/ChiauChian.OCC/" target="_blank" rel="noopener">粉專 僑牽 ｜ ＯＣＣ</a></p>
-<div align="right"><img src="logo.png" width="150" height="150"> </div>
-<h1 id="想法與現況-concept">想法與現況 Concept：</h1>
-<hr>
-<p>依據教育部統計處發布資料顯示，臺灣現有近 12,000 名僑生，每年 約以 10%的比例快速成長。然而僑生來台前的資訊蒐集，多限於官方的 法規、政策、各校簡章等，生活問題少有相關文章可供參考。而來台後 面對文化與生活習慣差異，甚至是學業問題，多是仰賴同儕之間交流與 扶持。<br>
-在經過比較相關性高的各大交流平台中，我們選擇建立「僑牽」論 壇，除了可以讓資料有足夠地方可以彙整呈現，對於發問、交流等需求 也相當出色。另外現行社群媒體盛行，我們也將使用臉書作為推廣管道， 以觸及更多族群。<br>
-我們期盼透過創立臉書粉絲專頁以達到招攬使用者、宣傳活動等功 能;創立論壇以達到官方及非官方資訊彙整提供、諮詢空間、生活貼近 度等呈現。讓已來台僑生提供生活經驗分享，初來台之僑生更能融入台 灣的生活，欲來台僑生可初步認識台灣。更進一步希望台灣生也能了解 僑生們的不同文化民情，增進國際交流，擴展國際視野。<br>
-According to the statistics released by the Statistics Department of the Ministry of Education, there are nearly 12,000 overseas Chinese students in Taiwan, which grows rapidly by about 10% each year. However, the information gathering before the overseas Chinese came to Taiwan was mostly limited to official regulations, policies, and school briefs. There are few relevant articles on life issues for reference. After coming to Taiwan, facing the differences in culture and living habits, and even academic problems, most of them rely on exchanges and support between their peers.<br>
-Among the major exchange platforms that have been highly correlated, we chose to establish the “Overseas Chinese” forum. In addition to allowing the information to have enough places to be presented, the demand for questions and communication is also excellent. In addition, the current social media is prevalent, and we will also use Facebook as a promotion channel to reach more ethnic groups.<br>
-We look forward to the creation of Facebook fan pages to reach users, publicity activities, etc.; to create forums to achieve official and unofficial information collection, consultation space, life closeness and other presentations. Let the overseas Chinese students who have come to Taiwan provide life experience sharing. The overseas Chinese who come to Taiwan will be able to integrate into Taiwan’s life. Taiwanese who want to come to Taiwan can get to know Taiwan. I further hope that Taiwanese students can also understand the different cultures and customs of overseas Chinese, enhance international exchanges and expand their international horizons.</p>
-<p><img src="website.png" alt="網頁首頁"></p>
-<h1 id="進行步驟及活動成效-prcedure-and-result">進行步驟及活動成效 Prcedure and Result</h1>
-<hr>
-<h2 id="步驟-step">步驟 Step：</h2>
-<p>Step1. 建立粉絲專頁 Build Fan Page<br>
-Step2. 宣傳活動 Advertisement and Activities<br>
-Step3. 建置論壇 Build Website</p>
-<h2 id="成效-result">成效 Result：</h2>
-<hr>
-<p><img src="result1.jpg" alt="結果"> <img src="result2.png" alt="結果2"></p>
-<h1 id="書面資料-written-report">書面資料 Written Report</h1>
-<hr>
-<p><a href="https://drive.google.com/drive/folders/126sHSHVP27LjqDtpRQmMCpdwN5nUHcUu" target="_blank" rel="noopener">了解更多此專題 Click on me</a></p>
-]]></content>
-      <tags>
-        <tag>Work</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>我的第一座山 - 鳶嘴山 </title>
     <url>/myblog/2020/09/13/Yuanzui-Mountain/</url>
     <content><![CDATA[<blockquote>
@@ -1624,99 +1587,40 @@ Step3. 建置論壇 Build Website</p>
       </tags>
   </entry>
   <entry>
-    <title>澎湖三日遊 2022/6/24 ~ 2022/6/26</title>
-    <url>/myblog/2022/06/27/penghu/</url>
+    <title>大學專題 Graduate Thesis- 僑牽ＯＣＣ</title>
+    <url>/myblog/2017/12/13/college-project/</url>
     <content><![CDATA[<blockquote>
-<p>熱舞社難得再次出遊<br>
-澎湖美得不像話</p>
+<p>暨南大學是全台外籍生比例最高的學校 其中有非常大一部分是僑生<br>
+我們和僑生同學相處的日常 有溫馨、有歡笑、也有很多意想不到的趣事<br>
+「 僑牽 」是我們為僑生同學們打造的平台</p>
+<p>Nation Chi Nan University is the school with the highest proportion of foreign students in Taiwan. A very large part of it is overseas Chinese. The daily life we ​​spend with our overseas students is warm, funny, and there are many unexpected things. “Overseas Chinese” is our platform for overseas students.</p>
 </blockquote>
-<p><a href="https://m.youtube.com/watch?fbclid=PAAaZAPuTQnvVmQuKya51FloPhzsLSGRYZiyv43dj9BRyOOjQtZQuQkVk-HrI&amp;v=3kW1WoxQE_s&amp;feature=youtu.be" target="_blank" rel="noopener">旅遊影片回憶：YouTube</a></p>
-<div align="left"><img src="9.jpg" width="500" height="500"> </div>
-<h1 id="澎湖簡介">澎湖簡介</h1>
-<div align="left"><img src="22.jpeg" width="500" height="500"> </div>
-<p>圖片來源：<a href="https://www.travelking.com.tw/tourguide/penghu/attraction.asp" target="_blank" rel="noopener">https://www.travelking.com.tw/tourguide/penghu/attraction.asp</a></p>
-<p>[背包攻略](<a href="https://www.backpackers.com.tw/guide/index.php/%E6%BE%8E%E6%B9%96%E7%B8%A3%EF%BC%89" target="_blank" rel="noopener">https://www.backpackers.com.tw/guide/index.php/澎湖縣）</a></p>
-<h1 id="必帶物品">必帶物品</h1>
-<ol>
-<li>太陽眼鏡</li>
-<li>防曬裝備(帽子、防曬乳、薄外套)</li>
-<li>泳具</li>
-<li>蘆薈</li>
-<li>拖鞋</li>
-<li>毛巾</li>
-<li>防水袋</li>
-<li>衛生紙</li>
-</ol>
-<h1 id="行程規劃">行程規劃</h1>
-<h2 id="day1">Day1</h2>
-<div align="left"><img src="19.jpg" width="500" height="500"> </div>
-<p>10:00 的飛機，10:50抵達澎湖</p>
-<p>午餐：馬益路燒肉飯、劉正港檸檬冰、小管麵線、澎湖龜鮮奶雞蛋糕</p>
-<p>澎湖天后宮小巷弄走走逛逛</p>
-<div align="left"><img src="6.jpg" width="500" height="500"> </div>
-<p>摩西分海</p>
-<div align="left"><img src="1.jpg" width="500" height="500"> </div>
-裡正角沙灘
-<div align="left"><img src="2.jpg" width="500" height="500"> </div>
-<div align="left"><img src="3.jpg" width="500" height="500"> </div>
-<p>隘門沙灘</p>
-<p>晚餐：澎湖山水夏日炭烤</p>
-<div align="left"><img src="4.jpg" width="500" height="500"> </div>
-<p>民宿：諾雅方舟民宿</p>
-<h2 id="day2">Day2</h2>
-<div align="left"><img src="20.jpg" width="500" height="500"> </div>
-<p>早餐：澎湖赤崁朗哥早餐店(激推海菜燒肉蛋餅)</p>
-<div align="left"><img src="5.jpg" width="500" height="500"> </div>
-<p>搭船前往吉貝島（買套票行程）<br>
-玩香蕉船、水上設施、浮淺<br>
-吉貝島沙尾（必去點！）</p>
-<div align="left"><img src="7.jpg" width="500" height="500"> </div>
-<div align="left"><img src="8.jpg" width="500" height="500"> </div>
-<div align="left"><img src="9.jpg" width="500" height="500"> </div>
-<p>午餐：三布五食平價海鮮（不推）<br>
-環吉貝島</p>
-<div align="left"><img src="10.jpg" width="500" height="500"> </div>
-<div align="left"><img src="11.jpg" width="500" height="500"> </div>
-<div align="left"><img src="14.jpg" width="500" height="500"> </div>
-<p>搭船返回白沙<br>
-澎湖跨海大橋看夕陽</p>
-<div align="left"><img src="12.jpg" width="500" height="500"> </div>
-<div align="left"><img src="15.jpg" width="500" height="500"> </div>
-<div align="left"><img src="16.jpg" width="500" height="500"> </div>
-<p>晚餐：青峰海鮮 (超推)<br>
-岐頭沙灘玩仙女棒</p>
-<div align="left"><img src="17.jpg" width="500" height="500"> </div>
-<p>回民宿：澎湖鎮海灣民宿</p>
-<h2 id="day3">Day3</h2>
-<div align="left"><img src="21.jpg" width="500" height="500"> </div>
-<p>民宿早餐<br>
-珍珍海產買伴手禮<br>
-玉冠嫩仙草<br>
-觀音亭親水遊憩區</p>
-<div align="left"><img src="18.jpg" width="500" height="500"> </div>
-還車前往機場
-13:35飛機回松山機場
-<h1 id="遺珠之憾">遺珠之憾</h1>
-<p>回家炸粿<br>
-福哥紅姐現煮熱炒<br>
-阿志冬瓜糕 (必須提早兩三天訂)<br>
-二崁杏仁茶<br>
-Beacon說酒人<br>
-鮮食堂海鮮蒸鍋<br>
-自由伯-澎湖第一仙人掌冰<br>
-紫玉仙草冰<br>
-59號地瓜球<br>
-阿爆香腸<br>
-瑞師父海菜煎餅<br>
-國統紅豆湯圓<br>
-鍋道熱(火鍋)<br>
-甲貳(火鍋)<br>
-清香海鮮餐廳</p>
-<h1 id="學到經驗">學到經驗</h1>
-<p>最後一天還車時，發現有被擦撞到的刮痕，租車公司說等師傅來報價，要我們押證件跟押金3000，先搭飛機回去，等等傳訊息多退少補，結果回到機場，跟我們報價12700元，被說是紅色烤漆較貴，還有小島價壓我們，整個生氣，朋友問認識修車行，說這報價有些不合理，因此持續與老闆議價，我們願意賠償，但是價格不太合理。</p>
+<p><a href="https://www.facebook.com/ChiauChian.OCC/" target="_blank" rel="noopener">粉專 僑牽 ｜ ＯＣＣ</a></p>
+<div align="right"><img src="logo.png" width="150" height="150"> </div>
+<h1 id="想法與現況-concept">想法與現況 Concept：</h1>
+<hr>
+<p>依據教育部統計處發布資料顯示，臺灣現有近 12,000 名僑生，每年 約以 10%的比例快速成長。然而僑生來台前的資訊蒐集，多限於官方的 法規、政策、各校簡章等，生活問題少有相關文章可供參考。而來台後 面對文化與生活習慣差異，甚至是學業問題，多是仰賴同儕之間交流與 扶持。<br>
+在經過比較相關性高的各大交流平台中，我們選擇建立「僑牽」論 壇，除了可以讓資料有足夠地方可以彙整呈現，對於發問、交流等需求 也相當出色。另外現行社群媒體盛行，我們也將使用臉書作為推廣管道， 以觸及更多族群。<br>
+我們期盼透過創立臉書粉絲專頁以達到招攬使用者、宣傳活動等功 能;創立論壇以達到官方及非官方資訊彙整提供、諮詢空間、生活貼近 度等呈現。讓已來台僑生提供生活經驗分享，初來台之僑生更能融入台 灣的生活，欲來台僑生可初步認識台灣。更進一步希望台灣生也能了解 僑生們的不同文化民情，增進國際交流，擴展國際視野。<br>
+According to the statistics released by the Statistics Department of the Ministry of Education, there are nearly 12,000 overseas Chinese students in Taiwan, which grows rapidly by about 10% each year. However, the information gathering before the overseas Chinese came to Taiwan was mostly limited to official regulations, policies, and school briefs. There are few relevant articles on life issues for reference. After coming to Taiwan, facing the differences in culture and living habits, and even academic problems, most of them rely on exchanges and support between their peers.<br>
+Among the major exchange platforms that have been highly correlated, we chose to establish the “Overseas Chinese” forum. In addition to allowing the information to have enough places to be presented, the demand for questions and communication is also excellent. In addition, the current social media is prevalent, and we will also use Facebook as a promotion channel to reach more ethnic groups.<br>
+We look forward to the creation of Facebook fan pages to reach users, publicity activities, etc.; to create forums to achieve official and unofficial information collection, consultation space, life closeness and other presentations. Let the overseas Chinese students who have come to Taiwan provide life experience sharing. The overseas Chinese who come to Taiwan will be able to integrate into Taiwan’s life. Taiwanese who want to come to Taiwan can get to know Taiwan. I further hope that Taiwanese students can also understand the different cultures and customs of overseas Chinese, enhance international exchanges and expand their international horizons.</p>
+<p><img src="website.png" alt="網頁首頁"></p>
+<h1 id="進行步驟及活動成效-prcedure-and-result">進行步驟及活動成效 Prcedure and Result</h1>
+<hr>
+<h2 id="步驟-step">步驟 Step：</h2>
+<p>Step1. 建立粉絲專頁 Build Fan Page<br>
+Step2. 宣傳活動 Advertisement and Activities<br>
+Step3. 建置論壇 Build Website</p>
+<h2 id="成效-result">成效 Result：</h2>
+<hr>
+<p><img src="result1.jpg" alt="結果"> <img src="result2.png" alt="結果2"></p>
+<h1 id="書面資料-written-report">書面資料 Written Report</h1>
+<hr>
+<p><a href="https://drive.google.com/drive/folders/126sHSHVP27LjqDtpRQmMCpdwN5nUHcUu" target="_blank" rel="noopener">了解更多此專題 Click on me</a></p>
 ]]></content>
       <tags>
-        <tag>Blog</tag>
+        <tag>Work</tag>
       </tags>
   </entry>
   <entry>
@@ -1953,6 +1857,102 @@ Maya is a 3D computer animation software with powerful modeling, color rendering
 ]]></content>
       <tags>
         <tag>Work</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>澎湖三日遊 2022/6/24 ~ 2022/6/26</title>
+    <url>/myblog/2022/06/27/penghu/</url>
+    <content><![CDATA[<blockquote>
+<p>熱舞社難得再次出遊<br>
+澎湖美得不像話</p>
+</blockquote>
+<p><a href="https://m.youtube.com/watch?fbclid=PAAaZAPuTQnvVmQuKya51FloPhzsLSGRYZiyv43dj9BRyOOjQtZQuQkVk-HrI&amp;v=3kW1WoxQE_s&amp;feature=youtu.be" target="_blank" rel="noopener">旅遊影片回憶：YouTube</a></p>
+<div align="left"><img src="9.jpg" width="500" height="500"> </div>
+<h1 id="澎湖簡介">澎湖簡介</h1>
+<div align="left"><img src="22.jpeg" width="500" height="500"> </div>
+<p>圖片來源：<a href="https://www.travelking.com.tw/tourguide/penghu/attraction.asp" target="_blank" rel="noopener">https://www.travelking.com.tw/tourguide/penghu/attraction.asp</a></p>
+<p>[背包攻略](<a href="https://www.backpackers.com.tw/guide/index.php/%E6%BE%8E%E6%B9%96%E7%B8%A3%EF%BC%89" target="_blank" rel="noopener">https://www.backpackers.com.tw/guide/index.php/澎湖縣）</a></p>
+<h1 id="必帶物品">必帶物品</h1>
+<ol>
+<li>太陽眼鏡</li>
+<li>防曬裝備(帽子、防曬乳、薄外套)</li>
+<li>泳具</li>
+<li>蘆薈</li>
+<li>拖鞋</li>
+<li>毛巾</li>
+<li>防水袋</li>
+<li>衛生紙</li>
+</ol>
+<h1 id="行程規劃">行程規劃</h1>
+<h2 id="day1">Day1</h2>
+<div align="left"><img src="19.jpg" width="500" height="500"> </div>
+<p>10:00 的飛機，10:50抵達澎湖</p>
+<p>午餐：馬益路燒肉飯、劉正港檸檬冰、小管麵線、澎湖龜鮮奶雞蛋糕</p>
+<p>澎湖天后宮小巷弄走走逛逛</p>
+<div align="left"><img src="6.jpg" width="500" height="500"> </div>
+<p>摩西分海</p>
+<div align="left"><img src="1.jpg" width="500" height="500"> </div>
+裡正角沙灘
+<div align="left"><img src="2.jpg" width="500" height="500"> </div>
+<div align="left"><img src="3.jpg" width="500" height="500"> </div>
+<p>隘門沙灘</p>
+<p>晚餐：澎湖山水夏日炭烤</p>
+<div align="left"><img src="4.jpg" width="500" height="500"> </div>
+<p>民宿：諾雅方舟民宿</p>
+<h2 id="day2">Day2</h2>
+<div align="left"><img src="20.jpg" width="500" height="500"> </div>
+<p>早餐：澎湖赤崁朗哥早餐店(激推海菜燒肉蛋餅)</p>
+<div align="left"><img src="5.jpg" width="500" height="500"> </div>
+<p>搭船前往吉貝島（買套票行程）<br>
+玩香蕉船、水上設施、浮淺<br>
+吉貝島沙尾（必去點！）</p>
+<div align="left"><img src="7.jpg" width="500" height="500"> </div>
+<div align="left"><img src="8.jpg" width="500" height="500"> </div>
+<div align="left"><img src="9.jpg" width="500" height="500"> </div>
+<p>午餐：三布五食平價海鮮（不推）<br>
+環吉貝島</p>
+<div align="left"><img src="10.jpg" width="500" height="500"> </div>
+<div align="left"><img src="11.jpg" width="500" height="500"> </div>
+<div align="left"><img src="14.jpg" width="500" height="500"> </div>
+<p>搭船返回白沙<br>
+澎湖跨海大橋看夕陽</p>
+<div align="left"><img src="12.jpg" width="500" height="500"> </div>
+<div align="left"><img src="15.jpg" width="500" height="500"> </div>
+<div align="left"><img src="16.jpg" width="500" height="500"> </div>
+<p>晚餐：青峰海鮮 (超推)<br>
+岐頭沙灘玩仙女棒</p>
+<div align="left"><img src="17.jpg" width="500" height="500"> </div>
+<p>回民宿：澎湖鎮海灣民宿</p>
+<h2 id="day3">Day3</h2>
+<div align="left"><img src="21.jpg" width="500" height="500"> </div>
+<p>民宿早餐<br>
+珍珍海產買伴手禮<br>
+玉冠嫩仙草<br>
+觀音亭親水遊憩區</p>
+<div align="left"><img src="18.jpg" width="500" height="500"> </div>
+還車前往機場
+13:35飛機回松山機場
+<h1 id="遺珠之憾">遺珠之憾</h1>
+<p>回家炸粿<br>
+福哥紅姐現煮熱炒<br>
+阿志冬瓜糕 (必須提早兩三天訂)<br>
+二崁杏仁茶<br>
+Beacon說酒人<br>
+鮮食堂海鮮蒸鍋<br>
+自由伯-澎湖第一仙人掌冰<br>
+紫玉仙草冰<br>
+59號地瓜球<br>
+阿爆香腸<br>
+瑞師父海菜煎餅<br>
+國統紅豆湯圓<br>
+鍋道熱(火鍋)<br>
+甲貳(火鍋)<br>
+清香海鮮餐廳</p>
+<h1 id="學到經驗">學到經驗</h1>
+<p>最後一天還車時，發現有被擦撞到的刮痕，租車公司說等師傅來報價，要我們押證件跟押金3000，先搭飛機回去，等等傳訊息多退少補，結果回到機場，跟我們報價12700元，被說是紅色烤漆較貴，還有小島價壓我們，整個生氣，朋友問認識修車行，說這報價有些不合理，因此持續與老闆議價，我們願意賠償，但是價格不太合理。</p>
+]]></content>
+      <tags>
+        <tag>Blog</tag>
       </tags>
   </entry>
   <entry>
