@@ -1,5 +1,6 @@
 <head>
     <meta charset="utf-8">
+    <meta name="google-site-verification" content="SyDj2XyyHM_O0z5ErRUw2G1d0Gum-3JBYv8n-Qg0aVs" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,7 +17,7 @@
         <% } %>
     </title>
 
-    <link rel="canonical" href="<%= config.url + config.root + (page.path||'').replace('index.html', '') %>">
+    <link rel="canonical" href="<%= (page.permalink || config.url + '/').replace('index.html', '') %>">
 
     <!-- Bootstrap Core CSS -->
     <%- css('css/bootstrap.min.css') %>
@@ -35,10 +36,12 @@
 
     <%- css('css/toc')%>
 
+    <%- css('css/responsive')%>
+
     <!-- Custom Fonts -->
     <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
     <!-- Hux change font-awesome CDN to qiniu -->
-    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 
     <!-- Hux Delete, sad but pending in China

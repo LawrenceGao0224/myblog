@@ -1,20 +1,25 @@
 ---
 layout: "about me"
-title: "About Ｍe"
+title: "About Me"
 date: 2020-08-31 04:48:33
 description: "Wish for the Best, Prepare for the Worst"
 header-img: "img/header_img/header5.jpg"
 comments: false
 ---
 
-> 人生有許多事情，正如船後的波紋，總要經歷過才覺得美
-> 自己選擇的路，跪著也要把它走完
-> 超乎一切之上的一件事，就是保持青春朝氣
 
-出生於平凡家庭的我，父母都是公務人員，從小對世界充滿好奇心，夢想能環遊世界，同時，想至世界各地工作。然而小時候從來沒有出過國，直到大學畢業旅行才第一次到國外體驗人文風情。本身性格外向，喜歡與他人面對面聊天相處，不希望只透過社交軟體、網路與他人交流。
+Hello! 我是高碩輿！
 
-    在大學期間，參加熱舞社並擔任幹部，在一次次的社團展演、比賽後，發覺自己喜歡享受舞台氣氛，也發現自己外向活潑的一面，並在多次開會討論社團方針與成果發表後，了解自己喜愛交際的個性。同時，大學擔任學生議會的議員，扮演學校與學生溝通的橋樑，協助學生有效的傳遞資訊予學校了解，並協助雙方協調達成共識。此外，參加過吉他社、北友會等社團，也參加過籃球、羽球、桌球等系隊，熱愛運動與社團活動的我，更想透過國際交換與國外學生們交流，因此我在大學畢業專題主題以僑生為主軸，包括日本、韓國、馬來西亞、香港、澳門、印尼等地區，設計一個網路平台供僑生們使用、交流，解決僑生們來台灣所遇到的問題(飲食、氣候、交通、穿著等)，並讓有經驗的僑生學長姐在平台提供經驗分享，在半年期間會員人數達600多人，瀏覽人數超過7000人的成績。並且在這次的經驗中，進行訪談、認識僑生，增加自己與他人溝通的機會，拓展自己的想法。
+自 2018 年起開始撰寫部落格。 
+從小就喜歡到處跑跳，因緣踏入電腦科學領域，目前於科技業外商擔任技術顧問。
+喜歡跳舞、球類運動，會固定購書閱讀，心得分享在[這網址](https://lawrencekao.notion.site/1a7fb57a6f3c4e30a8f1f5e45677b129?v=e89018e9e9c54144977390b1195ad432&pvs=4)。
+喜歡一句名言送給大家：「你比自己相信的更勇敢，比你外表看來更強大，比你想像的更有智慧。」這名言來自一本著名的童書，隨時提醒自己，不要低估自我。
+網站不定期分享我的生活與學習之心路歷程。
 
-    為了更了解自己，在升研究所的暑假去恆春的梅花鹿觀光景點打工度假，有時候在吧台協助飲料製作，體會服務業的辛勞，有時在鹿園清掃排泄物並餵養紅蘿蔔、地瓜給梅花鹿，了解動物的習性，除了台灣遊客外，也有來自歐美地區的遊客，喜好與遊客們交流，並因此認識許多不同領域的人。
+Hello! I'm Lawrence!
 
-    在碩一升碩二期間，在美光擔任DEG(DRAM Product Engineer)部門的實習生，由於外商的環境，且此部門是新成立並由美國直接移植來的部門，面試時是全英文面試，許多主管與員工都是外國人，我的三個主管皆來自不同的國家，分別是日本、馬來西亞、美國，在開會期間時常需要與日本研發部的工程師進行英文視訊會議，小組討論與剪報內容也都以英文進行，因為這個實習經驗，讓自己更有勇氣與外國人交談。
+Since 2018, I have been writing a blog. I have always enjoyed traveling and being active from a young age. By chance, I entered the field of computer science and currently work as a technical consultant in a foreign technology company. I enjoy dancing and sports. Despite testing as an extrovert (E), I still feel nervous and shy in large groups.
+
+I'd like to share a famous quote with everyone: "You are braver than you believe, stronger than you seem, and smarter than you think." - Christopher Robin to Pooh – A.A.Milne 
+
+My website periodically shares the journey of my life and learning experiences.

@@ -11,8 +11,8 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://MyBlog.com       # Note: don't forget to modify the CNAME file to your url
-root: /
+url: https://lawrencegao0224.github.io/myblog
+root: /myblog/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -23,9 +23,9 @@ SEOTitle: LawrenceKao's Blog
 email: bightt53523@gmail.com
 description: ""
 keyword: ""
-header-img: img/header_img/header4.jpg
+header-img: img/header_img/header9.jpg
 signature: true #show signature
-signature-img: img/signature/signature2.png 
+signature-img: img/signature/signature2.png
 
 
 # SNS settings
@@ -33,22 +33,22 @@ signature-img: img/signature/signature2.png
 # weibo_username:     Demonbaneen
 # zhihu_username:     Demonbane
 github_username:    LawrenceGao0224
-# twitter_username:   Demonbane_x
-facebook_username:  高碩輿
+#twitter_username:   Demonbane_x
+facebook_username:  Lawrence0224
 instagram_username: shuo_yu_gao 
-flickr_username: LawrenceFish
+#flickr : LawrenceFish
 
 # Build settings
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 
 
 # Disqus settings
-disqus_username: your-disqus-ID
+#disqus_username: your-disqus-ID
 
 # Duoshuo settings
 # duoshuo_username: kaijun
 # Share component is depend on Comment so we can NOT use share only.
-duoshuo_share: true                     # set to false if you want to use Comment without Sharing
+#duoshuo_share: true                     # set to false if you want to use Comment without Sharing
 
 
 # Analytics settings
@@ -62,14 +62,16 @@ ga_domain: yoursite
 # Sidebar settings
 sidebar: true                       # whether or not using Sidebar.
 sidebar-about-description: "Hi, i'm Lawrence Kao"
-sidebar-avatar: img/IMG_6713.JPG      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: img/1.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 widgets:
+- category
 - featured-tags
 - short-about
 - recent-posts
-- friends-blog
+# - friends-blog
 # - archive
-# - category
+
+
 
 # widget behavior
 ## Archive
@@ -83,20 +85,23 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 
 
 ## Friends
+
 friends: [
     {
-        title: "Bean Tech",
-        href: "http://beantech.org"
-    },{
-        title: "Kaijun's Blog",
-        href: "http://blog.kaijun.rocks"
-    },{
-        title: "Hux Blog",
-        href: "http://huangxuan.me"
-    },{
-        title: "It Helps SEO",
-        href: "#"
+        title: "Cozy Night In",
+        href: "https://cozynightin.com/"
     }
+    ,{
+        title: "My Reading List",
+        href: "https://www.notion.so/1a7fb57a6f3c4e30a8f1f5e45677b129?v=e89018e9e9c54144977390b1195ad432"
+    }
+#    ,{
+#        title: "Hux Blog",
+#        href: "http://huangxuan.me"
+#    },{
+#        title: "It Helps SEO",
+#        href: "#"
+#    }
 ]
 
 
@@ -121,14 +126,14 @@ titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: true
 future: true
 highlight:
   enable: true
   line_number: true
   auto_detect: true
-  tab_replace:
+  tab_replace: 
 
 # Category & Tag
 default_category: uncategorized
@@ -178,5 +183,5 @@ sitemap:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://github.com/LawrenceGao0224/myblog.git
+  repository: git@github.com:LawrenceGao0224/myblog.git
   branch: gh-pages
