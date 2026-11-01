@@ -9,8 +9,9 @@ tags:
 category: Blog
 toc: true
 ---
-YouTube vlog: [https://youtube.com/shorts/D4B8OZZ2N7Y?si=GS7MC9rQLROOtpHJ](https://youtube.com/shorts/D4B8OZZ2N7Y?si=GS7MC9rQLROOtpHJ)
-
+<div class="videos">
+<iframe class="yt short" src="https://www.youtube-nocookie.com/embed/D4B8OZZ2N7Y" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 > 宿霧人很友善 服務態度也不錯
 > 不會要求一定要小費 但給了會很開心

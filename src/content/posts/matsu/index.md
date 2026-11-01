@@ -9,9 +9,10 @@ tags:
 category: Blog
 toc: true
 ---
-YouTube Shorts: [https://www.youtube.com/shorts/ijpBgZXJArY](https://www.youtube.com/shorts/ijpBgZXJArY)
-   
-YouTube Shorts: [https://www.youtube.com/shorts/R-swCFxQLbg](https://www.youtube.com/shorts/R-swCFxQLbg)
+<div class="videos">
+<iframe class="yt short" src="https://www.youtube-nocookie.com/embed/ijpBgZXJArY" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe class="yt short" src="https://www.youtube-nocookie.com/embed/R-swCFxQLbg" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 ---
 

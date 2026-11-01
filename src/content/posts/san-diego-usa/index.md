@@ -11,7 +11,11 @@ toc: true
 ---
 > 因為DoDoman的推薦，才選擇這裡，真的非常值得！ 
 
-[旅遊影片回憶：YouTube](https://www.youtube.com/shorts/WOZ4zrb9I6w)
+旅遊影片回憶
+
+<div class="videos">
+<iframe class="yt short" src="https://www.youtube-nocookie.com/embed/WOZ4zrb9I6w" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 # Day 1
 

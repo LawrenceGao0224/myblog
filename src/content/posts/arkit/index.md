@@ -1,6 +1,6 @@
 ---
 title: 故宮沉浸式展場系統
-description: Immersive Display System of National Palace Museum
+description: 故宮沉浸式展場系統
 published: '2020-05-25T10:26:32+08:00'
 slug: arkit
 cover: ./head.jpg
@@ -10,13 +10,12 @@ category: Work
 toc: true
 ---
 > 故宮沉浸式展場系統將展場環境呈現於行動裝置中，使用者 能走訪於虛擬搭建的展場，且不受地域限制，提升博物館觀光的趣味，降低參展 的成本。本系統先將故宮 Open Data 之中國畫作、國外知名畫作及中西方雕像進 行蒐集，再將展場空間設計搭建，並放置畫作於展場空間內。最後透過 ARKit 技術將畫面投射至行動裝置中，即時呈現影像。未來若可結合智慧眼鏡，將可帶來更 多應用。
-> The research develops an immersive exhibition system in National Palace Museum and presents the exhibition environment in a mobile device. Users can visit the virtually constructed exhibition venue without geographical restrictions, enhancing the interest of museum tourism and reducing the cost of participation. This system collects Chinese paintings of open data in National Palace Museum, well-known western paintings and Western statues. And then we design the exhibition space and place the paintings there. Finally, through ARKit technology, the image is presented and projected on the screen of mobile device in real time. If smart glasses can be combined in the future, it will bring more applications.
 
 ---
 
-# 緒論 Objective
+# 緒論
 
-## 動機與目的 Motivation and Purpose
+## 動機與目的
 
 依據文化統計調查顯示，現今許多博物館皆面臨瀏覽人次減少問題，因此各大博物館希望透過 科技，建置現代結合過去，製造反差，改變大家以往對博物館的傳統思想，打造 創新的博物館，吸引更多遊客前來參觀。
 過去擴增實境 (AR) 最早用於軍事方面，但隨著軟硬體的發展，目前應用在 日常生活及遊戲產業中，Apple Inc. 推出的 iOS13 版本內，搭載以 AR 量測物體大 小及尺寸的工具，使用者不須透過尺規即可得知物體大小，使 AR 應用更為寬廣及 普及。
@@ -28,152 +27,110 @@ toc: true
 (2) 使用 Unity 及 SketchUp 軟體建立展場空間與擺設展品，並結合 ARKit 做實境技術運用，使系統更具有互動性。
 (3) 將規劃展場空間，實作虛擬展場，並提供參展地圖，予使用者方便走訪
 
-According to cultural statistics surveys, many museums today are facing the problem of a decrease in the number of visitors. Therefore, major museums hope to use technology to combine the modern with the past, create contrast, change people’s traditional thinking about museums in the past, and create innovative museums to attract more tourists to visit.
-In the past, augmented reality (AR) was first used in the military, but with the development of software and hardware, it is currently used in daily life and the game industry. In the iOS13 version launched by Apple Inc., it is equipped with an AR tool to measure the size of objects, which allows users to know the size of an object without using a ruler, making AR applications wider and more popular.
-The term immersion is an emerging concept, which is colloquially defined as “perception of physical existence in a non-physical world”. When referring to immersive movies, it usually means virtual reality movies, that is, the audience can enter 360-degree video and surround sound through VR devices, as if being in another world, and sometimes there is even an experience of smell and touch. In emphasizing the whole body and all-round sensory experience, taking the immersion experience of technology and art space as an example, for example, the works of teamLab in Japan in the past also used virtual reality installations for users to walk in virtual space.
-If the object of immersion is used to distinguish, it can be divided into the following six different types: sensory, ontology, sense of fun, spatial cognition, emotional immersion and narrative immersion. These six can be combined with each other at the same time, or can exist in a work of art at the same time.
-
-Summarizing the above research motivations, the research objectives of this study are as follows:
-(1) Combining ancient paintings in the Open Data area of the National Palace Museum, famous western paintings and real-world technology to design an interactive video system.
-(2) Use Unity and SketchUp software to create exhibition space and display exhibits, and combine ARKit for real-world technology to make the system more interactive.
-(3) The exhibition space will be planned, a virtual exhibition will be implemented, and a map of the exhibition will be provided for users to easily visit
-
 ---
 
-## 相關研究 Related Research
+## 相關研究
 
 影像處理及硬體性能高速發展下，擴增實境、虛擬實境已不再只有軍事發展 或實驗而已，近年來更加入人們的日常生活及遊戲產業中，如 2016 年起於世界各 地發行的寶可夢盛行全球，雖然其非首度應用擴增實境技術之手機遊戲，但卻為 眾人皆知的擴增實境遊戲，還有其他包括遠程會議、培訓及醫療上的應用。
 擴增實境技術的蓬勃發展，除了歸功於學術上的努力，也使更多商業團隊致 力於研究如何結合日常生活，加速便利性與有效性，以此開拓更廣大的消費市場。 以下列出近來商業界與學術界中，擴增實境相關應用的實際案例。
-With the rapid development of image processing and hardware performance, augmented reality and virtual reality are no longer just military development or experiments. In recent years, they have also become part of people's daily life and the game industry. Pokémon GO, released worldwide since 2016, is popular all over the world. Although it is not the first mobile game to use augmented reality technology, it is a well-known augmented reality game. There are also other applications including teleconferencing, training and medical care.
-The vigorous development of augmented reality technology is not only due to academic efforts, but also enables more business teams to study how to integrate daily life, accelerate convenience and effectiveness, and open up a wider consumer market. The following is a list of recent practical examples of AR-related applications in business and academia.
 
 (1) ARKit 與ARCore技術 
 Apple 公司所提供 ARKit，讓開發者實現 AR 的畫面，但不需要知道背後複 雜的成像及定位技術，只需要專注在如何設計 AR 的身歷其境經驗及場景搭建。 ARKit 原理是使用者可以在移動裝置下，同時改變虛擬物件的呈現方式，以追蹤虛 擬物件，再者，ARKit 可以執行 2D 和 3D 物件的追蹤效果，使用者可以與虛擬物 件做互動，更多可運用於遊戲產業。然而，ARKit 並不包含任何圖型 API，只提供 追蹤虛擬物件與表面偵測的能力，所以需要搭配 RealityKit、SceneKit、Metal 之類 Apple 的其他 Framework。
 而 ARKit 也有其軟硬體的限制，軟體限制為開發工具為 Xcode、iOS11 版本或以上、 macOS 10.12.4 或以上版本;硬體限制為處理器 A9 或以上的 iPhone 或iPad 設備( iPhone 6S 為 A9 處理器)。
 此外，Google 也有開發類似 ARKit 的技術，稱為「ARCore」，此技術可開發 於 Android 系統中，且有硬體設備的限制，其比較如下。
-The ARKit provided by Apple allows developers to realize AR images, but they do not need to know the complex imaging and positioning technology behind them. They only need to focus on how to design AR immersive experience and scene construction. The principle of ARKit is that users can change the presentation of virtual objects on mobile devices at the same time to track virtual objects. Furthermore, ARKit can perform tracking effects of 2D and 3D objects, and users can interact with virtual objects, which is mostly used in the game industry. However, ARKit does not contain any graphics API, and only provides the ability to track virtual objects and surface detection, so it needs to be paired with other Apple frameworks such as RealityKit, SceneKit, and Metal.
-ARKit also has its software and hardware limitations. The software is limited to Xcode, iOS11 version or above, macOS 10.12.4 or above, and the hardware is limited to iPhone or iPad devices with processor A9 or above (iPhone 6S uses the A9 processor).
-In addition, Google has also developed a technology similar to ARKit, called "ARCore", which can be developed in the Android system and is limited by hardware devices. The comparison is as below.
 ![1](./1.png)
 
 (2) Vuforia: Market-Leading Enterprise AR
 Vuforia 為知名手機晶片大廠高通(Qualcomm)公司的 AR 擴增實境平台，於 2015 年 PTC 參數科技以 6500 萬美元收購。Vuforia 提供基本的 SDK 軟體開發擴 增實境應用程式套件可於 Unity 上進行使用，讓使用者製作各種平台的開發與擴 增實境應用。過去 AR 開發工具 ARToolKit、Lyteshot、Unifeye 等軟體的入門門 檻高且價格高，然而 Vuforia 可以免費下載提供開發者開發測試，相對容易入門。
-Vuforia is the AR augmented reality platform of Qualcomm, a well-known mobile phone chip maker, and was acquired by PTC Parametric Technology for $65 million in 2015. Vuforia provides a basic SDK software development augmented reality application suite that can be used on Unity, allowing users to create development and augmented reality applications for various platforms. In the past, AR development tools such as ARToolKit, Lyteshot, Unifeye and other software had high entry barriers and high prices. However, Vuforia can be downloaded for free for developers to develop and test, making it relatively easy to get started.
 
 (3) Google Glass
 Google 眼鏡是一款由 Google 設計開發，裝配有光學式頭戴顯示器(OHMD) 的可穿戴電腦，其宗旨為能製造出符合普羅大眾消費者的行動裝置。其以免手持、 並與智慧型手機相似之方式顯示各種資訊，尤其導航功能是最大的看點。
 軍方從 1995 年起著手於研究光學式頭戴型裝置，而後 Google 於 2012 年起開 始測試並研發有關智慧眼鏡的各項功能應用，並於同年首次展示拍攝功能且相較 過去更輕薄。現今，其裝置已涵蓋觸控板、相機、顯示器、交通資訊和地圖服務 及遊戲等。
-Google Glass is a wearable computer with an optical head-mounted display (OHMD) designed and developed by Google to create a mobile device for the general public. It can display various information in a manner similar to that of a smart phone without being held by hand, especially the navigation function is the biggest attraction.
-The military started researching optical head-mounted devices in 1995, and then Google began to test and develop various functional applications of smart glasses in 2012, and in the same year, it demonstrated the shooting function for the first time and was thinner and lighter than in the past. Today, its devices include touchpads, cameras, monitors, traffic information and map services, and games.
 ![2](./2.png)
 
 ---
 
-## 本系統簡介與特色 System Introduction
+## 本系統簡介與特色
 
 此系統以 Apple Inc. 所提供的 ARKit 為擴增實境主體，以 Unity 為開發媒介， 運用其內部所提供之 ProBuilder 為展場空間建模並擺放虛擬物件於展場空間，在其 中針對各物品的建材、材質、透明度做調整，以及展場內部光影強弱微調，使遊 客可以直接透過手機或平板，在空曠地區，即時地、快速地欣賞展場，並可以透 過下方按鈕顯示展品資訊。
 此系統除了將故宮 Open Data 專區的數位化圖像放置於展區，也加入了具中國 風之展品(中式建築、兵馬俑等)，更加入西方著名八幅畫作與西方著名雕 像(大衛像、維納斯像、運動員)放置於左側，期望達到中西對比，與目前熱門 的實境技術結合，達到使用者可方便瀏覽，同時得到相當驚豔的效果。
-This system uses ARKit provided by Apple Inc. as the main body of the augmented reality, uses Unity as the development medium, and uses the internally provided ProBuilder to model the exhibition space and place virtual objects in the exhibition space. The building materials, materials, and transparency of the items are adjusted, as well as the fine-tuning of the intensity of light and shadow inside the exhibition hall, so that visitors can directly and quickly appreciate the exhibition hall through mobile phones or tablets in open areas, and display the exhibit information through the buttons below.
-In addition to placing the digital images of the Open Data area of the National Palace Museum in the exhibition area, this system also adds Chinese-style exhibits (Chinese-style buildings, terracotta warriors, etc.), as well as eight famous Western paintings and famous Western statues (Statue of David, Venus statues, athletes) are placed on the left side, hoping to achieve a contrast between Chinese and Western, and combine with the current popular reality technology, so that users can browse easily, and at the same time get quite amazing results.
 
-(1) 使用者端 Client:
+(1) 使用者端:
 對於使用者而言，此系統操作簡單，只需透過一台手機或平板即可運行，在空曠的場域中，使用者手持裝置，放置於眼前，裝置即可因為使用者行走、奔跑，計算所在位置與距離，即時呈現各個物品之相對位置，在系統左下方設置按鈕提供使用者在想了解作品時點擊，即時顯示作品資訊，能因此增加趣味，同時讓使用者增加對畫作的了解。
-For users, this system is easy to operate, and only needs to be run through a mobile phone or tablet. In an open area, the user holds the device and places it in front of his eyes, and the device can calculate the location and distance as the user walks and runs, showing the relative position of each item in real time. The button is set at the bottom left of the system for users to click when they want to know the work, and the information of the work will be displayed in real time, which can increase the interest and increase the user's understanding of the painting.
  
-(2) 開發者端 Developer:
+(2) 開發者端:
 本研究將各項展覽作品透過 Unity 內部提供之 ProBuilder 建造而成，其操作簡單，只需隨開發者欲建置的空間設定，就能產生空間，並透過各展品 自由拉移擺放，並於最後設定 ARKit 與預期顯示之項目，即可呈現。
-In this research, various exhibition works are built through the ProBuilder provided by Unity. The operation is simple. You only need to set the space according to the developer's desire to create a space. You can freely move and place the exhibits through each exhibit. Set ARKit and the expected display item, and it's ready to be rendered.
 
-(3) 博物館端 Museum side:
+(3) 博物館端:
 此系統提供欲參訪博物館或展場的遊客使用、還有無法到達的民眾可以使用，同時能給予博物館設計展場前、設計此系統後，觀看內部空間與擺設狀態，以降低不必要的成本，同時提供此作為宣傳目的。另外，博物館若需在展覽時提供多種展場，可嘗試建立於雲端中，供民眾下載參考。
-This system can be used by tourists who want to visit the museum or exhibition hall, as well as people who cannot reach it. At the same time, it can be used by the museum to view the internal space and decoration status before and after the design of the exhibition hall, so as to reduce unnecessary costs, while providing this for promotional purposes. In addition, if the museum needs to provide a variety of exhibition venues during the exhibition, it can try to build it in the cloud for the public to download and reference.
 
 ---
 
-# 系統關鍵技術 System related Technique
+# 系統關鍵技術
 
 本系統的關鍵技術主要分成兩大部分，一為 Apple Inc. 所開發的 ARKit 技術，另一為 Unity 及 SketchUp 所提供的建模方法。
-The key technology of this system is mainly divided into two parts, one is the ARKit technology developed by Apple Inc., and the other is the modeling method provided by Unity and SketchUp.
 
 ## ARKit API
 
 本研究主要針對 ARKit 作為開發支持，在此說明 ARKit 之底層技術。
-This research is mainly aimed at ARKit as development support, and the underlying technology of ARKit is explained here.
 
-### ARKit 的關鍵技術 Key Technique
+### ARKit 的關鍵技術
 
 ARKit 其中的技術原理為視覺慣性測量(VIO)系統及平面檢測兩大關鍵 技術，視覺慣性測量(VIO)即系統會隨時追蹤使用者在空間的位置，其記錄 著 iPhone 在 6DoF 空間中經過的距離(6DoF 即沿著 xyz 軸移動，加上俯仰、 旋轉、滾動等)，如下圖，螢幕在每幀畫面刷新時，動作會被立即重新計 算，畫面的刷新率為每秒 30fps 或以上，而這個刷新計算會同時被兩個系統 所計算，一為照相鏡頭與現實世界中的點將每幀畫面相匹配，此時使用者 動作會被計算。另一為動作被慣性系統所追蹤，以陀螺儀及加速度計兩慣 性測量單位(IMU)實作。最後透過卡爾曼濾波器(Kalman Filter)將其進行整 合，並計算出最佳真實位置(Ground Truth)。
 平面檢測即以地面做為參考物以計算位置訊息，藉此確立物體能平放 於平面上，以避免虛擬物體漂浮。任三點決定一平面，通過計算將特徵點 平均化，得到參考平面。
-The technical principle of ARKit is the visual inertial measurement (VIO) system and the two key technologies of plane detection. The visual inertial measurement (VIO) means that the system will track the user's position in space at any time, and it records the distance that the iPhone travels in the 6DoF space. (6DoF means moving along the xyz axis, plus pitch, rotation, roll, etc.), as shown in the figure below, when the screen refreshes every frame, the action will be recalculated immediately, and the refresh rate of the screen is 30fps or more, and this refresh calculation will be calculated by two systems at the same time, one is to match each frame of the camera lens with the point in the real world, and the user action will be calculated at this time. The other is that the movement is tracked by the inertial system, which is implemented with two inertial measurement units (IMU), gyroscope and accelerometer. Finally, it is integrated through Kalman Filter, and the best ground truth position is calculated.
-The plane detection is to use the ground as a reference to calculate the position information, thereby establishing that the object can lie flat on the plane, so as to prevent the virtual object from floating. Any three points determine a plane, and the feature points are averaged through calculation to obtain the reference plane.
 ![](./3.png)
 
 ---
 
-### ARKit 的架構 Architecture
+### ARKit 的架構
 
 ARKit 定義了簡單的 API，以下對 ARKit 組成進行分類，如: ARSession、ARSessionConfiguration、ARFrame、ARCamera 等。其中 ARSession 為整個系統核心，其實現了 AR 效果，包括世界追蹤及場景解析等，而 ARFrame 包含有 ARSession 所輸出的資訊，為渲染關鍵資料來源，其架構如下圖。
-ARKit defines a simple API. The components of ARKit are classified as follows: ARSession, ARSessionConfiguration, ARFrame, ARCamera, etc. Among them, ARSession is the core of the entire system, which realizes AR effects, including world tracking and scene analysis, and ARFrame contains the information output by ARSession, which is the key source of rendering data. Its architecture is as follows.
 ![4](./4.png)
 
 真實世界追蹤 : ARKit 在此使用 ARWorldTrackingSessionConfiguration 提供 6DoF 追蹤取得的六個參數，同時，AVCaptureSession 獲取照相機所拍 攝的影片(一幀一幀的圖像)，ARSession 根據獲取 6DoF 的 6 個參數及一幀 一幀的圖像序列進行分析，輸出給 ARFrame，此時 ARFrame 就包含有渲染 虛擬世界所需的訊息。ARCamera 為 ARFrame 中的一個屬性，其提供相機 捕捉到的圖像長度及寬度(以像素為單位)，以及 intrinsics (為 3 x 3 之矩陣)， 目的將現實世界中三維座標的點映射至相機捕捉的圖像中。
-Real-world tracking: ARKit uses ARWorldTrackingSessionConfiguration to provide six parameters obtained by 6DoF tracking. At the same time, AVCaptureSession obtains the video captured by the camera (one frame by one image), and ARSession obtains the six parameters of 6DoF and one frame by one frame. The image sequence is analyzed and output to ARFrame. At this time, ARFrame contains the information needed to render the virtual world. ARCamera is an attribute in ARFrame that provides the length and width (in pixels) of the image captured by the camera, as well as intrinsics (a 3 x 3 matrix), for the purpose of mapping points of 3D coordinates in the real world to the camera capture in the image.
 
 渲染 : ARSCNView 進行以下事件
 (1) 將真實世界作為背景。
 (2) 處理光照訊息，不斷更新光照強度。
 (3) 不斷更新相機位置及角度。
 (4) 將座標系結合到 AR 世界的座標系中，不斷渲染場景到真實世界的畫面中。
-Rendering: ARSCNView does the following events
-(1) Use the real world as a background.
-(2) Process the light information and continuously update the light intensity.
-(3) Constantly update the camera position and angle.
-(4) Combine the coordinate system with the coordinate system of the AR world, and continuously render the scene to the real world picture.
 
 ---
 
-## 本文場景設計與物體搭建 Background Design and Object Building
+## 本文場景設計與物體搭建
 
 
 (1) Unity – ProBuilder
 本研究所使用開發媒介為 Unity，場景建置為 Unity 所提供之ProBuilder，ProBuilder 自開發以來，廣受遊戲開發者好評，針對 簡單的幾何結構建構進行優化，提供簡單快速的建模方式，快速構建原型 結構、複雜地形特徵、車輛和武器等。提供遊戲開發者選擇外型，可針對材質、紋理、形狀做任意搭配，並 可設定物體長度、寬度、高度，以達需求。
-The scene construction is ProBuilder provided by Unity. Since its development, ProBuilder has been widely praised by game developers. It is optimized for simple geometric structure construction, and provides a simple and fast modeling method. Prototype structures, complex terrain features, vehicles and weapons, etc. Provide game developers to choose the appearance, can do any combination of materials, textures, and shapes, and can set the length, width, and height of objects to meet their needs.
 
 (2) SketchUp
 本研究在物體建構中，運用模型建構軟體 SketchUp，適用於電腦動畫，擁有強大的建模、材質、模擬，其可達極為精細的設定，達到擬真效果。
-In the construction of objects, this research uses the model construction software SketchUp, which is suitable for computer animation and has powerful modeling, material, and simulation, which can achieve extremely detailed settings and achieve realistic effects.
 
 ---
 
-## 本文方法與現有方法之比較 Comparison with current application
+## 本文方法與現有方法之比較
 
-(1) AR 美術館 AR museum
+(1) AR 美術館
 取自論文“ A digital look at physical museum exhibits: Designing personalized stories with handheld Augmented Reality in museums ” Jens Keil ; Laia Pujol ; Maria Roussou ; Timo Engelke ; Michael Schmitt ; Ulrich Bockholt ; Stamatia Elefthe 
 將希臘的衛城博物館 (Acropolis Museum) 設計故事及動畫，並運用 AR 實作，不侷限在白紙黑字上，其添加互動及探索性，使博物館更具吸引力。其最大的特點為遊客可手持手機或平板，自行在博物館中觀覽自己喜 愛的作品，透過照相機辨識，並可顯示展品動畫與其欲傳達之資訊。
 然而在此研究中，展品須事先搭建於展場中，且須有實體物品或圖像 給予裝置感應，這也是 AR 技術必須透過辨識才能達成其目的，而此方法無 法提供使用者於任意地點使用，使其侷限於只有展品擺放的地點才能使用。
-The Acropolis Museum in Greece is designed with stories and animations, and implemented using AR, which is not limited to black and white, adding interactivity and exploration, making the museum more attractive. Its biggest feature is that visitors can hold mobile phones or tablets to view their favorite works in the museum by themselves, identify them through cameras, and display animations of exhibits and the information they want to convey.
-However, in this study, the exhibits must be built in the exhibition site in advance, and there must be physical objects or images to give the device induction, which is also the AR technology must be recognized to achieve its purpose, and this method cannot provide users to use it anywhere, so that it can only be used where the exhibits are placed.
 ![5](./5.jpg)
 
-(2) HTC 與故宮合作 HTC cooperate with National Palace Museum
+(2) HTC 與故宮合作
 自 2015 年，故宮開始與 HTC 合作開發虛擬實境，在 VIVE 平台開發VR 的藝術作品，從虛擬書畫展廳到「自敘心境」(懷素《自敘帖》)、「神遊 幻境」(趙孟頫《鵲華秋色圖》)，將數位藝術帶入博物館。而後，於 2018 年 10 月 15 日推出「再現傳奇-VR 藝術體驗特展」，發表清明上河圖 VR，以故宮《清明上河圖》為本，包含畫作欣賞及遊戲體驗等，尋人物、玩遊戲、體會古人生活與智慧。另外，2019 年 12 月 17 日至 2020 年 5 月 26 日，推出《故宮南院奇幻嘉年華:21 世紀博物館特展》，故宮南院與全世界各大博物館、美術館合作，展出包括今年於法國羅浮宮《達 文西 500 週年特展》展出的《蒙娜麗莎:越界視野》、法國橘園美術館齊力 完成的《莫內:傾慕睡蓮》等著名巨作。
 然而，於這兩次的展覽中，皆須透過 HTC 的 VR 裝置進行互動體驗，若在沒有 VR 裝置下，無法進行體驗，甚至容易造成頭暈、想吐等狀況;另外，在設計上，開發所需的人力及遊戲設計，開發成本相對較高，利用此 方法對於使用者的裝置硬體需求較高，同時降低便利性。
-Since 2015, the National Palace Museum has cooperated with HTC to develop virtual reality, and developed VR art works on the VIVE platform.
-However, in these two exhibitions, the interactive experience must be carried out through HTC's VR device. If there is no VR device, the experience cannot be performed, and it may even cause dizziness and nausea. In addition, in terms of design, the manpower and game design required are relatively high, and the development cost is relatively high. Using this method requires high device hardware for users and reduces convenience.
 ![6](./6.jpg)
 
 ---
 
-# 系統實作 System Implement
+# 系統實作
 
-## 開發流程 Development Flow
+## 開發流程
 
 本系統之系統開發模式採用快速雛型法(Rapid Prototyping Model)。初期，採用漸進模型(Incremental Model)將系統做開發，其細部功能及擴充功能尚未建立，而 後再對系統與現況做評估，透過給同學及老師實測並給予建議後做修正，再進行 下一步驟的流程，每次增加一個功能就評估一次，遞增至所有的功能都做完，透 過將主要功能完成後再進行附加功能的設計，可使流程更方便管理、維護，同時 更能在有限的時間內將系統達成進度。
-The system development mode of this system adopts Rapid Prototyping Model. In the initial stage, the system was developed using the Incremental Model, and its detailed functions and extended functions have not yet been established. Then, the system and the current situation were evaluated, and corrections were made through actual testing and suggestions for students and teachers, and then proceed to the next step. Each time a function is added, it is evaluated once, and it is incremented until all functions are completed. By completing the main function and then designing additional functions, the process can be more convenient to manage and maintain, and the system can keep on schedule within the limited time.
 
-(1) 國立故宮博物院 Open Data 專區資料及西方古畫蒐集 Open Data from the National Palace Museum and collection of Western ancient paintings
+(1) 國立故宮博物院 Open Data 專區資料及西方古畫蒐集
 本系統主要透過故宮古畫及西方知名畫作做為展品陳列，因此首先蒐集故宮古畫。在此次資料蒐集中，將明朝仇英之畫作做為本次畫展區展覽 主題，找尋明朝仇英之畫作的第一步驟為透過故宮博物院的 Open Data 專區 中的「精選圖像下載」進行搜尋，在類別中選擇「繪畫」，再以關鍵字搜尋 「仇英」，在下方顯示所有仇英之繪畫，從顯示資料中出現的 46 筆仇英畫 作中，以圖畫整體的「線條複雜度」及「色彩鮮豔度」為依據，挑選 5 張 做為本次展場中主要的畫作，分別為「宋人十八學士圖」、「明仇英西園雅 集圖」、「明仇英秋獵圖」、「明仇英清明上河圖」、「明仇英觀榜圖」。 另外，在西方畫作中，從 The Artists 網站中將耳熟能詳的 8 幅著名畫 作，在 Google 以「進階搜尋」選擇「可任意使用、分享或修改」， 搜尋圖片後，進行下載，其中選擇的畫作為 「Mona Lisa」 、 「The Starry Night」 、 「The Scream」 、 「Girl with a Pearl Earring」 、 「A Sunday Afternoon on the Island of La Grande Jatte」、「Guernica」、「The Kiss」、 「American Gothic」。
-This system mainly uses ancient paintings of the National Palace Museum and well-known Western paintings as exhibits for display, so we first collect ancient paintings of the National Palace Museum. In this data collection, the paintings of Qiu Ying in the Ming Dynasty are used as the theme of this exhibition area. The first step to find the paintings of Qiu Ying in the Ming Dynasty is to search through the "Selected Image Download" in the Open Data section of the Palace Museum, select "painting" in the category, and then search for "Qiu Ying" with the keyword, all the paintings of Qiu Ying are displayed below. Among the 46 results, based on the “line complexity” and “color vividness”, 5 paintings were selected as the main paintings in this exhibition, namely “The Eighteen Bachelors of Song Dynasty”, “Ming Qiu Ying’s Elegant Gathering in the West Garden”, “Ming Qiu Ying’s Autumn Hunting Picture”, “Ming Qiu Ying’s Qingming Riverside Map” and “Ming Qiu Ying’s Viewing the List”. In addition, among Western paintings, select 8 well-known paintings from The Artists website, select “Can be used, shared or modified freely” in “Advanced Search” on Google, search for pictures, and download them. The selected paintings are "Mona Lisa", "The Starry Night", "The Scream", "Girl with a Pearl Earring", "A Sunday Afternoon on the Island of La Grande Jatte", "Guernica", "The Kiss", "American Gothic".
 
 (2) Unity-ProBuilder 場景搭建及展品擺放 
 從「Asset Store」搜尋「ProBuilder」後，將「ProBuilder」導入至 Unity中，使用其欄位下方之「New Shape」功能，建立展場空間，在本研究之展 場建立為一長方體空間，其設定大小為 X:10m Y:10m Z:12m，並確立門口的 位置，將門口也透過「New Shape」產生門，建立門口確保使用者可以以這 門口為動線，進出該門，在此即搭建完成展場空間。
@@ -223,7 +180,11 @@ Xcode 是一個提供開發人員為 Apple 開發應用程式的工具應用平�
 顯示展品資訊 走入門口後，即可見到所有展品陳列於使用者眼前，當使用者想了解展品資訊時，在螢幕左下方有「Show All」的按鈕，即可展示所有畫作的資 訊(作者、時間、類型、描述等)，以呈現給使用者。
 ![9](./9.jpg)
 
-[系統Demo影片 : Click On Me](https://www.youtube.com/watch?v=y6X5S8tKC08&feature=youtu.be)
+系統Demo影片 : Click On Me
+
+<div class="videos">
+<iframe class="yt" src="https://www.youtube-nocookie.com/embed/y6X5S8tKC08" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 ---
 
@@ -235,7 +196,11 @@ Xcode 是一個提供開發人員為 Apple 開發應用程式的工具應用平�
 (2) 本系統的展場地圖
 ![11](./11.png)
 
-[系統Demo影片 : Click On Me](https://www.youtube.com/watch?v=spNBQXed0aM&feature=youtu.be)
+系統Demo影片 : Click On Me
+
+<div class="videos">
+<iframe class="yt" src="https://www.youtube-nocookie.com/embed/spNBQXed0aM" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 ---
 

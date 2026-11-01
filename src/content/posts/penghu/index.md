@@ -12,7 +12,11 @@ toc: true
 > 熱舞社難得再次出遊
 > 澎湖美得不像話
 
-[旅遊影片回憶：YouTube](https://m.youtube.com/watch?fbclid=PAAaZAPuTQnvVmQuKya51FloPhzsLSGRYZiyv43dj9BRyOOjQtZQuQkVk-HrI&v=3kW1WoxQE_s&feature=youtu.be)
+旅遊影片回憶
+
+<div class="videos">
+<iframe class="yt" src="https://www.youtube-nocookie.com/embed/3kW1WoxQE_s" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 ![](./9.jpg)
 
@@ -21,7 +25,7 @@ toc: true
 
 圖片來源：[https://www.travelking.com.tw/tourguide/penghu/attraction.asp](https://www.travelking.com.tw/tourguide/penghu/attraction.asp)
 
-[背包攻略](https://www.backpackers.com.tw/guide/index.php/%E6%BE%8E%E6%B9%96%E7%B8%A3）
+[背包攻略](https://www.backpackers.com.tw/guide/index.php/%E6%BE%8E%E6%B9%96%E7%B8%A3)
 
 # 必帶物品
 

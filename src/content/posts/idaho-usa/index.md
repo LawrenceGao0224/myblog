@@ -12,10 +12,17 @@ toc: true
 > Idaho是我待過最舒服的城市，道路房屋都大且寬
 > 幾乎都是白人的州
 
-[旅遊影片回憶1：YouTube](https://www.youtube.com/shorts/d23OiaHArWg)
+旅遊影片回憶1
 
-[旅遊影片回憶2：YouTube](https://www.youtube.com/shorts/l0jXuHfz_4c)
+<div class="videos">
+<iframe class="yt short" src="https://www.youtube-nocookie.com/embed/d23OiaHArWg" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
+旅遊影片回憶2
+
+<div class="videos">
+<iframe class="yt short" src="https://www.youtube-nocookie.com/embed/l0jXuHfz_4c" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 # Day 1 Boise
 
@@ -110,7 +117,9 @@ toc: true
 
 繼續探索Coeur d'Alene，真的很多美景
 
-YouTube vlog: [https://www.youtube.com/shorts/dQlSG_bmfNE](https://www.youtube.com/shorts/dQlSG_bmfNE)
+<div class="videos">
+<iframe class="yt short" src="https://www.youtube-nocookie.com/embed/dQlSG_bmfNE" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 ![](./12.jpg)
 
@@ -138,7 +147,9 @@ YouTube vlog: [https://www.youtube.com/shorts/dQlSG_bmfNE](https://www.youtube.c
 
 ![](./18.jpg)
 
-YouTube vlog: [https://www.youtube.com/shorts/l0jXuHfz_4c](https://www.youtube.com/shorts/l0jXuHfz_4c)
+<div class="videos">
+<iframe class="yt short" src="https://www.youtube-nocookie.com/embed/l0jXuHfz_4c" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 美麗的夕陽
 

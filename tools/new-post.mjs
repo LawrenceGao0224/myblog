@@ -1,5 +1,5 @@
 // 新增文章：npm run new -- 網址名稱
-// 例：npm run new -- tokyo-2027  →  src/content/posts/tokyo-2027/index.md
+// 例：npm run new -- tokyo-2027  →  src/content/posts/tokyo-2027/index.md（中文）＋ index.en.md（英文）
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 
 const slug = process.argv[2];
@@ -29,4 +29,17 @@ draft: true             # 寫完改成 false（或刪掉這行）才會發佈
 
 <!-- 插入照片：把 1.jpg 放進這個資料夾，再寫 ![照片說明](./1.jpg) -->
 `);
-console.log(`已建立 ${dir}/index.md`);
+writeFileSync(`${dir}/index.en.md`, `---
+title: Post title
+description: One-line subtitle
+published: ${now}+08:00
+# cover: ./header.jpg   # 和中文版用同一張封面
+tags:
+- Travel
+category: Blog
+draft: true             # 英文版寫完再刪掉這行；沒寫完就保持 draft，英文網站不會出現這篇
+---
+
+Start writing in English here. Use the same photos as the Chinese version, e.g. ![caption](./1.jpg)
+`);
+console.log(`已建立 ${dir}/index.md（中文）和 ${dir}/index.en.md（英文）`);

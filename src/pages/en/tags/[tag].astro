@@ -1,0 +1,7 @@
+---
+import ListView from '../../../views/ListView.astro';
+import { tagPaths } from '../../../paths';
+export const getStaticPaths = () => tagPaths('en');
+const { tag } = Astro.params;
+---
+<ListView kind="tag" name={tag!} {...Astro.props} />

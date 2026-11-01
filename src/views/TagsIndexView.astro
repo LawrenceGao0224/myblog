@@ -1,0 +1,43 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeading from '../components/PageHeading.astro';
+import { T, langOf } from '../i18n';
+import { allCategories, allTags, categoryUrl, getPosts, tagUrl } from '../utils';
+
+const lang = langOf(Astro.url);
+const t = T[lang];
+const posts = await getPosts(lang);
+const groups = [
+  { title: t.categories, items: allCategories(posts).map(([n, c]) => ({ name: n, count: c, href: categoryUrl(n, lang) })) },
+  { title: t.tags, items: allTags(posts).map(([n, c]) => ({ name: `#${n}`, count: c, href: tagUrl(n, lang) })) },
+];
+---
+<Base title={t.explore}>
+  <PageHeading kicker="Explore" title={t.explore} subtitle={t.exploreSub} />
+  <div class="wrap-wide">
+    {groups.map((g) => (
+      <section class="reveal">
+        <h2 class="section-title">{g.title}</h2>
+        <div class="cards">
+          {g.items.map((i) => (
+            <a href={i.href}><span class="serif name">{i.name}</span><span class="muted">{t.countPosts(i.count)}</span></a>
+          ))}
+        </div>
+      </section>
+    ))}
+  </div>
+</Base>
+
+<style>
+  section + section { margin-top: 56px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+  .cards a {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 22px 24px;
+    border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface);
+    transition: border-color 0.2s;
+  }
+  .cards a:hover { border-color: var(--accent); }
+  .name { font-size: 22px; }
+  .muted { font-size: 14px; }
+</style>

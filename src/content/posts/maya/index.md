@@ -10,7 +10,6 @@ category: Work
 toc: true
 ---
 > Maya 是 3D 電腦動畫軟體，擁有強大的建模、彩現、模擬、材質設定和動畫工具，適用於美工人員、建模人員和動畫師
-> Maya is a 3D computer animation software with powerful modeling, color rendering, simulation, material settings, and animation tools for artists, modelers, and animators.
 
 ![](./maya.jpg)
 
@@ -26,7 +25,7 @@ toc: true
 伴隨優雅的琴聲，聲音迴盪於山谷間，餘波盪漾，山水鏡射，車裡車外相透射，你泥中有我，我泥中有你，全車身以玻璃、水、氣泡，使車體超自然、虛無飄渺，卻又貨真價實擺在眼前，氣泡外殼反射紫色光暈，透露淡淡奢華，玻璃握把、座位區可細看出車體的每個細節，及設計美學，金屬材質的車燈及LOGO，其餘以水進行設計，打造精細的現代感，呈現高雅細膩之感...
 
 ---
-[作品呈現 Click On Me](https://drive.google.com/drive/folders/1p1te08vQCDFEZ7dcw9FoyRvf9eRl5cJm)
+[作品呈現](https://drive.google.com/drive/folders/1p1te08vQCDFEZ7dcw9FoyRvf9eRl5cJm)
 
 ![近景](./近景.jpeg)   ![內部細節](./內部細節.jpeg)   ![遠景](./遠景.jpeg)
 
@@ -40,8 +39,6 @@ toc: true
 
 皮革經歷時間越久越有韻味 然而皮鞋穿久了卻是滿滿回憶 
 
-The longer the leather has passed, the more it has the charm. However, the leather shoes are worn for a long time but full of memories.
-
 皮鞋變舊過程：
 1. 會失去其光澤
 2. 在長期穿過的指頭關節會有皺摺
@@ -49,7 +46,7 @@ The longer the leather has passed, the more it has the charm. However, the leath
 4. 外觀變得些許粗糙
 
 ---
-[作品呈現 Click On Me](https://drive.google.com/drive/folders/1p63-EbCh_Vi1qWExLoqcV0_fTUuZE9nv)
+[作品呈現](https://drive.google.com/drive/folders/1p63-EbCh_Vi1qWExLoqcV0_fTUuZE9nv)
 
 ![shoes](./shoes.jpg)
 
@@ -66,17 +63,17 @@ The longer the leather has passed, the more it has the charm. However, the leath
 ##### 作品呈現：
 共分三層：
 
-第一層：沙漠 desert
+第一層：沙漠
 沙漠乃生命起源
 
 ![desert](./1.jpeg)
 
-第二層：海洋 ocean
+第二層：海洋
 沙漠下方隱匿世界部分海洋
 
 ![ocean](./2.jpeg)
 
-第三層：雲朵 + 城市 cloud + city
+第三層：雲朵 + 城市
 海洋下 其實有雲朵及荒廢的文明 其受到沙漠唯一的缺口照亮
 
 ![city](./3.jpeg)

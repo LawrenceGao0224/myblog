@@ -9,11 +9,23 @@ tags:
 category: Blog
 toc: true
 ---
-VLOG(上): [https://youtu.be/Oqg6GZoz2Ow?si=zUoa-r9i7JcNip-C](https://youtu.be/Oqg6GZoz2Ow?si=zUoa-r9i7JcNip-C)
+VLOG(上)
 
-VLOG(中): [https://youtu.be/UVYMOC1A-3c?si=ePPPkCUvlXU8Ijd0](https://youtu.be/UVYMOC1A-3c?si=ePPPkCUvlXU8Ijd0)
+<div class="videos">
+<iframe class="yt" src="https://www.youtube-nocookie.com/embed/Oqg6GZoz2Ow" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
-VLOG(下): [https://youtu.be/-RDZHZxLXhE?si=TTKszwkV-Bfe3G8C](https://youtu.be/-RDZHZxLXhE?si=TTKszwkV-Bfe3G8C)
+VLOG(中)
+
+<div class="videos">
+<iframe class="yt" src="https://www.youtube-nocookie.com/embed/UVYMOC1A-3c" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+VLOG(下)
+
+<div class="videos">
+<iframe class="yt" src="https://www.youtube-nocookie.com/embed/-RDZHZxLXhE" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 ---
 

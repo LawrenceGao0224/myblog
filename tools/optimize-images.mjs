@@ -29,13 +29,16 @@ for (const slug of await readdir(POSTS)) {
   const dir = join(POSTS, slug);
   if (!(await stat(dir)).isDirectory()) continue;
   const files = new Set(await readdir(dir));
-  const md = await readFile(join(dir, 'index.md'), 'utf8');
-  const refs = [...md.matchAll(/!\[[^\]]*\]\(<?\.\/([^)>]+)>?\)|^cover: \.\/(.+)$/gm)].map((m) => m[1] ?? m[2]);
-  for (const ref of refs) {
-    if (files.has(ref)) continue;
-    const actual = [...files].find((f) => f.toLowerCase() === ref.toLowerCase());
-    console.log(`檔名不符：${dir}/index.md 寫的是 ${ref}，${actual ? `實際檔名是 ${actual}` : '找不到這個檔案'}`);
-    caseErrors++;
+  for (const name of ['index.md', 'index.en.md']) {
+    if (!files.has(name)) continue;
+    const md = await readFile(join(dir, name), 'utf8');
+    const refs = [...md.matchAll(/!\[[^\]]*\]\(<?\.\/([^)>]+)>?\)|^cover: \.\/(.+)$/gm)].map((m) => m[1] ?? m[2]);
+    for (const ref of refs) {
+      if (files.has(ref)) continue;
+      const actual = [...files].find((f) => f.toLowerCase() === ref.toLowerCase());
+      console.log(`檔名不符：${dir}/${name} 寫的是 ${ref}，${actual ? `實際檔名是 ${actual}` : '找不到這個檔案'}`);
+      caseErrors++;
+    }
   }
 }
 

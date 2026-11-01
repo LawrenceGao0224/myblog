@@ -1,12 +1,14 @@
 ---
-import { formatDate, readingMinutes, type Post } from '../utils';
+import { T } from '../i18n';
+import { formatDate, langOfPost, readingMinutes, type Post } from '../utils';
 interface Props { post: Post }
 const { post } = Astro.props;
+const lang = langOfPost(post);
 ---
 <p class="meta">
-  <time datetime={post.data.published.toISOString()}>{formatDate(post.data.published)}</time>
+  <time datetime={post.data.published.toISOString()}>{formatDate(post.data.published, lang)}</time>
   <span aria-hidden="true">·</span>
-  <span>{readingMinutes(post)} 分鐘閱讀</span>
+  <span>{T[lang].minRead(readingMinutes(post))}</span>
 </p>
 
 <style>

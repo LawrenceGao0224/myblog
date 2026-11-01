@@ -136,6 +136,10 @@ a.kicker:hover { text-decoration: underline; text-underline-offset: 3px; }
   border: 0;
   border-radius: var(--radius);
 }
+/* YouTube：橫式 16:9；直式 Shorts 9:16，多支並排 */
+.prose .videos { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin: 1.6em 0; }
+.prose .videos iframe.yt { flex: 1 1 100%; margin: 0; aspect-ratio: 16 / 9; background: #000; }
+.prose .videos iframe.yt.short { flex: 0 1 210px; width: 210px; aspect-ratio: 9 / 16; }
 .prose pre { padding: 1em; border-radius: var(--radius); overflow-x: auto; font-size: 14px; line-height: 1.6; }
 .prose a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .prose a:hover { text-decoration-thickness: 2px; }

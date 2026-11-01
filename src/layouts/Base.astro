@@ -3,38 +3,53 @@ import '../styles/global.css';
 import Analytics from '../components/Analytics.astro';
 import Icon from '../components/Icon.astro';
 import { SITE, SOCIAL } from '../config';
-import { url } from '../utils';
+import { LOCALE, T, langOf, otherLangPath } from '../i18n';
+import { langUrl, url } from '../utils';
 
 interface Props {
   title?: string;
   description?: string;
   image?: string;
+  /** 另一種語言沒有這頁時，切換按鈕要去的地方 */
+  altHref?: string;
 }
-const { title, description = SITE.description, image } = Astro.props;
+const lang = langOf(Astro.url);
+const t = T[lang];
+const { title, description = SITE.description[lang], image, altHref } = Astro.props;
 const pageTitle = title ? `${title} - ${SITE.title}` : SITE.title;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const nav = [
-  { label: '首頁', href: url('/') },
-  { label: '旅遊', href: url('/tags/Travel/') },
-  { label: '生活', href: url('/tags/Blog/') },
-  { label: '工作', href: url('/tags/Work/') },
-  { label: '所有文章', href: url('/archive/') },
-  { label: '關於', href: url('/about/') },
+  { label: t.home, href: langUrl(lang, '/') },
+  { label: t.travel, href: langUrl(lang, '/tags/Travel/') },
+  { label: t.life, href: langUrl(lang, '/tags/Blog/') },
+  { label: t.work, href: langUrl(lang, '/tags/Work/') },
+  { label: t.allPosts, href: langUrl(lang, '/archive/') },
+  { label: t.about, href: langUrl(lang, '/about/') },
 ];
+const altPath = altHref ?? otherLangPath(Astro.url);
+const zhHref = new URL(lang === 'zh' ? Astro.url.pathname : altPath, Astro.site);
+const enHref = new URL(lang === 'en' ? Astro.url.pathname : altPath, Astro.site);
 const current = Astro.url.pathname;
 ---
 <!doctype html>
-<html lang={SITE.lang} data-theme="light">
+<html lang={LOCALE[lang].html} data-theme="light">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    {!altHref && (
+      <>
+        <link rel="alternate" hreflang="zh-TW" href={zhHref} />
+        <link rel="alternate" hreflang="en" href={enHref} />
+        <link rel="alternate" hreflang="x-default" href={zhHref} />
+      </>
+    )}
     <link rel="icon" href={url('/favicon.ico')} sizes="48x48" />
     <link rel="icon" type="image/png" href={url('/icon-192.png')} sizes="192x192" />
     <link rel="apple-touch-icon" href={url('/apple-touch-icon.png')} />
-    <link rel="alternate" type="application/rss+xml" title={SITE.title} href={url('/rss.xml')} />
+    <link rel="alternate" type="application/rss+xml" title={SITE.title} href={langUrl(lang, '/rss.xml')} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
@@ -54,8 +69,8 @@ const current = Astro.url.pathname;
   <body>
     <header class="site-header">
       <div class="wrap-wide bar">
-        <a class="brand serif" href={url('/')}>{SITE.title}</a>
-        <nav class="menu" aria-label="主選單">
+        <a class="brand serif" href={langUrl(lang, '/')}>{SITE.title}</a>
+        <nav class="menu" aria-label={t.mainMenu}>
           {nav.map((n) => (
             <a href={n.href} aria-current={current === n.href ? 'page' : undefined}>{n.label}</a>
           ))}
@@ -64,16 +79,17 @@ const current = Astro.url.pathname;
           {SOCIAL.slice(0, 2).map((s) => (
             <a class="icon social" href={s.href} target="_blank" rel="noopener" aria-label={s.label}><Icon name={s.icon} size={19} /></a>
           ))}
-          <button id="theme-toggle" class="icon" type="button" aria-label="切換深色／淺色">
+          <a class="lang" href={altPath} hreflang={lang === 'zh' ? 'en' : 'zh-TW'} lang={lang === 'zh' ? 'en' : 'zh-TW'} aria-label={t.switchLang} title={t.switchLang}>{t.switchLabel}</a>
+          <button id="theme-toggle" class="icon" type="button" aria-label={t.toggleTheme}>
             <span class="sun"><Icon name="sun" size={19} /></span>
             <span class="moon"><Icon name="moon" size={19} /></span>
           </button>
-          <button id="menu-toggle" class="icon" type="button" aria-label="開啟選單" aria-expanded="false" aria-controls="mobile-menu">
+          <button id="menu-toggle" class="icon" type="button" aria-label={t.openMenu} aria-expanded="false" aria-controls="mobile-menu">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
           </button>
         </div>
       </div>
-      <nav id="mobile-menu" class="mobile-menu" aria-label="手機選單" hidden>
+      <nav id="mobile-menu" class="mobile-menu" aria-label={t.mobileMenu} hidden>
         {nav.map((n) => <a href={n.href}>{n.label}</a>)}
       </nav>
     </header>
@@ -83,14 +99,14 @@ const current = Astro.url.pathname;
     <footer class="site-footer">
       <div class="wrap-wide inner">
         <div>
-          <a class="brand serif" href={url('/')}>{SITE.title}</a>
+          <a class="brand serif" href={langUrl(lang, '/')}>{SITE.title}</a>
           <p class="muted">{SITE.subtitle}</p>
         </div>
         <div class="social-row">
           {SOCIAL.map((s) => <a href={s.href} target="_blank" rel="noopener" aria-label={s.label}><Icon name={s.icon} size={19} /></a>)}
         </div>
       </div>
-      <p class="wrap-wide copy muted">© {new Date().getFullYear()} {SITE.author} · <a href={url('/rss.xml')}>RSS</a></p>
+      <p class="wrap-wide copy muted">© {new Date().getFullYear()} {SITE.author} · <a href={langUrl(lang, '/rss.xml')}>RSS</a></p>
     </footer>
     <script is:inline>
       document.getElementById('theme-toggle').addEventListener('click', () => {
@@ -155,6 +171,22 @@ const current = Astro.url.pathname;
     transition: background-color 0.2s;
   }
   .icon:hover { background: var(--surface-2); }
+  .lang {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 38px;
+    height: 30px;
+    margin-right: 2px;
+    padding: 0 8px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .lang:hover { border-color: var(--accent); color: var(--accent); }
   .moon { display: none; }
   :global([data-theme='light']) .moon { display: inline-flex; }
   :global([data-theme='light']) .sun { display: none; }

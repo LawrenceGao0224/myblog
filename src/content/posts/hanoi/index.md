@@ -51,7 +51,9 @@ toc: true
 ![](./6.jpg)
 
 再步行抵達著名的[河內火車街](https://maps.app.goo.gl/bVYmPjvnyqm6supg8)，建議在火車班次前提早30~60分鐘抵達。
-YouTube Shorts:[https://www.youtube.com/shorts/3xjEDx9t3Gc](https://www.youtube.com/shorts/3xjEDx9t3Gc)
+<div class="videos">
+<iframe class="yt short" src="https://www.youtube-nocookie.com/embed/3xjEDx9t3Gc" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 ![](./7.jpg)
 
@@ -73,7 +75,9 @@ YouTube Shorts:[https://www.youtube.com/shorts/3xjEDx9t3Gc](https://www.youtube.
 > 陸龍灣行程是我最喜歡的行程，在這天不只看到金宣虎跟智秀，也看到Alan Walker!
 
 參加晚上的跨年行程，體驗在路邊攤邊吃東西邊跨年，越南跨年超級嗨。
-YouTube Shorts:[https://www.youtube.com/shorts/q6dic_H1Asg](https://www.youtube.com/shorts/q6dic_H1Asg)
+<div class="videos">
+<iframe class="yt short" src="https://www.youtube-nocookie.com/embed/q6dic_H1Asg" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 ![](./14.jpg)
 

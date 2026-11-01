@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import Meta from './Meta.astro';
-import { postUrl, tagUrl, type Post } from '../utils';
+import { langOfPost, postUrl, tagUrl, type Post } from '../utils';
 
 // size="md"：圖在上、文字在下；size="sm"：左圖右文的精簡列
 interface Props { post: Post; size?: 'md' | 'sm' }
@@ -13,7 +13,7 @@ const { title, description, cover, tags } = post.data;
     {cover && <Image src={cover} alt="" widths={size === 'sm' ? [240, 480] : [480, 800]} sizes={size === 'sm' ? '140px' : '(max-width: 640px) 100vw, 400px'} loading="lazy" layout="none" />}
   </a>
   <div class="text">
-    {tags[0] && <a class="kicker" href={tagUrl(tags[0])}>{tags[0]}</a>}
+    {tags[0] && <a class="kicker" href={tagUrl(tags[0], langOfPost(post))}>{tags[0]}</a>}
     <h3 class="serif"><a href={postUrl(post)}>{title}</a></h3>
     {size === 'md' && description && <p class="dek">{description}</p>}
     <Meta post={post} />

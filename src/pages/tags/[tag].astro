@@ -1,24 +1,7 @@
 ---
-import Base from '../../layouts/Base.astro';
-import WithSidebar from '../../layouts/WithSidebar.astro';
-import PageHeading from '../../components/PageHeading.astro';
-import PostGrid from '../../components/PostGrid.astro';
-import { allTags, getPosts, type Post } from '../../utils';
-
-export async function getStaticPaths() {
-  const posts = await getPosts();
-  return allTags(posts).map(([tag]) => ({
-    params: { tag },
-    props: { all: posts, posts: posts.filter((p) => p.data.tags.includes(tag)) },
-  }));
-}
-
+import ListView from '../../views/ListView.astro';
+import { tagPaths } from '../../paths';
+export const getStaticPaths = () => tagPaths('zh');
 const { tag } = Astro.params;
-const { all, posts } = Astro.props as { all: Post[]; posts: Post[] };
 ---
-<Base title={`#${tag}`}>
-  <PageHeading kicker="標籤" title={`#${tag}`} subtitle={`${posts.length} 篇文章`} />
-  <WithSidebar posts={all}>
-    <PostGrid posts={posts} />
-  </WithSidebar>
-</Base>
+<ListView kind="tag" name={tag!} {...Astro.props} />

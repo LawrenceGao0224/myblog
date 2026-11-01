@@ -174,20 +174,26 @@ Microsoft Associate Consultant : 看到是去年9月開的職缺，可能已經�
 
 網路：
 http://linux.vbird.org/linux_server/0110network_basic.php#tcpip_network_arp
-https://www.youtube.com/watch?v=QKfk7YFILws&ab_channel=Geek%27sLesson
+<div class="videos">
+<iframe class="yt" src="https://www.youtube-nocookie.com/embed/QKfk7YFILws" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 演算法：
 Sorting: https://www.toptal.com/developers/sorting-algorithms
 LeetCode great solutions: https://www.youtube.com/channel/UC_mYaQAE6-71rjSN6CeCA-g/community
 
 資料庫：
-https://www.youtube.com/watch?v=7S_tz1z_5bA&ab_channel=ProgrammingwithMosh
-https://www.youtube.com/watch?v=ZS_kXvOeQ5Y&ab_channel=Academind
+<div class="videos">
+<iframe class="yt" src="https://www.youtube-nocookie.com/embed/7S_tz1z_5bA" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe class="yt" src="https://www.youtube-nocookie.com/embed/ZS_kXvOeQ5Y" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 System Design:
 https://medium.com/%E5%BE%8C%E7%AB%AF%E6%96%B0%E6%89%8B%E6%9D%91/%E7%B3%BB%E7%B5%B1%E8%A8%AD%E8%A8%88%E5%AD%B8%E7%BF%92%E5%9C%B0%E5%9C%96-de216ab211fb
-https://www.youtube.com/watch?v=bUHFg8CZFws&ab_channel=SystemDesignInterview
-https://www.youtube.com/watch?v=hnpzNAPiC0E&ab_channel=InfoQ
+<div class="videos">
+<iframe class="yt" src="https://www.youtube-nocookie.com/embed/bUHFg8CZFws" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe class="yt" src="https://www.youtube-nocookie.com/embed/hnpzNAPiC0E" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 作業系統：
 https://mropengate.blogspot.com/2017/09/operating-system-concepts.html
@@ -195,9 +201,6 @@ http://debussy.im.nuu.edu.tw/sjchen/OS_Final.html
 
 K8s:
 https://ithelp.ithome.com.tw/articles/10192401
-https://www.youtube.com/watch?v=X48VuDVv0do&list=LL&index=13&ab_channel=TechWorldwithNana
-
-
-
-
-
+<div class="videos">
+<iframe class="yt" src="https://www.youtube-nocookie.com/embed/X48VuDVv0do" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>

@@ -2,10 +2,12 @@
 import Base from '../layouts/Base.astro';
 import PageHeading from '../components/PageHeading.astro';
 import { url } from '../utils';
+// GitHub Pages 所有找不到的網址都用這一頁，所以中英文並列
 ---
-<Base title="找不到頁面">
-  <PageHeading kicker="404" title="找不到這個頁面" subtitle="網址可能打錯了，或文章已經搬家。" />
+<Base title="404" altHref={url('/en/')}>
+  <PageHeading kicker="404" title="找不到這個頁面 · Page not found" subtitle="網址可能打錯了，或文章已經搬家。The link may be mistyped, or the post has moved." />
   <div class="wrap-wide" style="margin-top: 24px">
-    <p><a href={url('/')}>回首頁</a> 或看看 <a href={url('/archive/')}>所有文章</a>。</p>
+    <p><a href={url('/')}>回首頁</a> · <a href={url('/archive/')}>所有文章</a></p>
+    <p><a href={url('/en/')}>English home</a> · <a href={url('/en/archive/')}>All posts</a></p>
   </div>
 </Base>

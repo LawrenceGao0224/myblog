@@ -1,9 +1,11 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
+import { LOCALE, type Lang } from './i18n';
 
-export type Post = CollectionEntry<'posts'>;
+export type Post = CollectionEntry<'posts'> | CollectionEntry<'postsEn'>;
 
-export async function getPosts(): Promise<Post[]> {
-  const posts = await getCollection('posts', ({ data }) => import.meta.env.DEV || !data.draft);
+export async function getPosts(lang: Lang = 'zh'): Promise<Post[]> {
+  const keep = ({ data }: Post) => import.meta.env.DEV || !data.draft;
+  const posts: Post[] = lang === 'en' ? await getCollection('postsEn', keep) : await getCollection('posts', keep);
   return posts.sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf());
 }
 
@@ -13,13 +15,23 @@ export function url(path = '/'): string {
   return `${base}${path.startsWith('/') ? path : `/${path}`}`;
 }
 
-export const postUrl = (post: Post) => url(`/posts/${post.id}/`);
-export const tagUrl = (tag: string) => url(`/tags/${encodeURIComponent(tag)}/`);
-export const categoryUrl = (cat: string) => url(`/categories/${encodeURIComponent(cat)}/`);
+/** 依語言加上 /en 前綴 */
+export const langUrl = (lang: Lang, path = '/') => url(lang === 'en' ? `/en${path}` : path);
+export const langOfPost = (post: Post): Lang => (post.collection === 'postsEn' ? 'en' : 'zh');
 
-export function formatDate(date: Date): string {
-  return date.toLocaleDateString('zh-TW', { year: 'numeric', month: '2-digit', day: '2-digit', timeZone: 'Asia/Taipei' });
+export const postUrl = (post: Post) => langUrl(langOfPost(post), `/posts/${post.id}/`);
+export const tagUrl = (tag: string, lang: Lang = 'zh') => langUrl(lang, `/tags/${encodeURIComponent(tag)}/`);
+export const categoryUrl = (cat: string, lang: Lang = 'zh') => langUrl(lang, `/categories/${encodeURIComponent(cat)}/`);
+
+export function formatDate(date: Date, lang: Lang = 'zh'): string {
+  return lang === 'en'
+    ? date.toLocaleDateString(LOCALE.en.date, { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'Asia/Taipei' })
+    : date.toLocaleDateString(LOCALE.zh.date, { year: 'numeric', month: '2-digit', day: '2-digit', timeZone: 'Asia/Taipei' });
 }
+
+/** 年份（台灣時間），文章列表依年份分組用 */
+export const yearOf = (date: Date) =>
+  date.toLocaleDateString('en-US', { year: 'numeric', timeZone: 'Asia/Taipei' });
 
 export function allTags(posts: Post[]): [string, number][] {
   const counts = new Map<string, number>();
@@ -43,7 +55,7 @@ export function relatedPosts(post: Post, posts: Post[], n = 3): Post[] {
 /** 閱讀時間：中文每分鐘約 400 字、英文約 200 字 */
 export function readingMinutes(post: Post): number {
   const body = (post.body ?? '').replace(/<[^>]*>/g, ' ').replace(/\]\([^)]*\)/g, ']');
-  const cjk = (body.match(/[\u4e00-\u9fff]/g) ?? []).length;
-  const words = body.replace(/[\u4e00-\u9fff]/g, ' ').split(/\s+/).filter(Boolean).length;
+  const cjk = (body.match(/[一-鿿]/g) ?? []).length;
+  const words = body.replace(/[一-鿿]/g, ' ').split(/\s+/).filter(Boolean).length;
   return Math.max(1, Math.round(cjk / 400 + words / 200));
 }

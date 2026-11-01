@@ -1,5 +1,5 @@
 ---
-title: 東京熱不熱 - Japan Tokyo
+title: 東京熱不熱
 description: 2023.9.28 - 2023.10.7
 published: '2023-10-11T19:20:09+08:00'
 slug: japan-tokyo
@@ -9,15 +9,19 @@ tags:
 category: Blog
 toc: true
 ---
-> First time in Japan, charmed and fascinated.
-> Friendly faces, a foreign yet warm language,
-> Guiding me through the city's vibrant swarm.
-> Streets so clean, they gleam like polished gold.
-> In this vibrant city, cherished memories are found.
+> 第一次來到日本，就被深深吸引、著迷不已。
+> 友善的笑臉、陌生卻溫暖的語言，
+> 帶著我穿梭在熙來攘往的城市裡。
+> 街道乾淨得像擦亮的金子一樣閃閃發光。
+> 在這座充滿活力的城市，留下了珍貴的回憶。
 
 ---
 
-# [My Japan Tokyo vlog](https://youtu.be/PeZZcBRyL3g)
+# 我的日本東京 vlog
+
+<div class="videos">
+<iframe class="yt" src="https://www.youtube-nocookie.com/embed/PeZZcBRyL3g" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 ---
 
@@ -25,138 +29,138 @@ toc: true
 
 ---
 
-# 行前準備 preparation
+# 行前準備
 
-Flight bookings: Remember to book the tickets correctly, especially the name spelling and passport number, because I typed my girlfriend’s name incorrectly until the day before the flight, and we only realized the mistake then.
+訂機票：訂票時一定要仔細確認，尤其是英文姓名拼法跟護照號碼，因為我把女友的名字打錯了，直到出發前一天才發現。
 
-Hotels: Because the great hotels tend to get fully booked quickly, we used [booking.com](http://booking.com) and [agoda.com](http://agoda.com) to compare prices and make reservations. 
+住宿：好的飯店很快就會被訂滿，所以我們用 [booking.com](http://booking.com) 跟 [agoda.com](http://agoda.com) 比價後再訂房。
 
-Weather: When we arrived, it was really hot, but three days later, it became quite chilly, with temperatures at about 20 degrees Celsius.  
+天氣：剛到的時候超熱，但三天後就變得蠻涼的，大概 20 度左右。
 
-Clothing & Necessities: 
+衣物與必需品：
 
 [What to Pack for Japan: 8 Essential Things for a Hassle-Free Trip | LIVE JAPAN travel guide](https://livejapan.com/en/article-a0000218/)
 
-# Day schedule
+# 行程表
 
-## Day 1 : Taiwan to Japan
+## Day 1：台灣到日本
 
-Our plane departed at 14:25, and the arrival time was 18:50.
+我們的飛機 14:25 起飛，18:50 抵達。
 ![](./1.jpg)
 
-When we arrived at Japan's Narita International Airport (成田国際空港), my suitcase was broken. We checked into the hotel first and then went to a nearby barbecue restaurant called [一頭牛燒肉 房家](https://maps.app.goo.gl/oHD24i5YBM2QxgQK8)
+抵達日本成田國際機場（成田国際空港）時，發現我的行李箱壞了。我們先去飯店 check in，再到附近一家燒肉店 [一頭牛燒肉 房家](https://maps.app.goo.gl/oHD24i5YBM2QxgQK8)
 
 ![](./2.jpg)
 ![](./3.jpg)
 
 
-## Day 2 : 鎌倉 Kamakura & 江ノ島 Enoshima
+## Day 2 : 鎌倉 & 江ノ島
 
-It’s a cool coastal town just an hour from Tokyo by train. We kicked off at 8:00 AM, and the streets were still pretty quiet.
+鎌倉是個很酷的海邊小鎮，從東京搭電車只要一小時。我們早上 8 點出發，街上還很安靜。
 
-We made a stop at this cute bakery inside 品川 Shinagawa station for some yummy mini sandwiches. Can you believe how fresh and tasty they were? Oh, and remember, no munching while walking in Japan, so we sat down to enjoy.
+我們在品川站裡一家可愛的麵包店停下來，買了好吃的迷你三明治。真的新鮮又好吃到不行！對了，記得在日本不要邊走邊吃，所以我們找位子坐下來慢慢享用。
 
-By 10 AM, we hit Kamakura, the weather was kinda cloudy, but it felt nice. As soon as you step out the station, you'll spot this Torii gate marking the start of the famous 小町Komachi Dori shopping street[小町通](https://maps.app.goo.gl/inCCR8xKa67w1hC5A).
+10 點左右抵達鎌倉，天氣有點陰，但感覺很舒服。一出車站就會看到一座鳥居，那裡就是有名的[小町通](https://maps.app.goo.gl/inCCR8xKa67w1hC5A)商店街的起點。
 
 ![](./4.jpg)
 
-We tried matcha ice cream for the first time in Japan, and it was super tasty on a chilly day like this!
+我們第一次在日本吃抹茶冰淇淋，在這種涼涼的天氣吃超級好吃！
 
-The shops here were adorable, selling local goodies like scents, crystal jewelry, honey, and more.
+這裡的小店都好可愛，賣香氛、水晶飾品、蜂蜜等等在地好物。
 ![](./13.jpg)
-And don't miss out on this Good Luck Buddha cake. It's fluffy with a sweet filling. Each flavor brings luck in a different area of life – and they're delicious!
+也千萬別錯過這個開運大佛蛋糕，口感鬆軟、內餡甜甜的，每種口味代表不同面向的好運——而且都很好吃！
 ![](./5.jpg)
 
-Further down, we came across the [鶴岡八幡宮 Tsurugaoka Hachimangu shrine](https://maps.app.goo.gl/dkJHCtaJ58rjzaW69). It had this ancient, serene vibe that made us feel so calm.
+再往前走，就來到了[鶴岡八幡宮](https://maps.app.goo.gl/dkJHCtaJ58rjzaW69)，古老又寧靜的氛圍讓我們整個人都平靜下來。
 
-Next up was the Great Buddha at [鎌倉大佛殿高德院Kotokuin temple](https://maps.app.goo.gl/vbAeADHkU4mA5WuT9). This spot is a must-see, full of vibes and history that are totally special.
+接著去看[鎌倉大佛殿高德院](https://maps.app.goo.gl/vbAeADHkU4mA5WuT9)的大佛，這裡絕對必訪，充滿氛圍跟歷史，真的很特別。
 ![](./6.jpg)
 
-And then, I tried these sweet soy sauce dumplings. The owner was super kind and even treated us to some free matcha tea.
+然後我吃了甜醬油糰子，老闆人超好，還招待我們免費的抹茶。
 
-If you're into anime, you might recognize the famous [鎌倉高校前Kamakurakokomae crossing](https://maps.app.goo.gl/XqBm51KXiKMDJLnx9). We got there at noon, so getting a pic without someone's head in it was a bit of a challenge. Tip: for awesome pics, go early on a weekday!
+如果你有在看動漫，應該認得有名的[鎌倉高校前](https://maps.app.goo.gl/XqBm51KXiKMDJLnx9)平交道。我們中午才到，要拍一張沒有別人頭入鏡的照片有點挑戰。小建議：想拍好照片，平日早點去！
 ![](./7.jpg)
 
-I was starving, so we hit a local ramen shop [Enoshima Black Ramen MENGA](https://maps.app.goo.gl/hKNvHcizGKchriF77). My girlfriend went for beef rice, and I got soy sauce ramen - both hit the spot.
+肚子超餓，我們就去了一家在地拉麵店 [Enoshima Black Ramen MENGA](https://maps.app.goo.gl/hKNvHcizGKchriF77)。女友點了牛肉飯，我點醬油拉麵，兩個都很滿足。
 
 
-Finally, we wrapped up the day at [江之島大橋 Enoshima Island](https://maps.app.goo.gl/HcXBxzkaZze8rb767), right around sunset. The view was absolutely breathtaking! The island's connected by a bridge and has so much to explore. There are tons of souvenir shops by those torii gates and on the road leading to Enoshima Shrine. And trust me, the treats here are unique and totally worth a try!
+最後，我們在夕陽時分來到[江之島大橋](https://maps.app.goo.gl/HcXBxzkaZze8rb767)，景色美到令人屏息！江之島有一座橋連接，島上有好多地方可以逛。鳥居旁邊跟通往江島神社的路上有一堆伴手禮店。相信我，這裡的小吃都很特別，絕對值得一試！
 ![](./8.jpg)
 ![](./9.jpg)
 
 
-Heading back to Ueno, we had grilled eel over rice for dinner, it's really delicious. Let's call it a day!
+回到上野，晚餐吃了鰻魚飯，真的很好吃。今天就到這裡啦！
 ![](./11.jpg)
 ![](./10.jpg)
 
-## Day 3 : 銀座 Ginza & Teamlab
+## Day 3 : 銀座 & Teamlab
 
-We went to the [皇居 Kokyo Higashi Gyoen Garden](https://maps.app.goo.gl/PN9RiVsrxWGHEPGX7) near Tokyo Station, right by the Imperial Palace. It's a super cool and quiet place, but we couldn't actually go inside the palace, so we just strolled around the garden.
+我們去了東京車站附近、緊鄰皇居的[皇居東御苑](https://maps.app.goo.gl/PN9RiVsrxWGHEPGX7)。這裡很酷又很安靜，不過皇居本身沒辦法進去，所以我們就在庭園裡散步。
 ![](./14.jpg)
 ![](./15.jpg)
 
-Around 10 in the morning, we visited Ginza and explored the area. There's a time when the street is only for pedestrians, with no cars allowed. It's filled with upscale stores and renowned restaurants. We checked out Uniqlo and MUJI, and let me tell you, they have everything you could want. I even bought some clothes there; it's like a shopping paradise.
+早上 10 點左右，我們去銀座逛逛。這裡有個時段是行人徒步區，車子不能進來。街上滿滿都是高級精品店跟知名餐廳。我們逛了 Uniqlo 跟 MUJI，真的是想要什麼都有，我還買了幾件衣服，根本購物天堂。
 ![](./17.jpg)
 ![](./19.jpg)
 
-For lunch, we tried some local Ramen at [銀座 嚆矢](https://maps.app.goo.gl/VuGF1eRXcUuzV2vY9). The soup was quite robust, and I loved it, but my girlfriend found it a bit too salty.
+午餐我們吃了在地拉麵 [銀座 嚆矢](https://maps.app.goo.gl/VuGF1eRXcUuzV2vY9)，湯頭很濃郁，我很喜歡，但女友覺得有點太鹹。
 ![](./16.jpg)
 
-Lastly, we visited [TeamLab Planets](https://maps.app.goo.gl/LL7ML45QgBjLUuDj9). Make sure you book your tickets ahead of time, or you'll have to wait in line forever. It was crowded, but completely worth it. You have to immerse yourself in the entire experience, and it's kind of mysterious and cool. You can feel the lights and sounds throughout your whole body, even the ground, the water, and the floor. It was my first time experiencing something like that, and it felt like a complete miracle.
+最後我們去了 [teamLab Planets](https://maps.app.goo.gl/LL7ML45QgBjLUuDj9)。一定要事先訂票，不然會排隊排到天荒地老。人很多，但完全值得。你必須讓自己完全沉浸在整個體驗裡，有點神祕又很酷。燈光跟聲音彷彿傳遍全身，連地面、水和地板都感受得到。這是我第一次有這種體驗，感覺就像奇蹟一樣。
 ![](./18.jpg)
 
 
-## Day 4 : 原宿 Harajuku、新宿 Shinjuku + 澀谷 Shibuya
+## Day 4 : 原宿、新宿 + 澀谷
 
-We arrived at [明治神宮](https://maps.app.goo.gl/m3KBL9d2bpvWaz3j9) at about 9 in the morning. It's tranquil but bustling with people, and the shrine itself exudes peace. This place is renowned for the **明治維新** (Meiji Restoration), which aimed to merge "modern advances" with traditional "eastern" values.
+我們大約早上 9 點抵達[明治神宮](https://maps.app.goo.gl/m3KBL9d2bpvWaz3j9)。這裡很寧靜，但人潮也不少，神社本身散發著平和的氣息。這裡跟**明治維新**有關，明治維新的目標是將「現代進步」與傳統「東方」價值結合。
 ![](./24.jpg)
 
-Around 10:30, we visited some thrift stores in Harajuku. I didn't purchase any clothes, but I would definitely recommend checking them out. There are some cool streets and hidden spots in that area.
+10:30 左右，我們去逛了原宿的幾家古著店。雖然我沒買衣服，但絕對推薦去看看，那一帶有一些很酷的街道跟隱藏小店。
 ![](./20.jpg)
 
-Lunchtime! We had sushi at this somewhat hidden place, [Sanaka](https://maps.app.goo.gl/M7ZXdKsVyo7PAztS7). It's a small restaurant, but the food is fantastic for the price. We didn't have to wait too long, but when we left, there was a line forming outside.
+午餐時間！我們在一家有點隱密的店 [Sanaka](https://maps.app.goo.gl/M7ZXdKsVyo7PAztS7) 吃壽司。店面不大，但以這個價格來說真的超好吃。我們沒等太久，但離開時外面已經開始排隊了。
 ![](./21.jpg)
 
-Later, we swung by Shibuya around 3:30. There were so many people; it felt like the whole world was crossing the Shibuya intersection, [渋谷スクランブル交差点](https://maps.app.goo.gl/NnqAayUgA52uWddB6). We visited some stores, including the Disney shop. I ended up finding some affordable shoes at ABC-Mart. We had intended to go to the Shibuya Sky, but it was crowded, so we just relaxed at the Starbucks right above the crossing. Watching everyone pass by was quite enjoyable.
+之後大概 3:30 我們晃到澀谷。人超多，好像全世界都在過澀谷十字路口 [渋谷スクランブル交差点](https://maps.app.goo.gl/NnqAayUgA52uWddB6)。我們逛了幾家店，包括迪士尼商店，我最後在 ABC-Mart 找到便宜的鞋子。本來想上 Shibuya Sky，但人太多了，所以就在十字路口正上方的星巴克休息，看著人來人往其實還蠻有趣的。
 ![](./22.jpg)
 
-We headed back to Ueno and had some tasty and affordable fried pork chops [とんかつ山家 上野店](https://maps.app.goo.gl/h6yDvymHHUDTseWN6)
-. That pretty much wrapped up our day.
+我們回到上野，吃了好吃又平價的炸豬排 [とんかつ山家 上野店](https://maps.app.goo.gl/h6yDvymHHUDTseWN6)
+。今天差不多就這樣結束了。
 ![](./23.jpg)
 
 
-## Day 5: 富士山 Mount Fuji + 歌舞伎町 kabukicho + 藥妝 Drugstore
+## Day 5: 富士山 + 歌舞伎町 + 藥妝
 
-We joined a KKdays trip that took us from Shinjuku to Mount Fuji. The package included tickets, a tour guide, and transportation, but it did not cover food or drinks.
+我們參加了 KKday 的一日遊，從新宿出發到富士山。行程包含門票、導遊和交通，但不含餐點飲料。
 
-Our first stop was [新倉山淺間公園 Arakurayama Sengen Park](https://maps.app.goo.gl/gY3JSubaG6kecdh4A), just a 5-10 minute walk from Shimo-Yoshida Station [下吉田](https://maps.app.goo.gl/ktMk67rKct4E6UUU7). I was captivated by the view from the temple, even though the top of Fuji was obscured by clouds, and there was no snow. It didn't look as spectacular as the photos I had seen.
+第一站是[新倉山淺間公園](https://maps.app.goo.gl/gY3JSubaG6kecdh4A)，從[下吉田](https://maps.app.goo.gl/ktMk67rKct4E6UUU7)站走路只要 5-10 分鐘。從神社望出去的景色讓我看得入迷，雖然富士山頂被雲遮住，也還沒有積雪，沒有我之前看過的照片那麼壯觀。
 ![](./25.jpg)
 
-Next, we hit up [Shimoyoshida Honcho Street(Fuji Scenic View)](https://maps.app.goo.gl/J23EcGzJgiT2jUncA)
-, a famous spot for photos. But with so many tourists on the road, it was getting tricky for the locals. Let's all follow the rules and not bother the folks who live here. We managed to snap a few pics, and luckily, the cloud didn't cover Fuji's peak.
+接著我們去了有名的拍照景點 [下吉田本町通り（富士山景觀）](https://maps.app.goo.gl/J23EcGzJgiT2jUncA)
+。但馬路上觀光客太多，已經造成當地居民的困擾。大家一起遵守規定，不要打擾住在這裡的人。我們拍了幾張照，幸運的是雲沒有遮住富士山頂。
 ![](./26.jpg)
 
-For lunch, we went to [忍野八海 Oshino Hakkai](https://maps.app.goo.gl/RhaUr8DKgH8Yhoqd6), where they have a famous pool that's 8 meters deep and super clear. We had sweet soy sauce dumplings, ice cream, and beef barbecue.
+午餐我們去了[忍野八海](https://maps.app.goo.gl/RhaUr8DKgH8Yhoqd6)，這裡有一個深達 8 公尺、超級清澈的有名水池。我們吃了甜醬油糰子、冰淇淋和烤牛肉。
 ![](./27.jpg)
 
-Our final stop was [西湖 療癒之里 根場](https://maps.app.goo.gl/iPWi6cT6P3z6DghAA), famous for 合掌屋Gassho-zukuri. We checked out some stores and strolled through the village. It was so peaceful and made us feel grateful.
+最後一站是以合掌屋聞名的[西湖 療癒之里 根場](https://maps.app.goo.gl/iPWi6cT6P3z6DghAA)。我們逛了一些小店，在村子裡散步，非常寧靜，讓人心懷感恩。
 ![](./28.jpg)
 
-We got back to Shinjuku before 5:30 PM and took a walk in [日本〒160-0021 東京都新宿區歌舞伎町](https://maps.app.goo.gl/KZ4CVhbDJwPjj3XH9). We found a drugstore and went on a shopping spree, spending nearly 40,000 JPY.
+下午 5:30 前回到新宿，我們到[日本〒160-0021 東京都新宿區歌舞伎町](https://maps.app.goo.gl/KZ4CVhbDJwPjj3XH9)走走。找到一家藥妝店就開始瘋狂掃貨，花了將近 40,000 日圓。
 ![](./29.jpg)
 
-For dinner, we chose a place called [炸牛排本村(新宿ALTA後側店)](https://maps.app.goo.gl/AF3XBq9wPE68955G7). We waited for about an hour, but it was totally worth it. The beef was crispy on the outside and tender inside, and you could cook it to your liking on the iron panel in front of you. It was super yummy.
+晚餐我們選了[炸牛排本村(新宿ALTA後側店)](https://maps.app.goo.gl/AF3XBq9wPE68955G7)。等了大概一小時，但完全值得。牛肉外酥內嫩，還可以在面前的鐵板上煎到自己喜歡的熟度，超級好吃。
 
-I loved this trip because it saved us the hassle of booking tickets from Tokyo to Mount Fuji and planning out our day at the tourist spots.
+我很喜歡這個行程，因為省去了自己訂東京到富士山的車票、規劃景點行程的麻煩。
 
 
-## Day 6: DisneySea 
+## Day 6: DisneySea
 
-We got up at around 6:30 AM and took the subway from Ueno to DisneySea, arriving at about 7:30 AM. The train from Maihama to DisneySea is really cute inside. Since there are a lot of people, I would suggest arriving early. Around 8 AM, the entrance began to open. I strongly recommend going for the popular rides as soon as you enter the park because if you spend too much time shopping or walking slowly, you'll end up waiting forever. Here are some of the top rides:
-1. [Journey to the Centre of the Earth](https://www.tokyodisneyresort.jp/en/tds/attraction/detail/223/) (9/10)
-2. [Indiana Jones Adventure: Temple of the Crystal Skull](https://www.tokyodisneyresort.jp/en/tds/attraction/detail/222/) (10/10)
-3. [Toy Story Mania!](https://www.tokyodisneyresort.jp/en/tds/attraction/detail/218/) (100/10)
-4. [Soaring: Fantastic Flight](https://www.tokyodisneyresort.jp/en/tds/attraction/detail/219/) (Unfortunately, We did not play because too many people there!!)
+我們早上 6:30 左右起床，從上野搭電車到 DisneySea，大約 7:30 抵達。從舞濱到 DisneySea 的電車裡面超可愛。因為人很多，建議早點到。大約 8 點開始入園。我強烈建議一進園就先衝熱門設施，如果花太多時間逛街或慢慢走，就會排到天荒地老。以下是幾個熱門設施：
+1. [地心探險之旅 Journey to the Centre of the Earth](https://www.tokyodisneyresort.jp/en/tds/attraction/detail/223/) (9/10)
+2. [印第安納瓊斯冒險旅程：水晶骷髏頭魔宮 Indiana Jones Adventure: Temple of the Crystal Skull](https://www.tokyodisneyresort.jp/en/tds/attraction/detail/222/) (10/10)
+3. [玩具總動員瘋狂遊戲屋 Toy Story Mania!](https://www.tokyodisneyresort.jp/en/tds/attraction/detail/218/) (100/10)
+4. [翱翔：夢幻奇航 Soaring: Fantastic Flight](https://www.tokyodisneyresort.jp/en/tds/attraction/detail/219/)（可惜人太多，我們沒玩到！！）
 
 [* A Guide to Tokyo DisneySea: Best Rides and Snacks](https://www.tokyoweekender.com/japan-life/guide-tokyo-disneysea/)
 [* 14 Best Tokyo DisneySea Rides for Adults](https://neverendingvoyage.com/best-tokyo-disneysea-rides/)
@@ -165,121 +169,121 @@ We got up at around 6:30 AM and took the subway from Ueno to DisneySea, arriving
 ![](./34.jpg)
 ![](./33.jpg)
 
-Now, let's talk about the must-eat stuff at Tokyo DisneySea. I've got some recommendations from others, and trust me, the food there is crazy delicious.
+再來聊聊東京 DisneySea 必吃美食。我參考了別人的推薦，相信我，這裡的食物好吃到瘋掉。
 [* 9 Must-Try Foods at Tokyo DisneySea | byFood](https://www.byfood.com/blog/tokyo/tokyo-disneysea-food)
 ![](./36.jpg)
 ![](./37.jpg)
 
-The fireworks show at night was just incredible. It almost brought tears to my eyes. The action, the characters, the music, and the fireworks all came together perfectly. It reminded me of all those childhood memories, especially **The Little Mermaid** and **Frozen**. Those two really touched my heart. I totally recommend that everyone should come and enjoy this moment.
+晚上的煙火秀真的太精彩了，我差點哭出來。表演、角色、音樂和煙火完美結合，喚起了好多童年回憶，尤其是**小美人魚**跟**冰雪奇緣**，這兩部真的觸動了我的心。超推薦大家來感受這一刻。
 
 ![](./35.jpg)
 
 
-## Day 7: 秋葉原 Akihabara + 唐吉軻德 DON DON DONKI 
+## Day 7: 秋葉原 + 唐吉軻德
 
-Today, we decided to take it easy, so we got up late at 9 AM. And guess what? It was raining outside! So, we went to this super popular café called [EGG BABY CAFE](https://maps.app.goo.gl/rFoSP5ivgpUh5TwNA) that a local influencer recommended, and let me tell you, the dessert was delicious. But the egg sandwich, well, it was just okay for me.
+今天決定放鬆一下，所以 9 點才起床。結果你猜怎樣？外面在下雨！於是我們去了一家在地網紅推薦的超人氣咖啡廳 [EGG BABY CAFE](https://maps.app.goo.gl/rFoSP5ivgpUh5TwNA)，甜點很好吃，但雞蛋三明治對我來說就普普。
 ![](./42.jpg)
 
-After brunch, we went back to our hotel and took a nap until 12:00. Then, we headed to [秋葉原 Akihabara](https://maps.app.goo.gl/RYoqKEZu8whEQfL26), which is famous for all things electronic, anime, and video games. I got an action figure for my brother, and there's this cool Gacha machine area we spent some time playing at.
+吃完早午餐我們回飯店睡午覺睡到 12 點，接著前往以電子產品、動漫和電玩聞名的[秋葉原](https://maps.app.goo.gl/RYoqKEZu8whEQfL26)。我幫弟弟買了一個公仔，還在一個很酷的扭蛋區玩了一陣子。
 ![](./38.jpg)
 ![](./39.jpg)
 ![](./40.jpg)
 
-Later on, we hit up DON DON DONKI to buy some desserts that influencers raved about. But be warned, some makeup stuff and meds are pricier here.
+之後我們去 DON DON DONKI 買網紅大推的零食。不過要注意，有些化妝品跟藥品在這裡比較貴。
 [內行人激推！唐吉軻德必買零食推薦 TOP 10，香濃起士條、卡士達蒸蛋糕美味爆表！](https://www.juksy.com/article/123070)
 
 [唐吉軻德必買零食、泡麵、生活雜貨40樣+推薦！DON DON DONKI開逛前必看購物指南](https://www.harpersbazaar.com/tw/life/food/g35242871/don-don-donki-40-items-must-buy/)
 
-For dinner, we had Japanese curry [Hinoya Curry Akihabara](https://maps.app.goo.gl/ZJy7j456m7pHW35E9). I thought it was thick and tasty, but my girlfriend found it a bit too salty for her liking.
+晚餐吃日式咖哩 [日乃屋カレー 秋葉原](https://maps.app.goo.gl/ZJy7j456m7pHW35E9)。我覺得濃郁又好吃，但女友覺得對她來說有點太鹹。
 ![](./41.jpg)
 
-## Day 8 : 淺草 Asakusa + 東京車站伴手禮 Tokyo station
+## Day 8 : 淺草 + 東京車站伴手禮
 
-We got up at around 9 AM and had breakfast at a local [Milk Stand](https://maps.app.goo.gl/e3Eq7oJwyMQdNJy18) near our hotel. The milk's good, and it's a cool deal because you give the bottle back to the staff when you're done.
+我們大約 9 點起床，在飯店附近一家在地的 [Milk Stand](https://maps.app.goo.gl/e3Eq7oJwyMQdNJy18) 吃早餐。牛奶很好喝，而且很酷的是喝完要把瓶子還給店員。
 
 
-Around 10 AM, we hit up Asakusa [淺草雷門](https://maps.app.goo.gl/8jW8x5HSePFQxe6o7). There were loads of folks hanging out by the famous gate. The street looked all fancy, and the food was yummy. We took some photos, and the vibe there was so chill, it felt like you could stay forever.
+10 點左右我們到了[淺草雷門](https://maps.app.goo.gl/8jW8x5HSePFQxe6o7)。一大堆人聚集在這座有名的大門旁。街道很漂亮，小吃也很好吃。我們拍了些照片，那裡的氣氛很悠閒，讓人好想一直待下去。
 ![](./47.jpg)
 ![](./48.jpg)
 ![](./49.jpg)
 ![](./43.jpg)
 
 
-We couldn't resist trying the famous Matcha ice cream [壽壽喜園](https://maps.app.goo.gl/yPyFQJxXbwVw72Zy8), and it was seriously tasty. After that, we did a bit of shopping at Uniqlo and had some fried meat [淺草炸肉餅 Fried Meatballs](https://maps.app.goo.gl/7snTaHpgMFYDToSz6).
+我們忍不住吃了有名的抹茶冰淇淋 [壽壽喜園](https://maps.app.goo.gl/yPyFQJxXbwVw72Zy8)，真的超好吃。之後去 Uniqlo 逛了一下，又吃了[淺草炸肉餅](https://maps.app.goo.gl/7snTaHpgMFYDToSz6)。
 ![](./45.jpg)
 
 
-We checked out the park there [隅田公園](https://maps.app.goo.gl/fFNb7ruiGooT3AGj9), and the view of the Skytree was amazing, like breathtaking.
+我們到附近的[隅田公園](https://maps.app.goo.gl/fFNb7ruiGooT3AGj9)走走，晴空塔的景色美到令人屏息。
 ![](./44.jpg)
 ![](./46.jpg)
 
-Back at our hotel, we made a quick stop at Tokyo Station. We got several famous desserts [東京必買伴手禮](https://bobby.tw/blog/post/227373275-%E3%80%90%E6%9D%B1%E4%BA%AC%E5%BF%85%E8%B2%B7%E3%80%91%E6%97%A5%E6%9C%AC%E5%A4%AF%E7%BF%BB%E5%A4%A9%EF%BC%81%E6%9D%B1%E4%BA%AC%E9%9B%B6%E9%A3%9F%E8%97%A5%E5%A6%9D%E4%BC%B4%E6%89%8B) that you must give a try.
+回飯店的路上順道去了東京車站，買了好幾樣有名的甜點，這些[東京必買伴手禮](https://bobby.tw/blog/post/227373275-%E3%80%90%E6%9D%B1%E4%BA%AC%E5%BF%85%E8%B2%B7%E3%80%91%E6%97%A5%E6%9C%AC%E5%A4%AF%E7%BF%BB%E5%A4%A9%EF%BC%81%E6%9D%B1%E4%BA%AC%E9%9B%B6%E9%A3%9F%E8%97%A5%E5%A6%9D%E4%BC%B4%E6%89%8B)一定要試試看。
 
 
-## Day 9 : 東京鐵塔 Tokyo Tower + 壽司 Sushi + 銀座 Ginza + 羽田機場 Airport
+## Day 9 : 東京鐵塔 + 壽司 + 銀座 + 羽田機場
 
-It's kind of our last day in Japan, we packed all our luggage and checked out at around 10 am.
-We put our luggage in a coin locker in 濱松町 station. And we moved to [芝公園](https://maps.app.goo.gl/EX3Wp63podPvKFXf6) took a walk and took photos of Tokyo Tower. 
+這算是我們在日本的最後一天，我們把行李都打包好，大約早上 10 點退房。
+我們把行李寄放在濱松町站的投幣置物櫃，然後走到[芝公園](https://maps.app.goo.gl/EX3Wp63podPvKFXf6)散步，拍東京鐵塔。
 ![](./50.jpg)
 ![](./51.jpg)
 
-We visited [Sushi panchi](https://maps.app.goo.gl/j4oQXNdFwG1oiPpZ7) for lunch, it's the best sushi I have ever had, but also the most expensive. 
+午餐我們去了 [Sushi panchi](https://maps.app.goo.gl/j4oQXNdFwG1oiPpZ7)，是我吃過最好吃的壽司，但也是最貴的。
 ![](./52.jpg)
 
-We took the subway to visit [豐洲市場](https://maps.app.goo.gl/QVmD6kwAn2o5fBN19). However, it was too late and most of the restaurants were closed. 
+我們搭地鐵去[豐洲市場](https://maps.app.goo.gl/QVmD6kwAn2o5fBN19)，可惜太晚了，大部分餐廳都已經關了。
 
-We then visited Ginza to enjoy the moment here again, and visited the garden on top of the department store [Rooftop garden](https://maps.app.goo.gl/ewM6dENGYSXyBcYBA). 
+接著我們又去銀座再享受一次這裡的氛圍，還去了百貨公司頂樓的[空中花園](https://maps.app.goo.gl/ewM6dENGYSXyBcYBA)。
 
-And we headed to airport, prepared to say goodbye to Japan.
+然後就前往機場，準備跟日本說再見。
 ![](./53.jpg)
 
-## Day 10: Japan to Taiwan
+## Day 10：日本到台灣
 
-We slept in the airport and left Japan at 5:30 am. The view was amazing. 
+我們在機場過夜，早上 5:30 離開日本，景色超美。
 ![](./54.jpg)
-See you Tokyo~
+東京，下次見～
 
-# Drugstore selection and the products we bought
+# 藥妝店的選擇與我們買的東西
 
-The website ranked the drugstore as below.
+這個網站對藥妝店的排名如下：
 
 [5 Best Japanese Drugstores](https://jw-webmagazine.com/5-best-japanese-drugstores-cc1305f73a77/)
 
-We bought all the drugs and supplements in **松本清（Matsumoto Kiyoshi，マツキヨ)**, because we found some products are cheaper than other stores.
+我們所有的藥品跟保健食品都在**松本清（Matsumoto Kiyoshi，マツキヨ)** 買，因為發現有些商品比其他店便宜。
 
 [75 Helpful Japanese Beauty Products for Every Skin Type](https://japanobjects.com/features/buy-japan-cosmetics)
 
-# The dessert I bought (All Recommend)
+# 我買的甜點（全部推薦）
 
-1. [白色戀人](https://hokkaido-omiyage.shop/collections/ishiya-%E7%99%BD%E3%81%84%E6%81%8B%E4%BA%BA) (8/10)： 
-This is a famous dessert that everyone would buy, and I love it.
+1. [白色戀人](https://hokkaido-omiyage.shop/collections/ishiya-%E7%99%BD%E3%81%84%E6%81%8B%E4%BA%BA) (8/10)：
+大家必買的有名甜點，我很喜歡。
 ![](./55.jpg)
 
-2. [Captain Sweet Burger](https://www.sweetsburger.jp/) (8.5/10):
-I bought 3 flavors, and my favorite is original. It's not too sweet and really yummy. 
+2. [Captain Sweet Burger](https://www.sweetsburger.jp/) (8.5/10)：
+我買了 3 種口味，最喜歡原味，不會太甜，真的很好吃。
 ![](./56.jpg)
 
-3. [Hanako 喫茶店に恋して Honey Toast Sable](https://suposaka.net/cute-damn-good-how-about-some-sweets-that-will-make-anyone-happy-as-a-souvenir/) (8.5/10):
-The combination of honey and the cream is perfect. It's tasty. 
+3. [Hanako 喫茶店に恋して 蜂蜜吐司餅乾](https://suposaka.net/cute-damn-good-how-about-some-sweets-that-will-make-anyone-happy-as-a-souvenir/) (8.5/10)：
+蜂蜜跟奶油的組合超完美，很好吃。
 ![](./57.jpg)
 
-4. [New York Perfect Cheese](https://japanselects.com/collections/campaign-newyork-perfect-cheese-cookie) (9/10):
-You can buy it in 羽田airport and Tokyo station. The cheese and cream combine with sweet cookie amazingly.
+4. [New York Perfect Cheese](https://japanselects.com/collections/campaign-newyork-perfect-cheese-cookie) (9/10)：
+羽田機場跟東京車站都買得到。起司、奶油跟香甜餅乾的搭配超驚艷。
 ![](./58.jpg)
 
-5. [Press Butter Sand](https://buttersand.com/en/) (10/10):
-My favorite one, it's really yummy. The cookie outside is not hard to bite, you can easily finish it.
+5. [Press Butter Sand](https://buttersand.com/en/) (10/10)：
+我的最愛，真的超好吃。外層餅乾不會太硬，很容易就一口接一口吃完。
 ![](./59.jpg)
 
-6. [Hanako 喫茶店に恋して。Creme Brûlée Tart 焦糖布丁撻](https://www.kadenjapan.store/item/Hanako-%E5%96%AB%E8%8C%B6%E5%BA%97%E3%81%AB%E6%81%8B%E3%81%97%E3%81%A6%E3%80%82Creme-Br%C3%BBl%C3%A9e-Tart-%E7%84%A6%E7%B3%96%E5%B8%83%E4%B8%81%E6%92%BB/6212712493875200?lang=zh-Hant) (10/10):
-Too tasty that I forgot to take photos.
+6. [Hanako 喫茶店に恋して。焦糖布丁撻](https://www.kadenjapan.store/item/Hanako-%E5%96%AB%E8%8C%B6%E5%BA%97%E3%81%AB%E6%81%8B%E3%81%97%E3%81%A6%E3%80%82Creme-Br%C3%BBl%C3%A9e-Tart-%E7%84%A6%E7%B3%96%E5%B8%83%E4%B8%81%E6%92%BB/6212712493875200?lang=zh-Hant) (10/10)：
+好吃到我忘記拍照。
 
-# Total Cost and Summary
+# 總花費與心得
 
-The total cost is 106,815 NTD, and the exchange rate is about 1 JPY to 0.217 NTD.
+總花費是新台幣 106,815 元，匯率大約 1 日圓兌 0.217 台幣。
 
-This is my first time in Japan, and everything feels so new to me. Experiencing Teamlab, DisneySea, and Mt. Fuji is exciting. But the style of the streets and the atmosphere make me feel like I've been here for 27 years.
+這是我第一次來日本，一切都好新鮮。體驗 teamLab、DisneySea 和富士山都好興奮，但街道的風格跟氛圍，卻讓我覺得好像已經在這裡住了 27 年。
 
-Everyone is polite and dresses well. I can also tell that people are considerate and don't want to create any trouble by paying attention to the atmosphere.
+每個人都很有禮貌、穿著得體。我也感受得到大家很體貼，會察言觀色，不想給別人添麻煩。
 
-Japan is a foreigner-friendly country; they are welcoming, and the train signs are clear and convenient.
+日本是對外國人很友善的國家，人們很熱情，電車的標示也清楚又方便。

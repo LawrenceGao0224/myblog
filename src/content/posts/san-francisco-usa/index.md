@@ -13,7 +13,11 @@ toc: true
 > 目前在美國遇到華人最多的城市
 
 
-[旅遊影片回憶：YouTube](https://www.youtube.com/shorts/07emnMyN5OI)
+旅遊影片回憶
+
+<div class="videos">
+<iframe class="yt short" src="https://www.youtube-nocookie.com/embed/07emnMyN5OI" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 # Day 1
 

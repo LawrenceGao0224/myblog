@@ -12,9 +12,17 @@ toc: true
 > 西雅圖適合慢活的生活 悠閒的度假的地方 
 
 
-[旅遊影片回憶1：YouTube](https://www.youtube.com/shorts/DnI2TzKMn1A)
+旅遊影片回憶1
 
-[旅遊影片回憶2：YouTube](https://www.youtube.com/shorts/TMPhEEys6cU)
+<div class="videos">
+<iframe class="yt short" src="https://www.youtube-nocookie.com/embed/DnI2TzKMn1A" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+旅遊影片回憶2
+
+<div class="videos">
+<iframe class="yt short" src="https://www.youtube-nocookie.com/embed/TMPhEEys6cU" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 # Day 1
 

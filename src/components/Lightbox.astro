@@ -1,4 +1,8 @@
-<dialog id="lightbox" aria-label="放大圖片">
+---
+import { T, langOf } from '../i18n';
+const t = T[langOf(Astro.url)];
+---
+<dialog id="lightbox" aria-label={t.zoom}>
   <img alt="" />
 </dialog>
 

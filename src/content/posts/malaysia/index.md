@@ -1,5 +1,5 @@
 ---
-title: 大馬遊 Malaysia 2018/7/21~2018/7/29
+title: 大馬遊 2018/7/21~2018/7/29
 description: 大學第二個畢旅
 published: '2018-07-30T17:48:45+08:00'
 slug: malaysia
@@ -15,17 +15,15 @@ toc: true
 
 ---
 
-# 行程規劃 Itinerary
+# 行程規劃
 
 [行程規劃 : Click On Me](https://gsy-life.webnode.tw/_files/200000006-8a0808b03e/馬來西亞之旅.pdf)
 
 ---
 
-# 行前準備 Preparation
+# 行前準備
 
 由於是在暑假熱季前往，衣物方面幾乎都是短袖短褲（但是要注意可能因為機上冷氣太強，所以有攜帶薄襯衫），還要攜帶泳褲以便下水，防曬物品更不能少（我就被曬傷了 嚴重脫皮) ><
-
-Suggestion: sunscreen, thin jacket
 
 ---
 
@@ -35,15 +33,12 @@ Suggestion: sunscreen, thin jacket
 
 坐飛機到Malaysia時間大約為4小時，到達 Kuala Lumpur 已經是晚上8、9點，出機場直達麥當勞，他們的麥當勞比台灣便宜，而且有魚漢堡（1馬幣=7.6台幣），也是出國後才知道只有台灣麥當勞垃圾要自己收（好習慣😊）。
 接著放完行李後，前往麻六甲(Malacca)品嚐道地沙爹，口味偏重、調味多，醬料如果沒有攪拌，下層便會燒焦，點飲料時推薦100plus(像有氣的舒跑)
-It takes about 4 hours to fly to Malaysia, and it is already 8 or 9 o'clock in the evening when we arrive in Kuala Lumpur. After leaving the airport, we go directly to McDonald's. Their McDonald's is cheaper than Taiwan's, and they have fish burgers (1 MYR = 7.6 TWD). 
-Then after putting away the luggage, we go to Malacca to taste the authentic satay. The taste is heavy and seasoned. If the sauce is not stirred continuously, the bottom of the sauce will be burnt. When ordering a drink, I recommend 100plus
 
 ![Day1](./1.jpg)
 
 ## Day 2
 
 在麻六甲，先是前往著名地標，而後到顛倒屋拍照，再坐車前往吉隆坡玩水上樂園Sunway（門票好像要快130RM 約930NTD)，印象中海盜船沒有360度，但這裡的有，這裡還有人造浪，還好都有玩到，晚上前往雙子星大樓（著名地標），在周邊吃小吃，印度薄餅好吃～
-In Malacca, we first went to the famous landmarks, then went to the Upside Down House to take pictures. In the afternoon, we took a car to Kuala Lumpur to play the water park Sunway (tickets seem to be almost 130 RM, about 930 NTD). In my impression, pirate ships don't do 360 degrees, but the one here does, and there are artificial waves here. Fortunately, I have played them all. We went to the Twin Towers (famous landmark) at night and ate snacks around. The Indian pancakes are delicious~
 
 ![Day2-1](./2.jpg)   ![Day2-2](./3.jpg) 
 

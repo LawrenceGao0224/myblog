@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+import WithSidebar from '../layouts/WithSidebar.astro';
+import PageHeading from '../components/PageHeading.astro';
+import PostGrid from '../components/PostGrid.astro';
+import { T, langOf } from '../i18n';
+import type { Post } from '../utils';
+
+// 標籤頁與分類頁共用
+interface Props { kind: 'tag' | 'category'; name: string; all: Post[]; posts: Post[] }
+const { kind, name, all, posts } = Astro.props;
+const t = T[langOf(Astro.url)];
+const title = kind === 'tag' ? `#${name}` : name;
+---
+<Base title={title}>
+  <PageHeading kicker={kind === 'tag' ? t.tags : t.categories} title={title} subtitle={t.nPosts(posts.length)} />
+  <WithSidebar posts={all}>
+    <PostGrid posts={posts} />
+  </WithSidebar>
+</Base>

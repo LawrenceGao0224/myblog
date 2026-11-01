@@ -1,5 +1,5 @@
 ---
-title: 辣個屏風山 - Mt. Pingfeng
+title: 辣個屏風山
 description: 2023.2.26 - 2023.2.27
 published: '2023-02-28T19:25:38+08:00'
 slug: mt-pingfeng
@@ -14,7 +14,11 @@ toc: true
 
 ___
 
-第一次錄影、剪片：[〔花蓮秀林鄉〕辣個屏風山！ 大腿炸裂！登山口最美😆 (vlog)](https://youtu.be/vtLtr2QE1hQ)
+第一次錄影、剪片：〔花蓮秀林鄉〕辣個屏風山！ 大腿炸裂！登山口最美😆 (vlog)
+
+<div class="videos">
+<iframe class="yt" src="https://www.youtube-nocookie.com/embed/vtLtr2QE1hQ" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 ![](./4.jpg)
 
@@ -103,10 +107,10 @@ ___
 ![](./14.jpg)
 ![](./15.jpg)
 
-# 總結 Summary
+# 總結
 
 自己本身是登山菜雞，這是以個人角度做的評分，覺得難度中上，單程10Ｋ，來回20K，在來之前要做好訓練，不然腳跟我一樣鐵到不行！
 
-難易度 Difficulty   ： ◼️ ◼️ ◼️ ◼️ ◼️ 
-危險度 Risk         ： ◼️ ◼️ ◼️ ◼️ ◻️
-值得程度 Worth rate ： ◼️ ◼️ ◼️ ◻️ ◻️
+難易度   ： ◼️ ◼️ ◼️ ◼️ ◼️ 
+危險度   ： ◼️ ◼️ ◼️ ◼️ ◻️
+值得程度 ： ◼️ ◼️ ◼️ ◻️ ◻️

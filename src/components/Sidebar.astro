@@ -2,29 +2,33 @@
 import { Image } from 'astro:assets';
 import Icon from './Icon.astro';
 import { AUTHOR, FEATURED, SOCIAL } from '../config';
-import { allCategories, allTags, categoryUrl, postUrl, tagUrl, url, type Post } from '../utils';
+import { T, langOf } from '../i18n';
+import { allCategories, allTags, categoryUrl, langUrl, postUrl, tagUrl, type Post } from '../utils';
 import avatar from '../assets/avatar.jpg';
 
 // 右側資訊欄：作者、推薦閱讀、分類、標籤
 interface Props { posts: Post[] }
 const { posts } = Astro.props;
+const lang = langOf(Astro.url);
+const t = T[lang];
+const author = AUTHOR[lang];
 const picks = FEATURED.map((id) => posts.find((p) => p.id === id)).filter((p): p is Post => !!p);
 ---
 <aside class="sidebar">
   <section class="author reveal">
-    <Image class="avatar" src={avatar} alt={AUTHOR.name} width={96} height={96} densities={[1, 2]} />
-    <h2 class="serif">{AUTHOR.name}</h2>
-    <p class="role">{AUTHOR.role}</p>
-    <p class="bio">{AUTHOR.bio}</p>
+    <Image class="avatar" src={avatar} alt={author.name} width={96} height={96} densities={[1, 2]} />
+    <h2 class="serif">{author.name}</h2>
+    <p class="role">{author.role}</p>
+    <p class="bio">{author.bio}</p>
     <div class="social">
       {SOCIAL.map((s) => <a href={s.href} target="_blank" rel="noopener" aria-label={s.label}><Icon name={s.icon} size={17} /></a>)}
     </div>
-    <a class="more" href={url('/about/')}>認識我 →</a>
+    <a class="more" href={langUrl(lang, '/about/')}>{t.meetMe}</a>
   </section>
 
   {picks.length > 0 && (
     <section class="reveal">
-      <h2 class="section-title">推薦閱讀</h2>
+      <h2 class="section-title">{t.picks}</h2>
       <ol class="picks">
         {picks.map((p, i) => (
           <li>
@@ -37,17 +41,17 @@ const picks = FEATURED.map((id) => posts.find((p) => p.id === id)).filter((p): p
   )}
 
   <section class="reveal">
-    <h2 class="section-title">分類</h2>
+    <h2 class="section-title">{t.categories}</h2>
     <ul class="cats">
       {allCategories(posts).map(([c, n]) => (
-        <li><a href={categoryUrl(c)}><span>{c}</span><span class="muted">{n}</span></a></li>
+        <li><a href={categoryUrl(c, lang)}><span>{c}</span><span class="muted">{n}</span></a></li>
       ))}
     </ul>
   </section>
 
   <section class="reveal">
-    <h2 class="section-title">標籤</h2>
-    <div class="tags">{allTags(posts).map(([t]) => <a class="tag" href={tagUrl(t)}>#{t}</a>)}</div>
+    <h2 class="section-title">{t.tags}</h2>
+    <div class="tags">{allTags(posts).map(([tag]) => <a class="tag" href={tagUrl(tag, lang)}>#{tag}</a>)}</div>
   </section>
 </aside>
 

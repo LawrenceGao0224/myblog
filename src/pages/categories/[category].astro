@@ -1,24 +1,7 @@
 ---
-import Base from '../../layouts/Base.astro';
-import WithSidebar from '../../layouts/WithSidebar.astro';
-import PageHeading from '../../components/PageHeading.astro';
-import PostGrid from '../../components/PostGrid.astro';
-import { allCategories, getPosts, type Post } from '../../utils';
-
-export async function getStaticPaths() {
-  const posts = await getPosts();
-  return allCategories(posts).map(([category]) => ({
-    params: { category },
-    props: { all: posts, posts: posts.filter((p) => p.data.category === category) },
-  }));
-}
-
+import ListView from '../../views/ListView.astro';
+import { categoryPaths } from '../../paths';
+export const getStaticPaths = () => categoryPaths('zh');
 const { category } = Astro.params;
-const { all, posts } = Astro.props as { all: Post[]; posts: Post[] };
 ---
-<Base title={category}>
-  <PageHeading kicker="分類" title={category!} subtitle={`${posts.length} 篇文章`} />
-  <WithSidebar posts={all}>
-    <PostGrid posts={posts} />
-  </WithSidebar>
-</Base>
+<ListView kind="category" name={category!} {...Astro.props} />

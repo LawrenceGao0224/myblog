@@ -1,0 +1,7 @@
+---
+import ListView from '../../../views/ListView.astro';
+import { categoryPaths } from '../../../paths';
+export const getStaticPaths = () => categoryPaths('en');
+const { category } = Astro.params;
+---
+<ListView kind="category" name={category!} {...Astro.props} />

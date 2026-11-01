@@ -1,13 +1,16 @@
 ---
 import { Image } from 'astro:assets';
+import { T, langOf } from '../i18n';
 import { formatDate, postUrl, readingMinutes, type Post } from '../utils';
 
 // 首頁頂端的文章輪播：每 6 秒換一篇，可左右滑動、點圓點或箭頭切換
 // 滑鼠移入、鍵盤聚焦或系統開啟「減少動態效果」時不自動播放
 interface Props { posts: Post[] }
 const { posts } = Astro.props;
+const lang = langOf(Astro.url);
+const t = T[lang];
 ---
-<section class="carousel wrap-wide" aria-roledescription="carousel" aria-label="精選文章">
+<section class="carousel wrap-wide" aria-roledescription="carousel" aria-label={t.featured}>
   <div class="track" tabindex="0">
     {posts.map((post, i) => (
       <article class="slide" aria-roledescription="slide" aria-label={`${i + 1} / ${posts.length}`}>
@@ -19,17 +22,17 @@ const { posts } = Astro.props;
             {post.data.tags[0] && <p class="kicker">{post.data.tags[0]}</p>}
             <h2 class="serif"><a href={postUrl(post)}>{post.data.title}</a></h2>
             {post.data.description && <p class="dek">{post.data.description}</p>}
-            <p class="meta">{formatDate(post.data.published)} · {readingMinutes(post)} 分鐘閱讀</p>
+            <p class="meta">{formatDate(post.data.published, lang)} · {t.minRead(readingMinutes(post))}</p>
           </div>
         </div>
       </article>
     ))}
   </div>
 
-  <button class="arrow prev" type="button" aria-label="上一篇">‹</button>
-  <button class="arrow next" type="button" aria-label="下一篇">›</button>
-  <div class="dots" role="tablist" aria-label="選擇文章">
-    {posts.map((_, i) => <button type="button" role="tab" aria-label={`第 ${i + 1} 篇`} aria-selected={i === 0 ? 'true' : 'false'}></button>)}
+  <button class="arrow prev" type="button" aria-label={t.prev}>‹</button>
+  <button class="arrow next" type="button" aria-label={t.next}>›</button>
+  <div class="dots" role="tablist" aria-label={t.pickSlide}>
+    {posts.map((_, i) => <button type="button" role="tab" aria-label={t.slideN(i + 1)} aria-selected={i === 0 ? 'true' : 'false'}></button>)}
   </div>
 </section>
 

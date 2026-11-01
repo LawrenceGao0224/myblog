@@ -38,6 +38,7 @@ npm run new -- kyoto-2027
 
 `kyoto-2027` 是文章的**網址名稱**，文章網址會是
 `https://lawrencegao0224.github.io/myblog/posts/kyoto-2027/`
+英文版網址是 `https://lawrencegao0224.github.io/myblog/en/posts/kyoto-2027/`
 
 **命名規則**
 - 只能用**小寫英文、數字、`-`**，例如 `kyoto-2027`、`taipei-marathon`
@@ -48,10 +49,11 @@ npm run new -- kyoto-2027
 
 ```
 src/content/posts/kyoto-2027/
-└── index.md      ← 文章內容
+├── index.md      ← 中文版
+└── index.en.md   ← 英文版（預設是草稿，見第 2.5 節）
 ```
 
-照片也放在這個資料夾裡。
+照片也放在這個資料夾裡，中英文版共用。
 
 ---
 
@@ -88,6 +90,24 @@ draft: true
 - 標題如果有半形冒號 `:` 或以 `#`、`[` 開頭，要用引號包起來：`title: "東京：第一天"`
 - 標籤大小寫要一致：`Travel` 和 `travel` 會變成兩個不同的標籤
 - `tags` 每一行前面是 `- `（減號＋空格）
+
+---
+
+## 2.5 英文版
+
+網站是中英雙語：右上角 **EN／中** 按鈕會切換到同一篇的另一種語言。
+
+- **中文版**：`index.md`，只寫中文，不要再在中文版裡附英文翻譯
+- **英文版**：`index.en.md`，完整的英文文章
+- 兩個檔案的 `published`、`cover`、`tags`、`category` 填一樣的
+- 照片寫法一樣：`![caption](./1.jpg)`，同一張照片不用放兩份
+- YouTube、Google 地圖的 iframe 兩邊各貼一次
+
+**還沒寫英文版怎麼辦？**
+`index.en.md` 保持 `draft: true` 就好。英文網站不會出現這篇，讀者在中文版按 EN 會到英文首頁，不會看到壞掉的頁面。
+寫好英文版後刪掉 `draft: true` 再發佈。
+
+**想請 AI 幫忙翻譯**：把 `index.md` 內容貼給 Claude，請它「翻成自然的英文，保留圖片路徑、iframe、網址和標題層級不變」，再貼進 `index.en.md`。
 
 ---
 
@@ -152,13 +172,18 @@ Google 地圖 → 搜尋地點 → **分享** → **嵌入地圖** → **複製 
 
 ### 插入 YouTube 影片
 
-最簡單的方式是放連結：
+直接貼 YouTube 網址（一行一個），再執行：
 
-```markdown
-[旅遊影片回憶：YouTube](https://www.youtube.com/watch?v=xxxx)
+```bash
+python3 tools/embed-youtube.py
 ```
 
-想直接嵌入播放器：YouTube 影片 → **分享** → **嵌入** → 複製 iframe 貼上。
+就會自動換成內嵌播放器：橫式影片 16:9；**Shorts 直式影片**會自動用直的比例，連續幾支會並排。
+網址前面的文字會保留成影片上方的說明，例如：
+
+```markdown
+清邁旅遊影片：https://www.youtube.com/shorts/FVwDx9CRbL8
+```
 
 ### 強調文字（螢光筆效果）
 
@@ -224,6 +249,7 @@ npm run dev
 ### 發佈前檢查清單
 
 - [ ] `title`、`description`、`published` 都填了
+- [ ] 英文版 `index.en.md` 寫好了，或保持 `draft: true`
 - [ ] 刪掉 `draft: true`
 - [ ] 有封面圖 `cover`（想上首頁輪播的話）
 - [ ] 執行過 `npm run images`，顯示「照片大小都 OK」

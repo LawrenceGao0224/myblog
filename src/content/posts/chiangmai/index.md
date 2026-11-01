@@ -12,11 +12,13 @@ toc: true
 > 清邁人好親切
 > 運氣很好，只有最後一天下雨，其他時候天氣都很好
 
-[旅遊影片回憶：YouTube](https://www.youtube.com/shorts/FVwDx9CRbL8)
+旅遊影片回憶
 
-[旅遊影片回憶：YouTube](https://www.youtube.com/shorts/saS3HHk0i9I)
-
-[旅遊影片回憶：YouTube](https://www.youtube.com/shorts/XQIewn7oDW0)
+<div class="videos">
+<iframe class="yt short" src="https://www.youtube-nocookie.com/embed/FVwDx9CRbL8" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe class="yt short" src="https://www.youtube-nocookie.com/embed/saS3HHk0i9I" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe class="yt short" src="https://www.youtube-nocookie.com/embed/XQIewn7oDW0" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 # 行前準備
 

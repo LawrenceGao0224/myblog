@@ -1,0 +1,62 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import PageHeading from '../components/PageHeading.astro';
+import { FRIENDS, SOCIAL } from '../config';
+import { langOf } from '../i18n';
+import avatar from '../assets/avatar.jpg';
+
+const lang = langOf(Astro.url);
+const readingList = 'https://lawrencekao.notion.site/1a7fb57a6f3c4e30a8f1f5e45677b129?v=e89018e9e9c54144977390b1195ad432&pvs=4';
+const motto = 'Wish for the Best, Prepare for the Worst';
+---
+<Base title={lang === 'en' ? 'About me' : '關於我'} description={motto}>
+  <PageHeading kicker="About" title={lang === 'en' ? 'About me' : '關於我'} subtitle={motto} />
+  <div class="wrap-wide about">
+    <Image class="avatar reveal" src={avatar} alt={lang === 'en' ? 'Lawrence Kao' : '高碩輿'} width={160} height={160} densities={[1, 2]} />
+    {lang === 'en' ? (
+      <article class="prose">
+        <p>Hello! I'm Lawrence!</p>
+        <p>
+          I've been writing this blog since 2018. I've loved traveling and staying active since I was young, found my way into computer science, and now work as a technical consultant at a foreign tech company.
+          I enjoy dancing and ball sports, and I read regularly — I share my notes in <a href={readingList}>my reading list</a>.
+        </p>
+        <p>
+          A quote I'd like to share: "You are braver than you believe, stronger than you seem, and smarter than you think." It comes from Christopher Robin in A. A. Milne's Winnie-the-Pooh, and it reminds me never to underestimate myself.
+          Here I share the journey of my life and what I learn along the way.
+        </p>
+        <h2>Get in touch</h2>
+        <p class="links">{SOCIAL.map((s) => <a href={s.href} target="_blank" rel="noopener">{s.label}</a>)}</p>
+        <h2>Friends</h2>
+        <p class="links">{FRIENDS.map((s) => <a href={s.href} target="_blank" rel="noopener">{s.label}</a>)}</p>
+      </article>
+    ) : (
+      <article class="prose">
+        <p>Hello! 我是高碩輿！</p>
+        <p>
+          自 2018 年起開始撰寫部落格。從小就喜歡到處跑跳，因緣踏入電腦科學領域，目前於科技業外商擔任技術顧問。
+          喜歡跳舞、球類運動，會固定購書閱讀，心得分享在<a href={readingList}>這網址</a>。
+        </p>
+        <p>
+          喜歡一句名言送給大家：「你比自己相信的更勇敢，比你外表看來更強大，比你想像的更有智慧。」這名言來自一本著名的童書，隨時提醒自己，不要低估自我。
+          網站不定期分享我的生活與學習之心路歷程。
+        </p>
+        <h2>聯絡我</h2>
+        <p class="links">{SOCIAL.map((s) => <a href={s.href} target="_blank" rel="noopener">{s.label}</a>)}</p>
+        <h2>朋友</h2>
+        <p class="links">{FRIENDS.map((s) => <a href={s.href} target="_blank" rel="noopener">{s.label}</a>)}</p>
+      </article>
+    )}
+  </div>
+</Base>
+
+<style>
+  .about { display: grid; grid-template-columns: 220px minmax(0, var(--content)); gap: 48px; margin-top: 40px; }
+  .avatar { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; }
+  .prose { margin: 0; }
+  @media (max-width: 760px) {
+    .about { grid-template-columns: 1fr; gap: 16px; }
+    .avatar { width: 112px; height: 112px; }
+  }
+  .links { display: flex; flex-wrap: wrap; gap: 16px; }
+</style>

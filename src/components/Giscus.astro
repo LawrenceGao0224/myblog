@@ -1,5 +1,7 @@
 ---
 import { GISCUS } from '../config';
+import { LOCALE, langOf } from '../i18n';
+const lang = LOCALE[langOf(Astro.url)].giscus;
 ---
 {GISCUS.repoId && GISCUS.categoryId && (
   <section class="comments">
@@ -16,7 +18,7 @@ import { GISCUS } from '../config';
       data-emit-metadata="0"
       data-input-position="top"
       data-theme="preferred_color_scheme"
-      data-lang="zh-TW"
+      data-lang={lang}
       data-loading="lazy"
       crossorigin="anonymous"
       async
