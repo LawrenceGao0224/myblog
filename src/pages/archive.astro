@@ -1,0 +1,38 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import { formatDate, getPosts, postUrl } from '../utils';
+
+const posts = await getPosts();
+const byYear = new Map<number, typeof posts>();
+for (const p of posts) {
+  const y = Number(formatDate(p.data.published).slice(0, 4));
+  byYear.set(y, [...(byYear.get(y) ?? []), p]);
+}
+---
+<Base title="所有文章">
+  <Hero slot="hero" title="所有文章" subtitle={`共 ${posts.length} 篇`} />
+  <div class="wrap">
+    {[...byYear].map(([year, list]) => (
+      <section>
+        <h2>{year} <span class="muted">{list.length}</span></h2>
+        <ul>
+          {list.map((p) => (
+            <li>
+              <time class="muted">{formatDate(p.data.published).slice(5)}</time>
+              <a href={postUrl(p)}>{p.data.title}</a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+  </div>
+</Base>
+
+<style>
+  h2 { margin: 32px 0 8px; font-size: 22px; }
+  h2 .muted { font-size: 15px; font-weight: normal; }
+  ul { list-style: none; margin: 0; padding: 0; }
+  li { display: flex; gap: 16px; padding: 8px 0; border-bottom: 1px dashed var(--border); }
+  time { flex: none; font-variant-numeric: tabular-nums; }
+</style>

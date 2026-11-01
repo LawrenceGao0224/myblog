@@ -1,108 +1,141 @@
-> Ported Theme of [Hux Blog](https://github.com/Huxpro/huxpro.github.io), Thank [Huxpro](https://github.com/Huxpro) for designing such a flawless theme.
-> 
-> This BeanTech theme created by [YuHsuan](http://beantech.org) modified from the original Porter [Kaijun](http://kaijun.rocks/hexo-theme-huxblog/)
+# 部落格使用手冊（Astro 版）
 
-# [Live Demo](http://beantech.org)
-![BeanTech Desktop](http://beantech.org/img/beantech-desktop.png)
+架構：**Astro 7 + Node 24**，放在 GitHub `master` 分支，push 後由 GitHub Actions 自動建置並發佈到
+https://lawrencegao0224.github.io/myblog/
 
-# Usage
-I publish the whole project for your convenience, so you can just follow the instruction down below, then you can easily customiz your own blog!
+```
+npm run new -- 名稱 → 寫文章、放照片 → npm run dev（預覽）→ git commit → git push → 自動上線
+```
 
-Let's begin!!!
+## 和 Hexo 版有什麼不同
 
-## Init
+| | Hexo 版 | Astro 版 |
+|---|---|---|
+| 照片 | 原檔直接給讀者下載 | 自動轉成 WebP、產生手機／平板／電腦三種尺寸，讀者只下載需要的那張 |
+| 清邁那篇的照片流量（手機） | 12.6 MB | 2.7 MB |
+| 文章網址 | `/2026/07/24/chiangmai/` | `/posts/chiangmai/`（舊網址會自動轉過來） |
+| 深色模式 | 無 | 跟隨手機設定，右上角 ◐ 可切換 |
+| 點照片放大 | 無 | 有 |
+| 文章格式檢查 | 無 | 欄位寫錯會在建置時直接報錯 |
+| 主題 | beantech（2016，Bootstrap 3 + jQuery） | 自製輕量主題，沒有 jQuery／Bootstrap |
+
+---
+
+## 日常使用
+
+### 1. 新增文章
+
 ```bash
-git clone https://github.com/YenYuHsuan/hexo-theme-beantech.git ./hexo-beantech
-cd hexo-beantech
-npm install
+npm run new -- tokyo-2027
 ```
 
-## Modify
-Modify `_config.yml` file with your own info.
-Especially the section:
-### Deployment
-Replace to your own repo!
-```yml
-deploy:
-  type: git
-  repo: https://github.com/<yourAccount>/<repo>
-  branch: <your-branch>
+會建立 `src/content/posts/tokyo-2027/index.md`。網址名稱只能用小寫英文、數字和 `-`。
+
+文章開頭（front-matter）：
+
+```yaml
+---
+title: 東京 2027.3.1~2027.3.7   # 標題
+description: 一句話副標題           # 副標題（首頁卡片也會顯示）
+published: 2027-03-10T20:00:00+08:00
+cover: ./header.jpg                # 封面圖，放在同一個資料夾
+tags:
+- Travel
+category: Blog
+toc: true                          # 顯示目錄（預設 true）
+draft: true                        # 草稿：本機看得到、不會發佈。寫完刪掉這行
+---
 ```
 
-### Sidebar settings
-Copy your avatar image to `<root>/img/` and modify the `_config.yml`:
-```yml
-sidebar: true    # whether or not using Sidebar.
-sidebar-about-description: "<your description>"
-sidebar-avatar: img/<your avatar path>
-```
-and activate your personal widget you like
-```yml
-widgets:         # here are widget you can use, you can comment out
-- featured-tags
-- short-about
-- recent-posts
-- friends-blog
-- archive
-- category
-```
-if you want to add sidebar widget, please add at `layout/_widget`.
-### Signature Setup
-Copy your signature image to `<root>/img/signature` and modify the `_config.yml`:
-```yml
-signature: true   # show signature
-signature-img: img/signature/<your-signature-ID>
-```
-### Go to top icon Setup
-My icon is using iron man, you can change to your own icon at `css/image`.
+### 2. 插入照片
 
-### Post tag
-You can decide to show post tags or not.
-```yml
-home_posts_tag: true
-```
-![home_posts_tag-true](./source/_posts/hexo-theme-beantech/home_posts_tag-true.png)
-```yml
-home_posts_tag: false
-```
-![home_posts_tag-false](./source/_posts/hexo-theme-beantech/home_posts_tag-false.png)
+把照片放進文章資料夾（和 `index.md` 同一層），然後：
 
-### Markdown render
-My markdown render engine plugin is [hexo-renderer-markdown-it](https://github.com/celsomiranda/hexo-renderer-markdown-it).
-```yml
-# Markdown-it config
-## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki
-markdown:
-  render:
-    html: true
-    xhtmlOut: false
-    breaks: true
-    linkify: true
-    typographer: true
-    quotes: '“”‘’'
-```
-and if you want to change the header anchor 'ℬ', you can go to `layout/post.ejs` to change it.
-```javascript
-async("//cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
-        anchors.options = {
-          visible: 'hover',
-          placement: 'left',
-          icon: 'ℬ'
-        };
-        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
-    })
+```markdown
+![淺草寺夜景](./1.jpg)
 ```
 
-## Hexo Basics
-Some hexo command:
+- 一定要用 `./` 開頭
+- 中括號裡的文字是圖片說明（給視障讀者和 Google），可以留空 `![](./1.jpg)`
+- 檔名打錯或照片不存在，建置會直接報錯並告訴你哪一篇、哪張，不會上線一張破圖
+- 不用再手動縮圖，Astro 會自動處理；但原檔超過 600 KB 時，發佈前的檢查會失敗，請先執行：
+
 ```bash
-hexo new post "<post name>" # you can change post to another layout if you want
-hexo clean && hexo generate # generate the static file
-hexo server # run hexo in local environment
-hexo deploy # hexo will push the static files automatically into the specific branch(gh-pages) of your repo!
+npm run images
 ```
 
-# Have fun ^_^ 
+### 3. 插入 Google 地圖
 
-Please [Star](https://github.com/YenYuHsuan/hexo-theme-beantech) this Project if you like it! [Follow](https://github.com/YenYuHsuan) would also be appreciated!
-Peace!
+Google 地圖 → 分享 → 嵌入地圖 → 複製 iframe 貼上即可，手機上會自動縮放。
+
+### 4. 本機預覽
+
+```bash
+npm run dev
+```
+
+打開 http://localhost:4321/myblog/ ，存檔後畫面會自動更新。按 `Ctrl + C` 停止。
+
+### 5. 發佈
+
+```bash
+git add -A
+git commit -m "新增：東京遊記"
+git push
+```
+
+1–2 分鐘後上線。到 GitHub repo 的 **Actions** 分頁可看進度。
+
+---
+
+## 設定（`src/config.ts`）
+
+網站標題、社群連結、朋友連結都在這裡改。以下選用功能留空就不會載入：
+
+### Google Analytics 4
+1. https://analytics.google.com 建立資源 → 網站資料串流，網址填 `https://lawrencegao0224.github.io/myblog/`
+2. 複製評估 ID（`G-XXXXXXXXXX`）填入 `ANALYTICS.ga4Id`
+
+### Cloudflare Web Analytics（免費、不用 cookie）
+1. Cloudflare 後台 → **Analytics & Logs → Web Analytics → Add a site**
+2. 複製 snippet 裡的 token 填入 `ANALYTICS.cloudflareToken`
+
+### giscus 留言
+1. repo **Settings → Features** 勾選 **Discussions**
+2. 安裝 https://github.com/apps/giscus ，只選 `myblog`
+3. 到 https://giscus.app/zh-TW 填 `LawrenceGao0224/myblog`、分類選 **Announcements**
+4. 把產生的 `data-repo-id`、`data-category-id` 填入 `GISCUS.repoId`、`GISCUS.categoryId`
+
+### Cloudflare Pages（選用，台灣讀者較快）
+Cloudflare → **Workers & Pages → Create → Pages → Connect to Git** → 選 `myblog`：
+- Build command：`npm run build:cloudflare`
+- Build output directory：`dist`
+- 環境變數：`NODE_VERSION` = `24`
+
+專案名稱若不是 `lawrence-blog`，請改 `package.json` 裡 `build:cloudflare` 的 `SITE_URL`。
+
+---
+
+## 指令速查
+
+| 指令 | 用途 |
+|---|---|
+| `npm run new -- 名稱` | 新增文章 |
+| `npm run dev` | 本機預覽（含草稿） |
+| `npm run images` | 壓縮過大的原始照片 |
+| `npm run build` | 產生網站到 `dist/`（通常不用手動跑） |
+| `npm run preview` | 預覽 `dist/` 的正式版本 |
+
+## 檔案位置
+
+| 位置 | 內容 |
+|---|---|
+| `src/content/posts/` | 所有文章（每篇一個資料夾） |
+| `src/config.ts` | 網站設定 |
+| `src/pages/` | 頁面：首頁、文章、標籤、關於、404 |
+| `src/pages/about.astro` | 「關於我」內容 |
+| `src/components/`、`src/layouts/` | 版面元件 |
+| `src/styles/global.css` | 顏色、字體、文章樣式 |
+| `src/assets/` | 首頁封面、大頭照 |
+| `src/redirects.json` | 舊 Hexo 網址 → 新網址對照表 |
+| `tools/` | 新增文章、壓縮照片、Hexo 轉換工具 |

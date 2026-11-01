@@ -1,0 +1,122 @@
+---
+import '../styles/global.css';
+import Analytics from '../components/Analytics.astro';
+import { SITE, SOCIAL } from '../config';
+import { url } from '../utils';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+const { title, description = SITE.description, image } = Astro.props;
+const pageTitle = title ? `${title} - ${SITE.title}` : SITE.title;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const nav = [
+  { label: '首頁', href: url('/') },
+  { label: '文章', href: url('/archive/') },
+  { label: '標籤', href: url('/tags/') },
+  { label: '關於', href: url('/about/') },
+];
+const current = Astro.url.pathname;
+---
+<!doctype html>
+<html lang={SITE.lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href={url('/favicon.png')} />
+    <link rel="alternate" type="application/rss+xml" title={SITE.title} href={url('/rss.xml')} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    {image && <meta property="og:image" content={new URL(image, Astro.site)} />}
+    <meta name="google-site-verification" content="SyDj2XyyHM_O0z5ErRUw2G1d0Gum-3JBYv8n-Qg0aVs" />
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <script is:inline>
+      try {
+        const t = localStorage.getItem('theme');
+        if (t) document.documentElement.dataset.theme = t;
+      } catch {}
+    </script>
+    <Analytics />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrap-wide bar">
+        <a class="brand" href={url('/')}>{SITE.title}</a>
+        <nav>
+          {nav.map((n) => (
+            <a href={n.href} aria-current={current === n.href ? 'page' : undefined}>{n.label}</a>
+          ))}
+          <button id="theme-toggle" type="button" aria-label="切換深色模式">◐</button>
+        </nav>
+      </div>
+    </header>
+    <slot name="hero" />
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <p class="social">
+          {SOCIAL.map((s) => <a href={s.href} target="_blank" rel="noopener">{s.label}</a>)}
+        </p>
+        <p class="muted">© {new Date().getFullYear()} {SITE.author}</p>
+      </div>
+    </footer>
+    <script is:inline>
+      document.getElementById('theme-toggle').addEventListener('click', () => {
+        const root = document.documentElement;
+        const dark = root.dataset.theme
+          ? root.dataset.theme === 'dark'
+          : matchMedia('(prefers-color-scheme: dark)').matches;
+        root.dataset.theme = dark ? 'light' : 'dark';
+        try { localStorage.setItem('theme', root.dataset.theme); } catch {}
+      });
+    </script>
+  </body>
+</html>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: color-mix(in srgb, var(--bg) 85%, transparent);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .bar { display: flex; align-items: center; justify-content: space-between; height: 56px; gap: 12px; }
+  .brand { font-weight: 700; font-size: 18px; color: var(--text); white-space: nowrap; }
+  nav { display: flex; align-items: center; gap: 4px; }
+  nav a {
+    padding: 6px 10px;
+    border-radius: 8px;
+    color: var(--muted);
+    font-size: 15px;
+    white-space: nowrap;
+  }
+  nav a:hover, nav a[aria-current='page'] { color: var(--text); background: var(--surface); text-decoration: none; }
+  #theme-toggle {
+    width: 34px; height: 34px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--text);
+    font-size: 16px;
+    cursor: pointer;
+  }
+  main { min-height: 60vh; }
+  .site-footer { margin-top: 64px; padding: 32px 0 48px; border-top: 1px solid var(--border); text-align: center; font-size: 14px; }
+  .site-footer p { margin: 4px 0; }
+  .social { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; }
+  @media (max-width: 480px) {
+    .brand { font-size: 16px; }
+    nav a { padding: 6px 7px; font-size: 14px; }
+  }
+</style>

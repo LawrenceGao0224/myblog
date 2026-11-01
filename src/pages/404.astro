@@ -1,0 +1,11 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import { url } from '../utils';
+---
+<Base title="找不到頁面">
+  <Hero slot="hero" title="404" subtitle="找不到這個頁面" />
+  <div class="wrap">
+    <p>網址可能打錯了，或文章已經搬家。<a href={url('/')}>回首頁</a> 或看看 <a href={url('/archive/')}>所有文章</a>。</p>
+  </div>
+</Base>

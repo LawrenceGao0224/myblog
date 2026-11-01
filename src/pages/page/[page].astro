@@ -1,0 +1,29 @@
+---
+import Base from '../../layouts/Base.astro';
+import PostList from '../../components/PostList.astro';
+import { SITE } from '../../config';
+import { getPosts, type Post } from '../../utils';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  const lastPage = Math.ceil(posts.length / SITE.postsPerPage);
+  return Array.from({ length: lastPage - 1 }, (_, i) => {
+    const page = i + 2;
+    return {
+      params: { page: String(page) },
+      props: { posts: posts.slice((page - 1) * SITE.postsPerPage, page * SITE.postsPerPage), page, lastPage },
+    };
+  });
+}
+
+const { posts, page, lastPage } = Astro.props as { posts: Post[]; page: number; lastPage: number };
+---
+<Base title={`第 ${page} 頁`}>
+  <div class="wrap-wide home">
+    <PostList posts={posts} page={page} lastPage={lastPage} />
+  </div>
+</Base>
+
+<style>
+  .home { max-width: 900px; margin-top: 32px; }
+</style>

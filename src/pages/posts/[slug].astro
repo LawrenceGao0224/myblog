@@ -1,0 +1,79 @@
+---
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Hero from '../../components/Hero.astro';
+import Giscus from '../../components/Giscus.astro';
+import Lightbox from '../../components/Lightbox.astro';
+import { formatDate, getPosts, postUrl, tagUrl, type Post } from '../../utils';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return posts.map((post, i) => ({
+    params: { slug: post.id },
+    props: { post, newer: posts[i - 1], older: posts[i + 1] },
+  }));
+}
+
+const { post, newer, older } = Astro.props as { post: Post; newer?: Post; older?: Post };
+const { title, description, published, cover, tags, toc } = post.data;
+const { Content, headings } = await render(post);
+const tocItems = headings.filter((h) => h.depth <= 2);
+---
+<Base title={title} description={description || title} image={cover?.src}>
+  <Hero slot="hero" image={cover} title={title} subtitle={description}>
+    <p class="meta">
+      <time datetime={published.toISOString()}>{formatDate(published)}</time>
+      {tags.map((t) => <a class="hero-tag" href={tagUrl(t)}>#{t}</a>)}
+    </p>
+  </Hero>
+
+  <div class="wrap">
+    {toc && tocItems.length > 2 && (
+      <details class="toc">
+        <summary>目錄</summary>
+        <ol>
+          {tocItems.map((h) => (
+            <li class={`d${h.depth}`}><a href={`#${h.slug}`}>{h.text}</a></li>
+          ))}
+        </ol>
+      </details>
+    )}
+
+    <article class="prose">
+      <Content />
+    </article>
+
+    <nav class="adjacent">
+      {newer ? <a href={postUrl(newer)}><span class="muted">← 較新</span>{newer.data.title}</a> : <span />}
+      {older ? <a class="right" href={postUrl(older)}><span class="muted">較舊 →</span>{older.data.title}</a> : <span />}
+    </nav>
+
+    <Giscus />
+  </div>
+  <Lightbox />
+</Base>
+
+<style>
+  .meta { display: flex; flex-wrap: wrap; gap: 4px 14px; margin: 10px 0 0; font-size: 15px; opacity: 0.9; }
+  .hero-tag { color: inherit; }
+  .toc {
+    margin: 28px 0 8px;
+    padding: 12px 18px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 15px;
+  }
+  .toc summary { cursor: pointer; font-weight: 600; }
+  .toc ol { margin: 8px 0 0; padding-left: 1.2em; }
+  .toc .d2 { margin-left: 1em; list-style: circle; }
+  .prose { margin-top: 28px; }
+  .adjacent { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); }
+  .adjacent a { display: flex; flex-direction: column; gap: 2px; font-size: 15px; line-height: 1.5; }
+  .adjacent .right { text-align: right; }
+  .adjacent .muted { font-size: 13px; }
+  @media (max-width: 640px) {
+    .adjacent { grid-template-columns: 1fr; }
+    .adjacent .right { text-align: left; }
+  }
+</style>

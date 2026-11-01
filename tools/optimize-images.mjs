@@ -1,11 +1,11 @@
-// 縮小 source/ 底下過大的照片（就地覆寫）
+// 縮小 src/ 底下過大的照片（Astro 建置時會再轉成 WebP，這裡是讓原檔不要太大）（就地覆寫）
 // 用法：npm run images            壓縮所有過大的照片
 //       npm run images -- --check 只檢查，有過大照片就回報錯誤（CI 用）
 import { readdir, stat, readFile, writeFile } from 'node:fs/promises';
 import { join, extname, basename } from 'node:path';
 import sharp from 'sharp';
 
-const ROOT = 'source';
+const ROOT = 'src';
 const MAX_EDGE = 1600;        // 內文照片最長邊
 const MAX_EDGE_HEADER = 1920; // 封面圖（head/header/cover 開頭）
 const MAX_BYTES = 600 * 1024; // 超過這個大小就壓縮

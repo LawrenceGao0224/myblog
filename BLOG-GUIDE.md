@@ -1,179 +1,141 @@
-# 部落格使用手冊
+# 部落格使用手冊（Astro 版）
 
-現在的架構：**Hexo 8 + Node 24**，原始碼放在 GitHub `master` 分支，
-**push 之後 GitHub Actions 會自動建置並發佈**，不用再在本機跑 `hexo deploy`。
+架構：**Astro 7 + Node 24**，放在 GitHub `master` 分支，push 後由 GitHub Actions 自動建置並發佈到
+https://lawrencegao0224.github.io/myblog/
 
 ```
-寫文章 → npm run images → npm run server（本機預覽）→ git commit → git push → 自動上線（約 1–2 分鐘）
+npm run new -- 名稱 → 寫文章、放照片 → npm run dev（預覽）→ git commit → git push → 自動上線
 ```
+
+## 和 Hexo 版有什麼不同
+
+| | Hexo 版 | Astro 版 |
+|---|---|---|
+| 照片 | 原檔直接給讀者下載 | 自動轉成 WebP、產生手機／平板／電腦三種尺寸，讀者只下載需要的那張 |
+| 清邁那篇的照片流量（手機） | 12.6 MB | 2.7 MB |
+| 文章網址 | `/2026/07/24/chiangmai/` | `/posts/chiangmai/`（舊網址會自動轉過來） |
+| 深色模式 | 無 | 跟隨手機設定，右上角 ◐ 可切換 |
+| 點照片放大 | 無 | 有 |
+| 文章格式檢查 | 無 | 欄位寫錯會在建置時直接報錯 |
+| 主題 | beantech（2016，Bootstrap 3 + jQuery） | 自製輕量主題，沒有 jQuery／Bootstrap |
 
 ---
 
-## 一、一次性設定（只需做一次）
+## 日常使用
 
-### 1. 讓終端機使用 Node 24
-
-Node 24 已安裝在 `~/.local/node24`（沒有動到系統原本的 Node 12）。
-把它加到 PATH，以後打開終端機就會用新版：
+### 1. 新增文章
 
 ```bash
-echo 'export PATH="$HOME/.local/node24/bin:$PATH"' >> ~/.zshrc
+npm run new -- tokyo-2027
 ```
 
-重新開一個終端機視窗後確認：
+會建立 `src/content/posts/tokyo-2027/index.md`。網址名稱只能用小寫英文、數字和 `-`。
 
-```bash
-node -v
-```
-
-應該顯示 `v24.x.x`。
-
-> 之後若想改用 Homebrew 管理：先執行 `sudo xcodebuild -license accept`，再 `brew install node@24`。
-
-### 2. GitHub Pages 改成由 Actions 發佈
-
-1. 打開 https://github.com/LawrenceGao0224/myblog/settings/pages
-2. **Build and deployment → Source** 選 **GitHub Actions**
-3. push 一次 `master`，到 repo 的 **Actions** 分頁看「Deploy blog」變成綠色勾勾就完成了
-
-網址不變：https://lawrencegao0224.github.io/myblog/
-舊的 `gh-pages` 分支之後可以刪除（確認新流程正常後再刪）。
-
----
-
-## 二、日常使用
-
-### 寫新文章
-
-```bash
-npx hexo new "文章網址名稱"
-```
-
-會產生：
-- `source/_posts/文章網址名稱.md`：文章內容
-- `source/_posts/文章網址名稱/`：放這篇文章的照片
-
-文章開頭（front-matter）範例：
+文章開頭（front-matter）：
 
 ```yaml
 ---
-title: 泰國清邁 2026.07.13~2026.07.22
-subtitle: 超多市集、夜市，東西便宜～
-date: 2026-07-24 16:44:36
-catalog: true          # 右側顯示目錄
-header-img: header.jpg # 封面圖（放在同名資料夾裡）
+title: 東京 2027.3.1~2027.3.7   # 標題
+description: 一句話副標題           # 副標題（首頁卡片也會顯示）
+published: 2027-03-10T20:00:00+08:00
+cover: ./header.jpg                # 封面圖，放在同一個資料夾
 tags:
 - Travel
-categories:
-- Blog
+category: Blog
+toc: true                          # 顯示目錄（預設 true）
+draft: true                        # 草稿：本機看得到、不會發佈。寫完刪掉這行
 ---
 ```
 
-插入照片（照片放在同名資料夾裡，直接寫檔名）：
+### 2. 插入照片
 
-```html
-<img src="1.jpg" width=300 />
+把照片放進文章資料夾（和 `index.md` 同一層），然後：
+
+```markdown
+![淺草寺夜景](./1.jpg)
 ```
 
-插入 Google 地圖：直接貼 Google 地圖「分享 → 嵌入地圖」的 iframe 即可，手機上會自動縮放。
-
-### 壓縮照片（每次加照片後都要做）
+- 一定要用 `./` 開頭
+- 中括號裡的文字是圖片說明（給視障讀者和 Google），可以留空 `![](./1.jpg)`
+- 檔名打錯或照片不存在，建置會直接報錯並告訴你哪一篇、哪張，不會上線一張破圖
+- 不用再手動縮圖，Astro 會自動處理；但原檔超過 600 KB 時，發佈前的檢查會失敗，請先執行：
 
 ```bash
 npm run images
 ```
 
-- 會把 `source/` 裡超過 600 KB 的照片縮到最長邊 1600px（封面 1920px）
-- **會直接覆蓋原檔**，想保留原圖請先另外備份
-- GitHub Actions 每次發佈前會自動檢查，若有過大的照片，發佈會失敗並列出檔名
+### 3. 插入 Google 地圖
 
-### 本機預覽
+Google 地圖 → 分享 → 嵌入地圖 → 複製 iframe 貼上即可，手機上會自動縮放。
+
+### 4. 本機預覽
 
 ```bash
-npm run server
+npm run dev
 ```
 
-打開 http://localhost:4000/myblog/ ，存檔後重新整理就能看到變化。按 `Ctrl + C` 停止。
+打開 http://localhost:4321/myblog/ ，存檔後畫面會自動更新。按 `Ctrl + C` 停止。
 
-### 發佈
+### 5. 發佈
 
 ```bash
 git add -A
-git commit -m "新增：清邁遊記"
+git commit -m "新增：東京遊記"
 git push
 ```
 
-push 後到 GitHub repo 的 **Actions** 分頁可以看進度，1–2 分鐘後上線。
-如果紅色叉叉失敗，點進去看錯誤訊息（最常見的是照片太大 → 執行 `npm run images` 後重新 commit）。
+1–2 分鐘後上線。到 GitHub repo 的 **Actions** 分頁可看進度。
 
 ---
 
-## 三、選用功能（填好設定就會生效，留空則不載入）
+## 設定（`src/config.ts`）
 
-都在 `_config.yml` 裡，改完 commit + push 即可。
+網站標題、社群連結、朋友連結都在這裡改。以下選用功能留空就不會載入：
 
-### 流量統計：Google Analytics 4
+### Google Analytics 4
+1. https://analytics.google.com 建立資源 → 網站資料串流，網址填 `https://lawrencegao0224.github.io/myblog/`
+2. 複製評估 ID（`G-XXXXXXXXXX`）填入 `ANALYTICS.ga4Id`
 
-1. 到 https://analytics.google.com 建立「資源」→ 網站資料串流，網址填 `https://lawrencegao0224.github.io/myblog/`
-2. 複製「評估 ID」（格式 `G-XXXXXXXXXX`）
-3. 填入 `_config.yml`：`ga4_id: G-XXXXXXXXXX`
+### Cloudflare Web Analytics（免費、不用 cookie）
+1. Cloudflare 後台 → **Analytics & Logs → Web Analytics → Add a site**
+2. 複製 snippet 裡的 token 填入 `ANALYTICS.cloudflareToken`
 
-### 流量統計：Cloudflare Web Analytics（免費、不用 cookie，二選一或都用）
+### giscus 留言
+1. repo **Settings → Features** 勾選 **Discussions**
+2. 安裝 https://github.com/apps/giscus ，只選 `myblog`
+3. 到 https://giscus.app/zh-TW 填 `LawrenceGao0224/myblog`、分類選 **Announcements**
+4. 把產生的 `data-repo-id`、`data-category-id` 填入 `GISCUS.repoId`、`GISCUS.categoryId`
 
-1. 登入 Cloudflare → **Analytics & Logs → Web Analytics → Add a site**
-2. 填入網址，複製 snippet 裡的 `token` 值
-3. 填入 `_config.yml`：`cf_analytics_token: 你的token`
+### Cloudflare Pages（選用，台灣讀者較快）
+Cloudflare → **Workers & Pages → Create → Pages → Connect to Git** → 選 `myblog`：
+- Build command：`npm run build:cloudflare`
+- Build output directory：`dist`
+- 環境變數：`NODE_VERSION` = `24`
 
-### 留言功能：giscus
-
-留言會存在 GitHub Discussions，讀者用 GitHub 帳號登入留言。
-
-1. 到 https://github.com/LawrenceGao0224/myblog/settings → **Features** 勾選 **Discussions**
-2. 安裝 giscus app：https://github.com/apps/giscus → 只選 `myblog` repo
-3. 到 https://giscus.app/zh-TW ，repo 填 `LawrenceGao0224/myblog`，分類選 **Announcements**
-4. 頁面下方會產生程式碼，把 `data-repo-id` 和 `data-category-id` 的值填入 `_config.yml`：
-
-```yaml
-giscus:
-  repo: LawrenceGao0224/myblog
-  repo_id: R_xxxxxxxx
-  category: Announcements
-  category_id: DIC_xxxxxxxx
-```
-
-### 改用 Cloudflare Pages（台灣讀者較快，可與 GitHub Pages 並存）
-
-1. 登入 https://dash.cloudflare.com → **Workers & Pages → Create → Pages → Connect to Git**
-2. 選 `LawrenceGao0224/myblog`，設定：
-   - Production branch：`master`
-   - Build command：`npm run build:cloudflare`
-   - Build output directory：`public`
-   - 環境變數：`NODE_VERSION` = `24`
-3. 專案名稱建議取 `lawrence-blog`，網址會是 https://lawrence-blog.pages.dev
-   若取別的名字或綁自訂網域，請修改 `_config.cloudflare.yml` 裡的 `url`
-
-之後每次 push，GitHub Pages 和 Cloudflare Pages 會同時更新。
+專案名稱若不是 `lawrence-blog`，請改 `package.json` 裡 `build:cloudflare` 的 `SITE_URL`。
 
 ---
 
-## 四、常用指令速查
+## 指令速查
 
 | 指令 | 用途 |
-| --- | --- |
-| `npx hexo new "名稱"` | 新增文章 |
-| `npm run images` | 壓縮過大的照片 |
-| `npm run images -- --check` | 只檢查不壓縮 |
-| `npm run server` | 本機預覽 |
-| `npm run build` | 產生網站到 `public/`（通常不用手動跑） |
-| `git push` | 發佈 |
+|---|---|
+| `npm run new -- 名稱` | 新增文章 |
+| `npm run dev` | 本機預覽（含草稿） |
+| `npm run images` | 壓縮過大的原始照片 |
+| `npm run build` | 產生網站到 `dist/`（通常不用手動跑） |
+| `npm run preview` | 預覽 `dist/` 的正式版本 |
 
-## 五、檔案說明
+## 檔案位置
 
-| 檔案 | 用途 |
-| --- | --- |
-| `_config.yml` | 網站主設定（標題、統計、留言） |
-| `_config.cloudflare.yml` | Cloudflare Pages 專用網址設定 |
-| `.github/workflows/deploy.yml` | 自動部署流程 |
-| `tools/optimize-images.mjs` | 照片壓縮工具 |
-| `themes/beantech/source/css/responsive.css` | 手機版面修正 |
-| `BLOG-REVIEW.md` | 上次校稿中待你確認的文字 |
+| 位置 | 內容 |
+|---|---|
+| `src/content/posts/` | 所有文章（每篇一個資料夾） |
+| `src/config.ts` | 網站設定 |
+| `src/pages/` | 頁面：首頁、文章、標籤、關於、404 |
+| `src/pages/about.astro` | 「關於我」內容 |
+| `src/components/`、`src/layouts/` | 版面元件 |
+| `src/styles/global.css` | 顏色、字體、文章樣式 |
+| `src/assets/` | 首頁封面、大頭照 |
+| `src/redirects.json` | 舊 Hexo 網址 → 新網址對照表 |
+| `tools/` | 新增文章、壓縮照片、Hexo 轉換工具 |

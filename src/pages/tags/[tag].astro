@@ -1,0 +1,27 @@
+---
+import Base from '../../layouts/Base.astro';
+import Hero from '../../components/Hero.astro';
+import PostCard from '../../components/PostCard.astro';
+import { allTags, getPosts, type Post } from '../../utils';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return allTags(posts).map(([tag]) => ({
+    params: { tag },
+    props: { posts: posts.filter((p) => p.data.tags.includes(tag)) },
+  }));
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props as { posts: Post[] };
+---
+<Base title={`#${tag}`}>
+  <Hero slot="hero" title={`#${tag}`} subtitle={`${posts.length} 篇文章`} />
+  <div class="wrap-wide list">
+    {posts.map((post) => <PostCard post={post} />)}
+  </div>
+</Base>
+
+<style>
+  .list { max-width: 900px; display: grid; gap: 20px; margin-top: 24px; }
+</style>

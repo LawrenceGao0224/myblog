@@ -1,0 +1,34 @@
+<dialog id="lightbox" aria-label="放大圖片">
+  <img alt="" />
+</dialog>
+
+<script>
+  const dialog = document.getElementById('lightbox') as HTMLDialogElement;
+  const big = dialog.querySelector('img')!;
+  document.querySelectorAll<HTMLImageElement>('.prose img').forEach((img) => {
+    img.addEventListener('click', () => {
+      const largest = img.srcset ? img.srcset.split(',').pop()!.trim().split(' ')[0] : '';
+      big.src = largest || img.currentSrc || img.src;
+      big.alt = img.alt;
+      dialog.showModal();
+    });
+  });
+  dialog.addEventListener('click', () => dialog.close());
+</script>
+
+<style>
+  dialog {
+    max-width: 100vw;
+    max-height: 100vh;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: rgb(0 0 0 / 0.9);
+    cursor: zoom-out;
+  }
+  dialog::backdrop { background: transparent; }
+  dialog[open] { display: flex; align-items: center; justify-content: center; }
+  dialog img { max-width: 96vw; max-height: 94vh; object-fit: contain; }
+</style>

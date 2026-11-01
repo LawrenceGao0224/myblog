@@ -1,0 +1,21 @@
+---
+import Base from '../../layouts/Base.astro';
+import Hero from '../../components/Hero.astro';
+import { allTags, getPosts, tagUrl } from '../../utils';
+
+const tags = allTags(await getPosts());
+---
+<Base title="標籤">
+  <Hero slot="hero" title="標籤" subtitle={`共 ${tags.length} 個標籤`} />
+  <div class="wrap tags">
+    {tags.map(([tag, count]) => (
+      <a class="tag big" href={tagUrl(tag)}>{tag} <span>{count}</span></a>
+    ))}
+  </div>
+</Base>
+
+<style>
+  .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+  .big { font-size: 16px; padding: 6px 16px; }
+  .big span { opacity: 0.7; font-size: 13px; }
+</style>

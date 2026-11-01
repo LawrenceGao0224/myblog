@@ -19,6 +19,8 @@
 
 ## 需要你確認（不確定原意，未修改）
 
+> Astro 版的文章位置：`src/content/posts/<小寫檔名>/index.md`，例如 Lookforjobs.md → `src/content/posts/lookforjobs/index.md`
+
 ### Lookforjobs.md
 - 「雲端低負載流程」是否為「負載平衡」？
 - 「如何反應」→「如何回應」？

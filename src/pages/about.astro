@@ -1,0 +1,42 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import { FRIENDS, SOCIAL } from '../config';
+import avatar from '../assets/avatar.jpg';
+---
+<Base title="關於我" description="Wish for the Best, Prepare for the Worst">
+  <Hero slot="hero" title="About Me" subtitle="Wish for the Best, Prepare for the Worst" />
+  <div class="wrap">
+    <Image class="avatar" src={avatar} alt="高碩輿" width={160} height={160} densities={[1, 2]} />
+    <article class="prose">
+      <p>Hello! 我是高碩輿！</p>
+      <p>
+        自 2018 年起開始撰寫部落格。從小就喜歡到處跑跳，因緣踏入電腦科學領域，目前於科技業外商擔任技術顧問。
+        喜歡跳舞、球類運動，會固定購書閱讀，心得分享在<a href="https://lawrencekao.notion.site/1a7fb57a6f3c4e30a8f1f5e45677b129?v=e89018e9e9c54144977390b1195ad432&pvs=4">這網址</a>。
+      </p>
+      <p>
+        喜歡一句名言送給大家：「你比自己相信的更勇敢，比你外表看來更強大，比你想像的更有智慧。」這名言來自一本著名的童書，隨時提醒自己，不要低估自我。
+        網站不定期分享我的生活與學習之心路歷程。
+      </p>
+      <hr />
+      <p>Hello! I'm Lawrence!</p>
+      <p>
+        Since 2018, I have been writing a blog. I have always enjoyed traveling and being active from a young age. By chance, I entered the field of computer science and currently work as a technical consultant in a foreign technology company. I enjoy dancing and sports. Despite testing as an extrovert (E), I still feel nervous and shy in large groups.
+      </p>
+      <p>
+        I'd like to share a famous quote with everyone: "You are braver than you believe, stronger than you seem, and smarter than you think." - Christopher Robin to Pooh – A.A.Milne
+      </p>
+      <p>My website periodically shares the journey of my life and learning experiences.</p>
+      <h2>聯絡我</h2>
+      <p class="links">{SOCIAL.map((s) => <a href={s.href} target="_blank" rel="noopener">{s.label}</a>)}</p>
+      <h2>朋友</h2>
+      <p class="links">{FRIENDS.map((s) => <a href={s.href} target="_blank" rel="noopener">{s.label}</a>)}</p>
+    </article>
+  </div>
+</Base>
+
+<style>
+  .avatar { display: block; width: 120px; height: 120px; margin: 32px auto 0; border-radius: 50%; object-fit: cover; }
+  .links { display: flex; flex-wrap: wrap; gap: 16px; }
+</style>
