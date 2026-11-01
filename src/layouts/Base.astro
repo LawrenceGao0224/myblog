@@ -31,7 +31,9 @@ const current = Astro.url.pathname;
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <link rel="icon" href={url('/favicon.png')} />
+    <link rel="icon" href={url('/favicon.ico')} sizes="48x48" />
+    <link rel="icon" type="image/png" href={url('/icon-192.png')} sizes="192x192" />
+    <link rel="apple-touch-icon" href={url('/apple-touch-icon.png')} />
     <link rel="alternate" type="application/rss+xml" title={SITE.title} href={url('/rss.xml')} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
