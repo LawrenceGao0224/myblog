@@ -7,6 +7,8 @@ https://lawrencegao0224.github.io/myblog/
 npm run new -- 名稱 → 寫文章、放照片 → npm run dev（預覽）→ git commit → git push → 自動上線
 ```
 
+> 📝 **要寫新文章？** 請看 [POSTING-GUIDE.md](POSTING-GUIDE.md)：撰寫格式、照片規則、發佈步驟、常見錯誤都在裡面。
+
 ## 和 Hexo 版有什麼不同
 
 | | Hexo 版 | Astro 版 |

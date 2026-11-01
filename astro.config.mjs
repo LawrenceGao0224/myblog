@@ -1,5 +1,7 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import { satteri } from '@astrojs/markdown-satteri';
+import { softBreaks } from './src/plugins/soft-breaks.mjs';
 import redirects from './src/redirects.json' with { type: 'json' };
 
 // 部署到 Cloudflare Pages 時：SITE_URL=https://xxx.pages.dev BASE_PATH=/ npm run build
@@ -22,6 +24,7 @@ export default defineConfig({
     responsiveStyles: true,
   },
   markdown: {
+    processor: satteri({ mdastPlugins: [softBreaks] }),
     shikiConfig: { theme: 'github-dark' },
   },
 });
