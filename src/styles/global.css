@@ -1,30 +1,32 @@
+/* 配色參考 Astro Theme OpenBlog：淺灰底、近黑字、靛藍點綴 */
 :root {
-  --bg: #fafaf9;
+  --bg: #f8f9fa;
   --surface: #ffffff;
-  --text: #1c1917;
-  --muted: #6b6560;
+  --text: #0c0a09;
+  --muted: #57534e;
   --border: #e7e5e4;
-  --accent: #0e7490;
-  --accent-soft: #e0f2f5;
-  --code-bg: #f5f5f4;
-  --shadow: 0 1px 2px rgb(0 0 0 / 0.04), 0 4px 16px rgb(0 0 0 / 0.06);
-  --radius: 14px;
+  --accent: #4f46e5;
+  --accent-soft: #e0e7ff;
+  --pill: #e5e7eb;
+  --code-bg: #f1f1f0;
+  --stripe: #a78bfa;
+  --radius: 6px;
   --content: 720px;
-  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang TC', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+  --font: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang TC', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
-    --bg: #121212; --surface: #1c1c1e; --text: #ececec; --muted: #a1a1aa;
-    --border: #2e2e32; --accent: #5ec4d6; --accent-soft: #163a42; --code-bg: #232326;
-    --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 4px 16px rgb(0 0 0 / 0.3);
+    --bg: #0c0a09; --surface: #1c1917; --text: #f5f5f4; --muted: #a8a29e;
+    --border: #292524; --accent: #818cf8; --accent-soft: #312e81; --pill: #292524;
+    --code-bg: #1c1917; --stripe: #7c3aed;
     color-scheme: dark;
   }
 }
 :root[data-theme='dark'] {
-  --bg: #121212; --surface: #1c1c1e; --text: #ececec; --muted: #a1a1aa;
-  --border: #2e2e32; --accent: #5ec4d6; --accent-soft: #163a42; --code-bg: #232326;
-  --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 4px 16px rgb(0 0 0 / 0.3);
+  --bg: #0c0a09; --surface: #1c1917; --text: #f5f5f4; --muted: #a8a29e;
+  --border: #292524; --accent: #818cf8; --accent-soft: #312e81; --pill: #292524;
+  --code-bg: #1c1917; --stripe: #7c3aed;
   color-scheme: dark;
 }
 
@@ -42,16 +44,17 @@ a:hover { text-decoration: underline; }
 img { max-width: 100%; height: auto; }
 
 .wrap { max-width: var(--content); margin: 0 auto; padding: 0 16px; }
-.wrap-wide { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+.wrap-wide { max-width: 1152px; margin: 0 auto; padding: 0 16px; }
 
 .tag {
   display: inline-block;
-  padding: 2px 10px;
+  padding: 3px 12px;
   border-radius: 999px;
-  background: var(--accent-soft);
-  color: var(--accent);
+  background: var(--accent);
+  color: #fff;
   font-size: 13px;
-  line-height: 1.7;
+  font-weight: 600;
+  line-height: 1.6;
 }
 .tag:hover { text-decoration: none; filter: brightness(0.95); }
 .muted { color: var(--muted); }
@@ -59,16 +62,14 @@ img { max-width: 100%; height: auto; }
 /* 文章內容 */
 .prose { font-size: 17px; }
 .prose h1, .prose h2, .prose h3 { line-height: 1.4; margin: 2em 0 0.6em; }
-.prose h1 { font-size: 1.6em; padding-bottom: 0.3em; border-bottom: 1px solid var(--border); }
+.prose h1 { font-size: 1.6em; }
 .prose h2 { font-size: 1.35em; }
 .prose h3 { font-size: 1.15em; }
 .prose p, .prose ul, .prose ol { margin: 0 0 1.1em; }
 .prose blockquote {
   margin: 1.5em 0;
-  padding: 0.6em 1.2em;
-  border-left: 4px solid var(--accent);
-  background: var(--surface);
-  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 0.4em 1.2em;
+  border-left: 3px solid var(--text);
   color: var(--muted);
 }
 .prose blockquote p { margin: 0.3em 0; }
@@ -79,7 +80,7 @@ img { max-width: 100%; height: auto; }
   height: auto;
   max-height: 80vh;
   object-fit: contain;
-  border-radius: 10px;
+  border-radius: var(--radius);
   cursor: zoom-in;
 }
 .prose iframe {
@@ -90,7 +91,7 @@ img { max-width: 100%; height: auto; }
   aspect-ratio: 4 / 3;
   margin: 1.2em auto;
   border: 0;
-  border-radius: 10px;
+  border-radius: var(--radius);
 }
 .prose pre {
   padding: 1em;
@@ -99,6 +100,8 @@ img { max-width: 100%; height: auto; }
   font-size: 14px;
   line-height: 1.6;
 }
+.prose a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; font-weight: 500; }
+.prose a:hover { color: var(--accent); }
 .prose :not(pre) > code {
   padding: 0.15em 0.4em;
   border-radius: 6px;
@@ -113,4 +116,23 @@ img { max-width: 100%; height: auto; }
 @media (max-width: 640px) {
   body, .prose { font-size: 16px; }
   .prose img { max-height: none; }
+}
+
+/* 頁面大標題前的斜線小方塊（OpenBlog 的招牌裝飾） */
+.stripe-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  font-size: clamp(34px, 7vw, 48px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+.stripe-title::before {
+  content: '';
+  flex: none;
+  width: 0.5em;
+  height: 0.5em;
+  background: repeating-linear-gradient(-45deg, var(--stripe) 0 1.5px, transparent 1.5px 5px);
 }

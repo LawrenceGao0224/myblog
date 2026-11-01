@@ -1,21 +1,21 @@
 ---
 import Base from '../layouts/Base.astro';
-import Hero from '../components/Hero.astro';
+import PageHeading from '../components/PageHeading.astro';
 import PostList from '../components/PostList.astro';
 import { SITE } from '../config';
 import { getPosts } from '../utils';
-import header from '../assets/site-header.jpg';
 
 const posts = await getPosts();
 const lastPage = Math.ceil(posts.length / SITE.postsPerPage);
 ---
 <Base>
-  <Hero slot="hero" image={header} title={SITE.title} subtitle={SITE.subtitle} />
-  <div class="wrap-wide home">
-    <PostList posts={posts.slice(0, SITE.postsPerPage)} page={1} lastPage={lastPage} />
+  <PageHeading title={SITE.title} subtitle={SITE.subtitle} posts={posts} />
+  <div class="wrap-wide">
+    <p class="section-label">最新文章</p>
+    <PostList posts={posts.slice(0, SITE.postsPerPage)} page={1} lastPage={lastPage} feature />
   </div>
 </Base>
 
 <style>
-  .home { max-width: 900px; margin-top: 32px; }
+  .section-label { margin: 36px 0 18px; text-align: right; font-size: 17px; }
 </style>

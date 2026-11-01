@@ -25,3 +25,11 @@ export function allTags(posts: Post[]): [string, number][] {
   for (const p of posts) for (const t of p.data.tags) counts.set(t, (counts.get(t) ?? 0) + 1);
   return [...counts].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
 }
+
+/** 閱讀時間：中文每分鐘約 400 字、英文約 200 字 */
+export function readingMinutes(post: Post): number {
+  const body = (post.body ?? '').replace(/<[^>]*>/g, ' ').replace(/\]\([^)]*\)/g, ']');
+  const cjk = (body.match(/[\u4e00-\u9fff]/g) ?? []).length;
+  const words = body.replace(/[\u4e00-\u9fff]/g, ' ').split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.round(cjk / 400 + words / 200));
+}

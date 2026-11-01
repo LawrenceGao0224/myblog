@@ -1,13 +1,13 @@
 ---
 import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
-import Hero from '../components/Hero.astro';
+import PageHeading from '../components/PageHeading.astro';
 import { FRIENDS, SOCIAL } from '../config';
 import avatar from '../assets/avatar.jpg';
 ---
 <Base title="關於我" description="Wish for the Best, Prepare for the Worst">
-  <Hero slot="hero" title="About Me" subtitle="Wish for the Best, Prepare for the Worst" />
-  <div class="wrap">
+  <PageHeading title="About Me" subtitle="Wish for the Best, Prepare for the Worst" />
+  <div class="wrap-wide about">
     <Image class="avatar" src={avatar} alt="高碩輿" width={160} height={160} densities={[1, 2]} />
     <article class="prose">
       <p>Hello! 我是高碩輿！</p>
@@ -37,6 +37,12 @@ import avatar from '../assets/avatar.jpg';
 </Base>
 
 <style>
-  .avatar { display: block; width: 120px; height: 120px; margin: 32px auto 0; border-radius: 50%; object-fit: cover; }
+  .about { display: grid; grid-template-columns: 220px minmax(0, var(--content)); gap: 48px; margin-top: 40px; }
+  .avatar { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; }
+  .prose { margin: 0; }
+  @media (max-width: 760px) {
+    .about { grid-template-columns: 1fr; gap: 16px; }
+    .avatar { width: 112px; height: 112px; }
+  }
   .links { display: flex; flex-wrap: wrap; gap: 16px; }
 </style>

@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Analytics from '../components/Analytics.astro';
+import Icon from '../components/Icon.astro';
 import { SITE, SOCIAL } from '../config';
 import { url } from '../utils';
 
@@ -48,11 +49,21 @@ const current = Astro.url.pathname;
     <header class="site-header">
       <div class="wrap-wide bar">
         <a class="brand" href={url('/')}>{SITE.title}</a>
-        <nav>
-          {nav.map((n) => (
-            <a href={n.href} aria-current={current === n.href ? 'page' : undefined}>{n.label}</a>
+        <nav aria-label="主選單">
+          {nav.slice(1).map((n) => (
+            <a href={n.href} aria-current={current === n.href ? 'page' : undefined}>
+              {n.label === '標籤' && <Icon name="tag" size={17} />}
+              {n.label}
+            </a>
           ))}
-          <button id="theme-toggle" type="button" aria-label="切換深色模式">◐</button>
+          <span class="divider" aria-hidden="true"></span>
+          {SOCIAL.slice(0, 2).map((s) => (
+            <a class="icon social" href={s.href} target="_blank" rel="noopener" aria-label={s.label}><Icon name={s.icon} /></a>
+          ))}
+          <button id="theme-toggle" class="icon" type="button" aria-label="切換深色模式">
+            <span class="moon"><Icon name="moon" /></span>
+            <span class="sun"><Icon name="sun" /></span>
+          </button>
         </nav>
       </div>
     </header>
@@ -61,11 +72,11 @@ const current = Astro.url.pathname;
       <slot />
     </main>
     <footer class="site-footer">
-      <div class="wrap">
-        <p class="social">
-          {SOCIAL.map((s) => <a href={s.href} target="_blank" rel="noopener">{s.label}</a>)}
+      <div class="wrap-wide">
+        <p class="social-row">
+          {SOCIAL.map((s) => <a href={s.href} target="_blank" rel="noopener" aria-label={s.label}><Icon name={s.icon} size={18} /></a>)}
         </p>
-        <p class="muted">© {new Date().getFullYear()} {SITE.author}</p>
+        <p>© {new Date().getFullYear()} {SITE.author}. All rights reserved.</p>
       </div>
     </footer>
     <script is:inline>
@@ -86,37 +97,47 @@ const current = Astro.url.pathname;
     position: sticky;
     top: 0;
     z-index: 10;
-    background: color-mix(in srgb, var(--bg) 85%, transparent);
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
     backdrop-filter: saturate(180%) blur(12px);
     -webkit-backdrop-filter: saturate(180%) blur(12px);
-    border-bottom: 1px solid var(--border);
   }
-  .bar { display: flex; align-items: center; justify-content: space-between; height: 56px; gap: 12px; }
-  .brand { font-weight: 700; font-size: 18px; color: var(--text); white-space: nowrap; }
-  nav { display: flex; align-items: center; gap: 4px; }
-  nav a {
-    padding: 6px 10px;
-    border-radius: 8px;
-    color: var(--muted);
-    font-size: 15px;
-    white-space: nowrap;
-  }
-  nav a:hover, nav a[aria-current='page'] { color: var(--text); background: var(--surface); text-decoration: none; }
-  #theme-toggle {
-    width: 34px; height: 34px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    background: var(--surface);
+  .bar { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 12px; }
+  .brand { font-weight: 600; font-size: 16px; color: var(--text); white-space: nowrap; }
+  .brand:hover { text-decoration: none; opacity: 0.7; }
+  nav { display: flex; align-items: center; gap: 2px; }
+  nav a, .icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 9px;
+    border: 0;
+    border-radius: 6px;
+    background: none;
     color: var(--text);
-    font-size: 16px;
+    font: 500 14px/1 var(--font);
+    white-space: nowrap;
     cursor: pointer;
   }
+  nav a:hover, .icon:hover { text-decoration: none; background: var(--pill); }
+  nav a[aria-current='page'] { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; }
+  .divider { width: 2px; height: 20px; margin: 0 8px; background: var(--text); }
+  .sun { display: none; }
+  :global([data-theme='dark']) .sun { display: inline-flex; }
+  :global([data-theme='dark']) .moon { display: none; }
+  @media (prefers-color-scheme: dark) {
+    :global(:root:not([data-theme='light'])) .sun { display: inline-flex; }
+    :global(:root:not([data-theme='light'])) .moon { display: none; }
+  }
   main { min-height: 60vh; }
-  .site-footer { margin-top: 64px; padding: 32px 0 48px; border-top: 1px solid var(--border); text-align: center; font-size: 14px; }
-  .site-footer p { margin: 4px 0; }
-  .social { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; }
-  @media (max-width: 480px) {
-    .brand { font-size: 16px; }
-    nav a { padding: 6px 7px; font-size: 14px; }
+  .site-footer { margin-top: 80px; text-align: center; font-size: 14px; }
+  .site-footer .wrap-wide { padding-top: 28px; padding-bottom: 40px; border-top: 1px solid var(--border); }
+  .site-footer p { margin: 6px 0; }
+  .social-row { display: flex; justify-content: center; gap: 14px; }
+  .social-row a { color: var(--muted); }
+  .social-row a:hover { color: var(--text); }
+  @media (max-width: 640px) {
+    nav .social, .divider { display: none; }
+    .brand { font-size: 15px; }
+    nav a, .icon { padding: 6px 7px; }
   }
 </style>

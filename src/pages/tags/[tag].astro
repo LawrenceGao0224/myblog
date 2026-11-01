@@ -1,27 +1,29 @@
 ---
 import Base from '../../layouts/Base.astro';
-import Hero from '../../components/Hero.astro';
-import PostCard from '../../components/PostCard.astro';
+import PageHeading from '../../components/PageHeading.astro';
+import PostList from '../../components/PostList.astro';
+import { SITE } from '../../config';
 import { allTags, getPosts, type Post } from '../../utils';
 
 export async function getStaticPaths() {
   const posts = await getPosts();
   return allTags(posts).map(([tag]) => ({
     params: { tag },
-    props: { posts: posts.filter((p) => p.data.tags.includes(tag)) },
+    props: { all: posts, posts: posts.filter((p) => p.data.tags.includes(tag)) },
   }));
 }
 
 const { tag } = Astro.params;
-const { posts } = Astro.props as { posts: Post[] };
+const { all, posts } = Astro.props as { all: Post[]; posts: Post[] };
 ---
 <Base title={`#${tag}`}>
-  <Hero slot="hero" title={`#${tag}`} subtitle={`${posts.length} 篇文章`} />
-  <div class="wrap-wide list">
-    {posts.map((post) => <PostCard post={post} />)}
+  <PageHeading title={SITE.title} subtitle={SITE.subtitle} posts={all} active={tag} />
+  <div class="wrap-wide">
+    <p class="section-label">{tag} · {posts.length} 篇</p>
+    <PostList posts={posts} />
   </div>
 </Base>
 
 <style>
-  .list { max-width: 900px; display: grid; gap: 20px; margin-top: 24px; }
+  .section-label { margin: 36px 0 18px; text-align: right; font-size: 17px; }
 </style>

@@ -1,26 +1,26 @@
 ---
 import Base from '../layouts/Base.astro';
-import Hero from '../components/Hero.astro';
+import PageHeading from '../components/PageHeading.astro';
 import { formatDate, getPosts, postUrl } from '../utils';
 
 const posts = await getPosts();
-const byYear = new Map<number, typeof posts>();
+const byYear = new Map<string, typeof posts>();
 for (const p of posts) {
-  const y = Number(formatDate(p.data.published).slice(0, 4));
+  const y = formatDate(p.data.published).slice(0, 4);
   byYear.set(y, [...(byYear.get(y) ?? []), p]);
 }
 ---
 <Base title="所有文章">
-  <Hero slot="hero" title="所有文章" subtitle={`共 ${posts.length} 篇`} />
-  <div class="wrap">
+  <PageHeading title="所有文章" subtitle={`2017 年至今，共 ${posts.length} 篇`} />
+  <div class="wrap-wide archive">
     {[...byYear].map(([year, list]) => (
       <section>
-        <h2>{year} <span class="muted">{list.length}</span></h2>
+        <h2>{year}</h2>
         <ul>
           {list.map((p) => (
             <li>
-              <time class="muted">{formatDate(p.data.published).slice(5)}</time>
               <a href={postUrl(p)}>{p.data.title}</a>
+              <time>{formatDate(p.data.published).slice(5)}</time>
             </li>
           ))}
         </ul>
@@ -30,9 +30,14 @@ for (const p of posts) {
 </Base>
 
 <style>
-  h2 { margin: 32px 0 8px; font-size: 22px; }
-  h2 .muted { font-size: 15px; font-weight: normal; }
-  ul { list-style: none; margin: 0; padding: 0; }
-  li { display: flex; gap: 16px; padding: 8px 0; border-bottom: 1px dashed var(--border); }
-  time { flex: none; font-variant-numeric: tabular-nums; }
+  .archive { margin-top: 24px; }
+  section { display: grid; grid-template-columns: 120px 1fr; gap: 24px; padding: 28px 0; border-bottom: 1px solid var(--border); }
+  h2 { margin: 0; font-size: 22px; font-weight: 700; }
+  ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+  li { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; }
+  li a { color: var(--text); font-weight: 500; }
+  time { flex: none; color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
+  @media (max-width: 600px) {
+    section { grid-template-columns: 1fr; gap: 12px; }
+  }
 </style>

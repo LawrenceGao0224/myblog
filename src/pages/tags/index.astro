@@ -1,21 +1,30 @@
 ---
 import Base from '../../layouts/Base.astro';
-import Hero from '../../components/Hero.astro';
+import PageHeading from '../../components/PageHeading.astro';
 import { allTags, getPosts, tagUrl } from '../../utils';
 
 const tags = allTags(await getPosts());
 ---
 <Base title="標籤">
-  <Hero slot="hero" title="標籤" subtitle={`共 ${tags.length} 個標籤`} />
-  <div class="wrap tags">
+  <PageHeading title="標籤" subtitle={`共 ${tags.length} 個標籤`} />
+  <div class="wrap-wide tags">
     {tags.map(([tag, count]) => (
-      <a class="tag big" href={tagUrl(tag)}>{tag} <span>{count}</span></a>
+      <a href={tagUrl(tag)}><span class="name">{tag}</span><span class="count">{count} 篇</span></a>
     ))}
   </div>
 </Base>
 
 <style>
-  .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
-  .big { font-size: 16px; padding: 6px 16px; }
-  .big span { opacity: 0.7; font-size: 13px; }
+  .tags { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin-top: 36px; }
+  .tags a {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 18px 20px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--text);
+  }
+  .tags a:hover { text-decoration: none; border-color: var(--text); }
+  .name { font-size: 17px; font-weight: 600; }
+  .count { color: var(--muted); font-size: 14px; }
 </style>

@@ -9,11 +9,11 @@ export const SITE = {
 };
 
 export const SOCIAL = [
-  { label: 'GitHub', href: 'https://github.com/LawrenceGao0224' },
-  { label: 'Instagram', href: 'https://www.instagram.com/shuo_yu_gao' },
-  { label: 'Facebook', href: 'https://www.facebook.com/Lawrence0224' },
-  { label: 'Email', href: 'mailto:bightt53523@gmail.com' },
-];
+  { label: 'GitHub', icon: 'github', href: 'https://github.com/LawrenceGao0224' },
+  { label: 'Instagram', icon: 'instagram', href: 'https://www.instagram.com/shuo_yu_gao' },
+  { label: 'Facebook', icon: 'facebook', href: 'https://www.facebook.com/Lawrence0224' },
+  { label: 'Email', icon: 'mail', href: 'mailto:bightt53523@gmail.com' },
+] as const;
 
 export const FRIENDS = [
   { label: 'Cozy Night In', href: 'https://cozynightin.com/' },

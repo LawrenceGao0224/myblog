@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import PageHeading from '../../components/PageHeading.astro';
 import PostList from '../../components/PostList.astro';
 import { SITE } from '../../config';
 import { getPosts, type Post } from '../../utils';
@@ -11,19 +12,21 @@ export async function getStaticPaths() {
     const page = i + 2;
     return {
       params: { page: String(page) },
-      props: { posts: posts.slice((page - 1) * SITE.postsPerPage, page * SITE.postsPerPage), page, lastPage },
+      props: { all: posts, posts: posts.slice((page - 1) * SITE.postsPerPage, page * SITE.postsPerPage), page, lastPage },
     };
   });
 }
 
-const { posts, page, lastPage } = Astro.props as { posts: Post[]; page: number; lastPage: number };
+const { all, posts, page, lastPage } = Astro.props as { all: Post[]; posts: Post[]; page: number; lastPage: number };
 ---
 <Base title={`第 ${page} 頁`}>
-  <div class="wrap-wide home">
+  <PageHeading title={SITE.title} subtitle={SITE.subtitle} posts={all} />
+  <div class="wrap-wide">
+    <p class="section-label">第 {page} 頁</p>
     <PostList posts={posts} page={page} lastPage={lastPage} />
   </div>
 </Base>
 
 <style>
-  .home { max-width: 900px; margin-top: 32px; }
+  .section-label { margin: 36px 0 18px; text-align: right; font-size: 17px; }
 </style>

@@ -2,23 +2,37 @@
 import PostCard from './PostCard.astro';
 import { url, type Post } from '../utils';
 
-interface Props { posts: Post[]; page: number; lastPage: number }
-const { posts, page, lastPage } = Astro.props;
+interface Props { posts: Post[]; page?: number; lastPage?: number; feature?: boolean }
+const { posts, page = 1, lastPage = 1, feature = false } = Astro.props;
 const pageHref = (n: number) => (n === 1 ? url('/') : url(`/page/${n}/`));
 ---
-<div class="list">
-  {posts.map((post, i) => <PostCard post={post} eager={page === 1 && i < 2} />)}
+<div class:list={['grid', { feature }]}>
+  {posts.map((post, i) => <PostCard post={post} eager={i < 2} wide={feature && i === 0} />)}
 </div>
 {lastPage > 1 && (
   <nav class="pager" aria-label="分頁">
-    {page > 1 ? <a href={pageHref(page - 1)}>← 較新</a> : <span />}
+    {page > 1 ? <a href={pageHref(page - 1)}>← 較新文章</a> : <span />}
     <span class="muted">{page} / {lastPage}</span>
-    {page < lastPage ? <a href={pageHref(page + 1)}>較舊 →</a> : <span />}
+    {page < lastPage ? <a href={pageHref(page + 1)}>較舊文章 →</a> : <span />}
   </nav>
 )}
 
 <style>
-  .list { display: grid; gap: 20px; }
-  .pager { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; font-size: 15px; }
-  .pager a { padding: 8px 16px; border: 1px solid var(--border); border-radius: 999px; background: var(--surface); }
+  .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px 28px; }
+  /* 第一列：一大一小（OpenBlog 首頁版型） */
+  .feature > :global(:first-child) { grid-column: span 2; }
+  @media (min-width: 601px) {
+    .feature > :global(:nth-child(-n + 2) .thumb) { height: 340px; }
+  }
+  @media (max-width: 900px) {
+    .feature > :global(:nth-child(2) .thumb) { height: 240px; }
+    .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .feature > :global(:first-child) { grid-column: span 2; }
+  }
+  @media (max-width: 600px) {
+    .grid { grid-template-columns: 1fr; gap: 40px; }
+    .feature > :global(:first-child) { grid-column: auto; }
+  }
+  .pager { display: flex; justify-content: space-between; align-items: center; margin-top: 56px; font-size: 14px; font-weight: 600; }
+  .pager a { color: var(--text); }
 </style>

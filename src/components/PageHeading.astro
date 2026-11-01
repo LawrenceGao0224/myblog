@@ -1,0 +1,28 @@
+---
+import { allTags, tagUrl, url, type Post } from '../utils';
+
+// 大標題 + 標籤分頁列（OpenBlog 的頁首）
+interface Props { title: string; subtitle?: string; posts?: Post[]; active?: string }
+const { title, subtitle, posts, active } = Astro.props;
+const tabs = posts ? [['全部', url('/')], ...allTags(posts).map(([t]) => [t, tagUrl(t)])] : [];
+---
+<section class="wrap-wide heading">
+  <h1 class="stripe-title">{title}</h1>
+  {subtitle && <p class="subtitle">{subtitle}</p>}
+  {tabs.length > 0 && (
+    <nav class="tabs" aria-label="分類">
+      {tabs.map(([label, href]) => (
+        <a href={href} aria-current={(active ?? '全部') === label ? 'page' : undefined}>{label}</a>
+      ))}
+    </nav>
+  )}
+</section>
+
+<style>
+  .heading { padding-top: 56px; }
+  .subtitle { margin: 12px 0 0; color: var(--muted); font-size: 16px; }
+  .tabs { display: flex; flex-wrap: wrap; gap: 0 22px; margin-top: 24px; border-bottom: 1px solid var(--border); }
+  .tabs a { padding: 10px 0 8px; margin-bottom: -1px; border-bottom: 2px solid transparent; color: var(--muted); font-size: 15px; }
+  .tabs a:hover { color: var(--text); text-decoration: none; }
+  .tabs a[aria-current='page'] { color: var(--text); border-bottom-color: var(--text); }
+</style>
