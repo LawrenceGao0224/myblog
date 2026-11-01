@@ -1,81 +1,125 @@
-/* 配色參考 Astro Theme OpenBlog：淺灰底、近黑字、靛藍點綴 */
-:root {
-  --bg: #f8f9fa;
-  --surface: #ffffff;
-  --text: #0c0a09;
-  --muted: #57534e;
-  --border: #e7e5e4;
-  --accent: #4f46e5;
-  --accent-soft: #e0e7ff;
-  --pill: #e5e7eb;
-  --code-bg: #f1f1f0;
-  --stripe: #a78bfa;
-  --radius: 6px;
-  --content: 720px;
-  --font: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 'PingFang TC', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+/* 雜誌風格：預設深色，暖色調，標題用襯線字 */
+:root,
+:root[data-theme='dark'] {
+  --bg: #141210;
+  --surface: #1d1a17;
+  --surface-2: #26221e;
+  --text: #ede7dd;
+  --muted: #a69d90;
+  --border: #322d27;
+  --accent: #e3a857;
+  --accent-ink: #1a1408;
+  --code-bg: #26221e;
+  --shadow: 0 10px 30px rgb(0 0 0 / 0.35);
+  color-scheme: dark;
+}
+:root[data-theme='light'] {
+  --bg: #f7f3ec;
+  --surface: #fffdf9;
+  --surface-2: #efe9df;
+  --text: #221d18;
+  --muted: #6f665b;
+  --border: #e3dbcf;
+  --accent: #b5651d;
+  --accent-ink: #ffffff;
+  --code-bg: #efe9df;
+  --shadow: 0 10px 30px rgb(60 40 20 / 0.10);
   color-scheme: light;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) {
-    --bg: #0c0a09; --surface: #1c1917; --text: #f5f5f4; --muted: #a8a29e;
-    --border: #292524; --accent: #818cf8; --accent-soft: #312e81; --pill: #292524;
-    --code-bg: #1c1917; --stripe: #7c3aed;
-    color-scheme: dark;
-  }
-}
-:root[data-theme='dark'] {
-  --bg: #0c0a09; --surface: #1c1917; --text: #f5f5f4; --muted: #a8a29e;
-  --border: #292524; --accent: #818cf8; --accent-soft: #312e81; --pill: #292524;
-  --code-bg: #1c1917; --stripe: #7c3aed;
-  color-scheme: dark;
+:root {
+  --radius: 4px;
+  --content: 680px;
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang TC', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+  --serif: 'Iowan Old Style', 'Palatino Linotype', Georgia, 'Songti TC', 'Noto Serif TC', 'PMingLiU', serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; scroll-padding-top: 72px; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 84px; }
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
 body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
   font: 17px/1.8 var(--font);
   overflow-wrap: anywhere;
+  transition: background-color 0.25s, color 0.25s;
 }
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
+a { color: inherit; text-decoration: none; }
 img { max-width: 100%; height: auto; }
 
-.wrap { max-width: var(--content); margin: 0 auto; padding: 0 16px; }
-.wrap-wide { max-width: 1152px; margin: 0 auto; padding: 0 16px; }
+.wrap { max-width: var(--content); margin: 0 auto; padding: 0 20px; }
+.wrap-wide { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+.serif { font-family: var(--serif); }
+.muted { color: var(--muted); }
+
+/* 分類小標（kicker） */
+.kicker {
+  display: inline-block;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+a.kicker:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 .tag {
   display: inline-block;
-  padding: 3px 12px;
+  padding: 4px 12px;
+  border: 1px solid var(--border);
   border-radius: 999px;
-  background: var(--accent);
-  color: #fff;
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 1.6;
-}
-.tag:hover { text-decoration: none; filter: brightness(0.95); }
-.muted { color: var(--muted); }
-
-/* 文章內容 */
-.prose { font-size: 17px; }
-.prose h1, .prose h2, .prose h3 { line-height: 1.4; margin: 2em 0 0.6em; }
-.prose h1 { font-size: 1.6em; }
-.prose h2 { font-size: 1.35em; }
-.prose h3 { font-size: 1.15em; }
-.prose p, .prose ul, .prose ol { margin: 0 0 1.1em; }
-.prose blockquote {
-  margin: 1.5em 0;
-  padding: 0.4em 1.2em;
-  border-left: 3px solid var(--text);
   color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+  transition: border-color 0.2s, color 0.2s;
+}
+.tag:hover { border-color: var(--accent); color: var(--accent); }
+
+/* 區塊標題：細線 + 小字大寫 */
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 22px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* 捲動淡入：只有允許動畫時才啟用，並由 Base.astro 的 script 加上 .in */
+@media (prefers-reduced-motion: no-preference) {
+  .js .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .js .reveal.in { opacity: 1; transform: none; }
+}
+
+/* 文章內容：控制行寬、加大行高，適合中文長文 */
+.prose { font-size: 18px; line-height: 1.9; }
+.prose h1, .prose h2, .prose h3 { font-family: var(--serif); line-height: 1.35; font-weight: 700; }
+.prose h1 { font-size: 1.7em; margin: 2.2em 0 0.7em; }
+.prose h2 { font-size: 1.4em; margin: 2em 0 0.6em; }
+.prose h3 { font-size: 1.15em; margin: 1.8em 0 0.5em; }
+.prose p, .prose ul, .prose ol { margin: 0 0 1.2em; }
+.prose li { margin: 0.25em 0; }
+.prose li::marker { color: var(--accent); }
+.prose blockquote {
+  position: relative;
+  margin: 2em 0;
+  padding: 0.2em 0 0.2em 1.4em;
+  border-left: 3px solid var(--accent);
+  font-family: var(--serif);
+  font-size: 1.12em;
+  font-style: italic;
+  color: var(--text);
 }
 .prose blockquote p { margin: 0.3em 0; }
 .prose img {
   display: block;
-  margin: 1.2em auto;
+  margin: 1.6em auto;
   width: 100%;
   height: auto;
   max-height: 80vh;
@@ -86,53 +130,24 @@ img { max-width: 100%; height: auto; }
 .prose iframe {
   display: block;
   width: 100%;
-  max-width: 100%;
   height: auto;
   aspect-ratio: 4 / 3;
-  margin: 1.2em auto;
+  margin: 1.6em auto;
   border: 0;
   border-radius: var(--radius);
 }
-.prose pre {
-  padding: 1em;
-  border-radius: 10px;
-  overflow-x: auto;
-  font-size: 14px;
-  line-height: 1.6;
-}
-.prose a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; font-weight: 500; }
-.prose a:hover { color: var(--accent); }
-.prose :not(pre) > code {
-  padding: 0.15em 0.4em;
-  border-radius: 6px;
-  background: var(--code-bg);
-  font-size: 0.9em;
-}
+.prose pre { padding: 1em; border-radius: var(--radius); overflow-x: auto; font-size: 14px; line-height: 1.6; }
+.prose a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.prose a:hover { text-decoration-thickness: 2px; }
+.prose :not(pre) > code { padding: 0.15em 0.4em; border-radius: 4px; background: var(--code-bg); font-size: 0.88em; }
 .prose table { display: block; overflow-x: auto; border-collapse: collapse; }
 .prose th, .prose td { border: 1px solid var(--border); padding: 6px 12px; }
-.prose hr { border: 0; border-top: 1px solid var(--border); margin: 2em 0; }
-.prose mark { background: #fde68a; color: #1c1917; padding: 0 0.2em; }
+.prose hr { border: 0; text-align: center; margin: 2.5em 0; }
+.prose hr::before { content: '· · ·'; color: var(--muted); letter-spacing: 0.5em; }
+.prose mark { background: var(--accent); color: var(--accent-ink); padding: 0 0.25em; }
 
 @media (max-width: 640px) {
-  body, .prose { font-size: 16px; }
+  body { font-size: 16px; }
+  .prose { font-size: 17px; line-height: 1.85; }
   .prose img { max-height: none; }
-}
-
-/* 頁面大標題前的斜線小方塊（OpenBlog 的招牌裝飾） */
-.stripe-title {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin: 0;
-  font-size: clamp(34px, 7vw, 48px);
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-}
-.stripe-title::before {
-  content: '';
-  flex: none;
-  width: 0.5em;
-  height: 0.5em;
-  background: repeating-linear-gradient(-45deg, var(--stripe) 0 1.5px, transparent 1.5px 5px);
 }

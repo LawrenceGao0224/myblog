@@ -4,8 +4,8 @@ import PageHeading from '../components/PageHeading.astro';
 import { url } from '../utils';
 ---
 <Base title="找不到頁面">
-  <PageHeading title="404" subtitle="找不到這個頁面" />
+  <PageHeading kicker="404" title="找不到這個頁面" subtitle="網址可能打錯了，或文章已經搬家。" />
   <div class="wrap-wide" style="margin-top: 24px">
-    <p>網址可能打錯了，或文章已經搬家。<a href={url('/')}>回首頁</a> 或看看 <a href={url('/archive/')}>所有文章</a>。</p>
+    <p><a href={url('/')}>回首頁</a> 或看看 <a href={url('/archive/')}>所有文章</a>。</p>
   </div>
 </Base>

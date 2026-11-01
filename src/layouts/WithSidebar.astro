@@ -1,0 +1,21 @@
+---
+import Sidebar from '../components/Sidebar.astro';
+import type { Post } from '../utils';
+
+// 主內容 + 右側資訊欄；窄螢幕時資訊欄移到下方
+interface Props { posts: Post[] }
+const { posts } = Astro.props;
+---
+<div class="wrap-wide columns">
+  <div class="main"><slot /></div>
+  <Sidebar posts={posts} />
+</div>
+
+<style>
+  .columns { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 56px; align-items: start; }
+  .columns > :global(aside) { position: sticky; top: 92px; }
+  @media (max-width: 960px) {
+    .columns { grid-template-columns: 1fr; gap: 64px; }
+    .columns > :global(aside) { position: static; }
+  }
+</style>

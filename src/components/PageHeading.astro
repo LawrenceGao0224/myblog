@@ -1,28 +1,17 @@
 ---
-import { allTags, tagUrl, url, type Post } from '../utils';
-
-// 大標題 + 標籤分頁列（OpenBlog 的頁首）
-interface Props { title: string; subtitle?: string; posts?: Post[]; active?: string }
-const { title, subtitle, posts, active } = Astro.props;
-const tabs = posts ? [['全部', url('/')], ...allTags(posts).map(([t]) => [t, tagUrl(t)])] : [];
+// 列表頁頁首：小標 + 襯線大標 + 說明
+interface Props { kicker?: string; title: string; subtitle?: string }
+const { kicker, title, subtitle } = Astro.props;
 ---
-<section class="wrap-wide heading">
-  <h1 class="stripe-title">{title}</h1>
+<header class="wrap-wide heading reveal">
+  {kicker && <p class="kicker">{kicker}</p>}
+  <h1 class="serif">{title}</h1>
   {subtitle && <p class="subtitle">{subtitle}</p>}
-  {tabs.length > 0 && (
-    <nav class="tabs" aria-label="分類">
-      {tabs.map(([label, href]) => (
-        <a href={href} aria-current={(active ?? '全部') === label ? 'page' : undefined}>{label}</a>
-      ))}
-    </nav>
-  )}
-</section>
+</header>
 
 <style>
-  .heading { padding-top: 56px; }
-  .subtitle { margin: 12px 0 0; color: var(--muted); font-size: 16px; }
-  .tabs { display: flex; flex-wrap: wrap; gap: 0 22px; margin-top: 24px; border-bottom: 1px solid var(--border); }
-  .tabs a { padding: 10px 0 8px; margin-bottom: -1px; border-bottom: 2px solid transparent; color: var(--muted); font-size: 15px; }
-  .tabs a:hover { color: var(--text); text-decoration: none; }
-  .tabs a[aria-current='page'] { color: var(--text); border-bottom-color: var(--text); }
+  .heading { padding-top: 56px; padding-bottom: 36px; margin-bottom: 44px; border-bottom: 1px solid var(--border); }
+  .kicker { margin: 0 0 10px; }
+  h1 { margin: 0; font-size: clamp(34px, 6vw, 56px); line-height: 1.1; letter-spacing: -0.02em; }
+  .subtitle { margin: 14px 0 0; max-width: 640px; color: var(--muted); font-size: 17px; }
 </style>

@@ -8,6 +8,16 @@ export const SITE = {
   postsPerPage: 10,
 };
 
+// 側邊欄作者卡片
+export const AUTHOR = {
+  name: '高碩輿 Lawrence Kao',
+  role: '科技業技術顧問・旅人',
+  bio: '從 2018 年開始記錄旅行、工作與生活。喜歡跳舞、球類運動和閱讀。',
+};
+
+// 側邊欄「推薦閱讀」：填文章資料夾名稱，依序顯示
+export const FEATURED = ['japan-tokyo', 'alishan', 'lookforjobs', 'aroundtaiwan', 'hanoi'];
+
 export const SOCIAL = [
   { label: 'GitHub', icon: 'github', href: 'https://github.com/LawrenceGao0224' },
   { label: 'Instagram', icon: 'instagram', href: 'https://www.instagram.com/shuo_yu_gao' },

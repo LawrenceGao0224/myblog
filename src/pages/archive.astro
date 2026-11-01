@@ -11,16 +11,17 @@ for (const p of posts) {
 }
 ---
 <Base title="所有文章">
-  <PageHeading title="所有文章" subtitle={`2017 年至今，共 ${posts.length} 篇`} />
-  <div class="wrap-wide archive">
+  <PageHeading kicker="Archive" title="所有文章" subtitle={`2017 年至今，共 ${posts.length} 篇`} />
+  <div class="wrap-wide">
     {[...byYear].map(([year, list]) => (
-      <section>
-        <h2>{year}</h2>
+      <section class="year reveal">
+        <h2 class="serif">{year}</h2>
         <ul>
           {list.map((p) => (
             <li>
-              <a href={postUrl(p)}>{p.data.title}</a>
-              <time>{formatDate(p.data.published).slice(5)}</time>
+              <time class="muted">{formatDate(p.data.published).slice(5)}</time>
+              <a class="serif" href={postUrl(p)}>{p.data.title}</a>
+              {p.data.tags[0] && <span class="kicker">{p.data.tags[0]}</span>}
             </li>
           ))}
         </ul>
@@ -30,14 +31,17 @@ for (const p of posts) {
 </Base>
 
 <style>
-  .archive { margin-top: 24px; }
-  section { display: grid; grid-template-columns: 120px 1fr; gap: 24px; padding: 28px 0; border-bottom: 1px solid var(--border); }
-  h2 { margin: 0; font-size: 22px; font-weight: 700; }
-  ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
-  li { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; }
-  li a { color: var(--text); font-weight: 500; }
-  time { flex: none; color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
-  @media (max-width: 600px) {
-    section { grid-template-columns: 1fr; gap: 12px; }
+  .year { display: grid; grid-template-columns: 140px 1fr; gap: 24px; padding: 32px 0; border-bottom: 1px solid var(--border); }
+  .year h2 { margin: 0; font-size: 36px; line-height: 1; color: var(--accent); }
+  ul { list-style: none; margin: 0; padding: 0; }
+  li { display: grid; grid-template-columns: 56px 1fr auto; gap: 16px; align-items: baseline; padding: 10px 0; }
+  time { font-size: 14px; font-variant-numeric: tabular-nums; }
+  li a { font-size: 19px; line-height: 1.4; transition: color 0.2s; }
+  li a:hover { color: var(--accent); }
+  @media (max-width: 640px) {
+    .year { grid-template-columns: 1fr; gap: 12px; }
+    li { grid-template-columns: 48px 1fr; }
+    li .kicker { display: none; }
+    li a { font-size: 17px; }
   }
 </style>

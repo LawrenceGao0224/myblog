@@ -15,14 +15,16 @@ const pageTitle = title ? `${title} - ${SITE.title}` : SITE.title;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const nav = [
   { label: '首頁', href: url('/') },
-  { label: '文章', href: url('/archive/') },
-  { label: '標籤', href: url('/tags/') },
+  { label: '旅遊', href: url('/tags/Travel/') },
+  { label: '生活', href: url('/tags/Blog/') },
+  { label: '工作', href: url('/tags/Work/') },
+  { label: '所有文章', href: url('/archive/') },
   { label: '關於', href: url('/about/') },
 ];
 const current = Astro.url.pathname;
 ---
 <!doctype html>
-<html lang={SITE.lang}>
+<html lang={SITE.lang} data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -38,9 +40,11 @@ const current = Astro.url.pathname;
     <meta name="google-site-verification" content="SyDj2XyyHM_O0z5ErRUw2G1d0Gum-3JBYv8n-Qg0aVs" />
     <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
     <script is:inline>
+      // 預設深色；讀者切換過就記住
+      document.documentElement.classList.add('js');
       try {
         const t = localStorage.getItem('theme');
-        if (t) document.documentElement.dataset.theme = t;
+        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
       } catch {}
     </script>
     <Analytics />
@@ -48,46 +52,66 @@ const current = Astro.url.pathname;
   <body>
     <header class="site-header">
       <div class="wrap-wide bar">
-        <a class="brand" href={url('/')}>{SITE.title}</a>
-        <nav aria-label="主選單">
-          {nav.slice(1).map((n) => (
-            <a href={n.href} aria-current={current === n.href ? 'page' : undefined}>
-              {n.label === '標籤' && <Icon name="tag" size={17} />}
-              {n.label}
-            </a>
+        <a class="brand serif" href={url('/')}>{SITE.title}</a>
+        <nav class="menu" aria-label="主選單">
+          {nav.map((n) => (
+            <a href={n.href} aria-current={current === n.href ? 'page' : undefined}>{n.label}</a>
           ))}
-          <span class="divider" aria-hidden="true"></span>
-          {SOCIAL.slice(0, 2).map((s) => (
-            <a class="icon social" href={s.href} target="_blank" rel="noopener" aria-label={s.label}><Icon name={s.icon} /></a>
-          ))}
-          <button id="theme-toggle" class="icon" type="button" aria-label="切換深色模式">
-            <span class="moon"><Icon name="moon" /></span>
-            <span class="sun"><Icon name="sun" /></span>
-          </button>
         </nav>
+        <div class="actions">
+          {SOCIAL.slice(0, 2).map((s) => (
+            <a class="icon social" href={s.href} target="_blank" rel="noopener" aria-label={s.label}><Icon name={s.icon} size={19} /></a>
+          ))}
+          <button id="theme-toggle" class="icon" type="button" aria-label="切換深色／淺色">
+            <span class="sun"><Icon name="sun" size={19} /></span>
+            <span class="moon"><Icon name="moon" size={19} /></span>
+          </button>
+          <button id="menu-toggle" class="icon" type="button" aria-label="開啟選單" aria-expanded="false" aria-controls="mobile-menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+          </button>
+        </div>
       </div>
+      <nav id="mobile-menu" class="mobile-menu" aria-label="手機選單" hidden>
+        {nav.map((n) => <a href={n.href}>{n.label}</a>)}
+      </nav>
     </header>
-    <slot name="hero" />
     <main>
       <slot />
     </main>
     <footer class="site-footer">
-      <div class="wrap-wide">
-        <p class="social-row">
-          {SOCIAL.map((s) => <a href={s.href} target="_blank" rel="noopener" aria-label={s.label}><Icon name={s.icon} size={18} /></a>)}
-        </p>
-        <p>© {new Date().getFullYear()} {SITE.author}. All rights reserved.</p>
+      <div class="wrap-wide inner">
+        <div>
+          <a class="brand serif" href={url('/')}>{SITE.title}</a>
+          <p class="muted">{SITE.subtitle}</p>
+        </div>
+        <div class="social-row">
+          {SOCIAL.map((s) => <a href={s.href} target="_blank" rel="noopener" aria-label={s.label}><Icon name={s.icon} size={19} /></a>)}
+        </div>
       </div>
+      <p class="wrap-wide copy muted">© {new Date().getFullYear()} {SITE.author} · <a href={url('/rss.xml')}>RSS</a></p>
     </footer>
     <script is:inline>
       document.getElementById('theme-toggle').addEventListener('click', () => {
         const root = document.documentElement;
-        const dark = root.dataset.theme
-          ? root.dataset.theme === 'dark'
-          : matchMedia('(prefers-color-scheme: dark)').matches;
-        root.dataset.theme = dark ? 'light' : 'dark';
+        root.dataset.theme = root.dataset.theme === 'light' ? 'dark' : 'light';
         try { localStorage.setItem('theme', root.dataset.theme); } catch {}
       });
+      const menuBtn = document.getElementById('menu-toggle');
+      const menu = document.getElementById('mobile-menu');
+      menuBtn.addEventListener('click', () => {
+        const open = menu.hidden;
+        menu.hidden = !open;
+        menuBtn.setAttribute('aria-expanded', String(open));
+      });
+      // 捲動淡入（系統設定「減少動態效果」時不執行，CSS 也不會隱藏內容）
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+          for (const e of entries) if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        }, { rootMargin: '0px 0px -8% 0px' });
+        document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+      } else {
+        document.querySelectorAll('.reveal').forEach((el) => el.classList.add('in'));
+      }
     </script>
   </body>
 </html>
@@ -96,48 +120,72 @@ const current = Astro.url.pathname;
   .site-header {
     position: sticky;
     top: 0;
-    z-index: 10;
-    background: color-mix(in srgb, var(--bg) 88%, transparent);
-    backdrop-filter: saturate(180%) blur(12px);
-    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    z-index: 20;
+    background: color-mix(in srgb, var(--bg) 90%, transparent);
+    backdrop-filter: saturate(160%) blur(14px);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+    border-bottom: 1px solid var(--border);
   }
-  .bar { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 12px; }
-  .brand { font-weight: 600; font-size: 16px; color: var(--text); white-space: nowrap; }
-  .brand:hover { text-decoration: none; opacity: 0.7; }
-  nav { display: flex; align-items: center; gap: 2px; }
-  nav a, .icon {
+  .bar { display: flex; align-items: center; gap: 24px; height: 68px; }
+  .brand { font-size: 22px; font-weight: 700; letter-spacing: -0.01em; white-space: nowrap; }
+  .menu { display: flex; gap: 4px; margin: 0 auto; }
+  .menu a {
+    padding: 6px 12px;
+    color: var(--muted);
+    font-size: 15px;
+    white-space: nowrap;
+    transition: color 0.2s;
+  }
+  .menu a:hover, .menu a[aria-current='page'] { color: var(--text); }
+  .menu a[aria-current='page'] { box-shadow: inset 0 -2px 0 var(--accent); }
+  .actions { display: flex; align-items: center; gap: 2px; margin-left: auto; }
+  .icon {
     display: inline-flex;
     align-items: center;
-    gap: 5px;
-    padding: 6px 9px;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
     border: 0;
-    border-radius: 6px;
+    border-radius: 50%;
     background: none;
     color: var(--text);
-    font: 500 14px/1 var(--font);
-    white-space: nowrap;
     cursor: pointer;
+    transition: background-color 0.2s;
   }
-  nav a:hover, .icon:hover { text-decoration: none; background: var(--pill); }
-  nav a[aria-current='page'] { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; }
-  .divider { width: 2px; height: 20px; margin: 0 8px; background: var(--text); }
-  .sun { display: none; }
-  :global([data-theme='dark']) .sun { display: inline-flex; }
-  :global([data-theme='dark']) .moon { display: none; }
-  @media (prefers-color-scheme: dark) {
-    :global(:root:not([data-theme='light'])) .sun { display: inline-flex; }
-    :global(:root:not([data-theme='light'])) .moon { display: none; }
-  }
+  .icon:hover { background: var(--surface-2); }
+  .moon { display: none; }
+  :global([data-theme='light']) .moon { display: inline-flex; }
+  :global([data-theme='light']) .sun { display: none; }
+  #menu-toggle { display: none; }
+  .mobile-menu { display: flex; flex-direction: column; padding: 8px 20px 16px; border-top: 1px solid var(--border); }
+  .mobile-menu[hidden] { display: none; }
+  .mobile-menu a { padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 16px; }
+  .mobile-menu a:last-child { border-bottom: 0; }
+
   main { min-height: 60vh; }
-  .site-footer { margin-top: 80px; text-align: center; font-size: 14px; }
-  .site-footer .wrap-wide { padding-top: 28px; padding-bottom: 40px; border-top: 1px solid var(--border); }
-  .site-footer p { margin: 6px 0; }
-  .social-row { display: flex; justify-content: center; gap: 14px; }
-  .social-row a { color: var(--muted); }
-  .social-row a:hover { color: var(--text); }
-  @media (max-width: 640px) {
-    nav .social, .divider { display: none; }
-    .brand { font-size: 15px; }
-    nav a, .icon { padding: 6px 7px; }
+
+  .site-footer { margin-top: 96px; border-top: 1px solid var(--border); background: var(--surface); }
+  .inner { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-top: 40px; padding-bottom: 24px; }
+  .inner p { margin: 6px 0 0; font-size: 14px; }
+  .social-row { display: flex; gap: 6px; }
+  .social-row a {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 40px; height: 40px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--muted);
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .social-row a:hover { color: var(--accent); border-color: var(--accent); }
+  .copy { padding-bottom: 32px; font-size: 13px; }
+  .copy a:hover { color: var(--accent); }
+
+  @media (max-width: 960px) {
+    .menu, .social { display: none; }
+    #menu-toggle { display: inline-flex; }
+    .brand { font-size: 20px; }
+  }
+  @media (max-width: 600px) {
+    .inner { flex-direction: column; align-items: flex-start; }
   }
 </style>

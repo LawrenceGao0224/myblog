@@ -1,8 +1,8 @@
 ---
 import Base from '../../layouts/Base.astro';
+import WithSidebar from '../../layouts/WithSidebar.astro';
 import PageHeading from '../../components/PageHeading.astro';
-import PostList from '../../components/PostList.astro';
-import { SITE } from '../../config';
+import PostGrid from '../../components/PostGrid.astro';
 import { allTags, getPosts, type Post } from '../../utils';
 
 export async function getStaticPaths() {
@@ -17,13 +17,8 @@ const { tag } = Astro.params;
 const { all, posts } = Astro.props as { all: Post[]; posts: Post[] };
 ---
 <Base title={`#${tag}`}>
-  <PageHeading title={SITE.title} subtitle={SITE.subtitle} posts={all} active={tag} />
-  <div class="wrap-wide">
-    <p class="section-label">{tag} · {posts.length} 篇</p>
-    <PostList posts={posts} />
-  </div>
+  <PageHeading kicker="標籤" title={`#${tag}`} subtitle={`${posts.length} 篇文章`} />
+  <WithSidebar posts={all}>
+    <PostGrid posts={posts} />
+  </WithSidebar>
 </Base>
-
-<style>
-  .section-label { margin: 36px 0 18px; text-align: right; font-size: 17px; }
-</style>

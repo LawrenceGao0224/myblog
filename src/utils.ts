@@ -15,6 +15,7 @@ export function url(path = '/'): string {
 
 export const postUrl = (post: Post) => url(`/posts/${post.id}/`);
 export const tagUrl = (tag: string) => url(`/tags/${encodeURIComponent(tag)}/`);
+export const categoryUrl = (cat: string) => url(`/categories/${encodeURIComponent(cat)}/`);
 
 export function formatDate(date: Date): string {
   return date.toLocaleDateString('zh-TW', { year: 'numeric', month: '2-digit', day: '2-digit', timeZone: 'Asia/Taipei' });
@@ -24,6 +25,19 @@ export function allTags(posts: Post[]): [string, number][] {
   const counts = new Map<string, number>();
   for (const p of posts) for (const t of p.data.tags) counts.set(t, (counts.get(t) ?? 0) + 1);
   return [...counts].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+}
+
+export function allCategories(posts: Post[]): [string, number][] {
+  const counts = new Map<string, number>();
+  for (const p of posts) if (p.data.category) counts.set(p.data.category, (counts.get(p.data.category) ?? 0) + 1);
+  return [...counts].sort((a, b) => b[1] - a[1]);
+}
+
+/** 同標籤的文章優先，再補最新的 */
+export function relatedPosts(post: Post, posts: Post[], n = 3): Post[] {
+  const others = posts.filter((p) => p.id !== post.id);
+  const shared = (p: Post) => p.data.tags.filter((t) => post.data.tags.includes(t)).length;
+  return [...others].sort((a, b) => shared(b) - shared(a)).slice(0, n);
 }
 
 /** 閱讀時間：中文每分鐘約 400 字、英文約 200 字 */

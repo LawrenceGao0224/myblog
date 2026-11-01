@@ -1,30 +1,40 @@
 ---
 import Base from '../../layouts/Base.astro';
 import PageHeading from '../../components/PageHeading.astro';
-import { allTags, getPosts, tagUrl } from '../../utils';
+import { allCategories, allTags, categoryUrl, getPosts, tagUrl } from '../../utils';
 
-const tags = allTags(await getPosts());
+const posts = await getPosts();
+const groups = [
+  { title: '分類', items: allCategories(posts).map(([n, c]) => ({ name: n, count: c, href: categoryUrl(n) })) },
+  { title: '標籤', items: allTags(posts).map(([n, c]) => ({ name: `#${n}`, count: c, href: tagUrl(n) })) },
+];
 ---
-<Base title="標籤">
-  <PageHeading title="標籤" subtitle={`共 ${tags.length} 個標籤`} />
-  <div class="wrap-wide tags">
-    {tags.map(([tag, count]) => (
-      <a href={tagUrl(tag)}><span class="name">{tag}</span><span class="count">{count} 篇</span></a>
+<Base title="分類與標籤">
+  <PageHeading kicker="Explore" title="分類與標籤" subtitle="依主題找文章" />
+  <div class="wrap-wide">
+    {groups.map((g) => (
+      <section class="reveal">
+        <h2 class="section-title">{g.title}</h2>
+        <div class="cards">
+          {g.items.map((i) => (
+            <a href={i.href}><span class="serif name">{i.name}</span><span class="muted">{i.count} 篇</span></a>
+          ))}
+        </div>
+      </section>
     ))}
   </div>
 </Base>
 
 <style>
-  .tags { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin-top: 36px; }
-  .tags a {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 18px 20px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    background: var(--surface);
-    color: var(--text);
+  section + section { margin-top: 56px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+  .cards a {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 22px 24px;
+    border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface);
+    transition: border-color 0.2s;
   }
-  .tags a:hover { text-decoration: none; border-color: var(--text); }
-  .name { font-size: 17px; font-weight: 600; }
-  .count { color: var(--muted); font-size: 14px; }
+  .cards a:hover { border-color: var(--accent); }
+  .name { font-size: 22px; }
+  .muted { font-size: 14px; }
 </style>
