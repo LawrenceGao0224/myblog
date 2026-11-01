@@ -1,10 +1,14 @@
 # 發文操作手冊
 
-這份手冊教你從零開始寫一篇文章、放照片、預覽，到發佈上線。
+這份手冊教你從零開始寫一篇文章：中文版、英文版、照片、YouTube 影片、預覽，到發佈上線。
 最後附上常見錯誤的解法和撰寫建議。
 
 > **一句話流程**
-> `npm run new -- 名稱` → 寫文章、放照片 → `npm run images` → `npm run dev` 預覽 → `git push` 上線
+> `npm run new -- 名稱` → 寫中文版 → 寫英文版 → 放照片、貼影片網址 → `python3 tools/embed-youtube.py` → `npm run images` → `npm run dev` 預覽 → `git push` 上線
+
+**目錄**
+0. 開始前　1. 建立新文章　2. 文章開頭設定　**3. 中文版與英文版**　4. 寫內文　**5. 插入 YouTube 影片**
+6. 照片規則　7. 本機預覽　8. 發佈上線　9. 修改、刪除、草稿　10. 常見錯誤　11. 撰寫建議　12. 範本
 
 ---
 
@@ -50,7 +54,7 @@ npm run new -- kyoto-2027
 ```
 src/content/posts/kyoto-2027/
 ├── index.md      ← 中文版
-└── index.en.md   ← 英文版（預設是草稿，見第 2.5 節）
+└── index.en.md   ← 英文版（預設是草稿，見第 3 節）
 ```
 
 照片也放在這個資料夾裡，中英文版共用。
@@ -93,25 +97,92 @@ draft: true
 
 ---
 
-## 2.5 英文版
+## 3. 中文版與英文版
 
-網站是中英雙語：右上角 **EN／中** 按鈕會切換到同一篇的另一種語言。
+網站是中英雙語。每篇文章資料夾裡有兩個檔案：
 
-- **中文版**：`index.md`，只寫中文，不要再在中文版裡附英文翻譯
-- **英文版**：`index.en.md`，完整的英文文章
-- 兩個檔案的 `published`、`cover`、`tags`、`category` 填一樣的
-- 照片寫法一樣：`![caption](./1.jpg)`，同一張照片不用放兩份
-- YouTube、Google 地圖的 iframe 兩邊各貼一次
+| 檔案 | 語言 | 網址 |
+|---|---|---|
+| `index.md` | 中文 | `/myblog/posts/kyoto-2027/` |
+| `index.en.md` | 英文 | `/myblog/en/posts/kyoto-2027/` |
 
-**還沒寫英文版怎麼辦？**
-`index.en.md` 保持 `draft: true` 就好。英文網站不會出現這篇，讀者在中文版按 EN 會到英文首頁，不會看到壞掉的頁面。
-寫好英文版後刪掉 `draft: true` 再發佈。
+讀者按右上角 **EN** 會跳到同一篇的英文版，按 **中** 跳回中文版。
 
-**想請 AI 幫忙翻譯**：把 `index.md` 內容貼給 Claude，請它「翻成自然的英文，保留圖片路徑、iframe、網址和標題層級不變」，再貼進 `index.en.md`。
+### 3.1 兩個檔案哪些要一樣、哪些不一樣
+
+| 項目 | 中文版 `index.md` | 英文版 `index.en.md` |
+|---|---|---|
+| `title`、`description` | 中文 | 英文 |
+| `published` | **一模一樣** | **一模一樣** |
+| `cover` | **一模一樣**（`./header.jpg`） | **一模一樣** |
+| `tags` | **一模一樣，用英文**：`Travel`、`Blog`、`Work` | **一模一樣** |
+| `category` | **一模一樣**：`Blog` 或 `Work` | **一模一樣** |
+| `toc`、`draft` | 依需要 | 依需要（可以不同，見 3.3） |
+| 照片 | `![清水寺夕陽](./1.jpg)` | `![Sunset at Kiyomizu-dera](./1.jpg)`：**路徑一樣，說明翻譯** |
+| YouTube 影片 | 中文說明 + 網址 | 英文說明 + **同一個網址** |
+| Google 地圖 iframe | 貼一次 | **同一段原封不動再貼一次** |
+| 標題層級（`#`、`##`） | 照你的結構 | **跟中文版一樣**，翻譯文字就好 |
+
+**重要**
+- **標籤不要翻譯**：中文版也寫 `Travel`，不要寫 `旅遊`。網站選單會自動顯示成「旅遊／生活／工作」或「Travel／Life／Work」。標籤寫成中文會變成另一個標籤，選單點不到。
+- **照片只放一份**：兩個檔案共用同一個資料夾裡的照片，不用複製。
+- **中文版只寫中文**：不要再在中文段落後面附英文翻譯，英文寫在 `index.en.md`。地名、品牌、技術名詞照常用英文沒關係（例如 Uniqlo、DisneySea、Python）。
+
+### 3.2 建議的寫作流程
+
+1. `npm run new -- kyoto-2027`，同時產生 `index.md` 和 `index.en.md`
+2. **先寫中文版** `index.md`，照片、影片網址都放好
+3. 預覽中文版確認沒問題
+4. **寫英文版**：把中文版整篇複製到 `index.en.md`，再逐段翻譯（這樣圖片、影片、地圖、標題層級一定跟中文版一致）
+5. 兩個檔案都刪掉 `draft: true`
+6. 執行 `python3 tools/embed-youtube.py`（有貼影片的話，見第 5 節）
+7. 預覽兩種語言：http://localhost:4321/myblog/ 和 http://localhost:4321/myblog/en/
+8. 發佈
+
+### 3.3 英文版還沒寫好怎麼辦？
+
+英文版保持 `draft: true` 就好，中文版照常刪掉 `draft: true` 發佈：
+
+- 中文網站：正常顯示這篇 ✅
+- 英文網站：不會出現這篇（不會有空白或壞掉的頁面）✅
+- 讀者在這篇中文文章按 **EN**：會到英文首頁，而不是 404 ✅
+
+之後寫好英文版，刪掉 `index.en.md` 的 `draft: true` 再發佈一次即可。
+
+### 3.4 請 AI 幫忙翻譯
+
+可以把整篇 `index.md` 貼給 Claude，附上這段指示：
+
+```text
+請把這篇部落格文章翻成自然、口語的英文（第一人稱、旅遊部落格語氣）。
+規則：
+- front-matter：title、description 翻成英文；published、cover、tags、category、toc 完全不變
+- 標題層級（#、##、###）、段落順序、換行都保持一樣
+- 圖片路徑 ./xxx.jpg 不變，只翻譯中括號裡的說明
+- iframe、<div class="videos">、<mark> 等 HTML 原封不動，只翻譯 <mark> 裡的文字
+- 網址不變，翻譯連結文字
+- 台灣的地名、小吃用拼音，第一次出現時括號附中文，例如 Jiufen (九份)
+- 金額保留 NT$、¥ 等幣別
+```
+
+翻完貼進 `index.en.md`，**自己讀一遍**，特別是地名、店名、專有名詞。
+
+### 3.5 修改已發佈的文章
+
+改了中文版，記得英文版也要改對應的地方（反之亦然）：
+
+- 換照片、加照片 → 兩個檔案都要加 `![...](./新照片.jpg)`
+- 改日期、封面、標籤 → 兩個檔案都要改成一樣
+- 改錯字、改文字 → 只改那個語言就好
+
+### 3.6 只寫英文、不寫中文？
+
+可以，但不建議（網站以中文為主）。做法：英文版刪掉 `draft: true`，中文版保持 `draft: true`。
+這篇只會出現在英文網站，讀者在英文版按 **中** 會到中文首頁。
 
 ---
 
-## 3. 寫內文（Markdown 語法）
+## 4. 寫內文（Markdown 語法）
 
 ### 標題層級
 
@@ -158,6 +229,7 @@ draft: true
 - **一定要 `./` 開頭**
 - 中括號裡是照片說明，給視障讀者和 Google 用。可以留空 `![](./1.jpg)`，但建議寫
 - 讀者點照片會放大全螢幕
+- 英文版照片路徑一樣，只把說明翻成英文（見 3.1）
 - 不用自己縮圖或轉格式，網站會自動轉成 WebP、產生手機／平板／電腦三種尺寸
 
 ### 插入 Google 地圖
@@ -172,18 +244,7 @@ Google 地圖 → 搜尋地點 → **分享** → **嵌入地圖** → **複製 
 
 ### 插入 YouTube 影片
 
-直接貼 YouTube 網址（一行一個），再執行：
-
-```bash
-python3 tools/embed-youtube.py
-```
-
-就會自動換成內嵌播放器：橫式影片 16:9；**Shorts 直式影片**會自動用直的比例，連續幾支會並排。
-網址前面的文字會保留成影片上方的說明，例如：
-
-```markdown
-清邁旅遊影片：https://www.youtube.com/shorts/FVwDx9CRbL8
-```
+見第 5 節。
 
 ### 強調文字（螢光筆效果）
 
@@ -193,7 +254,107 @@ python3 tools/embed-youtube.py
 
 ---
 
-## 4. 照片規則（最常出錯的地方）
+## 5. 插入 YouTube 影片
+
+不用自己寫 HTML：**貼網址 → 執行一個指令**，就會變成可以直接在文章裡播放的影片。
+
+### 5.1 三個步驟
+
+**步驟 1**：在文章裡貼 YouTube 網址，**一行一個**，前面可以加說明文字：
+
+```markdown
+清邁旅遊影片：https://www.youtube.com/shorts/FVwDx9CRbL8
+```
+
+**步驟 2**：在部落格資料夾執行：
+
+```bash
+python3 tools/embed-youtube.py
+```
+
+它會掃描**所有文章的中文版和英文版**，把影片網址換成播放器，並列出改了哪幾篇。
+
+**步驟 3**：`npm run dev` 預覽，確認影片出現、可以播放。
+
+> 這個指令可以重複執行，已經轉過的不會再轉一次。
+
+### 5.2 寫法與結果
+
+| 你寫的 | 轉換後 |
+|---|---|
+| `https://www.youtube.com/watch?v=XXXX`（單獨一行） | 只有影片 |
+| `京都影片：https://youtu.be/XXXX` | 上面一行文字「京都影片」，下面是影片 |
+| `[第一天 vlog](https://www.youtube.com/watch?v=XXXX)` | 上面一行文字「第一天 vlog」，下面是影片 |
+| `https://www.youtube.com/watch?v=XXXX&t=95s` | 影片會從 **1 分 35 秒**開始播（`t=1m35s`、`t=95` 也可以） |
+| `https://www.youtube.com/shorts/XXXX` | 自動用**直式** 9:16 比例 |
+
+**支援的網址格式**：`youtube.com/watch?v=`、`youtu.be/`、`youtube.com/shorts/`、手機版 `m.youtube.com`；後面帶 `?si=...` 之類的參數也沒關係。
+
+### 5.3 好幾支影片：自動並排
+
+連續的影片網址（中間只有空行，沒有其他文字）會放在同一組：
+
+```markdown
+清邁短影音：
+https://www.youtube.com/shorts/AAAA
+https://www.youtube.com/shorts/BBBB
+https://www.youtube.com/shorts/CCCC
+```
+
+- **Shorts 直式影片**：電腦上一排並排三支，手機上一排一支
+- **一般橫式影片**：每支都是整個內文寬度（16:9）
+- 想要**分開成不同組**：中間寫一行文字（或寫不同的說明）
+
+```markdown
+Day 1：https://youtu.be/AAAA
+
+Day 2：https://youtu.be/BBBB
+```
+
+### 5.4 英文版怎麼寫
+
+英文版貼**同一個網址**，說明改成英文，一樣執行 `python3 tools/embed-youtube.py`（同一個指令會一起處理中英文）：
+
+| 中文版 `index.md` | 英文版 `index.en.md` |
+|---|---|
+| `旅遊影片回憶：https://youtu.be/XXXX` | `Trip video: https://youtu.be/XXXX` |
+
+如果中文版已經轉成播放器了，也可以直接把中文版那段 `<div class="videos">…</div>` **整段複製**到英文版，只把上面那行說明翻成英文。
+
+### 5.5 不會被轉換的情況
+
+| 情況 | 結果 | 怎麼辦 |
+|---|---|---|
+| 播放清單 `youtube.com/playlist?list=...` | 保持一般連結 | 改貼單支影片網址 |
+| 頻道 `youtube.com/@xxx`、`/channel/...` | 保持一般連結 | 這是正常的，頻道沒辦法嵌入 |
+| 網址在程式碼區塊 ```` ``` ```` 裡 | 不轉換 | 正常，程式碼不會被改 |
+| 網址夾在句子中間：`我拍了 https://youtu.be/XXXX 很好看` | 會轉換，但句子中間留下一個空洞 | **網址放在一行的最後**或**自己一行** |
+
+### 5.6 想自己寫 HTML
+
+不用工具也可以，複製這段、把 `影片ID` 換掉（網址 `watch?v=` 後面那 11 個字元）：
+
+```html
+<div class="videos">
+<iframe class="yt" src="https://www.youtube-nocookie.com/embed/影片ID" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+```
+
+- Shorts 直式影片：`class="yt"` 改成 `class="yt short"`
+- 從第 95 秒開始：`embed/影片ID?start=95`
+- **`<div class="videos">` 前後要各空一行**，否則下一段文字可能不會正常顯示
+- 不建議直接用 YouTube「分享 → 嵌入」複製的原始碼：網站會把它當成一般 iframe，顯示成 4:3，影片上下會有黑邊，Shorts 也不會是直的
+
+### 5.7 注意事項
+
+- 影片要是**公開**或**不公開（有連結的人可看）**。**私人**影片讀者看不到
+- 如果影片上傳者關閉了「允許嵌入」，播放器會顯示「影片無法播放」，這時改用一般連結 `[影片標題](網址)`
+- 播放器用 `youtube-nocookie.com`：讀者按播放前不會被 YouTube 追蹤
+- 播放器只在讀者捲到附近時才載入，不會拖慢頁面
+
+---
+
+## 6. 照片規則（最常出錯的地方）
 
 | 規則 | 原因 |
 |---|---|
@@ -229,7 +390,7 @@ npm run images
 
 ---
 
-## 5. 本機預覽
+## 7. 本機預覽
 
 ```bash
 npm run dev
@@ -244,16 +405,18 @@ npm run dev
 
 ---
 
-## 6. 發佈上線
+## 8. 發佈上線
 
 ### 發佈前檢查清單
 
 - [ ] `title`、`description`、`published` 都填了
-- [ ] 英文版 `index.en.md` 寫好了，或保持 `draft: true`
-- [ ] 刪掉 `draft: true`
+- [ ] 中文版刪掉 `draft: true`
+- [ ] 英文版 `index.en.md` 寫好並刪掉 `draft: true`，或保持 `draft: true` 之後再補
+- [ ] 中英文的 `published`、`cover`、`tags`、`category` 一樣
+- [ ] 有貼影片的話，執行過 `python3 tools/embed-youtube.py`
 - [ ] 有封面圖 `cover`（想上首頁輪播的話）
 - [ ] 執行過 `npm run images`，顯示「照片大小都 OK」
-- [ ] `npm run dev` 預覽過，照片都有出來
+- [ ] `npm run dev` 預覽過中文版和英文版（`/myblog/en/`），照片、影片都有出來
 
 ### 發佈
 
@@ -273,21 +436,21 @@ git push
 到 https://github.com/LawrenceGao0224/myblog/actions 可以看進度：
 - 🟡 黃色 = 進行中
 - ✅ 綠色勾勾 = 成功
-- ❌ 紅色叉叉 = 失敗，網站維持舊版本，不會壞掉（看第 8 節）
+- ❌ 紅色叉叉 = 失敗，網站維持舊版本，不會壞掉（看第 10 節）
 
 上線後如果看到的還是舊畫面，按 **Cmd + Shift + R** 強制重新整理。
 
 ---
 
-## 7. 修改、刪除、草稿
+## 9. 修改、刪除、草稿
 
-**修改已發佈的文章**：直接改 `index.md`，存檔後照第 6 節 `git add / commit / push`。
+**修改已發佈的文章**：直接改 `index.md`（和 `index.en.md`，見 3.5），存檔後照第 8 節 `git add / commit / push`。
 
 **修改發佈日期**：改 `published`，文章在首頁的排序會跟著變。
 
-**先存草稿、之後再發**：保留 `draft: true` 照樣 commit + push，上線也看不到；寫完再刪掉那行重新 push。
+**先存草稿、之後再發**：保留 `draft: true` 照樣 commit + push，上線也看不到；寫完再刪掉那行重新 push。中英文的 `draft` 各自獨立。
 
-**刪除文章**：刪掉整個 `src/content/posts/文章名稱/` 資料夾，再 commit + push。
+**刪除文章**：刪掉整個 `src/content/posts/文章名稱/` 資料夾（中英文一起刪），再 commit + push。
 
 **調整首頁右側「推薦閱讀」**：改 `src/config.ts` 的 `FEATURED`，填文章資料夾名稱：
 
@@ -297,7 +460,7 @@ export const FEATURED = ['kyoto-2027', 'japan-tokyo', 'alishan'];
 
 ---
 
-## 8. 常見錯誤與解法
+## 10. 常見錯誤與解法
 
 錯誤訊息會出現在終端機（`npm run dev`／`npm run images`）或 GitHub Actions 的紅色叉叉裡。
 
@@ -312,12 +475,18 @@ export const FEATURED = ['kyoto-2027', 'japan-tokyo', 'alishan'];
 | 其他看不懂的錯誤，或指令完全跑不起來 | 可能用到舊版 Node | 執行 `node -v`，不是 `v24` 就照第 0 節設定 |
 | 預覽時新文章沒出現 | 還是草稿？ | 正式上線看不到草稿；本機 `npm run dev` 應該看得到 |
 | 上線後首頁沒變 | 瀏覽器快取 | Cmd + Shift + R |
+| 英文網站看不到新文章 | `index.en.md` 還是 `draft: true` | 寫好後刪掉那行 |
+| 中文文章按 EN 跑到英文首頁，不是這篇 | 英文版還是草稿或不存在 | 同上；這是刻意的，避免讀者看到壞掉的頁面 |
+| 選單「旅遊」點進去找不到這篇 | 標籤寫成中文 `旅遊` | 中英文版都寫 `Travel`（見 3.1） |
+| 執行 `embed-youtube.py` 後網址沒變成影片 | 網址是播放清單／頻道，或在程式碼區塊裡 | 見 5.5 |
+| 影片顯示「影片無法播放」 | 私人影片，或上傳者禁止嵌入 | 改成公開／不公開，或改用一般連結 |
+| 影片下一段的文字格式怪怪的 | 自己寫的 `<div class="videos">` 前後沒空行 | 前後各空一行 |
 
 **小提醒**：日期寫錯但「看起來像日期」時不會報錯，例如 `2027-13-45` 會被當成 2028 年 2 月。發佈前在預覽確認一下日期。
 
 ---
 
-## 9. 撰寫建議
+## 11. 撰寫建議
 
 ### 讓文章更好讀
 - **段落短**：手機上 3–4 行就換段，大段文字很難讀
@@ -338,9 +507,9 @@ export const FEATURED = ['kyoto-2027', 'japan-tokyo', 'alishan'];
 
 ---
 
-## 10. 範本：遊記
+## 12. 範本：遊記（中文＋英文）
 
-可以直接複製這段開始寫：
+### 中文版 `index.md`
 
 ```markdown
 ---
@@ -356,7 +525,7 @@ draft: true
 
 > 這趟旅行最想記住的一句話
 
-[旅遊影片回憶：YouTube](https://www.youtube.com/...)
+旅遊影片回憶：https://www.youtube.com/shorts/影片ID
 
 # 行前準備
 
@@ -391,3 +560,57 @@ draft: true
 
 寫下這趟旅行的感想。
 ```
+
+### 英文版 `index.en.md`
+
+```markdown
+---
+title: Place YYYY.MM.DD~YYYY.MM.DD
+description: One line about this trip
+published: 2027-01-01T20:00:00+08:00
+cover: ./header.jpg
+tags:
+- Travel
+category: Blog
+draft: true
+---
+
+> The one thing I want to remember from this trip
+
+Trip video: https://www.youtube.com/shorts/影片ID
+
+# Preparation
+
+1. Visa / entry documents
+2. Currency exchange
+3. Internet (eSIM / pocket Wi-Fi)
+
+# Itinerary
+
+## Day 1
+
+Arrived and checked in.
+
+![Our stay](./1.jpg)
+
+## Day 2
+
+![Sightseeing](./2.jpg)
+
+# Total cost
+
+<mark>Total: NT$00000</mark>
+
+| Item | Cost |
+|---|---|
+| Flights | |
+| Accommodation | |
+| Transport | |
+| Food | |
+
+# Thoughts
+
+What I took away from this trip.
+```
+
+注意兩個檔案的 `published`、`cover`、`tags`、`category`、照片路徑、影片網址都一樣，只有文字不同。

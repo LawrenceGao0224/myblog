@@ -7,9 +7,18 @@ URL = re.compile(r'https?://(?:www\.|m\.)?(?:youtube\.com/(?:watch\?[^\s)\]<>]*?
 MDLINK = re.compile(r'\[([^\]]*)\]\((' + URL.pattern + r')\)')
 JUNK = re.compile(r'^(YouTube( Shorts| vlog)?|VLOG)?\s*[:：]?\s*$', re.I)
 
-def iframe(vid, short):
+def start_seconds(url):
+    """網址裡的開始時間：t=95、t=95s、t=1m35s、start=95"""
+    m = re.search(r'[?&](?:t|start)=(?:(\d+)h)?(?:(\d+)m)?(\d+)?s?(?:&|$)', url)
+    if not m or not any(m.groups()):
+        return 0
+    h, mi, se = (int(x or 0) for x in m.groups())
+    return h * 3600 + mi * 60 + se
+
+def iframe(vid, short, start=0):
     cls = 'yt short' if short else 'yt'
-    return (f'<iframe class="{cls}" src="https://www.youtube-nocookie.com/embed/{vid}" title="YouTube video" '
+    query = f'?start={start}' if start else ''
+    return (f'<iframe class="{cls}" src="https://www.youtube-nocookie.com/embed/{vid}{query}" title="YouTube video" '
             'loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" '
             'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>')
 
@@ -41,7 +50,7 @@ def convert(md):
             flush()
             out.append(caption + '\n')
             last[0] = caption
-        group.append(iframe(vid, short))
+        group.append(iframe(vid, short, start_seconds(m.group(0))))
     flush()
     return '\n'.join(out)
 
