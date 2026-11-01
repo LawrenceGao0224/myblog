@@ -24,7 +24,7 @@ const nav = [
 const current = Astro.url.pathname;
 ---
 <!doctype html>
-<html lang={SITE.lang} data-theme="dark">
+<html lang={SITE.lang} data-theme="light">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -40,7 +40,7 @@ const current = Astro.url.pathname;
     <meta name="google-site-verification" content="SyDj2XyyHM_O0z5ErRUw2G1d0Gum-3JBYv8n-Qg0aVs" />
     <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
     <script is:inline>
-      // 預設深色；讀者切換過就記住
+      // 預設淺色；讀者切換過就記住
       document.documentElement.classList.add('js');
       try {
         const t = localStorage.getItem('theme');

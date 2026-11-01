@@ -1,5 +1,4 @@
-/* 雜誌風格：預設深色，暖色調，標題用襯線字 */
-:root,
+/* 雜誌風格：預設淺色，暖色調，標題用襯線字 */
 :root[data-theme='dark'] {
   --bg: #141210;
   --surface: #1d1a17;
@@ -13,6 +12,7 @@
   --shadow: 0 10px 30px rgb(0 0 0 / 0.35);
   color-scheme: dark;
 }
+:root,
 :root[data-theme='light'] {
   --bg: #f7f3ec;
   --surface: #fffdf9;
