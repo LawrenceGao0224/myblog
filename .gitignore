@@ -7,3 +7,4 @@ public/
 .deploy*/
 qdrant_storage/
 .claude/
+_multiconfig.yml

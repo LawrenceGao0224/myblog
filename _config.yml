@@ -51,12 +51,18 @@ anchorjs: true                          # if you want to customize anchor. check
 #duoshuo_share: true                     # set to false if you want to use Comment without Sharing
 
 
-# Analytics settings
-# Baidu Analytics
-# ba_track_id: 4cc1f2d8f3067386cc5cdb626a202900
-# Google Analytics
-ga_track_id: 'UA-XXXXXXXX-X'          # Format: UA-xxxxxx-xx
-ga_domain: yoursite
+# Analytics settings（留空就不載入）
+# Google Analytics 4：到 analytics.google.com 建立資源後取得，格式 G-XXXXXXXXXX
+ga4_id:
+# Cloudflare Web Analytics：到 Cloudflare 後台 → Analytics & Logs → Web Analytics 取得 token
+cf_analytics_token:
+
+# Comments：giscus（https://giscus.app/zh-TW），repo_id 留空就不顯示留言區
+giscus:
+  repo: LawrenceGao0224/myblog
+  repo_id:
+  category: Announcements
+  category_id:
 
 
 # Sidebar settings
@@ -160,8 +166,9 @@ archive_generator:
   daily: false
   
 # Markdown-it config
-## Docs: https://github.com/celsomiranda/hexo-renderer-markdown-it/wiki
+## Docs: https://github.com/hexojs/hexo-renderer-markdown-it
 markdown:
+  preset: 'default'
   render:
     html: true
     xhtmlOut: false
@@ -169,7 +176,13 @@ markdown:
     linkify: true
     typographer: true
     quotes: '“”‘’'
-  
+  anchors:
+    level: 1
+    collisionSuffix: ''
+    permalink: false
+  images:
+    lazyload: true
+
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
@@ -180,8 +193,4 @@ sitemap:
   path: sitemap.xml
 
 # Deployment
-## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type: git
-  repository: git@github.com:LawrenceGao0224/myblog.git
-  branch: gh-pages
+## 由 GitHub Actions 自動部署（.github/workflows/deploy.yml），不再需要 hexo deploy

@@ -75,6 +75,29 @@ layout: layout
                     </div>
                 <% } %>
                 <!-- disqus comment end -->
+
+                <!-- giscus comment start -->
+                <% if(config.giscus && config.giscus.repo_id) { %>
+                    <div class="comment">
+                        <script src="https://giscus.app/client.js"
+                            data-repo="<%= config.giscus.repo %>"
+                            data-repo-id="<%= config.giscus.repo_id %>"
+                            data-category="<%= config.giscus.category %>"
+                            data-category-id="<%= config.giscus.category_id %>"
+                            data-mapping="pathname"
+                            data-strict="1"
+                            data-reactions-enabled="1"
+                            data-emit-metadata="0"
+                            data-input-position="top"
+                            data-theme="preferred_color_scheme"
+                            data-lang="zh-TW"
+                            data-loading="lazy"
+                            crossorigin="anonymous"
+                            async>
+                        </script>
+                    </div>
+                <% } %>
+                <!-- giscus comment end -->
             </div>
             
             <!-- Tabe of Content -->

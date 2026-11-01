@@ -1,0 +1,5 @@
+# Cloudflare Pages 專用設定：覆蓋 _config.yml 的網址
+# 建置指令：npm run build:cloudflare   輸出資料夾：public
+# 若專案名稱不是 lawrence-blog，或有自訂網域，請改 url
+url: https://lawrence-blog.pages.dev
+root: /
