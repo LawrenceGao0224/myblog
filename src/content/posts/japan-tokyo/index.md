@@ -263,7 +263,7 @@ toc: true
 我買了 3 種口味，最喜歡原味，不會太甜，真的很好吃。
 ![](./56.jpg)
 
-3. [Hanako 喫茶店に恋して 蜂蜜吐司餅乾](https://suposaka.net/cute-damn-good-how-about-some-sweets-that-will-make-anyone-happy-as-a-souvenir/) (8.5/10)：
+3. Hanako 喫茶店に恋して 蜂蜜吐司餅乾 (8.5/10)：
 蜂蜜跟奶油的組合超完美，很好吃。
 ![](./57.jpg)
 

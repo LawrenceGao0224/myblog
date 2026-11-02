@@ -15,10 +15,6 @@ toc: true
 
 ---
 
-# 行程規劃
-
-[行程規劃 : Click On Me](https://gsy-life.webnode.tw/_files/200000006-8a0808b03e/馬來西亞之旅.pdf)
-
 ---
 
 # 行前準備

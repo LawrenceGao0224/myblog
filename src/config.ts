@@ -34,7 +34,6 @@ export const SOCIAL = [
 ] as const;
 
 export const FRIENDS = [
-  { label: 'Cozy Night In', href: 'https://cozynightin.com/' },
   { label: 'My Reading List', href: 'https://lawrencekao.notion.site/1a7fb57a6f3c4e30a8f1f5e45677b129?v=e89018e9e9c54144977390b1195ad432&pvs=4' },
 ];
 

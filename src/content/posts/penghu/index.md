@@ -23,7 +23,7 @@ toc: true
 # 澎湖簡介
 ![](./22.jpeg)
 
-圖片來源：[https://www.travelking.com.tw/tourguide/penghu/attraction.asp](https://www.travelking.com.tw/tourguide/penghu/attraction.asp)
+圖片來源：travelking.com.tw
 
 [背包攻略](https://www.backpackers.com.tw/guide/index.php/%E6%BE%8E%E6%B9%96%E7%B8%A3)
 

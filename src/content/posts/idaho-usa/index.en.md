@@ -117,10 +117,6 @@ We arrived at beautiful Coeur d'Alene Lake — it's absolutely huge and breathta
 
 We kept exploring Coeur d'Alene — there's so much beautiful scenery
 
-<div class="videos">
-<iframe class="yt short" src="https://www.youtube-nocookie.com/embed/dQlSG_bmfNE" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
 ![](./12.jpg)
 
 ![](./13.jpg)

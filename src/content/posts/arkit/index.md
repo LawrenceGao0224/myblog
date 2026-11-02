@@ -237,7 +237,7 @@ AR、VR 在軟硬體的高速發展，使其將成為未來的趨勢及主流，
 # 參考文獻
 
 [1] 施政計畫、業務統計及研究報告，2020. 取自國立故宮博物院博物館行政: https://www.npm.gov.tw/Article.aspx?sNo=03006230
-[2] 腦中乾坤 : 心智的生物學，2016. 取自國立自然科學博物館: http://web2.nmns.edu.tw/Exhibits/105/Brain/
+[2] 腦中乾坤 : 心智的生物學，2016. 取自國立自然科學博物館
 [3] 上河藝影—故宮 x 衛武營新媒體藝術展，2019. 取自國立故宮博物院展覽回 顧: https://theme.npm.edu.tw/exh108/npmweiwuying/
 [4] 林逸清(2019)，一 LINE 上博物館智能導覽系統設計，國立交通大學資訊管理 所碩士論文。
 [5] Pokémon Go，取自 Wikipedia : https://en.wikipedia.org/wiki/Pokemon_Go
@@ -251,7 +251,7 @@ AR、VR 在軟硬體的高速發展，使其將成為未來的趨勢及主流，
 [13] 奇幻嘉年華-21世紀博物館特展，取自國立故宮博物院南部院區: https://south.npm.gov.tw/ExhibitionsDetailC003110.aspx?Cond=6d4d3215-793a-48e1-b450-f2e41116e6e5&appname=Exhibition3112
 [14] Sketchfab官網，取自Sketchfab:https://sketchfab.com/
 [15] 兵馬俑雕像，取自Thingiverse:https://www.thingiverse.com/thing:1028560/
-[16] ARKit-Plugin，取自Unity: https://bitbucket.org/Unity-Technologies/unity-arkit-plugin/src/default/
+[16] ARKit-Plugin，取自Unity
 [17] C# 語言簡介，取自 Duran 的技術冶煉廠: http://dog0416.blogspot.com/2017/08/cvisual-studio-c.html
 [18] SketchUp 教學，取自 CG 數位學習網: http://www.cg.com.tw/SketchUp/Content/SketchUp_01.php
 [19] Swift 新手系列之一: 打造你的第一個 iOSApp，取自APPCODA: https://www.appcoda.com.tw/hello-world-app-swift/

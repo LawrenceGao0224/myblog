@@ -263,7 +263,7 @@ A famous treat that everyone buys, and I love it.
 I bought 3 flavors, and my favorite is the original. It's not too sweet and really yummy.
 ![](./56.jpg)
 
-3. [Hanako 喫茶店に恋して Honey Toast Sable](https://suposaka.net/cute-damn-good-how-about-some-sweets-that-will-make-anyone-happy-as-a-souvenir/) (8.5/10):
+3. Hanako 喫茶店に恋して Honey Toast Sable (8.5/10):
 The combination of honey and cream is perfect. So tasty.
 ![](./57.jpg)
 

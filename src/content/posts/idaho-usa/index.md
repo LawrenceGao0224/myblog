@@ -117,10 +117,6 @@ toc: true
 
 繼續探索Coeur d'Alene，真的很多美景
 
-<div class="videos">
-<iframe class="yt short" src="https://www.youtube-nocookie.com/embed/dQlSG_bmfNE" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
 ![](./12.jpg)
 
 ![](./13.jpg)

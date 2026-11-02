@@ -129,7 +129,6 @@ relative_link: true
 * {username}.github.io 
     * Repository name: {username}.github.io
         * ex: LawrenceGao0224.github.io
-        * link: https://LawrenceGao0224.github.io
         * Only one per account — the project that lives at the root
     * Branch: master
 * {username}.github.io/{project name}

@@ -236,7 +236,7 @@ The concept of this system isn't limited to showing artworks; it can be extended
 # References
 
 [1] Policy plans, statistics, and research reports, 2020. Retrieved from National Palace Museum – Museum Administration: https://www.npm.gov.tw/Article.aspx?sNo=03006230
-[2] The Universe Within: The Biology of the Mind, 2016. Retrieved from National Museum of Natural Science: http://web2.nmns.edu.tw/Exhibits/105/Brain/
+[2] The Universe Within: The Biology of the Mind, 2016. Retrieved from National Museum of Natural Science
 [3] Art Through the River – National Palace Museum x Weiwuying New Media Art Exhibition, 2019. Retrieved from National Palace Museum Past Exhibitions: https://theme.npm.edu.tw/exh108/npmweiwuying/
 [4] Lin, Yi-Ching (2019). Design of a Smart Museum Guide System on LINE. Master's thesis, Institute of Information Management, National Chiao Tung University.
 [5] Pokémon Go, retrieved from Wikipedia : https://en.wikipedia.org/wiki/Pokemon_Go
@@ -250,7 +250,7 @@ The concept of this system isn't limited to showing artworks; it can be extended
 [13] Fantasy Carnival – 21st Century Museum Special Exhibition, retrieved from National Palace Museum Southern Branch: https://south.npm.gov.tw/ExhibitionsDetailC003110.aspx?Cond=6d4d3215-793a-48e1-b450-f2e41116e6e5&appname=Exhibition3112
 [14] Sketchfab official website, retrieved from Sketchfab: https://sketchfab.com/
 [15] Terracotta warrior statue, retrieved from Thingiverse: https://www.thingiverse.com/thing:1028560/
-[16] ARKit-Plugin, retrieved from Unity: https://bitbucket.org/Unity-Technologies/unity-arkit-plugin/src/default/
+[16] ARKit-Plugin, retrieved from Unity
 [17] Introduction to the C# language, retrieved from Duran's Tech Forge (Duran 的技術冶煉廠): http://dog0416.blogspot.com/2017/08/cvisual-studio-c.html
 [18] SketchUp tutorial, retrieved from CG Digital Learning (CG 數位學習網): http://www.cg.com.tw/SketchUp/Content/SketchUp_01.php
 [19] Swift for Beginners Part 1: Build Your First iOS App, retrieved from APPCODA: https://www.appcoda.com.tw/hello-world-app-swift/

@@ -172,11 +172,6 @@ I hope everyone reading this, and everyone around me, finds a great job they tru
 
 Here are some learning resources and references I found useful.
 
-Networking:
-http://linux.vbird.org/linux_server/0110network_basic.php#tcpip_network_arp
-<div class="videos">
-<iframe class="yt" src="https://www.youtube-nocookie.com/embed/QKfk7YFILws" title="YouTube video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
 
 Algorithms:
 Sorting: https://www.toptal.com/developers/sorting-algorithms
@@ -197,7 +192,6 @@ https://medium.com/%E5%BE%8C%E7%AB%AF%E6%96%B0%E6%89%8B%E6%9D%91/%E7%B3%BB%E7%B5
 
 Operating Systems:
 https://mropengate.blogspot.com/2017/09/operating-system-concepts.html
-http://debussy.im.nuu.edu.tw/sjchen/OS_Final.html
 
 K8s:
 https://ithelp.ithome.com.tw/articles/10192401

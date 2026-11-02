@@ -21,7 +21,7 @@ toc: true
 Jialuo Lake sits in Siji Village (四季村), Datong Township, Yilan County, in the Jialuo Mountain area along the northern branch of the Central Cross-Island Highway. It's located where Nanhu Mountain (南湖大山) and Sanxing Mountain (三星山) of the Central Mountain Range meet, on the ridge running from north of Liluo Mountain (里洛山) to Taipingshan. It's named after nearby Jialuo Mountain, runs north to south, and is the source of Jianafu Creek (加納富溪). At 2,242 meters above sea level, Jialuo Lake is actually part of a whole group of lakes — besides Jialuo Lake itself there's Retreat Pond (撤退池), Haomai Pond (豪邁池), Weidan Pond (偉蛋池), Ink Pond (墨池), Sun Lake, Moon Lake, Heavenly Pond (天池), Cypress Pond (檜木池), Water Pond (水池), Green Pond (綠池) and more, with 18 alpine lakes found so far. Jialuo Lake is the biggest of them all, about 300 meters long, 150 meters wide and 15 meters deep.
 The Legend of Jialuo Lake – "The Scattered Pearls"
 The legend of Jialuo Lake is pretty magical. Long, long ago there was a beautiful fairy. One day, while she was doing her makeup, she got distracted and accidentally smashed the mirror on her table. The glittering, diamond-like shards rained down over the Jialuo Mountains and became this huge cluster of dreamlike lakes. With their crystal-clear water, lots of sunlight and beautiful surroundings, the Jialuo lakes became known as "The Scattered Pearls".
-[Source: https://www.travelking.com.tw/tourguide/scenery103360.html](https://www.travelking.com.tw/tourguide/scenery103360.html)
+Source: travelking.com.tw
 
 # How Jialuo Lake Was Rediscovered in Modern Hiking History
 

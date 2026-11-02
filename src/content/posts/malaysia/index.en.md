@@ -15,10 +15,6 @@ toc: true
 
 ---
 
-# Itinerary
-
-[Itinerary: Click On Me](https://gsy-life.webnode.tw/_files/200000006-8a0808b03e/馬來西亞之旅.pdf)
-
 ---
 
 # Preparation

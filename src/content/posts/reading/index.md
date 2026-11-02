@@ -85,7 +85,7 @@ toc: true
 # 推薦書單
 
 我最喜愛比爾蓋茲的書單，非常多元，各種面向都有，尤其是對於興趣廣泛的我再適合不過了，而股癌是Podcaster，他的書單也很棒，而查理蒙格是巴菲特身邊非常重要的人，巴菲特常說：「沒有蒙格就沒有我」
-1. [比爾蓋茲書單](https://activity.books.com.tw/crosscat/show/A00000023102)
+1. 比爾蓋茲書單
 
 2. [股癌書單](https://www.evernote.com/shard/s706/client/snv?noteGuid=a0556273-7a2b-9e6b-6d51-33e2c856e353&noteKey=94725ec975a01bbf3cedb6db1b378dec&sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs706%2Fsh%2Fa0556273-7a2b-9e6b-6d51-33e2c856e353%2F94725ec975a01bbf3cedb6db1b378dec&title=%25E8%2582%25A1%25E7%2599%258C%25E6%259B%25B8%25E5%2596%25AE%2528%25E5%25B0%2587%25E6%258C%2581%25E7%25BA%258C%25E6%259B%25B4%25E6%2596%25B0%25EF%25BC%258C%25E6%259C%2580%25E6%2596%25B0%25E7%25BD%25AE%25E9%25A0%2582%2529)
 
@@ -93,7 +93,7 @@ toc: true
 
 4. [誠品的各名人書單](https://events.eslite.com/2020/191217-CelebrityPicks/index.html)
 
-5. [書單星球](https://planetofbooklist.com/)
+5. 書單星球
 
 此外，最近發現這個Blog所撰寫的閱讀心得與推薦書非常值得一看 [JUJU CHU 愛讀書](https://jujuchu.com/)
 

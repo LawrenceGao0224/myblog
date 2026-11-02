@@ -23,7 +23,7 @@ Trip video memories
 # About Penghu
 ![](./22.jpeg)
 
-Image source: [https://www.travelking.com.tw/tourguide/penghu/attraction.asp](https://www.travelking.com.tw/tourguide/penghu/attraction.asp)
+Image source: travelking.com.tw
 
 [Backpackers' guide](https://www.backpackers.com.tw/guide/index.php/%E6%BE%8E%E6%B9%96%E7%B8%A3)
 

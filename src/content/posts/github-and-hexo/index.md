@@ -129,7 +129,6 @@ relative_link: true
 * {用戶名稱}.github.io 
     * 儲存庫名稱：{用戶名稱}.github.io
         * ex: LawrenceGao0224.github.io
-        * link: https://LawrenceGao0224.github.io
         * 每個帳戶只有一個，能放在最根目錄的專案
     * Branch ：master
 * {用戶名稱}.github.io/{專案名稱}

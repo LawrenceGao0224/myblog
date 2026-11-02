@@ -103,8 +103,6 @@ Rose is the youngest player ever named MVP, but foot injuries in earlier seasons
 
 (https://www.cnblogs.com/huadongw/p/4202492.html?fbclid=IwAR3PHEOcrAar0rCI1e9AeYBxV0fI6JKJIRqGAJ3ag9BnlleT5M9v_8oNiy0)
 
-(https://www.itread01.com/articles/1495821610.html?fbclid=IwAR1Ssz1ZCdqnxtT6obwpx0AFRDBEGrqKK0BXmMGPK-I1lvNwqJuif9EhZt0)
-
 (https://scikit-learn.org/stable/auto_examples/applications/plot_stock_market.html?fbclid=IwAR29Qcy3SrWFDjHAJGF--XO-0zW2FWt8t4dYZT0lsYxUDqJpBz17ds2pQQM)
 
 (https://scikit-learn.org/stable/auto_examples/cluster/plot_affinity_propagation.html?fbclid=IwAR2SsWtrb5MJdypMha6G59nWSeEwf7QK5vzmCa_UefR9mHDT0WzLgEbqng4#sphx-glr-auto-examples-cluster-plot-affinity-propagation-py)
