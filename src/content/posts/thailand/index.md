@@ -21,7 +21,7 @@ toc: true
 
 這次旅行交由大樂旅行社幫忙規劃安排
 
-[行程 : Click On Me](https://drive.google.com/file/d/0B_MUcnppdaa7VWM0SmxFWHVISkU/view)
+[行程 : Click On Me](https://drive.google.com/file/d/0B_MUcnppdaa7VWM0SmxFWHVISkU/view?usp=sharing&resourcekey=0-5oMlViKCfi0GSGR7omYBqw)
 
 ---
 

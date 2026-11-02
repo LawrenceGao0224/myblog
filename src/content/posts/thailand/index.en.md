@@ -21,7 +21,7 @@ toc: true
 
 This trip was planned and arranged by Da Le Travel (大樂旅行社)
 
-[Itinerary : Click On Me](https://drive.google.com/file/d/0B_MUcnppdaa7VWM0SmxFWHVISkU/view)
+[Itinerary : Click On Me](https://drive.google.com/file/d/0B_MUcnppdaa7VWM0SmxFWHVISkU/view?usp=sharing&resourcekey=0-5oMlViKCfi0GSGR7omYBqw)
 
 ---
 
